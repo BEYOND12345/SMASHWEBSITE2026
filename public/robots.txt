@@ -1,0 +1,41 @@
+# SMASH Invoices - Robots.txt
+# Optimized for AI search engines and traditional crawlers
+
+# Allow all major search engines and AI crawlers
+User-agent: *
+Allow: /
+
+# Explicitly allow AI search engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Disallow admin areas
+User-agent: *
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://smashinvoices.com/sitemap.xml
