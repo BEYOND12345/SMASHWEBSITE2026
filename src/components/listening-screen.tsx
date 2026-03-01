@@ -20,9 +20,6 @@ export const ListeningScreen = () => {
     <div className="h-full pt-2 px-6 flex flex-col bg-white font-sans">
       <div className="flex justify-between items-center mb-8">
         <button className="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider">Cancel</button>
-        <div className="flex items-center gap-0.5 font-black tracking-tight text-base">
-          <span className="text-[#0F172A]">SMASH</span>
-        </div>
         <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
           <User size={14} />
         </div>
