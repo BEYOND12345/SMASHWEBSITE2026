@@ -18,7 +18,9 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = 
   return (
     <div className={`relative ${floating ? 'animate-float' : ''} ${className}`}>
       <div className={`relative ${sizeClasses} bg-[#0F172A] border-[#0F172A] overflow-hidden shadow-2xl`}>
-        {children}
+        <div className="w-full h-full" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+          {children}
+        </div>
       </div>
     </div>
   );
