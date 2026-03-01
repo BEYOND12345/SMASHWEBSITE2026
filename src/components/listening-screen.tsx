@@ -17,8 +17,8 @@ export const ListeningScreen = () => {
   };
 
   return (
-    <div className="h-full pt-8 px-6 flex flex-col bg-white font-sans">
-      <div className="flex justify-between items-center mb-16">
+    <div className="h-full pt-2 px-6 flex flex-col bg-white font-sans">
+      <div className="flex justify-between items-center mb-8">
         <button className="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider">Cancel</button>
         <div className="flex items-center gap-0.5 font-black tracking-tight text-base">
           <span className="text-[#0F172A]">SMASH</span>
@@ -29,7 +29,7 @@ export const ListeningScreen = () => {
       </div>
 
       <div className="flex-1 flex flex-col items-center pt-4">
-        <div className="relative w-40 h-40 mb-10">
+        <div className="relative w-28 h-28 mb-8">
           <div className="relative w-full h-full bg-[#1E293B] rounded-full flex items-center justify-center shadow-xl">
             <div className="flex items-end gap-1 h-10">
               {[0.4, 0.7, 1, 0.8, 0.5].map((h, i) => (
@@ -45,7 +45,7 @@ export const ListeningScreen = () => {
         </div>
 
         <h2 className="text-xl font-black text-[#0F172A] uppercase tracking-tight mb-3">Listening...</h2>
-        <div className="flex items-center gap-2 mb-16">
+        <div className="flex items-center gap-2 mb-8">
           <span className="text-3xl font-black text-[#0F172A] tracking-tight">{formatTime(timer)}</span>
           <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">REC</span>
         </div>

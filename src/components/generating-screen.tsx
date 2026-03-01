@@ -13,8 +13,8 @@ export const GeneratingScreen = () => {
   }, []);
 
   return (
-    <div className="h-full pt-14 px-6 flex flex-col bg-white">
-      <div className="flex justify-between items-center mb-12">
+    <div className="h-full pt-2 px-6 flex flex-col bg-white">
+      <div className="flex justify-between items-center mb-6">
         <button className="text-[11px] font-black text-[#0F172A] uppercase tracking-widest">Cancel</button>
         <div className="flex items-center gap-0.5 font-extrabold tracking-tighter text-xl">
           <span className="text-[#0F172A]">SMASH</span>
@@ -25,23 +25,23 @@ export const GeneratingScreen = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col items-center pt-12">
-        <div className="relative w-40 h-40 mb-16">
-          <svg className="w-full h-full -rotate-90">
+      <div className="flex-1 flex flex-col items-center pt-4">
+        <div className="relative w-28 h-28 mb-8">
+          <svg className="w-full h-full -rotate-90" viewBox="0 0 112 112">
             <circle
-              cx="80" cy="80" r="70"
+              cx="56" cy="56" r="50"
               fill="none" stroke="#F1F5F9" strokeWidth="4"
             />
             <motion.circle
-              cx="80" cy="80" r="70"
+              cx="56" cy="56" r="50"
               fill="none" stroke="#E2FF00" strokeWidth="4"
-              strokeDasharray="440"
-              animate={{ strokeDashoffset: 440 - (440 * progress / 100) }}
+              strokeDasharray="314"
+              animate={{ strokeDashoffset: 314 - (314 * progress / 100) }}
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 bg-[#0F172A] rounded-full flex items-center justify-center shadow-xl">
-              <Mic className="text-[#E2FF00]" size={32} />
+            <div className="w-16 h-16 bg-[#0F172A] rounded-full flex items-center justify-center shadow-xl">
+              <Mic className="text-[#E2FF00]" size={24} />
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export const GeneratingScreen = () => {
           Turning voice into a professional document...
         </p>
 
-        <div className="w-full mt-12">
+        <div className="w-full mt-6">
           <div className="flex gap-1 mb-8">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className={`h-2 flex-1 rounded-full ${progress >= i * 20 ? 'bg-[#E2FF00]' : 'bg-slate-100'}`} />
