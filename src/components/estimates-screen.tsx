@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, User, Eye, EyeOff } from 'lucide-react';
+import { Search, Filter, Eye, EyeOff } from 'lucide-react';
 
 const ESTIMATES = [
   { id: '1', title: 'REPLACE GARAGE DOOR', customer: 'ALEX JOHNSON', amount: '$1,250.00', date: 'OCT 24', status: 'SENT', seenCount: 2, initials: 'AJ' },
@@ -61,11 +61,7 @@ const duplicatedEstimates = [...ESTIMATES, ...ESTIMATES];
 export const EstimatesScreen = () => {
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-full overflow-hidden">
-      <div className="flex justify-end items-center mb-6">
-        <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
-          <User size={16} />
-        </div>
-      </div>
+      <div className="mb-6" />
 
       <div className="flex gap-3 mb-6">
         <div className="flex-1 relative">

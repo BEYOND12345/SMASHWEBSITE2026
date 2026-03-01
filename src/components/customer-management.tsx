@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, ChevronLeft, MoreVertical, Plus, User } from 'lucide-react';
+import { Search, ChevronLeft, MoreVertical, Plus } from 'lucide-react';
 
 const CUSTOMERS = [
   { id: '1', name: 'Anthony Russo', email: 'anthony.r@outlook.com', phone: '+61 411 222 333', initials: 'AR', jobs: 3, revenue: '$4,250.00', lastJob: '12 Jan' },
@@ -96,11 +96,7 @@ export const CustomerManagement = () => {
 
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-screen font-sans">
-      <div className="flex justify-end items-center mb-6">
-        <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
-          <User size={16} />
-        </div>
-      </div>
+      <div className="mb-6" />
 
       <div className="flex gap-3 mb-4">
         <div className="flex-1 relative">

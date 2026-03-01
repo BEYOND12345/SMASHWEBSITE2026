@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { User } from 'lucide-react';
 
 export const ListeningScreen = () => {
   const [timer, setTimer] = useState(27);
@@ -18,12 +17,7 @@ export const ListeningScreen = () => {
 
   return (
     <div className="h-full pt-2 px-6 flex flex-col bg-white font-sans">
-      <div className="flex justify-between items-center mb-8">
-        <button className="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider">Cancel</button>
-        <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
-          <User size={14} />
-        </div>
-      </div>
+      <div className="mb-8" />
 
       <div className="flex-1 flex flex-col items-center pt-4">
         <div className="relative w-28 h-28 mb-8">
