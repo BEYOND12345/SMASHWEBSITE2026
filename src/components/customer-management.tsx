@@ -96,13 +96,9 @@ export const CustomerManagement = () => {
 
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-screen font-sans">
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center gap-0.5 font-extrabold tracking-tighter text-xl">
-          <span className="text-[#0F172A]">SMASH</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-[#D9F99D] mt-1" />
-        </div>
-        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
-          <User size={20} />
+      <div className="flex justify-end items-center mb-6">
+        <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+          <User size={16} />
         </div>
       </div>
 
