@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { PhoneMockup } from './phone-mockup';
 import { ListeningScreen } from './listening-screen';
-import { EstimatesScreenStatic } from './estimates-screen-static';
+import { GeneratingScreen } from './generating-screen';
 
 export const DualPhoneSection = () => {
   return (
@@ -25,7 +25,7 @@ export const DualPhoneSection = () => {
               className="absolute left-0 lg:left-4 top-12 z-0 -rotate-6"
             >
               <PhoneMockup>
-                <EstimatesScreenStatic />
+                <GeneratingScreen />
               </PhoneMockup>
             </motion.div>
 
