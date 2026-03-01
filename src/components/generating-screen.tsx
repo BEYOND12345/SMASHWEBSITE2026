@@ -14,14 +14,13 @@ export const GeneratingScreen = () => {
 
   return (
     <div className="h-full pt-2 px-6 flex flex-col bg-white">
-      <div className="flex justify-between items-center mb-6">
-        <button className="text-[11px] font-black text-[#0F172A] uppercase tracking-widest">Cancel</button>
-        <div className="flex items-center gap-0.5 font-extrabold tracking-tighter text-xl">
+      <div className="flex justify-between items-center mb-8">
+        <button className="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider">Cancel</button>
+        <div className="flex items-center gap-0.5 font-black tracking-tight text-base">
           <span className="text-[#0F172A]">SMASH</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-[#E2FF00] mt-1" />
         </div>
-        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-          <User size={20} className="text-slate-600" />
+        <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+          <User size={14} />
         </div>
       </div>
 
@@ -52,13 +51,13 @@ export const GeneratingScreen = () => {
         </p>
 
         <div className="w-full mt-6">
-          <div className="flex gap-1 mb-8">
+          <div className="flex gap-1 mb-4">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className={`h-2 flex-1 rounded-full ${progress >= i * 20 ? 'bg-[#E2FF00]' : 'bg-slate-100'}`} />
             ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             {[
               { label: 'Transcribing Audio', active: progress >= 25 },
               { label: 'Extracting Details', active: progress >= 50 },
@@ -67,11 +66,11 @@ export const GeneratingScreen = () => {
             ].map((phase, i) => (
               <div
                 key={i}
-                className={`p-4 rounded-2xl border flex flex-col justify-between h-20 transition-all ${
+                className={`p-3 rounded-xl border flex items-start h-14 transition-all ${
                   phase.active ? 'bg-white border-slate-100 shadow-sm' : 'bg-transparent border-slate-100 opacity-40'
                 }`}
               >
-                <span className="text-[10px] font-black text-[#0F172A] uppercase tracking-widest leading-tight">
+                <span className="text-[9px] font-black text-[#0F172A] uppercase tracking-wider leading-tight">
                   {phase.label}
                 </span>
               </div>
