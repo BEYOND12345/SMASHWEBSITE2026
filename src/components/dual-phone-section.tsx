@@ -9,17 +9,18 @@ export const DualPhoneSection = () => {
     <section className="py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative flex items-center justify-center min-h-[700px]">
-            <div className="absolute left-0 lg:left-4 top-12 z-0 -rotate-6">
-              <PhoneMockup>
-                <GeneratingScreen />
-              </PhoneMockup>
-            </div>
-
-            <div className="relative z-10 ml-44 lg:ml-52">
-              <PhoneMockup>
-                <ListeningScreen />
-              </PhoneMockup>
+          <div className="flex items-center justify-center">
+            <div className="relative flex items-end justify-center">
+              <div className="relative z-0 -rotate-6 -mr-6">
+                <PhoneMockup>
+                  <GeneratingScreen />
+                </PhoneMockup>
+              </div>
+              <div className="relative z-10 -ml-6">
+                <PhoneMockup>
+                  <ListeningScreen />
+                </PhoneMockup>
+              </div>
             </div>
           </div>
 
