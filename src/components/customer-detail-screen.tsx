@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronLeft, MoreVertical, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const CUSTOMER = {
   name: 'Sarah Johnson',
@@ -17,16 +17,7 @@ const ACTIVITY = [
 ];
 
 export const CustomerDetailScreen = () => (
-  <div className="pt-12 pb-32 px-6 bg-[#F8FAFC] h-full overflow-hidden">
-    <div className="flex justify-between items-center mb-6">
-      <button className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-slate-100">
-        <ChevronLeft size={18} className="text-[#0F172A]" />
-      </button>
-      <button className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-slate-100">
-        <MoreVertical size={18} className="text-[#0F172A]" />
-      </button>
-    </div>
-
+  <div className="pt-8 pb-32 px-6 bg-[#F8FAFC] h-full overflow-hidden">
     <div className="text-center mb-6">
       <h1 className="text-2xl font-black text-[#0F172A] tracking-tight mb-1">{CUSTOMER.name}</h1>
       <div className="flex flex-col items-center gap-0.5">
