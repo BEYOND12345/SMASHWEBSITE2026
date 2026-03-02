@@ -276,55 +276,53 @@ export function LandingPage() {
         variant="secondary"
       />
 
-      {/* SECTION 10: CRM DASHBOARD */}
-      <FeatureSection
-        background="white"
-        imagePosition="right"
-        title="TRACK HIGH-VOLUME QUOTING"
-        description={
-          <p>
-            See all quotes in one view. Nothing slips through.
-          </p>
-        }
-        bullets={[
-          "All quotes at a glance",
-          "Filter by status",
-          "Track repeat clients",
-          "Never miss follow-ups"
-        ]}
-        image={
-          <div className="flex justify-center lg:justify-start">
-            <PhoneMockup>
-              <AppScreen type="estimates" />
-            </PhoneMockup>
-          </div>
-        }
-      />
+      {/* SECTION 10: QUOTING & CLIENTS */}
+      <section className="bg-brand py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-10 uppercase leading-tight text-white">
+                EVERY QUOTE. EVERY CLIENT. ONE VIEW.
+              </h2>
 
-      {/* SECTION 11: CLIENT MANAGEMENT */}
-      <FeatureSection
-        background="slate"
-        imagePosition="left"
-        title="REPEAT CLIENTS REMEMBERED"
-        description={
-          <p>
-            Client history pulled up instantly. Repeat work done faster.
-          </p>
-        }
-        bullets={[
-          "Details linked to quotes",
-          "Addresses saved",
-          "Past quotes visible",
-          "Faster repeat work"
-        ]}
-        image={
-          <div className="flex justify-center lg:justify-start">
-            <PhoneMockup>
-              <AppScreen type="customer-management" />
-            </PhoneMockup>
+              <div className="text-xl md:text-2xl font-bold leading-relaxed mb-10 text-white/90">
+                <p className="mb-4">
+                  See all quotes at a glance and pull up client history instantly. Nothing slips through. Repeat work gets done faster.
+                </p>
+              </div>
+
+              <ul className="space-y-6">
+                {[
+                  "All quotes tracked by status",
+                  "Client history linked to every job",
+                  "Addresses and details saved automatically",
+                  "Never miss a follow-up"
+                ].map((bullet, index) => (
+                  <li key={index} className="flex items-start gap-5">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-1">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="text-accent">
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                    </div>
+                    <span className="text-lg md:text-xl font-bold leading-snug text-white/95">
+                      {bullet}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 lg:gap-6">
+              <PhoneMockup size="small">
+                <AppScreen type="estimates" />
+              </PhoneMockup>
+              <PhoneMockup size="small">
+                <AppScreen type="customer-management" />
+              </PhoneMockup>
+            </div>
           </div>
-        }
-      />
+        </div>
+      </section>
 
       {/* SOCIAL PROOF */}
       <section className="bg-white py-20 lg:py-28">
