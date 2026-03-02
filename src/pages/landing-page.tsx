@@ -259,14 +259,9 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase"
         ]}
         image={
-          <div className="relative">
-            <PhoneMockup>
-              <AppScreen type="quote" />
-            </PhoneMockup>
-            <div className="absolute -bottom-4 -right-4 bg-accent text-accentText px-4 py-2 rounded-full font-black text-sm shadow-lg">
-              APPROVED ✓
-            </div>
-          </div>
+          <PhoneMockup>
+            <AppScreen type="invoices" />
+          </PhoneMockup>
         }
       />
 

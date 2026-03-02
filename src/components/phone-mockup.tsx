@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListeningScreen } from './listening-screen';
 import { EstimatesScreen } from './estimates-screen';
+import { InvoicesScreen } from './invoices-screen';
 import { CustomerManagement } from './customer-management';
 
 interface PhoneMockupProps {
@@ -27,7 +28,7 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = 
 };
 
 interface AppScreenProps {
-  type: 'voice' | 'dashboard' | 'quote' | 'pricing' | 'invoice' | 'client' | 'customer-detail' | 'estimates' | 'customer-management';
+  type: 'voice' | 'dashboard' | 'quote' | 'pricing' | 'invoice' | 'invoices' | 'client' | 'customer-detail' | 'estimates' | 'customer-management';
   animated?: boolean;
 }
 
@@ -38,6 +39,10 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
 
   if (type === 'dashboard') {
     return <EstimatesScreen />;
+  }
+
+  if (type === 'invoices') {
+    return <InvoicesScreen />;
   }
 
   if (type === 'quote') {
