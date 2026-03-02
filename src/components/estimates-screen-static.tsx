@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, Eye, EyeOff } from 'lucide-react';
+import { Search, Filter, User, Eye, EyeOff } from 'lucide-react';
 
 const ESTIMATES = [
   { id: '1', title: 'REPLACE GARAGE DOOR', customer: 'ALEX JOHNSON', amount: '$1,250.00', date: 'OCT 24', status: 'SENT', seenCount: 2, initials: 'AJ' },
@@ -11,7 +11,15 @@ const ESTIMATES = [
 export const EstimatesScreenStatic = () => {
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-full">
-      <div className="mb-6" />
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex items-center gap-0.5 font-extrabold tracking-tighter text-xl">
+          <span className="text-[#0F172A]">SMASH</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#E2FF00] mt-1" />
+        </div>
+        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+          <User size={20} className="text-slate-600" />
+        </div>
+      </div>
 
       <div className="flex gap-3 mb-6">
         <div className="flex-1 relative">

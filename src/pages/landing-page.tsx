@@ -259,9 +259,14 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase"
         ]}
         image={
-          <PhoneMockup>
-            <AppScreen type="portal" />
-          </PhoneMockup>
+          <div className="flex items-center justify-center gap-4 lg:gap-6">
+            <PhoneMockup size="small">
+              <AppScreen type="estimates-static" />
+            </PhoneMockup>
+            <PhoneMockup size="small">
+              <AppScreen type="portal" />
+            </PhoneMockup>
+          </div>
         }
       />
 

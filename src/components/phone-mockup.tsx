@@ -5,6 +5,7 @@ import { InvoicesScreen } from './invoices-screen';
 import { CustomerManagement } from './customer-management';
 import { CustomerDetailScreen } from './customer-detail-screen';
 import { PortalScreen } from './portal-screen';
+import { EstimatesScreenStatic } from './estimates-screen-static';
 
 interface PhoneMockupProps {
   children: React.ReactNode;
@@ -30,7 +31,7 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = 
 };
 
 interface AppScreenProps {
-  type: 'voice' | 'dashboard' | 'quote' | 'pricing' | 'invoice' | 'invoices' | 'portal' | 'client' | 'customer-detail' | 'estimates' | 'customer-management';
+  type: 'voice' | 'dashboard' | 'quote' | 'pricing' | 'invoice' | 'invoices' | 'portal' | 'estimates-static' | 'client' | 'customer-detail' | 'estimates' | 'customer-management';
   animated?: boolean;
 }
 
@@ -184,6 +185,10 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
 
   if (type === 'portal') {
     return <PortalScreen />;
+  }
+
+  if (type === 'estimates-static') {
+    return <EstimatesScreenStatic />;
   }
 
   if (type === 'customer-management') {
