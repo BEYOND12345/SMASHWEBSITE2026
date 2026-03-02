@@ -3,6 +3,7 @@ import { ListeningScreen } from './listening-screen';
 import { EstimatesScreen } from './estimates-screen';
 import { InvoicesScreen } from './invoices-screen';
 import { CustomerManagement } from './customer-management';
+import { CustomerDetailScreen } from './customer-detail-screen';
 
 interface PhoneMockupProps {
   children: React.ReactNode;
@@ -181,7 +182,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
   }
 
   if (type === 'customer-management') {
-    return <CustomerManagement />;
+    return <CustomerDetailScreen />;
   }
 
   return null;
