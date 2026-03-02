@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronLeft, MoreVertical, Plus } from 'lucide-react';
 
 const CUSTOMERS = [
@@ -109,7 +108,7 @@ export const CustomerManagement = () => {
 
       <div className="space-y-3">
         {CUSTOMERS.map((cust) => (
-          <motion.div
+          <div
             key={cust.id}
             onClick={() => { setSelectedId(cust.id); setView('detail'); }}
             className="bg-white rounded-3xl p-4 flex items-center gap-4 shadow-sm border border-slate-50 cursor-pointer hover:bg-slate-50 transition-colors"
@@ -121,7 +120,7 @@ export const CustomerManagement = () => {
               <h3 className="font-extrabold text-[#0F172A] text-sm tracking-tight leading-none mb-1">{cust.name}</h3>
               <p className="text-[10px] font-bold text-slate-400 tracking-wider">{cust.email}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
