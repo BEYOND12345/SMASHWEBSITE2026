@@ -168,13 +168,17 @@ export function LandingPage() {
           "No setup. No configuration. Just talk and it works like you."
         ]}
         image={
-          <div className="flex justify-center lg:justify-end gap-6 items-end">
-            <PhoneMockup size="small" className="opacity-60 translate-y-8">
-              <ScannerScreen />
-            </PhoneMockup>
-            <PhoneMockup>
-              <AnalyzerScreen />
-            </PhoneMockup>
+          <div className="relative flex items-center justify-center min-h-[700px]">
+            <div className="absolute left-0 lg:left-4 top-12 z-0 -rotate-6">
+              <PhoneMockup>
+                <ScannerScreen />
+              </PhoneMockup>
+            </div>
+            <div className="relative z-10 ml-44 lg:ml-52">
+              <PhoneMockup>
+                <AnalyzerScreen />
+              </PhoneMockup>
+            </div>
           </div>
         }
       />
