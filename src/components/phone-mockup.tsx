@@ -15,14 +15,27 @@ interface PhoneMockupProps {
 }
 
 export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = '', floating = false, size = 'standard' }) => {
-  const sizeClasses = size === 'small'
+  const isSmall = size === 'small';
+  const sizeClasses = isSmall
     ? 'w-[240px] h-[520px] rounded-[40px] border-[6px]'
     : 'w-[280px] h-[607px] rounded-[48px] border-[7px]';
+
+  const scale = isSmall ? 240 / 375 : 280 / 375;
+  const innerHeight = isSmall ? 520 / scale : 607 / scale;
 
   return (
     <div className={`relative ${floating ? 'animate-float' : ''} ${className}`}>
       <div className={`relative ${sizeClasses} bg-[#0F172A] border-[#0F172A] overflow-hidden shadow-2xl`}>
-        <div className="w-full h-full" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+        <div
+          className="overflow-hidden"
+          style={{
+            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+            width: 375,
+            height: innerHeight,
+            transform: `scale(${scale})`,
+            transformOrigin: 'top left',
+          }}
+        >
           {children}
         </div>
       </div>
