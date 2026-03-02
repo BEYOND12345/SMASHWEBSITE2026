@@ -17,7 +17,7 @@ const ACTIVITY = [
 ];
 
 export const CustomerDetailScreen = () => (
-  <div className="pt-12 pb-32 px-6 bg-[#F8FAFC] h-full overflow-y-auto">
+  <div className="pt-12 pb-32 px-6 bg-[#F8FAFC] h-full overflow-hidden">
     <div className="flex justify-between items-center mb-6">
       <button className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm border border-slate-100">
         <ChevronLeft size={18} className="text-[#0F172A]" />
