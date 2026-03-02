@@ -260,7 +260,7 @@ export function LandingPage() {
         ]}
         image={
           <PhoneMockup>
-            <AppScreen type="invoices" />
+            <AppScreen type="portal" />
           </PhoneMockup>
         }
       />
