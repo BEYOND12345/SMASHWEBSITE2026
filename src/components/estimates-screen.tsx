@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Search, Filter, Eye, EyeOff } from 'lucide-react';
 
 const ESTIMATES = [
@@ -56,8 +55,6 @@ const EstimateCard = ({ est }: { est: typeof ESTIMATES[number] }) => (
   </div>
 );
 
-const duplicatedEstimates = [...ESTIMATES, ...ESTIMATES];
-
 export const EstimatesScreen = () => {
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-full overflow-hidden">
@@ -77,22 +74,10 @@ export const EstimatesScreen = () => {
         </button>
       </div>
 
-      <div className="relative overflow-hidden" style={{ height: '500px' }}>
-        <motion.div
-          className="flex flex-col gap-4"
-          animate={{ y: ['0%', '-50%'] }}
-          transition={{
-            y: {
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            },
-          }}
-        >
-          {duplicatedEstimates.map((est, index) => (
-            <EstimateCard key={`${est.id}-${index}`} est={est} />
-          ))}
-        </motion.div>
+      <div className="flex flex-col gap-4">
+        {ESTIMATES.slice(0, 4).map((est) => (
+          <EstimateCard key={est.id} est={est} />
+        ))}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Search, Filter, User, Eye, EyeOff } from 'lucide-react';
 
 const INVOICES = [
@@ -54,8 +53,6 @@ const InvoiceCard = ({ inv }: { inv: typeof INVOICES[number] }) => (
   </div>
 );
 
-const duplicatedInvoices = [...INVOICES, ...INVOICES, ...INVOICES, ...INVOICES];
-
 export const InvoicesScreen = () => {
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] h-full flex flex-col overflow-hidden">
@@ -83,23 +80,10 @@ export const InvoicesScreen = () => {
         </button>
       </div>
 
-      <div className="flex-1 relative overflow-hidden">
-        <motion.div
-          animate={{ y: [0, -600] }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: "linear"
-          }}
-          className="space-y-4"
-        >
-          {duplicatedInvoices.map((inv, idx) => (
-            <InvoiceCard key={`${inv.id}-${idx}`} inv={inv} />
-          ))}
-        </motion.div>
-
-        <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#F8FAFC]/50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F8FAFC]/50 to-transparent z-10 pointer-events-none" />
+      <div className="flex-1 overflow-hidden space-y-4">
+        {INVOICES.map((inv) => (
+          <InvoiceCard key={inv.id} inv={inv} />
+        ))}
       </div>
     </div>
   );
