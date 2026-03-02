@@ -2,17 +2,18 @@ import React from 'react';
 import { ChevronLeft, MoreVertical, Plus } from 'lucide-react';
 
 const CUSTOMER = {
-  name: 'SARAH WILLIAMS',
-  email: 'SARAH.W@EXAMPLE.COM',
-  phone: '+61 412 345 678',
-  jobs: 12,
-  revenue: '$14,250.00',
-  lastJob: 'KITCHEN REPAIR'
+  name: 'Sarah Johnson',
+  email: 'SARAH.JOHNSON@GMAIL.COM',
+  phone: '+61 423 456 789',
+  jobs: 2,
+  revenue: '$18,447.00',
+  lastJob: '28 Oct'
 };
 
 const ACTIVITY = [
-  { id: '1', title: 'KITCHEN FAUCET REPAIR', invoiceId: '882', date: 'OCT 23', amount: '$320.00', status: 'Paid' },
-  { id: '2', title: 'BATHROOM TILING', invoiceId: '881', date: 'OCT 15', amount: '$1,200.00', status: 'Sent' },
+  { id: '1', title: 'Bathroom Tap Replacement', invoiceId: 'INV-2023-012', date: '28 OCT', amount: '$258.50', status: 'Paid' },
+  { id: '2', title: 'Kitchen Cabinet Hinge Repair', invoiceId: 'INV-2023-011', date: '20 SEPT', amount: '$159.50', status: 'Paid' },
+  { id: '3', title: 'Deck Power Washing & Re-staining', invoiceId: '', date: '20 JUNE', amount: '$797.50', status: 'Sent' },
 ];
 
 export const CustomerDetailScreen = () => (
