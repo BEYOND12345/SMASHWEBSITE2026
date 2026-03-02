@@ -16,13 +16,13 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
 
   if (variant === 'secondary') {
     return (
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-brand py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center">
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand mb-6 leading-tight uppercase tracking-tighter">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight uppercase tracking-tighter">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-lg md:text-xl text-slate-700 font-bold mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 font-bold mb-8 max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}
