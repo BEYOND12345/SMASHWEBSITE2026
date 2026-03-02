@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 export function AnalyzerScreen() {
   return (
-    <div className="h-full flex flex-col p-8 pt-20 bg-white text-[#0F172A] relative">
-      <div className="flex-1 flex flex-col items-center">
-        <div className="relative w-full aspect-[3/4] bg-slate-50 rounded-3xl border-2 border-slate-100 overflow-hidden mb-10">
+    <div className="h-full flex flex-col justify-center px-8 bg-white text-[#0F172A]">
+      <div className="flex flex-col items-center">
+        <div className="relative w-full aspect-[3/4] bg-slate-50 rounded-3xl border-2 border-slate-100 overflow-hidden mb-8">
           <motion.div
             animate={{ top: ['0%', '100%', '0%'] }}
             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
@@ -24,8 +24,8 @@ export function AnalyzerScreen() {
             </div>
           </div>
         </div>
-        <h3 className="text-xl font-black tracking-tighter uppercase mb-2">Analyzing Data</h3>
-        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Extracting line items...</p>
+        <h3 className="text-2xl font-black tracking-tighter uppercase mb-2">Analyzing Data</h3>
+        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Extracting line items...</p>
       </div>
     </div>
   );
