@@ -249,6 +249,28 @@ export function HowItWorks() {
           </div>
         </section>
 
+        <section className="py-20 lg:py-32 bg-white">
+          <div className="max-w-6xl mx-auto px-8 lg:px-12">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-brand mb-6 leading-tight uppercase">
+                See It In Action
+              </h2>
+              <p className="text-xl md:text-2xl text-slate-700 font-semibold max-w-3xl mx-auto">
+                Watch how SMASH turns voice into a professional invoice in under 60 seconds
+              </p>
+            </div>
+            <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/gr_iAEvyIQY"
+                title="SMASH Voice-to-Invoice Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 lg:py-32 bg-brand text-white">
           <div className="max-w-5xl mx-auto px-8 lg:px-12 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight uppercase">
