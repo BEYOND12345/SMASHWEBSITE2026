@@ -131,12 +131,15 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 bg-slate-900 aspect-video">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
-              <button className="w-24 h-24 rounded-full bg-accent hover:brightness-95 transition-all shadow-glow flex items-center justify-center group">
-                <Play size={40} className="text-accentText ml-1" strokeWidth={2.5} />
-              </button>
-            </div>
+          <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
+              title="SMASH Voice-to-Invoice Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
