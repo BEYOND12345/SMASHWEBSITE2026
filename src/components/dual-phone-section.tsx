@@ -6,11 +6,11 @@ import { GeneratingScreen } from './generating-screen';
 
 export const DualPhoneSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center">
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="relative flex items-end justify-center scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100">
+            <div className="relative flex items-end justify-center scale-[0.6] sm:scale-[0.7] md:scale-[0.85] lg:scale-100">
               <div className="relative z-0 -rotate-3 md:-rotate-6 -mr-3 md:-mr-6">
                 <PhoneMockup>
                   <GeneratingScreen />
@@ -24,16 +24,16 @@ export const DualPhoneSection = () => {
             </div>
           </div>
 
-          <div className="px-4 sm:px-0">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0F172A] mb-4 md:mb-6 leading-tight">
+          <div className="px-2 sm:px-0">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0F172A] mb-4 md:mb-6 leading-tight tracking-tight">
               JUST TALK. SMASH DOES THE REST.
             </h2>
 
-            <p className="text-lg sm:text-xl text-slate-700 font-semibold mb-8 md:mb-12">
+            <p className="text-base sm:text-lg md:text-xl text-slate-700 font-semibold mb-6 md:mb-10 leading-snug">
               Describe the job out loud. That's your only job.
             </p>
 
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-3 md:space-y-5">
               {[
                 'Quote built instantly — priced the way you work',
                 'Sent to your customer with one tap',
@@ -42,12 +42,12 @@ export const DualPhoneSection = () => {
               ].map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 md:gap-4"
+                  className="flex items-start gap-3"
                 >
-                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#D9F99D] flex items-center justify-center">
-                    <Check size={16} className="text-[#0F172A] md:w-[18px] md:h-[18px]" strokeWidth={3} />
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-[#D9F99D] flex items-center justify-center mt-0.5">
+                    <Check size={14} className="text-[#0F172A] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px]" strokeWidth={3} />
                   </div>
-                  <p className="text-base md:text-lg text-slate-800 font-semibold leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-slate-800 font-semibold leading-snug md:leading-relaxed">
                     {feature}
                   </p>
                 </div>
