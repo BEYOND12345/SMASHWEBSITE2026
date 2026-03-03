@@ -60,10 +60,7 @@ export function LandingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/95 to-gray-900/80"></div>
         </div>
 
-        <nav className="max-w-7xl mx-auto px-8 lg:px-12 py-6 flex items-center justify-between relative z-10">
-          <div className="text-2xl font-black tracking-tight">
-            SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-          </div>
+        <nav className="max-w-7xl mx-auto px-8 lg:px-12 py-6 flex items-center justify-end relative z-10">
           <div className="flex items-center gap-3">
             <Link to="/founder" className="hidden md:block px-4 py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
               Founder
