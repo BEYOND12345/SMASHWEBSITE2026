@@ -11,11 +11,7 @@ const ESTIMATES = [
 export const EstimatesScreenStatic = () => {
   return (
     <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-full">
-      <div className="flex justify-end items-center mb-6">
-        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-          <User size={20} className="text-slate-600" />
-        </div>
-      </div>
+      <div className="mb-6" />
 
       <div className="flex gap-3 mb-6">
         <div className="flex-1 relative">
