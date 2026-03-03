@@ -93,12 +93,13 @@ export function HowItWorks() {
                 Watch how SMASH turns voice into a professional invoice in under 60 seconds
               </p>
             </div>
-            <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 bg-black">
+            <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/gr_iAEvyIQY"
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
                 title="SMASH Voice-to-Invoice Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
