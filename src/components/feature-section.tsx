@@ -27,25 +27,25 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
     <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className={`${image ? 'grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20' : 'max-w-3xl'} items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
-          <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-6 md:mb-8 uppercase leading-tight ${textClass}`}>
+          <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''} overflow-hidden`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-4 md:mb-6 uppercase leading-[1.1] ${textClass}`}>
               {title}
             </h2>
 
-            <div className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-snug md:leading-relaxed mb-6 md:mb-8 ${descClass}`}>
+            <div className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-snug mb-5 md:mb-7 ${descClass}`}>
               {description}
             </div>
 
             {bullets && bullets.length > 0 && (
-              <ul className="space-y-3 md:space-y-5">
+              <ul className="space-y-2.5 md:space-y-4">
                 {bullets.map((bullet, index) => (
-                  <li key={index} className="flex items-start gap-3 md:gap-4">
-                    <div className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full ${background === 'brand' ? 'bg-accent/20' : 'bg-white border-2 border-accent'} flex items-center justify-center shrink-0 mt-0.5`}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`md:w-[16px] md:h-[16px] lg:w-[18px] lg:h-[18px] ${background === 'brand' ? 'text-accent' : 'text-accentText'}`}>
+                  <li key={index} className="flex items-start gap-2.5 md:gap-3">
+                    <div className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full ${background === 'brand' ? 'bg-accent/20' : 'bg-white border-2 border-accent'} flex items-center justify-center shrink-0 mt-0.5`}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`md:w-[14px] md:h-[14px] lg:w-[16px] lg:h-[16px] ${background === 'brand' ? 'text-accent' : 'text-accentText'}`}>
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </div>
-                    <span className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-snug ${background === 'brand' ? 'text-white/95' : 'text-slate-800'}`}>
+                    <span className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold leading-snug ${background === 'brand' ? 'text-white/95' : 'text-slate-800'}`}>
                       {bullet}
                     </span>
                   </li>
@@ -55,7 +55,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
           </div>
 
           {image && (
-            <div className={`flex items-center justify-center mt-6 lg:mt-0 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
+            <div className={`flex items-center justify-center mt-6 lg:mt-0 overflow-hidden ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
               {image}
             </div>
           )}
