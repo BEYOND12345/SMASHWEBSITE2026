@@ -77,175 +77,9 @@ export function HowItWorks() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 uppercase tracking-tighter">
               How SMASH Works
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 font-bold max-w-3xl mx-auto leading-tight">
+            <p className="text-2xl md:text-3xl text-white/90 font-bold max-w-3xl mx-auto leading-tight mb-12">
               From finished job to paid invoice. In under 60 seconds. No typing.
             </p>
-          </div>
-        </section>
-
-        <section className="py-20 lg:py-32 bg-slate-50">
-          <div className="max-w-6xl mx-auto px-8 lg:px-12">
-            <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
-              <div>
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
-                  1
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-brand mb-6 leading-tight">
-                  Speak Your Job Details
-                </h2>
-                <p className="text-xl text-slate-700 font-semibold mb-6 leading-relaxed">
-                  Tap the mic button. Describe what you just did. That's it.
-                </p>
-                <ul className="space-y-3 text-lg text-slate-600">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Talk naturally - no special commands needed</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Mention materials, labour, time spent</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>AI understands your job and pricing</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-200">
-                <div className="flex items-center justify-center h-64 bg-gradient-to-br from-accent/20 to-accent/5 rounded-xl">
-                  <Mic size={80} className="text-accent" strokeWidth={2} />
-                </div>
-                <p className="text-center text-slate-600 mt-6 italic">
-                  "Changed brake pads and rotors on the Hilux. Used premium pads. Took about 2 hours."
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
-              <div className="order-2 md:order-1 bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-200">
-                <div className="bg-slate-50 rounded-xl p-6 space-y-4">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-200">
-                    <span className="font-black text-brand">INVOICE</span>
-                    <span className="text-sm text-slate-600">#INV-2847</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-700">Brake Pad Replacement</span>
-                      <span className="font-bold">$280</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-700">Brake Rotor Replacement</span>
-                      <span className="font-bold">$320</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-700">Labour (2 hrs)</span>
-                      <span className="font-bold">$180</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pt-3 border-t border-slate-200">
-                    <span className="font-black text-brand">TOTAL</span>
-                    <span className="font-black text-2xl text-brand">$780</span>
-                  </div>
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
-                  2
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-brand mb-6 leading-tight">
-                  AI Generates Your Invoice
-                </h2>
-                <p className="text-xl text-slate-700 font-semibold mb-6 leading-relaxed">
-                  SMASH instantly creates a professional invoice with accurate pricing.
-                </p>
-                <ul className="space-y-3 text-lg text-slate-600">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Automatic line items and descriptions</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Your rates applied automatically</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>GST calculated and included</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
-              <div>
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
-                  3
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-brand mb-6 leading-tight">
-                  Review and Send
-                </h2>
-                <p className="text-xl text-slate-700 font-semibold mb-6 leading-relaxed">
-                  Quick review, one-tap send. Customer gets it instantly.
-                </p>
-                <ul className="space-y-3 text-lg text-slate-600">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Edit anything if needed</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Send via SMS or email</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Track when they open it</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-200">
-                <div className="flex items-center justify-center h-64 bg-gradient-to-br from-accent/20 to-accent/5 rounded-xl">
-                  <Send size={80} className="text-accent" strokeWidth={2} />
-                </div>
-                <p className="text-center text-slate-600 mt-6 font-semibold">
-                  Sent to customer's phone in real-time
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1 bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-200">
-                <div className="flex items-center justify-center h-64 bg-gradient-to-br from-green-100 to-green-50 rounded-xl">
-                  <CreditCard size={80} className="text-green-600" strokeWidth={2} />
-                </div>
-                <p className="text-center text-slate-600 mt-6 font-semibold">
-                  Money in your account in 48 hours
-                </p>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
-                  4
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-brand mb-6 leading-tight">
-                  Get Paid Immediately
-                </h2>
-                <p className="text-xl text-slate-700 font-semibold mb-6 leading-relaxed">
-                  Customer approves and pays directly from the invoice.
-                </p>
-                <ul className="space-y-3 text-lg text-slate-600">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>One-tap payment approval</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>Built-in payment processing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
-                    <span>48-hour payout to your bank</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -259,7 +93,7 @@ export function HowItWorks() {
                 Watch how SMASH turns voice into a professional invoice in under 60 seconds
               </p>
             </div>
-            <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200">
+            <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-300 bg-black">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/gr_iAEvyIQY"
@@ -267,6 +101,106 @@ export function HowItWorks() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 lg:py-32 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-8 lg:px-12">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-brand mb-6 leading-tight uppercase">
+                Simple 4-Step Process
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
+                  1
+                </div>
+                <h3 className="text-3xl font-black text-brand mb-4 leading-tight">
+                  Speak Your Job Details
+                </h3>
+                <p className="text-lg text-slate-700 font-semibold mb-4 leading-relaxed">
+                  Tap the mic button. Describe what you just did. That's it.
+                </p>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>Talk naturally - no special commands needed</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>AI understands your job and pricing</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
+                  2
+                </div>
+                <h3 className="text-3xl font-black text-brand mb-4 leading-tight">
+                  AI Generates Your Invoice
+                </h3>
+                <p className="text-lg text-slate-700 font-semibold mb-4 leading-relaxed">
+                  SMASH instantly creates a professional invoice with accurate pricing.
+                </p>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>Automatic line items and descriptions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>GST calculated and included</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
+                  3
+                </div>
+                <h3 className="text-3xl font-black text-brand mb-4 leading-tight">
+                  Review and Send
+                </h3>
+                <p className="text-lg text-slate-700 font-semibold mb-4 leading-relaxed">
+                  Quick review, one-tap send. Customer gets it instantly.
+                </p>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>Send via SMS or email</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>Track when they open it</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-accentText font-black text-2xl mb-6">
+                  4
+                </div>
+                <h3 className="text-3xl font-black text-brand mb-4 leading-tight">
+                  Get Paid Immediately
+                </h3>
+                <p className="text-lg text-slate-700 font-semibold mb-4 leading-relaxed">
+                  Customer approves and pays directly from the invoice.
+                </p>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>Built-in payment processing</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="text-accent shrink-0 mt-1" size={20} strokeWidth={2.5} />
+                    <span>48-hour payout to your bank</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
