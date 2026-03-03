@@ -39,7 +39,7 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
   }
 
   return (
-    <section className="bg-gradient-to-br from-brand to-slate-800 py-12 md:py-16 lg:py-24">
+    <section className="bg-gradient-to-br from-brand to-slate-800 py-10 md:py-14 lg:py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight md:tracking-tighter">
           {title}

@@ -105,7 +105,7 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 2: SPEED REINFORCEMENT */}
-      <section className="bg-accent py-12 md:py-16 lg:py-24">
+      <section className="bg-accent py-10 md:py-14 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-accentText leading-[1] md:leading-[1.05] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter">
             4X faster than typing.
@@ -120,7 +120,7 @@ export function LandingPage() {
       <DualPhoneSection />
 
       {/* SECTION 4: VIDEO DEMO */}
-      <section className="bg-white py-12 md:py-16 lg:py-24">
+      <section className="bg-white py-10 md:py-14 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-10 md:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-4 md:mb-6 text-brand uppercase leading-tight">
@@ -187,12 +187,12 @@ export function LandingPage() {
 
       {/* SECTION 6: WHY THIS IS FAST */}
       <section
-        className="relative min-h-[600px] md:min-h-screen bg-cover bg-left md:bg-center bg-no-repeat flex items-center"
+        className="relative min-h-[500px] md:min-h-screen bg-cover bg-left md:bg-center bg-no-repeat flex items-center"
         style={{ backgroundImage: 'url(/why_section_image.png)' }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-900/70 to-slate-900/50 md:from-slate-900/70 md:via-slate-900/50 md:to-transparent"></div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-24">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-10 md:py-14 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="hidden lg:block"></div>
 
@@ -329,7 +329,7 @@ export function LandingPage() {
       />
 
       {/* SOCIAL PROOF */}
-      <section className="bg-white py-12 md:py-16 lg:py-24">
+      <section className="bg-white py-10 md:py-14 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <SocialProof />
         </div>

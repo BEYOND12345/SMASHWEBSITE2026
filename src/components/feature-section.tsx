@@ -24,7 +24,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   const descClass = background === 'brand' ? 'text-white/90' : 'text-slate-700';
 
   return (
-    <section className={`${bgClass} py-12 md:py-16 lg:py-24 ${className}`}>
+    <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className={`${image ? 'grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20' : 'max-w-3xl'} items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
           <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
@@ -87,7 +87,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
   const bgClass = background === 'white' ? 'bg-white' : 'bg-slate-50';
 
   return (
-    <section className={`${bgClass} py-12 md:py-16 lg:py-24`}>
+    <section className={`${bgClass} py-10 md:py-14 lg:py-20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-tight">
           {title}
@@ -134,7 +134,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   const bgClass = background === 'white' ? 'bg-white' : 'bg-slate-50';
 
   return (
-    <section className={`${bgClass} py-12 md:py-16 lg:py-24`}>
+    <section className={`${bgClass} py-10 md:py-14 lg:py-20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-tight">
           {title}

@@ -6,17 +6,17 @@ import { GeneratingScreen } from './generating-screen';
 
 export const DualPhoneSection = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center">
-          <div className="flex items-center justify-center lg:justify-end">
-            <div className="relative flex items-end justify-center scale-[0.6] sm:scale-[0.7] md:scale-[0.85] lg:scale-100">
-              <div className="relative z-0 -rotate-3 md:-rotate-6 -mr-3 md:-mr-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="flex items-center justify-center lg:justify-end overflow-hidden">
+            <div className="relative flex items-end justify-center scale-[0.5] sm:scale-[0.65] md:scale-[0.8] lg:scale-100 max-w-full">
+              <div className="relative z-0 -rotate-2 md:-rotate-3 lg:-rotate-6 -mr-2 md:-mr-4 lg:-mr-6">
                 <PhoneMockup>
                   <GeneratingScreen />
                 </PhoneMockup>
               </div>
-              <div className="relative z-10 -ml-3 md:-ml-6">
+              <div className="relative z-10 -ml-2 md:-ml-4 lg:-ml-6">
                 <PhoneMockup>
                   <ListeningScreen />
                 </PhoneMockup>
@@ -24,16 +24,16 @@ export const DualPhoneSection = () => {
             </div>
           </div>
 
-          <div className="px-2 sm:px-0">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0F172A] mb-4 md:mb-6 leading-tight tracking-tight">
+          <div className="px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-[#0F172A] mb-3 md:mb-5 leading-[1.1] tracking-tight">
               JUST TALK. SMASH DOES THE REST.
             </h2>
 
-            <p className="text-base sm:text-lg md:text-xl text-slate-700 font-semibold mb-6 md:mb-10 leading-snug">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-700 font-semibold mb-5 md:mb-8 leading-snug">
               Describe the job out loud. That's your only job.
             </p>
 
-            <div className="space-y-3 md:space-y-5">
+            <div className="space-y-2.5 md:space-y-4">
               {[
                 'Quote built instantly — priced the way you work',
                 'Sent to your customer with one tap',
@@ -42,12 +42,12 @@ export const DualPhoneSection = () => {
               ].map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-2.5 md:gap-3"
                 >
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-[#D9F99D] flex items-center justify-center mt-0.5">
-                    <Check size={14} className="text-[#0F172A] sm:w-4 sm:h-4 md:w-[18px] md:h-[18px]" strokeWidth={3} />
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full bg-[#D9F99D] flex items-center justify-center mt-0.5">
+                    <Check size={12} className="text-[#0F172A] sm:w-[14px] sm:h-[14px] md:w-4 md:h-4 lg:w-[18px] lg:h-[18px]" strokeWidth={3} />
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-slate-800 font-semibold leading-snug md:leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-slate-800 font-semibold leading-snug">
                     {feature}
                   </p>
                 </div>
