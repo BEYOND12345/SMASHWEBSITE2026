@@ -169,13 +169,13 @@ export function LandingPage() {
         ]}
         image={
           <div className="flex items-center justify-center">
-            <div className="relative flex items-end justify-center">
-              <div className="relative z-0 -rotate-6 -mr-6">
+            <div className="relative flex items-end justify-center scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100">
+              <div className="relative z-0 -rotate-3 md:-rotate-6 -mr-3 md:-mr-6">
                 <PhoneMockup>
                   <ScannerScreen />
                 </PhoneMockup>
               </div>
-              <div className="relative z-10 -ml-6">
+              <div className="relative z-10 -ml-3 md:-ml-6">
                 <PhoneMockup>
                   <AnalyzerScreen />
                 </PhoneMockup>
@@ -261,7 +261,7 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase"
         ]}
         image={
-          <div className="flex items-center justify-center gap-4 lg:gap-6">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 scale-[0.7] sm:scale-[0.85] md:scale-95 lg:scale-100">
             <PhoneMockup size="small">
               <AppScreen type="estimates-static" />
             </PhoneMockup>
@@ -295,7 +295,7 @@ export function LandingPage() {
           "Never miss follow-ups"
         ]}
         image={
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start scale-75 sm:scale-[0.85] md:scale-95 lg:scale-100">
             <PhoneMockup>
               <AppScreen type="estimates" />
             </PhoneMockup>
@@ -320,7 +320,7 @@ export function LandingPage() {
           "Faster repeat work"
         ]}
         image={
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start scale-75 sm:scale-[0.85] md:scale-95 lg:scale-100">
             <PhoneMockup>
               <AppScreen type="customer-management" />
             </PhoneMockup>
