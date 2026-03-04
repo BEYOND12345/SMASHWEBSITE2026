@@ -6,7 +6,7 @@ import { GeneratingScreen } from './generating-screen';
 
 export const DualPhoneSection = () => {
   return (
-    <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="flex items-center justify-center lg:justify-end overflow-hidden">

@@ -105,7 +105,7 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 2: SPEED REINFORCEMENT */}
-      <section className="bg-accent py-10 md:py-14 lg:py-20">
+      <section className="bg-accent py-10 md:py-14 lg:py-20 relative z-0">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-accentText leading-[1] md:leading-[1.05] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter">
             4X faster than typing.
