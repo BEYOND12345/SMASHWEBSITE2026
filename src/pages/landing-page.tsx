@@ -369,7 +369,7 @@ export function LandingPage() {
                 SMASH<span className="text-accent text-5xl leading-none align-baseline">.</span>
               </div>
               <p className="text-base text-white/60 font-medium leading-relaxed mb-6">
-                Voice powered quoting for high volume trades.
+                Voice to quote. High volume trades. Smart invoicing. Voice-to-invoice in seconds.
               </p>
               <div>
                 <h3 className="text-sm font-black uppercase tracking-wider mb-4 text-white/50">Follow Us</h3>
