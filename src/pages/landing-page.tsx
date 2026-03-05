@@ -435,6 +435,9 @@ export function LandingPage() {
               <p className="text-sm text-white/40 font-medium">
                 © 2024 SMASH<span className="text-accent text-xl leading-none align-baseline">.</span> Made for high volume work.
               </p>
+              <p className="text-sm text-white/40 font-medium">
+                Built in Byron Bay, Australia
+              </p>
             </div>
             <p className="text-sm text-white/30 font-medium text-center md:text-left leading-relaxed">
               Beta software. Not accounting software.
