@@ -261,7 +261,7 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase"
         ]}
         image={
-          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 w-full py-12">
             <PhoneMockup size="small">
               <AppScreen type="estimates-static" />
             </PhoneMockup>
