@@ -24,10 +24,10 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   const descClass = background === 'brand' ? 'text-white/90' : 'text-slate-700';
 
   return (
-    <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className}`}>
+    <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className} overflow-hidden`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className={`${image ? 'grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20' : 'max-w-3xl'} items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
-          <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''} overflow-hidden`}>
+          <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
             <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-4 md:mb-6 uppercase leading-[1.1] ${textClass}`}>
               {title}
             </h2>
@@ -55,7 +55,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
           </div>
 
           {image && (
-            <div className={`flex items-center justify-center mt-6 lg:mt-0 overflow-hidden ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
+            <div className={`flex items-center justify-center mt-6 lg:mt-0 py-8 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
               {image}
             </div>
           )}
