@@ -1,9 +1,35 @@
 import { createClient } from '@supabase/supabase-js';
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const supabaseUrl = process.env.VITE_SUPABASE_URL!;
-const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY!;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+function loadEnv() {
+  const envPath = join(__dirname, '..', '.env');
+  if (existsSync(envPath)) {
+    const envContent = readFileSync(envPath, 'utf-8');
+    envContent.split('\n').forEach(line => {
+      const match = line.match(/^([^=]+)=(.*)$/);
+      if (match) {
+        const key = match[1].trim();
+        const value = match[2].trim().replace(/^["']|["']$/g, '');
+        process.env[key] = value;
+      }
+    });
+  }
+}
+
+loadEnv();
+
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error('Missing Supabase credentials. Please check your .env file.');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -19,7 +45,7 @@ async function generateSitemap() {
     process.exit(1);
   }
 
-  const baseUrl = 'https://www.quickquip.co';
+  const baseUrl = 'https://smashinvoices.com';
   const today = new Date().toISOString().split('T')[0];
 
   const staticPages = [
