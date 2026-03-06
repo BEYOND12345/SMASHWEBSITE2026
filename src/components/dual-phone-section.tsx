@@ -6,10 +6,10 @@ import { GeneratingScreen } from './generating-screen';
 
 export const DualPhoneSection = () => {
   return (
-    <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden relative z-10">
+    <section className="py-8 md:py-12 lg:py-20 bg-white overflow-hidden relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          <div className="flex items-center justify-center lg:justify-end overflow-hidden">
+          <div className="flex items-center justify-center lg:justify-end overflow-visible py-8">
             <div className="relative flex items-end justify-center scale-[0.5] sm:scale-[0.65] md:scale-[0.8] lg:scale-100 max-w-full">
               <div className="relative z-0 -rotate-2 md:-rotate-3 lg:-rotate-6 -mr-2 md:-mr-4 lg:-mr-6">
                 <PhoneMockup>

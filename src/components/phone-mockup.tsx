@@ -18,10 +18,10 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = 
   const isSmall = size === 'small';
   const sizeClasses = isSmall
     ? 'w-[240px] h-[520px] rounded-[40px] border-[6px]'
-    : 'w-[280px] h-[607px] rounded-[48px] border-[7px]';
+    : 'w-[280px] h-[640px] rounded-[48px] border-[7px]';
 
   const scale = isSmall ? 240 / 375 : 280 / 375;
-  const innerHeight = isSmall ? 520 / scale : 607 / scale;
+  const innerHeight = isSmall ? 520 / scale : 850;
 
   return (
     <div className={`relative ${floating ? 'animate-float' : ''} ${className}`}>
