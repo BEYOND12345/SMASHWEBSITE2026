@@ -27,11 +27,9 @@ export function Founder() {
       <section className="max-w-4xl mx-auto px-8 lg:px-12 py-16 lg:py-24">
         <div className="bg-white rounded-brand p-8 border border-slate-200 mb-12">
           <div className="flex items-start gap-6">
-            <img
-              src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400"
-              alt="Dan - Founder of SMASH Invoices"
-              className="w-20 h-20 rounded-full object-cover shrink-0"
-            />
+            <div className="w-20 h-20 rounded-full bg-brand flex items-center justify-center shrink-0">
+              <span className="text-white text-3xl font-black">D</span>
+            </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-1 tracking-tight">Dan</h2>
               <p className="text-base text-slate-600 font-semibold mb-3">Founder, SMASH Invoices & Good Hands Handyman</p>
