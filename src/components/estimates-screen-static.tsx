@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, User, Eye, EyeOff } from 'lucide-react';
+import { Search, Filter, Eye, EyeOff } from 'lucide-react';
 
 const ESTIMATES = [
   { id: '1', title: 'REPLACE GARAGE DOOR', customer: 'ALEX JOHNSON', amount: '$1,250.00', date: 'OCT 24', status: 'SENT', seenCount: 2, initials: 'AJ' },

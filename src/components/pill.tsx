@@ -1,11 +1,10 @@
-import React from 'react';
-import { JobStatus } from '../../types';
+import { JobStatus } from '../types';
 
 interface PillProps {
   status: JobStatus;
 }
 
-export const Pill: React.FC<PillProps> = ({ status }) => {
+export const Pill = ({ status }: PillProps) => {
   const styles = {
     [JobStatus.DRAFT]: "bg-gray-100 text-gray-500",
     [JobStatus.SENT]: "bg-blue-50 text-blue-600",

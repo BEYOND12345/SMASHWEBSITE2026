@@ -169,6 +169,7 @@ export function FAQPage() {
         title="FAQ | Voice Invoicing Questions Answered | SMASH Invoices"
         description="Get answers to common questions about voice-to-invoice software, AI invoicing, pricing, payments, and how SMASH works for tradies and service businesses."
         keywords="voice invoicing FAQ, AI invoice questions, how does voice to invoice work, voice invoicing pricing, mobile invoicing questions"
+        ogImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/faq"
       />
 

@@ -1,4 +1,4 @@
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface InlineCTAProps {
   title: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
@@ -24,7 +24,7 @@ export function BlogPreview() {
         .from('blog_posts')
         .select('id, title, slug, excerpt, featured_image, featured_image_alt, reading_time, published_at')
         .eq('published', true)
-        .order('published_at', { ascending: true })
+        .order('published_at', { ascending: false })
         .limit(3);
 
       if (!error && data) {

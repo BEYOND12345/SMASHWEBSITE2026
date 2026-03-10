@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mic, Play, Apple, Mail, Facebook, Instagram } from 'lucide-react';
+import { Play, Mail, Facebook, Instagram } from 'lucide-react';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
-import { FeatureSection, ComparisonSection, ProcessFlow } from '../components/feature-section';
+import { FeatureSection } from '../components/feature-section';
 import { SEO } from '../components/seo';
 import { SignupForm } from '../components/signup-form';
 import { StickyCTA } from '../components/sticky-cta';
@@ -17,15 +16,6 @@ import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 
 export function LandingPage() {
-  const [email, setEmail] = useState('');
-
-  const handleEmailSignup = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Email signup:', email);
-    setEmail('');
-    alert('Thanks for signing up!');
-  };
-
   return (
     <div className="min-h-screen bg-white font-sans overflow-x-hidden">
       <SEO

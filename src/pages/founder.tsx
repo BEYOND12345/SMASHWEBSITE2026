@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Linkedin, Twitter } from 'lucide-react';
+import { ArrowLeft, Mail } from 'lucide-react';
 import { SEO } from '../components/seo';
 
 export function Founder() {
@@ -11,6 +10,7 @@ export function Founder() {
         description="Meet Dan, founder of SMASH Invoices. A working tradie who built voice to invoice software because typing quotes was slowing him down. Real problems, real solutions."
         keywords="founder story, about us, SMASH founder, voice invoicing creator, tradie software founder"
         ogUrl="https://smashinvoices.com/founder"
+        ogImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/founder"
       />
 

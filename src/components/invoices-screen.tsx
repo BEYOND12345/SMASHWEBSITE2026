@@ -1,5 +1,4 @@
-import React from 'react';
-import { Search, Filter, User, Eye, EyeOff } from 'lucide-react';
+import { Search, Filter, Eye, EyeOff } from 'lucide-react';
 
 const INVOICES = [
   { id: '1', title: 'FULL DECK RENOVATION', customer: 'SARAH JOHNSON', amount: '$9,350.00', date: '25 JAN', status: 'OVERDUE', seenCount: 2, initials: 'FD' },

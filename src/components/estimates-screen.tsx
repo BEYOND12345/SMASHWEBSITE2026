@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, Filter, Eye, EyeOff } from 'lucide-react';
 
 const ESTIMATES = [

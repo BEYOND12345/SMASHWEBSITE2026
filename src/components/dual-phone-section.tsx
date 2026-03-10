@@ -1,4 +1,3 @@
-import React from 'react';
 import { Check } from 'lucide-react';
 import { PhoneMockup } from './phone-mockup';
 import { ListeningScreen } from './listening-screen';

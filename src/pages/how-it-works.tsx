@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mic, Send, CreditCard, CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { StructuredData } from '../components/structured-data';
 
@@ -50,6 +50,7 @@ export function HowItWorks() {
         keywords="how voice invoicing works, voice to invoice process, AI invoice generation, automated invoicing workflow, voice powered invoicing"
         ogTitle="How SMASH Voice-to-Invoice Works"
         ogDescription="Speak your job details, AI creates the invoice, send with one tap, get paid in 48 hours. That simple."
+        ogImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/how-it-works"
       />
 

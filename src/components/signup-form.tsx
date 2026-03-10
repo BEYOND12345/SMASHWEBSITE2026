@@ -79,7 +79,7 @@ export function SignupForm() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -131,8 +131,8 @@ export function SignupForm() {
               </div>
 
               <div className="text-center">
-                <a href="mailto:dan@smahinvoices.com" className="text-accent font-black text-lg hover:text-accent/80 transition-colors">
-                  Questions? dan@smahinvoices.com
+                <a href="mailto:dan@smashinvoices.com" className="text-accent font-black text-lg hover:text-accent/80 transition-colors">
+                  Questions? dan@smashinvoices.com
                 </a>
               </div>
             </div>

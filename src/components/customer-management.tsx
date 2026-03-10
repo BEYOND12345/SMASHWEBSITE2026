@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, ChevronLeft, MoreVertical, Plus } from 'lucide-react';
 
 const CUSTOMERS = [

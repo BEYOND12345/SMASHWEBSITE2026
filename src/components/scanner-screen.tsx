@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function ScannerScreen() {
   return (
     <div className="h-full flex flex-col justify-center px-8 bg-white text-[#0F172A]">

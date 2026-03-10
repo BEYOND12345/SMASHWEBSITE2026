@@ -1,8 +1,6 @@
-import React from 'react';
 import { ListeningScreen } from './listening-screen';
 import { EstimatesScreen } from './estimates-screen';
 import { InvoicesScreen } from './invoices-screen';
-import { CustomerManagement } from './customer-management';
 import { CustomerDetailScreen } from './customer-detail-screen';
 import { PortalScreen } from './portal-screen';
 import { EstimatesScreenStatic } from './estimates-screen-static';
