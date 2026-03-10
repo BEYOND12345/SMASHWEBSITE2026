@@ -27,7 +27,7 @@ export function SocialProof() {
             <Users className="text-brand" size={32} strokeWidth={2.5} />
           </div>
           <div className="text-4xl font-black text-brand mb-2">
-            {signupCount !== null ? `${signupCount}+` : '150+'}
+            {signupCount !== null ? `${signupCount}+` : '100+'}
           </div>
           <div className="text-sm font-bold text-slate-600 uppercase tracking-wide">
             Beta Testers
