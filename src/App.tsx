@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LandingPage } from './pages/landing-page';
 import { Founder } from './pages/founder';
 import { HowItWorks } from './pages/how-it-works';
@@ -20,6 +20,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/admin/blog" element={<BlogAdmin />} />
         <Route path="/admin/blog/:id" element={<BlogEditor />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
