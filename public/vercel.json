@@ -1,12 +1,18 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/blog/:slug",
-      "destination": "/blog/:slug/index.html"
+      "src": "/blog/([^/]+)/?",
+      "dest": "/blog/$1/index.html",
+      "status": 200
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
     }
-  ]
+  ],
+  "trailingSlash": false
 }
