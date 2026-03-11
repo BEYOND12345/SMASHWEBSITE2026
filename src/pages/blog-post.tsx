@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { RelatedPosts } from '../components/related-posts';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
@@ -317,6 +318,13 @@ export function BlogPost() {
               </div>
             </div>
           )}
+
+          <RelatedPosts
+            currentPostId={post.id}
+            primaryKeyword={post.primary_keyword}
+            secondaryKeywords={post.secondary_keywords}
+            limit={3}
+          />
 
           <div className="mt-16 pt-8 border-t border-white/10">
             <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12">
