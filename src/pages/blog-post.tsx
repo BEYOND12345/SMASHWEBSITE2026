@@ -189,16 +189,21 @@ export function BlogPost() {
           </header>
 
           {post.key_takeaways && post.key_takeaways.length > 0 && (
-            <div className="bg-accent/10 border-l-4 border-accent rounded-r-xl p-6 mb-12">
-              <h2 className="text-xl font-black text-white mb-4">Key Takeaways</h2>
-              <ul className="space-y-2">
+            <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8 mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
+                  <span className="text-accentText font-black text-xl">✓</span>
+                </div>
+                <h2 className="text-2xl font-black text-white">TL;DR - Key Takeaways</h2>
+              </div>
+              <div className="grid gap-3">
                 {post.key_takeaways.map((takeaway, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/90">
-                    <span className="text-accent font-bold mt-1">•</span>
-                    <span>{takeaway}</span>
-                  </li>
+                  <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
+                    <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
+                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
 
@@ -212,9 +217,12 @@ export function BlogPost() {
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="text-3xl font-black text-white mt-10 mb-5 tracking-tight">
-                    {children}
-                  </h2>
+                  <div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent my-12"></div>
+                    <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tight">
+                      {children}
+                    </h2>
+                  </div>
                 ),
                 h3: ({ children }) => (
                   <h3 className="text-2xl font-bold text-white mt-8 mb-4 tracking-tight">
@@ -227,7 +235,7 @@ export function BlogPost() {
                   </p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="list-disc list-inside space-y-2 text-white/80 mb-6">
+                  <ul className="space-y-3 text-white/80 mb-6 ml-1">
                     {children}
                   </ul>
                 ),
@@ -237,7 +245,10 @@ export function BlogPost() {
                   </ol>
                 ),
                 li: ({ children }) => (
-                  <li className="text-lg leading-relaxed">{children}</li>
+                  <li className="text-lg leading-relaxed flex items-start gap-3">
+                    <span className="text-accent font-bold mt-1 shrink-0">•</span>
+                    <span className="flex-1">{children}</span>
+                  </li>
                 ),
                 a: ({ href, children }) => (
                   <a
@@ -250,14 +261,24 @@ export function BlogPost() {
                   </a>
                 ),
                 blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-accent pl-6 py-2 my-6 italic text-white/70">
+                  <blockquote className="border-l-4 border-accent bg-accent/10 rounded-r-xl pl-6 pr-6 py-4 my-8 text-white/90 font-medium">
                     {children}
                   </blockquote>
                 ),
                 code: ({ children }) => (
-                  <code className="bg-white/10 px-2 py-1 rounded text-accent font-mono text-sm">
+                  <code className="bg-accent/20 border border-accent/30 px-2 py-1 rounded text-accent font-mono text-sm font-bold">
                     {children}
                   </code>
+                ),
+                strong: ({ children }) => {
+                  const text = String(children);
+                  if (text.startsWith('Result:') || text.includes('$') || text.startsWith('ROI:') || text.startsWith('Total')) {
+                    return <strong className="font-black text-accent">{children}</strong>;
+                  }
+                  return <strong className="font-bold text-white">{children}</strong>;
+                },
+                em: ({ children }) => (
+                  <em className="italic text-white/70">{children}</em>
                 ),
                 pre: ({ children }) => (
                   <pre className="bg-white/5 p-4 rounded-xl overflow-x-auto mb-6">
@@ -265,20 +286,20 @@ export function BlogPost() {
                   </pre>
                 ),
                 table: ({ children }) => (
-                  <div className="overflow-x-auto my-8">
+                  <div className="overflow-x-auto my-8 rounded-xl border border-accent/30 bg-gradient-to-br from-accent/5 to-transparent">
                     <table className="w-full border-collapse">
                       {children}
                     </table>
                   </div>
                 ),
                 thead: ({ children }) => (
-                  <thead className="bg-white/10">{children}</thead>
+                  <thead className="bg-accent/20 border-b-2 border-accent">{children}</thead>
                 ),
                 tbody: ({ children }) => (
                   <tbody className="divide-y divide-white/10">{children}</tbody>
                 ),
                 tr: ({ children }) => (
-                  <tr className="border-b border-white/10">{children}</tr>
+                  <tr className="hover:bg-white/5 transition-colors">{children}</tr>
                 ),
                 th: ({ children }) => (
                   <th className="px-6 py-4 text-left text-sm font-black text-white uppercase tracking-wider">
@@ -286,7 +307,7 @@ export function BlogPost() {
                   </th>
                 ),
                 td: ({ children }) => (
-                  <td className="px-6 py-4 text-white/80">{children}</td>
+                  <td className="px-6 py-4 text-white/90 font-medium">{children}</td>
                 ),
                 img: ({ src, alt }) => (
                   <div className="my-8 rounded-xl overflow-hidden bg-white/5">
@@ -303,6 +324,25 @@ export function BlogPost() {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          {post.key_takeaways && post.key_takeaways.length > 0 && (
+            <div className="mt-16 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
+                  <span className="text-accentText font-black text-xl">✓</span>
+                </div>
+                <h2 className="text-2xl font-black text-white">Key Takeaways</h2>
+              </div>
+              <div className="grid gap-4">
+                {post.key_takeaways.map((takeaway, index) => (
+                  <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
+                    <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
+                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {post.author_bio && (
             <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
