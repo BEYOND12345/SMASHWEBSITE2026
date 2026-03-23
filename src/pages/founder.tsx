@@ -1,18 +1,42 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Mail } from 'lucide-react';
 import { SEO } from '../components/seo';
+import { StructuredData } from '../components/structured-data';
+import { Footer } from '../components/footer';
 
 export function Founder() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <SEO
-        title="Meet the Founder | SMASH Invoices - Built by a Tradie for Tradies"
-        description="Meet Dan, founder of SMASH Invoices. A working tradie who built voice to invoice software because typing quotes was slowing him down. Real problems, real solutions."
-        keywords="founder story, about us, SMASH founder, voice invoicing creator, tradie software founder"
+        title="Meet the Founder | SMASH Invoices Australia"
+        description="Meet Dan, founder of SMASH Invoices. A working handyman who built voice to invoice software because typing quotes was slowing him down. Real problems, real solutions."
+        keywords="founder story, about us, SMASH founder, voice invoicing creator, service business software founder"
+        ogTitle="Meet Dan — Founder of SMASH Invoices"
+        ogDescription="A working handyman who built voice to invoice software because typing quotes was slowing him down. Real problems, real solutions."
         ogUrl="https://smashinvoices.com/founder"
         ogImage="https://smashinvoices.com/hero_image.png"
+        twitterTitle="Meet Dan — Founder of SMASH Invoices"
+        twitterDescription="A working handyman who built voice to invoice software because typing quotes was slowing him down."
         canonical="https://smashinvoices.com/founder"
       />
+
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Dan",
+          "jobTitle": "Founder",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "SMASH Invoices",
+            "url": "https://smashinvoices.com"
+          },
+          "description": "Founder of SMASH Invoices and Good Hands Handyman. Built voice to invoice software for people who work with their hands.",
+          "email": "dan@smashinvoices.com",
+          "url": "https://smashinvoices.com/founder"
+        }
+      }} />
 
       <nav className="max-w-7xl mx-auto px-8 lg:px-12 py-6 flex items-center justify-between relative z-10 bg-white border-b border-slate-200">
         <Link to="/" className="text-2xl font-black tracking-tight text-brand">
@@ -31,7 +55,7 @@ export function Founder() {
               <span className="text-white text-3xl font-black">D</span>
             </div>
             <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-1 tracking-tight">Dan</h2>
+              <h1 className="text-2xl font-black text-slate-900 mb-1 tracking-tight">Dan — Founder, SMASH Invoices</h1>
               <p className="text-base text-slate-600 font-semibold mb-3">Founder, SMASH Invoices & Good Hands Handyman</p>
               <a href="mailto:dan@smashinvoices.com" className="text-brand hover:text-accent transition-colors inline-block">
                 <Mail size={20} />
@@ -45,7 +69,7 @@ export function Founder() {
             Whether it's a leaky roof or a broken workflow—I'm obsessed with fixing things.
           </p>
 
-          <h3 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Story</h3>
+          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Story</h2>
 
           <p>
             I'm a designer, an animator, and a product creator. But I'm also a professional handyman.
@@ -63,7 +87,7 @@ export function Founder() {
             For years, this was a massive frustration. I could go to a job, solve a complex structural problem, or design a beautiful product. But ask me to sit down and type out an invoice? I'd freeze. It was slow, painful, and honestly, I felt like it held me back.
           </p>
 
-          <h3 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Fix</h3>
+          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Fix</h2>
 
           <p>
             I'm the kind of person who can't leave a problem alone. It's just who I am. If I see a leaky roof, I have to patch it. If I see a process that wastes time, I have to improve it.
@@ -103,57 +127,7 @@ export function Founder() {
         </div>
       </section>
 
-      <footer className="bg-brand text-white border-t border-white/10 mt-24">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-20 lg:py-24">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
-            <div>
-              <div className="text-3xl font-black tracking-tight mb-5">
-                SMASH<span className="text-accent text-5xl leading-none align-baseline">.</span>
-              </div>
-              <p className="text-base text-white/60 font-medium leading-relaxed">
-                Voice powered invoice and quote software for high volume work.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Company</h3>
-              <ul className="space-y-3">
-                <li><Link to="/founder" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><Link to="/blog" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Blog</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Legal</h3>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Privacy Policy</a></li>
-                <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-10 border-t border-white/10">
-            <nav className="mb-6">
-              <ul className="flex flex-wrap gap-6 justify-center md:justify-start">
-                <li><Link to="/" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Home</Link></li>
-                <li><Link to="/blog" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Blog</Link></li>
-                <li><Link to="/founder" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Privacy</a></li>
-                <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Terms</a></li>
-              </ul>
-            </nav>
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-3">
-              <p className="text-sm text-white/40 font-medium">
-                © 2024 SMASH<span className="text-accent text-xl leading-none align-baseline">.</span> Made for high volume work.
-              </p>
-            </div>
-            <p className="text-sm text-white/30 font-medium text-center md:text-left leading-relaxed">
-              Beta software. Features and functionality subject to change. Not accounting software.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer showCTA />
     </div>
   );
 }

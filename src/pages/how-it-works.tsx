@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/seo';
-import { StructuredData } from '../components/structured-data';
+import { StructuredData, createVideoSchema } from '../components/structured-data';
+import { Footer } from '../components/footer';
 
 export function HowItWorks() {
   const howToSchema = {
@@ -45,16 +46,26 @@ export function HowItWorks() {
   return (
     <>
       <SEO
-        title="How It Works | Voice-to-Invoice in 60 Seconds | SMASH Invoices"
+        title="How It Works | Voice-to-Invoice in Under 60 Seconds | SMASH Invoices"
         description="Learn how SMASH turns your voice into professional invoices in under 60 seconds. Simple 4-step process: speak, review, send, get paid. No typing required."
-        keywords="how voice invoicing works, voice to invoice process, AI invoice generation, automated invoicing workflow, voice powered invoicing"
+        keywords="how voice invoicing works, voice to invoice process, automated invoicing workflow, voice invoicing Australia"
         ogTitle="How SMASH Voice-to-Invoice Works"
-        ogDescription="Speak your job details, AI creates the invoice, send with one tap, get paid in 48 hours. That simple."
+        ogDescription="Speak your job details, SMASH creates the invoice, send with one tap, get paid in 48 hours. That simple."
         ogImage="https://smashinvoices.com/hero_image.png"
+        ogUrl="https://smashinvoices.com/how-it-works"
+        twitterTitle="How SMASH Voice-to-Invoice Works"
+        twitterDescription="Speak your job details, SMASH creates the invoice, send with one tap. Under 60 seconds, no typing."
         canonical="https://smashinvoices.com/how-it-works"
       />
 
       <StructuredData data={howToSchema} />
+      <StructuredData data={createVideoSchema({
+        name: "SMASH Voice-to-Invoice Demo",
+        description: "Watch how SMASH turns your voice into a professional invoice in under 60 seconds. No typing required.",
+        thumbnailUrl: "https://smashinvoices.com/hero_image.png",
+        embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
+        uploadDate: "2026-01-01"
+      })} />
 
       <div className="min-h-screen bg-white">
         <nav className="bg-brand text-white border-b border-white/10">
@@ -225,20 +236,7 @@ export function HowItWorks() {
           </div>
         </section>
 
-        <footer className="bg-brand text-white border-t border-white/10 py-12">
-          <div className="max-w-7xl mx-auto px-8 lg:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <Link to="/" className="text-2xl font-black tracking-tight">
-                SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-              </Link>
-              <div className="flex gap-6">
-                <Link to="/" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Home</Link>
-                <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Blog</Link>
-                <Link to="/founder" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Founder</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer showCTA />
       </div>
     </>
   );

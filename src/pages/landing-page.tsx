@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play, Mail, Facebook, Instagram } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
 import { SEO } from '../components/seo';
@@ -10,7 +10,8 @@ import { InlineCTA } from '../components/inline-cta';
 import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
-import { StructuredData, organizationSchema, webApplicationSchema } from '../components/structured-data';
+import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema } from '../components/structured-data';
+import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
@@ -27,11 +28,21 @@ export function LandingPage() {
         ogUrl="https://smashinvoices.com"
         twitterTitle="Voice to Invoice & Quote Software | SMASH"
         twitterDescription="Generate invoices 4x faster with voice. Just talk - SMASH creates professional invoices instantly."
+        ogImage="https://smashinvoices.com/hero_image.png"
+        twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com"
       />
 
       <StructuredData data={organizationSchema} />
       <StructuredData data={webApplicationSchema} />
+      <StructuredData data={websiteSchema} />
+      <StructuredData data={createVideoSchema({
+        name: "SMASH Voice-to-Invoice Demo",
+        description: "Watch how SMASH turns your voice into a professional invoice in under 60 seconds. No typing required.",
+        thumbnailUrl: "https://smashinvoices.com/hero_image.png",
+        embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
+        uploadDate: "2026-01-01"
+      })} />
 
       <StickyCTA />
       <SignupFAB />
@@ -42,7 +53,7 @@ export function LandingPage() {
         <div className="absolute inset-0">
           <img
             src="/hero_image.png"
-            alt=""
+            alt="Voice to invoice software — describe the job, SMASH sends the invoice"
             className="w-full h-full object-cover"
             style={{ imageRendering: 'crisp-edges' }}
           />
@@ -52,14 +63,20 @@ export function LandingPage() {
 
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-end relative z-10">
           <div className="flex items-center gap-2 sm:gap-3">
-            <Link to="/founder" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Founder
+            <Link to="/how-it-works" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
+              How It Works
+            </Link>
+            <Link to="/pricing" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
+              Pricing
+            </Link>
+            <Link to="/faq" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
+              FAQ
             </Link>
             <Link to="/blog" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
               Blog
             </Link>
             <a href="#signup-form" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-accent text-accentText font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-              Sign Up
+              Start Free
             </a>
           </div>
         </nav>
@@ -78,8 +95,7 @@ export function LandingPage() {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-8">
               <a href="#signup-form" className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow flex items-center justify-center gap-2 sm:gap-3">
-                <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-                Get Early Access
+                Start Free
               </a>
               <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-white/10 text-white border-2 border-white/20 font-bold text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-2 sm:gap-3">
                 <Play size={18} className="sm:w-5 sm:h-5" strokeWidth={2.5} />
@@ -88,7 +104,7 @@ export function LandingPage() {
             </div>
 
             <p className="text-sm sm:text-base text-white/50 font-medium">
-              Beta access. Free.
+              No credit card required.
             </p>
           </div>
         </div>
@@ -136,7 +152,7 @@ export function LandingPage() {
 
       <InlineCTA
         title="Ready to Quote Faster?"
-        subtitle="Join beta testers quoting in seconds."
+        subtitle="Send an invoice in under 60 seconds."
       />
 
       {/* SECTION 5: BUILT-IN PRICING */}
@@ -264,7 +280,7 @@ export function LandingPage() {
 
       <InlineCTA
         title="Stop Typing. Start Talking."
-        subtitle="Free beta access for high-volume trades."
+        subtitle="Work with your hands. Not a keyboard."
         variant="secondary"
       />
 
@@ -334,107 +350,7 @@ export function LandingPage() {
       {/* SECTION 13: SIGNUP FORM */}
       <SignupForm />
 
-      {/* SECTION 16: FOOTER */}
-      <footer className="bg-brand text-white border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
-          <div className="text-center mb-10 md:mb-14 pb-10 md:pb-14 border-b border-white/10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight md:tracking-tighter">
-              Start Quoting Faster
-            </h3>
-            <p className="text-base sm:text-lg text-white/80 font-bold mb-6 md:mb-8 max-w-2xl mx-auto leading-snug md:leading-relaxed">
-              Try voice-powered quoting on real jobs.
-            </p>
-            <a
-              href="#signup-form"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow"
-            >
-              <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-              Get Beta Access
-            </a>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-14 mb-10 md:mb-14">
-            <div>
-              <div className="text-3xl font-black tracking-tight mb-5">
-                SMASH<span className="text-accent text-5xl leading-none align-baseline">.</span>
-              </div>
-              <p className="text-base text-white/60 font-medium leading-relaxed mb-6">
-                Smart invoicing. Voice-to-invoice in seconds.
-              </p>
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider mb-4 text-white/50">Follow Us</h3>
-                <div className="flex gap-3">
-                  <a
-                    href="https://facebook.com/smashquotes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
-                    aria-label="Follow us on Facebook"
-                  >
-                    <Facebook size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
-                  </a>
-                  <a
-                    href="https://instagram.com/smashquotes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
-                    aria-label="Follow us on Instagram"
-                  >
-                    <Instagram size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Contact</h3>
-              <ul className="space-y-3">
-                <li><a href="mailto:dan@smashinvoices.com" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">dan@smashinvoices.com</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Company</h3>
-              <ul className="space-y-3">
-                <li><Link to="/founder" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><Link to="/blog" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Blog</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Legal</h3>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Privacy Policy</a></li>
-                <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-10 border-t border-white/10">
-            <nav className="mb-6">
-              <ul className="flex flex-wrap gap-6 justify-center md:justify-start">
-                <li><Link to="/" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Home</Link></li>
-                <li><Link to="/blog" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Blog</Link></li>
-                <li><Link to="/founder" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Privacy</a></li>
-                <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Terms</a></li>
-              </ul>
-            </nav>
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-3">
-              <p className="text-sm text-white/40 font-medium">
-                © 2024 SMASH<span className="text-accent text-xl leading-none align-baseline">.</span> Made for high volume work.
-              </p>
-              <p className="text-sm text-white/40 font-medium">
-                Built in Byron Bay, Australia
-              </p>
-            </div>
-            <p className="text-sm text-white/30 font-medium text-center md:text-left leading-relaxed">
-              Beta software. Not accounting software.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer showCTA />
 
     </div>
   );

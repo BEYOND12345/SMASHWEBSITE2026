@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
 import { RelatedPosts } from '../components/related-posts';
+import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
@@ -89,9 +90,14 @@ export function BlogPost() {
         title={post.meta_title || `${post.title} | SMASH Blog`}
         description={post.meta_description || post.excerpt}
         keywords={[post.primary_keyword, ...post.secondary_keywords].join(', ')}
-        ogImage={post.featured_image}
+        ogTitle={post.meta_title || post.title}
+        ogDescription={post.meta_description || post.excerpt}
+        ogImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
         ogUrl={articleUrl}
         ogType="article"
+        twitterTitle={post.meta_title || post.title}
+        twitterDescription={post.meta_description || post.excerpt}
+        twitterImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
         canonical={articleUrl}
       />
 
@@ -103,7 +109,9 @@ export function BlogPost() {
           dateModified: post.updated_at || post.last_reviewed || post.published_at,
           author: post.author,
           image: post.featured_image,
-          url: articleUrl
+          url: articleUrl,
+          wordCount: post.content ? post.content.split(/\s+/).length : undefined,
+          keywords: [post.primary_keyword, ...post.secondary_keywords].join(', ')
         })}
       />
 
@@ -385,18 +393,7 @@ export function BlogPost() {
           </div>
         </article>
 
-        <footer className="bg-[#0D0D0D] border-t border-white/10 mt-20">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
-            <div className="text-center">
-              <Link to="/" className="inline-block text-2xl font-black tracking-tight text-white mb-4">
-                SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-              </Link>
-              <p className="text-white/50 text-sm">
-                © 2024 SMASH. Made for high volume work.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

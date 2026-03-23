@@ -1,5 +1,3 @@
-import { Mail } from 'lucide-react';
-
 interface InlineCTAProps {
   title: string;
   subtitle?: string;
@@ -30,8 +28,7 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
             onClick={scrollToSignup}
             className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow inline-flex items-center justify-center gap-2 sm:gap-3"
           >
-            <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-            Join The Beta
+            Start Free
           </button>
         </div>
       </section>
@@ -54,8 +51,7 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
             onClick={scrollToSignup}
             className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow flex items-center justify-center gap-2 sm:gap-3"
           >
-            <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-            Get Early Access
+            Start Free
           </button>
           <p className="text-sm sm:text-base text-white/70 font-medium">
             Free • No credit card

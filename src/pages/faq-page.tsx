@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema } from '../components/structured-data';
+import { Footer } from '../components/footer';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
@@ -167,9 +168,14 @@ export function FAQPage() {
     <>
       <SEO
         title="FAQ | Voice Invoicing Questions Answered | SMASH Invoices"
-        description="Get answers to common questions about voice-to-invoice software, AI invoicing, pricing, payments, and how SMASH works for tradies and service businesses."
-        keywords="voice invoicing FAQ, AI invoice questions, how does voice to invoice work, voice invoicing pricing, mobile invoicing questions"
+        description="Get answers to common questions about voice-to-invoice software, pricing, payments, and how SMASH works for service businesses in Australia."
+        keywords="voice invoicing FAQ, invoice questions, how does voice to invoice work, voice invoicing pricing, mobile invoicing questions"
+        ogTitle="Voice Invoicing FAQ — SMASH Invoices"
+        ogDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works for service businesses."
         ogImage="https://smashinvoices.com/hero_image.png"
+        ogUrl="https://smashinvoices.com/faq"
+        twitterTitle="Voice Invoicing FAQ — SMASH Invoices"
+        twitterDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works."
         canonical="https://smashinvoices.com/faq"
       />
 
@@ -243,21 +249,7 @@ export function FAQPage() {
           </div>
         </section>
 
-        <footer className="bg-[#0D0D0D] border-t border-white/10 py-12">
-          <div className="max-w-7xl mx-auto px-8 lg:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <Link to="/" className="text-2xl font-black tracking-tight text-white">
-                SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-              </Link>
-              <div className="flex gap-6">
-                <Link to="/" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Home</Link>
-                <Link to="/how-it-works" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">How It Works</Link>
-                <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Blog</Link>
-                <Link to="/founder" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Founder</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer showCTA />
       </div>
     </>
   );
