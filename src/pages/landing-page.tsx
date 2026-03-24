@@ -255,7 +255,7 @@ export function LandingPage() {
             <p className="mb-4">
               From the moment you hit send, you know exactly what's happening.
             </p>
-            <p className="text-base font-normal text-textSecondary">
+            <p className="text-base font-medium text-slate-600">
               No guessing. No chasing. No "I never got it."
             </p>
           </>

@@ -24,10 +24,10 @@ export const Button: React.FC<ButtonProps> = ({
     // Success now uses the same Lime accent to maintain consistency (no other greens)
     success: "bg-accent text-brand shadow-lg shadow-accent/20 hover:brightness-95",
     // Light Gray Fill (Modern Secondary).
-    secondary: "bg-gray-100 text-primary hover:bg-gray-200",
+    secondary: "bg-gray-100 text-brand hover:bg-gray-200",
     // Traditional Outline (used sparingly)
-    outline: "bg-transparent border-2 border-gray-200 text-secondary hover:border-brand hover:text-brand",
-    ghost: "bg-transparent text-secondary hover:text-primary hover:bg-gray-50",
+    outline: "bg-transparent border-2 border-gray-200 text-slate-500 hover:border-brand hover:text-brand",
+    ghost: "bg-transparent text-slate-500 hover:text-brand hover:bg-gray-50",
     danger: "bg-red-50 text-red-600 hover:bg-red-100"
   };
 

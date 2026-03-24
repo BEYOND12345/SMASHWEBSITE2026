@@ -119,7 +119,7 @@ export function Founder() {
             <p className="text-lg text-white/80 mb-6 leading-[1.15]">
               I'm always interested in hearing from people building businesses. If you have feedback, questions, or just want to talk about invoicing problems, reach out.
             </p>
-            <a href="mailto:dan@smashinvoices.com" className="inline-flex items-center gap-3 px-6 py-3 rounded-[32px] bg-accent text-brand font-bold text-base uppercase tracking-wider hover:brightness-95 transition-all">
+            <a href="mailto:dan@smashinvoices.com" className="inline-flex items-center gap-3 px-6 py-3 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all">
               <Mail size={20} />
               Get in touch
             </a>

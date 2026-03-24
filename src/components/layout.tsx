@@ -17,7 +17,7 @@ export const Layout: React.FC<LayoutProps> = ({
   className = ''
 }) => {
   return (
-    <div className="min-h-screen w-full flex justify-center bg-[#f1f5f9] font-sans text-primary">
+    <div className="min-h-screen w-full flex justify-center bg-[#f1f5f9] font-sans text-brand">
       <div className="w-full max-w-[390px] h-[100dvh] bg-[#FAFAFA] flex flex-col shadow-2xl overflow-hidden relative">
         <main className={`flex-1 overflow-y-auto no-scrollbar ${className}`}>
           {children}
@@ -27,21 +27,21 @@ export const Layout: React.FC<LayoutProps> = ({
           <nav className="h-[96px] bg-white border-t border-gray-50 flex items-start pt-5 justify-center gap-20 shrink-0 z-50 absolute bottom-0 w-full left-0 rounded-t-[32px] shadow-[0_-5px_20px_rgba(0,0,0,0.02)]">
             <button 
               onClick={() => onTabChange?.('estimates')}
-              className={`group flex flex-col items-center gap-2 w-16 transition-all duration-300 ${activeTab === 'estimates' ? 'text-primary' : 'text-tertiary hover:text-secondary'}`}
+              className={`group flex flex-col items-center gap-2 w-16 transition-all duration-300 ${activeTab === 'estimates' ? 'text-brand' : 'text-slate-400 hover:text-slate-500'}`}
             >
               <div className={`transition-transform duration-300 ${activeTab === 'estimates' ? '-translate-y-1' : ''}`}>
                 <Home size={26} strokeWidth={activeTab === 'estimates' ? 2.5 : 2} />
               </div>
-              <span className={`text-[9px] uppercase tracking-widest font-bold transition-colors ${activeTab === 'estimates' ? 'text-primary' : 'text-tertiary'}`}>Home</span>
+              <span className={`text-[9px] uppercase tracking-widest font-bold transition-colors ${activeTab === 'estimates' ? 'text-brand' : 'text-slate-400'}`}>Home</span>
             </button>
             <button 
               onClick={() => onTabChange?.('invoices')}
-              className={`group flex flex-col items-center gap-2 w-16 transition-all duration-300 ${activeTab === 'invoices' ? 'text-primary' : 'text-tertiary hover:text-secondary'}`}
+              className={`group flex flex-col items-center gap-2 w-16 transition-all duration-300 ${activeTab === 'invoices' ? 'text-brand' : 'text-slate-400 hover:text-slate-500'}`}
             >
                <div className={`transition-transform duration-300 ${activeTab === 'invoices' ? '-translate-y-1' : ''}`}>
                 <FileText size={26} strokeWidth={activeTab === 'invoices' ? 2.5 : 2} />
                </div>
-              <span className={`text-[9px] uppercase tracking-widest font-bold transition-colors ${activeTab === 'invoices' ? 'text-primary' : 'text-tertiary'}`}>Invoices</span>
+              <span className={`text-[9px] uppercase tracking-widest font-bold transition-colors ${activeTab === 'invoices' ? 'text-brand' : 'text-slate-400'}`}>Invoices</span>
             </button>
           </nav>
         )}
@@ -63,7 +63,7 @@ export const Header: React.FC<{
     `}>
       <div className="w-10 flex justify-start">{left}</div>
       <div className="flex-1 text-center">
-        {title && <h1 className={`text-[15px] uppercase font-black tracking-widest ${variant === 'dark' ? 'text-white' : 'text-primary'}`}>{title}</h1>}
+        {title && <h1 className={`text-[15px] uppercase font-black tracking-widest ${variant === 'dark' ? 'text-white' : 'text-brand'}`}>{title}</h1>}
       </div>
       <div className="w-10 flex justify-end">{right}</div>
     </header>
@@ -72,7 +72,7 @@ export const Header: React.FC<{
 
 export const Section: React.FC<{ title: string; children: React.ReactNode; className?: string }> = ({ title, children, className = '' }) => (
   <div className={`flex flex-col gap-4 mb-8 px-6 ${className}`}>
-    <h2 className="text-[11px] font-black text-secondary uppercase tracking-[0.2em] ml-1 opacity-80">{title}</h2>
+    <h2 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1 opacity-80">{title}</h2>
     {children}
   </div>
 );
