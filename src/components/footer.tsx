@@ -11,10 +11,10 @@ export function Footer({ showCTA = false }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
         {showCTA && (
           <div className="text-center mb-10 md:mb-14 pb-10 md:pb-14 border-b border-white/10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight md:tracking-tighter">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-[0.88] uppercase tracking-tighter">
               From Finished Job to Paid. In Under a Minute.
             </h3>
-            <p className="text-base sm:text-lg text-white/80 font-bold mb-2 max-w-2xl mx-auto leading-snug md:leading-relaxed">
+            <p className="text-base sm:text-lg text-white/80 font-medium mb-2 max-w-2xl mx-auto leading-[1.15]">
               Describe the job out loud. SMASH does the rest.
             </p>
             <p className="text-sm text-white/50 font-medium mb-6 md:mb-8">
@@ -22,7 +22,7 @@ export function Footer({ showCTA = false }: FooterProps) {
             </p>
             <Link
               to="/#signup-form"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow"
             >
               Start Free
             </Link>
@@ -34,7 +34,7 @@ export function Footer({ showCTA = false }: FooterProps) {
             <Link to="/" className="inline-block text-3xl font-black tracking-tight mb-5">
               SMASH<span className="text-accent text-5xl leading-none align-baseline">.</span>
             </Link>
-            <p className="text-base text-white/60 font-medium leading-relaxed mb-6">
+            <p className="text-base text-white/60 font-medium leading-[1.15] mb-6">
               Describe the job. Get paid. That's it.
             </p>
             <div>
@@ -47,7 +47,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                   className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
                   aria-label="Follow us on Facebook"
                 >
-                  <Facebook size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
+                  <Facebook size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-brand transition-colors" />
                 </a>
                 <a
                   href="https://instagram.com/smashquotes"
@@ -56,7 +56,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                   className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
                   aria-label="Follow us on Instagram"
                 >
-                  <Instagram size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
+                  <Instagram size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-brand transition-colors" />
                 </a>
               </div>
             </div>

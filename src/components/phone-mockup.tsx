@@ -22,7 +22,7 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = 
   const innerHeight = isSmall ? 520 / scale : 850;
 
   return (
-    <div className={`relative ${floating ? 'animate-float' : ''} ${className}`}>
+    <div className={`relative ${floating ? '' : ''} ${className}`}>
       <div className={`relative ${sizeClasses} bg-[#0F172A] border-[#0F172A] overflow-hidden shadow-2xl`}>
         <div
           className="overflow-hidden"
@@ -107,19 +107,19 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
         <div className="flex-1 p-4 space-y-2 overflow-hidden">
           <div className="bg-white rounded-xl p-3 border border-slate-100">
             <div className="font-bold text-slate-900 text-xs mb-1">Merbau Decking</div>
-            <div className="text-sm font-black text-accentText">$120/m²</div>
+            <div className="text-sm font-black text-brand">$120/m²</div>
           </div>
           <div className="bg-white rounded-xl p-3 border border-slate-100">
             <div className="font-bold text-slate-900 text-xs mb-1">Pine Framing</div>
-            <div className="text-sm font-black text-accentText">$85/m²</div>
+            <div className="text-sm font-black text-brand">$85/m²</div>
           </div>
           <div className="bg-white rounded-xl p-3 border border-slate-100">
             <div className="font-bold text-slate-900 text-xs mb-1">Labour Rate</div>
-            <div className="text-sm font-black text-accentText">$800/day</div>
+            <div className="text-sm font-black text-brand">$800/day</div>
           </div>
           <div className="bg-white rounded-xl p-3 border border-slate-100">
             <div className="font-bold text-slate-900 text-xs mb-1">Travel Fee</div>
-            <div className="text-sm font-black text-accentText">$150</div>
+            <div className="text-sm font-black text-brand">$150</div>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
     return (
       <div className="w-full h-full bg-white p-6 overflow-hidden">
         <div className="text-center mb-4">
-          <div className="text-accentText text-xs font-bold mb-2 bg-white inline-block px-3 py-1 rounded-full border border-accent">
+          <div className="text-brand text-xs font-bold mb-2 bg-white inline-block px-3 py-1 rounded-full border border-accent">
             INVOICE
           </div>
           <div className="font-black text-lg text-slate-900 mb-1">#INV-1042</div>
@@ -143,13 +143,13 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
           </div>
           <div className="flex justify-between">
             <span className="text-slate-600">Status</span>
-            <span className="font-bold text-accentText">PAID</span>
+            <span className="font-bold text-brand">PAID</span>
           </div>
         </div>
         <div className="pt-4 border-t border-slate-200">
           <div className="flex justify-between font-black text-sm text-slate-900">
             <span>AMOUNT PAID</span>
-            <span className="text-accentText">$4,455</span>
+            <span className="text-brand">$4,455</span>
           </div>
         </div>
       </div>
@@ -173,11 +173,11 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="text-slate-700">Deck Build</span>
-                <span className="font-bold text-accentText">PAID</span>
+                <span className="font-bold text-brand">PAID</span>
               </div>
               <div className="flex justify-between items-center text-xs">
                 <span className="text-slate-700">Fence Repair</span>
-                <span className="font-bold text-accentText">PAID</span>
+                <span className="font-bold text-brand">PAID</span>
               </div>
             </div>
           </div>

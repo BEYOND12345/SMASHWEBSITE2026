@@ -85,9 +85,9 @@ export function BlogList() {
               </Link>
               <Link
                 to="/#signup-form"
-                className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all"
+                className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all"
               >
-                Sign Up
+                Start Free
               </Link>
             </div>
           </div>
@@ -95,10 +95,10 @@ export function BlogList() {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
           <header className="mb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
               Blog
             </h1>
-            <p className="text-xl text-white/70 max-w-3xl leading-relaxed">
+            <p className="text-xl text-white/70 max-w-3xl leading-[1.15]">
               Insights, tips, and stories about mobile invoicing, billing on the go, and productivity
               for contractors and small businesses.
             </p>
@@ -149,12 +149,12 @@ export function BlogList() {
                       </div>
                     </div>
 
-                    <h2 className="text-2xl font-black text-white mb-3 leading-tight group-hover:text-accent transition-colors">
+                    <h2 className="text-2xl font-black text-white mb-3 leading-[0.88] group-hover:text-accent transition-colors">
                       {post.title}
                     </h2>
 
                     {post.excerpt && (
-                      <p className="text-white/70 leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-white/70 leading-[1.15] mb-4 line-clamp-3">
                         {post.excerpt}
                       </p>
                     )}

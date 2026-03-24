@@ -28,11 +28,11 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className={`${image ? 'grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20' : 'max-w-3xl'} items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
           <div className={`${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-4 md:mb-6 uppercase leading-[1.1] ${textClass}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter mb-4 md:mb-6 uppercase leading-[0.88] ${textClass}`}>
               {title}
             </h2>
 
-            <div className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold leading-snug mb-5 md:mb-7 ${descClass}`}>
+            <div className={`text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-[1.15] mb-5 md:mb-7 ${descClass}`}>
               {description}
             </div>
 
@@ -41,11 +41,11 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
                 {bullets.map((bullet, index) => (
                   <li key={index} className="flex items-start gap-2.5 md:gap-3">
                     <div className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 rounded-full ${background === 'brand' ? 'bg-accent/20' : 'bg-white border-2 border-accent'} flex items-center justify-center shrink-0 mt-0.5`}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`md:w-[14px] md:h-[14px] lg:w-[16px] lg:h-[16px] ${background === 'brand' ? 'text-accent' : 'text-accentText'}`}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`md:w-[14px] md:h-[14px] lg:w-[16px] lg:h-[16px] ${background === 'brand' ? 'text-accent' : 'text-brand'}`}>
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </div>
-                    <span className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold leading-snug ${background === 'brand' ? 'text-white/95' : 'text-slate-800'}`}>
+                    <span className={`text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-[1.15] ${background === 'brand' ? 'text-white/95' : 'text-slate-800'}`}>
                       {bullet}
                     </span>
                   </li>
@@ -89,7 +89,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
   return (
     <section className={`${bgClass} py-10 md:py-14 lg:py-20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-[0.88]">
           {title}
         </h2>
 
@@ -104,7 +104,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
           </div>
 
           <div>
-            <div className="text-xs sm:text-sm font-black text-accentText uppercase tracking-wider mb-4 md:mb-6 text-center">
+            <div className="text-xs sm:text-sm font-black text-brand uppercase tracking-wider mb-4 md:mb-6 text-center">
               {after.label}
             </div>
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border-2 border-slate-200 p-5 sm:p-6 md:p-8 lg:p-10">
@@ -136,7 +136,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   return (
     <section className={`${bgClass} py-10 md:py-14 lg:py-20`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-10 md:mb-14 uppercase text-center text-brand leading-[0.88]">
           {title}
         </h2>
 

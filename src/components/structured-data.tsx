@@ -21,7 +21,7 @@ export const organizationSchema = {
   "alternateName": "SMASH",
   "url": "https://smashinvoices.com",
   "logo": "https://smashinvoices.com/favicon.svg",
-  "description": "Voice powered quote and invoice software for tradies. Turn conversations into approved quotes and invoices in seconds.",
+  "description": "Voice to invoice software for service businesses. Describe the job, SMASH sends the invoice in under 60 seconds.",
   "email": "dan@smashinvoices.com",
   "foundingDate": "2024",
   "founder": {
@@ -110,9 +110,9 @@ export const webApplicationSchema = {
     "price": "0",
     "priceCurrency": "AUD",
     "availability": "https://schema.org/InStock",
-    "description": "Free beta access"
+    "description": "Free to start"
   },
-  "description": "Voice to invoice software that turns spoken quotes into professional invoices. Voice powered quoting 4x faster than typing. Perfect for tradies, contractors, and anyone doing high-volume quoting.",
+  "description": "Voice to invoice software that turns spoken quotes into professional invoices in under 60 seconds. 4x faster than typing. Built for anyone who works with their hands.",
   "featureList": [
     "Voice to quote conversion",
     "Voice to invoice generation",

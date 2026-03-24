@@ -83,7 +83,7 @@ export function RelatedPosts({ currentPostId, primaryKeyword, secondaryKeywords,
 
   return (
     <section className="mt-16 pt-12 border-t border-white/10">
-      <h2 className="text-3xl font-black text-white mb-8 uppercase tracking-tight">
+      <h2 className="text-3xl font-black text-white mb-8 uppercase tracking-tighter">
         Related Articles
       </h2>
 
@@ -110,12 +110,12 @@ export function RelatedPosts({ currentPostId, primaryKeyword, secondaryKeywords,
                 <span>{post.reading_time} min read</span>
               </div>
 
-              <h3 className="text-lg font-black text-white mb-2 leading-tight group-hover:text-accent transition-colors line-clamp-2">
+              <h3 className="text-lg font-black text-white mb-2 leading-[0.88] group-hover:text-accent transition-colors line-clamp-2">
                 {post.title}
               </h3>
 
               {post.excerpt && (
-                <p className="text-white/70 text-sm leading-relaxed mb-3 line-clamp-2">
+                <p className="text-white/70 text-sm leading-[1.15] mb-3 line-clamp-2">
                   {post.excerpt}
                 </p>
               )}

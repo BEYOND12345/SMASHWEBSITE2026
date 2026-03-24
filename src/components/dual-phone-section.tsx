@@ -24,11 +24,11 @@ export const DualPhoneSection = () => {
           </div>
 
           <div className="px-0">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-[#0F172A] mb-3 md:mb-5 leading-[1.1] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-brand mb-3 md:mb-5 leading-[0.88] tracking-tighter uppercase">
               JUST TALK. SMASH DOES THE REST.
             </h2>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-700 font-semibold mb-5 md:mb-8 leading-snug">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-700 font-medium mb-5 md:mb-8 leading-[1.15]">
               Describe the job out loud. That's your only job.
             </p>
 
@@ -46,7 +46,7 @@ export const DualPhoneSection = () => {
                   <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full bg-[#D9F99D] flex items-center justify-center mt-0.5">
                     <Check size={12} className="text-[#0F172A] sm:w-[14px] sm:h-[14px] md:w-4 md:h-4 lg:w-[18px] lg:h-[18px]" strokeWidth={3} />
                   </div>
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-slate-800 font-semibold leading-snug">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-slate-800 font-medium leading-[1.15]">
                     {feature}
                   </p>
                 </div>

@@ -44,7 +44,7 @@ const faqs = [
       },
       {
         question: "How much does SMASH cost?",
-        answer: "We're currently in free beta. Sign up now to get lifetime early access pricing when we launch. No credit card required for beta."
+        answer: "SMASH is free to start. No credit card required. Start sending quotes today and upgrade when you're ready."
       }
     ]
   },
@@ -128,7 +128,7 @@ const faqs = [
       },
       {
         question: "Can multiple team members use one SMASH account?",
-        answer: "Team features are coming soon. Currently, SMASH is optimized for solo tradies and small teams sharing one device."
+        answer: "Team features are coming soon. Currently, SMASH is optimised for solo operators and small teams sharing one device."
       }
     ]
   }
@@ -150,7 +150,7 @@ function FAQItem({ question, answer, isOpen, onClick }: { question: string; answ
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="text-white/80 leading-relaxed">{answer}</p>
+          <p className="text-white/80 leading-[1.15]">{answer}</p>
         </div>
       )}
     </div>
@@ -194,8 +194,8 @@ export function FAQPage() {
               <Link to="/blog" className="hidden md:block px-4 py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
                 Blog
               </Link>
-              <Link to="/#signup-form" className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-                Sign Up
+              <Link to="/#signup-form" className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all">
+                Start Free
               </Link>
             </div>
           </div>
@@ -203,16 +203,16 @@ export function FAQPage() {
 
         <section className="py-20 lg:py-32">
           <div className="max-w-4xl mx-auto px-8 lg:px-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tighter">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 font-semibold mb-16 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/70 font-medium mb-16 leading-[1.15]">
               Everything you need to know about voice-to-invoice software and how SMASH works.
             </p>
 
             {faqs.map((category, categoryIndex) => (
               <div key={categoryIndex} className="mb-16">
-                <h2 className="text-3xl font-black text-accent mb-8 uppercase tracking-tight">
+                <h2 className="text-3xl font-black text-accent mb-8 uppercase tracking-tighter">
                   {category.category}
                 </h2>
                 <div className="bg-white/5 rounded-2xl px-8 py-4">
@@ -236,14 +236,14 @@ export function FAQPage() {
               <h3 className="text-3xl font-black text-white mb-4">
                 Still have questions?
               </h3>
-              <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                Join the beta and see how voice-to-invoice works in your business. Free beta access with no credit card required.
+              <p className="text-white/80 text-lg mb-6 leading-[1.15]">
+                See how voice-to-invoice works in your business. Free to start, no credit card required.
               </p>
               <Link
                 to="/#signup-form"
-                className="inline-block px-8 py-4 rounded-full bg-accent text-accentText font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
+                className="inline-block px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
               >
-                Join Free Beta
+                Start Free
               </Link>
             </div>
           </div>

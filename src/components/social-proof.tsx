@@ -30,7 +30,7 @@ export function SocialProof() {
             {signupCount !== null ? `${signupCount}+` : '100+'}
           </div>
           <div className="text-sm font-bold text-slate-600 uppercase tracking-wide">
-            Beta Testers
+            Early Users
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export function SocialProof() {
             100%
           </div>
           <div className="text-sm font-bold text-slate-600 uppercase tracking-wide">
-            Free Beta Access
+            Free to Start
           </div>
         </div>
 
@@ -65,28 +65,28 @@ export function SocialProof() {
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
               <img
                 src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Beta tester"
+                alt="SMASH user"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
               <img
                 src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Beta tester"
+                alt="SMASH user"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
               <img
                 src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Beta tester"
+                alt="SMASH user"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 border-3 border-white shadow-lg flex items-center justify-center text-white font-bold text-lg">
               <img
                 src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Beta tester"
+                alt="SMASH user"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>

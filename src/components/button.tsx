@@ -14,15 +14,15 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   // Styles: No borders. Height 56px.
   // Updated: UPPERCASE, tracking-widest, bold font.
-  const baseStyles = "h-[56px] rounded-brand font-black text-[13px] uppercase tracking-widest transition-all duration-300 flex items-center justify-center focus:outline-none disabled:opacity-50 disabled:pointer-events-none active:scale-[0.97]";
+  const baseStyles = "h-[56px] rounded-[32px] font-black text-[13px] uppercase tracking-widest transition-all duration-300 flex items-center justify-center focus:outline-none disabled:opacity-50 disabled:pointer-events-none active:scale-[0.97]";
   
   const variants = {
     // Solid Black. No border.
     primary: "bg-brand text-white shadow-lg shadow-brand/10 hover:shadow-brand/20 hover:brightness-95",
     // Lime Pop.
-    accent: "bg-accent text-accentText shadow-lg shadow-accent/20 hover:brightness-95",
+    accent: "bg-accent text-brand shadow-lg shadow-accent/20 hover:brightness-95",
     // Success now uses the same Lime accent to maintain consistency (no other greens)
-    success: "bg-accent text-accentText shadow-lg shadow-accent/20 hover:brightness-95",
+    success: "bg-accent text-brand shadow-lg shadow-accent/20 hover:brightness-95",
     // Light Gray Fill (Modern Secondary).
     secondary: "bg-gray-100 text-primary hover:bg-gray-200",
     // Traditional Outline (used sparingly)

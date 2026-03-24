@@ -10,7 +10,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'Why did you build this?',
-    answer: 'Watching tradies write quotes in their trucks, on site, between jobs. Always rushed. Always messy. Most just text a rough number and hope it sticks. There had to be a better way that actually fit how the work gets done.'
+    answer: 'Watching people write quotes in their trucks, on site, between jobs. Always rushed. Always messy. Most just text a rough number and hope it sticks. There had to be a better way that actually fit how the work gets done.'
   },
   {
     question: 'Who is SMASH for?',
@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is SMASH right now?',
-    answer: 'In beta. The app works and real tradies are using it on real jobs. We\'re refining the experience based on feedback and adding features that actually matter. You get free access, we get to build something that works for how you actually work.'
+    answer: 'The app is live and real service businesses are using it on real jobs. We\'re refining the experience based on feedback and adding features that actually matter. You get free access, we get to build something that works for how you actually work.'
   },
   {
     question: 'What happens when I join?',
@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Where is this going?',
-    answer: 'The goal is simple: make quoting so fast you never put it off. After beta, we\'re adding job tracking, payment integrations, and deeper client management. But the core stays the same—talk, send, get approved, invoice.'
+    answer: 'The goal is simple: make quoting so fast you never put it off. Next up: job tracking, payment integrations, and deeper client management. But the core stays the same—talk, send, get approved, invoice.'
   },
   {
     question: 'Is my data safe?',
@@ -46,10 +46,10 @@ export function FAQ() {
       <StructuredData data={createFAQSchema(faqs)} />
       <div className="max-w-4xl mx-auto px-8 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-7 text-brand uppercase leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-7 text-brand uppercase leading-[0.88]">
             Questions About SMASH
           </h2>
-          <p className="text-xl md:text-2xl text-slate-700 font-bold leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-700 font-medium leading-[1.15]">
             The story, the vision, and where we are now
           </p>
         </div>
@@ -64,7 +64,7 @@ export function FAQ() {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-8 py-6 flex items-center justify-between text-left group"
               >
-                <span className="text-lg md:text-xl font-black text-brand pr-8 leading-tight">
+                <span className="text-lg md:text-xl font-black text-brand pr-8 leading-[0.88]">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -81,7 +81,7 @@ export function FAQ() {
                 }`}
               >
                 <div className="px-8 pb-6">
-                  <p className="text-base md:text-lg text-slate-700 font-medium leading-relaxed">
+                  <p className="text-base md:text-lg text-slate-700 font-medium leading-[1.15]">
                     {faq.answer}
                   </p>
                 </div>

@@ -8,7 +8,7 @@ export const Pill = ({ status }: PillProps) => {
   const styles = {
     [JobStatus.DRAFT]: "bg-gray-100 text-gray-500",
     [JobStatus.SENT]: "bg-blue-50 text-blue-600",
-    [JobStatus.APPROVED]: "bg-white border border-accent text-accentText",
+    [JobStatus.APPROVED]: "bg-white border border-accent text-brand",
     [JobStatus.PAID]: "bg-violet-50 text-violet-600",
   };
 

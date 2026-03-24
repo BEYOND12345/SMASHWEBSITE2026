@@ -27,10 +27,10 @@ export function SignupFAB() {
   return (
     <button
       onClick={scrollToSignup}
-      className={`fixed bottom-6 right-6 w-16 h-16 rounded-full bg-accent text-accentText shadow-2xl flex items-center justify-center hover:brightness-95 active:scale-95 transition-all duration-300 z-50 lg:hidden ${
+      className={`fixed bottom-6 right-6 w-16 h-16 rounded-full bg-accent text-brand shadow-2xl flex items-center justify-center hover:brightness-95 active:scale-95 transition-all duration-300 z-50 lg:hidden ${
         isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
       }`}
-      aria-label="Sign up for beta access"
+      aria-label="Start free"
     >
       <Mail size={28} strokeWidth={2.5} />
     </button>

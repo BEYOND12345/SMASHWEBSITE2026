@@ -38,7 +38,7 @@ export function StickyCTA() {
           </div>
           <button
             onClick={scrollToSignup}
-            className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all shadow-glow flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all shadow-glow flex items-center gap-2"
           >
             Start Free
           </button>

@@ -2,50 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #ffffff;
-  -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
-}
+@layer base {
+  body {
+    @apply bg-surface text-brand antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
 
-html {
-  overflow-x: hidden;
-}
-
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
+  /* Hide scrollbars for the clean 'app' look */
+  ::-webkit-scrollbar {
     display: none;
   }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+@layer components {
+  /* The signature SMASH primary button */
+  .btn-primary {
+    @apply h-14 bg-accent text-brand rounded-2xl font-black uppercase tracking-widest
+            flex items-center justify-center gap-2 hover:bg-accent/90 transition-all
+            active:scale-95 shadow-lg shadow-accent/20;
   }
-  50% {
-    transform: translateY(-20px);
-  }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  /* The soft-bordered premium card */
+  .card-premium {
+    @apply bg-white rounded-[32px] border-2 border-border shadow-sm overflow-hidden;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
 }

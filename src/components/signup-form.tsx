@@ -38,7 +38,7 @@ export function SignupForm() {
       if (error) {
         console.error('Supabase insert error:', error);
         if (error.code === '23505') {
-          setErrorMessage('This email is already registered for early access.');
+          setErrorMessage('This email is already registered.');
         } else {
           setErrorMessage(`Error: ${error.message || 'Something went wrong. Please try again.'}`);
         }
@@ -90,11 +90,11 @@ export function SignupForm() {
     <div id="signup-form" className="bg-accent py-24 lg:py-32 px-8 lg:px-12">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-7 text-accentText uppercase leading-tight">
-            Get Early Access
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-7 text-brand uppercase leading-[0.88]">
+            Start Free
           </h2>
-          <p className="text-xl md:text-2xl text-accentText/90 font-bold leading-relaxed">
-            Try the app on real jobs. Give us feedback. That's it.
+          <p className="text-xl md:text-2xl text-brand/90 font-medium leading-[1.15]">
+            Try it on real jobs. No credit card required.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export function SignupForm() {
                 <path d="M20 6L9 17l-5-5" />
               </svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-6 text-center leading-tight">You're In!</h3>
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-6 text-center leading-[0.88]">You're In!</h3>
 
             <div className="space-y-6 text-white/90 font-semibold max-w-xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -140,7 +140,7 @@ export function SignupForm() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-7">
             <div>
-              <label htmlFor="email" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+              <label htmlFor="email" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                 Email Address *
               </label>
               <div className="relative">
@@ -152,14 +152,14 @@ export function SignupForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full pl-12 pr-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
+                  className="w-full pl-12 pr-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
                   placeholder="your@email.com"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="name" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+              <label htmlFor="name" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                 Full Name
               </label>
               <div className="relative">
@@ -170,14 +170,14 @@ export function SignupForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-12 pr-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
+                  className="w-full pl-12 pr-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
                   placeholder="John Smith"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+              <label htmlFor="phone" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                 Phone Number
               </label>
               <div className="relative">
@@ -188,7 +188,7 @@ export function SignupForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full pl-12 pr-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
+                  className="w-full pl-12 pr-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm"
                   placeholder="+61 400 000 000"
                 />
               </div>
@@ -196,7 +196,7 @@ export function SignupForm() {
 
             <div className="grid md:grid-cols-2 gap-7">
               <div>
-                <label htmlFor="trade_type" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+                <label htmlFor="trade_type" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                   Trade Type *
                 </label>
                 <select
@@ -205,7 +205,7 @@ export function SignupForm() {
                   value={formData.trade_type}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm appearance-none"
+                  className="w-full px-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm appearance-none"
                 >
                   <option value="">Select your trade</option>
                   <option value="electrician">Electrician</option>
@@ -223,7 +223,7 @@ export function SignupForm() {
               </div>
 
               <div>
-                <label htmlFor="quotes_per_week" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+                <label htmlFor="quotes_per_week" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                   Quotes Per Week *
                 </label>
                 <select
@@ -232,7 +232,7 @@ export function SignupForm() {
                   value={formData.quotes_per_week}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm appearance-none"
+                  className="w-full px-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold bg-white shadow-sm appearance-none"
                 >
                   <option value="">Select range</option>
                   <option value="1-5">1-5 quotes/week</option>
@@ -244,7 +244,7 @@ export function SignupForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-base font-black text-accentText mb-3 uppercase tracking-wider">
+              <label htmlFor="message" className="block text-base font-black text-brand mb-3 uppercase tracking-wider">
                 Tell Us About Your Work
               </label>
               <div className="relative">
@@ -255,7 +255,7 @@ export function SignupForm() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full pl-12 pr-5 py-4 rounded-brand border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold resize-none bg-white shadow-sm"
+                  className="w-full pl-12 pr-5 py-4 rounded-[32px] border-2 border-slate-900/20 focus:border-brand focus:outline-none text-slate-900 font-semibold resize-none bg-white shadow-sm"
                   placeholder="What trade are you in? How many quotes do you send per week?"
                 />
               </div>
@@ -270,12 +270,12 @@ export function SignupForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-8 py-5 rounded-brand bg-brand text-white font-black text-base uppercase tracking-widest hover:bg-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-xl"
+              className="w-full px-8 py-5 rounded-[32px] bg-brand text-white font-black text-base uppercase tracking-widest hover:bg-brand/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-xl"
             >
-              {isSubmitting ? 'Signing Up...' : 'Get Early Access'}
+              {isSubmitting ? 'Submitting...' : 'Start Free'}
             </button>
 
-            <p className="text-base text-accentText/90 text-center font-bold leading-relaxed pt-2">
+            <p className="text-base text-brand/90 text-center font-medium leading-[1.15] pt-2">
               No spam. Just updates about early access and new features.
             </p>
           </form>

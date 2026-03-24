@@ -49,14 +49,14 @@ export function Founder() {
       </nav>
 
       <section className="max-w-4xl mx-auto px-8 lg:px-12 py-16 lg:py-24">
-        <div className="bg-white rounded-brand p-8 border border-slate-200 mb-12">
+        <div className="bg-white rounded-[32px] p-8 border border-slate-200 mb-12">
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 rounded-full bg-brand flex items-center justify-center shrink-0">
               <span className="text-white text-3xl font-black">D</span>
             </div>
             <div>
-              <h1 className="text-2xl font-black text-slate-900 mb-1 tracking-tight">Dan — Founder, SMASH Invoices</h1>
-              <p className="text-base text-slate-600 font-semibold mb-3">Founder, SMASH Invoices & Good Hands Handyman</p>
+              <h1 className="text-2xl font-black text-slate-900 mb-1 tracking-tighter">Dan — Founder, SMASH Invoices</h1>
+              <p className="text-base text-slate-600 font-medium mb-3">Founder, SMASH Invoices & Good Hands Handyman</p>
               <a href="mailto:dan@smashinvoices.com" className="text-brand hover:text-accent transition-colors inline-block">
                 <Mail size={20} />
               </a>
@@ -64,12 +64,12 @@ export function Founder() {
           </div>
         </div>
 
-        <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
-          <p className="text-2xl font-bold text-slate-800">
+        <div className="space-y-6 text-lg text-slate-700 leading-[1.15]">
+          <p className="text-2xl font-medium text-slate-800">
             Whether it's a leaky roof or a broken workflow—I'm obsessed with fixing things.
           </p>
 
-          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Story</h2>
+          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tighter">The Story</h2>
 
           <p>
             I'm a designer, an animator, and a product creator. But I'm also a professional handyman.
@@ -87,7 +87,7 @@ export function Founder() {
             For years, this was a massive frustration. I could go to a job, solve a complex structural problem, or design a beautiful product. But ask me to sit down and type out an invoice? I'd freeze. It was slow, painful, and honestly, I felt like it held me back.
           </p>
 
-          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tight">The Fix</h2>
+          <h2 className="text-3xl font-black text-brand mt-8 mb-4 tracking-tighter">The Fix</h2>
 
           <p>
             I'm the kind of person who can't leave a problem alone. It's just who I am. If I see a leaky roof, I have to patch it. If I see a process that wastes time, I have to improve it.
@@ -109,17 +109,17 @@ export function Founder() {
             I built it for me. Now I'm sharing it with you.
           </p>
 
-          <p className="text-base text-slate-600 font-semibold">
+          <p className="text-base text-slate-600 font-medium">
             Dan<br />
             Founder, SMASH Invoices & Good Hands Handyman
           </p>
 
-          <div className="bg-brand text-white rounded-brand p-8 mt-12">
-            <h3 className="text-2xl font-black mb-4 tracking-tight">Want to chat?</h3>
-            <p className="text-lg text-white/80 mb-6 leading-relaxed">
+          <div className="bg-brand text-white rounded-[32px] p-8 mt-12">
+            <h3 className="text-2xl font-black mb-4 tracking-tighter">Want to chat?</h3>
+            <p className="text-lg text-white/80 mb-6 leading-[1.15]">
               I'm always interested in hearing from people building businesses. If you have feedback, questions, or just want to talk about invoicing problems, reach out.
             </p>
-            <a href="mailto:dan@smashinvoices.com" className="inline-flex items-center gap-3 px-6 py-3 rounded-brand bg-accent text-accentText font-bold text-base uppercase tracking-wider hover:brightness-95 transition-all">
+            <a href="mailto:dan@smashinvoices.com" className="inline-flex items-center gap-3 px-6 py-3 rounded-[32px] bg-accent text-brand font-bold text-base uppercase tracking-wider hover:brightness-95 transition-all">
               <Mail size={20} />
               Get in touch
             </a>

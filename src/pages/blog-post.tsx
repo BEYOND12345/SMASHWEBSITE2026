@@ -153,7 +153,7 @@ export function BlogPost() {
               Back to Blog
             </Link>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
               {post.title}
             </h1>
 
@@ -200,7 +200,7 @@ export function BlogPost() {
             <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8 mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
-                  <span className="text-accentText font-black text-xl">✓</span>
+                  <span className="text-brand font-black text-xl">✓</span>
                 </div>
                 <h2 className="text-2xl font-black text-white">TL;DR - Key Takeaways</h2>
               </div>
@@ -208,7 +208,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                    <span className="text-white/90 leading-[1.15] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -220,25 +220,25 @@ export function BlogPost() {
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ children }) => (
-                  <h1 className="text-4xl font-black text-white mt-12 mb-6 tracking-tight">
+                  <h1 className="text-4xl font-black text-white mt-12 mb-6 tracking-tighter">
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
                   <div>
                     <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent my-12"></div>
-                    <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tight">
+                    <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tighter">
                       {children}
                     </h2>
                   </div>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="text-2xl font-bold text-white mt-8 mb-4 tracking-tight">
+                  <h3 className="text-2xl font-bold text-white mt-8 mb-4 tracking-tighter">
                     {children}
                   </h3>
                 ),
                 p: ({ children }) => (
-                  <p className="text-lg text-white/80 leading-relaxed mb-6">
+                  <p className="text-lg text-white/80 leading-[1.15] mb-6">
                     {children}
                   </p>
                 ),
@@ -253,7 +253,7 @@ export function BlogPost() {
                   </ol>
                 ),
                 li: ({ children }) => (
-                  <li className="text-lg leading-relaxed flex items-start gap-3">
+                  <li className="text-lg leading-[1.15] flex items-start gap-3">
                     <span className="text-accent font-bold mt-1 shrink-0">•</span>
                     <span className="flex-1">{children}</span>
                   </li>
@@ -337,7 +337,7 @@ export function BlogPost() {
             <div className="mt-16 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
-                  <span className="text-accentText font-black text-xl">✓</span>
+                  <span className="text-brand font-black text-xl">✓</span>
                 </div>
                 <h2 className="text-2xl font-black text-white">Key Takeaways</h2>
               </div>
@@ -345,7 +345,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                    <span className="text-white/90 leading-[1.15] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -361,7 +361,7 @@ export function BlogPost() {
                 </div>
                 <div>
                   <p className="font-bold text-white mb-1">{post.author}</p>
-                  <p className="text-white/70 text-sm leading-relaxed">{post.author_bio}</p>
+                  <p className="text-white/70 text-sm leading-[1.15]">{post.author_bio}</p>
                 </div>
               </div>
             </div>
@@ -379,15 +379,15 @@ export function BlogPost() {
               <h3 className="text-2xl font-black text-white mb-4">
                 Ready to Transform Your Invoicing?
               </h3>
-              <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                Stop fighting your software and start getting paid. Join the waitlist for SMASH
-                and experience invoicing built for how you actually work.
+              <p className="text-white/80 text-lg mb-6 leading-[1.15]">
+                Stop fighting your software and start getting paid. SMASH turns your voice into
+                professional invoices in under 60 seconds.
               </p>
               <Link
                 to="/#signup-form"
-                className="inline-block px-8 py-4 rounded-full bg-accent text-accentText font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
+                className="inline-block px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
               >
-                Join the Waitlist
+                Start Free
               </Link>
             </div>
           </div>

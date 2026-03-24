@@ -56,11 +56,11 @@ export function BlogPreview() {
     <section className="bg-slate-50 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 text-brand uppercase leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 text-brand uppercase leading-[0.88]">
             From the Blog
           </h2>
-          <p className="text-xl md:text-2xl text-slate-700 font-bold max-w-3xl mx-auto leading-snug mb-4">
-            Behind-the-scenes insights, invoicing tips, and workflow strategies for tradies who want to work smarter.
+          <p className="text-xl md:text-2xl text-slate-700 font-medium max-w-3xl mx-auto leading-[1.15] mb-4">
+            Behind-the-scenes insights, invoicing tips, and workflow strategies for service businesses.
           </p>
           <Link
             to="/blog"
@@ -90,10 +90,10 @@ export function BlogPreview() {
                   <Clock size={16} strokeWidth={2.5} />
                   <span>{post.reading_time} min read</span>
                 </div>
-                <h3 className="text-xl font-black text-brand mb-3 leading-tight group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-black text-brand mb-3 leading-[0.88] group-hover:text-accent transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-slate-600 font-medium leading-relaxed line-clamp-3">
+                <p className="text-slate-600 font-medium leading-[1.15] line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-brand font-bold group-hover:text-accent transition-colors">
