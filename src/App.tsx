@@ -7,6 +7,7 @@ import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
 import { BlogEditor } from './pages/admin/blog-editor';
+import { Privacy } from './pages/privacy';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="/admin/blog" element={<BlogAdmin />} />
         <Route path="/admin/blog/:id" element={<BlogEditor />} />
         <Route path="*" element={<Navigate to="/" replace />} />

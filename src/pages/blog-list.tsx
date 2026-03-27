@@ -172,7 +172,7 @@ export function BlogList() {
               <div>
                 <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Legal</h3>
                 <ul className="space-y-3">
-                  <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Privacy Policy</a></li>
+                  <li><Link to="/privacy" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Privacy Policy</Link></li>
                   <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Terms of Service</a></li>
                 </ul>
               </div>
@@ -184,7 +184,7 @@ export function BlogList() {
                   <li><Link to="/" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Home</Link></li>
                   <li><Link to="/blog" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Blog</Link></li>
                   <li><Link to="/founder" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Meet the Founder</Link></li>
-                  <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Privacy</a></li>
+                  <li><Link to="/privacy" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Privacy</Link></li>
                   <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Terms</a></li>
                 </ul>
               </nav>

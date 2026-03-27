@@ -54,6 +54,7 @@ async function generateSitemap() {
     { loc: '/founder', lastmod: today, changefreq: 'monthly', priority: '0.7' },
     { loc: '/how-it-works', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/faq', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: '0.3' },
   ];
 
   const blogPages = posts?.map(post => ({
