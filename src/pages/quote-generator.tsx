@@ -3,8 +3,9 @@ import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown, Star, Quote as QuoteIcon, Plus, Trash2 } from 'lucide-react';
+import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown, Star, Quote as QuoteIcon, Plus, Trash2, Mail } from 'lucide-react';
 import { useState, useRef } from 'react';
+import { supabase } from '../lib/supabase';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -121,7 +122,9 @@ function QuoteBuilder() {
     { id: 2, description: 'Materials', qty: '1', rate: '120', gst: true },
   ]);
   const [notes, setNotes] = useState('This quote is valid for 30 days. Prices include GST where indicated.');
-  const [sent, setSent] = useState(false);
+  const [step, setStep] = useState<'idle' | 'capture' | 'done'>('idle');
+  const [leadEmail, setLeadEmail] = useState('');
+  const [submitting, setSubmitting] = useState(false);
   const nextId = useRef(3);
 
   const addItem = () => {
@@ -148,6 +151,25 @@ function QuoteBuilder() {
   const total = subtotal + gstAmount;
   const fmt = (n: number) => n.toFixed(2);
   const today = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadEmail) return;
+    setSubmitting(true);
+    try {
+      await supabase.from('leads').insert({
+        email: leadEmail,
+        source: 'quote_generator',
+        business_name: businessName !== 'Your Business Name' ? businessName : null,
+        total_value: total,
+        created_at: new Date().toISOString(),
+      });
+    } catch (_) {
+      // silently ignore — don't block the user experience
+    }
+    setSubmitting(false);
+    setStep('done');
+  };
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
@@ -340,25 +362,77 @@ function QuoteBuilder() {
         </div>
 
         <div className="mt-4 space-y-3">
-          {sent ? (
-            <div className="bg-accent rounded-[16px] p-5 text-center">
-              <p className="font-black text-base text-brand uppercase tracking-tighter mb-1">Now imagine doing that in 60 seconds by voice.</p>
-              <p className="font-body text-sm text-brand/70 font-medium mb-4">SMASH builds this from a voice description — no typing at all. Free to download.</p>
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all">
-                Download Free <ArrowRight size={14} strokeWidth={2.5} />
-              </a>
-            </div>
-          ) : (
-            <button onClick={() => setSent(true)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-[16px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all">
-              <Send size={15} strokeWidth={2.5} />
-              Send Quote (Preview)
-            </button>
+          {step === 'idle' && (
+            <>
+              <button
+                onClick={() => setStep('capture')}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-[16px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+              >
+                <Send size={15} strokeWidth={2.5} />
+                Send Quote
+              </button>
+              <p className="text-center font-body text-xs text-brand/35 font-medium">
+                Want real quotes from voice in 60 seconds? <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">Download SMASH</a>
+              </p>
+            </>
           )}
-          <p className="text-center font-body text-xs text-brand/35 font-medium">
-            Want real quotes sent instantly from voice? <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">Download SMASH</a>
-          </p>
+
+          {step === 'capture' && (
+            <div className="bg-surface rounded-[16px] border-2 border-border p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Mail size={16} className="text-accent" strokeWidth={2.5} />
+                <p className="font-black text-sm uppercase tracking-tighter text-brand">Where should we send your copy?</p>
+              </div>
+              <p className="font-body text-xs font-medium text-brand/55 mb-4 leading-[1.5]">
+                Enter your email and we'll send you a copy of this quote — plus how to build quotes like this in 60 seconds by voice.
+              </p>
+              <form onSubmit={handleEmailSubmit} className="space-y-3">
+                <input
+                  type="email"
+                  value={leadEmail}
+                  onChange={e => setLeadEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                  className="w-full px-4 py-3 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white placeholder:text-brand/30"
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all disabled:opacity-60"
+                >
+                  {submitting ? 'Sending...' : <><Send size={14} strokeWidth={2.5} /> Send me a copy</>}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setStep('idle')}
+                  className="w-full text-center font-body text-xs font-medium text-brand/35 hover:text-brand/60 transition-colors py-1"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          )}
+
+          {step === 'done' && (
+            <div className="bg-accent rounded-[16px] p-6 text-center">
+              <p className="font-black text-base text-brand uppercase tracking-tighter mb-1">
+                ✓ Sent to {leadEmail}
+              </p>
+              <p className="font-body text-sm text-brand/70 font-medium mb-4">
+                Now imagine building that quote in 60 seconds — just by talking. No typing. No form. That's SMASH.
+              </p>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+              >
+                Download Free
+                <ArrowRight size={14} strokeWidth={2.5} />
+              </a>
+              <p className="font-body text-xs font-medium text-brand/45 mt-3">No credit card · Free to start</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
