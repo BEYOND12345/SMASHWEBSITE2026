@@ -14,6 +14,13 @@ import { GstCompliantInvoicing } from './pages/gst-compliant-invoicing';
 import { InvoiceOnMobile } from './pages/invoice-on-mobile';
 import { Roadmap } from './pages/roadmap';
 import { Changelog } from './pages/changelog';
+
+// Comparison pages
+import { SmashVsXero } from './pages/smash-vs-xero';
+import { SmashVsMyob } from './pages/smash-vs-myob';
+import { SmashVsServiceM8 } from './pages/smash-vs-servicem8';
+import { SmashVsQuickBooks } from './pages/smash-vs-quickbooks';
+import { SmashVsFergus } from './pages/smash-vs-fergus';
 import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
@@ -61,6 +68,13 @@ function App() {
         <Route path="/invoice-on-mobile" element={<InvoiceOnMobile />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/changelog" element={<Changelog />} />
+
+        {/* Comparison pages */}
+        <Route path="/smash-vs-xero" element={<SmashVsXero />} />
+        <Route path="/smash-vs-myob" element={<SmashVsMyob />} />
+        <Route path="/smash-vs-servicem8" element={<SmashVsServiceM8 />} />
+        <Route path="/smash-vs-quickbooks" element={<SmashVsQuickBooks />} />
+        <Route path="/smash-vs-fergus" element={<SmashVsFergus />} />
 
         {/* Segment pages */}
         <Route path="/for-cleaners" element={<ForCleaners />} />
