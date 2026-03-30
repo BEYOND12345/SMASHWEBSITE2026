@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
-import { Check, X, ChevronDown } from 'lucide-react';
+import { Check, X, ChevronDown, Wrench, Zap, Users } from 'lucide-react';
 import { useState } from 'react';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
@@ -227,7 +227,7 @@ export function Pricing() {
             <div className="rounded-[32px] border-2 border-accent bg-white p-6 sm:p-8 flex flex-col relative">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="bg-accent text-brand font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap">
-                  ⭐ Most Popular
+                  Most Popular
                 </span>
               </div>
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-2">Pro</h3>
@@ -328,7 +328,7 @@ export function Pricing() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-surface rounded-[32px] p-8 border-2 border-border">
-              <div className="text-4xl mb-4">🔨</div>
+              <Wrench size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Just starting out</h3>
               <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
                 Use the Free plan. Two quotes a month to try SMASH and see if it sticks. No card, no commitment.
@@ -338,7 +338,7 @@ export function Pricing() {
               </span>
             </div>
             <div className="bg-surface rounded-[32px] p-8 border-2 border-accent">
-              <div className="text-4xl mb-4">⚡</div>
+              <Zap size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Sole trader, always on the go</h3>
               <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
                 You're quoting multiple jobs a week. You need invoices paid fast. Starter or Pro will pay for itself after one job.
@@ -348,7 +348,7 @@ export function Pricing() {
               </span>
             </div>
             <div className="bg-surface rounded-[32px] p-8 border-2 border-border">
-              <div className="text-4xl mb-4">🏗️</div>
+              <Users size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Running a team</h3>
               <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
                 Multiple people quoting and invoicing. You need visibility, branding, and accounting integration. That's Unlimited.

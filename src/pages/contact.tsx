@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
+import { Bug, MessageSquare, CreditCard, Users, Newspaper } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -114,14 +115,14 @@ export function Contact() {
                 </h2>
                 <ul className="space-y-4">
                   {[
-                    { emoji: "🐛", title: "Something's broken", desc: "If something in the app isn't working as expected, tell us and we'll fix it fast." },
-                    { emoji: "💬", title: "Feedback", desc: "Built by a working handyman. Honest feedback from real users shapes every update." },
-                    { emoji: "💳", title: "Billing questions", desc: "Charges, cancellations, refunds — email us and we'll sort it out." },
-                    { emoji: "🤝", title: "Partnerships", desc: "Trade associations, industry groups, referral arrangements. Dan reads every email." },
-                    { emoji: "📰", title: "Press", desc: "Writing about SMASH or covering the space? Get in touch for comment or assets." },
+                    { icon: Bug, title: "Something's broken", desc: "If something in the app isn't working as expected, tell us and we'll fix it fast." },
+                    { icon: MessageSquare, title: "Feedback", desc: "Built by a working handyman. Honest feedback from real users shapes every update." },
+                    { icon: CreditCard, title: "Billing questions", desc: "Charges, cancellations, refunds — email us and we'll sort it out." },
+                    { icon: Users, title: "Partnerships", desc: "Trade associations, industry groups, referral arrangements. Dan reads every email." },
+                    { icon: Newspaper, title: "Press", desc: "Writing about SMASH or covering the space? Get in touch for comment or assets." },
                   ].map((item) => (
                     <li key={item.title} className="flex gap-4">
-                      <span className="text-2xl shrink-0">{item.emoji}</span>
+                      <item.icon size={22} className="shrink-0 mt-0.5 text-accent" strokeWidth={2} />
                       <div>
                         <p className="font-bold text-brand text-sm uppercase tracking-wide">{item.title}</p>
                         <p className="text-brand/60 font-medium text-sm leading-[1.15] mt-1">{item.desc}</p>
