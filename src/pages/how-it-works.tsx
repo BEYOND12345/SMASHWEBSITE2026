@@ -8,6 +8,7 @@ import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { ListeningScreen } from '../components/listening-screen';
 import { GeneratingScreen } from '../components/generating-screen';
 import { InlineCTA } from '../components/inline-cta';
+import { AnimateIn } from '../components/animate-in';
 
 export function HowItWorks() {
   const howToSchema = {
@@ -95,26 +96,31 @@ export function HowItWorks() {
         {/* HERO */}
         <section className="bg-brand text-white py-16 md:py-20 lg:py-32">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] mb-6 md:mb-8 uppercase tracking-tighter">
-              How SMASH Works
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.15] mb-8 md:mb-12">
-              From finished job to paid invoice. In under 60 seconds. No typing.
-            </p>
+            <AnimateIn direction="up">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] mb-6 md:mb-8 uppercase tracking-tighter">
+                How SMASH Works
+              </h1>
+              <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.5] mb-8 md:mb-12">
+                From finished job to paid invoice. In under 60 seconds. No typing.
+              </p>
+            </AnimateIn>
           </div>
         </section>
 
         {/* VIDEO DEMO */}
         <section className="py-10 md:py-14 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand mb-4 md:mb-6 leading-[0.88] uppercase tracking-tighter">
-                See It In Action
-              </h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-700 font-medium max-w-3xl mx-auto leading-[1.15]">
-                Watch how SMASH turns voice into a professional invoice in under 60 seconds
-              </p>
-            </div>
+            <AnimateIn direction="up">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand mb-4 md:mb-6 leading-[0.88] uppercase tracking-tighter">
+                  See It In Action
+                </h2>
+                <p className="font-body text-lg sm:text-xl md:text-2xl text-slate-700 font-medium max-w-3xl mx-auto leading-[1.5]">
+                  Watch how SMASH turns voice into a professional invoice in under 60 seconds
+                </p>
+              </div>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={100}>
             <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
               <iframe
                 className="absolute inset-0 w-full h-full"
@@ -125,6 +131,7 @@ export function HowItWorks() {
                 allowFullScreen
               />
             </div>
+            </AnimateIn>
           </div>
         </section>
 
@@ -134,7 +141,7 @@ export function HowItWorks() {
           imagePosition="right"
           title="STEP 1. TALK ABOUT THE JOB"
           description={
-            <p>
+            <p className="font-body leading-[1.5]">
               Tap the mic and describe the work. Talk naturally — what you did, materials used, time spent. No scripts, no special commands. Just talk like you'd explain the job to a mate.
             </p>
           }
@@ -159,7 +166,7 @@ export function HowItWorks() {
           imagePosition="left"
           title="STEP 2. SMASH BUILDS YOUR QUOTE"
           description={
-            <p>
+            <p className="font-body leading-[1.5]">
               SMASH takes what you said and turns it into a professional, itemised quote — priced the way you price. Your rates. Your job types. Your style. From your very first quote.
             </p>
           }
@@ -190,7 +197,7 @@ export function HowItWorks() {
           imagePosition="right"
           title="STEP 3. SEND IT. WATCH IT."
           description={
-            <p>
+            <p className="font-body leading-[1.5]">
               One tap to send via SMS or email. Your customer gets a professional quote on their phone. You'll know the second they open it — no more "I never got it."
             </p>
           }
@@ -218,7 +225,7 @@ export function HowItWorks() {
           imagePosition="left"
           title="STEP 4. GET PAID. MOVE ON."
           description={
-            <p>
+            <p className="font-body leading-[1.5]">
               Customer approves with one tap and pays right there and then. Quote becomes invoice automatically. Money in your account — not in two weeks, not after chasing. Done.
             </p>
           }
@@ -240,22 +247,24 @@ export function HowItWorks() {
         {/* CLOSING CTA */}
         <section className="py-14 md:py-20 lg:py-32 bg-brand text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 leading-[0.88] uppercase tracking-tighter">
-              That's it. Seriously.
-            </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium mb-8 md:mb-12 max-w-3xl mx-auto leading-[1.15]">
-              From job completion to money in the bank. Under 60 seconds of work. No typing. No spreadsheets. No waiting.
-            </p>
-            <Link
-              to="/#signup-form"
-              className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-[32px] bg-accent text-brand font-black text-base sm:text-lg uppercase tracking-wide hover:brightness-95 transition-all shadow-glow"
-            >
-              Start Free
-              <ArrowRight size={24} strokeWidth={3} />
-            </Link>
-            <p className="text-sm text-white/50 font-medium mt-4">
-              No credit card required.
-            </p>
+            <AnimateIn direction="up">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 leading-[0.88] uppercase tracking-tighter">
+                That's it. Seriously.
+              </h2>
+              <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium mb-8 md:mb-12 max-w-3xl mx-auto leading-[1.5]">
+                From job completion to money in the bank. Under 60 seconds of work. No typing. No spreadsheets. No waiting.
+              </p>
+              <Link
+                to="/#signup-form"
+                className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-[32px] bg-accent text-brand font-black text-base sm:text-lg uppercase tracking-wide hover:brightness-95 transition-all shadow-glow"
+              >
+                Start Free
+                <ArrowRight size={24} strokeWidth={3} />
+              </Link>
+              <p className="text-sm text-white/50 font-medium mt-4">
+                No credit card required.
+              </p>
+            </AnimateIn>
           </div>
         </section>
 

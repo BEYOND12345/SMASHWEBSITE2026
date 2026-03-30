@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { Bug, MessageSquare, CreditCard, Users, Newspaper } from 'lucide-react';
+import { AnimateIn } from '../components/animate-in';
 
 export function Contact() {
   return (
@@ -42,12 +43,14 @@ export function Contact() {
       {/* HEADER */}
       <section className="bg-brand py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
-            Get in touch.
-          </h1>
-          <p className="text-lg text-white/70 font-medium leading-[1.15] max-w-xl">
-            Built by one person. Which means you're talking directly to the person who built it.
-          </p>
+          <AnimateIn direction="up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
+              Get in touch.
+            </h1>
+            <p className="font-body text-lg text-white/70 font-medium leading-[1.5] max-w-xl">
+              Built by one person. Which means you're talking directly to the person who built it.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
@@ -57,6 +60,7 @@ export function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
             {/* LEFT — contact details */}
+            <AnimateIn direction="left">
             <div className="space-y-6">
               <div className="bg-white rounded-[32px] border-2 border-border p-8">
                 <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
@@ -68,7 +72,7 @@ export function Contact() {
                 >
                   dan@smashinvoices.com
                 </a>
-                <p className="text-brand/60 font-medium text-sm mt-3 leading-[1.15]">
+                <p className="font-body text-brand/60 font-medium text-sm mt-3 leading-[1.5]">
                   We aim to respond within one business day.
                 </p>
               </div>
@@ -90,7 +94,7 @@ export function Contact() {
                 <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
                   Before you email
                 </h2>
-                <p className="text-brand/60 font-medium text-sm leading-[1.15] mb-4">
+                <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mb-4">
                   Your question might already be answered:
                 </p>
                 <div className="space-y-2">
@@ -107,7 +111,10 @@ export function Contact() {
               </div>
             </div>
 
+            </AnimateIn>
+
             {/* RIGHT — reasons to contact */}
+            <AnimateIn direction="right">
             <div className="space-y-6">
               <div className="bg-white rounded-[32px] border-2 border-border p-8">
                 <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
@@ -125,7 +132,7 @@ export function Contact() {
                       <item.icon size={22} className="shrink-0 mt-0.5 text-accent" strokeWidth={2} />
                       <div>
                         <p className="font-bold text-brand text-sm uppercase tracking-wide">{item.title}</p>
-                        <p className="text-brand/60 font-medium text-sm leading-[1.15] mt-1">{item.desc}</p>
+                        <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mt-1">{item.desc}</p>
                       </div>
                     </li>
                   ))}
@@ -136,7 +143,7 @@ export function Contact() {
                 <h2 className="text-xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-3">
                   Just want to try it?
                 </h2>
-                <p className="text-white/70 font-medium text-sm leading-[1.15] mb-6">
+                <p className="font-body text-white/70 font-medium text-sm leading-[1.5] mb-6">
                   Free to download. No credit card. Talk for 30 seconds and see your first quote.
                 </p>
                 <Link
@@ -148,6 +155,7 @@ export function Contact() {
               </div>
             </div>
 
+          </AnimateIn>
           </div>
         </div>
       </section>

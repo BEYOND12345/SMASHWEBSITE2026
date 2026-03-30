@@ -5,6 +5,7 @@ import { StructuredData } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
 import { ListeningScreen } from '../components/listening-screen';
+import { AnimateIn } from '../components/animate-in';
 
 export function Founder() {
   return (
@@ -69,13 +70,15 @@ export function Founder() {
         </nav>
 
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 md:pb-16">
-          <p className="text-sm font-black text-accent uppercase tracking-widest mb-4">Meet the Founder</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.88] uppercase tracking-tighter mb-6">
-            Built by Someone<br />Who Gets It.
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.15] max-w-2xl">
-            A working handyman who couldn't type fast enough to keep up with the jobs.
-          </p>
+          <AnimateIn direction="up">
+            <p className="text-sm font-black text-accent uppercase tracking-widest mb-4">Meet the Founder</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.88] uppercase tracking-tighter mb-6">
+              Built by Someone<br />Who Gets It.
+            </h1>
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl">
+              A working handyman who couldn't type fast enough to keep up with the jobs.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
@@ -99,19 +102,20 @@ export function Founder() {
 
       {/* THE STORY */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
-        <div className="space-y-6 text-lg text-slate-700 leading-[1.15]">
+        <AnimateIn direction="up">
+        <div className="space-y-6 text-lg text-slate-700 leading-[1.5]">
 
           <h2 className="text-3xl sm:text-4xl font-black text-brand tracking-tighter leading-[0.88] uppercase">The Story</h2>
 
-          <p>
+          <p className="font-body">
             I'm a designer, an animator, and a product creator. But I'm also a professional handyman.
           </p>
 
-          <p>
+          <p className="font-body">
             I know what it's like to be on the tools because I'm still on them. I run <a href="https://www.goodhandshandyman.com.au" target="_blank" rel="noopener noreferrer" className="text-brand hover:text-accent font-bold transition-colors">Good Hands Handyman</a>. I'm legit. I know the grind.
           </p>
 
-          <p>
+          <p className="font-body">
             But here is the other side of the coin: I'm dyslexic. If you don't know, that basically means I'm pretty crap at reading and writing. I've always been better with my hands.
           </p>
 
@@ -123,25 +127,25 @@ export function Founder() {
             <p className="text-sm text-white/50 font-bold mt-4 uppercase tracking-wider">— Dan, on why voice changes everything</p>
           </div>
 
-          <p>
+          <p className="font-body">
             For years, this was a massive frustration. I could go to a job, solve a complex structural problem, or design a beautiful product. But ask me to sit down and type out an invoice? I'd freeze.
           </p>
 
           <h2 className="text-3xl sm:text-4xl font-black text-brand tracking-tighter leading-[0.88] uppercase pt-4">The Fix</h2>
 
-          <p>
+          <p className="font-body">
             I'm the kind of person who can't leave a problem alone. It's just who I am. If I see a leaky roof, I have to patch it. If I see a process that wastes time, I have to improve it.
           </p>
 
-          <p>
+          <p className="font-body">
             I realized that my "weakness" with typing was actually an opportunity. Why are we forcing people who are masters of verbal communication and hands-on work to act like office clerks?
           </p>
 
-          <p>
+          <p className="font-body">
             I used my background in design and tech to build the tool I personally needed.
           </p>
 
-          <p>
+          <p className="font-body">
             SMASH Invoices isn't just an app. It's my solution to the biggest headache in the trade. It allows you to use your voice to get the job done. It's accurate, and it lets you get back to doing what you're good at.
           </p>
 
@@ -149,23 +153,25 @@ export function Founder() {
             I built it for me. Now I'm sharing it with you.
           </p>
 
-          <p className="text-base text-slate-500 font-medium">
+          <p className="font-body text-base text-slate-500 font-medium">
             Dan<br />
             Founder, SMASH Invoices & Good Hands Handyman
           </p>
         </div>
+        </AnimateIn>
       </section>
 
       {/* SEE THE PRODUCT */}
       <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+            <AnimateIn direction="left">
             <div>
               <p className="text-sm font-black text-accent uppercase tracking-widest mb-4">The Product</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand tracking-tighter leading-[0.88] uppercase mb-6">
                 This Is What I Built.
               </h2>
-              <p className="text-lg text-slate-700 font-medium leading-[1.15] mb-8">
+              <p className="font-body text-lg text-slate-700 font-medium leading-[1.5] mb-8">
                 Tap the mic. Describe the job. SMASH builds the quote, sends it to the customer, and gets you paid — before you've left the driveway.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -184,20 +190,24 @@ export function Founder() {
                 </Link>
               </div>
             </div>
+            </AnimateIn>
+            <AnimateIn direction="right">
             <div className="flex justify-center scale-[0.65] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100">
               <PhoneMockup>
                 <ListeningScreen />
               </PhoneMockup>
             </div>
+            </AnimateIn>
           </div>
         </div>
       </section>
 
       {/* WANT TO CHAT */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
+        <AnimateIn direction="up">
         <div className="bg-brand text-white rounded-[32px] p-6 sm:p-8 md:p-12">
           <h3 className="text-2xl sm:text-3xl font-black mb-4 tracking-tighter leading-[0.88]">Want to chat?</h3>
-          <p className="text-base sm:text-lg text-white/80 mb-6 leading-[1.15]">
+          <p className="font-body text-base sm:text-lg text-white/80 mb-6 leading-[1.5]">
             I'm always interested in hearing from people building businesses. If you have feedback, questions, or just want to talk about invoicing problems, reach out.
           </p>
           <a href="mailto:dan@smashinvoices.com" className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
@@ -205,6 +215,7 @@ export function Founder() {
             Get in Touch
           </a>
         </div>
+        </AnimateIn>
       </section>
 
       <Footer />

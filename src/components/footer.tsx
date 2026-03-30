@@ -92,7 +92,24 @@ export function Footer({ showCTA = false }: FooterProps) {
             </ul>
             <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Industries</h3>
             <ul className="space-y-3">
-              <li><Link to="/for-plumbers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">View all industries →</Link></li>
+              <li><Link to="/for-cleaners" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Cleaners</Link></li>
+              <li><Link to="/for-plumbers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Plumbers</Link></li>
+              <li><Link to="/for-electricians" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Electricians</Link></li>
+              <li><Link to="/for-handymen" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Handymen</Link></li>
+              <li><Link to="/for-painters" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Painters</Link></li>
+              <li><Link to="/for-mobile-mechanics" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Mobile Mechanics</Link></li>
+              <li><Link to="/for-gardeners" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Gardeners</Link></li>
+              <li><Link to="/for-hvac" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">HVAC & Air Con</Link></li>
+              <li><Link to="/for-concreters" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Concreters</Link></li>
+              <li><Link to="/for-pest-control" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Pest Control</Link></li>
+              <li><Link to="/for-tilers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Tilers</Link></li>
+              <li><Link to="/for-arborists" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Arborists</Link></li>
+              <li><Link to="/for-locksmiths" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Locksmiths</Link></li>
+              <li><Link to="/for-car-detailers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Car Detailers</Link></li>
+              <li><Link to="/for-dog-groomers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Dog Groomers</Link></li>
+              <li><Link to="/for-pool-maintenance" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Pool Maintenance</Link></li>
+              <li><Link to="/for-solar-installers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Solar Installers</Link></li>
+              <li><Link to="/for-rubbish-removal" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Rubbish Removal</Link></li>
             </ul>
             <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Contact</h3>
             <ul className="space-y-3">

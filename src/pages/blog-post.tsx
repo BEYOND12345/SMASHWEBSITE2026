@@ -8,6 +8,7 @@ import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
+import { AnimateIn } from '../components/animate-in';
 
 interface BlogPost {
   id: string;
@@ -65,7 +66,7 @@ export function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
+      <div className="min-h-screen bg-brand flex items-center justify-center">
         <div className="text-white/60">Loading...</div>
       </div>
     );
@@ -73,7 +74,7 @@ export function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-brand flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-white mb-4">Post Not Found</h1>
         <Link to="/blog" className="text-accent hover:underline">
           Back to Blog
@@ -127,8 +128,8 @@ export function BlogPost() {
         <StructuredData data={createFAQSchema(post.faq_data)} />
       )}
 
-      <div className="min-h-screen bg-[#0A0A0A]">
-        <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
+      <div className="min-h-screen bg-brand">
+        <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
             <Link to="/" className="text-xl font-black tracking-tight text-white">
               SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
@@ -144,6 +145,7 @@ export function BlogPost() {
         </nav>
 
         <article className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
+          <AnimateIn direction="up">
           <header className="mb-12">
             <Link
               to="/blog"
@@ -195,6 +197,7 @@ export function BlogPost() {
               </div>
             )}
           </header>
+          </AnimateIn>
 
           {post.key_takeaways && post.key_takeaways.length > 0 && (
             <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8 mb-12">
@@ -208,7 +211,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-[1.15] font-medium">{takeaway}</span>
+                    <span className="font-body text-white/90 leading-[1.5] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -238,7 +241,7 @@ export function BlogPost() {
                   </h3>
                 ),
                 p: ({ children }) => (
-                  <p className="text-lg text-white/80 leading-[1.15] mb-6">
+                  <p className="font-body text-lg text-white/80 leading-[1.6] mb-6">
                     {children}
                   </p>
                 ),
@@ -345,7 +348,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-[1.15] font-medium">{takeaway}</span>
+                    <span className="font-body text-white/90 leading-[1.5] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -361,7 +364,7 @@ export function BlogPost() {
                 </div>
                 <div>
                   <p className="font-bold text-white mb-1">{post.author}</p>
-                  <p className="text-white/70 text-sm leading-[1.15]">{post.author_bio}</p>
+                  <p className="font-body text-white/70 text-sm leading-[1.5]">{post.author_bio}</p>
                 </div>
               </div>
             </div>
@@ -379,7 +382,7 @@ export function BlogPost() {
               <h3 className="text-2xl font-black text-white mb-4">
                 Ready to Transform Your Invoicing?
               </h3>
-              <p className="text-white/80 text-lg mb-6 leading-[1.15]">
+              <p className="font-body text-white/80 text-lg mb-6 leading-[1.5]">
                 Stop fighting your software and start getting paid. SMASH turns your voice into
                 professional invoices in under 60 seconds.
               </p>

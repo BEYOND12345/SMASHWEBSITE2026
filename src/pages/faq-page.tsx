@@ -4,6 +4,7 @@ import { StructuredData, createFAQSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { AnimateIn } from '../components/animate-in';
 
 const faqs = [
   {
@@ -137,7 +138,7 @@ function FAQItem({ question, answer, isOpen, onClick }: { question: string; answ
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="text-white/80 leading-[1.15]">{answer}</p>
+          <p className="font-body text-white/80 leading-[1.5]">{answer}</p>
         </div>
       )}
     </div>
@@ -202,12 +203,14 @@ export function FAQPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
           </div>
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.15] max-w-2xl">
-              Everything you need to know about voice-to-invoice software and how SMASH works.
-            </p>
+            <AnimateIn direction="up">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
+                Frequently Asked Questions
+              </h1>
+              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl">
+                Everything you need to know about voice-to-invoice software and how SMASH works.
+              </p>
+            </AnimateIn>
           </div>
         </section>
 
@@ -215,33 +218,36 @@ export function FAQPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
 
             {faqs.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="mb-12 md:mb-16">
-                <h2 className="text-2xl sm:text-3xl font-black text-accent mb-6 md:mb-8 uppercase tracking-tighter leading-[0.88]">
-                  {category.category}
-                </h2>
-                <div className="bg-white/5 rounded-2xl px-4 sm:px-8 py-2 sm:py-4">
-                  {category.questions.map((faq, questionIndex) => {
-                    const key = `${categoryIndex}-${questionIndex}`;
-                    return (
-                      <FAQItem
-                        key={key}
-                        question={faq.question}
-                        answer={faq.answer}
-                        isOpen={openIndex === key}
-                        onClick={() => setOpenIndex(openIndex === key ? null : key)}
-                      />
-                    );
-                  })}
+              <AnimateIn key={categoryIndex} direction="up" delay={categoryIndex * 100 > 200 ? 200 : categoryIndex * 100}>
+                <div className="mb-12 md:mb-16">
+                  <h2 className="text-2xl sm:text-3xl font-black text-accent mb-6 md:mb-8 uppercase tracking-tighter leading-[0.88]">
+                    {category.category}
+                  </h2>
+                  <div className="bg-white/5 rounded-2xl px-4 sm:px-8 py-2 sm:py-4">
+                    {category.questions.map((faq, questionIndex) => {
+                      const key = `${categoryIndex}-${questionIndex}`;
+                      return (
+                        <FAQItem
+                          key={key}
+                          question={faq.question}
+                          answer={faq.answer}
+                          isOpen={openIndex === key}
+                          onClick={() => setOpenIndex(openIndex === key ? null : key)}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
 
             {/* BLOG INTERLINK */}
+            <AnimateIn direction="up">
             <div className="mt-16 md:mt-20 mb-12 md:mb-16 bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10">
               <h3 className="text-xl sm:text-2xl font-black text-white mb-3 tracking-tighter leading-[0.88]">
                 Want to learn more?
               </h3>
-              <p className="text-white/70 font-medium leading-[1.15] mb-5">
+              <p className="font-body text-white/70 font-medium leading-[1.5] mb-5">
                 Read real-world invoicing tips and workflow strategies on the SMASH blog.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -261,12 +267,14 @@ export function FAQPage() {
                 </Link>
               </div>
             </div>
+            </AnimateIn>
 
+            <AnimateIn direction="up" delay={100}>
             <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-[32px] p-6 sm:p-8 md:p-12 border border-accent/20">
               <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 tracking-tighter leading-[0.88]">
                 Just gotta try it.
               </h3>
-              <p className="text-white/80 text-base sm:text-lg mb-6 leading-[1.15]">
+              <p className="font-body text-white/80 text-base sm:text-lg mb-6 leading-[1.5]">
                 Free to start. No card. No setup. Talk for 30 seconds and see what happens.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -284,6 +292,7 @@ export function FAQPage() {
                 </Link>
               </div>
             </div>
+            </AnimateIn>
           </div>
         </section>
 

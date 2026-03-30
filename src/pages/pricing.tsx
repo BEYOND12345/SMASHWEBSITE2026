@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
+import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Wrench, Zap, Users } from 'lucide-react';
 import { useState } from 'react';
 
@@ -49,7 +50,7 @@ function FAQItem({ question, answer, isOpen, onClick }: { question: string; answ
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="text-brand/70 font-medium leading-[1.15]">{answer}</p>
+          <p className="font-body text-brand/70 font-medium leading-[1.6]">{answer}</p>
         </div>
       )}
     </div>
@@ -126,11 +127,11 @@ export function Pricing() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
             Stop leaving money<br />on the table.
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.15] max-w-2xl mx-auto mb-4">
+          <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.4] max-w-2xl mx-auto mb-4">
             The average tradie loses <span className="text-accent font-black">$8,684/year</span> in uninvoiced work.
             SMASH costs less than a slab.
           </p>
-          <p className="text-base text-white/60 font-medium">
+          <p className="font-body text-base text-white/60 font-medium">
             Free to start. No credit card required.
           </p>
         </div>
@@ -139,12 +140,12 @@ export function Pricing() {
       {/* PRICING CARDS */}
       <section className="bg-surface py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <AnimateIn direction="up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
 
             {/* FREE */}
             <div className="rounded-[32px] border-2 border-border bg-white p-6 sm:p-8 flex flex-col">
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-2">Free</h3>
-              <p className="text-brand/60 font-medium text-sm leading-[1.15] mb-6">
+              <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mb-6">
                 Dip your toe in. No strings.
               </p>
               <div className="mb-6">
@@ -163,19 +164,19 @@ export function Pricing() {
               <ul className="space-y-3 mt-auto">
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">2 quotes per month</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">2 quotes per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Voice-to-quote</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Voice-to-quote</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Professional quote PDF</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Professional quote PDF</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Customer quote link</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Customer quote link</span>
                 </li>
               </ul>
             </div>
@@ -183,7 +184,7 @@ export function Pricing() {
             {/* STARTER */}
             <div className="rounded-[32px] border-2 border-border bg-white p-6 sm:p-8 flex flex-col">
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-2">Starter</h3>
-              <p className="text-brand/60 font-medium text-sm leading-[1.15] mb-6">
+              <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mb-6">
                 For sole traders getting serious.
               </p>
               <div className="mb-6">
@@ -202,23 +203,23 @@ export function Pricing() {
               <ul className="space-y-3 mt-auto">
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">20 quotes per month</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">20 quotes per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Unlimited invoices</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Unlimited invoices</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Quote-to-invoice conversion</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Quote-to-invoice conversion</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Payment collection via Stripe</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Payment collection via Stripe</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Read receipts</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Read receipts</span>
                 </li>
               </ul>
             </div>
@@ -231,7 +232,7 @@ export function Pricing() {
                 </span>
               </div>
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-2">Pro</h3>
-              <p className="text-brand/60 font-medium text-sm leading-[1.15] mb-6">
+              <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mb-6">
                 For busy tradies who mean business.
               </p>
               <div className="mb-6">
@@ -250,23 +251,23 @@ export function Pricing() {
               <ul className="space-y-3 mt-auto">
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">35 quotes per month</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">35 quotes per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Everything in Starter</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Everything in Starter</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Custom branding</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Custom branding</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Priority support</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Priority support</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Advanced reporting</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Advanced reporting</span>
                 </li>
               </ul>
             </div>
@@ -274,7 +275,7 @@ export function Pricing() {
             {/* UNLIMITED */}
             <div className="rounded-[32px] border-2 border-border bg-white p-6 sm:p-8 flex flex-col">
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-2">Unlimited</h3>
-              <p className="text-brand/60 font-medium text-sm leading-[1.15] mb-6">
+              <p className="font-body text-brand/60 font-medium text-sm leading-[1.5] mb-6">
                 For teams that never stop quoting.
               </p>
               <div className="mb-6">
@@ -293,27 +294,27 @@ export function Pricing() {
               <ul className="space-y-3 mt-auto">
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Unlimited quotes</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Unlimited quotes</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Everything in Pro</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Everything in Pro</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Multi-user access</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Multi-user access</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Accounting integration (coming soon)</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Accounting integration (coming soon)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={18} className="shrink-0 mt-0.5 text-accent" strokeWidth={3} />
-                  <span className="text-sm font-medium text-brand/80 leading-[1.15]">Dedicated support</span>
+                  <span className="font-body text-sm font-medium text-brand/80 leading-[1.4]">Dedicated support</span>
                 </li>
               </ul>
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -323,14 +324,14 @@ export function Pricing() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand mb-4 uppercase tracking-tighter leading-[0.88] text-center">
             Is SMASH right for me?
           </h2>
-          <p className="text-center text-brand/60 font-medium mb-12 md:mb-16 max-w-xl mx-auto leading-[1.15]">
+          <p className="font-body text-center text-brand/60 font-medium mb-12 md:mb-16 max-w-xl mx-auto leading-[1.5]">
             If you're quoting work on your phone, the answer is yes.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <AnimateIn direction="up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-surface rounded-[32px] p-8 border-2 border-border">
               <Wrench size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Just starting out</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 Use the Free plan. Two quotes a month to try SMASH and see if it sticks. No card, no commitment.
               </p>
               <span className="inline-block text-xs font-black uppercase tracking-widest bg-brand/10 text-brand px-3 py-1.5 rounded-full">
@@ -340,7 +341,7 @@ export function Pricing() {
             <div className="bg-surface rounded-[32px] p-8 border-2 border-accent">
               <Zap size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Sole trader, always on the go</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 You're quoting multiple jobs a week. You need invoices paid fast. Starter or Pro will pay for itself after one job.
               </p>
               <span className="inline-block text-xs font-black uppercase tracking-widest bg-accent text-brand px-3 py-1.5 rounded-full">
@@ -350,14 +351,14 @@ export function Pricing() {
             <div className="bg-surface rounded-[32px] p-8 border-2 border-border">
               <Users size={28} className="text-accent mb-4" strokeWidth={2} />
               <h3 className="text-xl font-black uppercase tracking-tighter text-brand mb-3 leading-[0.88]">Running a team</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 Multiple people quoting and invoicing. You need visibility, branding, and accounting integration. That's Unlimited.
               </p>
               <span className="inline-block text-xs font-black uppercase tracking-widest bg-brand/10 text-brand px-3 py-1.5 rounded-full">
                 Best on Unlimited
               </span>
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -367,7 +368,7 @@ export function Pricing() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88] text-center">
             The real cost of not using SMASH
           </h2>
-          <p className="text-center text-white/60 font-medium mb-12 max-w-xl mx-auto leading-[1.15]">
+          <p className="font-body text-center text-white/60 font-medium mb-12 max-w-xl mx-auto leading-[1.5]">
             Every forgotten invoice is cash that never hits your account.
           </p>
           <div className="overflow-x-auto">
@@ -405,7 +406,7 @@ export function Pricing() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand mb-4 uppercase tracking-tighter leading-[0.88] text-center">
             How SMASH stacks up
           </h2>
-          <p className="text-center text-brand/60 font-medium mb-12 max-w-xl mx-auto leading-[1.15]">
+          <p className="font-body text-center text-brand/60 font-medium mb-12 max-w-xl mx-auto leading-[1.5]">
             Desktop invoicing tools weren't built for the job site. SMASH was.
           </p>
           <div className="overflow-x-auto">
@@ -455,7 +456,7 @@ export function Pricing() {
               <p className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2">
                 "I'm not tech-savvy."
               </p>
-              <p className="text-lg text-brand/60 font-medium leading-[1.15]">
+              <p className="font-body text-lg text-brand/60 font-medium leading-[1.5]">
                 You speak. SMASH types. That's it.
               </p>
             </div>
@@ -463,7 +464,7 @@ export function Pricing() {
               <p className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2">
                 "I already use spreadsheets."
               </p>
-              <p className="text-lg text-brand/60 font-medium leading-[1.15]">
+              <p className="font-body text-lg text-brand/60 font-medium leading-[1.5]">
                 Your spreadsheet can't send itself.
               </p>
             </div>
@@ -471,7 +472,7 @@ export function Pricing() {
               <p className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2">
                 "I'll set it up next week."
               </p>
-              <p className="text-lg text-brand/60 font-medium leading-[1.15]">
+              <p className="font-body text-lg text-brand/60 font-medium leading-[1.5]">
                 Every week you wait is another forgotten job.
               </p>
             </div>
@@ -497,7 +498,7 @@ export function Pricing() {
             </div>
           </div>
           <div className="mt-8 bg-white rounded-[32px] border-2 border-border p-8 md:p-10 max-w-3xl mx-auto">
-            <p className="text-xl md:text-2xl font-black text-brand leading-[1.15] italic mb-4">
+            <p className="font-body text-xl md:text-2xl font-black text-brand leading-[1.4] italic mb-4">
               "I used to forget at least two or three jobs a month. Now I quote on the spot and the invoice is already done. Paid faster, less stress."
             </p>
             <p className="text-sm font-bold text-brand/50 uppercase tracking-wide">— Dave, electrician, Brisbane</p>
@@ -531,10 +532,10 @@ export function Pricing() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 md:mb-6 uppercase tracking-tighter leading-[0.88]">
             Ready to get paid faster?
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 font-medium leading-[1.15] mb-2 max-w-xl mx-auto">
+          <p className="font-body text-lg sm:text-xl text-white/80 font-medium leading-[1.5] mb-2 max-w-xl mx-auto">
             Free to start. Talk for 30 seconds. See your first quote appear.
           </p>
-          <p className="text-sm text-white/50 font-medium mb-8">
+          <p className="font-body text-sm text-white/50 font-medium mb-8">
             No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">

@@ -5,6 +5,7 @@ import { SEO } from '../components/seo';
 import { StructuredData } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { AnimateIn } from '../components/animate-in';
 
 interface BlogPost {
   id: string;
@@ -94,15 +95,17 @@ export function BlogList() {
         </nav>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
-          <header className="mb-16">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
-              Blog
-            </h1>
-            <p className="text-xl text-white/70 max-w-3xl leading-[1.15]">
-              Insights, tips, and stories about mobile invoicing, billing on the go, and productivity
-              for contractors and small businesses.
-            </p>
-          </header>
+          <AnimateIn direction="up">
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
+                Blog
+              </h1>
+              <p className="font-body text-xl text-white/70 max-w-3xl leading-[1.5]">
+                Insights, tips, and stories about mobile invoicing, billing on the go, and productivity
+                for contractors and small businesses.
+              </p>
+            </header>
+          </AnimateIn>
 
           {loading ? (
             <div className="text-center text-white/60 py-20">
@@ -114,6 +117,7 @@ export function BlogList() {
               <p>Check back soon for insights on mobile invoicing and productivity!</p>
             </div>
           ) : (
+            <AnimateIn direction="up">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
                 <Link
@@ -154,7 +158,7 @@ export function BlogList() {
                     </h2>
 
                     {post.excerpt && (
-                      <p className="text-white/70 leading-[1.15] mb-4 line-clamp-3">
+                      <p className="font-body text-white/70 leading-[1.5] mb-4 line-clamp-3">
                         {post.excerpt}
                       </p>
                     )}
@@ -167,6 +171,7 @@ export function BlogList() {
                 </Link>
               ))}
             </div>
+            </AnimateIn>
           )}
         </div>
 

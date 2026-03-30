@@ -1,0 +1,6 @@
+import { SegmentPage } from './segment-page';
+import { segmentBySlug } from '../data/segment-data';
+
+export function ForPainters() {
+  return <SegmentPage data={segmentBySlug['painters']} />;
+}

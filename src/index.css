@@ -6,11 +6,24 @@
   body {
     @apply bg-surface text-brand antialiased;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Body text override — applied explicitly to prose/description content */
+  .font-body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
   /* Hide scrollbars for the clean 'app' look */
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -18,12 +31,87 @@
   /* The signature SMASH primary button */
   .btn-primary {
     @apply h-14 bg-accent text-brand rounded-2xl font-black uppercase tracking-widest
-            flex items-center justify-center gap-2 hover:bg-accent/90 transition-all
-            active:scale-95 shadow-lg shadow-accent/20;
+            flex items-center justify-center gap-2 hover:brightness-95 transition-all
+            active:scale-95 shadow-glow;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, filter 0.2s ease;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 32px rgba(223, 255, 0, 0.55), 0 0 64px rgba(223, 255, 0, 0.25);
+    transform: translateY(-1px);
   }
 
   /* The soft-bordered premium card */
   .card-premium {
     @apply bg-white rounded-[32px] border-2 border-border shadow-sm overflow-hidden;
+  }
+}
+
+@layer utilities {
+  /* ── Scroll-reveal animation ─────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(-16px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Delay utilities */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-150 { transition-delay: 150ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
+  .delay-600 { transition-delay: 600ms; }
+
+  /* ── Grain texture overlay ───────────────────────────────────────────── */
+  /* Safe grain: uses background-image blend — only works on solid-bg sections */
+  /* For sections with child-div backgrounds (hero), use .grain-safe instead   */
+  .grain-solid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+  }
+
+  /* ── Accent glow hover ──────────────────────────────────────────────── */
+  .hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 32px rgba(223, 255, 0, 0.5), 0 0 64px rgba(223, 255, 0, 0.2);
+    transform: translateY(-1px);
   }
 }

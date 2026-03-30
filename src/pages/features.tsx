@@ -4,6 +4,7 @@ import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight } from 'lucide-react';
+import { AnimateIn } from '../components/animate-in';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -92,27 +93,29 @@ export function Features() {
           <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Features</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-            Everything built<br />to get you paid.
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.15] max-w-2xl mb-8">
-            SMASH is the fastest way to send an invoice. Every feature exists to close the gap between finishing a job and getting paid for it.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              to="/#signup-form"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
-            >
-              Start Free
-            </Link>
-            <Link
-              to="/how-it-works"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
-            >
-              See How It Works
-            </Link>
-          </div>
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Features</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
+              Everything built<br />to get you paid.
+            </h1>
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-8">
+              SMASH is the fastest way to send an invoice. Every feature exists to close the gap between finishing a job and getting paid for it.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/#signup-form"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
+              >
+                Start Free
+              </Link>
+              <Link
+                to="/how-it-works"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
+              >
+                See How It Works
+              </Link>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -141,14 +144,17 @@ export function Features() {
       {/* VIDEO DEMO */}
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
-              Watch how it works
-            </h2>
-            <p className="text-brand/60 font-medium leading-[1.15]">
-              Voice to PDF in seconds.
-            </p>
-          </div>
+          <AnimateIn direction="up">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
+                Watch how it works
+              </h2>
+              <p className="font-body text-brand/60 font-medium leading-[1.5]">
+                Voice to PDF in seconds.
+              </p>
+            </div>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={100}>
           <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
             <iframe
               className="absolute inset-0 w-full h-full"
@@ -159,6 +165,7 @@ export function Features() {
               allowFullScreen
             />
           </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -168,14 +175,17 @@ export function Features() {
       {/* CLUSTER 1 — QUOTE ON THE JOB */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Quote on the job</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
-            No keyboard. No templates.<br />Just talk.
-          </h2>
-          <p className="text-brand/60 font-medium leading-[1.15] max-w-2xl mb-12 md:mb-16">
-            The only thing stopping most service businesses from invoicing is the effort of doing it. SMASH removes that barrier completely.
-          </p>
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Quote on the job</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
+              No keyboard. No templates.<br />Just talk.
+            </h2>
+            <p className="font-body text-brand/60 font-medium leading-[1.5] max-w-2xl mb-12 md:mb-16">
+              The only thing stopping most service businesses from invoicing is the effort of doing it. SMASH removes that barrier completely.
+            </p>
+          </AnimateIn>
 
+          <AnimateIn direction="up" delay={100}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {/* Voice to quote */}
             <div className="bg-surface rounded-[32px] border-2 border-border p-8 flex flex-col">
@@ -185,7 +195,7 @@ export function Features() {
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88]">Voice to quote</h3>
               </div>
-              <p className="text-brand/70 font-medium leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
                 Describe the job the way you'd explain it to a mate — 20 to 30 seconds. SMASH builds the quote. You don't type a single character.
               </p>
               <ul className="space-y-2 mb-6">
@@ -209,7 +219,7 @@ export function Features() {
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88]">Your pricing catalog</h3>
               </div>
-              <p className="text-brand/70 font-medium leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
                 Build your price list once. Every time you mention a service you offer, SMASH fills in your price automatically. Your rates. Every time. No guessing.
               </p>
               <ul className="space-y-2 mb-6">
@@ -233,7 +243,7 @@ export function Features() {
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88]">Materials priced automatically</h3>
               </div>
-              <p className="text-brand/70 font-medium leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
                 Over 2,250 Australian trade materials already priced inside SMASH. Mention the materials in your voice description — they're added to the quote automatically. No looking up, no guessing.
               </p>
               <ul className="space-y-2 mb-6">
@@ -257,7 +267,7 @@ export function Features() {
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88]">Invoice sent before you leave</h3>
               </div>
-              <p className="text-brand/70 font-medium leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
                 The entire flow — speak the job, review the quote, send it — takes under 60 seconds. For repeat jobs with your catalog, under 30. No other invoicing method comes close.
               </p>
               <ul className="space-y-2 mb-6">
@@ -273,27 +283,31 @@ export function Features() {
               </Link>
             </div>
           </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* CLUSTER 2 — GET PAID FASTER */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Get paid faster</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
-            They approve it.<br />They pay it. Done.
-          </h2>
-          <p className="text-brand/60 font-medium leading-[1.15] max-w-2xl mb-12 md:mb-16">
-            Sending the quote is only half the job. SMASH closes the loop — customer approval, payment, and confirmation, all from a single link.
-          </p>
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Get paid faster</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
+              They approve it.<br />They pay it. Done.
+            </h2>
+            <p className="font-body text-brand/60 font-medium leading-[1.5] max-w-2xl mb-12 md:mb-16">
+              Sending the quote is only half the job. SMASH closes the loop — customer approval, payment, and confirmation, all from a single link.
+            </p>
+          </AnimateIn>
 
+          <AnimateIn direction="up" delay={100}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-[32px] border-2 border-border p-8 flex flex-col">
               <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
                 <UserCheck size={24} className="text-accent" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Customer approval portal</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 Customer gets a link. They open it on their phone, review the quote, and tap approve. No printing, no signing, no "can you resend it?"
               </p>
               <Link to="/features/customer-approval" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
@@ -306,7 +320,7 @@ export function Features() {
                 <Eye size={24} className="text-accent" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Read receipts</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 You'll know the second they open it. No more wondering if it arrived. No more guessing when to follow up. Just certainty.
               </p>
               <p className="mt-auto text-xs font-bold text-brand/40 uppercase tracking-wide">Included on all paid plans</p>
@@ -317,12 +331,13 @@ export function Features() {
                 <CreditCard size={24} className="text-accent" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Payment collection</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15] mb-4">
+              <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 Customers pay directly from their approval link via Stripe. Quote approved, payment taken, invoice issued — automatically, in sequence.
               </p>
               <p className="mt-auto text-xs font-bold text-brand/40 uppercase tracking-wide">Powered by Stripe</p>
             </div>
           </div>
+          </AnimateIn>
 
           {/* APP SCREENS — estimates + portal */}
           <div className="flex items-center justify-center gap-4 sm:gap-6 mt-16 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top">
@@ -339,13 +354,15 @@ export function Features() {
       {/* CLUSTER 3 — KNOW YOUR MONEY */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Know your money</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
-            Know exactly where<br />your money is.
-          </h2>
-          <p className="text-brand/60 font-medium leading-[1.15] max-w-2xl mb-12 md:mb-16">
-            SMASH tracks what's been quoted, approved, invoiced, and paid. No spreadsheet. No mental queue. No forgotten jobs.
-          </p>
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Know your money</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
+              Know exactly where<br />your money is.
+            </h2>
+            <p className="font-body text-brand/60 font-medium leading-[1.5] max-w-2xl mb-12 md:mb-16">
+              SMASH tracks what's been quoted, approved, invoiced, and paid. No spreadsheet. No mental queue. No forgotten jobs.
+            </p>
+          </AnimateIn>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -354,7 +371,7 @@ export function Features() {
                   <BarChart2 size={24} className="text-accent" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Reporting</h3>
-                <p className="text-brand/70 font-medium text-sm leading-[1.15]">
+                <p className="font-body text-brand/70 font-medium text-sm leading-[1.5]">
                   See what you've earned, what's outstanding, and what's been paid — at a glance. No accounting degree required.
                 </p>
                 <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">Pro and Unlimited plans</p>
@@ -365,7 +382,7 @@ export function Features() {
                   <Zap size={24} className="text-accent" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Quote-to-invoice conversion</h3>
-                <p className="text-brand/70 font-medium text-sm leading-[1.15]">
+                <p className="font-body text-brand/70 font-medium text-sm leading-[1.5]">
                   When a customer approves a quote, the invoice is created automatically. One less thing to remember. One less job that falls through the cracks.
                 </p>
                 <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">All paid plans</p>
@@ -391,7 +408,7 @@ export function Features() {
           <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
             Built for anyone who does the work.
           </h2>
-          <p className="text-white/60 font-medium leading-[1.15] mb-10 max-w-xl">
+          <p className="font-body text-white/60 font-medium leading-[1.5] mb-10 max-w-xl">
             SMASH works for any service business that quotes and invoices jobs. See how it fits your trade.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
@@ -441,8 +458,30 @@ export function Features() {
             ].map((faq, i) => (
               <div key={i} className="py-6">
                 <p className="font-bold text-brand mb-2">{faq.q}</p>
-                <p className="text-brand/60 font-medium text-sm leading-[1.15]">{faq.a}</p>
+                <p className="font-body text-brand/60 font-medium text-sm leading-[1.5]">{faq.a}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FROM THE BLOG */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88]">From the blog</h2>
+            <Link to="/blog" className="text-sm font-black text-brand/50 uppercase tracking-wide hover:text-brand transition-colors">All posts →</Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { slug: "best-quote-and-invoice-software-for-tradies", title: "Best Quote & Invoice Software", desc: "What separates a great invoicing app from a frustrating one — and what features actually matter in the field." },
+              { slug: "the-cost-of-a-coffee-invoicing-roi", title: "The Cost of a Coffee", desc: "SMASH costs less than a coffee per week. Here's the return on that investment if you invoice 10 jobs a week." },
+              { slug: "voice-to-estimate-build-bids-without-pen", title: "Build Bids Without a Pen", desc: "How voice-to-estimate changes the on-site quoting process — no notepad, no laptop, no delays." },
+            ].map((post) => (
+              <Link key={post.slug} to={`/blog/${post.slug}`} className="bg-white rounded-[24px] border-2 border-border p-6 hover:border-accent transition-colors group">
+                <h3 className="text-base font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2 group-hover:text-accent transition-colors">{post.title}</h3>
+                <p className="text-sm text-brand/60 font-medium leading-[1.4]">{post.desc}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -451,10 +490,11 @@ export function Features() {
       {/* CTA */}
       <section className="bg-brand py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <AnimateIn direction="up">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88]">
             Invoice sent before you<br />leave the driveway.
           </h2>
-          <p className="text-lg text-white/80 font-medium leading-[1.15] mb-8 max-w-xl mx-auto">
+          <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
             Free to start. No credit card. Talk for 30 seconds and see your first quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
@@ -474,6 +514,7 @@ export function Features() {
           <p className="text-sm text-white/40 font-medium">
             <Link to="/voice-invoicing" className="underline hover:text-white/70 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link> · <Link to="/how-it-works" className="underline hover:text-white/70 transition-colors">How it works</Link>
           </p>
+          </AnimateIn>
         </div>
       </section>
 
