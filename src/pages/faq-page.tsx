@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
-import { StructuredData, createFAQSchema } from '../components/structured-data';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { ChevronDown, ArrowRight, Star } from 'lucide-react';
 import { useState } from 'react';
@@ -170,6 +170,10 @@ export function FAQPage() {
         canonical="https://smashinvoices.com/faq"
       />
 
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'FAQ', url: 'https://smashinvoices.com/faq' },
+      ])} />
       <StructuredData data={createFAQSchema(allFAQs)} />
 
       <div className="min-h-screen bg-brand">

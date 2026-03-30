@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { CheckCircle2, Circle, Zap, Clock, Lightbulb, Rocket } from 'lucide-react';
@@ -96,6 +97,10 @@ export function Roadmap() {
         ogDescription="See what's being built, what's shipping soon, and what's planned for SMASH Invoices."
         canonical="https://smashinvoices.com/roadmap"
       />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Roadmap', url: 'https://smashinvoices.com/roadmap' },
+      ])} />
 
       <Nav />
 

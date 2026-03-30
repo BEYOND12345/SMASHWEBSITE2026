@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ArrowRight, Zap, Upload, ChevronDown, Star, Quote } from 'lucide-react';
@@ -90,6 +92,14 @@ export function ComparisonPage({ data }: Props) {
         ogDescription={data.metaDescription}
         canonical={`https://smashinvoices.com/${data.slug}`}
       />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Compare', url: 'https://smashinvoices.com/smash-vs-xero' },
+        { name: `SMASH vs ${data.competitorShort}`, url: `https://smashinvoices.com/${data.slug}` },
+      ])} />
+      {data.faq && data.faq.length > 0 && (
+        <StructuredData data={createFAQSchema(data.faq.map(f => ({ question: f.q, answer: f.a })))} />
+      )}
 
       <Nav />
 
@@ -634,6 +644,15 @@ export function ComparisonPage({ data }: Props) {
                 ))}
             </div>
           </AnimateIn>
+        </div>
+      </section>
+
+      <section className="bg-brand py-12 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <RelatedTools
+            keywords={['invoice', 'quote', 'gst', 'comparison']}
+            title="Free tools — try before you decide"
+          />
         </div>
       </section>
 

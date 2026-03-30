@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { Check, ChevronDown, Star, Quote } from 'lucide-react';
@@ -36,16 +38,6 @@ const faqs = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
-};
-
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
     <div className="border-b border-border last:border-0">
@@ -71,7 +63,12 @@ export function GstCompliantInvoicing() {
         ogDescription="Tax invoices that meet every ATO requirement. Generated in under 60 seconds."
         canonical="https://smashinvoices.com/gst-compliant-invoicing"
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Features', url: 'https://smashinvoices.com/features' },
+        { name: 'GST-Compliant Invoicing', url: 'https://smashinvoices.com/gst-compliant-invoicing' },
+      ])} />
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
 
       <Nav />
 
@@ -401,6 +398,16 @@ export function GstCompliantInvoicing() {
               ))}
             </div>
           </AnimateIn>
+        </div>
+      </section>
+
+      {/* RELATED TOOLS */}
+      <section className="bg-brand py-12 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <RelatedTools
+            keywords={['gst', 'tax invoice', 'ato']}
+            title="Related free tools"
+          />
         </div>
       </section>
 

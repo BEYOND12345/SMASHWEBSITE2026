@@ -6,6 +6,7 @@ import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown, Star, Quote as QuoteIcon, Plus, Trash2, Mail } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
+import { RelatedTools } from '../components/related-tools';
 import { useState, useRef } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -839,28 +840,14 @@ export function QuoteGenerator() {
         </div>
       </section>
 
-      {/* ── RELATED LINKS ─────────────────────────────────────── */}
+      {/* ── RELATED TOOLS ─────────────────────────────────────── */}
       <section className="bg-brand py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                All Tools →
-              </Link>
-              <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Generator →
-              </Link>
-              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Profit Calculator →
-              </Link>
-              <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST Calculator →
-              </Link>
-              <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Hourly Rate Calculator →
-              </Link>
-            </div>
-          </AnimateIn>
+          <RelatedTools
+            keywords={['quote', 'estimate', 'job quote']}
+            currentSlug="/quote-generator"
+            title="More free tools"
+          />
         </div>
       </section>
 

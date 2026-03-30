@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Quote, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from '../components/seo';
-import { StructuredData, createVideoSchema } from '../components/structured-data';
+import { StructuredData, createVideoSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { FeatureSection } from '../components/feature-section';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
@@ -148,6 +149,10 @@ export function HowItWorks() {
         embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
         uploadDate: "2026-01-01"
       })} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'How It Works', url: 'https://smashinvoices.com/how-it-works' },
+      ])} />
 
       <div className="min-h-screen bg-white">
         <Nav />
@@ -407,6 +412,15 @@ export function HowItWorks() {
                 <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
               </div>
             </AnimateIn>
+          </div>
+        </section>
+
+        <section className="bg-brand py-12 border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+            <RelatedTools
+              keywords={['invoice', 'quote', 'how to invoice']}
+              title="Related free tools"
+            />
           </div>
         </section>
 

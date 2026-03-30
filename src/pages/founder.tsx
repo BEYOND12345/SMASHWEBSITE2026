@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, ArrowRight, Star } from 'lucide-react';
 import { SEO } from '../components/seo';
-import { StructuredData } from '../components/structured-data';
+import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
 import { ListeningScreen } from '../components/listening-screen';
@@ -26,6 +26,10 @@ export function Founder() {
         canonical="https://smashinvoices.com/founder"
       />
 
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Our Story', url: 'https://smashinvoices.com/founder' },
+      ])} />
       <StructuredData data={{
         "@context": "https://schema.org",
         "@type": "ProfilePage",

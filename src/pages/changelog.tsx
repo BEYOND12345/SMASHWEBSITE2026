@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Plus, Zap, Wrench, ArrowRight, Star } from 'lucide-react';
@@ -118,6 +119,10 @@ export function Changelog() {
         ogDescription="Every update to SMASH Invoices. See what's new, improved, and fixed."
         canonical="https://smashinvoices.com/changelog"
       />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Changelog', url: 'https://smashinvoices.com/changelog' },
+      ])} />
 
       <Nav />
 

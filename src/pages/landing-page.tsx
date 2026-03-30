@@ -11,7 +11,7 @@ import { InlineCTA } from '../components/inline-cta';
 import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
-import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema } from '../components/structured-data';
+import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema, createFAQSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
@@ -19,6 +19,13 @@ import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+
+const homeFaqs = [
+  { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for Australian tradies. Describe the job out loud and get a professional, GST-compliant invoice in under 60 seconds. Free to start, no credit card required." },
+  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 2 invoices per month — no credit card needed. The Pro plan ($22.99/month) gives unlimited invoices, Stripe payments, read receipts, and customer history." },
+  { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
+  { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
+];
 
 const testimonials = [
   {
@@ -65,6 +72,7 @@ export function LandingPage() {
         embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
         uploadDate: "2026-01-01"
       })} />
+      <StructuredData data={createFAQSchema(homeFaqs)} />
 
       <StickyCTA />
       <SignupFAB />

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
 import { Check, ChevronDown, Star } from 'lucide-react';
@@ -30,16 +32,6 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
 export function SegmentPage({ data }: { data: SegmentData }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": data.faqs.map(f => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a }
-    }))
-  };
-
   return (
     <>
       <SEO
@@ -50,7 +42,12 @@ export function SegmentPage({ data }: { data: SegmentData }) {
         ogDescription={data.seo.ogDescription}
         canonical={`https://smashinvoices.com/for-${data.slug}`}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Trades', url: 'https://smashinvoices.com/tools' },
+        { name: data.trade, url: `https://smashinvoices.com/${data.slug}` },
+      ])} />
+      <StructuredData data={createFAQSchema(data.faqs.map(f => ({ question: f.q, answer: f.a })))} />
 
       {/* ── NAV ────────────────────────────────────────────────────────────── */}
       <Nav />
@@ -384,6 +381,16 @@ export function SegmentPage({ data }: { data: SegmentData }) {
               Read the blog →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── RELATED TOOLS ──────────────────────────────────────────────────── */}
+      <section className="bg-brand py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <RelatedTools
+            keywords={[data.trade, 'invoice', 'quote', 'gst']}
+            title="Free tools for your trade"
+          />
         </div>
       </section>
 

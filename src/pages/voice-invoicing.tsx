@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { Check, ChevronDown, Star, Quote, ArrowRight } from 'lucide-react';
@@ -87,15 +89,12 @@ export function VoiceInvoicing() {
         twitterDescription="Speak the job for 30 seconds. Quote built automatically. Invoice sent before you leave the driveway."
         canonical="https://smashinvoices.com/voice-invoicing"
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(f => ({
-          "@type": "Question",
-          "name": f.q,
-          "acceptedAnswer": { "@type": "Answer", "text": f.a }
-        }))
-      }) }} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Features', url: 'https://smashinvoices.com/features' },
+        { name: 'Voice Invoicing', url: 'https://smashinvoices.com/voice-invoicing' },
+      ])} />
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
 
       <Nav />
 
@@ -452,6 +451,16 @@ export function VoiceInvoicing() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── RELATED TOOLS ─────────────────────────────────────── */}
+      <section className="bg-brand py-12 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <RelatedTools
+            keywords={['invoice', 'voice', 'quote generator']}
+            title="Related free tools"
+          />
         </div>
       </section>
 

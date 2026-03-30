@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Wrench, Zap, Users, Star, Quote } from 'lucide-react';
@@ -96,18 +97,11 @@ export function Pricing() {
         twitterDescription="Stop leaving money on the table. Voice invoicing from $14.99/month for Australian tradies."
         canonical="https://smashinvoices.com/pricing"
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": pricingFaqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      }) }} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Pricing', url: 'https://smashinvoices.com/pricing' },
+      ])} />
+      <StructuredData data={createFAQSchema(pricingFaqs)} />
 
       <Nav />
 

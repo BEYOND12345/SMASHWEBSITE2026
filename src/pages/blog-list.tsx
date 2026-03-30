@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
-import { StructuredData } from '../components/structured-data';
+import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { Calendar, Clock, ArrowRight, Star } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
@@ -60,6 +60,10 @@ export function BlogList() {
         canonical="https://smashinvoices.com/blog"
       />
 
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Blog', url: 'https://smashinvoices.com/blog' },
+      ])} />
       <StructuredData data={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",

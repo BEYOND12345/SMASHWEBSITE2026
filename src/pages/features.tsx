@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { DualPhoneSection } from '../components/dual-phone-section';
@@ -25,44 +27,12 @@ const testimonials = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does SMASH generate a quote from voice?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does SMASH produce GST-compliant invoices?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description — all required fields for a valid Australian tax invoice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can customers pay directly from the quote link?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the personal pricing catalog?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds."
-      }
-    }
-  ]
-};
+const featureFaqs = [
+  { question: "How does SMASH generate a quote from voice?", answer: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation." },
+  { question: "Does SMASH produce GST-compliant invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description — all required fields for a valid Australian tax invoice." },
+  { question: "Can customers pay directly from the quote link?", answer: "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing." },
+  { question: "What is the personal pricing catalog?", answer: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds." },
+];
 
 export function Features() {
   return (
@@ -79,7 +49,11 @@ export function Features() {
         twitterDescription="Voice-to-quote in 60 seconds. Everything you need to get paid without the admin."
         canonical="https://smashinvoices.com/features"
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Features', url: 'https://smashinvoices.com/features' },
+      ])} />
+      <StructuredData data={createFAQSchema(featureFaqs)} />
 
       <Nav />
 
@@ -583,6 +557,15 @@ export function Features() {
             <Link to="/voice-invoicing" className="underline hover:text-white/60 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing from $0</Link> · <Link to="/how-it-works" className="underline hover:text-white/60 transition-colors">How it works</Link>
           </p>
           </AnimateIn>
+        </div>
+      </section>
+
+      <section className="bg-brand py-12 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <RelatedTools
+            keywords={['invoice', 'quote', 'gst calculator']}
+            title="Related free tools"
+          />
         </div>
       </section>
 
