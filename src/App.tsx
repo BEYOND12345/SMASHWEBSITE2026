@@ -12,6 +12,8 @@ import { VoiceInvoicing } from './pages/voice-invoicing';
 import { AiInvoicing } from './pages/ai-invoicing';
 import { GstCompliantInvoicing } from './pages/gst-compliant-invoicing';
 import { InvoiceOnMobile } from './pages/invoice-on-mobile';
+import { Roadmap } from './pages/roadmap';
+import { Changelog } from './pages/changelog';
 import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
@@ -57,6 +59,8 @@ function App() {
         <Route path="/ai-invoicing" element={<AiInvoicing />} />
         <Route path="/gst-compliant-invoicing" element={<GstCompliantInvoicing />} />
         <Route path="/invoice-on-mobile" element={<InvoiceOnMobile />} />
+        <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/changelog" element={<Changelog />} />
 
         {/* Segment pages */}
         <Route path="/for-cleaners" element={<ForCleaners />} />
