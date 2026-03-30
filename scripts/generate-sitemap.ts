@@ -64,8 +64,12 @@ async function generateSitemap() {
     { loc: '/changelog',    lastmod: today, changefreq: 'monthly', priority: '0.7' },
 
     // Tool pages
-    { loc: '/quote-generator',   lastmod: today, changefreq: 'monthly', priority: '0.9' },
-    { loc: '/invoice-generator', lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/quote-generator',          lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/invoice-generator',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/gst-calculator',           lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/invoice-template',         lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/hourly-rate-calculator',   lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/late-payment-calculator',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
 
     // Feature / product pages
     { loc: '/voice-invoicing',         lastmod: today, changefreq: 'monthly', priority: '0.9' },

@@ -18,6 +18,10 @@ import { Changelog } from './pages/changelog';
 // Tool pages
 import { QuoteGenerator } from './pages/quote-generator';
 import { InvoiceGenerator } from './pages/invoice-generator';
+import { GstCalculator } from './pages/gst-calculator';
+import { InvoiceTemplate } from './pages/invoice-template';
+import { HourlyRateCalculator } from './pages/hourly-rate-calculator';
+import { LatePaymentCalculator } from './pages/late-payment-calculator';
 
 // Comparison pages
 import { SmashVsXero } from './pages/smash-vs-xero';
@@ -76,6 +80,10 @@ function App() {
         {/* Tool pages */}
         <Route path="/quote-generator" element={<QuoteGenerator />} />
         <Route path="/invoice-generator" element={<InvoiceGenerator />} />
+        <Route path="/gst-calculator" element={<GstCalculator />} />
+        <Route path="/invoice-template" element={<InvoiceTemplate />} />
+        <Route path="/hourly-rate-calculator" element={<HourlyRateCalculator />} />
+        <Route path="/late-payment-calculator" element={<LatePaymentCalculator />} />
 
         {/* Comparison pages */}
         <Route path="/smash-vs-xero" element={<SmashVsXero />} />
