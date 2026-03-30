@@ -3,6 +3,9 @@ import { LandingPage } from './pages/landing-page';
 import { Founder } from './pages/founder';
 import { HowItWorks } from './pages/how-it-works';
 import { FAQPage } from './pages/faq-page';
+import { Pricing } from './pages/pricing';
+import { Privacy } from './pages/privacy';
+import { Terms } from './pages/terms';
 import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
@@ -16,6 +19,9 @@ function App() {
         <Route path="/founder" element={<Founder />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/admin/blog" element={<BlogAdmin />} />
