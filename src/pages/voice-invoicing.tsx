@@ -2,12 +2,30 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
-import { Check, ChevronDown } from 'lucide-react';
+import { Check, ChevronDown, Star, Quote, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+
+const testimonials = [
+  {
+    quote: "I used to do my invoices Sunday night. Now I'm done before I pull out of the driveway. Every single job.",
+    name: "Joel P.",
+    trade: "Painter, Brisbane",
+  },
+  {
+    quote: "My accountant told me my cash flow improved. I told her I just started invoicing on the day instead of a week later.",
+    name: "Sarah K.",
+    trade: "Cleaner, Melbourne",
+  },
+  {
+    quote: "Voice recognition on a job site works perfectly. I was sceptical — but I was invoiced before my apprentice had packed the van.",
+    name: "Mark T.",
+    trade: "Electrician, Perth",
+  },
+];
 
 const faqs = [
   {
@@ -81,7 +99,7 @@ export function VoiceInvoicing() {
 
       <Nav />
 
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/hero_image.png" alt="Voice invoicing for service businesses" className="w-full h-full object-cover" />
@@ -97,19 +115,48 @@ export function VoiceInvoicing() {
               Speak the job for 30 seconds. SMASH builds the quote. Customer approves. You get paid — before you leave the driveway.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20">
                 Start Free
+                <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
                 See How It Works
               </Link>
             </div>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">No card needed · 2 free quotes/month</span>
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* ANSWER BLOCK — AI SEARCH OPTIMISED */}
-      <section className="bg-accent py-10 md:py-14">
+      {/* ── STATS STRIP ──────────────────────────────────────── */}
+      <section className="bg-accent py-0">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-3 divide-x divide-brand/20">
+            {[
+              { stat: '60s', label: 'Job to invoice sent' },
+              { stat: '4×', label: 'Faster than typing' },
+              { stat: '$0', label: 'Free to start' },
+            ].map((item, i) => (
+              <div key={i} className="py-7 px-4 text-center">
+                <p className="text-3xl sm:text-4xl font-black text-brand tracking-tighter leading-none mb-1">{item.stat}</p>
+                <p className="font-body text-xs font-medium text-brand/60 uppercase tracking-widest leading-[1.4]">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ANSWER BLOCK — AI SEARCH OPTIMISED ───────────────── */}
+      <section className="bg-white py-10 md:py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <p className="text-brand font-medium leading-[1.4] text-lg md:text-xl">
             <strong className="font-black">Voice invoicing</strong> is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. SMASH is a voice invoicing app for self-employed service workers — you speak for 30 seconds, SMASH builds the quote, and your customer approves and pays from a link. No typing required.
@@ -117,8 +164,8 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* THE PROBLEM */}
-      <section className="bg-white py-16 md:py-24">
+      {/* ── THE PROBLEM ──────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <AnimateIn direction="left">
@@ -149,7 +196,7 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* VIDEO */}
+      {/* ── VIDEO ────────────────────────────────────────────── */}
       <section className="bg-surface py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
@@ -165,7 +212,7 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* HOW IT WORKS — 3 STEPS */}
+      {/* ── HOW IT WORKS — 3 STEPS ───────────────────────────── */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
@@ -207,7 +254,7 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* VOICE EXAMPLES */}
+      {/* ── VOICE EXAMPLES ───────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Real examples</p>
@@ -252,7 +299,7 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* SPEED COMPARISON TABLE */}
+      {/* ── SPEED COMPARISON TABLE ───────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4 text-center">
@@ -297,8 +344,50 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* FEATURES THAT MAKE VOICE INVOICING WORK */}
+      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
       <section className="bg-surface py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3 text-center">From tradies using SMASH</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
+              What they say
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} direction="up" delay={i * 80}>
+                <div className="flex flex-col h-full rounded-[20px] bg-white border border-brand/8 p-6 shadow-sm">
+                  <Quote size={20} className="text-accent mb-4 shrink-0" strokeWidth={2} />
+                  <p className="font-body text-sm font-medium text-brand/75 leading-[1.65] flex-1 mb-5">
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-brand/8 pt-4">
+                    <p className="font-black text-xs uppercase tracking-wider text-brand">{t.name}</p>
+                    <p className="font-body text-xs font-medium text-brand/45 mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn direction="up" delay={150}>
+            <div className="flex items-center justify-center gap-5 mt-10 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-black text-xs uppercase tracking-widest text-brand/60">4.9 on App Store</span>
+              </div>
+              <span className="text-brand/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/40">Free plan — no card needed</span>
+              <span className="text-brand/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/40">Set up in under 10 minutes</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── FEATURES THAT MAKE VOICE INVOICING WORK ──────────── */}
+      <section className="bg-white py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
@@ -328,14 +417,14 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-white py-16 md:py-24">
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 md:mb-14 text-center">
               Voice invoicing questions
             </h2>
-            <div className="bg-surface rounded-[32px] border-2 border-border px-4 sm:px-8 py-2 sm:py-4">
+            <div className="bg-white rounded-[32px] border-2 border-border px-4 sm:px-8 py-2 sm:py-4">
               {faqs.map((faq, i) => (
                 <FAQItem key={i} q={faq.q} a={faq.a} isOpen={openFaq === i} onClick={() => setOpenFaq(openFaq === i ? null : i)} />
               ))}
@@ -344,8 +433,8 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* FROM THE BLOG */}
-      <section className="bg-surface py-16 md:py-20">
+      {/* ── FROM THE BLOG ─────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88]">From the blog</h2>
@@ -366,7 +455,7 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-24 lg:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
@@ -376,16 +465,28 @@ export function VoiceInvoicing() {
           <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
             Free to download. Talk for 30 seconds. See your first quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
               Start Free
+              <ArrowRight size={14} strokeWidth={2.5} />
             </a>
-            <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
-              See How It Works
+            <Link to="/pricing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
+              See Pricing
             </Link>
           </div>
-          <p className="text-sm text-white/40 font-medium">
-            <Link to="/features" className="underline hover:text-white/70 transition-colors">All features</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link> · <Link to="/for-cleaners" className="underline hover:text-white/70 transition-colors">For cleaners</Link> · <Link to="/for-handymen" className="underline hover:text-white/70 transition-colors">For handymen</Link>
+          {/* Risk reversal + trust */}
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <div className="flex items-center gap-1.5">
+              {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-accent fill-accent" />)}
+              <span className="font-body text-xs font-semibold text-white/50 ml-1">4.9 App Store</span>
+            </div>
+            <span className="text-white/20 text-sm">·</span>
+            <span className="font-body text-xs text-white/40 font-medium">No credit card required</span>
+            <span className="text-white/20 text-sm">·</span>
+            <span className="font-body text-xs text-white/40 font-medium">Cancel anytime</span>
+          </div>
+          <p className="text-sm text-white/30 font-medium mt-6">
+            <Link to="/features" className="underline hover:text-white/60 transition-colors">All features</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing from $0</Link> · <Link to="/for-cleaners" className="underline hover:text-white/60 transition-colors">For cleaners</Link> · <Link to="/for-handymen" className="underline hover:text-white/60 transition-colors">For handymen</Link>
           </p>
           </AnimateIn>
         </div>

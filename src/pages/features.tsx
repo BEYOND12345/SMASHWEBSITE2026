@@ -3,9 +3,27 @@ import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { DualPhoneSection } from '../components/dual-phone-section';
-import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight } from 'lucide-react';
+import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight, Star, Quote, ArrowRight } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+
+const testimonials = [
+  {
+    quote: "The pricing catalog saves me so much time. After a few weeks it basically does my repeat jobs automatically.",
+    name: "Jess A.",
+    trade: "Cleaner, Perth",
+  },
+  {
+    quote: "Read receipts changed how I follow up. I know exactly when someone opened the invoice — so I know when to call.",
+    name: "Ben C.",
+    trade: "Painter, Melbourne",
+  },
+  {
+    quote: "Voice invoicing is the feature I didn't know I needed. Now I can't imagine going back to typing.",
+    name: "Nick F.",
+    trade: "Handyman, Brisbane",
+  },
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -85,18 +103,31 @@ export function Features() {
               SMASH is the fastest way to send an invoice. Every feature exists to close the gap between finishing a job and getting paid for it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/#signup-form"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
+              <a
+                href="https://apps.apple.com/au/app/smash-invoices/id6759475079"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
               >
                 Start Free
-              </Link>
+                <ArrowRight size={14} strokeWidth={2.5} />
+              </a>
               <Link
                 to="/how-it-works"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
               >
                 See How It Works
               </Link>
+            </div>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">No card needed · 2 free quotes/month</span>
             </div>
           </AnimateIn>
         </div>
@@ -414,6 +445,46 @@ export function Features() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-3 text-center">From tradies using SMASH</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center">
+              What they say
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} direction="up" delay={i * 80}>
+                <div className="flex flex-col h-full rounded-[20px] bg-white/[0.06] border border-white/12 p-6">
+                  <Quote size={20} className="text-accent mb-4 shrink-0" strokeWidth={2} />
+                  <p className="font-body text-sm font-medium text-white/75 leading-[1.65] flex-1 mb-5">
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="font-black text-xs uppercase tracking-wider text-white">{t.name}</p>
+                    <p className="font-body text-xs font-medium text-white/40 mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn direction="up" delay={150}>
+            <div className="flex items-center justify-center gap-5 mt-10 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-accent fill-accent" />)}
+                <span className="font-body text-xs font-semibold text-white/50 ml-1">4.9 App Store</span>
+              </div>
+              <span className="text-white/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-white/35">Free plan — no card needed</span>
+              <span className="text-white/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-white/35">Cancel anytime</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -480,13 +551,16 @@ export function Features() {
           <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
             Free to start. No credit card. Talk for 30 seconds and see your first quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-            <Link
-              to="/#signup-form"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
+            <a
+              href="https://apps.apple.com/au/app/smash-invoices/id6759475079"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
             >
               Start Free
-            </Link>
+              <ArrowRight size={14} strokeWidth={2.5} />
+            </a>
             <Link
               to="/pricing"
               className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
@@ -494,8 +568,19 @@ export function Features() {
               See Pricing
             </Link>
           </div>
-          <p className="text-sm text-white/40 font-medium">
-            <Link to="/voice-invoicing" className="underline hover:text-white/70 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link> · <Link to="/how-it-works" className="underline hover:text-white/70 transition-colors">How it works</Link>
+          {/* Risk reversal + trust */}
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-6">
+            <div className="flex items-center gap-1.5">
+              {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-accent fill-accent" />)}
+              <span className="font-body text-xs font-semibold text-white/50 ml-1">4.9 App Store</span>
+            </div>
+            <span className="text-white/20 text-sm">·</span>
+            <span className="font-body text-xs text-white/40 font-medium">No credit card required</span>
+            <span className="text-white/20 text-sm">·</span>
+            <span className="font-body text-xs text-white/40 font-medium">Cancel anytime</span>
+          </div>
+          <p className="text-sm text-white/30 font-medium">
+            <Link to="/voice-invoicing" className="underline hover:text-white/60 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing from $0</Link> · <Link to="/how-it-works" className="underline hover:text-white/60 transition-colors">How it works</Link>
           </p>
           </AnimateIn>
         </div>

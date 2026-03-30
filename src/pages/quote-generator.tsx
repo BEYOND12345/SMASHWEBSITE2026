@@ -3,7 +3,7 @@ import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown } from 'lucide-react';
+import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
@@ -19,7 +19,7 @@ const steps = [
     num: '02',
     icon: FileText,
     title: 'Describe the job out loud',
-    desc: 'Labour, materials, call-out fee — say it how you'd say it to a mate. SMASH figures out the rest.',
+    desc: "Labour, materials, call-out fee — say it how you'd say it to a mate. SMASH figures out the rest.",
   },
   {
     num: '03',
@@ -36,6 +36,24 @@ const quoteFeatures = [
   'Client email delivery in one tap',
   'Optional Pay Now button (Stripe)',
   'Quote-to-invoice conversion when approved',
+];
+
+const testimonials = [
+  {
+    quote: "I send quotes in under a minute. My competitors take 24 hours to get back to customers. I win the job before they've replied.",
+    name: "Dan W.",
+    trade: "Handyman, Sydney",
+  },
+  {
+    quote: "My quote acceptance rate went up. I think it's because customers get the quote while they're still excited about the job — not a day later.",
+    name: "Amy R.",
+    trade: "Gardener, Gold Coast",
+  },
+  {
+    quote: "I was losing jobs because my quotes were slow. SMASH fixed that. I now quote faster than anyone else in my area.",
+    name: "Chris B.",
+    trade: "Tiler, Adelaide",
+  },
 ];
 
 interface CompRow {
@@ -124,7 +142,7 @@ export function QuoteGenerator() {
 
       <Nav />
 
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/4 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -143,7 +161,7 @@ export function QuoteGenerator() {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all shadow-glow"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
               >
                 Download Free
                 <ArrowRight size={15} strokeWidth={2.5} />
@@ -155,14 +173,39 @@ export function QuoteGenerator() {
                 See how it works
               </Link>
             </div>
-            <p className="font-body text-white/35 text-sm font-medium mt-4">
-              2 quotes free per month · No credit card · iPhone
-            </p>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">2 free quotes/month · No credit card · iPhone</span>
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* ── STATS STRIP ──────────────────────────────────────── */}
+      <section className="bg-surface border-b border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-3 divide-x divide-brand/10">
+            {[
+              { stat: '60s', label: 'Job to quote sent' },
+              { stat: '$0', label: 'Free to start' },
+              { stat: '4.9★', label: 'App Store rating' },
+            ].map((item, i) => (
+              <div key={i} className="py-7 px-4 text-center">
+                <p className="text-3xl sm:text-4xl font-black text-brand tracking-tighter leading-none mb-1">{item.stat}</p>
+                <p className="font-body text-xs font-medium text-brand/50 uppercase tracking-widest leading-[1.4]">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
@@ -195,7 +238,7 @@ export function QuoteGenerator() {
         </div>
       </section>
 
-      {/* WHAT'S IN EVERY QUOTE */}
+      {/* ── WHAT'S IN EVERY QUOTE ────────────────────────────── */}
       <section className="bg-brand py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -217,6 +260,7 @@ export function QuoteGenerator() {
                 Try it free
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
+              <p className="font-body text-white/35 text-xs font-medium mt-3">No credit card · Cancel anytime</p>
             </AnimateIn>
             <AnimateIn direction="right">
               <div className="rounded-[28px] bg-white/[0.04] border border-white/10 overflow-hidden">
@@ -237,7 +281,7 @@ export function QuoteGenerator() {
         </div>
       </section>
 
-      {/* COMPARISON TABLE */}
+      {/* ── COMPARISON TABLE ─────────────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
@@ -270,15 +314,55 @@ export function QuoteGenerator() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
       <section className="bg-brand py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-3 text-center">From tradies using SMASH</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center">
+              What they say
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} direction="up" delay={i * 80}>
+                <div className="flex flex-col h-full rounded-[20px] bg-white/[0.06] border border-white/12 p-6">
+                  <Quote size={20} className="text-accent mb-4 shrink-0" strokeWidth={2} />
+                  <p className="font-body text-sm font-medium text-white/75 leading-[1.65] flex-1 mb-5">
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="font-black text-xs uppercase tracking-wider text-white">{t.name}</p>
+                    <p className="font-body text-xs font-medium text-white/40 mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn direction="up" delay={150}>
+            <div className="flex items-center justify-center gap-5 mt-10 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-accent fill-accent" />)}
+                <span className="font-body text-xs font-semibold text-white/50 ml-1">4.9 App Store</span>
+              </div>
+              <span className="text-white/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-white/35">Free to start — no card</span>
+              <span className="text-white/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-white/35">Cancel anytime</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <section className="bg-surface py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-widest mb-4">FAQ</p>
-            <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-10">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-4">FAQ</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10">
               Good questions.
             </h2>
-            <div>
+            <div className="rounded-[28px] bg-brand overflow-hidden border border-white/10 px-6">
               {faqs.map((faq, i) => (
                 <FAQ key={i} q={faq.q} a={faq.a} />
               ))}
@@ -287,7 +371,7 @@ export function QuoteGenerator() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-accent py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
@@ -297,7 +381,7 @@ export function QuoteGenerator() {
             <p className="font-body text-brand/70 font-medium text-lg leading-[1.5] mb-8 max-w-xl mx-auto">
               Free to start. No card needed. Just talk and send.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
               <a
                 href={APP_STORE_URL}
                 target="_blank"
@@ -314,11 +398,22 @@ export function QuoteGenerator() {
                 See pricing
               </Link>
             </div>
+            {/* Risk reversal */}
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-brand fill-brand" />)}
+                <span className="font-body text-xs font-semibold text-brand/60 ml-1">4.9 App Store</span>
+              </div>
+              <span className="text-brand/30 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/55">No credit card required</span>
+              <span className="text-brand/30 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/55">Cancel anytime</span>
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* RELATED LINKS */}
+      {/* ── RELATED LINKS ─────────────────────────────────────── */}
       <section className="bg-brand py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">

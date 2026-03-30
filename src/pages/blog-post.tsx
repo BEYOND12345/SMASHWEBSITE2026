@@ -7,7 +7,9 @@ import { RelatedPosts } from '../components/related-posts';
 import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, RefreshCw, Star } from 'lucide-react';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 
@@ -366,20 +368,30 @@ export function BlogPost() {
           />
 
           <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl font-black text-white mb-4">
-                Ready to Transform Your Invoicing?
+            <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12 border border-accent/20">
+              <div className="flex items-center gap-0.5 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className="text-accent fill-accent" />
+                ))}
+                <span className="font-body text-xs font-semibold text-white/50 ml-2">4.9 App Store</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tighter leading-[0.88]">
+                Ready to invoice in under 60 seconds?
               </h3>
-              <p className="font-body text-white/80 text-lg mb-6 leading-[1.5]">
-                Stop fighting your software and start getting paid. SMASH turns your voice into
-                professional invoices in under 60 seconds.
+              <p className="font-body text-white/75 text-base sm:text-lg mb-6 leading-[1.5] max-w-lg">
+                Stop fighting your software and start getting paid. Talk for 30 seconds — SMASH builds the invoice. Free to start.
               </p>
-              <Link
-                to="/#signup-form"
-                className="inline-block px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
-              >
-                Start Free
-              </Link>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+                >
+                  Start Free
+                </a>
+                <span className="font-body text-xs font-medium text-white/35">No credit card · Cancel anytime</span>
+              </div>
             </div>
           </div>
         </article>

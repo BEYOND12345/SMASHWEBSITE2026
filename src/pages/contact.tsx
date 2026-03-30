@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { Bug, MessageSquare, CreditCard, Users, Newspaper } from 'lucide-react';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 
@@ -129,12 +131,14 @@ export function Contact() {
                 <p className="font-body text-white/70 font-medium text-sm leading-[1.5] mb-6">
                   Free to download. No credit card. Talk for 30 seconds and see your first quote.
                 </p>
-                <Link
-                  to="/#signup-form"
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
                 >
                   Start Free
-                </Link>
+                </a>
               </div>
             </div>
 

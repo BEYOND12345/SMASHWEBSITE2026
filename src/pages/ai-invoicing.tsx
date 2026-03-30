@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
-import { Check, ChevronDown } from 'lucide-react';
+import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
@@ -103,6 +103,17 @@ export function AiInvoicing() {
               <Link to="/voice-invoicing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
                 How Voice Invoicing Works
               </Link>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
+              </div>
+              <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
             </div>
           </AnimateIn>
         </div>
@@ -302,6 +313,62 @@ export function AiInvoicing() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn className="text-center mb-10 md:mb-12">
+            <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/60">Real tradies, real results</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter leading-[0.88] text-white">
+              Sceptical? So were they.
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              {
+                quote: "I thought AI invoicing was going to be complicated. I talked for 40 seconds and my invoice was ready. I've been doing it every single job since.",
+                name: "Tom B.",
+                trade: "Air con installer, Adelaide",
+              },
+              {
+                quote: "Tried the free plan for one week. Upgraded the next Monday. It's doing the one thing I actually hated about running my own business.",
+                name: "Pete A.",
+                trade: "Tiler, Melbourne",
+              },
+              {
+                quote: "My invoices used to take 20 minutes. Now they take less than a minute. That's two hours a week I'm getting back.",
+                name: "Sam D.",
+                trade: "Painter, Gold Coast",
+              },
+            ].map((t, i) => (
+              <AnimateIn key={i} delay={i * 80} direction="up">
+                <div className="rounded-[24px] bg-white/6 border border-white/10 p-6 md:p-7 flex flex-col h-full">
+                  <div className="flex items-center gap-0.5 mb-4">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={12} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <Quote size={20} className="text-accent/60 mb-3 shrink-0" />
+                  <p className="font-body text-base font-medium text-white/85 leading-[1.6] mb-5 flex-1">
+                    "{t.quote}"
+                  </p>
+                  <div>
+                    <p className="font-black text-sm text-white uppercase tracking-wide">{t.name}</p>
+                    <p className="font-body text-xs text-white/45 font-medium mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -357,6 +424,20 @@ export function AiInvoicing() {
             <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
               See How It Works
             </Link>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-2 mb-4">
+            <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/50">4.9 App Store</span>
+            </div>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">No credit card required</span>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/40 font-medium">
             <Link to="/voice-invoicing" className="underline hover:text-white/70 transition-colors">Voice invoicing</Link> · <Link to="/features" className="underline hover:text-white/70 transition-colors">All features</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link> · <Link to="/for-cleaners" className="underline hover:text-white/70 transition-colors">For cleaners</Link>

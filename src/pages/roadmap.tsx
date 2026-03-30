@@ -204,31 +204,64 @@ export function Roadmap() {
         </div>
       </section>
 
-      {/* FEEDBACK CTA */}
-      <section className="bg-accent py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <AnimateIn direction="up">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
-              Want something<br />on this list?
-            </h2>
-            <p className="font-body text-brand/70 font-medium text-lg leading-[1.5] mb-8 max-w-xl mx-auto">
-              Email Dan directly. Every feature here started as a message from someone using the app on a real job.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="mailto:dan@smashinvoices.com"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
-              >
-                Send feedback
-              </a>
-              <Link
-                to="/changelog"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] border-2 border-brand/30 text-brand font-black text-sm uppercase tracking-widest hover:bg-brand/10 transition-all"
-              >
-                See what's shipped
-              </Link>
-            </div>
-          </AnimateIn>
+      {/* FEEDBACK + TRY IT CTAs */}
+      <section className="bg-brand py-16 md:py-24 border-t border-white/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Feedback */}
+            <AnimateIn direction="left">
+              <div className="bg-accent rounded-[32px] p-8 md:p-10 h-full flex flex-col">
+                <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">
+                  Want something<br />on this list?
+                </h2>
+                <p className="font-body text-brand/70 font-medium text-base leading-[1.5] mb-8 flex-1">
+                  Email Dan directly. Every feature here started as a message from someone using the app on a real job.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="mailto:dan@smashinvoices.com"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+                  >
+                    Send feedback
+                  </a>
+                  <Link
+                    to="/changelog"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] border-2 border-brand/30 text-brand font-black text-sm uppercase tracking-widest hover:bg-brand/10 transition-all"
+                  >
+                    See what's shipped
+                  </Link>
+                </div>
+              </div>
+            </AnimateIn>
+            {/* Try it */}
+            <AnimateIn direction="right">
+              <div className="bg-white/5 border-2 border-white/10 rounded-[32px] p-8 md:p-10 h-full flex flex-col">
+                <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-3">
+                  Ready to use<br />what's live?
+                </h2>
+                <p className="font-body text-white/60 font-medium text-base leading-[1.5] mb-8 flex-1">
+                  Voice-to-invoice, read receipts, Stripe payments, customer history — all available right now. Free to start.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+                  >
+                    Start Free
+                  </a>
+                  <Link
+                    to="/how-it-works"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all"
+                  >
+                    See How It Works
+                  </Link>
+                </div>
+                <p className="font-body text-xs text-white/30 font-medium mt-4">No credit card · Cancel anytime</p>
+              </div>
+            </AnimateIn>
+          </div>
         </div>
       </section>
 

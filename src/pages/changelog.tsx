@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Plus, Zap, Wrench, ArrowRight } from 'lucide-react';
+import { Plus, Zap, Wrench, ArrowRight, Star } from 'lucide-react';
 import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
@@ -221,22 +221,46 @@ export function Changelog() {
       <section className="bg-surface py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {/* What's coming */}
+              <div className="bg-white rounded-[24px] border-2 border-border p-7">
+                <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2">
                   What's coming next?
                 </h3>
-                <p className="font-body text-brand/60 font-medium text-sm leading-[1.5]">
-                  See what's in development and what's planned.
+                <p className="font-body text-brand/55 font-medium text-sm leading-[1.5] mb-5">
+                  See what's in development and what's planned for upcoming releases.
                 </p>
+                <Link
+                  to="/roadmap"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[32px] bg-brand text-white font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all"
+                >
+                  View roadmap
+                  <ArrowRight size={14} strokeWidth={2.5} />
+                </Link>
               </div>
-              <Link
-                to="/roadmap"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all shrink-0"
-              >
-                View roadmap
-                <ArrowRight size={15} strokeWidth={2.5} />
-              </Link>
+              {/* Try it now */}
+              <div className="bg-brand rounded-[24px] p-7">
+                <div className="flex items-center gap-0.5 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={12} className="text-accent fill-accent" />
+                  ))}
+                  <span className="font-body text-xs font-semibold text-white/45 ml-2">4.9 App Store</span>
+                </div>
+                <h3 className="text-xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-2">
+                  Want to use it today?
+                </h3>
+                <p className="font-body text-white/55 font-medium text-sm leading-[1.5] mb-5">
+                  Everything in the latest release is live now. Free to download, free to start.
+                </p>
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
+                >
+                  Start Free
+                </a>
+              </div>
             </div>
           </AnimateIn>
         </div>

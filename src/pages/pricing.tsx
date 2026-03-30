@@ -2,11 +2,32 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, ChevronDown, Wrench, Zap, Users } from 'lucide-react';
+import { Check, X, ChevronDown, Wrench, Zap, Users, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+
+const pricingTestimonials = [
+  {
+    quote: "Paid for itself on the first week. I used to lose track of small jobs. Now they're all invoiced before I've even driven off.",
+    name: "Luke H.",
+    trade: "Plumber, Perth",
+    plan: "Pro",
+  },
+  {
+    quote: "The free plan was enough to convince me. Two quotes in and I upgraded same day. Best $22 I spend every month.",
+    name: "Marcus W.",
+    trade: "Sparky, Gold Coast",
+    plan: "Pro",
+  },
+  {
+    quote: "I run three guys and we all use it. Way cheaper than the software my accountant wanted us on — and honestly faster.",
+    name: "Dave R.",
+    trade: "Plumbing contractor, Brisbane",
+    plan: "Unlimited",
+  },
+];
 
 const pricingFaqs = [
   {
@@ -108,9 +129,17 @@ export function Pricing() {
             The average tradie loses <span className="text-accent font-black">$8,684/year</span> in uninvoiced work.
             SMASH costs less than a slab.
           </p>
-          <p className="font-body text-base text-white/60 font-medium">
-            Free to start. No credit card required.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={10} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+            </div>
+            <p className="font-body text-sm text-white/50 font-medium">Free to start · No credit card required</p>
+          </div>
         </div>
       </section>
 
@@ -292,6 +321,44 @@ export function Pricing() {
               </ul>
             </div>
           </AnimateIn>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter leading-[0.88] text-white mb-2">
+              They were sceptical too.
+            </h2>
+            <p className="font-body text-white/55 font-medium">Here's what happened after they tried it.</p>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {pricingTestimonials.map((t, i) => (
+              <AnimateIn key={i} delay={i * 80} direction="up">
+                <div className="rounded-[24px] bg-white/6 border border-white/10 p-6 md:p-7 flex flex-col h-full">
+                  <div className="flex items-center gap-0.5 mb-4">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={12} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <Quote size={20} className="text-accent/60 mb-3 shrink-0" />
+                  <p className="font-body text-base font-medium text-white/85 leading-[1.6] mb-5 flex-1">
+                    "{t.quote}"
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-black text-sm text-white uppercase tracking-wide">{t.name}</p>
+                      <p className="font-body text-xs text-white/45 font-medium mt-0.5">{t.trade}</p>
+                    </div>
+                    <span className="text-xs font-black uppercase tracking-widest px-2.5 py-1 rounded-full bg-accent/15 text-accent border border-accent/25">
+                      {t.plan}
+                    </span>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -530,6 +597,21 @@ export function Pricing() {
             >
               See How It Works
             </Link>
+          </div>
+          {/* Trust strip */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4 mb-6">
+            <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/55">4.9 App Store</span>
+            </div>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">No credit card required</span>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/40 font-medium">
             Questions? <Link to="/faq" className="underline hover:text-white/70 transition-colors">See the FAQ</Link> or <Link to="/features" className="underline hover:text-white/70 transition-colors">explore all features</Link>.

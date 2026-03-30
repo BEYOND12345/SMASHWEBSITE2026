@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight, Star } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { StructuredData } from '../components/structured-data';
 import { Footer } from '../components/footer';
@@ -7,6 +7,8 @@ import { PhoneMockup } from '../components/phone-mockup';
 import { ListeningScreen } from '../components/listening-screen';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 export function Founder() {
   return (
@@ -160,7 +162,7 @@ export function Founder() {
               <p className="font-body text-lg text-slate-700 font-medium leading-[1.5] mb-8">
                 Tap the mic. Describe the job. SMASH builds the quote, sends it to the customer, and gets you paid — before you've left the driveway.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link
                   to="/how-it-works"
                   className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-brand text-white font-black text-sm sm:text-base uppercase tracking-widest hover:bg-brand/90 transition-all"
@@ -168,12 +170,22 @@ export function Founder() {
                   See How It Works
                   <ArrowRight size={20} strokeWidth={2.5} />
                 </Link>
-                <Link
-                  to="/#signup-form"
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
                 >
                   Start Free
-                </Link>
+                </a>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={11} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-slate-400">4.9 App Store · No credit card required</span>
               </div>
             </div>
             </AnimateIn>

@@ -3,7 +3,7 @@ import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, Mic, Zap, CreditCard, ArrowRight, ChevronDown } from 'lucide-react';
+import { Check, X, Mic, Zap, CreditCard, ArrowRight, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
@@ -38,6 +38,24 @@ const invoiceFeatures = [
   'Stripe payment link built in',
   'Read receipts — see when client opens it',
   'Overdue tracking with days-outstanding counter',
+];
+
+const testimonials = [
+  {
+    quote: "I used to wait 2 weeks to get paid. Now it's usually same day or next day. The Pay Now button changes everything.",
+    name: "Steve M.",
+    trade: "Plumber, Sydney",
+  },
+  {
+    quote: "Invoice sent, client paid, money in my account — all before I got home from the job. That's not an exaggeration.",
+    name: "Tracey L.",
+    trade: "Carpet Cleaner, Melbourne",
+  },
+  {
+    quote: "ATO-compliant invoices without thinking about it. My bookkeeper loves me now.",
+    name: "Ryan O.",
+    trade: "Electrician, Brisbane",
+  },
 ];
 
 interface CompRow {
@@ -94,20 +112,20 @@ function CellVal({ val }: { val: boolean | string }) {
 function FAQ({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-white/8">
+    <div className="border-b border-brand/10 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="font-black text-sm uppercase tracking-tighter text-white leading-[0.95]">{q}</span>
+        <span className="font-black text-sm uppercase tracking-tighter text-brand leading-[0.95]">{q}</span>
         <ChevronDown
           size={16}
-          className={`text-white/40 shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`text-brand/40 shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           strokeWidth={2.5}
         />
       </button>
       {open && (
-        <p className="font-body text-sm font-medium text-white/60 leading-[1.6] pb-5">{a}</p>
+        <p className="font-body text-sm font-medium text-brand/60 leading-[1.6] pb-5">{a}</p>
       )}
     </div>
   );
@@ -127,7 +145,7 @@ export function InvoiceGenerator() {
 
       <Nav />
 
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -147,7 +165,7 @@ export function InvoiceGenerator() {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all shadow-glow"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
               >
                 Download Free
                 <ArrowRight size={15} strokeWidth={2.5} />
@@ -159,14 +177,21 @@ export function InvoiceGenerator() {
                 See all features
               </Link>
             </div>
-            <p className="font-body text-white/35 text-sm font-medium mt-4">
-              2 invoices free per month · No credit card · iPhone
-            </p>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">2 invoices free/month · No credit card · iPhone</span>
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* STATS STRIP */}
+      {/* ── STATS STRIP ──────────────────────────────────────── */}
       <section className="bg-white/[0.03] border-y border-white/8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-3 divide-x divide-white/8">
@@ -184,7 +209,7 @@ export function InvoiceGenerator() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
       <section className="bg-brand py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
@@ -217,7 +242,7 @@ export function InvoiceGenerator() {
         </div>
       </section>
 
-      {/* WHAT'S IN EVERY INVOICE */}
+      {/* ── WHAT'S IN EVERY INVOICE ──────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -239,6 +264,7 @@ export function InvoiceGenerator() {
                 Try it free
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
+              <p className="font-body text-brand/40 text-xs font-medium mt-3">No credit card · Cancel anytime</p>
             </AnimateIn>
             <AnimateIn direction="right">
               <div className="rounded-[28px] bg-brand border border-white/10 overflow-hidden">
@@ -259,7 +285,7 @@ export function InvoiceGenerator() {
         </div>
       </section>
 
-      {/* COMPARISON TABLE */}
+      {/* ── COMPARISON TABLE ─────────────────────────────────── */}
       <section className="bg-brand py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
@@ -289,26 +315,64 @@ export function InvoiceGenerator() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3 text-center">From tradies using SMASH</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
+              Getting paid faster
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} direction="up" delay={i * 80}>
+                <div className="flex flex-col h-full rounded-[20px] bg-white border border-brand/8 p-6 shadow-sm">
+                  <Quote size={20} className="text-accent mb-4 shrink-0" strokeWidth={2} />
+                  <p className="font-body text-sm font-medium text-brand/75 leading-[1.65] flex-1 mb-5">
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-brand/8 pt-4">
+                    <p className="font-black text-xs uppercase tracking-wider text-brand">{t.name}</p>
+                    <p className="font-body text-xs font-medium text-brand/45 mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn direction="up" delay={150}>
+            <div className="flex items-center justify-center gap-5 mt-10 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-accent fill-accent" />)}
+                <span className="font-body text-xs font-semibold text-brand/60 ml-1">4.9 App Store</span>
+              </div>
+              <span className="text-brand/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/40">Free to start</span>
+              <span className="text-brand/20 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/40">No card needed</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <section className="bg-brand py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-4">FAQ</p>
-            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10">
+            <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-4">FAQ</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-10">
               Common questions.
             </h2>
-            <div>
+            <div className="rounded-[28px] bg-surface overflow-hidden px-6">
               {faqs.map((faq, i) => (
-                <div key={i} className="border-b border-brand/10">
-                  <FAQ key={i} q={faq.q} a={faq.a} />
-                </div>
+                <FAQ key={i} q={faq.q} a={faq.a} />
               ))}
             </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="bg-accent py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
@@ -318,7 +382,7 @@ export function InvoiceGenerator() {
             <p className="font-body text-brand/70 font-medium text-lg leading-[1.5] mb-8 max-w-xl mx-auto">
               Free to start. No card. Just describe the job and tap send.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
               <a
                 href={APP_STORE_URL}
                 target="_blank"
@@ -335,11 +399,22 @@ export function InvoiceGenerator() {
                 See pricing
               </Link>
             </div>
+            {/* Risk reversal */}
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-brand fill-brand" />)}
+                <span className="font-body text-xs font-semibold text-brand/60 ml-1">4.9 App Store</span>
+              </div>
+              <span className="text-brand/30 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/55">No credit card required</span>
+              <span className="text-brand/30 text-sm">·</span>
+              <span className="font-body text-xs font-medium text-brand/55">Cancel anytime</span>
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* RELATED */}
+      {/* ── RELATED ───────────────────────────────────────────── */}
       <section className="bg-brand py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">

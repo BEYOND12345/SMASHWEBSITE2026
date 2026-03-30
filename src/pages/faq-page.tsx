@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, Star } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const faqs = [
   {
@@ -188,9 +190,17 @@ export function FAQPage() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
                 Frequently Asked Questions
               </h1>
-              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl">
+              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-6">
                 Everything you need to know about voice-to-invoice software and how SMASH works.
               </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store · Used by tradies across Australia</span>
+              </div>
             </AnimateIn>
           </div>
         </section>
@@ -258,19 +268,32 @@ export function FAQPage() {
               <p className="font-body text-white/80 text-base sm:text-lg mb-6 leading-[1.5]">
                 Free to start. No card. No setup. Talk for 30 seconds and see what happens.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/#signup-form"
+              <div className="flex flex-col sm:flex-row gap-3 mb-5">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
                 >
                   Start Free
-                </Link>
+                </a>
                 <Link
                   to="/how-it-works"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
                 >
                   See How It Works
                 </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+                <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={11} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <span className="font-body text-xs font-semibold text-white/50">4.9 App Store</span>
+                </div>
+                <span className="font-body text-xs font-medium text-white/35">No credit card required · Cancel anytime</span>
               </div>
             </div>
             </AnimateIn>

@@ -98,6 +98,18 @@ export function SegmentPage({ data }: { data: SegmentData }) {
                   See How It Works
                 </Link>
               </div>
+              {/* Trust row */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={10} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
+                </div>
+                <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
+              </div>
             </div>
 
             {/* Right — phones */}
@@ -401,6 +413,21 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             >
               See Pricing
             </Link>
+          </div>
+          {/* Trust strip */}
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6">
+            <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/50">4.9 App Store</span>
+            </div>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">No credit card required</span>
+            <span className="text-white/20 hidden sm:block">·</span>
+            <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/30 font-medium">
             <Link to="/voice-invoicing" className="hover:text-white/60 transition-colors">Voice invoicing</Link>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play } from 'lucide-react';
+import { Play, Star, Quote } from 'lucide-react';
 import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
@@ -17,6 +17,26 @@ import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+
+const testimonials = [
+  {
+    quote: "Finished a hot water job at 4pm, talked into my phone for 30 seconds, invoice was in the customer's inbox before I started the van. Never going back.",
+    name: "Chris M.",
+    trade: "Plumber, Sydney",
+  },
+  {
+    quote: "I was losing track of small jobs — $200 here, $150 there. SMASH catches every single one now. My monthly income is noticeably higher.",
+    name: "Brendan T.",
+    trade: "Electrician, Melbourne",
+  },
+  {
+    quote: "My wife used to chase invoices for me on weekends. That stopped the day I got SMASH. It just sends them on the spot.",
+    name: "Jason K.",
+    trade: "Carpenter, Brisbane",
+  },
+];
 
 export function LandingPage() {
   return (
@@ -120,13 +140,23 @@ export function LandingPage() {
               </button>
             </div>
 
-            {/* Disclaimer */}
-            <p
-              className="font-body text-sm text-white/40 font-medium animate-hero-reveal"
+            {/* Trust row */}
+            <div
+              className="flex flex-col sm:flex-row sm:items-center gap-3 animate-hero-reveal"
               style={{ animationDelay: '650ms' }}
             >
-              No credit card required. Free to start.
-            </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <p className="font-body text-sm text-white/40 font-medium">
+                No credit card required · Free to start
+              </p>
+            </div>
           </div>
         </div>
 
@@ -392,6 +422,52 @@ export function LandingPage() {
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <SocialProof />
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn className="text-center mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/60">Tradies that switched</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.88] text-white">
+              The job site review.
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} delay={i * 80} direction="up">
+                <div className="rounded-[24px] bg-white/6 border border-white/10 p-6 md:p-7 flex flex-col h-full">
+                  <Quote size={22} className="text-accent mb-4 shrink-0" />
+                  <p className="font-body text-base font-medium text-white/85 leading-[1.6] mb-5 flex-1">
+                    "{t.quote}"
+                  </p>
+                  <div>
+                    <p className="font-black text-sm text-white uppercase tracking-wide">{t.name}</p>
+                    <p className="font-body text-xs text-white/45 font-medium mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn delay={300} className="mt-8 text-center">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+            >
+              Join them — Start Free
+            </a>
+            <p className="font-body text-xs text-white/35 font-medium mt-3">No card needed · Cancel anytime</p>
+          </AnimateIn>
         </div>
       </section>
 

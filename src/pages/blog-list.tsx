@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData } from '../components/structured-data';
 import { Footer } from '../components/footer';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Star } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 
@@ -154,6 +156,37 @@ export function BlogList() {
             </div>
             </AnimateIn>
           )}
+        </div>
+
+        {/* CTA BANNER */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 pb-16">
+          <div className="bg-accent rounded-[32px] px-8 md:px-12 py-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <p className="text-brand font-black text-xs uppercase tracking-widest mb-2">Done reading?</p>
+              <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-1">
+                See it in action.
+              </h2>
+              <p className="font-body text-brand/65 font-medium text-sm">Talk for 30 seconds. See your first invoice.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+              >
+                Start Free
+              </a>
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={11} className="text-brand/50 fill-brand/50" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-brand/55">4.9 App Store</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <Footer />
