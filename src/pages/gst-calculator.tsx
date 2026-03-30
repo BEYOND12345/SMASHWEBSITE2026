@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -47,27 +48,27 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'What is GST in Australia?',
-    a: '10% Goods and Services Tax applied to most goods and services. Registered businesses (ABN with >$75k turnover) must charge and remit GST to the ATO.',
+    a: 'GST (Goods and Services Tax) is a 10% tax applied to most goods and services sold in Australia. It is administered by the ATO and mandatory for businesses with annual turnover above $75,000. Registered businesses collect GST on behalf of the ATO and remit it quarterly or annually via a Business Activity Statement (BAS).',
   },
   {
     q: 'How do I add GST to a price?',
-    a: 'Multiply the ex-GST price by 1.1. E.g. $500 ex-GST = $550 inc-GST ($50 GST).',
+    a: 'Multiply the ex-GST price by 1.1 to get the total including GST. Example: $500 ex-GST × 1.1 = $550 inc-GST, where the $50 difference is the GST component you collect and remit to the ATO. SMASH adds GST automatically to every invoice.',
   },
   {
     q: 'How do I remove GST from a price?',
-    a: 'Divide the inc-GST price by 1.1. E.g. $550 inc-GST = $500 ex-GST ($50 GST).',
+    a: 'Divide the inc-GST price by 1.1 to find the ex-GST amount. Example: $550 ÷ 1.1 = $500 ex-GST. To find just the GST component from an inc-GST price, divide by 11 — so $550 ÷ 11 = $50 GST. This calculator handles both directions instantly.',
   },
   {
     q: 'Do I have to charge GST?',
-    a: 'Only if your annual turnover is $75,000 or more (or $150,000 for non-profits). Under that, GST registration is optional.',
+    a: 'GST registration is mandatory if your annual turnover is $75,000 or more ($150,000 for non-profits). Below that threshold, registration is voluntary — but many small tradies register anyway to claim GST credits on business purchases. SMASH shows your ABN on every invoice so clients can see your registration status.',
   },
   {
     q: 'Does SMASH handle GST automatically?',
-    a: 'Yes. Every invoice SMASH generates includes the correct GST breakdown, ATO-compliant formatting, and your ABN.',
+    a: 'Yes. Every invoice SMASH generates includes the correct GST breakdown, ATO-compliant formatting, your ABN, and all required fields. You describe the job by voice and SMASH calculates GST per line item, showing both the ex-GST amount and the 10% GST component automatically. No manual calculation required.',
   },
   {
     q: 'Can I mix GST and no-GST items?',
-    a: 'Yes. SMASH lets you toggle GST on/off per line item, so you can mix GST-free and GST-applicable items in the same invoice.',
+    a: 'Yes. Some items are GST-free under Australian law — basic food, some medical services, and certain educational materials. SMASH lets you toggle GST on/off per line item, so you can mix GST-free and GST-applicable items in the same invoice and the totals will calculate correctly.',
   },
 ];
 
@@ -308,11 +309,36 @@ export function GstCalculator() {
   return (
     <>
       <SEO
-        title="Free GST Calculator Australia | SMASH"
+        title="GST Calculator Australia: Add or Remove 10% GST Instantly | SMASH"
         description="Free Australian GST calculator. Add or remove GST instantly. Find the GST amount, ex-GST price, and inc-GST total. Built for tradies and small businesses."
         keywords="gst calculator australia, add gst calculator, remove gst calculator, gst calculator online free"
         canonical="https://smashinvoices.com/gst-calculator"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "GST Calculator Australia",
+        description: "Free Australian GST calculator. Add or remove 10% GST instantly. Find the GST amount, ex-GST price, and inc-GST total.",
+        url: "https://smashinvoices.com/gst-calculator",
+        featureList: ["Add GST to any price", "Remove GST from any price", "Calculate GST component", "ATO-compliant calculations"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Calculate GST in Australia",
+        description: "Calculate GST in both directions — adding 10% to a price or removing GST from an inc-GST total.",
+        steps: [
+          { name: "Enter your amount", text: "Type the dollar amount you want to calculate GST on." },
+          { name: "Choose Add or Remove GST", text: "Select whether you want to add 10% GST to a price, or remove GST from an inc-GST total." },
+          { name: "Read your result — or email it to yourself", text: "See the ex-GST amount, GST component, and inc-GST total instantly. Email the result to yourself for your records." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'GST Calculator', url: 'https://smashinvoices.com/gst-calculator' },
+      ])} />
 
       <Nav />
 
@@ -355,7 +381,37 @@ export function GstCalculator() {
                 Works for adding 10% GST to a price, or stripping GST out of an inc-GST total. Both directions, instantly.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Getting GST wrong costs Australian tradies time, ATO penalties, and client trust. This free calculator handles both directions instantly — enter any amount to see the ex-GST price, GST component, and inc-GST total.
+            </p>
             <GSTCalculator />
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── HOW TO USE ───────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3">How to use</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
+              How to calculate GST.
+            </h2>
+            <ol className="space-y-4">
+              {[
+                { n: '01', title: 'Enter your amount', desc: 'Type in the dollar amount you want to calculate GST on. Use any dollar value — the calculator works in both directions.' },
+                { n: '02', title: 'Choose Add or Remove GST', desc: 'Select Add GST if you have an ex-GST price and want to know what to charge the client. Select Remove GST if you\'ve been given an inc-GST price and need to see the breakdown.' },
+                { n: '03', title: 'Read your result — or email it to yourself', desc: 'Your ex-GST amount, GST component, and inc-GST total appear instantly. Tap Email to save the calculation for your records or share with your bookkeeper.' },
+              ].map(s => (
+                <li key={s.n} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-accent text-brand font-black text-sm flex items-center justify-center shrink-0">{s.n}</div>
+                  <div>
+                    <p className="font-black text-base uppercase tracking-tighter text-brand leading-[0.95] mb-1">{s.title}</p>
+                    <p className="font-body text-sm font-medium text-brand/60 leading-[1.5]">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </AnimateIn>
         </div>
       </section>
@@ -390,13 +446,13 @@ export function GstCalculator() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: 'Adding GST',
+                title: 'Adding GST to a price',
                 formula: 'Price × 1.1',
                 example: '$500 × 1.1 = $550',
                 desc: 'Multiply your ex-GST price by 1.1 to get the total your customer pays. The $50 difference is the GST you collect and remit to the ATO.',
               },
               {
-                title: 'Removing GST',
+                title: 'Removing GST from a price',
                 formula: 'Price ÷ 1.1',
                 example: '$550 ÷ 1.1 = $500',
                 desc: 'Divide an inc-GST price by 1.1 to find the ex-GST amount. To find just the GST component: price ÷ 11.',
@@ -404,8 +460,8 @@ export function GstCalculator() {
             ].map((item, i) => (
               <AnimateIn key={i} direction="up" delay={i * 80}>
                 <div className="rounded-[28px] bg-brand p-7 h-full">
-                  <p className="font-black text-xs uppercase tracking-widest text-accent mb-3">{item.title}</p>
-                  <p className="font-black text-3xl text-white tracking-tighter leading-none mb-2">{item.formula}</p>
+                  <h3 className="font-black text-lg uppercase tracking-tighter text-white mb-3">{item.title}</h3>
+                  <p className="font-black text-3xl text-accent tracking-tighter leading-none mb-2">{item.formula}</p>
                   <p className="font-body text-sm font-medium text-accent/80 mb-4">{item.example}</p>
                   <p className="font-body text-sm font-medium text-white/55 leading-[1.5]">{item.desc}</p>
                 </div>
@@ -549,23 +605,20 @@ export function GstCalculator() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
+              </Link>
               <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Invoice Generator →
               </Link>
-              <Link to="/invoice-template" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Template →
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
               </Link>
               <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Hourly Rate Calculator →
               </Link>
               <Link to="/late-payment-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Late Payment Calculator →
-              </Link>
-              <Link to="/gst-compliant-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST-Compliant Invoicing →
-              </Link>
-              <Link to="/voice-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Voice Invoicing →
               </Link>
             </div>
           </AnimateIn>

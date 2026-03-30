@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -59,27 +60,27 @@ const templateFeatures = [
 const faqs = [
   {
     q: 'What must a tax invoice include in Australia?',
-    a: "Business name, ABN, date, invoice number, description of goods/services, price, and GST amount. Required for purchases over $82.50.",
+    a: "An ATO-compliant tax invoice must include: your business name and ABN, the word 'Tax Invoice', the date, a unique invoice number, a description of goods or services supplied, the price of each item, and the GST amount (or a statement that GST is included). These requirements apply to invoices over $82.50 — below that, a simpler invoice is acceptable.",
   },
   {
     q: 'Can I use a Word or Excel invoice template?',
-    a: 'Yes, but manually maintaining formatting, GST calculations, and invoice numbering is error-prone and slow. Voice-generated invoices are faster and more accurate.',
+    a: 'Yes, but manually maintaining formatting, GST calculations, and sequential invoice numbering is error-prone and slow. You have to update dates, client details, and totals manually every time. Voice-generated invoices via SMASH are faster, more accurate, and automatically ATO-compliant — no template management required.',
   },
   {
     q: 'Is this template ATO-compliant?',
-    a: 'Yes. The format includes all fields required by the ATO for a valid tax invoice.',
+    a: 'Yes. The template format shown here includes all fields required by the ATO for a valid tax invoice in Australia: business name, ABN, invoice number, date, description of services, subtotal, GST amount, and total. If you\'re using SMASH, every invoice is automatically formatted to these requirements.',
   },
   {
     q: 'Can I add my logo?',
-    a: 'Custom branding (logo, colours) is coming soon to SMASH. Business name, ABN, and contact details already appear on every invoice.',
+    a: 'Custom branding including logo and colour scheme is on the SMASH roadmap and coming soon. Currently, your business name, ABN, and contact details appear on every invoice automatically. You can see the current layout in the template preview above.',
   },
   {
     q: 'What file format is the invoice?',
-    a: 'SMASH generates invoices as PDFs, emailed directly to your client. Clients also get a web link with a Pay Now button.',
+    a: 'SMASH generates invoices as PDF files, emailed directly to your client with your business details and all required ATO fields. Clients also receive a web link to the invoice with a Pay Now button powered by Stripe — so they can pay in seconds without logging into internet banking.',
   },
   {
     q: 'Is the template free?',
-    a: "Yes, and so is SMASH's free plan (2 invoices/month, no card needed).",
+    a: "Yes, the template is free to download. SMASH also has a free plan that gives you 2 invoices per month with no credit card required. If you're invoicing more than twice a month, the Pro plan ($22.99/month) gives you unlimited invoices, read receipts, and overdue tracking.",
   },
 ];
 
@@ -315,11 +316,36 @@ export function InvoiceTemplate() {
   return (
     <>
       <SEO
-        title="Free Invoice Template Australia | Download & Customise | SMASH"
+        title="Free Invoice Template Australia (ATO-Compliant, GST Ready) | SMASH"
         description="Free Australian invoice template. ATO-compliant tax invoice format with ABN, GST breakdown, and payment terms. Download free or generate by voice with SMASH."
         keywords="free invoice template australia, invoice template word australia, tax invoice template australia, gst invoice template"
         canonical="https://smashinvoices.com/invoice-template"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "Free Invoice Template Australia",
+        description: "Free ATO-compliant Australian invoice template with ABN, GST breakdown, and payment terms. Download free or generate by voice with SMASH.",
+        url: "https://smashinvoices.com/invoice-template",
+        featureList: ["ATO-compliant format", "ABN and GST included", "Professional PDF layout", "Free to download"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Use the Free Invoice Template",
+        description: "Download and customise Australia's most-used ATO-compliant invoice template.",
+        steps: [
+          { name: "Review the template below", text: "Preview the ATO-compliant invoice format with all required fields including ABN, GST breakdown, and payment terms." },
+          { name: "Download free to your device", text: "Click Download to receive the template via email — ready to customise with your business details." },
+          { name: "Customise with your business details — or use SMASH to auto-generate", text: "Fill in your business name, ABN, and client details. Or download SMASH to generate this invoice automatically from voice in under 60 seconds." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'Invoice Template', url: 'https://smashinvoices.com/invoice-template' },
+      ])} />
 
       <Nav />
 
@@ -362,7 +388,37 @@ export function InvoiceTemplate() {
                 A professional, ATO-compliant tax invoice with all required fields. Download the template or let SMASH generate it automatically.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Preview Australia's most-used invoice format below. ATO-compliant, GST-ready, professional. Download the template free — or use SMASH to auto-generate this from voice in under 60 seconds.
+            </p>
             <InvoiceTemplatePreview />
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── HOW TO USE ───────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3">How to use</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
+              How to use this template.
+            </h2>
+            <ol className="space-y-4">
+              {[
+                { n: '01', title: 'Review the template below', desc: 'Scroll up to see the full ATO-compliant invoice layout with all required fields: ABN, GST breakdown, invoice number, payment terms, and Pay Now button.' },
+                { n: '02', title: 'Download free to your device', desc: 'Click the download button to receive the template via email. No login required — just your email address to receive the file.' },
+                { n: '03', title: 'Customise with your business details — or use SMASH to auto-generate', desc: 'Replace the placeholder text with your business name, ABN, and client details. Or download SMASH to skip the template entirely — just describe the job by voice and SMASH generates a professional invoice in 60 seconds.' },
+              ].map(s => (
+                <li key={s.n} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-accent text-brand font-black text-sm flex items-center justify-center shrink-0">{s.n}</div>
+                  <div>
+                    <p className="font-black text-base uppercase tracking-tighter text-brand leading-[0.95] mb-1">{s.title}</p>
+                    <p className="font-body text-sm font-medium text-brand/60 leading-[1.5]">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </AnimateIn>
         </div>
       </section>
@@ -561,23 +617,20 @@ export function InvoiceTemplate() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
+              </Link>
               <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Invoice Generator →
               </Link>
               <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 GST Calculator →
               </Link>
-              <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Hourly Rate Calculator →
+              <Link to="/quote-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Quote Generator →
               </Link>
-              <Link to="/late-payment-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Late Payment Calculator →
-              </Link>
-              <Link to="/gst-compliant-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST-Compliant Invoicing →
-              </Link>
-              <Link to="/voice-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Voice Invoicing →
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
               </Link>
             </div>
           </AnimateIn>

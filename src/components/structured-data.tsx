@@ -203,3 +203,51 @@ export function createBreadcrumbSchema(items: Array<{ name: string; url: string 
     }))
   };
 }
+
+export function createHowToSchema({ name, description, steps }: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function createCalculatorSchema({ name, description, url, featureList }: {
+  name: string;
+  description: string;
+  url: string;
+  featureList: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "AUD",
+    },
+    featureList: featureList.join(", "),
+    inLanguage: "en-AU",
+    publisher: {
+      "@type": "Organization",
+      name: "SMASH Invoices",
+      url: "https://smashinvoices.com",
+    },
+  };
+}

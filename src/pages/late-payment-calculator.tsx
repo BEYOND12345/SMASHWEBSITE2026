@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -47,27 +48,27 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Can I charge interest on overdue invoices in Australia?',
-    a: 'Yes, if your payment terms include an interest clause. Without that clause, charging interest is legally difficult. Always include payment terms on your invoices.',
+    a: 'Yes, if your payment terms explicitly include an interest clause. Without a clear written agreement stating the interest rate and conditions, charging interest is legally difficult to enforce. Always include payment terms on every invoice — SMASH adds payment terms automatically to every invoice it generates.',
   },
   {
     q: 'What interest rate can I charge?',
-    a: "There's no fixed legal rate for commercial invoices. Common practice is 10–15% p.a. The ATO's general interest charge (GIC) is a common reference point.",
+    a: "There's no fixed legal rate for commercial invoices between private parties in Australia. Common practice for tradie invoices is 10–15% per annum. The ATO's general interest charge (GIC) rate is often used as a reference point. Whatever rate you choose, it must be clearly stated in your payment terms before the work is done.",
   },
   {
     q: 'How do I add interest to an overdue invoice?',
-    a: 'Issue a separate "overdue notice" invoice showing the original amount, days overdue, interest rate, and interest charged.',
+    a: 'Issue a separate "overdue notice" document showing the original invoice number and amount, the number of days overdue, the annual interest rate, and the total interest accrued. This calculator gives you the exact figures you need. Always send this as a formal document — not just a message — so it\'s on the record.',
   },
   {
     q: 'Does SMASH track overdue invoices?',
-    a: 'Yes. SMASH shows you which invoices are unpaid, how many days overdue they are, and whether your client has opened the invoice (read receipts).',
+    a: 'Yes. SMASH shows you a dashboard of all unpaid invoices, how many days overdue each one is, and whether your client has opened the invoice (via read receipts). You can see at a glance who hasn\'t paid and who hasn\'t even looked at the invoice — so you know exactly who to follow up and what to say.',
   },
   {
     q: "What's the best way to avoid late payments?",
-    a: 'Send invoices immediately (not at end of week), include a Pay Now button, use read receipts to know when the client has seen it, and follow up within 24 hours of the due date.',
+    a: 'The single most effective step is sending invoices immediately after completing work — not at the end of the week. Also: include a Pay Now button so the client can pay in 10 seconds, use read receipts to know when the invoice has been seen, and follow up within 24 hours of the due date. SMASH handles all of this automatically.',
   },
   {
     q: 'Is there a legal late payment scheme in Australia?',
-    a: 'Not a universal one for small business. Some states have prompt payment legislation for government contracts. For private clients, your payment terms in the invoice/contract govern everything.',
+    a: 'There is no universal late payment law for small business in Australia, unlike the UK\'s Late Payment of Commercial Debts Act. Some states have prompt payment legislation specifically for government contracts and construction industry payments (Security of Payment Acts). For private clients, your invoiced payment terms and any signed contract govern everything — which is why clearly stated terms matter.',
   },
 ];
 
@@ -312,11 +313,36 @@ export function LatePaymentCalculator() {
   return (
     <>
       <SEO
-        title="Invoice Late Payment Calculator Australia | SMASH"
+        title="Overdue Invoice Calculator Australia: Days Late + Interest | SMASH"
         description="Calculate interest on overdue invoices in Australia. Work out how much you're owed on a late payment using the standard commercial rate."
         keywords="late payment calculator australia, overdue invoice interest calculator, invoice interest calculator australia, commercial late payment interest"
         canonical="https://smashinvoices.com/late-payment-calculator"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "Overdue Invoice Calculator Australia",
+        description: "Calculate interest on overdue invoices in Australia. See how many days overdue and how much interest has accrued at your chosen annual rate.",
+        url: "https://smashinvoices.com/late-payment-calculator",
+        featureList: ["Days overdue calculation", "Daily interest accrual", "Total amount owed", "Customisable interest rate"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Calculate Interest on an Overdue Invoice",
+        description: "Calculate exactly how much interest has accrued on a late invoice using the Australian commercial interest rate.",
+        steps: [
+          { name: "Enter your invoice amount and due date", text: "Enter the original invoice amount (inc. GST) and the date the payment was due." },
+          { name: "Set your interest rate", text: "Enter your annual interest rate — the default is 10% p.a., aligned with the ATO reference rate." },
+          { name: "See how many days overdue and total interest owed", text: "See the number of days the invoice is overdue, the interest accrued to date, and the total amount now owed." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'Late Payment Calculator', url: 'https://smashinvoices.com/late-payment-calculator' },
+      ])} />
 
       <Nav />
 
@@ -359,7 +385,37 @@ export function LatePaymentCalculator() {
                 Late invoice interest calculated daily at your chosen annual rate. Includes total owing with interest accrued.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Late invoices hurt cash flow and can be legally recoverable if your payment terms are clear. This calculator shows you exactly how much interest has accrued and the total your client now owes.
+            </p>
             <LatePaymentCalc />
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── HOW TO USE ───────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3">How to use</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
+              How to calculate overdue invoice interest.
+            </h2>
+            <ol className="space-y-4">
+              {[
+                { n: '01', title: 'Enter your invoice amount and due date', desc: 'Enter the total invoice amount including GST, and the original due date. The calculator works from today\'s date to show you live days overdue.' },
+                { n: '02', title: 'Set your interest rate (default: 10% p.a.)', desc: 'The default rate of 10% p.a. is aligned with the ATO\'s general interest charge rate. Adjust to match your payment terms — but make sure your terms state the rate clearly.' },
+                { n: '03', title: 'See how many days overdue and total interest owed', desc: 'Your result shows the number of days overdue, interest accrued, and the total now owed including the original invoice. Use these figures in your overdue notice.' },
+              ].map(s => (
+                <li key={s.n} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-accent text-brand font-black text-sm flex items-center justify-center shrink-0">{s.n}</div>
+                  <div>
+                    <p className="font-black text-base uppercase tracking-tighter text-brand leading-[0.95] mb-1">{s.title}</p>
+                    <p className="font-body text-sm font-medium text-brand/60 leading-[1.5]">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </AnimateIn>
         </div>
       </section>
@@ -559,23 +615,20 @@ export function LatePaymentCalculator() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST Calculator →
-              </Link>
-              <Link to="/invoice-template" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Template →
-              </Link>
-              <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Hourly Rate Calculator →
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
               </Link>
               <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Invoice Generator →
               </Link>
-              <Link to="/quote-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Quote Generator →
+              <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                GST Calculator →
               </Link>
-              <Link to="/voice-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Voice Invoicing →
+              <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Hourly Rate Calculator →
+              </Link>
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
               </Link>
             </div>
           </AnimateIn>

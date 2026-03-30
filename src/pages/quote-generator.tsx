@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -77,27 +78,27 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is SMASH really free?',
-    a: 'Yes. The free plan gives you 2 quotes per month, forever. No credit card needed to start. Upgrade to Pro ($22.99/month) if you need unlimited quotes.',
+    a: 'Yes. The free plan gives you 2 quotes per month, forever, with no credit card needed to start. If you need unlimited quotes, the Pro plan is $22.99/month. You can also use the quote builder on this page for free, with no download or login required.',
   },
   {
     q: 'Does it work on Android?',
-    a: 'Right now SMASH is iPhone only. Android is in development — it\'s the most-requested feature and it\'s coming. Jump on the free plan and you\'ll be notified when it launches.',
+    a: 'Right now SMASH is iPhone only. Android is in development and it\'s the most-requested feature — it\'s coming. The free web quote builder above works in any browser on any device. Jump on the free iOS plan now and you\'ll be first to know when Android launches.',
   },
   {
     q: 'Are quotes GST-compliant?',
-    a: 'Yes. Every quote includes your ABN, GST line-item breakdown, and meets ATO requirements for tax invoices. You can toggle GST-inclusive or exclusive per line item.',
+    a: 'Yes. Every quote SMASH generates includes your ABN, a GST line-item breakdown, and meets ATO requirements for valid tax quotes. You can toggle GST on or off per line item, so you can include both GST-applicable and GST-free items in the same quote — with correct totals automatically calculated.',
   },
   {
     q: 'Can I add my logo?',
-    a: 'Custom branding (logo, colours) is on the roadmap and coming soon. Right now your business name, ABN, and contact details appear on every quote.',
+    a: 'Custom branding including logo and colours is on the SMASH roadmap and coming soon. Right now your business name, ABN, and contact details appear on every quote. The professional layout alone significantly improves how clients perceive your business.',
   },
   {
     q: 'Does it work without internet?',
-    a: 'An internet connection is needed to process your voice and generate the quote. The app works on 4G/5G so you can quote straight from the job site.',
+    a: 'An active internet connection is needed to process your voice description and generate the quote. The SMASH app works on 4G/5G so you can quote directly from the job site, even without Wi-Fi. For the web quote builder on this page, any browser with an internet connection will work.',
   },
   {
     q: 'What if I need to edit the quote?',
-    a: 'You can review and edit any line item before sending. Change prices, add or remove items, update the description — full control before it goes out.',
+    a: 'You have full control before anything goes out. Review each line item, change prices, add or remove items, update the description or notes. SMASH shows you a preview of the quote before sending — nothing leaves without your approval.',
   },
 ];
 
@@ -471,13 +472,38 @@ export function QuoteGenerator() {
   return (
     <>
       <SEO
-        title="Free Quote Generator for Australian Tradies | SMASH"
+        title="Free Quote Generator Australia: Professional Quotes in 60 Seconds | SMASH"
         description="Australia's fastest quote generator. Describe the job out loud — get a professional, GST-compliant quote in 60 seconds. Free to start. iPhone app for tradies."
         keywords="free quote generator australia, tradie quote generator, quote generator app, invoice quote generator, GST quote generator australia"
         ogTitle="Free Quote Generator for Tradies — SMASH"
         ogDescription="Voice-powered quote generator for Australian tradies. Professional quotes in 60 seconds. Free to start."
         canonical="https://smashinvoices.com/quote-generator"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "Free Quote Generator Australia",
+        description: "Australia's fastest quote generator for tradies. Build a professional GST-compliant quote in 60 seconds. No login, no download.",
+        url: "https://smashinvoices.com/quote-generator",
+        featureList: ["GST-compliant quotes", "Itemised line items", "Live quote preview", "Email delivery", "ABN included"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Generate a Professional Quote",
+        description: "Build a professional GST-compliant quote for any tradie job using the free quote generator.",
+        steps: [
+          { name: "Add your business and client details", text: "Enter your business name, ABN, and client details. Add a quote number and valid-until date." },
+          { name: "Enter line items (labour, materials, call-out fee)", text: "Add each line item with description, quantity, rate, and toggle GST on or off per line." },
+          { name: "Send — or download SMASH to do this by voice in 60 seconds", text: "Send your quote by email — or download SMASH to describe the entire job by voice and get a professional quote in under 60 seconds." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'Quote Generator', url: 'https://smashinvoices.com/quote-generator' },
+      ])} />
 
       <Nav />
 
@@ -539,6 +565,9 @@ export function QuoteGenerator() {
                 Free to use right here — no download, no signup. Build a quote, see it live, send it. Want to do this in 60 seconds by voice? That's SMASH.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Build a professional GST-compliant quote right here in your browser. No login, no download. When you're ready to do this in 60 seconds from voice, that's SMASH.
+            </p>
             <QuoteBuilder />
           </AnimateIn>
         </div>
@@ -775,29 +804,20 @@ export function QuoteGenerator() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
+              </Link>
               <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Invoice Generator →
+              </Link>
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
               </Link>
               <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 GST Calculator →
               </Link>
-              <Link to="/invoice-template" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Template →
-              </Link>
               <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Hourly Rate Calculator →
-              </Link>
-              <Link to="/late-payment-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Late Payment Calculator →
-              </Link>
-              <Link to="/voice-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Voice Invoicing →
-              </Link>
-              <Link to="/gst-compliant-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST Invoicing →
-              </Link>
-              <Link to="/smash-vs-xero" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                SMASH vs Xero →
               </Link>
             </div>
           </AnimateIn>

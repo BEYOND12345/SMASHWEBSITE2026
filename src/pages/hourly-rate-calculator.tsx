@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -47,27 +48,27 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: "What's the average tradie hourly rate in Australia?",
-    a: 'Varies by trade: electricians $80–$130/hr, plumbers $80–$120/hr, carpenters $70–$110/hr. But your rate depends on your costs, location, and target income.',
+    a: 'Average rates vary significantly by trade and location: electricians typically charge $80–$130/hr, plumbers $80–$120/hr, carpenters $70–$110/hr, and handymen $60–$90/hr. But the right rate for you depends on your specific costs, location, experience, and income goal — use this calculator to find your personal minimum and recommended rate.',
   },
   {
     q: 'Should my rate include GST?',
-    a: 'Show your rate ex-GST, then add 10% for GST if you\'re registered. SMASH handles this automatically on every invoice.',
+    a: 'Always quote your hourly rate ex-GST, then add 10% GST on top if you\'re registered. If you\'re above the $75,000 annual turnover threshold, GST registration is mandatory. SMASH handles GST automatically on every invoice — your rate is applied and the correct GST is added without any manual calculation.',
   },
   {
     q: 'What overhead should I include?',
-    a: 'Tools and equipment, vehicle costs, insurance, phone/software, licences and registrations, accountant fees. Most tradies underestimate this by 30–50%.',
+    a: 'Overhead includes everything you spend that isn\'t tied to a specific job: vehicle registration and maintenance, fuel, tools and equipment replacement, public liability insurance, phone and software, licences, accountant and bookkeeper fees. Most tradies underestimate overhead by 30–50%. A 20% overhead rate is a common starting point, but trade-specific costs can be higher.',
   },
   {
     q: 'How many billable hours should I assume per week?',
-    a: 'Most tradies are 60–80% billable (driving, quoting, admin takes the rest). 32 hours/week is a realistic billable estimate for a 40-hour week.',
+    a: 'Most tradies are only 60–80% billable — driving, quoting, invoicing, buying materials, and admin all take time you can\'t charge for. If you work a 40-hour week, assume 28–32 billable hours as a realistic estimate. Using too high a billable hours figure leads to undercharging. This calculator lets you set your own billable hours so the rate reflects your reality.',
   },
   {
     q: 'Do I need to charge more as a sole trader?',
-    a: 'Yes. No sick leave, no super contributions from an employer, no paid leave. Factor in at least 11.5% super and 4 weeks leave in your rate.',
+    a: 'Yes — significantly more. As a sole trader you have no paid sick leave, no paid annual leave, no employer super contributions, and no redundancy cover. You need to fund at least 11.5% superannuation yourself, plus budget for 4 weeks unpaid leave per year. These costs should all be factored into your rate, which this calculator does automatically.',
   },
   {
     q: 'How does SMASH help with rates?',
-    a: 'SMASH learns your labour rates from your first few quotes and applies them automatically. You set the rate once; it uses it every time.',
+    a: 'SMASH learns your labour rates from your first few quotes and applies them automatically to every new quote. You describe the job by voice — SMASH pulls in your saved rates, calculates the labour total, adds GST, and sends a professional quote. You set the rate once; it uses it every time without any manual entry.',
   },
 ];
 
@@ -361,11 +362,36 @@ export function HourlyRateCalculator() {
   return (
     <>
       <SEO
-        title="Tradie Hourly Rate Calculator Australia | SMASH"
+        title="Tradie Hourly Rate Calculator: What Should I Charge? | SMASH"
         description="Free hourly rate calculator for Australian tradies. Work out what you need to charge to hit your income goal — including overhead, super, tax, and profit margin."
         keywords="tradie hourly rate calculator, hourly rate calculator australia, what to charge per hour australia, trade hourly rate"
         canonical="https://smashinvoices.com/hourly-rate-calculator"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "Tradie Hourly Rate Calculator Australia",
+        description: "Free hourly rate calculator for Australian tradies. Work out what you need to charge to hit your income goal — including overhead, super, tax, and profit margin.",
+        url: "https://smashinvoices.com/hourly-rate-calculator",
+        featureList: ["Income-based rate calculation", "Overhead percentage included", "Profit margin calculation", "Day rate calculation", "Minimum and recommended rate"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Calculate Your Tradie Hourly Rate",
+        description: "Work out your minimum and recommended hourly rate based on your actual income goal and business costs.",
+        steps: [
+          { name: "Enter your income goal and working weeks", text: "Enter your desired annual take-home income and how many weeks per year you plan to work." },
+          { name: "Set your overhead and margin", text: "Enter your overhead percentage (tools, fuel, insurance) and target profit margin to build in business costs." },
+          { name: "See your minimum and recommended hourly rate", text: "Read your minimum rate (covers income only), recommended rate (includes overhead and profit), and full-day rate." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'Hourly Rate Calculator', url: 'https://smashinvoices.com/hourly-rate-calculator' },
+      ])} />
 
       <Nav />
 
@@ -408,7 +434,37 @@ export function HourlyRateCalculator() {
                 Most tradies undercharge because they don't account for overhead and profit. This calculator shows you the real numbers.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Most tradies undercharge because they forget to include overhead. This calculator builds up from your real costs — income target, overhead, and profit — to give you a rate that actually covers your business.
+            </p>
             <HourlyRateCalc />
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── HOW TO USE ───────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3">How to use</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
+              How to calculate your hourly rate.
+            </h2>
+            <ol className="space-y-4">
+              {[
+                { n: '01', title: 'Enter your income goal and working weeks', desc: 'Enter the annual take-home income you want to achieve, and how many weeks you plan to work. 48 weeks allows 4 weeks leave.' },
+                { n: '02', title: 'Set your overhead and margin', desc: 'Enter your overhead percentage to cover business costs like fuel, insurance, and tools. Add a profit margin to build your business surplus.' },
+                { n: '03', title: 'See your minimum and recommended hourly rate', desc: 'Your minimum rate covers your income only. The recommended rate adds overhead and profit — that\'s the rate you should actually be charging.' },
+              ].map(s => (
+                <li key={s.n} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-accent text-brand font-black text-sm flex items-center justify-center shrink-0">{s.n}</div>
+                  <div>
+                    <p className="font-black text-base uppercase tracking-tighter text-brand leading-[0.95] mb-1">{s.title}</p>
+                    <p className="font-body text-sm font-medium text-brand/60 leading-[1.5]">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </AnimateIn>
         </div>
       </section>
@@ -608,23 +664,20 @@ export function HourlyRateCalculator() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
+              </Link>
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
+              </Link>
               <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 GST Calculator →
-              </Link>
-              <Link to="/invoice-template" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Template →
               </Link>
               <Link to="/late-payment-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Late Payment Calculator →
               </Link>
-              <Link to="/quote-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Quote Generator →
-              </Link>
               <Link to="/invoice-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Invoice Generator →
-              </Link>
-              <Link to="/voice-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Voice Invoicing →
               </Link>
             </div>
           </AnimateIn>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -80,27 +81,27 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is the invoice generator free?',
-    a: 'Yes — SMASH has a free plan that lets you send 2 invoices per month with no credit card required. Upgrade to Pro ($22.99/month) for unlimited invoices and all features.',
+    a: 'Yes — SMASH has a free plan that lets you send 2 invoices per month with no credit card required. The free web invoice builder on this page is also completely free with no signup. Upgrade to the Pro plan ($22.99/month) for unlimited invoices, read receipts, and overdue tracking.',
   },
   {
     q: 'Are SMASH invoices ATO-compliant?',
-    a: 'Yes. Every invoice includes your ABN, GST breakdown, sequential invoice numbers, and all fields required by the ATO for a valid tax invoice.',
+    a: 'Yes. Every invoice SMASH generates includes your ABN, a GST breakdown, sequential invoice numbers, invoice date, and all fields required by the ATO for a valid tax invoice in Australia. Your bookkeeper and the ATO will be happy. The web invoice builder on this page produces the same compliant format.',
   },
   {
     q: 'How does the payment link work?',
-    a: 'SMASH integrates with Stripe. Your client taps "Pay Now" on the invoice link, pays by card, and you receive the money in your bank account within 2 business days.',
+    a: 'SMASH integrates with Stripe. When your client receives the invoice, they see a "Pay Now" button. They tap it, pay by card, and the money arrives in your bank account within 2 business days. No internet banking, no BSB lookup, no delays from forgetting to check email.',
   },
   {
     q: 'Can I convert a quote to an invoice?',
-    a: 'Quote-to-invoice conversion is in development — it\'s the most requested feature after Android. It\'ll be a single tap when it launches. For now, you can create the invoice from voice in the same amount of time.',
+    a: 'Quote-to-invoice conversion is in development and it\'s the most requested feature after Android. It\'ll be a single tap when it launches. For now, you can create the invoice from a fresh voice description in the same amount of time — SMASH already knows your rates so it\'s very fast.',
   },
   {
     q: 'What if my client hasn\'t paid?',
-    a: 'SMASH tracks payment status on every invoice and shows you which are overdue and by how many days. You can also see if your client opened the invoice (read receipts).',
+    a: 'SMASH tracks payment status on every invoice and shows you a dashboard of unpaid invoices, how many days overdue each one is, and whether your client has opened the invoice (read receipts). No more "I didn\'t get your invoice" — you can see exactly when it was opened.',
   },
   {
     q: 'Can I invoice in Australian dollars?',
-    a: 'Yes — SMASH is built for Australia. AUD, GST, ABN. Everything is Australian by default.',
+    a: 'Yes — SMASH is built specifically for Australia. All amounts are in AUD, GST is calculated at the Australian rate of 10%, and your ABN appears on every invoice. There\'s no setup needed to configure currency or tax rates — it works correctly for Australian businesses out of the box.',
   },
 ];
 
@@ -544,13 +545,38 @@ export function InvoiceGenerator() {
   return (
     <>
       <SEO
-        title="Free Invoice Generator for Australian Tradies | SMASH"
+        title="Free Invoice Generator Australia: ATO Tax Invoice in 60 Seconds | SMASH"
         description="Australia's fastest invoice generator. Describe the job out loud — get an ATO-compliant tax invoice with Stripe payment link in under 60 seconds. Free to start."
         keywords="free invoice generator australia, tradie invoice generator, invoice generator app, tax invoice generator australia, GST invoice generator"
         ogTitle="Free Invoice Generator for Tradies — SMASH"
         ogDescription="Voice-powered invoice generator for Australian tradies. ATO-compliant tax invoices in 60 seconds. Free to start."
         canonical="https://smashinvoices.com/invoice-generator"
       />
+
+      <StructuredData data={createCalculatorSchema({
+        name: "Free Invoice Generator Australia",
+        description: "Build a real ATO-compliant tax invoice in your browser. No login, no download. Enter your details, add line items, and send.",
+        url: "https://smashinvoices.com/invoice-generator",
+        featureList: ["ATO-compliant tax invoice format", "ABN displayed on every invoice", "GST calculated per line item", "Stripe payment link", "Free to use"],
+      })} />
+
+      <StructuredData data={createHowToSchema({
+        name: "How to Generate an Invoice Online",
+        description: "Build a free ATO-compliant Australian tax invoice right in your browser in 3 steps.",
+        steps: [
+          { name: "Enter your business details and ABN", text: "Enter your business name and ABN — both required for an ATO-compliant tax invoice in Australia." },
+          { name: "Add line items with GST toggle per item", text: "Add each line item — labour, materials, call-out fee — with quantity and rate. Toggle GST on or off per line item." },
+          { name: "Send invoice and capture the lead — or use SMASH for voice-to-invoice", text: "Send your completed invoice by email — or download SMASH to describe the job by voice and generate this invoice in under 60 seconds." },
+        ],
+      })} />
+
+      <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com' },
+        { name: 'Tools', url: 'https://smashinvoices.com/tools' },
+        { name: 'Invoice Generator', url: 'https://smashinvoices.com/invoice-generator' },
+      ])} />
 
       <Nav />
 
@@ -613,6 +639,9 @@ export function InvoiceGenerator() {
                 Free to use right here — no download, no signup. Add your details, see it live, send it. Want to do this in 60 seconds by voice? That's SMASH.
               </p>
             </div>
+            <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
+              Build a real ATO-compliant tax invoice right here. No login, no download, no setup. Enter your details, add line items, and send. For voice-to-invoice in 60 seconds, download SMASH.
+            </p>
             <InvoiceBuilder />
           </AnimateIn>
         </div>
@@ -846,29 +875,20 @@ export function InvoiceGenerator() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="flex flex-wrap gap-3 justify-center">
+              <Link to="/tools" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                All Tools →
+              </Link>
               <Link to="/quote-generator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Quote Generator →
+              </Link>
+              <Link to="/profit-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
+                Profit Calculator →
               </Link>
               <Link to="/gst-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 GST Calculator →
               </Link>
-              <Link to="/invoice-template" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Invoice Template →
-              </Link>
-              <Link to="/hourly-rate-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                Hourly Rate Calculator →
-              </Link>
               <Link to="/late-payment-calculator" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
                 Late Payment Calculator →
-              </Link>
-              <Link to="/ai-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                AI Invoicing →
-              </Link>
-              <Link to="/gst-compliant-invoicing" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                GST Invoicing →
-              </Link>
-              <Link to="/smash-vs-xero" className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all">
-                SMASH vs Xero →
               </Link>
             </div>
           </AnimateIn>
