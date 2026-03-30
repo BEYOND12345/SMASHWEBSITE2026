@@ -5,6 +5,7 @@ import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight } from 'lucide-react';
+import { RelatedPosts } from '../components/related-posts';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -273,6 +274,32 @@ function GSTCalculator() {
           Enter an amount above to see your GST calculation
         </p>
       )}
+
+      {/* Don't-type CTA */}
+      <div className="mt-5 bg-brand rounded-[20px] p-5 border border-accent/20">
+        <div className="flex items-start gap-3">
+          <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0 mt-0.5">
+            <span className="text-brand font-black text-sm">⚡</span>
+          </div>
+          <div>
+            <p className="font-black text-sm uppercase tracking-tighter text-white leading-[0.95] mb-1">
+              Don't want to type all this?
+            </p>
+            <p className="font-body text-xs font-medium text-white/60 leading-[1.5] mb-3">
+              SMASH does this automatically from a 30-second voice description. No form, no typing, no GST maths.
+            </p>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
+            >
+              Try SMASH Free
+              <ArrowRight size={11} strokeWidth={3} />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -539,6 +566,19 @@ export function GstCalculator() {
               <span className="font-body text-xs font-medium text-white/35">Cancel anytime</span>
             </div>
           </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── FROM THE BLOG ────────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-white/30 mb-6">From the blog</p>
+          <RelatedPosts
+            currentPostId=""
+            primaryKeyword="gst"
+            secondaryKeywords={['tax invoice', 'ato compliance', 'gst calculator australia']}
+            limit={2}
+          />
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight } from 'lucide-react';
+import { RelatedPosts } from '../components/related-posts';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -212,6 +213,32 @@ function ProfitCalc() {
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 font-black text-brand/40 text-sm">%</span>
               </div>
               <p className="font-body text-[10px] text-brand/35 mt-1">Industry avg is 15-25% for tradies</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Don't-type CTA */}
+        <div className="bg-brand rounded-[20px] p-5 border border-accent/20">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0 mt-0.5">
+              <span className="text-brand font-black text-sm">⚡</span>
+            </div>
+            <div>
+              <p className="font-black text-sm uppercase tracking-tighter text-white leading-[0.95] mb-1">
+                Don't want to type all this?
+              </p>
+              <p className="font-body text-xs font-medium text-white/60 leading-[1.5] mb-3">
+                SMASH does this automatically from a 30-second voice description. No form, no typing, no GST maths.
+              </p>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
+              >
+                Try SMASH Free
+                <ArrowRight size={11} strokeWidth={3} />
+              </a>
             </div>
           </div>
         </div>
@@ -603,6 +630,19 @@ export function ProfitCalculator() {
               </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── FROM THE BLOG ────────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-white/30 mb-6">From the blog</p>
+          <RelatedPosts
+            currentPostId=""
+            primaryKeyword="profit margin"
+            secondaryKeywords={['job pricing', 'materials markup', 'tradie rates']}
+            limit={2}
+          />
         </div>
       </section>
 

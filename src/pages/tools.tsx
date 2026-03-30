@@ -5,6 +5,7 @@ import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Star, ArrowRight, Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle } from 'lucide-react';
+import { RelatedPosts } from '../components/related-posts';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -167,6 +168,19 @@ export function Tools() {
               </div>
             </div>
           </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── RELATED READING ──────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-white/30 mb-6">Related reading</p>
+          <RelatedPosts
+            currentPostId=""
+            primaryKeyword="invoice"
+            secondaryKeywords={['tradie tools', 'gst', 'quote', 'get paid']}
+            limit={3}
+          />
         </div>
       </section>
 

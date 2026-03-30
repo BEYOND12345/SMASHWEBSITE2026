@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
 import { RelatedPosts } from '../components/related-posts';
+import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -367,6 +368,11 @@ export function BlogPost() {
             limit={3}
           />
 
+          <RelatedTools
+            keywords={[post.primary_keyword, ...post.secondary_keywords]}
+            title="Free tools — use right now, no download"
+          />
+
           <div className="mt-16 pt-8 border-t border-white/10">
             <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12 border border-accent/20">
               <div className="flex items-center gap-0.5 mb-4">
@@ -376,10 +382,10 @@ export function BlogPost() {
                 <span className="font-body text-xs font-semibold text-white/50 ml-2">4.9 App Store</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tighter leading-[0.88]">
-                Ready to invoice in under 60 seconds?
+                Stop typing invoices.<br />Talk for 30 seconds.
               </h3>
               <p className="font-body text-white/75 text-base sm:text-lg mb-6 leading-[1.5] max-w-lg">
-                Stop fighting your software and start getting paid. Talk for 30 seconds — SMASH builds the invoice. Free to start.
+                SMASH turns a voice description into a professional, ATO-compliant tax invoice — with a Pay Now button — before you've packed up your tools. No typing. No form. No GST maths.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
