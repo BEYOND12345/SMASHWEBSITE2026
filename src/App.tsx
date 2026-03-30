@@ -6,6 +6,7 @@ import { FAQPage } from './pages/faq-page';
 import { Pricing } from './pages/pricing';
 import { Privacy } from './pages/privacy';
 import { Terms } from './pages/terms';
+import { Contact } from './pages/contact';
 import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/admin/blog" element={<BlogAdmin />} />
