@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { DualPhoneSection } from '../components/dual-phone-section';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight } from 'lucide-react';
 
 const faqSchema = {
@@ -161,17 +162,8 @@ export function Features() {
         </div>
       </section>
 
-      {/* PHONE SCREENS — voice + pricing catalog */}
-      <section className="bg-surface py-12 md:py-16 overflow-hidden">
-        <div className="flex items-center justify-center gap-6 sm:gap-10 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top">
-          <PhoneMockup>
-            <AppScreen type="voice" />
-          </PhoneMockup>
-          <PhoneMockup>
-            <AppScreen type="pricing" />
-          </PhoneMockup>
-        </div>
-      </section>
+      {/* DUAL PHONE — voice to quote visual */}
+      <DualPhoneSection />
 
       {/* CLUSTER 1 — QUOTE ON THE JOB */}
       <section className="bg-white py-16 md:py-24">
@@ -332,13 +324,13 @@ export function Features() {
             </div>
           </div>
 
-          {/* APP SCREENS — quote + invoice */}
+          {/* APP SCREENS — estimates + portal */}
           <div className="flex items-center justify-center gap-4 sm:gap-6 mt-16 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top">
             <PhoneMockup size="small">
-              <AppScreen type="quote" />
+              <AppScreen type="estimates-static" />
             </PhoneMockup>
             <PhoneMockup size="small">
-              <AppScreen type="invoice" />
+              <AppScreen type="portal" />
             </PhoneMockup>
           </div>
         </div>
@@ -380,13 +372,13 @@ export function Features() {
               </div>
             </div>
 
-            {/* APP SCREENS — invoices + client */}
+            {/* APP SCREENS — estimates + customer management */}
             <div className="flex items-center justify-center gap-4 sm:gap-6 scale-75 sm:scale-90 lg:scale-100 origin-center">
               <PhoneMockup>
-                <AppScreen type="invoices" />
+                <AppScreen type="estimates" />
               </PhoneMockup>
               <PhoneMockup>
-                <AppScreen type="client" />
+                <AppScreen type="customer-management" />
               </PhoneMockup>
             </div>
           </div>
