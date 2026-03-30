@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 interface BlogPost {
   id: string;
@@ -129,20 +130,7 @@ export function BlogPost() {
       )}
 
       <div className="min-h-screen bg-brand">
-        <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="text-xl font-black tracking-tight text-white">
-              SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
-            </Link>
-            <Link
-              to="/blog"
-              className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors"
-            >
-              <ArrowLeft size={16} />
-              All Posts
-            </Link>
-          </div>
-        </nav>
+        <Nav />
 
         <article className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
           <AnimateIn direction="up">

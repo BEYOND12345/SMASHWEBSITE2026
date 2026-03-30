@@ -15,6 +15,10 @@ import { InvoiceOnMobile } from './pages/invoice-on-mobile';
 import { Roadmap } from './pages/roadmap';
 import { Changelog } from './pages/changelog';
 
+// Tool pages
+import { QuoteGenerator } from './pages/quote-generator';
+import { InvoiceGenerator } from './pages/invoice-generator';
+
 // Comparison pages
 import { SmashVsXero } from './pages/smash-vs-xero';
 import { SmashVsMyob } from './pages/smash-vs-myob';
@@ -68,6 +72,10 @@ function App() {
         <Route path="/invoice-on-mobile" element={<InvoiceOnMobile />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/changelog" element={<Changelog />} />
+
+        {/* Tool pages */}
+        <Route path="/quote-generator" element={<QuoteGenerator />} />
+        <Route path="/invoice-generator" element={<InvoiceGenerator />} />
 
         {/* Comparison pages */}
         <Route path="/smash-vs-xero" element={<SmashVsXero />} />

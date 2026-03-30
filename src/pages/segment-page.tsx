@@ -9,6 +9,7 @@ import { GeneratingScreen } from '../components/generating-screen';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import type { SegmentData } from '../data/segment-data';
+import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -52,19 +53,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── NAV ────────────────────────────────────────────────────────────── */}
-      <nav className="bg-brand px-4 sm:px-6 lg:px-12 py-4 md:py-5 flex items-center justify-between sticky top-0 z-50">
-        <Link to="/" className="text-white font-black text-xl tracking-tighter">
-          SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
-        </Link>
-        <a
-          href={APP_STORE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
-        >
-          Start Free
-        </a>
-      </nav>
+      <Nav />
 
       {/* ── HERO — text left, dual phones right ────────────────────────────── */}
       <section className="relative bg-brand overflow-hidden">

@@ -70,6 +70,16 @@ export function Footer({ showCTA = false }: FooterProps) {
               <li><Link to="/how-it-works" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">How It Works</Link></li>
               <li><Link to="/voice-invoicing" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Voice Invoicing</Link></li>
               <li><Link to="/gst-compliant-invoicing" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">GST Invoicing</Link></li>
+              <li><Link to="/quote-generator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Quote Generator</Link></li>
+              <li><Link to="/invoice-generator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Invoice Generator</Link></li>
+            </ul>
+            <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Compare</h3>
+            <ul className="space-y-3">
+              <li><Link to="/smash-vs-xero" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Xero</Link></li>
+              <li><Link to="/smash-vs-myob" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs MYOB</Link></li>
+              <li><Link to="/smash-vs-servicem8" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs ServiceM8</Link></li>
+              <li><Link to="/smash-vs-quickbooks" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs QuickBooks</Link></li>
+              <li><Link to="/smash-vs-fergus" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Fergus</Link></li>
             </ul>
           </div>
 

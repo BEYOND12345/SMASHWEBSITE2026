@@ -6,6 +6,7 @@ import { StructuredData } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 interface BlogPost {
   id: string;
@@ -72,27 +73,7 @@ export function BlogList() {
       }} />
 
       <div className="min-h-screen bg-[#0A0A0A]">
-        <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-            <Link to="/" className="text-xl font-black tracking-tight text-white">
-              SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
-            </Link>
-            <div className="flex items-center gap-4">
-              <Link
-                to="/founder"
-                className="text-sm font-semibold text-white/70 hover:text-white transition-colors"
-              >
-                Founder
-              </Link>
-              <Link
-                to="/#signup-form"
-                className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all"
-              >
-                Start Free
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Nav />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
           <AnimateIn direction="up">

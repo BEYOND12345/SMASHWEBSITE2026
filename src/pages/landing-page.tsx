@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
+import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
 import { SEO } from '../components/seo';
@@ -47,6 +48,7 @@ export function LandingPage() {
 
       <StickyCTA />
       <SignupFAB />
+      <Nav />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative text-white min-h-[90vh] overflow-hidden">
@@ -59,33 +61,6 @@ export function LandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/93 to-gray-900/70" />
         </div>
-
-        {/* Nav */}
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-5 md:py-7 flex items-center justify-between relative z-10">
-          <span className="text-white font-black text-2xl tracking-tight">
-            SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-          </span>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <Link to="/how-it-works" className="hidden md:block px-4 py-2.5 text-sm font-semibold font-body text-white/60 hover:text-white transition-colors tracking-wide">
-              How It Works
-            </Link>
-            <Link to="/pricing" className="hidden md:block px-4 py-2.5 text-sm font-semibold font-body text-white/60 hover:text-white transition-colors tracking-wide">
-              Pricing
-            </Link>
-            <Link to="/faq" className="hidden md:block px-4 py-2.5 text-sm font-semibold font-body text-white/60 hover:text-white transition-colors tracking-wide">
-              FAQ
-            </Link>
-            <Link to="/blog" className="hidden md:block px-4 py-2.5 text-sm font-semibold font-body text-white/60 hover:text-white transition-colors tracking-wide">
-              Blog
-            </Link>
-            <a
-              href="#signup-form"
-              className="ml-2 px-5 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover-glow hover:brightness-95 transition-all"
-            >
-              Start Free
-            </a>
-          </div>
-        </nav>
 
         {/* Hero content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 py-16 md:py-20 lg:py-28">

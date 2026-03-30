@@ -5,6 +5,7 @@ import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -62,25 +63,7 @@ export function Features() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* NAV */}
-      <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-black tracking-tight text-white">
-            SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link to="/how-it-works" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              How It Works
-            </Link>
-            <Link to="/pricing" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Pricing
-            </Link>
-            <Link to="/#signup-form" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-              Start Free
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* HERO */}
       <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
@@ -230,8 +213,8 @@ export function Features() {
                   </li>
                 ))}
               </ul>
-              <Link to="/features/pricing-catalog" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
-                Learn about pricing catalog <ChevronRight size={16} strokeWidth={2.5} />
+              <Link to="/voice-invoicing" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
+                Learn about voice invoicing <ChevronRight size={16} strokeWidth={2.5} />
               </Link>
             </div>
 
@@ -254,8 +237,8 @@ export function Features() {
                   </li>
                 ))}
               </ul>
-              <Link to="/features/materials-pricing" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
-                Learn about materials pricing <ChevronRight size={16} strokeWidth={2.5} />
+              <Link to="/gst-compliant-invoicing" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
+                GST invoicing details <ChevronRight size={16} strokeWidth={2.5} />
               </Link>
             </div>
 
@@ -278,7 +261,7 @@ export function Features() {
                   </li>
                 ))}
               </ul>
-              <Link to="/features/fastest-invoicing" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
+              <Link to="/how-it-works" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
                 See the speed proof <ChevronRight size={16} strokeWidth={2.5} />
               </Link>
             </div>
@@ -310,7 +293,7 @@ export function Features() {
               <p className="font-body text-brand/70 font-medium text-sm leading-[1.5] mb-4">
                 Customer gets a link. They open it on their phone, review the quote, and tap approve. No printing, no signing, no "can you resend it?"
               </p>
-              <Link to="/features/customer-approval" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
+              <Link to="/how-it-works" className="mt-auto inline-flex items-center gap-1 text-sm font-black text-accent uppercase tracking-wide hover:gap-2 transition-all">
                 Learn more <ChevronRight size={16} strokeWidth={2.5} />
               </Link>
             </div>

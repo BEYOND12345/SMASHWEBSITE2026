@@ -9,6 +9,7 @@ import { ListeningScreen } from '../components/listening-screen';
 import { GeneratingScreen } from '../components/generating-screen';
 import { InlineCTA } from '../components/inline-cta';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 export function HowItWorks() {
   const howToSchema = {
@@ -74,24 +75,7 @@ export function HowItWorks() {
       })} />
 
       <div className="min-h-screen bg-white">
-        <nav className="bg-brand text-white border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-between">
-            <Link to="/" className="text-2xl font-black tracking-tight">
-              SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-            </Link>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <Link to="/faq" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-                FAQ
-              </Link>
-              <Link to="/blog" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-                Blog
-              </Link>
-              <Link to="/#signup-form" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-                Start Free
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Nav />
 
         {/* HERO */}
         <section className="bg-brand text-white py-16 md:py-20 lg:py-32">

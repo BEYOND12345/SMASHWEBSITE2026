@@ -5,6 +5,7 @@ import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { Check, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -72,13 +73,7 @@ export function GstCompliantInvoicing() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* NAV */}
-      <nav className="bg-brand px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between sticky top-0 z-50">
-        <Link to="/" className="text-white font-black text-xl tracking-tighter">SMASH.</Link>
-        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all">
-          Start Free
-        </a>
-      </nav>
+      <Nav />
 
       {/* HERO */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden">

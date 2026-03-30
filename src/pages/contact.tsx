@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { Bug, MessageSquare, CreditCard, Users, Newspaper } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 export function Contact() {
   return (
@@ -20,25 +21,7 @@ export function Contact() {
         canonical="https://smashinvoices.com/contact"
       />
 
-      {/* NAV */}
-      <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-black tracking-tight text-white">
-            SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link to="/pricing" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Pricing
-            </Link>
-            <Link to="/faq" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              FAQ
-            </Link>
-            <Link to="/#signup-form" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-              Start Free
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* HEADER */}
       <section className="bg-brand py-16 md:py-24">

@@ -4,6 +4,7 @@ import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Wrench, Zap, Users } from 'lucide-react';
 import { useState } from 'react';
+import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -87,31 +88,7 @@ export function Pricing() {
         }))
       }) }} />
 
-      {/* NAV */}
-      <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-black tracking-tight text-white">
-            SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link to="/how-it-works" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              How It Works
-            </Link>
-            <Link to="/faq" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              FAQ
-            </Link>
-            <Link to="/features" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Features
-            </Link>
-            <Link to="/blog" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Blog
-            </Link>
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-              Start Free
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* HERO */}
       <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
