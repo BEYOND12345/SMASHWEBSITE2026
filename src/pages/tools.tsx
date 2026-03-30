@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -68,6 +70,7 @@ export function Tools() {
         { name: 'Home', url: 'https://smashinvoices.com' },
         { name: 'Tools', url: 'https://smashinvoices.com/tools' },
       ])} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 

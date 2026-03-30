@@ -3,6 +3,8 @@ import { ArrowRight, Star, Quote, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from '../components/seo';
 import { StructuredData, createVideoSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { FeatureSection } from '../components/feature-section';
@@ -153,6 +155,7 @@ export function HowItWorks() {
         { name: 'Home', url: 'https://smashinvoices.com' },
         { name: 'How It Works', url: 'https://smashinvoices.com/how-it-works' },
       ])} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <div className="min-h-screen bg-white">
         <Nav />

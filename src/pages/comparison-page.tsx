@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -100,6 +102,7 @@ export function ComparisonPage({ data }: Props) {
       {data.faq && data.faq.length > 0 && (
         <StructuredData data={createFAQSchema(data.faq.map(f => ({ question: f.q, answer: f.a })))} />
       )}
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 

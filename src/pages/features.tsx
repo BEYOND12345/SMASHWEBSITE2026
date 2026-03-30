@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
@@ -54,6 +56,7 @@ export function Features() {
         { name: 'Features', url: 'https://smashinvoices.com/features' },
       ])} />
       <StructuredData data={createFAQSchema(featureFaqs)} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 

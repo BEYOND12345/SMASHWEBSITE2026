@@ -12,6 +12,13 @@ import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
 import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import {
+  organizationSchema as aiOrgSchema,
+  websiteSchema as aiWebsiteSchema,
+  softwareApplicationSchema,
+  homepageFaqSchema,
+} from '../data/schema-data';
 import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
@@ -73,6 +80,7 @@ export function LandingPage() {
         uploadDate: "2026-01-01"
       })} />
       <StructuredData data={createFAQSchema(homeFaqs)} />
+      <SchemaMarkup schemas={[aiOrgSchema, aiWebsiteSchema, softwareApplicationSchema, homepageFaqSchema]} />
 
       <StickyCTA />
       <SignupFAB />

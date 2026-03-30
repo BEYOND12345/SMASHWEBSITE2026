@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
@@ -69,6 +71,7 @@ export function InvoiceOnMobile() {
         { name: 'Invoice on Mobile', url: 'https://smashinvoices.com/invoice-on-mobile' },
       ])} />
       <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 

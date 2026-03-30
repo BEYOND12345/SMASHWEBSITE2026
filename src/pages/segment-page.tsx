@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import {
+  organizationSchema as aiOrgSchema,
+  softwareApplicationSchema,
+  createSegmentFaqSchema,
+} from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
@@ -48,6 +54,11 @@ export function SegmentPage({ data }: { data: SegmentData }) {
         { name: data.trade, url: `https://smashinvoices.com/${data.slug}` },
       ])} />
       <StructuredData data={createFAQSchema(data.faqs.map(f => ({ question: f.q, answer: f.a })))} />
+      <SchemaMarkup schemas={[
+        aiOrgSchema,
+        softwareApplicationSchema,
+        createSegmentFaqSchema(data.trade, data.faqs.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a }))),
+      ]} />
 
       {/* ── NAV ────────────────────────────────────────────────────────────── */}
       <Nav />

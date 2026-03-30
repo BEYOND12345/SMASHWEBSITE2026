@@ -3,6 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import {
+  organizationSchema as aiOrgSchema,
+  createArticleSchemaAI,
+} from '../data/schema-data';
 import { RelatedPosts } from '../components/related-posts';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
@@ -131,6 +136,16 @@ export function BlogPost() {
       {post.faq_data && post.faq_data.length > 0 && (
         <StructuredData data={createFAQSchema(post.faq_data)} />
       )}
+      <SchemaMarkup schemas={[
+        aiOrgSchema,
+        createArticleSchemaAI({
+          title: post.title,
+          description: post.meta_description || post.excerpt,
+          slug: post.slug,
+          datePublished: post.published_at,
+          dateModified: post.updated_at || post.published_at,
+        }),
+      ]} />
 
       <div className="min-h-screen bg-brand">
         <Nav />

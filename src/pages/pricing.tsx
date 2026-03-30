@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Wrench, Zap, Users, Star, Quote } from 'lucide-react';
@@ -102,6 +104,7 @@ export function Pricing() {
         { name: 'Pricing', url: 'https://smashinvoices.com/pricing' },
       ])} />
       <StructuredData data={createFAQSchema(pricingFaqs)} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 
