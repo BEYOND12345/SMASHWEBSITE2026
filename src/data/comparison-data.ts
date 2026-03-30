@@ -22,6 +22,7 @@ export interface ComparisonData {
   theyAreFor: string;
   weAreFor: string;
   closingLine: string;
+  exportNote?: string;
 }
 
 const comparisons: ComparisonData[] = [
@@ -67,6 +68,7 @@ const comparisons: ComparisonData[] = [
     theyAreFor: 'Businesses that need full accounting — payroll, bank reconciliation, tax compliance, or those whose accountant already uses Xero.',
     weAreFor: 'Tradies who need to quote and invoice fast on the job. And soon: tradies who want both — SMASH speed on site, Xero for the books.',
     closingLine: 'Use SMASH to get paid on the job. Use Xero for the books. Soon, they\'ll talk to each other.',
+    exportNote: 'When the Xero integration launches, every invoice you create in SMASH will push automatically into your Xero account — line items, GST, client details, all of it. Your accountant gets the full picture, job by job, in real time. No re-entering data. No spreadsheets. No chasing receipts. Everything you\'ve already invoiced in SMASH will be there waiting.',
   },
   {
     slug: 'smash-vs-myob',
@@ -194,6 +196,7 @@ const comparisons: ComparisonData[] = [
     theyAreFor: 'Small businesses that need affordable accounting with payroll, expense tracking, and reporting. Great for those already in the QuickBooks ecosystem.',
     weAreFor: 'Australian tradies who need to quote and invoice instantly on the job. And soon: tradies who want SMASH speed on site with QuickBooks keeping the books.',
     closingLine: 'Use SMASH to invoice on the job. Use QuickBooks for the books. Integration coming soon — no double entry required.',
+    exportNote: 'When the QuickBooks integration launches, every invoice created in SMASH pushes straight into QuickBooks automatically — line items, GST, client details and all. No re-entering anything. No copying and pasting. Your books stay up to date without you touching QuickBooks at all. Everything you\'ve already invoiced in SMASH will be there ready to go.',
   },
   {
     slug: 'smash-vs-fergus',

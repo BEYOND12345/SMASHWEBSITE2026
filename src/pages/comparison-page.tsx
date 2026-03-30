@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, ArrowRight, Zap } from 'lucide-react';
+import { Check, X, ArrowRight, Zap, Upload } from 'lucide-react';
 import type { ComparisonData } from '../data/comparison-data';
 import { Nav } from '../components/nav';
+import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -23,7 +24,7 @@ function FeatureRow({ label, smash, them }: { label: string; smash: boolean | st
         ) : smash === false ? (
           <X size={15} className="text-white/20" strokeWidth={2.5} />
         ) : (
-          <span className="font-body text-xs font-bold text-white/50 text-center">{smash}</span>
+          <span className="font-body text-xs font-bold text-accent/70 text-center bg-accent/10 px-2 py-0.5 rounded-full">{smash}</span>
         )}
       </div>
       {/* Them */}
@@ -39,6 +40,27 @@ function FeatureRow({ label, smash, them }: { label: string; smash: boolean | st
     </div>
   );
 }
+
+const howItWorksSteps = [
+  {
+    num: '01',
+    screen: 'voice' as const,
+    title: 'Tap record',
+    desc: 'Open the app and tap record. Five seconds. No form, no template, no navigation.',
+  },
+  {
+    num: '02',
+    screen: 'quote' as const,
+    title: 'Describe the job',
+    desc: 'Talk for 30 seconds — labour, materials, call-out fee. SMASH builds the quote automatically.',
+  },
+  {
+    num: '03',
+    screen: 'portal' as const,
+    title: 'Client approves & pays',
+    desc: 'Your client gets a link. They approve with one tap and pay by card. Done before you leave.',
+  },
+];
 
 export function ComparisonPage({ data }: Props) {
   const headlineLines = data.heroHeadline.split('\n');
@@ -95,6 +117,65 @@ export function ComparisonPage({ data }: Props) {
                   {data.verdictSub}
                 </p>
               </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* HOW SMASH WORKS — 3 PHONES */}
+      <section className="bg-surface py-20 md:py-28 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3 text-center">How SMASH works</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4 text-center">
+              Talk. Quote. Paid.<br />Under 60 seconds.
+            </h2>
+            <p className="font-body text-brand/55 font-medium text-base leading-[1.5] mb-14 text-center max-w-xl mx-auto">
+              No typing. No templates. No desk required. This is what most tradies are missing.
+            </p>
+          </AnimateIn>
+
+          {/* 3 phones */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4 items-end justify-items-center">
+            {howItWorksSteps.map((step, i) => (
+              <AnimateIn key={i} direction="up" delay={i * 100}>
+                <div className="flex flex-col items-center text-center">
+                  {/* Step label above */}
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className="w-6 h-6 rounded-full bg-brand text-accent font-black text-xs flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span className="font-black text-xs uppercase tracking-widest text-brand">{step.title}</span>
+                  </div>
+
+                  {/* Phone */}
+                  <div className={`transition-all ${i === 1 ? 'scale-105' : 'scale-95 opacity-90'}`}>
+                    <PhoneMockup size="small">
+                      <AppScreen type={step.screen} />
+                    </PhoneMockup>
+                  </div>
+
+                  {/* Description below */}
+                  <p className="font-body text-xs font-medium text-brand/55 leading-[1.5] mt-5 max-w-[180px]">
+                    {step.desc}
+                  </p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+
+          {/* CTA under phones */}
+          <AnimateIn direction="up" delay={200}>
+            <div className="text-center mt-12">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+              >
+                Try it free — 2 quotes per month, no card
+                <ArrowRight size={14} strokeWidth={2.5} />
+              </a>
             </div>
           </AnimateIn>
         </div>
@@ -198,6 +279,40 @@ export function ComparisonPage({ data }: Props) {
           </div>
         </div>
       </section>
+
+      {/* EXPORT / INTEGRATION CALLOUT — only shown when data.exportNote is set */}
+      {data.exportNote && (
+        <section className="bg-brand py-16 md:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+            <AnimateIn direction="up">
+              <div className="rounded-[28px] border-2 border-accent/30 bg-accent/5 p-8 md:p-10">
+                <div className="flex flex-col sm:flex-row items-start gap-5">
+                  <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center shrink-0">
+                    <Upload size={22} className="text-accent" strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <p className="font-black text-xs uppercase tracking-widest text-accent mb-3">
+                      Export & integration
+                    </p>
+                    <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter leading-[0.92] mb-4">
+                      No double entry. Ever.
+                    </h3>
+                    <p className="font-body text-base font-medium text-white/70 leading-[1.6]">
+                      {data.exportNote}
+                    </p>
+                    <Link
+                      to="/roadmap"
+                      className="inline-flex items-center gap-1.5 mt-5 font-black text-xs uppercase tracking-widest text-accent hover:brightness-110 transition-all"
+                    >
+                      See it on the roadmap <ArrowRight size={13} strokeWidth={2.5} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
+      )}
 
       {/* WHO IS EACH FOR */}
       <section className="bg-brand py-20 md:py-28">
