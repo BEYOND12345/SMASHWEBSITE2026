@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
 import { Footer } from '../components/footer';
+import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { DualPhoneSection } from '../components/dual-phone-section';
+import { ScannerScreen } from '../components/scanner-screen';
+import { AnalyzerScreen } from '../components/analyzer-screen';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight } from 'lucide-react';
 
 const faqSchema = {
@@ -135,6 +139,33 @@ export function Features() {
           </div>
         </div>
       </section>
+
+      {/* VIDEO DEMO */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">
+              Watch how it works
+            </h2>
+            <p className="text-brand/60 font-medium leading-[1.15]">
+              Voice to PDF in seconds.
+            </p>
+          </div>
+          <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
+              title="SMASH Voice-to-Invoice Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* DUAL PHONE — VOICE TO QUOTE VISUAL */}
+      <DualPhoneSection />
 
       {/* CLUSTER 1 — QUOTE ON THE JOB */}
       <section className="bg-white py-16 md:py-24">
@@ -294,6 +325,16 @@ export function Features() {
               <p className="mt-auto text-xs font-bold text-brand/40 uppercase tracking-wide">Powered by Stripe</p>
             </div>
           </div>
+
+          {/* APP SCREENS — estimates + portal */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-16 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top">
+            <PhoneMockup size="small">
+              <AppScreen type="estimates-static" />
+            </PhoneMockup>
+            <PhoneMockup size="small">
+              <AppScreen type="portal" />
+            </PhoneMockup>
+          </div>
         </div>
       </section>
 
@@ -308,27 +349,39 @@ export function Features() {
             SMASH tracks what's been quoted, approved, invoiced, and paid. No spreadsheet. No mental queue. No forgotten jobs.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            <div className="bg-surface rounded-[32px] border-2 border-border p-8">
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
-                <BarChart2 size={24} className="text-accent" strokeWidth={2} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="bg-surface rounded-[32px] border-2 border-border p-8">
+                <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
+                  <BarChart2 size={24} className="text-accent" strokeWidth={2} />
+                </div>
+                <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Reporting</h3>
+                <p className="text-brand/70 font-medium text-sm leading-[1.15]">
+                  See what you've earned, what's outstanding, and what's been paid — at a glance. No accounting degree required.
+                </p>
+                <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">Pro and Unlimited plans</p>
               </div>
-              <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Reporting</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15]">
-                See what you've earned, what's outstanding, and what's been paid — at a glance. No accounting degree required.
-              </p>
-              <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">Pro and Unlimited plans</p>
+
+              <div className="bg-surface rounded-[32px] border-2 border-border p-8">
+                <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
+                  <Zap size={24} className="text-accent" strokeWidth={2} />
+                </div>
+                <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Quote-to-invoice conversion</h3>
+                <p className="text-brand/70 font-medium text-sm leading-[1.15]">
+                  When a customer approves a quote, the invoice is created automatically. One less thing to remember. One less job that falls through the cracks.
+                </p>
+                <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">All paid plans</p>
+              </div>
             </div>
 
-            <div className="bg-surface rounded-[32px] border-2 border-border p-8">
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
-                <Zap size={24} className="text-accent" strokeWidth={2} />
-              </div>
-              <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">Quote-to-invoice conversion</h3>
-              <p className="text-brand/70 font-medium text-sm leading-[1.15]">
-                When a customer approves a quote, the invoice is created automatically. One less thing to remember. One less job that falls through the cracks.
-              </p>
-              <p className="mt-4 text-xs font-bold text-brand/40 uppercase tracking-wide">All paid plans</p>
+            {/* APP SCREENS — estimates + CRM */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 scale-75 sm:scale-90 lg:scale-100 origin-center">
+              <PhoneMockup>
+                <AppScreen type="estimates" />
+              </PhoneMockup>
+              <PhoneMockup>
+                <AppScreen type="customer-management" />
+              </PhoneMockup>
             </div>
           </div>
         </div>
