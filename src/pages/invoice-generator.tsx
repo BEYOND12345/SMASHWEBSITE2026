@@ -3,8 +3,8 @@ import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { Check, X, Mic, Zap, CreditCard, ArrowRight, ChevronDown, Star, Quote } from 'lucide-react';
-import { useState } from 'react';
+import { Check, X, Mic, Zap, CreditCard, ArrowRight, ChevronDown, Star, Quote, Plus, Trash2, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -103,6 +103,348 @@ const faqs = [
   },
 ];
 
+// ── Interactive Invoice Builder ──────────────────────────────
+interface LineItem {
+  id: number;
+  description: string;
+  qty: string;
+  rate: string;
+  gst: boolean;
+}
+
+function InvoiceBuilder() {
+  const invoiceRef = useRef<HTMLDivElement>(null);
+  const [businessName, setBusinessName] = useState('Your Business Name');
+  const [abn, setAbn] = useState('');
+  const [clientName, setClientName] = useState('');
+  const [clientEmail, setClientEmail] = useState('');
+  const [invoiceNumber, setInvoiceNumber] = useState('INV-001');
+  const [dueDate, setDueDate] = useState('');
+  const [items, setItems] = useState<LineItem[]>([
+    { id: 1, description: 'Labour — 2 hours', qty: '2', rate: '85', gst: true },
+    { id: 2, description: 'Call-out fee', qty: '1', rate: '60', gst: true },
+  ]);
+  const [notes, setNotes] = useState('Payment due within 7 days. Thank you for your business.');
+  const [sent, setSent] = useState(false);
+  const nextId = useRef(3);
+
+  const addItem = () => {
+    setItems(prev => [...prev, { id: nextId.current++, description: '', qty: '1', rate: '', gst: true }]);
+  };
+
+  const removeItem = (id: number) => {
+    setItems(prev => prev.filter(item => item.id !== id));
+  };
+
+  const updateItem = (id: number, field: keyof LineItem, value: string | boolean) => {
+    setItems(prev => prev.map(item => item.id === id ? { ...item, [field]: value } : item));
+  };
+
+  const subtotal = items.reduce((sum, item) => {
+    const qty = parseFloat(item.qty) || 0;
+    const rate = parseFloat(item.rate) || 0;
+    return sum + qty * rate;
+  }, 0);
+
+  const gstAmount = items.reduce((sum, item) => {
+    if (!item.gst) return sum;
+    const qty = parseFloat(item.qty) || 0;
+    const rate = parseFloat(item.rate) || 0;
+    return sum + (qty * rate) * 0.1;
+  }, 0);
+
+  const total = subtotal + gstAmount;
+
+  const fmt = (n: number) => n.toFixed(2);
+  const today = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  return (
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      {/* LEFT — Edit form */}
+      <div className="space-y-5">
+        {/* Business details */}
+        <div className="bg-white rounded-[20px] border-2 border-border p-6">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Your details</p>
+          <div className="space-y-3">
+            <div>
+              <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">Business name</label>
+              <input
+                type="text"
+                value={businessName}
+                onChange={e => setBusinessName(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white"
+              />
+            </div>
+            <div>
+              <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">ABN (optional)</label>
+              <input
+                type="text"
+                value={abn}
+                onChange={e => setAbn(e.target.value)}
+                placeholder="12 345 678 901"
+                className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white placeholder:text-brand/25"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Client details */}
+        <div className="bg-white rounded-[20px] border-2 border-border p-6">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Client details</p>
+          <div className="space-y-3">
+            <div>
+              <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">Client name</label>
+              <input
+                type="text"
+                value={clientName}
+                onChange={e => setClientName(e.target.value)}
+                placeholder="John Smith"
+                className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white placeholder:text-brand/25"
+              />
+            </div>
+            <div>
+              <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">Client email</label>
+              <input
+                type="email"
+                value={clientEmail}
+                onChange={e => setClientEmail(e.target.value)}
+                placeholder="john@example.com"
+                className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white placeholder:text-brand/25"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">Invoice #</label>
+                <input
+                  type="text"
+                  value={invoiceNumber}
+                  onChange={e => setInvoiceNumber(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white"
+                />
+              </div>
+              <div>
+                <label className="font-black text-xs uppercase tracking-wider text-brand/50 mb-1 block">Due date</label>
+                <input
+                  type="date"
+                  value={dueDate}
+                  onChange={e => setDueDate(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-white"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Line items */}
+        <div className="bg-white rounded-[20px] border-2 border-border p-6">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Line items</p>
+          <div className="space-y-2 mb-3">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_56px_72px_32px_24px] gap-2 px-1">
+              <span className="font-black text-[10px] uppercase tracking-widest text-brand/30">Description</span>
+              <span className="font-black text-[10px] uppercase tracking-widest text-brand/30 text-center">Qty</span>
+              <span className="font-black text-[10px] uppercase tracking-widest text-brand/30 text-right">Rate</span>
+              <span className="font-black text-[10px] uppercase tracking-widest text-brand/30 text-center">GST</span>
+              <span></span>
+            </div>
+            {items.map(item => (
+              <div key={item.id} className="grid grid-cols-[1fr_56px_72px_32px_24px] gap-2 items-center">
+                <input
+                  type="text"
+                  value={item.description}
+                  onChange={e => updateItem(item.id, 'description', e.target.value)}
+                  placeholder="Description"
+                  className="px-3 py-2 rounded-lg border border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-surface placeholder:text-brand/25"
+                />
+                <input
+                  type="number"
+                  value={item.qty}
+                  onChange={e => updateItem(item.id, 'qty', e.target.value)}
+                  min="0"
+                  className="px-2 py-2 rounded-lg border border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-surface text-center"
+                />
+                <div className="relative">
+                  <span className="absolute left-2 top-1/2 -translate-y-1/2 text-brand/40 text-xs font-bold">$</span>
+                  <input
+                    type="number"
+                    value={item.rate}
+                    onChange={e => updateItem(item.id, 'rate', e.target.value)}
+                    min="0"
+                    placeholder="0"
+                    className="w-full pl-5 pr-2 py-2 rounded-lg border border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-surface text-right placeholder:text-brand/25"
+                  />
+                </div>
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => updateItem(item.id, 'gst', !item.gst)}
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black transition-all ${item.gst ? 'bg-accent text-brand' : 'bg-border text-brand/30'}`}
+                  >
+                    {item.gst ? '✓' : ''}
+                  </button>
+                </div>
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className="w-6 h-6 flex items-center justify-center text-brand/25 hover:text-red-400 transition-colors"
+                >
+                  <Trash2 size={14} strokeWidth={2} />
+                </button>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={addItem}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-dashed border-brand/15 text-brand/40 hover:border-accent hover:text-accent transition-all font-black text-xs uppercase tracking-widest w-full justify-center"
+          >
+            <Plus size={14} strokeWidth={2.5} /> Add line item
+          </button>
+        </div>
+
+        {/* Notes */}
+        <div className="bg-white rounded-[20px] border-2 border-border p-6">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-3">Notes</p>
+          <textarea
+            value={notes}
+            onChange={e => setNotes(e.target.value)}
+            rows={2}
+            className="w-full px-4 py-3 rounded-xl border-2 border-border font-body text-sm text-brand font-medium focus:outline-none focus:border-brand/40 bg-surface resize-none"
+          />
+        </div>
+      </div>
+
+      {/* RIGHT — Live preview */}
+      <div className="sticky top-6 self-start">
+        <div className="bg-white rounded-[20px] border-2 border-border overflow-hidden shadow-xl" ref={invoiceRef}>
+          {/* Invoice header */}
+          <div className="bg-brand px-8 py-7">
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="font-black text-xl text-white uppercase tracking-tighter leading-[0.9]">
+                  {businessName || 'Your Business Name'}
+                </p>
+                {abn && <p className="font-body text-xs text-white/50 font-medium mt-1">ABN: {abn}</p>}
+              </div>
+              <div className="text-right">
+                <p className="font-black text-xs uppercase tracking-widest text-accent mb-1">Tax Invoice</p>
+                <p className="font-mono text-white font-bold text-sm">{invoiceNumber}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="px-8 py-6">
+            {/* Meta row */}
+            <div className="flex flex-wrap gap-x-8 gap-y-2 mb-6 pb-5 border-b border-brand/8">
+              <div>
+                <p className="font-black text-[10px] uppercase tracking-widest text-brand/35 mb-0.5">Date</p>
+                <p className="font-body text-sm font-medium text-brand">{today}</p>
+              </div>
+              {dueDate && (
+                <div>
+                  <p className="font-black text-[10px] uppercase tracking-widest text-brand/35 mb-0.5">Due date</p>
+                  <p className="font-body text-sm font-medium text-brand">
+                    {new Date(dueDate).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  </p>
+                </div>
+              )}
+              {clientName && (
+                <div>
+                  <p className="font-black text-[10px] uppercase tracking-widest text-brand/35 mb-0.5">Bill to</p>
+                  <p className="font-body text-sm font-medium text-brand">{clientName}</p>
+                  {clientEmail && <p className="font-body text-xs text-brand/50">{clientEmail}</p>}
+                </div>
+              )}
+            </div>
+
+            {/* Line items table */}
+            <table className="w-full mb-5">
+              <thead>
+                <tr className="border-b-2 border-brand/8">
+                  <th className="font-black text-[10px] uppercase tracking-widest text-brand/35 text-left pb-2">Description</th>
+                  <th className="font-black text-[10px] uppercase tracking-widest text-brand/35 text-center pb-2 w-12">Qty</th>
+                  <th className="font-black text-[10px] uppercase tracking-widest text-brand/35 text-right pb-2 w-20">Rate</th>
+                  <th className="font-black text-[10px] uppercase tracking-widest text-brand/35 text-right pb-2 w-20">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {items.map(item => {
+                  const qty = parseFloat(item.qty) || 0;
+                  const rate = parseFloat(item.rate) || 0;
+                  const amount = qty * rate;
+                  return (
+                    <tr key={item.id} className="border-b border-brand/5">
+                      <td className="font-body text-sm font-medium text-brand py-2.5 pr-4">
+                        {item.description || <span className="text-brand/25 italic">No description</span>}
+                        {item.gst && <span className="ml-1 text-[10px] font-black text-accent uppercase tracking-wider">+GST</span>}
+                      </td>
+                      <td className="font-body text-sm font-medium text-brand/60 text-center py-2.5">{item.qty || '0'}</td>
+                      <td className="font-body text-sm font-medium text-brand/60 text-right py-2.5">${fmt(rate)}</td>
+                      <td className="font-body text-sm font-medium text-brand text-right py-2.5">${fmt(amount)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+
+            {/* Totals */}
+            <div className="space-y-1.5 mb-5 border-t-2 border-brand/8 pt-4">
+              <div className="flex justify-between">
+                <span className="font-body text-sm font-medium text-brand/50">Subtotal (ex. GST)</span>
+                <span className="font-body text-sm font-medium text-brand">${fmt(subtotal)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-body text-sm font-medium text-brand/50">GST (10%)</span>
+                <span className="font-body text-sm font-medium text-brand">${fmt(gstAmount)}</span>
+              </div>
+              <div className="flex justify-between border-t-2 border-brand pt-2 mt-2">
+                <span className="font-black text-base uppercase tracking-tighter text-brand">Total (inc. GST)</span>
+                <span className="font-black text-xl tracking-tighter text-brand">${fmt(total)}</span>
+              </div>
+            </div>
+
+            {/* Notes */}
+            {notes && (
+              <div className="bg-surface rounded-xl p-4">
+                <p className="font-black text-[10px] uppercase tracking-widest text-brand/35 mb-1">Notes</p>
+                <p className="font-body text-xs font-medium text-brand/60 leading-[1.5]">{notes}</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Action buttons */}
+        <div className="mt-4 space-y-3">
+          {sent ? (
+            <div className="bg-accent rounded-[16px] p-5 text-center">
+              <p className="font-black text-base text-brand uppercase tracking-tighter mb-1">Nice! Now do this in 60 seconds.</p>
+              <p className="font-body text-sm text-brand/70 font-medium mb-4">The SMASH app builds your invoice from voice — no typing, no form, no fuss.</p>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+              >
+                Download Free
+                <ArrowRight size={14} strokeWidth={2.5} />
+              </a>
+            </div>
+          ) : (
+            <button
+              onClick={() => setSent(true)}
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-[16px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
+            >
+              <Send size={15} strokeWidth={2.5} />
+              Send Invoice (Preview)
+            </button>
+          )}
+          <p className="text-center font-body text-xs text-brand/35 font-medium">
+            Want real invoices with payment links? <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">Download SMASH</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Interactive Quote Builder ──────────────────────────────────
 function CellVal({ val }: { val: boolean | string }) {
   if (val === true) return <Check size={16} className="text-accent mx-auto" strokeWidth={2.5} />;
   if (val === false) return <X size={14} className="text-white/25 mx-auto" strokeWidth={2.5} />;
@@ -187,6 +529,24 @@ export function InvoiceGenerator() {
               </div>
               <span className="font-body text-xs text-white/40 font-medium">2 invoices free/month · No credit card · iPhone</span>
             </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── INTERACTIVE INVOICE BUILDER ──────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <div className="text-center mb-10">
+              <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3">Free online tool</p>
+              <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">
+                Build your invoice now.
+              </h2>
+              <p className="font-body text-brand/55 font-medium text-base leading-[1.5] max-w-xl mx-auto">
+                Free to use right here — no download, no signup. Add your details, see it live, send it. Want to do this in 60 seconds by voice? That's SMASH.
+              </p>
+            </div>
+            <InvoiceBuilder />
           </AnimateIn>
         </div>
       </section>
