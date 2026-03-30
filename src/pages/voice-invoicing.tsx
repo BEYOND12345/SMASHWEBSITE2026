@@ -155,6 +155,22 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
+      {/* VIDEO */}
+      <section className="bg-surface py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
+              title="SMASH Voice Invoicing Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* HOW IT WORKS — 3 STEPS */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
