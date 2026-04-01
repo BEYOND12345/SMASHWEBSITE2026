@@ -40,9 +40,9 @@ export function Features() {
   return (
     <>
       <SEO
-        title="Features | Voice Invoicing App for Service Businesses | SMASH Invoices"
-        description="SMASH Invoices features: voice-to-quote in 60 seconds, personal pricing catalog, automatic materials pricing, customer approval portal, and read receipts. Built for Australian service businesses."
-        keywords="invoicing app features Australia, invoice app for service businesses, voice invoicing features, SMASH Invoices features"
+        title="Tradie Invoicing App Features | Voice Quotes, GST, Payments | SMASH"
+        description="SMASH features: voice-to-quote in 60 seconds, 2,250+ item Australian materials catalog, GST-compliant invoicing, Stripe payments, read receipts, and overdue tracking. Built for Australian tradies."
+        keywords="tradie invoicing app features, tradie quoting software features, voice invoicing australia, GST invoice app, tradie quoting tool, invoice app for tradies australia"
         ogTitle="SMASH Invoices — Features"
         ogDescription="Voice-to-quote in 60 seconds. Personal pricing catalog. Customer approval portal. Everything you need to get paid without the admin."
         ogImage="https://smashinvoices.com/og-image.png"

@@ -56,11 +56,11 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SEO
-        title="Voice to Invoice & Quote Software | SMASH Invoices - Generate Invoices 4x Faster"
-        description="Voice to invoice software that generates quotes and invoices in seconds. Just talk - no typing. 4x faster than traditional invoicing. Built for anyone who works with their hands."
-        keywords="voice to invoice, voice to quote, voice invoicing Australia, generate invoices quickly, invoice software, quote generator, voice invoice app, talk to invoice, speech to invoice, automated invoice generation, service business invoice software, contractor quote software, mobile invoice generator"
-        ogTitle="Voice to Invoice & Quote Software | SMASH Invoices"
-        ogDescription="Generate invoices and quotes 4x faster with voice. Just talk - SMASH creates professional invoices in under 60 seconds."
+        title="Tradie Invoicing App Australia | SMASH — Quote &amp; Invoice in 60 Seconds"
+        description="The invoicing &amp; quoting app built for Australian tradies. Speak a job description and get a GST-compliant invoice in under 60 seconds. Free to start. No typing, no laptop."
+        keywords="tradie invoicing app, tradie quoting software, invoicing software for tradies, tradie quoting app, tradie invoice app australia, voice invoicing australia, GST invoice app, tradie quoting tool, invoice app for tradies, mobile invoicing app australia"
+        ogTitle="Tradie Invoicing App Australia | SMASH — Quote in 60 Seconds"
+        ogDescription="The invoicing app built for Australian tradies. Speak a job and get a GST-compliant quote in 60 seconds. Free to start."
         ogUrl="https://smashinvoices.com"
         twitterTitle="Voice to Invoice & Quote Software | SMASH"
         twitterDescription="Generate invoices 4x faster with voice. Just talk - SMASH creates professional invoices instantly."
