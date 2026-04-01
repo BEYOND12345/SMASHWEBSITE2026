@@ -49,12 +49,62 @@ async function generateSitemap() {
   const today = new Date().toISOString().split('T')[0];
 
   const staticPages = [
-    { loc: '/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
-    { loc: '/blog', lastmod: today, changefreq: 'daily', priority: '0.9' },
-    { loc: '/founder', lastmod: today, changefreq: 'monthly', priority: '0.7' },
+    // Core
+    { loc: '/',             lastmod: today, changefreq: 'weekly',  priority: '1.0' },
+    { loc: '/blog',         lastmod: today, changefreq: 'daily',   priority: '0.9' },
     { loc: '/how-it-works', lastmod: today, changefreq: 'monthly', priority: '0.8' },
-    { loc: '/faq', lastmod: today, changefreq: 'monthly', priority: '0.8' },
-    { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: '0.3' },
+    { loc: '/faq',          lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/pricing',      lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/features',     lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/founder',      lastmod: today, changefreq: 'monthly', priority: '0.7' },
+    { loc: '/contact',      lastmod: today, changefreq: 'yearly',  priority: '0.5' },
+    { loc: '/privacy',      lastmod: today, changefreq: 'yearly',  priority: '0.3' },
+    { loc: '/terms',        lastmod: today, changefreq: 'yearly',  priority: '0.3' },
+    { loc: '/roadmap',      lastmod: today, changefreq: 'monthly', priority: '0.7' },
+    { loc: '/changelog',    lastmod: today, changefreq: 'monthly', priority: '0.7' },
+
+    // Tool pages
+    { loc: '/tools',                    lastmod: today, changefreq: 'weekly',  priority: '0.9' },
+    { loc: '/quote-generator',          lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/invoice-generator',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/gst-calculator',           lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/invoice-template',         lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/hourly-rate-calculator',   lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/late-payment-calculator',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/profit-calculator',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
+
+    // Feature / product pages
+    { loc: '/voice-invoicing',         lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/ai-invoicing',            lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/gst-compliant-invoicing', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/invoice-on-mobile',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
+
+    // Comparison pages
+    { loc: '/smash-vs-xero',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-myob',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-servicem8',   lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-quickbooks',  lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-fergus',      lastmod: today, changefreq: 'monthly', priority: '0.9' },
+
+    // Segment / trade pages
+    { loc: '/for-cleaners',         lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-plumbers',         lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-electricians',     lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-handymen',         lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-painters',         lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-gardeners',        lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-mobile-mechanics', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-hvac',             lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-pest-control',     lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-concreters',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-tilers',           lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-locksmiths',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-car-detailers',    lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-dog-groomers',     lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-arborists',        lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-pool-maintenance', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-solar-installers', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-rubbish-removal',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
   ];
 
   const blogPages = posts?.map(post => ({

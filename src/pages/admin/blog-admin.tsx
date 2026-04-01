@@ -83,7 +83,7 @@ export function BlogAdmin() {
             </Link>
             <Link
               to="/admin/blog/new"
-              className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all flex items-center gap-2"
+              className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all flex items-center gap-2"
             >
               <Plus size={16} />
               New Post
@@ -102,7 +102,7 @@ export function BlogAdmin() {
             <p className="text-white/60 text-xl mb-6">No blog posts yet.</p>
             <Link
               to="/admin/blog/new"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all"
             >
               <Plus size={16} />
               Create Your First Post

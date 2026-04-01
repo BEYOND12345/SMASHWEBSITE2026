@@ -396,7 +396,7 @@ Paragraph text here.
             <button
               type="submit"
               disabled={saving}
-              className="flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-accentText font-black text-base uppercase tracking-wide hover:brightness-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-wide hover:brightness-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Save size={18} />
               {saving ? 'Saving...' : isNew ? 'Create Post' : 'Update Post'}

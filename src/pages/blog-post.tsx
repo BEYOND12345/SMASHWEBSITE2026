@@ -3,10 +3,21 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import {
+  organizationSchema as aiOrgSchema,
+  createArticleSchemaAI,
+} from '../data/schema-data';
 import { RelatedPosts } from '../components/related-posts';
+import { RelatedTools } from '../components/related-tools';
+import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, RefreshCw, Star } from 'lucide-react';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 interface BlogPost {
   id: string;
@@ -64,7 +75,7 @@ export function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
+      <div className="min-h-screen bg-brand flex items-center justify-center">
         <div className="text-white/60">Loading...</div>
       </div>
     );
@@ -72,7 +83,7 @@ export function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-brand flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-white mb-4">Post Not Found</h1>
         <Link to="/blog" className="text-accent hover:underline">
           Back to Blog
@@ -89,9 +100,14 @@ export function BlogPost() {
         title={post.meta_title || `${post.title} | SMASH Blog`}
         description={post.meta_description || post.excerpt}
         keywords={[post.primary_keyword, ...post.secondary_keywords].join(', ')}
-        ogImage={post.featured_image}
+        ogTitle={post.meta_title || post.title}
+        ogDescription={post.meta_description || post.excerpt}
+        ogImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
         ogUrl={articleUrl}
         ogType="article"
+        twitterTitle={post.meta_title || post.title}
+        twitterDescription={post.meta_description || post.excerpt}
+        twitterImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
         canonical={articleUrl}
       />
 
@@ -103,7 +119,9 @@ export function BlogPost() {
           dateModified: post.updated_at || post.last_reviewed || post.published_at,
           author: post.author,
           image: post.featured_image,
-          url: articleUrl
+          url: articleUrl,
+          wordCount: post.content ? post.content.split(/\s+/).length : undefined,
+          keywords: [post.primary_keyword, ...post.secondary_keywords].join(', ')
         })}
       />
 
@@ -118,24 +136,22 @@ export function BlogPost() {
       {post.faq_data && post.faq_data.length > 0 && (
         <StructuredData data={createFAQSchema(post.faq_data)} />
       )}
+      <SchemaMarkup schemas={[
+        aiOrgSchema,
+        createArticleSchemaAI({
+          title: post.title,
+          description: post.meta_description || post.excerpt,
+          slug: post.slug,
+          datePublished: post.published_at,
+          dateModified: post.updated_at || post.published_at,
+        }),
+      ]} />
 
-      <div className="min-h-screen bg-[#0A0A0A]">
-        <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="text-xl font-black tracking-tight text-white">
-              SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
-            </Link>
-            <Link
-              to="/blog"
-              className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors"
-            >
-              <ArrowLeft size={16} />
-              All Posts
-            </Link>
-          </div>
-        </nav>
+      <div className="min-h-screen bg-brand">
+        <Nav />
 
         <article className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
+          <AnimateIn direction="up">
           <header className="mb-12">
             <Link
               to="/blog"
@@ -145,7 +161,7 @@ export function BlogPost() {
               Back to Blog
             </Link>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
               {post.title}
             </h1>
 
@@ -187,12 +203,13 @@ export function BlogPost() {
               </div>
             )}
           </header>
+          </AnimateIn>
 
           {post.key_takeaways && post.key_takeaways.length > 0 && (
             <div className="bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8 mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
-                  <span className="text-accentText font-black text-xl">✓</span>
+                  <span className="text-brand font-black text-xl">✓</span>
                 </div>
                 <h2 className="text-2xl font-black text-white">TL;DR - Key Takeaways</h2>
               </div>
@@ -200,7 +217,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                    <span className="font-body text-white/90 leading-[1.5] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -212,25 +229,25 @@ export function BlogPost() {
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ children }) => (
-                  <h1 className="text-4xl font-black text-white mt-12 mb-6 tracking-tight">
+                  <h1 className="text-4xl font-black text-white mt-12 mb-6 tracking-tighter">
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
                   <div>
                     <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent my-12"></div>
-                    <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tight">
+                    <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tighter">
                       {children}
                     </h2>
                   </div>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="text-2xl font-bold text-white mt-8 mb-4 tracking-tight">
+                  <h3 className="text-2xl font-bold text-white mt-8 mb-4 tracking-tighter">
                     {children}
                   </h3>
                 ),
                 p: ({ children }) => (
-                  <p className="text-lg text-white/80 leading-relaxed mb-6">
+                  <p className="font-body text-lg text-white/80 leading-[1.6] mb-6">
                     {children}
                   </p>
                 ),
@@ -245,7 +262,7 @@ export function BlogPost() {
                   </ol>
                 ),
                 li: ({ children }) => (
-                  <li className="text-lg leading-relaxed flex items-start gap-3">
+                  <li className="text-lg leading-[1.15] flex items-start gap-3">
                     <span className="text-accent font-bold mt-1 shrink-0">•</span>
                     <span className="flex-1">{children}</span>
                   </li>
@@ -329,7 +346,7 @@ export function BlogPost() {
             <div className="mt-16 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
-                  <span className="text-accentText font-black text-xl">✓</span>
+                  <span className="text-brand font-black text-xl">✓</span>
                 </div>
                 <h2 className="text-2xl font-black text-white">Key Takeaways</h2>
               </div>
@@ -337,7 +354,7 @@ export function BlogPost() {
                 {post.key_takeaways.map((takeaway, index) => (
                   <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
                     <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="text-white/90 leading-relaxed font-medium">{takeaway}</span>
+                    <span className="font-body text-white/90 leading-[1.5] font-medium">{takeaway}</span>
                   </div>
                 ))}
               </div>
@@ -353,7 +370,7 @@ export function BlogPost() {
                 </div>
                 <div>
                   <p className="font-bold text-white mb-1">{post.author}</p>
-                  <p className="text-white/70 text-sm leading-relaxed">{post.author_bio}</p>
+                  <p className="font-body text-white/70 text-sm leading-[1.5]">{post.author_bio}</p>
                 </div>
               </div>
             </div>
@@ -366,37 +383,41 @@ export function BlogPost() {
             limit={3}
           />
 
+          <RelatedTools
+            keywords={[post.primary_keyword, ...post.secondary_keywords]}
+            title="Free tools — use right now, no download"
+          />
+
           <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl font-black text-white mb-4">
-                Ready to Transform Your Invoicing?
+            <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12 border border-accent/20">
+              <div className="flex items-center gap-0.5 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className="text-accent fill-accent" />
+                ))}
+                <span className="font-body text-xs font-semibold text-white/50 ml-2">4.9 App Store</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tighter leading-[0.88]">
+                Stop typing invoices.<br />Talk for 30 seconds.
               </h3>
-              <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                Stop fighting your software and start getting paid. Join the waitlist for SMASH
-                and experience invoicing built for how you actually work.
+              <p className="font-body text-white/75 text-base sm:text-lg mb-6 leading-[1.5] max-w-lg">
+                SMASH turns a voice description into a professional, ATO-compliant tax invoice — with a Pay Now button — before you've packed up your tools. No typing. No form. No GST maths.
               </p>
-              <Link
-                to="/#signup-form"
-                className="inline-block px-8 py-4 rounded-full bg-accent text-accentText font-black text-base uppercase tracking-wide hover:brightness-95 transition-all"
-              >
-                Join the Waitlist
-              </Link>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+                >
+                  Start Free
+                </a>
+                <span className="font-body text-xs font-medium text-white/35">No credit card · Cancel anytime</span>
+              </div>
             </div>
           </div>
         </article>
 
-        <footer className="bg-[#0D0D0D] border-t border-white/10 mt-20">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
-            <div className="text-center">
-              <Link to="/" className="inline-block text-2xl font-black tracking-tight text-white mb-4">
-                SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-              </Link>
-              <p className="text-white/50 text-sm">
-                © 2024 SMASH. Made for high volume work.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

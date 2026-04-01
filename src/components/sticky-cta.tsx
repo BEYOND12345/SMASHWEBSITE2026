@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Mail } from 'lucide-react';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,15 +33,14 @@ export function StickyCTA() {
               SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
             </div>
             <div className="hidden md:block text-sm text-white/80 font-bold">
-              Voice powered invoicing for high volume work
+              Describe the job. Get paid. That's it.
             </div>
           </div>
           <button
             onClick={scrollToSignup}
-            className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all shadow-glow flex items-center gap-2"
+            className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all shadow-glow flex items-center gap-2"
           >
-            <Mail size={18} strokeWidth={2.5} />
-            Get Early Access
+            Start Free
           </button>
         </div>
       </div>

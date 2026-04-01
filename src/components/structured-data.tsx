@@ -21,7 +21,7 @@ export const organizationSchema = {
   "alternateName": "SMASH",
   "url": "https://smashinvoices.com",
   "logo": "https://smashinvoices.com/favicon.svg",
-  "description": "Voice powered quote and invoice software for tradies. Turn conversations into approved quotes and invoices in seconds.",
+  "description": "Voice to invoice software for service businesses. Describe the job, SMASH sends the invoice in under 60 seconds.",
   "email": "dan@smashinvoices.com",
   "foundingDate": "2024",
   "founder": {
@@ -34,6 +34,71 @@ export const organizationSchema = {
   ]
 };
 
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "SMASH Invoices",
+  "alternateName": "SMASH",
+  "url": "https://smashinvoices.com",
+  "description": "Voice to invoice software for service businesses. Describe the job out loud, SMASH sends a professional invoice in under 60 seconds.",
+  "inLanguage": "en-AU",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SMASH Invoices",
+    "url": "https://smashinvoices.com"
+  }
+};
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SMASH Invoices",
+  "author": {
+    "@type": "Organization",
+    "name": "SMASH Invoices",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Byron Bay",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "email": "dan@smashinvoices.com",
+    "url": "https://smashinvoices.com"
+  }
+};
+
+export function createVideoSchema({
+  name,
+  description,
+  thumbnailUrl,
+  embedUrl,
+  uploadDate
+}: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  embedUrl: string;
+  uploadDate: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": name,
+    "description": description,
+    "thumbnailUrl": thumbnailUrl,
+    "embedUrl": embedUrl,
+    "uploadDate": uploadDate,
+    "publisher": {
+      "@type": "Organization",
+      "name": "SMASH Invoices",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smashinvoices.com/favicon.svg"
+      }
+    }
+  };
+}
+
 export const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -45,9 +110,9 @@ export const webApplicationSchema = {
     "price": "0",
     "priceCurrency": "AUD",
     "availability": "https://schema.org/InStock",
-    "description": "Free beta access"
+    "description": "Free to start"
   },
-  "description": "Voice to invoice software that turns spoken quotes into professional invoices. Voice powered quoting 4x faster than typing. Perfect for tradies, contractors, and anyone doing high-volume quoting.",
+  "description": "Voice to invoice software that turns spoken quotes into professional invoices in under 60 seconds. 4x faster than typing. Built for anyone who works with their hands.",
   "featureList": [
     "Voice to quote conversion",
     "Voice to invoice generation",
@@ -82,7 +147,9 @@ export function createArticleSchema({
   dateModified,
   author,
   image,
-  url
+  url,
+  wordCount,
+  keywords
 }: {
   headline: string;
   description: string;
@@ -91,6 +158,8 @@ export function createArticleSchema({
   author?: string;
   image?: string;
   url: string;
+  wordCount?: number;
+  keywords?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -100,6 +169,9 @@ export function createArticleSchema({
     "image": image || "https://smashinvoices.com/hero_image.png",
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
+    "inLanguage": "en-AU",
+    ...(wordCount && { "wordCount": wordCount }),
+    ...(keywords && { "keywords": keywords }),
     "author": {
       "@type": "Person",
       "name": author || "Dan"
@@ -129,5 +201,53 @@ export function createBreadcrumbSchema(items: Array<{ name: string; url: string 
       "name": item.name,
       "item": item.url
     }))
+  };
+}
+
+export function createHowToSchema({ name, description, steps }: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function createCalculatorSchema({ name, description, url, featureList }: {
+  name: string;
+  description: string;
+  url: string;
+  featureList: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "AUD",
+    },
+    featureList: featureList.join(", "),
+    inLanguage: "en-AU",
+    publisher: {
+      "@type": "Organization",
+      name: "SMASH Invoices",
+      url: "https://smashinvoices.com",
+    },
   };
 }

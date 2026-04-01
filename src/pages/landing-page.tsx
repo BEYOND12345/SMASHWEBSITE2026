@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Play, Mail, Facebook, Instagram } from 'lucide-react';
+import { Play, Star, Quote } from 'lucide-react';
+import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
 import { SEO } from '../components/seo';
@@ -10,162 +11,274 @@ import { InlineCTA } from '../components/inline-cta';
 import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
-import { StructuredData, organizationSchema, webApplicationSchema } from '../components/structured-data';
+import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema, createFAQSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import {
+  organizationSchema as aiOrgSchema,
+  websiteSchema as aiWebsiteSchema,
+  softwareApplicationSchema,
+  homepageFaqSchema,
+} from '../data/schema-data';
+import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
+import { AnimateIn } from '../components/animate-in';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+
+const homeFaqs = [
+  { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for Australian tradies. Describe the job out loud and get a professional, GST-compliant invoice in under 60 seconds. Free to start, no credit card required." },
+  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 2 invoices per month — no credit card needed. The Pro plan ($22.99/month) gives unlimited invoices, Stripe payments, read receipts, and customer history." },
+  { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
+  { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
+];
+
+const testimonials = [
+  {
+    quote: "Finished a hot water job at 4pm, talked into my phone for 30 seconds, invoice was in the customer's inbox before I started the van. Never going back.",
+    name: "Chris M.",
+    trade: "Plumber, Sydney",
+  },
+  {
+    quote: "I was losing track of small jobs — $200 here, $150 there. SMASH catches every single one now. My monthly income is noticeably higher.",
+    name: "Brendan T.",
+    trade: "Electrician, Melbourne",
+  },
+  {
+    quote: "My wife used to chase invoices for me on weekends. That stopped the day I got SMASH. It just sends them on the spot.",
+    name: "Jason K.",
+    trade: "Carpenter, Brisbane",
+  },
+];
 
 export function LandingPage() {
   return (
-    <div className="min-h-screen bg-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <SEO
-        title="Voice to Invoice & Quote Software | SMASH Invoices - Generate Invoices 4x Faster"
-        description="Voice to invoice software that generates quotes and invoices in seconds. Just talk - no typing. Voice to quote technology 4x faster than traditional invoicing. Perfect for tradies doing high-volume work."
-        keywords="voice to invoice, voice to quote, voice powered invoicing, generate invoices quickly, fast invoice software, quick quote generator, voice invoice app, talk to invoice, speech to invoice, automated invoice generation, tradie invoice software, contractor quote software, mobile invoice generator"
-        ogTitle="Voice to Invoice & Quote Software | SMASH Invoices"
-        ogDescription="Generate invoices and quotes 4x faster with voice. Just talk - SMASH creates professional invoices instantly. Voice to invoice technology for busy tradies."
+        title="Tradie Invoicing App Australia | SMASH — Quote &amp; Invoice in 60 Seconds"
+        description="The invoicing &amp; quoting app built for Australian tradies. Speak a job description and get a GST-compliant invoice in under 60 seconds. Free to start. No typing, no laptop."
+        keywords="tradie invoicing app, tradie quoting software, invoicing software for tradies, tradie quoting app, tradie invoice app australia, voice invoicing australia, GST invoice app, tradie quoting tool, invoice app for tradies, mobile invoicing app australia"
+        ogTitle="Tradie Invoicing App Australia | SMASH — Quote in 60 Seconds"
+        ogDescription="The invoicing app built for Australian tradies. Speak a job and get a GST-compliant quote in 60 seconds. Free to start."
         ogUrl="https://smashinvoices.com"
         twitterTitle="Voice to Invoice & Quote Software | SMASH"
         twitterDescription="Generate invoices 4x faster with voice. Just talk - SMASH creates professional invoices instantly."
+        ogImage="https://smashinvoices.com/hero_image.png"
+        twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com"
       />
 
       <StructuredData data={organizationSchema} />
       <StructuredData data={webApplicationSchema} />
+      <StructuredData data={websiteSchema} />
+      <StructuredData data={createVideoSchema({
+        name: "SMASH Voice-to-Invoice Demo",
+        description: "Watch how SMASH turns your voice into a professional invoice in under 60 seconds. No typing required.",
+        thumbnailUrl: "https://smashinvoices.com/hero_image.png",
+        embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
+        uploadDate: "2026-01-01"
+      })} />
+      <StructuredData data={createFAQSchema(homeFaqs)} />
+      <SchemaMarkup schemas={[aiOrgSchema, aiWebsiteSchema, softwareApplicationSchema, homepageFaqSchema]} />
 
       <StickyCTA />
       <SignupFAB />
+      <Nav />
 
-      {/* SECTION 1: HERO WITH SIDE-BY-SIDE LAYOUT */}
-      <section className="relative text-white min-h-[85vh] md:min-h-[95vh] overflow-hidden">
-        {/* Background Image */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="relative text-white min-h-[90vh] overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0">
           <img
             src="/hero_image.png"
-            alt=""
+            alt="Voice to invoice software — describe the job, SMASH sends the invoice"
             className="w-full h-full object-cover"
-            style={{ imageRendering: 'crisp-edges' }}
           />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/95 to-gray-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/93 to-gray-900/70" />
         </div>
 
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-6 flex items-center justify-end relative z-10">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link to="/founder" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Founder
-            </Link>
-            <Link to="/blog" className="hidden md:block px-3 md:px-4 py-2 md:py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-              Blog
-            </Link>
-            <a href="#signup-form" className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-accent text-accentText font-black text-xs sm:text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-              Sign Up
-            </a>
-          </div>
-        </nav>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 py-12 md:py-16 lg:py-24">
+        {/* Hero content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 py-16 md:py-20 lg:py-28">
           <div className="max-w-3xl">
-            <h1 className="text-[2.75rem] leading-[0.9] sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight md:tracking-tighter mb-8 md:mb-10 uppercase">
-              Just Talk.<br />
-              SMASH does<br />
-              the rest.
+            {/* Eyebrow */}
+            <p
+              className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-6 animate-hero-reveal"
+              style={{ animationDelay: '0ms' }}
+            >
+              Voice to Invoice — Australia
+            </p>
+
+            {/* H1 — staggered line-by-line */}
+            <h1 className="font-black uppercase leading-[0.88] tracking-tighter mb-8 md:mb-10">
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
+                style={{ animationDelay: '80ms' }}
+              >
+                Just Talk.
+              </span>
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
+                style={{ animationDelay: '180ms' }}
+              >
+                SMASH does
+              </span>
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl text-accent animate-hero-reveal"
+                style={{ animationDelay: '280ms' }}
+              >
+                the rest.
+              </span>
             </h1>
 
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 mb-8 md:mb-12 font-bold leading-snug md:leading-tight">
+            {/* Subtitle */}
+            <p
+              className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mb-10 md:mb-12 font-medium leading-[1.3] max-w-2xl animate-hero-reveal"
+              style={{ animationDelay: '420ms' }}
+            >
               Describe the job out loud. SMASH sends a professional invoice before you've left the driveway.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 md:mb-8">
-              <a href="#signup-form" className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow flex items-center justify-center gap-2 sm:gap-3">
-                <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-                Get Early Access
+            {/* CTAs */}
+            <div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 animate-hero-reveal"
+              style={{ animationDelay: '560ms' }}
+            >
+              <a
+                href="#signup-form"
+                className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3"
+              >
+                Start Free
               </a>
-              <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-white/10 text-white border-2 border-white/20 font-bold text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-2 sm:gap-3">
-                <Play size={18} className="sm:w-5 sm:h-5" strokeWidth={2.5} />
+              <button className="px-8 py-4 rounded-[32px] bg-white/10 text-white border-2 border-white/15 font-black text-base uppercase tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-3">
+                <Play size={16} strokeWidth={2.5} />
                 Watch Demo
               </button>
             </div>
 
-            <p className="text-sm sm:text-base text-white/50 font-medium">
-              Beta access. Free.
-            </p>
+            {/* Trust row */}
+            <div
+              className="flex flex-col sm:flex-row sm:items-center gap-3 animate-hero-reveal"
+              style={{ animationDelay: '650ms' }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <p className="font-body text-sm text-white/40 font-medium">
+                No credit card required · Free to start
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative: large ambient text */}
+        <div
+          className="absolute bottom-0 right-0 text-[200px] md:text-[320px] lg:text-[440px] font-black text-white/[0.025] leading-none tracking-tighter pointer-events-none select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          60s
+        </div>
+      </section>
+
+      {/* ── SPEED BAR ────────────────────────────────────────────────────── */}
+      <section className="bg-accent overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16">
+          <div className="flex flex-col md:flex-row md:items-end gap-2 md:gap-8">
+            {/* Giant 4X */}
+            <AnimateIn direction="left">
+              <span className="block text-[100px] sm:text-[140px] md:text-[180px] lg:text-[220px] font-black leading-none tracking-tighter text-brand">
+                4X
+              </span>
+            </AnimateIn>
+            {/* Label */}
+            <AnimateIn delay={100}>
+              <div className="pb-4 md:pb-8">
+                <p className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.88] text-brand">
+                  FASTER<br />THAN<br />TYPING.
+                </p>
+                <p className="font-body text-base md:text-lg text-brand/65 font-medium mt-4 max-w-sm leading-[1.4]">
+                  Stop losing 20–30 minutes to every invoice.{' '}
+                  <Link to="/blog/the-60-second-invoice-voice-to-invoice" className="underline hover:no-underline">
+                    Master the 60-second workflow
+                  </Link>.
+                </p>
+              </div>
+            </AnimateIn>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: SPEED REINFORCEMENT */}
-      <section className="bg-accent py-10 md:py-14 lg:py-20 relative z-0">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-accentText leading-[1] md:leading-[1.05] mb-6 md:mb-8 uppercase tracking-tight md:tracking-tighter">
-            4X faster than typing.
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-accentText/90 font-bold max-w-3xl mx-auto leading-snug md:leading-tight">
-            Stop losing 20 to 30 minutes to every invoice. <Link to="/blog/the-60-second-invoice-voice-to-invoice" className="underline hover:no-underline">Master the 60-second workflow</Link>.
-          </p>
-        </div>
-      </section>
-
-      {/* SECTION 3: VOICE TO QUOTE - VISUAL PROOF */}
+      {/* ── DUAL PHONE SECTION ───────────────────────────────────────────── */}
       <DualPhoneSection />
 
-      {/* SECTION 4: VIDEO DEMO */}
-      <section className="bg-white py-10 md:py-14 lg:py-20">
+      {/* ── VIDEO DEMO ───────────────────────────────────────────────────── */}
+      <section className="bg-surface py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-4 md:mb-6 text-brand uppercase leading-tight">
-              WATCH HOW IT WORKS
+          <AnimateIn className="text-center mb-12 md:mb-16">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-4">See it in action</p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-5 text-brand uppercase leading-[0.88]">
+              Watch how it works
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-700 font-bold max-w-3xl mx-auto leading-snug">
-              Voice to PDF in seconds.
+            <p className="font-body text-base sm:text-lg md:text-xl text-brand/60 font-medium max-w-2xl mx-auto leading-[1.4]">
+              Voice to PDF. Under 60 seconds.
             </p>
-          </div>
+          </AnimateIn>
 
-          <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
-              title="SMASH Voice-to-Invoice Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <AnimateIn delay={100}>
+            <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden border-2 border-border shadow-2xl">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
+                title="SMASH Voice-to-Invoice Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
       <InlineCTA
         title="Ready to Quote Faster?"
-        subtitle="Join beta testers quoting in seconds."
+        subtitle="Send an invoice in under 60 seconds."
       />
 
-      {/* SECTION 5: BUILT-IN PRICING */}
+      {/* ── BUILT-IN PRICING ─────────────────────────────────────────────── */}
       <FeatureSection
         background="slate"
         imagePosition="right"
         title="IT ALREADY KNOWS YOUR BUSINESS."
         description={
-          <p>
-            Upload a couple of your old invoices when you sign up. That's it.
+          <p className="font-body">
+            Upload a couple of your old invoices when you start. That's it.
             <br /><br />
-            SMASH reads them and learns everything — your rates, your jobs, your way of doing things. From your very first quote it prices the way you price. Not a generic template. Yours. <Link to="/blog/voice-to-crm-ai-learns-customers" className="text-white underline hover:no-underline">Learn how AI learns your business</Link>.
+            SMASH reads them and learns everything — your rates, your jobs, your way of doing things. From your very first quote it prices the way you price.{' '}
+            <Link to="/blog/voice-to-crm-ai-learns-customers" className="text-accent underline hover:no-underline">
+              Learn how AI learns your business
+            </Link>.
           </p>
         }
         bullets={[
           "Your labour rates, automatically applied",
           "Your job types, already understood",
           "Your style, from day one",
-          "No setup. No configuration. Just talk and it works like you."
+          "No setup. No configuration. Just talk and it works like you.",
         ]}
         image={
-          <div className="flex items-center justify-center w-full">
-            <div className="relative flex items-end justify-center scale-[0.45] sm:scale-[0.6] md:scale-75 lg:scale-90 xl:scale-100 max-w-full">
-              <div className="relative z-0 -rotate-2 md:-rotate-3 lg:-rotate-6 -mr-2 md:-mr-4 lg:-mr-6">
+          <div className="flex items-end justify-center w-full overflow-visible h-[280px] sm:h-[370px] md:h-[450px] lg:h-auto">
+            <div className="relative flex items-end justify-center scale-[0.5] sm:scale-[0.65] md:scale-[0.8] lg:scale-90 xl:scale-100 origin-bottom">
+              <div className="animate-float-slow -mr-6">
                 <PhoneMockup>
                   <ScannerScreen />
                 </PhoneMockup>
               </div>
-              <div className="relative z-10 -ml-2 md:-ml-4 lg:-ml-6">
+              <div className="animate-float-delayed -ml-6">
                 <PhoneMockup>
                   <AnalyzerScreen />
                 </PhoneMockup>
@@ -175,71 +288,64 @@ export function LandingPage() {
         }
       />
 
-      {/* SECTION 6: WHY THIS IS FAST */}
+      {/* ── WHY SMASH IS FAST ─────────────────────────────────────────────── */}
       <section
         className="relative min-h-[500px] md:min-h-screen bg-cover bg-left md:bg-center bg-no-repeat flex items-center"
         style={{ backgroundImage: 'url(/why_section_image.png)' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-900/70 to-slate-900/50 md:from-slate-900/70 md:via-slate-900/50 md:to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/40" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-10 md:py-14 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="hidden lg:block"></div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="hidden lg:block" />
 
-            <div className="text-white max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black tracking-tight md:tracking-tighter mb-6 md:mb-10 uppercase leading-tight">
-                Why <span className="bg-accent text-brand px-1.5 sm:px-2 md:px-3 py-0.5 md:py-1">SMASH</span> is actually fast
+            <AnimateIn direction="right" className="text-white max-w-2xl">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 md:mb-12 uppercase leading-[0.88]">
+                Why{' '}
+                <span className="bg-accent text-brand px-2 md:px-3 py-0.5">SMASH</span>
+                {' '}is actually fast
               </h2>
 
-              <ul className="space-y-3 md:space-y-5 mb-6 md:mb-10">
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">Talk instead of type — always</span>
-                </li>
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">Already knows your rates and jobs</span>
-                </li>
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">Scope written for you automatically</span>
-                </li>
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">GST handled, nothing to calculate</span>
-                </li>
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">Quote becomes invoice in one tap</span>
-                </li>
-                <li className="flex items-start gap-2.5 md:gap-4">
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full bg-accent shrink-0 mt-1.5 md:mt-2"></div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white leading-snug">Customer pays right there and then</span>
-                </li>
+              <ul className="space-y-4 md:space-y-6 mb-8 md:mb-12">
+                {[
+                  'Talk instead of type — always',
+                  'Already knows your rates and jobs',
+                  'Scope written for you automatically',
+                  'GST handled, nothing to calculate',
+                  'Quote becomes invoice in one tap',
+                  'Customer pays right there and then',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="w-2.5 h-2.5 rounded-full bg-accent shrink-0 mt-2.5" />
+                    <span className="font-body text-lg md:text-xl lg:text-2xl font-medium text-white leading-[1.3]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
               </ul>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-white/90 leading-snug mb-3 md:mb-4">
+              <p className="font-body text-lg md:text-xl font-medium text-white/80 leading-[1.3] mb-4">
                 From finished job to paid. In under a minute.
               </p>
-              <Link to="/blog/ultimate-tradie-tech-stack-voice-first-2026" className="text-accent underline hover:no-underline text-sm sm:text-base md:text-lg lg:text-xl font-bold">
-                See the complete tech stack for 2026 →
+              <Link to="/how-it-works" className="font-body text-accent font-bold text-base hover:text-white transition-colors">
+                See how it works →
               </Link>
-            </div>
+            </AnimateIn>
           </div>
         </div>
       </section>
 
-      {/* SECTION 8: SHARING & DELIVERY */}
+      {/* ── SEND IT. WATCH IT. GET PAID. ─────────────────────────────────── */}
       <FeatureSection
         background="white"
         imagePosition="left"
         title="SEND IT. WATCH IT. GET PAID."
         description={
           <>
-            <p className="mb-4">
+            <p className="font-body mb-4">
               From the moment you hit send, you know exactly what's happening.
             </p>
-            <p className="text-base font-normal text-textSecondary">
+            <p className="font-body text-base font-medium text-brand/55">
               No guessing. No chasing. No "I never got it."
             </p>
           </>
@@ -248,33 +354,39 @@ export function LandingPage() {
           "See the second they open your quote or invoice",
           "They approve with one tap — no back and forth",
           "They pay right there and then — no bank transfer drama",
-          "Everything tracked automatically — nothing to chase"
+          "Everything tracked automatically — nothing to chase",
         ]}
         image={
-          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 w-full py-12">
-            <PhoneMockup size="small">
-              <AppScreen type="estimates-static" />
-            </PhoneMockup>
-            <PhoneMockup size="small">
-              <AppScreen type="portal" />
-            </PhoneMockup>
+          <div className="flex items-end justify-center w-full overflow-visible h-[260px] sm:h-[330px] md:h-[400px] lg:h-auto">
+            <div className="flex items-end justify-center gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom">
+              <div className="animate-float">
+                <PhoneMockup size="small">
+                  <AppScreen type="estimates-static" />
+                </PhoneMockup>
+              </div>
+              <div className="animate-float-delayed">
+                <PhoneMockup size="small">
+                  <AppScreen type="portal" />
+                </PhoneMockup>
+              </div>
+            </div>
           </div>
         }
       />
 
       <InlineCTA
         title="Stop Typing. Start Talking."
-        subtitle="Free beta access for high-volume trades."
+        subtitle="Work with your hands. Not a keyboard."
         variant="secondary"
       />
 
-      {/* SECTION 10: CRM DASHBOARD */}
+      {/* ── TRACK HIGH-VOLUME QUOTING ─────────────────────────────────────── */}
       <FeatureSection
         background="white"
         imagePosition="right"
         title="TRACK HIGH-VOLUME QUOTING"
         description={
-          <p>
+          <p className="font-body">
             See all quotes in one view. Nothing slips through.
           </p>
         }
@@ -282,24 +394,26 @@ export function LandingPage() {
           "All quotes at a glance",
           "Filter by status",
           "Track repeat clients",
-          "Never miss follow-ups"
+          "Never miss follow-ups",
         ]}
         image={
-          <div className="flex justify-center lg:justify-start scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
-            <PhoneMockup>
-              <AppScreen type="estimates" />
-            </PhoneMockup>
+          <div className="flex items-end justify-center lg:justify-start w-full overflow-visible h-[350px] sm:h-[440px] md:h-[510px] lg:h-auto">
+            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom animate-float">
+              <PhoneMockup>
+                <AppScreen type="estimates" />
+              </PhoneMockup>
+            </div>
           </div>
         }
       />
 
-      {/* SECTION 11: CLIENT MANAGEMENT */}
+      {/* ── REPEAT CLIENTS ───────────────────────────────────────────────── */}
       <FeatureSection
         background="slate"
         imagePosition="left"
         title="REPEAT CLIENTS REMEMBERED"
         description={
-          <p>
+          <p className="font-body">
             Client history pulled up instantly. Repeat work done faster.
           </p>
         }
@@ -307,135 +421,82 @@ export function LandingPage() {
           "Details linked to quotes",
           "Addresses saved",
           "Past quotes visible",
-          "Faster repeat work"
+          "Faster repeat work",
         ]}
         image={
-          <div className="flex justify-center lg:justify-start scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
-            <PhoneMockup>
-              <AppScreen type="customer-management" />
-            </PhoneMockup>
+          <div className="flex items-end justify-center lg:justify-start w-full overflow-visible h-[350px] sm:h-[440px] md:h-[510px] lg:h-auto">
+            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom animate-float">
+              <PhoneMockup>
+                <AppScreen type="customer-management" />
+              </PhoneMockup>
+            </div>
           </div>
         }
       />
 
-      {/* SOCIAL PROOF */}
-      <section className="bg-white py-10 md:py-14 lg:py-20">
+      {/* ── SOCIAL PROOF ─────────────────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <SocialProof />
         </div>
       </section>
 
-      {/* BLOG PREVIEW */}
+      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn className="text-center mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="text-accent fill-accent" />
+                ))}
+              </div>
+              <span className="font-body text-xs font-semibold text-white/60">Tradies that switched</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.88] text-white">
+              The job site review.
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {testimonials.map((t, i) => (
+              <AnimateIn key={i} delay={i * 80} direction="up">
+                <div className="rounded-[24px] bg-white/6 border border-white/10 p-6 md:p-7 flex flex-col h-full">
+                  <Quote size={22} className="text-accent mb-4 shrink-0" />
+                  <p className="font-body text-base font-medium text-white/85 leading-[1.6] mb-5 flex-1">
+                    "{t.quote}"
+                  </p>
+                  <div>
+                    <p className="font-black text-sm text-white uppercase tracking-wide">{t.name}</p>
+                    <p className="font-body text-xs text-white/45 font-medium mt-0.5">{t.trade}</p>
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn delay={300} className="mt-8 text-center">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+            >
+              Join them — Start Free
+            </a>
+            <p className="font-body text-xs text-white/35 font-medium mt-3">No card needed · Cancel anytime</p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── BLOG PREVIEW ─────────────────────────────────────────────────── */}
       <BlogPreview />
 
-      {/* FAQ SECTION */}
+      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <FAQ />
 
-      {/* SECTION 13: SIGNUP FORM */}
+      {/* ── SIGNUP FORM ──────────────────────────────────────────────────── */}
       <SignupForm />
 
-      {/* SECTION 16: FOOTER */}
-      <footer className="bg-brand text-white border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-16 lg:py-20">
-          <div className="text-center mb-10 md:mb-14 pb-10 md:pb-14 border-b border-white/10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight md:tracking-tighter">
-              Start Quoting Faster
-            </h3>
-            <p className="text-base sm:text-lg text-white/80 font-bold mb-6 md:mb-8 max-w-2xl mx-auto leading-snug md:leading-relaxed">
-              Try voice-powered quoting on real jobs.
-            </p>
-            <a
-              href="#signup-form"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-brand bg-accent text-accentText font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow"
-            >
-              <Mail size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={2.5} />
-              Get Beta Access
-            </a>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-14 mb-10 md:mb-14">
-            <div>
-              <div className="text-3xl font-black tracking-tight mb-5">
-                SMASH<span className="text-accent text-5xl leading-none align-baseline">.</span>
-              </div>
-              <p className="text-base text-white/60 font-medium leading-relaxed mb-6">
-                Smart invoicing. Voice-to-invoice in seconds.
-              </p>
-              <div>
-                <h3 className="text-sm font-black uppercase tracking-wider mb-4 text-white/50">Follow Us</h3>
-                <div className="flex gap-3">
-                  <a
-                    href="https://facebook.com/smashquotes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
-                    aria-label="Follow us on Facebook"
-                  >
-                    <Facebook size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
-                  </a>
-                  <a
-                    href="https://instagram.com/smashquotes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
-                    aria-label="Follow us on Instagram"
-                  >
-                    <Instagram size={20} strokeWidth={2.5} className="text-white/70 group-hover:text-accentText transition-colors" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Contact</h3>
-              <ul className="space-y-3">
-                <li><a href="mailto:dan@smashinvoices.com" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">dan@smashinvoices.com</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Company</h3>
-              <ul className="space-y-3">
-                <li><Link to="/founder" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><Link to="/blog" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Blog</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-black uppercase tracking-wider mb-5 text-white/50">Legal</h3>
-              <ul className="space-y-3">
-                <li><Link to="/privacy" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Privacy Policy</Link></li>
-                <li><a href="#" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-10 border-t border-white/10">
-            <nav className="mb-6">
-              <ul className="flex flex-wrap gap-6 justify-center md:justify-start">
-                <li><Link to="/" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Home</Link></li>
-                <li><Link to="/blog" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Blog</Link></li>
-                <li><Link to="/founder" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Meet the Founder</Link></li>
-                <li><Link to="/privacy" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Privacy</Link></li>
-                <li><a href="#" className="text-sm text-white/50 hover:text-white transition-colors font-semibold">Terms</a></li>
-              </ul>
-            </nav>
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-3">
-              <p className="text-sm text-white/40 font-medium">
-                © 2024 SMASH<span className="text-accent text-xl leading-none align-baseline">.</span> Made for high volume work.
-              </p>
-              <p className="text-sm text-white/40 font-medium">
-                Built in Byron Bay, Australia
-              </p>
-            </div>
-            <p className="text-sm text-white/30 font-medium text-center md:text-left leading-relaxed">
-              Beta software. Not accounting software.
-            </p>
-          </div>
-        </div>
-      </footer>
-
+      <Footer showCTA />
     </div>
   );
 }

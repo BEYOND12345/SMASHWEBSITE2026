@@ -1,301 +1,170 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
-
-const lastUpdated = 'March 26, 2026';
+import { Footer } from '../components/footer';
+import { AnimateIn } from '../components/animate-in';
+import { Nav } from '../components/nav';
 
 export function Privacy() {
   return (
     <>
       <SEO
         title="Privacy Policy | SMASH Invoices"
-        description="Privacy Policy for SMASH Invoices. Learn how we collect, use, and protect your personal and business data."
-        keywords="SMASH privacy policy, invoicing data privacy, tradie data protection"
+        description="Privacy Policy for SMASH Invoices. How we collect, use, and protect your data. ABN 58 600 491 085."
+        keywords="SMASH Invoices privacy policy, invoice app privacy"
+        ogTitle="Privacy Policy — SMASH Invoices"
+        ogDescription="How SMASH Invoices collects, uses, and protects your personal information."
+        ogImage="https://smashinvoices.com/og-image.png"
+        ogUrl="https://smashinvoices.com/privacy"
+        twitterTitle="Privacy Policy — SMASH Invoices"
+        twitterDescription="How SMASH Invoices collects, uses, and protects your personal information."
         canonical="https://smashinvoices.com/privacy"
       />
 
-      <div className="min-h-screen bg-[#0A0A0A]">
-        <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-8 lg:px-12 py-6 flex items-center justify-between">
-            <Link to="/" className="text-2xl font-black tracking-tight text-white">
-              SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-            </Link>
-            <div className="flex items-center gap-3">
-              <Link to="/how-it-works" className="hidden md:block px-4 py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-                How It Works
-              </Link>
-              <Link to="/blog" className="hidden md:block px-4 py-2.5 text-sm font-bold text-white/70 hover:text-white transition-colors uppercase tracking-wide">
-                Blog
-              </Link>
-              <Link to="/#signup-form" className="px-6 py-2.5 rounded-full bg-accent text-accentText font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all">
-                Sign Up
-              </Link>
-            </div>
-          </div>
-        </nav>
+      <Nav />
 
-        <section className="py-20 lg:py-28">
-          <div className="max-w-3xl mx-auto px-8 lg:px-12">
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-4 leading-tight uppercase tracking-tighter">
+      {/* HEADER */}
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <h1 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
               Privacy Policy
             </h1>
-            <p className="text-white/50 text-sm font-semibold mb-16">
-              Last updated: {lastUpdated}
+            <p className="font-body text-white/60 font-medium">
+              Last updated: 30 March 2026
             </p>
+          </AnimateIn>
+        </div>
+      </section>
 
-            <div className="space-y-12">
-              <PolicySection title="1. Introduction">
-                <p>
-                  SMASH Invoices ("SMASH", "we", "us", or "our") is committed to protecting
-                  the privacy and security of your personal information. This Privacy Policy
-                  explains how we collect, use, disclose, and safeguard your information when
-                  you use our voice-to-invoice platform, website, and related services
-                  (collectively, the "Service").
-                </p>
-                <p>
-                  By using the Service, you agree to the collection and use of information in
-                  accordance with this policy. If you do not agree, please do not use the
-                  Service.
-                </p>
-              </PolicySection>
+      {/* CONTENT */}
+      <section className="bg-white py-12 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="prose prose-lg max-w-none text-brand/80 leading-relaxed space-y-10">
 
-              <PolicySection title="2. Information We Collect">
-                <h4 className="text-lg font-bold text-white mt-4 mb-2">Account Information</h4>
-                <p>
-                  When you sign up for SMASH, we collect your name, email address, phone
-                  number, business name, ABN (Australian Business Number), and trade or
-                  industry type.
-                </p>
-
-                <h4 className="text-lg font-bold text-white mt-6 mb-2">Voice and Invoice Data</h4>
-                <p>
-                  When you use our voice-to-invoice feature, we process your voice recordings
-                  to generate invoices. Voice recordings are temporarily processed to extract
-                  invoice details (customer name, job description, amounts) and are not stored
-                  permanently after processing is complete. Generated invoices, quotes, and
-                  related business documents are stored securely on your behalf.
-                </p>
-
-                <h4 className="text-lg font-bold text-white mt-6 mb-2">Customer Data</h4>
-                <p>
-                  Through the invoices you create, we store information about your customers
-                  including their names, email addresses, phone numbers, and business
-                  addresses. This data is stored solely to enable invoicing and CRM
-                  functionality within the Service.
-                </p>
-
-                <h4 className="text-lg font-bold text-white mt-6 mb-2">Usage Data</h4>
-                <p>
-                  We automatically collect information about how you interact with the
-                  Service, including device type, browser type, IP address, pages visited, and
-                  features used. This helps us improve the Service and troubleshoot issues.
-                </p>
-
-                <h4 className="text-lg font-bold text-white mt-6 mb-2">Payment Information</h4>
-                <p>
-                  Payment processing is handled by third-party providers. We do not store full
-                  credit card numbers or bank account details on our servers. We may store
-                  partial payment references (last 4 digits, transaction IDs) for record-keeping.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="3. How We Use Your Information">
-                <p>We use the information we collect to:</p>
-                <ul className="list-none space-y-3 mt-4">
-                  <ListItem>Provide, operate, and maintain the Service</ListItem>
-                  <ListItem>Process voice recordings into invoices and quotes</ListItem>
-                  <ListItem>Send invoices and payment reminders to your customers on your behalf</ListItem>
-                  <ListItem>Improve and personalise your experience, including AI accuracy over time</ListItem>
-                  <ListItem>Communicate with you about your account, updates, and support requests</ListItem>
-                  <ListItem>Process payments and manage billing</ListItem>
-                  <ListItem>Detect, prevent, and address fraud or technical issues</ListItem>
-                  <ListItem>Comply with legal obligations and enforce our terms</ListItem>
-                </ul>
-              </PolicySection>
-
-              <PolicySection title="4. Data Sharing and Disclosure">
-                <p>
-                  We do not sell your personal information or business data to third parties.
-                  We may share information in the following limited circumstances:
-                </p>
-                <ul className="list-none space-y-3 mt-4">
-                  <ListItem>
-                    <strong className="text-white">Service Providers:</strong> We use trusted
-                    third-party services for hosting, payment processing, email delivery, and
-                    analytics. These providers only access data necessary to perform their
-                    functions and are bound by confidentiality obligations.
-                  </ListItem>
-                  <ListItem>
-                    <strong className="text-white">Accounting Integrations:</strong> If you
-                    connect SMASH to Xero, QuickBooks, or other accounting software, invoice
-                    data is shared with those platforms as directed by you.
-                  </ListItem>
-                  <ListItem>
-                    <strong className="text-white">Legal Requirements:</strong> We may
-                    disclose information if required by law, legal process, or government
-                    request, or to protect the rights, property, or safety of SMASH, our
-                    users, or the public.
-                  </ListItem>
-                  <ListItem>
-                    <strong className="text-white">Business Transfers:</strong> In the event
-                    of a merger, acquisition, or sale of assets, your information may be
-                    transferred as part of that transaction.
-                  </ListItem>
-                </ul>
-              </PolicySection>
-
-              <PolicySection title="5. Data Security">
-                <p>
-                  We implement industry-standard security measures to protect your data,
-                  including:
-                </p>
-                <ul className="list-none space-y-3 mt-4">
-                  <ListItem>Encryption of data in transit (TLS/SSL) and at rest (AES-256)</ListItem>
-                  <ListItem>Secure cloud infrastructure with regular security audits</ListItem>
-                  <ListItem>Access controls limiting data access to authorised personnel only</ListItem>
-                  <ListItem>Regular backups and disaster recovery procedures</ListItem>
-                </ul>
-                <p className="mt-4">
-                  While we take all reasonable steps to protect your information, no method of
-                  electronic storage or transmission is 100% secure. We cannot guarantee
-                  absolute security.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="6. Data Retention">
-                <p>
-                  We retain your account information and business data for as long as your
-                  account is active or as needed to provide the Service. Invoice and financial
-                  records are retained for a minimum of 7 years to comply with Australian tax
-                  and record-keeping requirements.
-                </p>
-                <p>
-                  Voice recordings used for invoice generation are processed in real-time and
-                  are not retained after the invoice has been created, unless you explicitly
-                  opt in to storing recordings for quality improvement purposes.
-                </p>
-                <p>
-                  If you close your account, we will delete or anonymise your personal data
-                  within 90 days, except where retention is required by law.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="7. Your Rights">
-                <p>
-                  Under Australian Privacy Principles (APPs) and applicable data protection
-                  laws, you have the right to:
-                </p>
-                <ul className="list-none space-y-3 mt-4">
-                  <ListItem>Access the personal information we hold about you</ListItem>
-                  <ListItem>Request correction of inaccurate or incomplete information</ListItem>
-                  <ListItem>Request deletion of your personal data (subject to legal retention requirements)</ListItem>
-                  <ListItem>Withdraw consent for optional data processing (such as marketing communications)</ListItem>
-                  <ListItem>Export your invoice and customer data in a standard format</ListItem>
-                  <ListItem>Lodge a complaint with the Office of the Australian Information Commissioner (OAIC)</ListItem>
-                </ul>
-                <p className="mt-4">
-                  To exercise any of these rights, contact us at{' '}
-                  <a href="mailto:privacy@smashinvoices.com" className="text-accent hover:text-accent/80 font-semibold transition-colors">
-                    privacy@smashinvoices.com
-                  </a>.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="8. Cookies and Tracking">
-                <p>
-                  We use essential cookies to maintain your session and preferences. We may
-                  also use analytics cookies to understand how the Service is used and to
-                  improve performance. You can control cookie preferences through your browser
-                  settings.
-                </p>
-                <p>
-                  We do not use third-party advertising trackers or sell data to ad networks.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="9. Third-Party Links">
-                <p>
-                  The Service may contain links to third-party websites or services not
-                  operated by us. We are not responsible for the privacy practices of these
-                  third parties. We encourage you to review their privacy policies.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="10. Children's Privacy">
-                <p>
-                  The Service is not intended for use by individuals under the age of 18. We
-                  do not knowingly collect personal information from children. If we become
-                  aware that we have collected data from a child, we will delete it promptly.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="11. Changes to This Policy">
-                <p>
-                  We may update this Privacy Policy from time to time. We will notify you of
-                  material changes by posting the updated policy on our website and updating
-                  the "Last updated" date. Continued use of the Service after changes
-                  constitutes acceptance of the revised policy.
-                </p>
-              </PolicySection>
-
-              <PolicySection title="12. Contact Us">
-                <p>
-                  If you have questions or concerns about this Privacy Policy or our data
-                  practices, contact us at:
-                </p>
-                <div className="mt-4 bg-white/5 rounded-xl p-6 border border-white/10">
-                  <p className="text-white font-bold text-lg mb-1">SMASH Invoices</p>
-                  <p>
-                    Email:{' '}
-                    <a href="mailto:privacy@smashinvoices.com" className="text-accent hover:text-accent/80 font-semibold transition-colors">
-                      privacy@smashinvoices.com
-                    </a>
-                  </p>
-                  <p>
-                    Website:{' '}
-                    <a href="https://smashinvoices.com" className="text-accent hover:text-accent/80 font-semibold transition-colors">
-                      smashinvoices.com
-                    </a>
-                  </p>
-                </div>
-              </PolicySection>
+            <div>
+              <p className="font-body text-brand font-medium leading-[1.6]">
+                SMASH Invoices ("SMASH", "we", "us", "our") is operated by Daniel Neale (ABN 58 600 491 085), based in Australia. This Privacy Policy explains how we collect, use, and protect your personal information when you use the SMASH Invoices app and website (smashinvoices.com).
+              </p>
+              <p className="font-body mt-4 leading-[1.6]">
+                By using SMASH, you agree to the collection and use of information in accordance with this policy. We comply with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs).
+              </p>
             </div>
-          </div>
-        </section>
 
-        <footer className="bg-[#0D0D0D] border-t border-white/10 py-12">
-          <div className="max-w-7xl mx-auto px-8 lg:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <Link to="/" className="text-2xl font-black tracking-tight text-white">
-                SMASH<span className="text-accent text-4xl leading-none align-baseline">.</span>
-              </Link>
-              <div className="flex gap-6">
-                <Link to="/" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Home</Link>
-                <Link to="/how-it-works" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">How It Works</Link>
-                <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Blog</Link>
-                <Link to="/founder" className="text-sm text-white/60 hover:text-white transition-colors font-semibold">Founder</Link>
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">1. Information We Collect</h2>
+              <h3 className="text-lg font-bold text-brand mb-2">Account information</h3>
+              <p className="font-body leading-[1.6]">When you create an account, we collect your name, email address, and business details (business name, ABN if provided).</p>
+
+              <h3 className="text-lg font-bold text-brand mt-6 mb-2">Voice recordings</h3>
+              <p className="font-body leading-[1.6]">When you use the voice-to-quote feature, your voice is temporarily processed to generate a quote. Voice audio is transmitted to our speech processing provider for transcription and is not stored permanently after processing is complete.</p>
+
+              <h3 className="text-lg font-bold text-brand mt-6 mb-2">Business data</h3>
+              <p className="font-body leading-[1.6]">We store the quotes, invoices, and customer records you create in the app. This includes customer names, contact details, job descriptions, pricing, and payment status.</p>
+
+              <h3 className="text-lg font-bold text-brand mt-6 mb-2">Payment information</h3>
+              <p className="font-body leading-[1.6]">Subscription payments are processed by Stripe. We do not store your credit card details. Stripe's privacy policy governs how payment information is handled. Customer payments you collect via SMASH are processed through Stripe Connect.</p>
+
+              <h3 className="text-lg font-bold text-brand mt-6 mb-2">Usage data</h3>
+              <p className="font-body leading-[1.6]">We collect information about how you use the app — features used, quotes sent, session data — to improve the service. This data is aggregated and not used to identify you individually.</p>
+
+              <h3 className="text-lg font-bold text-brand mt-6 mb-2">Device information</h3>
+              <p className="font-body leading-[1.6]">We collect device type, operating system version, and app version for support and debugging purposes.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">2. How We Use Your Information</h2>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li>To provide and operate the SMASH Invoices service</li>
+                <li>To process your voice input and generate quotes and invoices</li>
+                <li>To send quotes and invoices to your customers on your behalf</li>
+                <li>To process subscription payments and manage your account</li>
+                <li>To send transactional emails (quote confirmations, invoice receipts, payment notifications)</li>
+                <li>To respond to support requests</li>
+                <li>To improve the product through aggregated usage analysis</li>
+                <li>To comply with legal obligations</li>
+              </ul>
+              <p className="font-body mt-4 leading-[1.6]">We do not sell your personal information to third parties. We do not use your business data to train AI models.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">3. Third-Party Services</h2>
+              <p className="font-body mb-4 leading-[1.6]">SMASH uses the following third-party services to deliver the product. Each has its own privacy policy:</p>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li><strong>Supabase</strong> — database and authentication (supabase.com/privacy)</li>
+                <li><strong>Stripe</strong> — subscription billing and customer payment collection (stripe.com/privacy)</li>
+                <li><strong>Deepgram</strong> — voice transcription (deepgram.com/privacy)</li>
+                <li><strong>OpenAI</strong> — quote generation from transcribed speech (openai.com/privacy)</li>
+                <li><strong>RevenueCat</strong> — subscription management for iOS (revenuecat.com/privacy)</li>
+                <li><strong>Apple</strong> — App Store distribution (apple.com/privacy)</li>
+                <li><strong>Vercel</strong> — website hosting (vercel.com/legal/privacy-policy)</li>
+              </ul>
+              <p className="font-body mt-4 leading-[1.6]">We only share data with these providers to the extent necessary to deliver the service.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">4. Data Storage and Security</h2>
+              <p className="font-body leading-[1.6]">Your data is stored on servers in Australia and/or the United States via Supabase. We use encryption in transit (TLS) and at rest. Access to your data is restricted to authenticated users and authorised personnel only.</p>
+              <p className="font-body mt-4 leading-[1.6]">We take reasonable steps to protect your information from misuse, loss, and unauthorised access. However, no method of electronic transmission or storage is 100% secure.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">5. Data Retention</h2>
+              <p className="font-body leading-[1.6]">We retain your account data for as long as your account is active. If you delete your account, we will delete your personal data within 30 days, except where we are required to retain it for legal or tax purposes.</p>
+              <p className="font-body mt-4 leading-[1.6]">Voice recordings are not retained after transcription is complete.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">6. Your Rights</h2>
+              <p className="font-body mb-4 leading-[1.6]">Under the Australian Privacy Principles, you have the right to:</p>
+              <ul className="list-disc list-outside ml-6 space-y-2">
+                <li>Access the personal information we hold about you</li>
+                <li>Request correction of inaccurate information</li>
+                <li>Request deletion of your account and associated data</li>
+                <li>Opt out of marketing communications</li>
+                <li>Lodge a complaint with the Office of the Australian Information Commissioner (oaic.gov.au)</li>
+              </ul>
+              <p className="font-body mt-4 leading-[1.6]">To exercise any of these rights, email us at <a href="mailto:dan@smashinvoices.com" className="text-accent hover:underline">dan@smashinvoices.com</a>.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">7. Cookies and Analytics</h2>
+              <p className="font-body leading-[1.6]">Our website (smashinvoices.com) uses cookies for basic functionality and may use analytics tools to understand how visitors use the site. You can disable cookies in your browser settings, though some site features may not work correctly.</p>
+              <p className="font-body mt-4 leading-[1.6]">The SMASH app does not use advertising cookies or tracking pixels.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">8. Children</h2>
+              <p className="font-body leading-[1.6]">SMASH Invoices is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">9. Changes to This Policy</h2>
+              <p className="font-body leading-[1.6]">We may update this Privacy Policy from time to time. We will notify you of significant changes via email or in-app notification. Your continued use of SMASH after changes are posted constitutes acceptance of the updated policy.</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4">10. Contact Us</h2>
+              <p className="font-body leading-[1.6]">If you have any questions about this Privacy Policy or how we handle your data, contact us:</p>
+              <div className="mt-4 bg-surface rounded-[24px] p-6 border-2 border-border">
+                <p className="font-bold text-brand">SMASH Invoices</p>
+                <p>Daniel Neale</p>
+                <p>ABN: 58 600 491 085</p>
+                <p>Byron Bay, NSW, Australia</p>
+                <p>Email: <a href="mailto:dan@smashinvoices.com" className="text-accent hover:underline">dan@smashinvoices.com</a></p>
               </div>
             </div>
+
+            <div className="border-t border-border pt-8">
+              <p className="text-sm text-brand/50">
+                See also: <Link to="/terms" className="underline hover:text-brand transition-colors">Terms of Service</Link> · <Link to="/pricing" className="underline hover:text-brand transition-colors">Pricing</Link>
+              </p>
+            </div>
+
           </div>
-        </footer>
-      </div>
+        </div>
+      </section>
+
+      <Footer />
     </>
-  );
-}
-
-function PolicySection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <h2 className="text-2xl font-black text-white mb-4 tracking-tight">{title}</h2>
-      <div className="text-white/70 leading-relaxed space-y-4">{children}</div>
-    </div>
-  );
-}
-
-function ListItem({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="flex items-start gap-3">
-      <span className="text-accent font-bold mt-0.5 shrink-0">--</span>
-      <span>{children}</span>
-    </li>
   );
 }
