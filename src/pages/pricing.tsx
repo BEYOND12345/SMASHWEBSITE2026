@@ -104,8 +104,7 @@ export function Pricing() {
         { name: 'Pricing', url: 'https://smashinvoices.com/pricing' },
       ])} />
       <StructuredData data={createFAQSchema(faqs)} />
-      <SchemaMarkup data={aiOrgSchema} />
-      <SchemaMarkup data={softwareApplicationSchema} />
+      <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 
