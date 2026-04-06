@@ -1,73 +1,54 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
-import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
+import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
-import { PhoneMockup, AppScreen } from '../components/phone-mockup';
-import { Check, ChevronDown, Star, Quote, ArrowRight } from 'lucide-react';
+import { Check, ChevronDown, Star, ArrowRight, Mic, FileText, Send, ThumbsUp, DollarSign } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
-const testimonials = [
-  {
-    quote: "I used to do my invoices Sunday night. Now I'm done before I pull out of the driveway. Every single job.",
-    name: "Joel P.",
-    trade: "Painter, Brisbane",
-  },
-  {
-    quote: "My accountant told me my cash flow improved. I told her I just started invoicing on the day instead of a week later.",
-    name: "Sarah K.",
-    trade: "Cleaner, Melbourne",
-  },
-  {
-    quote: "Voice recognition on a job site works perfectly. I was sceptical — but I was invoiced before my apprentice had packed the van.",
-    name: "Mark T.",
-    trade: "Electrician, Perth",
-  },
-];
-
 const faqs = [
   {
-    q: "Do I need to speak clearly or slowly?",
-    a: "No. SMASH handles natural speech — accents, background noise, and the way you actually talk on a job site. You don't need to slow down or enunciate. Just describe the job the way you'd explain it to a mate."
+    q: "What is voice invoicing?",
+    a: "Voice invoicing is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. Instead of typing, you speak — the software transcribes and interprets what you said, then generates a tax-compliant invoice ready to send."
   },
   {
-    q: "What if I get the details wrong?",
-    a: "You get a full review screen before anything is sent. Read through the quote, edit any line items, adjust prices, and send only when you're happy. Nothing goes to your customer without your approval."
+    q: "How accurate is voice invoicing?",
+    a: "SMASH handles natural speech including trade terminology, accents, and background noise. It's designed for job sites, not offices. You get a full review screen before anything is sent, so you can catch and fix any misinterpretations before the customer sees it."
   },
   {
-    q: "Does it work offline?",
-    a: "Voice processing needs an internet connection — a standard 4G signal is enough. Once a quote is generated, you can review and edit it offline. Sending requires a connection."
-  },
-  {
-    q: "How long does it actually take?",
-    a: "Under 10 seconds from finishing your voice description to a structured, priced quote appearing on screen. End-to-end — speak, review, send — takes under 60 seconds for a new job. Under 30 seconds with your personal pricing catalog set up."
+    q: "How long does voice invoicing take?",
+    a: "Under 60 seconds end-to-end for a new job — speak, review, send. Under 30 seconds once your pricing catalog is set up. Voice processing takes approximately 7 seconds, quote generation under 10 seconds total."
   },
   {
     q: "What trades does voice invoicing work for?",
-    a: "Any trade or service business that quotes jobs. Cleaners, handymen, gardeners, painters, plumbers, electricians, mobile mechanics, pest control — if you describe work out loud, SMASH can build the quote from it."
+    a: "Any trade or service business that quotes jobs verbally: cleaners, plumbers, electricians, painters, handymen, gardeners, mobile mechanics, pest control, HVAC, concreters, tilers — if you can describe the work out loud, SMASH can build the invoice from it."
+  },
+  {
+    q: "Does voice invoicing work in Australia?",
+    a: "Yes. SMASH is built specifically for Australia — GST calculations, ABN display, ATO-compliant invoice format, and Australian trade materials pricing are all built in. Prices are in AUD."
   },
   {
     q: "Is voice invoicing available on Android?",
-    a: "SMASH is currently available on iOS (iPhone). Android is coming. Join the waitlist from the App Store page to be notified when it launches."
+    a: "SMASH is currently available on iOS (iPhone). Android support is coming. The web-based quote generator at smashinvoices.com works on any device in the meantime."
   }
 ];
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
-    <div className="border-b border-border last:border-b-0">
+    <div className="border-b border-slate-100 last:border-b-0">
       <button onClick={onClick} className="w-full flex items-start justify-between gap-4 py-6 text-left">
-        <span className="text-lg font-bold text-brand">{q}</span>
-        <ChevronDown size={24} className={`shrink-0 transition-transform text-brand/40 ${isOpen ? 'rotate-180' : ''}`} strokeWidth={2.5} />
+        <span className="font-display text-sm uppercase tracking-tight text-brand">{q}</span>
+        <ChevronDown size={20} className={`shrink-0 transition-transform text-slate-400 mt-0.5 ${isOpen ? 'rotate-180' : ''}`} strokeWidth={2.5} />
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="font-body text-brand/70 font-medium leading-[1.5]">{a}</p>
+          <p className="font-body text-base text-slate-500 leading-relaxed">{a}</p>
         </div>
       )}
     </div>
@@ -80,427 +61,438 @@ export function VoiceInvoicing() {
   return (
     <>
       <SEO
-        title="Voice Invoicing App Australia | Invoice by Talking | SMASH Invoices"
-        description="Voice invoicing for Australian service businesses. Speak the job for 30 seconds — SMASH builds the quote automatically. Under 60 seconds from job done to invoice sent."
-        keywords="voice invoicing app, create invoice by voice, hands-free invoicing Australia, voice to invoice, speak to invoice"
-        ogTitle="Voice Invoicing — Invoice by Talking, Not Typing | SMASH Invoices"
-        ogDescription="Speak the job for 30 seconds. SMASH builds the quote. Invoice sent before you leave the driveway."
-        ogImage="https://smashinvoices.com/og-image.png"
+        title="Voice Invoicing — What It Is and How It Works | SMASH"
+        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Learn what voice invoicing is, how it works, and why tradies use it."
+        keywords="voice invoicing, what is voice invoicing, voice to invoice, voice invoicing app Australia, how voice invoicing works"
+        ogTitle="Voice Invoicing — What It Is and How It Works | SMASH"
+        ogDescription="Voice invoicing explained: describe the job out loud, invoice built automatically. The category defined."
         ogUrl="https://smashinvoices.com/voice-invoicing"
-        twitterTitle="Voice Invoicing | SMASH Invoices"
-        twitterDescription="Speak the job for 30 seconds. Quote built automatically. Invoice sent before you leave the driveway."
         canonical="https://smashinvoices.com/voice-invoicing"
       />
+
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
-        { name: 'Features', url: 'https://smashinvoices.com/features' },
         { name: 'Voice Invoicing', url: 'https://smashinvoices.com/voice-invoicing' },
       ])} />
       <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
+      <StructuredData data={createHowToSchema({
+        name: 'How Voice Invoicing Works',
+        description: 'The complete workflow from job done to invoice sent using voice invoicing software.',
+        steps: [
+          { name: 'Describe the job out loud', text: 'Speak naturally for 20–30 seconds — what you did, materials used, time taken. No script or format required.' },
+          { name: 'Software builds the invoice', text: 'In under 10 seconds, a structured, priced, GST-compliant invoice is generated automatically from your speech.' },
+          { name: 'Review and edit', text: 'Check the invoice on screen. Edit any line items, adjust prices, add notes. Nothing leaves without your approval.' },
+          { name: 'Send to customer', text: 'Send the invoice as a link via SMS, email, or WhatsApp. Customer receives it instantly on their phone.' },
+          { name: 'Customer approves and pays', text: 'Customer opens the link, approves with one tap, and pays. You receive a notification the moment they open it.' },
+        ],
+      })} />
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <Nav />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/hero_image.png" alt="Voice invoicing for service businesses" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+      {/* ── HERO — CATEGORY DEFINITION ───────────────────────── */}
+      <section className="bg-black py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Voice Invoicing</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-              Invoice by talking.<br />Not typing.
-            </h1>
-            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-8">
-              Speak the job for 30 seconds. SMASH builds the quote. Customer approves. You get paid — before you leave the driveway.
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-6">
+              The category defined
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20">
-                Start Free
-                <ArrowRight size={14} strokeWidth={2.5} />
-              </a>
-              <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
-                See How It Works
-              </Link>
-            </div>
-            {/* Trust signals */}
-            <div className="flex items-center gap-3 mt-5 flex-wrap">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
-                </div>
-                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
-              </div>
-              <span className="font-body text-xs text-white/40 font-medium">No card needed · 2 free quotes/month</span>
-            </div>
+            <h1 className="font-display text-[64px] md:text-[96px] lg:text-[120px] uppercase tracking-tighter leading-[0.88] text-white mb-8 max-w-5xl">
+              Voice<br />
+              <span className="text-accent">Invoicing.</span>
+            </h1>
+            <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-10">
+              Describe a job out loud. Invoice built automatically. Sent before you leave the driveway.
+            </p>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 font-display text-sm uppercase tracking-widest text-brand px-8 py-4 rounded-2xl hover:brightness-95 transition-all"
+              style={{ backgroundColor: '#DFFF00' }}
+            >
+              Try It Free
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
           </AnimateIn>
         </div>
       </section>
 
-      {/* ── STATS STRIP ──────────────────────────────────────── */}
-      <section className="bg-accent py-0">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-3 divide-x divide-brand/20">
-            {[
-              { stat: '60s', label: 'Job to invoice sent' },
-              { stat: '4×', label: 'Faster than typing' },
-              { stat: '$0', label: 'Free to start' },
-            ].map((item, i) => (
-              <div key={i} className="py-7 px-4 text-center">
-                <p className="text-3xl sm:text-4xl font-black text-brand tracking-tighter leading-none mb-1">{item.stat}</p>
-                <p className="font-body text-xs font-medium text-brand/60 uppercase tracking-widest leading-[1.4]">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ANSWER BLOCK — AI SEARCH OPTIMISED ───────────────── */}
-      <section className="bg-white py-10 md:py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-brand font-medium leading-[1.4] text-lg md:text-xl">
-            <strong className="font-black">Voice invoicing</strong> is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. SMASH is a voice invoicing app for self-employed service workers — you speak for 30 seconds, SMASH builds the quote, and your customer approves and pays from a link. No typing required.
-          </p>
-        </div>
-      </section>
-
-      {/* ── THE PROBLEM ──────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <AnimateIn direction="left">
-            <div>
-              <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">The problem</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
-                Typing is the barrier. Nothing else.
-              </h2>
-              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
-                The job is done. The money should be yours. But invoicing means opening an app, typing out what you did, calculating GST, finding the customer's details, and hitting send. By the time you're back in the van, exhausted, it just doesn't happen.
-              </p>
-              <p className="font-body text-brand/70 font-medium leading-[1.5] mb-6">
-                Then it's four jobs behind. Then it's a mountain you never climb. Then it's $8,684 sitting uninvoiced at the end of the year — because the only barrier was the effort of typing it out.
-              </p>
-              <p className="text-brand font-black leading-[1.4]">
-                SMASH removes that barrier completely. You don't type anything. Ever.
-              </p>
-            </div>
-            </AnimateIn>
-            <AnimateIn direction="right">
-            <div className="flex justify-center scale-75 sm:scale-90 lg:scale-100 origin-center">
-              <PhoneMockup>
-                <AppScreen type="voice" />
-              </PhoneMockup>
-            </div>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── VIDEO ────────────────────────────────────────────── */}
-      <section className="bg-surface py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/gr_iAEvyIQY?rel=0"
-              title="SMASH Voice Invoicing Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOW IT WORKS — 3 STEPS ───────────────────────────── */}
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+      {/* ── DEFINITION — FEATURED SNIPPET TARGET ─────────────── */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">How it works</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 md:mb-16">
-              Just talk. SMASH<br />does the rest.
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-6">Definition</p>
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9] text-brand mb-8">
+              What is voice invoicing?
             </h2>
+            <p className="font-body text-xl text-slate-600 leading-relaxed mb-6">
+              <strong className="text-brand">Voice invoicing</strong> is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. Instead of opening an app and typing, you speak — the software transcribes and interprets what you said, then generates a tax-compliant invoice ready to send to your customer.
+            </p>
+            <p className="font-body text-lg text-slate-500 leading-relaxed mb-6">
+              Voice invoicing eliminates the single biggest reason tradespeople and contractors fail to invoice on the day: the friction of typing. When you can describe a job the same way you'd explain it to a mate — and have the invoice ready in under a minute — invoicing on the day becomes the default, not the exception.
+            </p>
+            <p className="font-body text-lg text-slate-500 leading-relaxed">
+              The term covers both <em>voice-to-invoice</em> (converting speech directly into an invoice) and <em>voice-to-quote</em> (building a quote or estimate from spoken job descriptions). In practice, the same technology handles both.
+            </p>
           </AnimateIn>
-          <AnimateIn direction="up" delay={100}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </div>
+      </section>
+
+      {/* ── WHY IT MATTERS ───────────────────────────────────── */}
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">Why it matters</p>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-brand mb-6 max-w-3xl">
+              The invoicing problem no one solved.
+            </h2>
+            <p className="font-body text-xl text-slate-500 max-w-2xl leading-relaxed mb-16">
+              Tradies and contractors have always known what needs to be invoiced. The problem was never the work — it was the paperwork.
+            </p>
+          </AnimateIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                step: "01",
-                title: "Speak the job",
-                body: "Describe the work out loud — what you did, what materials you used, how long it took. 20 to 30 seconds. The same way you'd explain it to a mate. No script, no format."
+                stat: '$8,684',
+                label: 'Average uninvoiced work per tradie per year',
+                body: 'Not because the jobs weren\'t done. Because invoicing felt like too much effort after a full day on site.',
               },
               {
-                step: "02",
-                title: "Quote appears",
-                body: "In under 10 seconds, a structured, priced, GST-compliant quote is built automatically. Your rates, your materials, your business name. Review it on the spot and make any edits."
+                stat: '4×',
+                label: 'Faster than typing an invoice manually',
+                body: 'Typing a standard invoice takes 8–15 minutes. Describing it takes 30 seconds. Voice invoicing removes the gap entirely.',
               },
               {
-                step: "03",
-                title: "Customer pays",
-                body: "Send the quote as a link. Customer opens it on their phone, approves with one tap, and pays right there. You see the second they open it. Invoice issued automatically."
-              }
-            ].map((s) => (
-              <div key={s.step} className="bg-white rounded-[32px] border-2 border-border p-8">
-                <p className="text-5xl font-black text-accent/30 leading-none mb-4">{s.step}</p>
-                <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">{s.title}</h3>
-                <p className="font-body text-brand/70 font-medium text-sm leading-[1.5]">{s.body}</p>
-              </div>
+                stat: '60s',
+                label: 'From job done to invoice sent',
+                body: 'Speak. Review. Send. The entire process — including GST calculation and customer delivery — in under a minute.',
+              },
+            ].map((item) => (
+              <AnimateIn key={item.stat} direction="up">
+                <div className="bg-white rounded-4xl p-8 border border-slate-100 hover:border-accent transition-all">
+                  <p className="font-display text-5xl uppercase tracking-tighter text-brand mb-2">{item.stat}</p>
+                  <p className="font-display text-[11px] uppercase tracking-[0.15em] text-slate-400 mb-4">{item.label}</p>
+                  <p className="font-body text-sm text-slate-500 leading-relaxed">{item.body}</p>
+                </div>
+              </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── WHO IT'S FOR ─────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">Who uses it</p>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-brand mb-6 max-w-3xl">
+              Built for anyone who works with their hands.
+            </h2>
+            <p className="font-body text-xl text-slate-500 max-w-2xl leading-relaxed mb-12">
+              Voice invoicing works for any trade or service business where jobs are quoted and invoiced on site — not at a desk.
+            </p>
           </AnimateIn>
-          <p className="text-center text-brand/60 font-medium mt-8">
-            Total time: <strong className="text-brand">under 60 seconds</strong> for a new job. <strong className="text-brand">Under 30 seconds</strong> with your personal pricing catalog.
-          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {[
+              { trade: 'Plumbers', link: '/for-plumbers' },
+              { trade: 'Electricians', link: '/for-electricians' },
+              { trade: 'Painters', link: '/for-painters' },
+              { trade: 'Cleaners', link: '/for-cleaners' },
+              { trade: 'Handymen', link: '/for-handymen' },
+              { trade: 'Gardeners', link: '/for-gardeners' },
+              { trade: 'Mobile Mechanics', link: '/for-mobile-mechanics' },
+              { trade: 'HVAC Technicians', link: '/for-hvac' },
+              { trade: 'Pest Control', link: '/for-pest-control' },
+              { trade: 'Concreters', link: '/for-concreters' },
+              { trade: 'Tilers', link: '/for-tilers' },
+              { trade: 'Arborists', link: '/for-arborists' },
+            ].map((item) => (
+              <Link
+                key={item.trade}
+                to={item.link}
+                className="bg-slate-50 rounded-4xl p-5 border border-slate-100 hover:border-accent hover:bg-white transition-all"
+              >
+                <span className="font-display text-sm uppercase tracking-tight text-brand">{item.trade}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS — 5 STEPS ───────────────────────────── */}
+      <section className="bg-black py-16 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">How it works</p>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-white mb-4 max-w-3xl">
+              The five steps of voice invoicing.
+            </h2>
+            <p className="font-body text-xl text-slate-400 max-w-xl leading-relaxed mb-16">
+              This is the complete workflow — from the moment you finish a job to money in your account.
+            </p>
+          </AnimateIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              {
+                icon: Mic,
+                step: '01',
+                title: 'Talk',
+                body: 'Describe the job out loud — what you did, materials used, time taken. 20–30 seconds. Natural speech, no script.',
+              },
+              {
+                icon: FileText,
+                step: '02',
+                title: 'Quote built',
+                body: 'In under 10 seconds, a structured, priced, GST-compliant invoice is built automatically from your speech.',
+              },
+              {
+                icon: Send,
+                step: '03',
+                title: 'Sent',
+                body: 'Review the invoice, make any edits, then send it as a link via SMS, email, or WhatsApp. Instant delivery.',
+              },
+              {
+                icon: ThumbsUp,
+                step: '04',
+                title: 'Approved',
+                body: 'Customer opens the link on their phone. You\'re notified the second they open it. They approve with one tap.',
+              },
+              {
+                icon: DollarSign,
+                step: '05',
+                title: 'Paid',
+                body: 'Payment processed immediately. Money on its way. Invoice automatically issued. Total time: under 60 seconds.',
+              },
+            ].map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <AnimateIn key={s.step} direction="up">
+                  <div className="bg-white/5 border border-white/10 rounded-4xl p-6 hover:border-accent transition-all h-full">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center">
+                        <Icon size={18} className="text-accent" strokeWidth={2} />
+                      </div>
+                      <span className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-500">{s.step}</span>
+                    </div>
+                    <h3 className="font-display text-xl uppercase tracking-tight text-white mb-3">{s.title}</h3>
+                    <p className="font-body text-sm text-slate-400 leading-relaxed">{s.body}</p>
+                  </div>
+                </AnimateIn>
+              );
+            })}
+          </div>
+
+          <AnimateIn direction="up">
+            <p className="font-body text-center text-slate-500 mt-10 text-sm">
+              Total time from job done to invoice sent: <span className="text-white font-semibold">under 60 seconds</span>
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── HOW SMASH DOES IT ─────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">How SMASH does it</p>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-brand mb-6 max-w-3xl">
+              The technology behind the 60-second invoice.
+            </h2>
+            <p className="font-body text-xl text-slate-500 max-w-2xl leading-relaxed mb-16">
+              Voice invoicing at this speed requires four systems working together.
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'Speech recognition built for job sites',
+                body: 'SMASH uses professional-grade voice transcription tuned for trade terminology, Australian accents, and noisy environments. You don\'t need to speak slowly or use special words. Say it the way you\'d explain it to an apprentice.',
+              },
+              {
+                title: 'AI interpretation of job descriptions',
+                body: 'The transcription is processed by an AI model trained to identify line items, labour time, materials, rates, and customer details from natural job descriptions. It fills gaps intelligently using your pricing catalog and job history.',
+              },
+              {
+                title: 'Your personal pricing catalog',
+                body: 'Build your rates once and SMASH remembers them. Every time you mention a service or material you\'ve quoted before, it fills the price automatically. The more you use it, the faster it gets — under 30 seconds once your catalog is established.',
+              },
+              {
+                title: 'GST and ATO compliance built in',
+                body: 'Every invoice generated by SMASH is automatically GST-compliant — ABN included, tax calculated correctly, line items itemised. Meets ATO tax invoice requirements for Australian businesses without any extra steps.',
+              },
+            ].map((item) => (
+              <AnimateIn key={item.title} direction="up">
+                <div className="bg-slate-50 rounded-4xl p-8 border border-slate-100 hover:border-accent transition-all">
+                  <h3 className="font-display text-xl uppercase tracking-tight text-brand mb-4">{item.title}</h3>
+                  <p className="font-body text-base text-slate-500 leading-relaxed">{item.body}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── VOICE EXAMPLES ───────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-accent font-black text-xs uppercase tracking-widest mb-3">Real examples</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
-            This is all you say.
-          </h2>
-          <p className="font-body text-white/60 font-medium leading-[1.5] mb-12 max-w-xl">
-            Exactly as you'd say it. No special words. No format. Just the job.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/30 mb-4">Real examples</p>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-white mb-4 max-w-2xl">
+              This is all you say.
+            </h2>
+            <p className="font-body text-xl text-white/50 max-w-xl leading-relaxed mb-12">
+              No special format. No specific words. Just the job, the way you'd explain it.
+            </p>
+          </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                trade: "Cleaner",
-                link: "/for-cleaners",
-                quote: "\"3-bed standard clean, Mrs Johnson, Indooroopilly, took about 3 hours, the usual rate.\"",
-                result: "Quote built: 3hr standard clean, correct rate, GST included, customer link ready."
+                trade: 'Cleaner',
+                link: '/for-cleaners',
+                quote: '"3-bed standard clean, Mrs Johnson, Indooroopilly, took about 3 hours, the usual rate."',
+                result: 'Quote built: 3hr standard clean, correct rate, GST included, customer link ready.',
               },
               {
-                trade: "Handyman",
-                link: "/for-handymen",
-                quote: "\"Fixed the fence gate out the back — two new hinges and a latch, about 2 hours labour.\"",
-                result: "Quote built: labour + materials priced automatically from catalog, sent in 45 seconds."
+                trade: 'Handyman',
+                link: '/for-handymen',
+                quote: '"Fixed the fence gate out the back — two new hinges and a latch, about 2 hours labour."',
+                result: 'Quote built: labour + materials priced from catalog, sent in 45 seconds.',
               },
               {
-                trade: "Painter",
-                link: "/for-painters",
-                quote: "\"Bedroom and hallway, 2 coats, used about 15 litres of paint, took 2 days.\"",
-                result: "Quote built: paint materials priced, labour rate applied, professional PDF ready."
-              }
+                trade: 'Painter',
+                link: '/for-painters',
+                quote: '"Bedroom and hallway, 2 coats, used about 15 litres of paint, took 2 days."',
+                result: 'Quote built: paint materials priced, labour rate applied, PDF ready.',
+              },
             ].map((ex) => (
-              <div key={ex.trade} className="bg-white/10 rounded-[32px] border border-white/20 p-8">
-                <Link to={ex.link} className="inline-block text-xs font-black uppercase tracking-widest bg-accent text-brand px-3 py-1.5 rounded-full mb-4 hover:brightness-95 transition-all">
-                  {ex.trade}
-                </Link>
-                <p className="text-white font-medium leading-[1.4] text-lg italic mb-4">{ex.quote}</p>
-                <div className="border-t border-white/20 pt-4">
-                  <p className="text-accent text-sm font-bold leading-[1.4]">{ex.result}</p>
+              <AnimateIn key={ex.trade} direction="up">
+                <div className="bg-white/5 rounded-4xl border border-white/10 p-8 hover:border-accent transition-all">
+                  <Link to={ex.link} className="inline-block font-display text-[10px] uppercase tracking-widest bg-accent text-brand px-3 py-1.5 rounded-full mb-5 hover:brightness-95 transition-all">
+                    {ex.trade}
+                  </Link>
+                  <p className="font-body text-lg text-white/80 italic leading-relaxed mb-6">{ex.quote}</p>
+                  <div className="border-t border-white/10 pt-5 flex items-start gap-3">
+                    <Check size={16} className="text-accent shrink-0 mt-0.5" strokeWidth={3} />
+                    <p className="font-body text-sm text-accent leading-relaxed">{ex.result}</p>
+                  </div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SPEED COMPARISON TABLE ───────────────────────────── */}
+      {/* ── COMPARISON ───────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4 text-center">
-            Why SMASH is actually fast
-          </h2>
-          <p className="font-body text-center text-brand/60 font-medium mb-12 max-w-xl mx-auto leading-[1.5]">
-            Every other invoicing method requires typing. That's the only difference.
-          </p>
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9] text-brand mb-4 text-center">
+              Voice invoicing vs. traditional invoicing
+            </h2>
+            <p className="font-body text-xl text-slate-500 text-center mb-12 leading-relaxed">
+              The only real difference is whether you type or talk.
+            </p>
+          </AnimateIn>
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[480px]">
+            <table className="w-full min-w-[500px]">
               <thead>
                 <tr className="border-b-2 border-brand">
-                  <th className="text-left py-4 pr-6 text-sm font-black uppercase tracking-wider text-brand">Method</th>
-                  <th className="text-center py-4 px-4 text-sm font-black uppercase tracking-wider text-brand">Time to invoice</th>
-                  <th className="text-center py-4 px-4 text-sm font-black uppercase tracking-wider text-brand">Typing required</th>
+                  <th className="text-left py-4 pr-6 font-display text-xs uppercase tracking-widest text-brand">Method</th>
+                  <th className="text-center py-4 px-4 font-display text-xs uppercase tracking-widest text-brand">Time</th>
+                  <th className="text-center py-4 px-4 font-display text-xs uppercase tracking-widest text-brand">Typing</th>
+                  <th className="text-center py-4 px-4 font-display text-xs uppercase tracking-widest text-brand">On-site</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { method: "Excel / Word template", time: "15–25 minutes", typing: true },
-                  { method: "Traditional invoice app", time: "5–10 minutes", typing: true },
-                  { method: "SMASH — new job", time: "Under 60 seconds", typing: false },
-                  { method: "SMASH — with pricing catalog", time: "Under 30 seconds", typing: false },
+                  { method: 'Word / Excel template', time: '15–25 min', typing: true, onsite: false },
+                  { method: 'Traditional invoice app', time: '5–10 min', typing: true, onsite: false },
+                  { method: 'SMASH voice invoicing', time: 'Under 60s', typing: false, onsite: true, highlight: true },
                 ].map((row, i) => (
-                  <tr key={i} className={`border-b border-border ${i >= 2 ? 'bg-accent/5' : ''}`}>
-                    <td className={`py-4 pr-6 text-sm font-bold leading-[1.15] ${i >= 2 ? 'text-brand' : 'text-brand/60'}`}>{row.method}</td>
-                    <td className={`text-center py-4 px-4 text-sm font-black ${i >= 2 ? 'text-accent' : 'text-brand/50'}`}>{row.time}</td>
-                    <td className="text-center py-4 px-4">
+                  <tr key={i} className={`border-b border-slate-100 ${row.highlight ? 'bg-slate-50' : ''}`}>
+                    <td className={`py-5 pr-6 font-display text-sm uppercase tracking-tight ${row.highlight ? 'text-brand' : 'text-slate-400'}`}>
+                      {row.method}
+                    </td>
+                    <td className={`text-center py-5 px-4 font-display text-sm ${row.highlight ? 'text-accent' : 'text-slate-400'}`}>
+                      {row.time}
+                    </td>
+                    <td className="text-center py-5 px-4">
                       {row.typing
-                        ? <span className="text-brand/30 font-bold text-sm">Yes</span>
-                        : <Check size={18} className="mx-auto text-accent" strokeWidth={3} />
-                      }
+                        ? <span className="font-body text-sm text-slate-300">Yes</span>
+                        : <Check size={16} className="mx-auto text-accent" strokeWidth={3} />}
+                    </td>
+                    <td className="text-center py-5 px-4">
+                      {row.onsite
+                        ? <Check size={16} className="mx-auto text-accent" strokeWidth={3} />
+                        : <span className="font-body text-sm text-slate-300">No</span>}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-center text-sm text-brand/40 font-medium mt-6">
-            Voice processing takes ~7 seconds. Quote generation under 10 seconds end to end.
-          </p>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-3 text-center">From tradies using SMASH</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
-              What they say
-            </h2>
-          </AnimateIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {testimonials.map((t, i) => (
-              <AnimateIn key={i} direction="up" delay={i * 80}>
-                <div className="flex flex-col h-full rounded-[20px] bg-white border border-brand/8 p-6 shadow-sm">
-                  <Quote size={20} className="text-accent mb-4 shrink-0" strokeWidth={2} />
-                  <p className="font-body text-sm font-medium text-brand/75 leading-[1.65] flex-1 mb-5">
-                    "{t.quote}"
-                  </p>
-                  <div className="border-t border-brand/8 pt-4">
-                    <p className="font-black text-xs uppercase tracking-wider text-brand">{t.name}</p>
-                    <p className="font-body text-xs font-medium text-brand/45 mt-0.5">{t.trade}</p>
-                  </div>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-          <AnimateIn direction="up" delay={150}>
-            <div className="flex items-center justify-center gap-5 mt-10 flex-wrap">
-              <div className="flex items-center gap-1.5">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={12} className="text-accent fill-accent" />)}
-                </div>
-                <span className="font-black text-xs uppercase tracking-widest text-brand/60">4.9 on App Store</span>
-              </div>
-              <span className="text-brand/20 text-sm">·</span>
-              <span className="font-body text-xs font-medium text-brand/40">Free plan — no card needed</span>
-              <span className="text-brand/20 text-sm">·</span>
-              <span className="font-body text-xs font-medium text-brand/40">Set up in under 10 minutes</span>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ── FEATURES THAT MAKE VOICE INVOICING WORK ──────────── */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
-              What makes it work
-            </h2>
-          </AnimateIn>
-          <AnimateIn direction="up" delay={100}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              { title: "Your pricing catalog", body: "Build your rates once. Every time you mention a service, SMASH fills your price automatically. Gets faster every job." },
-              { title: "Materials priced automatically", body: "2,250+ Australian trade materials already in the system. Say the materials — they're priced without you looking anything up." },
-              { title: "GST handled automatically", body: "Every quote is tax invoice compliant — ABN included, GST calculated, line items itemised. Your accountant will thank you." },
-              { title: "Full review before sending", body: "You see the quote before it goes anywhere. Edit, adjust, approve. Nothing leaves without your say-so." },
-            ].map((f) => (
-              <div key={f.title} className="bg-white rounded-[32px] border-2 border-border p-8">
-                <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-3">{f.title}</h3>
-                <p className="font-body text-brand/70 font-medium text-sm leading-[1.5]">{f.body}</p>
-              </div>
-            ))}
-          </div>
-          </AnimateIn>
-          <div className="text-center mt-10">
-            <Link to="/features" className="inline-flex items-center gap-2 text-sm font-black text-brand uppercase tracking-wide hover:text-accent transition-colors">
-              See all features →
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="bg-slate-50 py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
-            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 md:mb-14 text-center">
-              Voice invoicing questions
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">FAQ</p>
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9] text-brand mb-10">
+              Common questions.
             </h2>
-            <div className="bg-white rounded-[32px] border-2 border-border px-4 sm:px-8 py-2 sm:py-4">
-              {faqs.map((faq, i) => (
-                <FAQItem key={i} q={faq.q} a={faq.a} isOpen={openFaq === i} onClick={() => setOpenFaq(openFaq === i ? null : i)} />
-              ))}
-            </div>
           </AnimateIn>
-        </div>
-      </section>
-
-      {/* ── FROM THE BLOG ─────────────────────────────────────── */}
-      <section className="bg-surface py-16 md:py-20 border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter leading-[0.88]">From the blog</h2>
-            <Link to="/blog" className="text-sm font-black text-brand/50 uppercase tracking-wide hover:text-brand transition-colors">All posts →</Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[
-              { slug: "the-60-second-invoice-voice-to-invoice", title: "The 60-Second Invoice", desc: "How voice invoicing cuts your end-of-job admin from 10 minutes to under a minute." },
-              { slug: "voice-vs-typing-thumbs-costing-ten-dollars", title: "Your Thumbs Are Costing You $10", desc: "Every minute you spend typing an invoice is money you're not billing for. Here's the maths." },
-              { slug: "stop-admin-sundays-voice-invoicing", title: "Stop Admin Sundays", desc: "If you're catching up on invoices on weekends, voice invoicing exists to solve exactly that." },
-            ].map((post) => (
-              <Link key={post.slug} to={`/blog/${post.slug}`} className="bg-white rounded-[24px] border-2 border-border p-6 hover:border-accent transition-colors group">
-                <h3 className="text-base font-black text-brand uppercase tracking-tighter leading-[0.88] mb-2 group-hover:text-accent transition-colors">{post.title}</h3>
-                <p className="text-sm text-brand/60 font-medium leading-[1.4]">{post.desc}</p>
-              </Link>
+          <div className="bg-white rounded-4xl border border-slate-100 px-8 py-2">
+            {faqs.map((faq, i) => (
+              <FAQItem key={i} q={faq.q} a={faq.a} isOpen={openFaq === i} onClick={() => setOpenFaq(openFaq === i ? null : i)} />
             ))}
           </div>
         </div>
       </section>
 
       {/* ── RELATED TOOLS ─────────────────────────────────────── */}
-      <section className="bg-brand py-12 border-t border-white/10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <RelatedTools
-            keywords={['invoice', 'voice', 'quote generator']}
-            title="Related free tools"
-          />
+      <section className="bg-white py-12 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <RelatedTools keywords={['invoice', 'voice', 'quote']} title="Free voice invoicing tools" />
         </div>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="bg-brand py-16 md:py-24 lg:py-32">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <section className="bg-black py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
           <AnimateIn direction="up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88]">
-            Work with your hands.<br />Not a keyboard.
-          </h2>
-          <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
-            Free to download. Talk for 30 seconds. See your first quote.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-              Start Free
-              <ArrowRight size={14} strokeWidth={2.5} />
-            </a>
-            <Link to="/pricing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
-              See Pricing
-            </Link>
-          </div>
-          {/* Risk reversal + trust */}
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <div className="flex items-center gap-1.5">
-              {[...Array(5)].map((_, i) => <Star key={i} size={11} className="text-accent fill-accent" />)}
-              <span className="font-body text-xs font-semibold text-white/50 ml-1">4.9 App Store</span>
+            <div>
+              <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/30 mb-4">Free to start</p>
+              <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.88] text-white mb-4 max-w-xl">
+                Stop typing.<br />
+                <span className="text-accent">Start talking.</span>
+              </h2>
+              <p className="font-body text-xl text-slate-400 leading-relaxed max-w-lg">
+                SMASH is the voice invoicing app built for Australian tradies. Free to try. No card needed.
+              </p>
+              <div className="flex items-center gap-2 mt-4">
+                {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-accent fill-accent" />)}
+                <span className="font-body text-sm text-white/40 ml-1">4.9 on the App Store</span>
+              </div>
             </div>
-            <span className="text-white/20 text-sm">·</span>
-            <span className="font-body text-xs text-white/40 font-medium">No credit card required</span>
-            <span className="text-white/20 text-sm">·</span>
-            <span className="font-body text-xs text-white/40 font-medium">Cancel anytime</span>
-          </div>
-          <p className="text-sm text-white/30 font-medium mt-6">
-            <Link to="/features" className="underline hover:text-white/60 transition-colors">All features</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing from $0</Link> · <Link to="/for-cleaners" className="underline hover:text-white/60 transition-colors">For cleaners</Link> · <Link to="/for-handymen" className="underline hover:text-white/60 transition-colors">For handymen</Link>
-          </p>
           </AnimateIn>
+          <div className="flex flex-col gap-4 shrink-0">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 font-display text-sm uppercase tracking-widest text-brand px-10 py-5 rounded-2xl hover:brightness-95 transition-all"
+              style={{ backgroundColor: '#DFFF00' }}
+            >
+              Download Free
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
+            <p className="font-body text-xs text-white/30 text-center">No account needed · 2 free quotes/month</p>
+          </div>
         </div>
       </section>
 
