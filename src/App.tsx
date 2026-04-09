@@ -55,6 +55,7 @@ import { ForArborists } from './pages/for-arborists';
 import { ForPoolMaintenance } from './pages/for-pool-maintenance';
 import { ForSolarInstallers } from './pages/for-solar-installers';
 import { ForRubbishRemoval } from './pages/for-rubbish-removal';
+import { ForWindowCleaners } from './pages/for-window-cleaners';
 
 function App() {
   return (
@@ -115,6 +116,7 @@ function App() {
         <Route path="/for-pool-maintenance" element={<ForPoolMaintenance />} />
         <Route path="/for-solar-installers" element={<ForSolarInstallers />} />
         <Route path="/for-rubbish-removal" element={<ForRubbishRemoval />} />
+        <Route path="/for-window-cleaners" element={<ForWindowCleaners />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />
