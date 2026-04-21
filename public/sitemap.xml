@@ -355,6 +355,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smashinvoices.com/integrations</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/integrations/xero</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/integrations/quickbooks</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smashinvoices.com/blog/built-by-someone-else-tradie-invoicing</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>

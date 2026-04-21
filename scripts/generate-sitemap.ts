@@ -119,6 +119,11 @@ async function generateSitemap() {
     { loc: '/uk', lastmod: today, changefreq: 'weekly', priority: '0.8' },
     { loc: '/us', lastmod: today, changefreq: 'weekly', priority: '0.8' },
     { loc: '/ca', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+
+    // Integrations
+    { loc: '/integrations',            lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/integrations/xero',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/integrations/quickbooks', lastmod: today, changefreq: 'monthly', priority: '0.8' },
   ];
 
   const blogPages = posts?.map(post => ({

@@ -69,6 +69,9 @@ import { CountryNZ } from './pages/country-nz';
 import { CountryUK } from './pages/country-uk';
 import { CountryUS } from './pages/country-us';
 import { CountryCA } from './pages/country-ca';
+import { Integrations } from './pages/integrations';
+import { IntegrationsXero } from './pages/integrations-xero';
+import { IntegrationsQuickBooks } from './pages/integrations-quickbooks';
 
 function App() {
   return (
@@ -143,6 +146,11 @@ function App() {
         <Route path="/uk" element={<CountryUK />} />
         <Route path="/us" element={<CountryUS />} />
         <Route path="/ca" element={<CountryCA />} />
+
+        {/* Integrations */}
+        <Route path="/integrations" element={<Integrations />} />
+        <Route path="/integrations/xero" element={<IntegrationsXero />} />
+        <Route path="/integrations/quickbooks" element={<IntegrationsQuickBooks />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />

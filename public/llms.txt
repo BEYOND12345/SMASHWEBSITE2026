@@ -44,6 +44,21 @@ Key facts:
 - [SMASH vs ServiceM8](https://smashinvoices.com/smash-vs-servicem8)
 - [SMASH vs QuickBooks](https://smashinvoices.com/smash-vs-quickbooks)
 - [SMASH vs Fergus](https://smashinvoices.com/smash-vs-fergus)
+- [SMASH vs Tradify](https://smashinvoices.com/smash-vs-tradify)
+- [SMASH vs Invoice2go](https://smashinvoices.com/smash-vs-invoice2go)
+- [SMASH vs Joist](https://smashinvoices.com/smash-vs-joist)
+- [SMASH vs Rounded](https://smashinvoices.com/smash-vs-rounded)
+
+## Integrations
+- [Integrations hub](https://smashinvoices.com/integrations): All current and upcoming SMASH integrations.
+- [SMASH × Xero](https://smashinvoices.com/integrations/xero): Two-way sync of invoices, contacts, payments and tax codes into Xero (coming soon).
+- [SMASH × QuickBooks Online](https://smashinvoices.com/integrations/quickbooks): Two-way sync into QuickBooks Online (coming soon).
+
+## International
+- [New Zealand waitlist](https://smashinvoices.com/nz)
+- [United Kingdom waitlist](https://smashinvoices.com/uk)
+- [United States waitlist](https://smashinvoices.com/us)
+- [Canada waitlist](https://smashinvoices.com/ca)
 
 ## For specific trades
 - [For Cleaners](https://smashinvoices.com/for-cleaners)
@@ -64,6 +79,10 @@ Key facts:
 - [For Pool Maintenance](https://smashinvoices.com/for-pool-maintenance)
 - [For Solar Installers](https://smashinvoices.com/for-solar-installers)
 - [For Rubbish Removal](https://smashinvoices.com/for-rubbish-removal)
+- [For IT Repair](https://smashinvoices.com/for-it-repair)
+- [For Appliance Repair](https://smashinvoices.com/for-appliance-repair)
+- [For Security Installers](https://smashinvoices.com/for-security-installers)
+- [For Fencers](https://smashinvoices.com/for-fencers)
 
 ## Blog
 - [Blog index](https://smashinvoices.com/blog): All articles, indexed and kept up to date.
