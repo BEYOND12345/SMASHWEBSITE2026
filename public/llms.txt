@@ -1,0 +1,76 @@
+# SMASH Invoices
+
+> Voice-to-invoice software for tradies and service businesses. Speak into your phone on the job site, and SMASH generates a professional invoice or quote in under 60 seconds — no typing, no laptop, no admin backlog.
+
+SMASH is built for anyone who works with their hands: plumbers, electricians, cleaners, mechanics, painters, gardeners, handymen, tilers, concreters, locksmiths, arborists, HVAC techs, and more. It replaces "I'll do the paperwork on Sunday" with "it's already sent."
+
+Key facts:
+- Platform: iOS (Australia / New Zealand focus, working globally)
+- Model: Voice → AI-parsed line items → tax-compliant invoice or quote
+- Typical time saved vs manual entry: ~12 hours/month
+- Pricing: Volume-based tiers with a free starter tier
+- Homepage: https://smashinvoices.com
+
+## Core pages
+- [Home](https://smashinvoices.com/): Product overview and sign-up.
+- [How it works](https://smashinvoices.com/how-it-works): Step-by-step walk-through of the voice-to-invoice flow.
+- [Features](https://smashinvoices.com/features): Full capability list — voice, quotes, GST, mobile-first, client CRM.
+- [Pricing](https://smashinvoices.com/pricing): Volume-based tiers with a free starter plan.
+- [FAQ](https://smashinvoices.com/faq): Common questions about accuracy, trades supported, tax compliance, pricing.
+- [Contact](https://smashinvoices.com/contact): Support and sales.
+- [Founder](https://smashinvoices.com/founder): Why SMASH exists.
+- [Roadmap](https://smashinvoices.com/roadmap): What's coming.
+- [Changelog](https://smashinvoices.com/changelog): Recent shipped updates.
+
+## Product / category pages
+- [Voice Invoicing](https://smashinvoices.com/voice-invoicing): The category-definition page for voice-to-invoice.
+- [AI Invoicing](https://smashinvoices.com/ai-invoicing): How the AI turns speech into structured invoice data.
+- [GST-Compliant Invoicing](https://smashinvoices.com/gst-compliant-invoicing): Australian GST and tax-compliant invoicing.
+- [Invoice on Mobile](https://smashinvoices.com/invoice-on-mobile): Mobile-first invoicing workflow.
+
+## Free tools
+- [Tools hub](https://smashinvoices.com/tools): All calculators and templates.
+- [Invoice Generator](https://smashinvoices.com/invoice-generator): Build an invoice in-browser.
+- [Quote Generator](https://smashinvoices.com/quote-generator): Build a quote in-browser.
+- [Invoice Template](https://smashinvoices.com/invoice-template): Download-ready templates.
+- [GST Calculator](https://smashinvoices.com/gst-calculator): Australian GST maths.
+- [Hourly Rate Calculator](https://smashinvoices.com/hourly-rate-calculator): Price your labour.
+- [Late Payment Calculator](https://smashinvoices.com/late-payment-calculator): Quantify what overdue invoices cost you.
+- [Profit Calculator](https://smashinvoices.com/profit-calculator): Job-level profit maths.
+
+## Comparisons
+- [SMASH vs Xero](https://smashinvoices.com/smash-vs-xero)
+- [SMASH vs MYOB](https://smashinvoices.com/smash-vs-myob)
+- [SMASH vs ServiceM8](https://smashinvoices.com/smash-vs-servicem8)
+- [SMASH vs QuickBooks](https://smashinvoices.com/smash-vs-quickbooks)
+- [SMASH vs Fergus](https://smashinvoices.com/smash-vs-fergus)
+
+## For specific trades
+- [For Cleaners](https://smashinvoices.com/for-cleaners)
+- [For Plumbers](https://smashinvoices.com/for-plumbers)
+- [For Electricians](https://smashinvoices.com/for-electricians)
+- [For Handymen](https://smashinvoices.com/for-handymen)
+- [For Painters](https://smashinvoices.com/for-painters)
+- [For Gardeners](https://smashinvoices.com/for-gardeners)
+- [For Mobile Mechanics](https://smashinvoices.com/for-mobile-mechanics)
+- [For HVAC](https://smashinvoices.com/for-hvac)
+- [For Pest Control](https://smashinvoices.com/for-pest-control)
+- [For Concreters](https://smashinvoices.com/for-concreters)
+- [For Tilers](https://smashinvoices.com/for-tilers)
+- [For Locksmiths](https://smashinvoices.com/for-locksmiths)
+- [For Car Detailers](https://smashinvoices.com/for-car-detailers)
+- [For Dog Groomers](https://smashinvoices.com/for-dog-groomers)
+- [For Arborists](https://smashinvoices.com/for-arborists)
+- [For Pool Maintenance](https://smashinvoices.com/for-pool-maintenance)
+- [For Solar Installers](https://smashinvoices.com/for-solar-installers)
+- [For Rubbish Removal](https://smashinvoices.com/for-rubbish-removal)
+
+## Blog
+- [Blog index](https://smashinvoices.com/blog): All articles, indexed and kept up to date.
+
+## Legal
+- [Privacy Policy](https://smashinvoices.com/privacy)
+- [Terms of Service](https://smashinvoices.com/terms)
+
+## Download
+- [iOS App Store](https://apps.apple.com/au/app/smash-invoices/id6759475079)

@@ -1,18 +1,17 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
     {
-      "src": "/blog/([^/]+)/?",
+      "src": "^/blog/([^/]+)/?$",
       "dest": "/blog/$1/index.html",
       "status": 200
     },
-    {
-      "handle": "filesystem"
-    },
+    { "handle": "filesystem" },
     {
       "src": "/(.*)",
       "dest": "/index.html",
       "status": 200
     }
-  ],
-  "trailingSlash": false
+  ]
 }

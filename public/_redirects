@@ -1,6 +1,11 @@
-# Netlify redirects file
-# Serve pre-rendered blog posts
-/blog/:slug/  /blog/:slug/index.html  200
+# Netlify redirects — served for every request.
+# Rules are evaluated top-to-bottom; first match wins.
 
-# SPA fallback for all other routes
-/*  /index.html  200
+# Normalise trailing slashes on blog post URLs -> canonical (no trailing slash)
+/blog/:slug/          /blog/:slug          301!
+
+# Serve the pre-rendered static HTML for blog posts
+/blog/:slug           /blog/:slug/index.html   200
+
+# SPA fallback for every other route
+/*                    /index.html              200
