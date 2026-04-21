@@ -80,6 +80,25 @@ export function Footer({ showCTA = false }: FooterProps) {
               <li><Link to="/smash-vs-servicem8" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs ServiceM8</Link></li>
               <li><Link to="/smash-vs-quickbooks" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs QuickBooks</Link></li>
               <li><Link to="/smash-vs-fergus" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Fergus</Link></li>
+              <li><Link to="/smash-vs-tradify" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Tradify</Link></li>
+              <li><Link to="/smash-vs-invoice2go" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Invoice2go</Link></li>
+              <li><Link to="/smash-vs-joist" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Joist</Link></li>
+              <li><Link to="/smash-vs-rounded" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Rounded</Link></li>
+            </ul>
+            <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Free Tools</h3>
+            <ul className="space-y-3">
+              <li><Link to="/tools" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">All free tools</Link></li>
+              <li><Link to="/invoice-template" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Invoice template</Link></li>
+              <li><Link to="/gst-calculator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">GST calculator</Link></li>
+              <li><Link to="/hourly-rate-calculator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Hourly rate calculator</Link></li>
+              <li><Link to="/late-payment-calculator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Late payment calculator</Link></li>
+              <li><Link to="/profit-calculator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Profit calculator</Link></li>
+            </ul>
+            <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Integrations</h3>
+            <ul className="space-y-3">
+              <li><Link to="/integrations" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">All integrations</Link></li>
+              <li><Link to="/integrations/xero" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH × Xero</Link></li>
+              <li><Link to="/integrations/quickbooks" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH × QuickBooks</Link></li>
             </ul>
           </div>
 
@@ -91,6 +110,16 @@ export function Footer({ showCTA = false }: FooterProps) {
               <li><Link to="/faq" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">FAQ</Link></li>
               <li><Link to="/roadmap" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Roadmap</Link></li>
               <li><Link to="/changelog" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Changelog</Link></li>
+              <li><Link to="/contact" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Contact</Link></li>
+              <li><Link to="/sitemap" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Sitemap</Link></li>
+            </ul>
+            <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Countries</h3>
+            <ul className="space-y-3">
+              <li><Link to="/" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Australia <span className="text-white/30 font-medium">· Live</span></Link></li>
+              <li><Link to="/nz" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">New Zealand <span className="text-white/30 font-medium">· Waitlist</span></Link></li>
+              <li><Link to="/uk" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">United Kingdom <span className="text-white/30 font-medium">· Waitlist</span></Link></li>
+              <li><Link to="/us" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">United States <span className="text-white/30 font-medium">· Waitlist</span></Link></li>
+              <li><Link to="/ca" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Canada <span className="text-white/30 font-medium">· Waitlist</span></Link></li>
             </ul>
           </div>
 
@@ -120,6 +149,10 @@ export function Footer({ showCTA = false }: FooterProps) {
               <li><Link to="/for-pool-maintenance" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Pool Maintenance</Link></li>
               <li><Link to="/for-solar-installers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Solar Installers</Link></li>
               <li><Link to="/for-rubbish-removal" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Rubbish Removal</Link></li>
+              <li><Link to="/for-it-repair" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">IT Repair</Link></li>
+              <li><Link to="/for-appliance-repair" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Appliance Repair</Link></li>
+              <li><Link to="/for-security-installers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Security Installers</Link></li>
+              <li><Link to="/for-fencers" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Fencers</Link></li>
             </ul>
             <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Contact</h3>
             <ul className="space-y-3">
