@@ -74,6 +74,9 @@ import { IntegrationsXero } from './pages/integrations-xero';
 import { IntegrationsQuickBooks } from './pages/integrations-quickbooks';
 import { SitemapPage } from './pages/sitemap-page';
 import { NotFound } from './pages/not-found';
+import { TradieHourlyRates } from './pages/tradie-hourly-rates';
+import { MaterialsPricing } from './pages/materials-pricing';
+import { CustomerApproval } from './pages/customer-approval';
 
 function App() {
   return (
@@ -153,6 +156,11 @@ function App() {
         <Route path="/integrations" element={<Integrations />} />
         <Route path="/integrations/xero" element={<IntegrationsXero />} />
         <Route path="/integrations/quickbooks" element={<IntegrationsQuickBooks />} />
+
+        {/* Content pillars — AI search + evergreen SEO */}
+        <Route path="/tradie-hourly-rates" element={<TradieHourlyRates />} />
+        <Route path="/materials-pricing" element={<MaterialsPricing />} />
+        <Route path="/customer-approval" element={<CustomerApproval />} />
 
         {/* Human-readable sitemap */}
         <Route path="/sitemap" element={<SitemapPage />} />

@@ -125,6 +125,11 @@ async function generateSitemap() {
     { loc: '/integrations/xero',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/integrations/quickbooks', lastmod: today, changefreq: 'monthly', priority: '0.8' },
 
+    // Content pillars — evergreen SEO + AI citation bait
+    { loc: '/tradie-hourly-rates', lastmod: today, changefreq: 'monthly', priority: '0.85' },
+    { loc: '/materials-pricing',   lastmod: today, changefreq: 'monthly', priority: '0.85' },
+    { loc: '/customer-approval',   lastmod: today, changefreq: 'monthly', priority: '0.85' },
+
     // Human-readable sitemap (for discovery + AI crawlers)
     { loc: '/sitemap', lastmod: today, changefreq: 'weekly', priority: '0.5' },
   ];

@@ -373,6 +373,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smashinvoices.com/tradie-hourly-rates</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/materials-pricing</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/customer-approval</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smashinvoices.com/sitemap</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>

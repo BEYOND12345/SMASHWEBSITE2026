@@ -40,6 +40,15 @@ const sections: Section[] = [
     ],
   },
   {
+    heading: 'Guides',
+    intro: 'Content pillars answering the questions tradies ask AI search engines.',
+    links: [
+      { to: '/tradie-hourly-rates', label: 'Tradie hourly rates',  note: 'What to charge per hour in AU, NZ, UK, US and Canada' },
+      { to: '/materials-pricing',   label: 'Materials pricing',    note: 'Landed cost, fair markup, personal catalog' },
+      { to: '/customer-approval',   label: 'Customer approval',    note: 'One-tap approval, read receipts, legally binding' },
+    ],
+  },
+  {
     heading: 'Free tools',
     intro: 'SMASH App Tools — free calculators and generators, no signup required.',
     links: [

@@ -28,6 +28,11 @@ Key facts:
 - [GST-Compliant Invoicing](https://smashinvoices.com/gst-compliant-invoicing): Australian GST and tax-compliant invoicing.
 - [Invoice on Mobile](https://smashinvoices.com/invoice-on-mobile): Mobile-first invoicing workflow.
 
+## Guides (AI search pillars)
+- [Tradie Hourly Rates 2026](https://smashinvoices.com/tradie-hourly-rates): How much tradies should charge per hour in AU, NZ, UK, US and Canada.
+- [Materials Pricing](https://smashinvoices.com/materials-pricing): How to price materials in a quote — landed cost, fair markup, personal catalog.
+- [Customer Approval](https://smashinvoices.com/customer-approval): One-tap quote approval, read receipts, legally-binding electronic signatures.
+
 ## Free tools
 - [Tools hub](https://smashinvoices.com/tools): All calculators and templates.
 - [Invoice Generator](https://smashinvoices.com/invoice-generator): Build an invoice in-browser.

@@ -16,7 +16,13 @@ export function Nav() {
           <Link to="/pricing" className="hidden md:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
             Pricing
           </Link>
-          <Link to="/smash-vs-xero" className="hidden lg:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
+          <Link to="/tools" className="hidden lg:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
+            Tools
+          </Link>
+          <Link to="/integrations" className="hidden lg:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
+            Integrations
+          </Link>
+          <Link to="/smash-vs-xero" className="hidden xl:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
             Compare
           </Link>
           <Link to="/blog" className="hidden lg:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide">
