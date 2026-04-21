@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LandingPage } from './pages/landing-page';
 import { Founder } from './pages/founder';
 import { HowItWorks } from './pages/how-it-works';
@@ -73,6 +73,7 @@ import { Integrations } from './pages/integrations';
 import { IntegrationsXero } from './pages/integrations-xero';
 import { IntegrationsQuickBooks } from './pages/integrations-quickbooks';
 import { SitemapPage } from './pages/sitemap-page';
+import { NotFound } from './pages/not-found';
 
 function App() {
   return (
@@ -164,7 +165,7 @@ function App() {
         <Route path="/admin/blog" element={<BlogAdmin />} />
         <Route path="/admin/blog/:id" element={<BlogEditor />} />
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -9,6 +9,7 @@ import { Footer } from '../components/footer';
 import { Calendar, Clock, ArrowRight, Star } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 interface BlogPost {
   id: string;
@@ -48,16 +49,17 @@ export function BlogList() {
   return (
     <>
       <SEO
-        title="Voice to Invoice Blog | SMASH - Invoicing Tips for Service Businesses"
-        description="Tips and insights on voice to invoice technology, getting paid faster, and invoicing for service businesses in Australia."
-        keywords="voice to invoice, voice to quote, invoice generation tips, quick invoicing software, service business invoice tips, fast quote generation"
+        title="Voice to Invoice Blog | SMASH — Invoicing Tips for Service Businesses"
+        description="Tips and insights on voice-to-invoice technology, getting paid faster, and invoicing for tradies and service businesses across Australia, NZ, UK, US and Canada."
+        keywords="voice to invoice, voice to quote, invoice generation tips, quick invoicing software, service business invoice tips, fast quote generation, tradie invoicing, contractor invoicing"
         ogTitle="SMASH Blog — Voice to Invoice Tips"
-        ogDescription="Tips and insights on voice to invoice technology, getting paid faster, and invoicing for service businesses."
+        ogDescription="Tips and insights on voice-to-invoice technology, getting paid faster, and invoicing for service businesses."
         ogImage="https://smashinvoices.com/hero_image.png"
         ogUrl="https://smashinvoices.com/blog"
         twitterTitle="SMASH Blog — Voice to Invoice Tips"
-        twitterDescription="Tips on voice to invoice technology, getting paid faster, and invoicing for service businesses."
+        twitterDescription="Tips on voice-to-invoice technology, getting paid faster, and invoicing for service businesses."
         canonical="https://smashinvoices.com/blog"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createBreadcrumbSchema([
