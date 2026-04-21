@@ -412,6 +412,17 @@ function renderPost(post: BlogPost): string {
   const schemas: object[] = [
     buildArticleSchema(post, url),
     buildBreadcrumbSchema(post, url),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'SMASH Invoices',
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.svg`,
+      description:
+        'Voice-to-invoice software for tradies, contractors and service businesses. Live in Australia; launching next in New Zealand, the UK, the US and Canada.',
+      areaServed: ['AU', 'NZ', 'GB', 'US', 'CA'],
+      sameAs: [APP_STORE_URL],
+    },
   ];
   if (post.faq_data && post.faq_data.length > 0) {
     schemas.push(buildFaqSchema(post.faq_data));
@@ -428,6 +439,15 @@ function renderPost(post: BlogPost): string {
   <meta name="author" content="${escapeHtml(post.author)}">
   <link rel="canonical" href="${url}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Same-URL hreflang alternates: content is globally-relevant; per-country
+       product pages live at /nz /uk /us /ca. -->
+  <link rel="alternate" hreflang="x-default" href="${url}">
+  <link rel="alternate" hreflang="en-AU"     href="${url}">
+  <link rel="alternate" hreflang="en-NZ"     href="${url}">
+  <link rel="alternate" hreflang="en-GB"     href="${url}">
+  <link rel="alternate" hreflang="en-US"     href="${url}">
+  <link rel="alternate" hreflang="en-CA"     href="${url}">
 
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -511,11 +531,22 @@ ${schemas
       <a href="/blog">Blog</a>
       <a href="/pricing">Pricing</a>
       <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice invoicing</a>
+      <a href="/tools">Free tools</a>
+      <a href="/integrations">Integrations</a>
       <a href="/faq">FAQ</a>
+      <a href="/sitemap">Sitemap</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </div>
-    <div style="margin-top:16px;">© ${new Date().getFullYear()} SMASH Invoices · smashinvoices.com</div>
+    <div style="margin-top:14px;">
+      Live in Australia · Waitlists open for
+      <a href="/nz">NZ</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© ${new Date().getFullYear()} SMASH Invoices · smashinvoices.com</div>
   </footer>
 </body>
 </html>`;
