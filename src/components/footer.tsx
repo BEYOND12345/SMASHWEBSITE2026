@@ -73,6 +73,12 @@ export function Footer({ showCTA = false }: FooterProps) {
               <li><Link to="/quote-generator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Quote Generator</Link></li>
               <li><Link to="/invoice-generator" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Invoice Generator</Link></li>
             </ul>
+            <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Guides</h3>
+            <ul className="space-y-3">
+              <li><Link to="/tradie-hourly-rates" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Tradie hourly rates</Link></li>
+              <li><Link to="/materials-pricing" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Materials pricing</Link></li>
+              <li><Link to="/customer-approval" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">Customer approval</Link></li>
+            </ul>
             <h3 className="text-sm font-black uppercase tracking-wider mb-4 mt-8 text-white/50">Compare</h3>
             <ul className="space-y-3">
               <li><Link to="/smash-vs-xero" className="text-base text-white/70 hover:text-accent transition-colors font-semibold">SMASH vs Xero</Link></li>
