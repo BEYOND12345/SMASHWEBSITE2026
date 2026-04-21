@@ -12,8 +12,10 @@ const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079
 const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
 
 /**
- * Mobile-collapsible footer section. Heading acts as a button under `lg`,
- * always expanded on `lg` and above.
+ * Mobile-collapsible footer section. Under `lg` each section renders as
+ * a toggleable accordion; at `lg` and above the heading is a plain label
+ * and the content is always shown — so there is no "collapsed" state
+ * exposed to assistive tech on desktop.
  */
 function FooterSection({
   title,
@@ -27,19 +29,24 @@ function FooterSection({
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div className="border-b border-white/10 lg:border-0 py-4 lg:py-0 first:border-t lg:first:border-0">
+      {/* Mobile: toggle button */}
       <button
         type="button"
         onClick={() => setOpen(o => !o)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-4 lg:pointer-events-none lg:cursor-default text-sm font-black uppercase tracking-wider text-white/50 lg:mb-5 lg:justify-start"
+        className="lg:hidden flex w-full items-center justify-between gap-4 text-sm font-black uppercase tracking-wider text-white/50"
       >
         <span>{title}</span>
         <ChevronDown
           size={18}
           strokeWidth={2.5}
-          className={`lg:hidden transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`transition-transform ${open ? 'rotate-180' : ''}`}
         />
       </button>
+      {/* Desktop: static label */}
+      <h3 className="hidden lg:block text-sm font-black uppercase tracking-wider mb-5 text-white/50">
+        {title}
+      </h3>
       <div className={`${open ? 'block' : 'hidden'} lg:block mt-4 lg:mt-0`}>
         <ul className="space-y-3">{children}</ul>
       </div>
