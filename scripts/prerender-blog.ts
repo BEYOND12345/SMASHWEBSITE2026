@@ -52,6 +52,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const SITE_URL = 'https://smashinvoices.com';
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
 
 interface FAQItem { question: string; answer: string }
 
@@ -541,6 +542,10 @@ ${schemas
       <a href="/sitemap">Sitemap</a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">App Store</a>
+      <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome</a>
     </div>
     <div style="margin-top:14px;">
       Live in Australia · Waitlists open for
