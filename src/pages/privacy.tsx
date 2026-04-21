@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
+import { SchemaMarkup } from '../components/SchemaMarkup';
+import { organizationSchema as aiOrgSchema } from '../data/schema-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
@@ -19,6 +22,12 @@ export function Privacy() {
         twitterDescription="How SMASH Invoices collects, uses, and protects your personal information."
         canonical="https://smashinvoices.com/privacy"
       />
+
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', url: 'https://smashinvoices.com/' },
+        { name: 'Privacy Policy', url: 'https://smashinvoices.com/privacy' },
+      ])} />
+      <SchemaMarkup schemas={[aiOrgSchema]} />
 
       <Nav />
 

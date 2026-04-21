@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { ArrowLeft, Save, Eye } from 'lucide-react';
+import { SEO } from '../../components/seo';
 
 interface BlogFormData {
   title: string;
@@ -143,6 +144,7 @@ export function BlogEditor() {
 
   return (
     <div className="min-h-screen bg-[#0A0A0A]">
+      <SEO title="Blog Editor | SMASH" robots="noindex, nofollow" />
       <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
           <Link to="/" className="text-xl font-black tracking-tight text-white">

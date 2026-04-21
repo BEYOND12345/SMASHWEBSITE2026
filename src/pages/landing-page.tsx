@@ -19,6 +19,7 @@ import {
   softwareApplicationSchema,
   homepageFaqSchema,
 } from '../data/schema-data';
+import { hreflangAlternates } from '../data/country-data';
 import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
@@ -67,6 +68,7 @@ export function LandingPage() {
         ogImage="https://smashinvoices.com/hero_image.png"
         twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={organizationSchema} />

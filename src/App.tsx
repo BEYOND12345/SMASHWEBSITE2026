@@ -56,6 +56,12 @@ import { ForPoolMaintenance } from './pages/for-pool-maintenance';
 import { ForSolarInstallers } from './pages/for-solar-installers';
 import { ForRubbishRemoval } from './pages/for-rubbish-removal';
 
+// International coming-soon / country landing pages
+import { CountryNZ } from './pages/country-nz';
+import { CountryUK } from './pages/country-uk';
+import { CountryUS } from './pages/country-us';
+import { CountryCA } from './pages/country-ca';
+
 function App() {
   return (
     <BrowserRouter>
@@ -115,6 +121,12 @@ function App() {
         <Route path="/for-pool-maintenance" element={<ForPoolMaintenance />} />
         <Route path="/for-solar-installers" element={<ForSolarInstallers />} />
         <Route path="/for-rubbish-removal" element={<ForRubbishRemoval />} />
+
+        {/* International landing pages (coming soon / waitlist) */}
+        <Route path="/nz" element={<CountryNZ />} />
+        <Route path="/uk" element={<CountryUK />} />
+        <Route path="/us" element={<CountryUS />} />
+        <Route path="/ca" element={<CountryCA />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />

@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+interface HrefLang {
+  hreflang: string;
+  href: string;
+}
+
 interface SEOProps {
   title?: string;
   description?: string;
@@ -14,6 +19,10 @@ interface SEOProps {
   twitterDescription?: string;
   twitterImage?: string;
   canonical?: string;
+  /** Override the `<meta name="robots">` directive (e.g. "noindex, nofollow"). */
+  robots?: string;
+  /** Optional hreflang alternates for internationalised pages. */
+  hreflangs?: HrefLang[];
 }
 
 export function SEO({
@@ -30,6 +39,8 @@ export function SEO({
   twitterDescription,
   twitterImage,
   canonical,
+  robots,
+  hreflangs,
 }: SEOProps) {
   useEffect(() => {
     if (title) {
@@ -106,7 +117,27 @@ export function SEO({
         document.head.appendChild(linkElement);
       }
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, ogUrl, twitterCard, twitterTitle, twitterDescription, twitterImage, canonical]);
+
+    if (robots) {
+      updateMetaTag('meta[name="robots"]', robots);
+      updateMetaTag('meta[name="googlebot"]', robots);
+    }
+
+    // Replace any existing hreflang alternates when `hreflangs` is provided.
+    if (hreflangs && hreflangs.length) {
+      document
+        .querySelectorAll('link[rel="alternate"][data-smash-hreflang]')
+        .forEach(el => el.remove());
+      hreflangs.forEach(({ hreflang, href }) => {
+        const link = document.createElement('link');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('hreflang', hreflang);
+        link.setAttribute('href', href);
+        link.setAttribute('data-smash-hreflang', 'true');
+        document.head.appendChild(link);
+      });
+    }
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, ogUrl, twitterCard, twitterTitle, twitterDescription, twitterImage, canonical, robots, hreflangs]);
 
   return null;
 }

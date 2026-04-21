@@ -105,6 +105,12 @@ async function generateSitemap() {
     { loc: '/for-pool-maintenance', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/for-solar-installers', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/for-rubbish-removal',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
+
+    // International landing pages (waitlist — live country is root)
+    { loc: '/nz', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+    { loc: '/uk', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+    { loc: '/us', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+    { loc: '/ca', lastmod: today, changefreq: 'weekly', priority: '0.8' },
   ];
 
   const blogPages = posts?.map(post => ({
