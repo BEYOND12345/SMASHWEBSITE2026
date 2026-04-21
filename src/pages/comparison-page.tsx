@@ -14,6 +14,7 @@ import { PhoneMockup } from '../components/phone-mockup';
 import { ListeningScreen } from '../components/listening-screen';
 import { GeneratingScreen } from '../components/generating-screen';
 import { PortalScreen } from '../components/portal-screen';
+import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -89,10 +90,11 @@ export function ComparisonPage({ data }: Props) {
       <SEO
         title={data.metaTitle}
         description={data.metaDescription}
-        keywords={`SMASH vs ${data.competitor}, ${data.competitor} alternative, tradie invoicing, voice invoicing Australia`}
+        keywords={`SMASH vs ${data.competitor}, ${data.competitor} alternative, voice invoicing, tradie invoicing, contractor invoicing, Australia, New Zealand, United Kingdom, United States, Canada`}
         ogTitle={data.metaTitle}
         ogDescription={data.metaDescription}
         canonical={`https://smashinvoices.com/${data.slug}`}
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
@@ -622,6 +624,17 @@ export function ComparisonPage({ data }: Props) {
               <span className="text-brand/30 text-sm">·</span>
               <span className="font-body text-xs font-medium text-brand/55">Cancel anytime</span>
             </div>
+
+            <p className="mt-5 font-body text-xs text-brand/50 font-medium text-center">
+              Live in Australia · Waitlists open for{' '}
+              <Link to="/nz" className="underline decoration-accent/60 hover:text-brand">NZ</Link>
+              {', '}
+              <Link to="/uk" className="underline decoration-accent/60 hover:text-brand">UK</Link>
+              {', '}
+              <Link to="/us" className="underline decoration-accent/60 hover:text-brand">US</Link>
+              {' and '}
+              <Link to="/ca" className="underline decoration-accent/60 hover:text-brand">Canada</Link>
+            </p>
           </AnimateIn>
         </div>
       </section>
@@ -634,15 +647,25 @@ export function ComparisonPage({ data }: Props) {
               More comparisons
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              {['xero', 'myob', 'servicem8', 'quickbooks', 'fergus']
-                .filter(s => `smash-vs-${s}` !== data.slug)
+              {[
+                { slug: 'xero',        label: 'Xero' },
+                { slug: 'myob',        label: 'MYOB' },
+                { slug: 'servicem8',   label: 'ServiceM8' },
+                { slug: 'quickbooks',  label: 'QuickBooks' },
+                { slug: 'fergus',      label: 'Fergus' },
+                { slug: 'tradify',     label: 'Tradify' },
+                { slug: 'invoice2go',  label: 'Invoice2go' },
+                { slug: 'joist',       label: 'Joist' },
+                { slug: 'rounded',     label: 'Rounded' },
+              ]
+                .filter(s => `smash-vs-${s.slug}` !== data.slug)
                 .map(s => (
                   <Link
-                    key={s}
-                    to={`/smash-vs-${s}`}
+                    key={s.slug}
+                    to={`/smash-vs-${s.slug}`}
                     className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-black text-xs uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all"
                   >
-                    SMASH vs {s.charAt(0).toUpperCase() + s.slice(1)}
+                    SMASH vs {s.label}
                   </Link>
                 ))}
             </div>

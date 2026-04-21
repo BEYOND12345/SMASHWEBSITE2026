@@ -5,6 +5,7 @@ import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Star, ArrowRight, Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -186,6 +187,12 @@ export function Tools() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="all of this"
+        headline="Every tool, automated. From one voice note."
+        sub="Use the free tools as long as you like. When you are ready, SMASH bundles invoices, quotes, tax and payment into a single voice-powered workflow."
+      />
 
       <Footer />
     </>

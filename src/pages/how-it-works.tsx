@@ -13,6 +13,7 @@ import { GeneratingScreen } from '../components/generating-screen';
 import { InlineCTA } from '../components/inline-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -131,6 +132,7 @@ export function HowItWorks() {
         twitterTitle="How SMASH Voice-to-Invoice Works"
         twitterDescription="Speak your job details, SMASH creates the invoice, send with one tap. Under 60 seconds, no typing."
         canonical="https://smashinvoices.com/how-it-works"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={howToSchema} />

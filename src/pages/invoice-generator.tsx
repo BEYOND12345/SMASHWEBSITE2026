@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, Mic, Zap, CreditCard, ArrowRight, ChevronDown, Star, Quote, Plus, Trash2, Send, Mail } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -921,6 +922,12 @@ export function InvoiceGenerator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this invoice"
+        headline="Want this invoice to send itself from a voice note?"
+        sub="SMASH turns a 30-second voice note into a tax-compliant invoice — sent, tracked, and paid, without opening a laptop."
+      />
 
       <Footer />
     </>

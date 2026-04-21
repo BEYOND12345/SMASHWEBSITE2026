@@ -72,6 +72,7 @@ import { CountryCA } from './pages/country-ca';
 import { Integrations } from './pages/integrations';
 import { IntegrationsXero } from './pages/integrations-xero';
 import { IntegrationsQuickBooks } from './pages/integrations-quickbooks';
+import { SitemapPage } from './pages/sitemap-page';
 
 function App() {
   return (
@@ -151,6 +152,9 @@ function App() {
         <Route path="/integrations" element={<Integrations />} />
         <Route path="/integrations/xero" element={<IntegrationsXero />} />
         <Route path="/integrations/quickbooks" element={<IntegrationsQuickBooks />} />
+
+        {/* Human-readable sitemap */}
+        <Route path="/sitemap" element={<SitemapPage />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />

@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -651,6 +652,12 @@ export function GstCalculator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this calculation"
+        headline="Stop calculating tax by hand."
+        sub="SMASH applies the right tax rate to every line item automatically — GST, VAT, HST, sales tax — the moment you describe the job out loud."
+      />
 
       <Footer />
     </>

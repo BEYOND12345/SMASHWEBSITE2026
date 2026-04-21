@@ -124,6 +124,9 @@ async function generateSitemap() {
     { loc: '/integrations',            lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/integrations/xero',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/integrations/quickbooks', lastmod: today, changefreq: 'monthly', priority: '0.8' },
+
+    // Human-readable sitemap (for discovery + AI crawlers)
+    { loc: '/sitemap', lastmod: today, changefreq: 'weekly', priority: '0.5' },
   ];
 
   const blogPages = posts?.map(post => ({

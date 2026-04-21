@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -715,6 +716,12 @@ export function ProfitCalculator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this job"
+        headline="Price the job right, the first time."
+        sub="SMASH uses your pricing catalog to build every quote and invoice from voice — labour, materials, call-out — so you stop undercharging on the ones that actually pay."
+      />
 
       <Footer />
     </>

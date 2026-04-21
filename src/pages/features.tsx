@@ -10,6 +10,7 @@ import { DualPhoneSection } from '../components/dual-phone-section';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight, Star, Quote, ArrowRight } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 const testimonials = [
   {
@@ -50,6 +51,7 @@ export function Features() {
         twitterTitle="SMASH Invoices — Features"
         twitterDescription="Voice-to-quote in 60 seconds. Everything you need to get paid without the admin."
         canonical="https://smashinvoices.com/features"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

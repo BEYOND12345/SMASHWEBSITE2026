@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -710,6 +711,12 @@ export function HourlyRateCalculator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this rate"
+        headline="Know your rate. Now use it in seconds."
+        sub="SMASH remembers your labour, call-out and material rates. Describe the job once — every future invoice uses your numbers automatically."
+      />
 
       <Footer />
     </>

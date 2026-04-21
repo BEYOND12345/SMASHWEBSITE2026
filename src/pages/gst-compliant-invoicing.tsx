@@ -10,6 +10,7 @@ import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -17,6 +18,10 @@ const faqs = [
   {
     q: "What makes an invoice GST-compliant in Australia?",
     a: "A GST-compliant tax invoice must include: your business name and ABN, the words 'Tax Invoice', the date of issue, a description of goods or services, the total price including GST, and the GST amount shown separately. SMASH generates every invoice with all of these automatically."
+  },
+  {
+    q: "Does SMASH handle GST, VAT, HST and sales tax for other countries?",
+    a: "Yes. SMASH currently ships AU GST today and will support NZ GST (15%), UK VAT (20%), Canadian GST/HST/PST and US state sales tax as each country launches. You can join the waitlist for NZ, UK, US and Canada now."
   },
   {
     q: "Does SMASH calculate GST automatically?",
@@ -59,11 +64,12 @@ export function GstCompliantInvoicing() {
     <>
       <SEO
         title="GST Compliant Invoicing App | Tax Invoice Generator Australia | SMASH"
-        description="Generate ATO-compliant tax invoices instantly. ABN included, GST calculated, line items itemised. Every invoice is legally correct — automatically."
-        keywords="GST compliant invoice, tax invoice Australia, GST invoice generator, ATO invoice requirements, ABN invoice, GST invoice app"
+        description="Generate ATO-compliant tax invoices instantly. ABN included, GST calculated, line items itemised. Every invoice is legally correct — automatically. Built for Australia today; NZ, UK, US and Canada tax coming next."
+        keywords="GST compliant invoice, tax invoice Australia, GST invoice generator, ATO invoice requirements, ABN invoice, GST invoice app, VAT invoice app, HST invoice app, sales tax invoice app"
         ogTitle="GST-Compliant Invoicing — SMASH"
-        ogDescription="Tax invoices that meet every ATO requirement. Generated in under 60 seconds."
+        ogDescription="Tax invoices that meet every ATO requirement. Generated in under 60 seconds. Coming next to NZ, UK, US and Canada."
         canonical="https://smashinvoices.com/gst-compliant-invoicing"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

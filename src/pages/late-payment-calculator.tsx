@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight, Clock } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -661,6 +662,12 @@ export function LatePaymentCalculator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="late payments"
+        headline="The fastest fix for late payments? Faster invoicing."
+        sub="The longer you wait to send an invoice, the longer you wait to get paid. SMASH sends a tax-compliant invoice from a voice note before you leave the job."
+      />
 
       <Footer />
     </>

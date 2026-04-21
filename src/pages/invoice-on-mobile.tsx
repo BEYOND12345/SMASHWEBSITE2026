@@ -10,6 +10,7 @@ import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -59,11 +60,12 @@ export function InvoiceOnMobile() {
     <>
       <SEO
         title="Invoice on Mobile | Invoice from Your Phone | SMASH Invoices"
-        description="Invoice from your phone without typing. Speak the job, SMASH builds the invoice. Send a professional PDF before you leave the job site."
-        keywords="invoice on mobile, invoice from phone, mobile invoicing app, iPhone invoice app, invoice on site, voice invoice phone"
+        description="Invoice from your phone without typing. Speak the job, SMASH builds the invoice. Send a professional PDF before you leave the job site. Live in Australia; coming to New Zealand, the UK, the US and Canada."
+        keywords="invoice on mobile, invoice from phone, mobile invoicing app, iPhone invoice app, invoice on site, voice invoice phone, mobile invoicing UK, mobile invoicing USA, mobile invoicing Canada, mobile invoicing New Zealand"
         ogTitle="Invoice on Mobile — SMASH"
         ogDescription="Speak the job. Invoice sent. Before you leave the driveway."
         canonical="https://smashinvoices.com/invoice-on-mobile"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

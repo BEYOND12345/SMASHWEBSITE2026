@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, Mic, FileText, Send, ArrowRight, ChevronDown, Star, Quote as QuoteIcon, Plus, Trash2, Mail } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -850,6 +851,12 @@ export function QuoteGenerator() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this quote"
+        headline="Want this quote to build itself from a voice note?"
+        sub="SMASH turns a 30-second voice note into a professional quote with line items, tax and call-out fees — and a one-tap approval link for your customer."
+      />
 
       <Footer />
     </>

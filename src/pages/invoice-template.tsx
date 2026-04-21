@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
+import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Check, X, ChevronDown, Star, Quote as QuoteIcon, Mail, ArrowRight, FileText, CreditCard, Eye, Bell } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
@@ -663,6 +664,12 @@ export function InvoiceTemplate() {
           />
         </div>
       </section>
+
+      <VoiceConversionCTA
+        outputLabel="this template"
+        headline="Skip the template. Just talk."
+        sub="Templates are fine. Voice is faster. SMASH turns a 30-second voice note into a ready-to-send, tax-compliant invoice — every time."
+      />
 
       <Footer />
     </>

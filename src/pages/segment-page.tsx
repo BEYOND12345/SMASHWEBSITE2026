@@ -18,6 +18,7 @@ import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import type { SegmentData } from '../data/segment-data';
 import { Nav } from '../components/nav';
+import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -47,6 +48,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
         ogTitle={data.seo.ogTitle}
         ogDescription={data.seo.ogDescription}
         canonical={`https://smashinvoices.com/for-${data.slug}`}
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
@@ -455,6 +457,16 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             <Link to="/gst-compliant-invoicing" className="hover:text-white/60 transition-colors">GST invoicing</Link>
             {' · '}
             <Link to="/blog" className="hover:text-white/60 transition-colors">Blog</Link>
+          </p>
+          <p className="mt-4 text-xs text-white/30 font-medium">
+            Live in Australia · Coming to{' '}
+            <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>
+            {', '}
+            <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>
+            {', '}
+            <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link>
+            {' and '}
+            <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>
           </p>
         </div>
       </section>
