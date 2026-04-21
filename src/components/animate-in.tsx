@@ -47,7 +47,7 @@ export function AnimateIn({
   }, [delay, direction, threshold]);
 
   return (
-    // @ts-ignore — dynamic tag
+    // @ts-expect-error — polymorphic wrapper: Tag is keyof JSX.IntrinsicElements, ref typing varies by element
     <Tag ref={ref} className={className}>
       {children}
     </Tag>

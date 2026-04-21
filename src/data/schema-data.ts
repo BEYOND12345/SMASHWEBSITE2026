@@ -210,7 +210,7 @@ export function createBlogFaqSchema(faqs: Array<{ q: string; a: string }>) {
   };
 }
 
-export function createSegmentFaqSchema(trade: string, faqs: Array<{ q: string; a: string }>) {
+export function createSegmentFaqSchema(faqs: Array<{ q: string; a: string }>) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",

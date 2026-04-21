@@ -51,13 +51,13 @@ export function SegmentPage({ data }: { data: SegmentData }) {
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
         { name: 'Trades', url: 'https://smashinvoices.com/tools' },
-        { name: data.trade, url: `https://smashinvoices.com/${data.slug}` },
+        { name: data.tradeLabel, url: `https://smashinvoices.com/for-${data.slug}` },
       ])} />
       <StructuredData data={createFAQSchema(data.faqs.map(f => ({ question: f.q, answer: f.a })))} />
       <SchemaMarkup schemas={[
         aiOrgSchema,
         softwareApplicationSchema,
-        createSegmentFaqSchema(data.trade, data.faqs.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a }))),
+        createSegmentFaqSchema(data.faqs.map((f: { q: string; a: string }) => ({ q: f.q, a: f.a }))),
       ]} />
 
       {/* ── NAV ────────────────────────────────────────────────────────────── */}
@@ -399,7 +399,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
       <section className="bg-brand py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <RelatedTools
-            keywords={[data.trade, 'invoice', 'quote', 'gst']}
+            keywords={[data.slug, 'invoice', 'quote', 'gst']}
             title="Free tools for your trade"
           />
         </div>

@@ -119,7 +119,7 @@ function InvoiceTemplatePreview() {
         source: 'invoice_template',
         created_at: new Date().toISOString(),
       });
-    } catch (_) {
+    } catch {
       // silent failure
     }
     setSubmitting(false);

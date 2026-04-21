@@ -108,7 +108,7 @@ function GSTCalculator() {
         source: 'gst_calculator',
         created_at: new Date().toISOString(),
       });
-    } catch (_) {
+    } catch {
       // silent failure
     }
     setSubmitting(false);

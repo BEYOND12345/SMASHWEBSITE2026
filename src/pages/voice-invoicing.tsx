@@ -266,7 +266,7 @@ export function VoiceInvoicing() {
                 title: 'Paid',
                 body: 'Payment processed immediately. Money on its way. Invoice automatically issued. Total time: under 60 seconds.',
               },
-            ].map((s, i) => {
+            ].map((s) => {
               const Icon = s.icon;
               return (
                 <AnimateIn key={s.step} direction="up">

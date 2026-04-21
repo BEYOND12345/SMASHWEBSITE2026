@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Quote, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from '../components/seo';

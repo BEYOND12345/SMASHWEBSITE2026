@@ -112,7 +112,7 @@ function LatePaymentCalc() {
         source: 'late_payment_calculator',
         created_at: new Date().toISOString(),
       });
-    } catch (_) {
+    } catch {
       // silent failure
     }
     setSubmitting(false);

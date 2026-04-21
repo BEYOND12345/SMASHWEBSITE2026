@@ -21,3 +21,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Local Claude / Cursor worktrees (not part of shipped site)
+.claude/
+.claire/

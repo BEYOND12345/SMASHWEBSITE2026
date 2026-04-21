@@ -3,7 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
-import { CheckCircle2, Circle, Zap, Clock, Lightbulb, Rocket } from 'lucide-react';
+import { CheckCircle2, Zap, Clock, Lightbulb, Rocket } from 'lucide-react';
 import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";

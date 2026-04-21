@@ -594,7 +594,7 @@ export const segments: SegmentData[] = [
       { problem: 'Getting the quote in writing fast', reality: 'Client decides on the spot. You need to send them a quote before they call someone else.' },
     ],
     voiceExamples: [
-      { slug: 'driveway-concrete-asphalt-voice-invoicing', voice: '"Exposed aggregate driveway at the Burnside property. 42 square metres, 100mm deep, mesh reinforced. Supplied 4.5 cubic metres of 32MPa concrete plus the aggregate finish. Three days labour, two crew."', result: 'Exposed aggregate driveway — 3 days × 2 crew + 4.5m³ 32MPa concrete + aggregate finish = $7,200.00 + GST' },
+      { voice: '"Exposed aggregate driveway at the Burnside property. 42 square metres, 100mm deep, mesh reinforced. Supplied 4.5 cubic metres of 32MPa concrete plus the aggregate finish. Three days labour, two crew."', result: 'Exposed aggregate driveway — 3 days × 2 crew + 4.5m³ 32MPa concrete + aggregate finish = $7,200.00 + GST' },
       { voice: '"Concrete slab for the garage at 8 Macquarie Drive. 6 by 6 metres, 100mm slab, mesh reinforced, broom finish. One day pour, excavation done separately."', result: 'Garage slab — 6×6m pour + mesh + 3.6m³ concrete + broom finish = $2,850.00 + GST' },
       { voice: '"Concrete footpath repair in the council job at Miller Street. 8 lineal metres, 100mm removal and replacement. Day rate, two crew."', result: 'Path repair — 8LM removal + replacement concrete + 2× crew day rate = $1,440.00 + GST' },
     ],

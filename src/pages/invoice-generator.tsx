@@ -176,7 +176,7 @@ function InvoiceBuilder() {
         total_value: total,
         created_at: new Date().toISOString(),
       });
-    } catch (_) {
+    } catch {
       // silently ignore — don't block the user experience
     }
     setSubmitting(false);

@@ -138,7 +138,7 @@ ${allPages.map(page => `  <url>
   try {
     writeFileSync(distPath, sitemap);
     console.log(`✓ Sitemap also updated at ${distPath}`);
-  } catch (e) {
+  } catch {
     console.log('  (dist folder will be updated on next build)');
   }
 }
