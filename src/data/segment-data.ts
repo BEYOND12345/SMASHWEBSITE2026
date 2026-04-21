@@ -1095,6 +1095,242 @@ export const segments: SegmentData[] = [
     ctaSub: 'Free to download. No credit card. First invoice in minutes.',
     relatedSlugs: ['gardeners', 'concreters', 'handymen'],
   },
+
+  // ─────────────────────────────────────────────
+  // IT REPAIR TECHNICIANS
+  // ─────────────────────────────────────────────
+  {
+    slug: 'it-repair',
+    name: 'IT Repair Technicians',
+    tradeLabel: 'For IT Repair Technicians',
+    seo: {
+      title: 'Invoicing for IT Repair Technicians | Computer Repair Invoice App | SMASH',
+      description: 'The fastest invoicing app for IT repair and computer technicians. Speak the job, send a GST-compliant invoice from your phone in under 60 seconds.',
+      keywords: 'IT repair invoice app, computer repair invoicing, tech support invoice Australia, mobile IT technician invoice, on-site IT repair invoice',
+      ogTitle: 'Invoicing for IT Repair Technicians — SMASH',
+      ogDescription: 'Callout done. Invoice sent. Before you pack up the laptop bag.',
+    },
+    heroH1: ['Fix done.', 'Invoice sent.', 'Next ticket.'],
+    heroSub: 'Mobile IT techs run on callouts, hourly rates, and part markups. SMASH turns a 30-second voice description into a full GST-compliant invoice — sent from the client\'s carpark.',
+    appScreen: 'invoice',
+    heroImage: '/images/segments/it-repair-hero.jpg',
+    tradePhotos: ['/images/segments/it-repair-1.jpg', '/images/segments/it-repair-2.jpg'],
+    answerQuestion: 'Best invoicing app for IT repair technicians',
+    answerText: 'SMASH suits mobile IT techs and small computer repair businesses that bill by callout + hourly + parts. Set your callout fee, hourly rate, and part markup once. Describe the job out loud and SMASH builds a line-itemised, GST-compliant invoice on your phone in under 60 seconds.',
+    problemTitle: 'The IT callout invoicing problem',
+    problems: [
+      { problem: 'Callout + labour + parts on every job', reality: 'Three line items to remember, every time, typed on a phone.' },
+      { problem: 'Remote vs on-site pricing', reality: 'Different rates for the same job depending on where you worked. Easy to get wrong.' },
+      { problem: 'Small part markups', reality: 'A $14 cable becomes $22. Multiply that by every invoice — it adds up, and it gets forgotten.' },
+      { problem: 'Business clients on terms', reality: 'Different rates, different payment terms, and a lot of "I\'ll send the invoice later" that becomes "I forgot."' },
+    ],
+    voiceExamples: [
+      { voice: '"On-site callout at Harris Accounting. Replaced a failed SSD in the partner\'s laptop, restored from backup, 90 minutes work. New SSD is the 1TB I buy in at $80."', result: 'On-site callout fee + 1.5 hrs @ $140/hr + 1TB SSD (marked up) = $399.00 + GST' },
+      { voice: '"Remote support for Lisa this morning. Fixed the Outlook profile, reset the VPN, about 45 minutes."', result: 'Remote support — 0.75 hrs @ $120/hr = $90.00 + GST' },
+      { voice: '"Business rate for BetaPoint. Two hours on the server, replaced the UPS battery, standard markup on the battery."', result: 'On-site business rate — 2 hrs @ $160/hr + UPS battery (marked up) = $470.00 + GST' },
+    ],
+    features: [
+      { title: 'Callout + hourly + parts', body: 'Three-line invoices by default. SMASH splits callout, labour, and parts automatically so every bill is easy for the client to read.' },
+      { title: 'Remote vs on-site rates', body: 'Two hourly rates out of the box. Say "remote" or "on-site" and SMASH applies the right one.' },
+      { title: 'Parts with markup', body: 'Store your buy price and markup rule once. SMASH calculates the line price every time.' },
+      { title: 'Business vs residential', body: 'Per-client rates. Business clients get business rates automatically when you invoice them.' },
+      { title: 'Payment terms per client', body: 'NET 7, NET 14, NET 30 — set per client and printed on the invoice.' },
+      { title: 'Online payments', body: 'Residential clients pay by card from the invoice. Fast, no bank details over the phone.' },
+    ],
+    blogPosts: [
+      { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Callout, labour, parts — one voice note, one clean invoice.' },
+      { slug: 'how-to-get-invoices-paid-faster-tradie-secrets', title: 'Get Paid Faster', desc: 'Why sending from the client\'s carpark is worth four working days.' },
+      { slug: 'why-tradies-hate-phones-for-admin', title: 'Why Typing on Phones Fails', desc: 'Thumb-typed invoices are the number one reason invoicing gets skipped.' },
+    ],
+    faqs: [
+      { q: 'Can SMASH handle callout + labour + parts as separate lines?', a: 'Yes. SMASH splits a callout, hourly labour, and any parts into clean line items automatically — that is its default shape.' },
+      { q: 'Can I store part markups instead of typing them each time?', a: 'Yes. Add parts to your pricing catalog with buy price and markup rule. SMASH calculates the sell price on every invoice.' },
+      { q: 'Can I use different rates for remote vs on-site work?', a: 'Yes. Mention "remote" or "on-site" in the voice input — SMASH applies the matching rate.' },
+      { q: 'Can I invoice business clients on NET 30?', a: 'Yes. Set payment terms per client; the terms appear on every invoice for that client automatically.' },
+      { q: 'Does it work for remote-only MSPs?', a: 'Yes. You can use SMASH as a pure remote-support invoicer — callouts are optional.' },
+      { q: 'Does it include GST correctly?', a: 'Yes. ATO-compliant tax invoices with ABN, GST breakdown, and sequential invoice numbers — by default.' },
+    ],
+    ctaH1: ['Every ticket.', 'Every callout.', 'Every part.'],
+    ctaSub: 'Free to download. No credit card. Start invoicing in minutes.',
+    relatedSlugs: ['appliance-repair', 'security-installers', 'handymen'],
+  },
+
+  // ─────────────────────────────────────────────
+  // APPLIANCE REPAIR
+  // ─────────────────────────────────────────────
+  {
+    slug: 'appliance-repair',
+    name: 'Appliance Repair Technicians',
+    tradeLabel: 'For Appliance Repair',
+    seo: {
+      title: 'Invoicing for Appliance Repair Technicians | Repair Invoice App | SMASH',
+      description: 'Invoice appliance repair callouts from the driveway. Callout + labour + parts in one voice note. GST-compliant PDF in under 60 seconds.',
+      keywords: 'appliance repair invoice app, whitegoods repair invoice, appliance technician invoicing, mobile repair invoice Australia, fridge repair invoice',
+      ogTitle: 'Invoicing for Appliance Repair — SMASH',
+      ogDescription: 'Fridge fixed. Invoice sent. Before you leave the driveway.',
+    },
+    heroH1: ['Fridge fixed.', 'Invoice sent.', 'Before the van is packed.'],
+    heroSub: 'Appliance repair is a callout-driven business with parts, labour, and diagnostic fees on every job. SMASH handles all three in a single voice note — no typing on the tailgate.',
+    appScreen: 'estimates-static',
+    heroImage: '/images/segments/appliance-repair-hero.jpg',
+    tradePhotos: ['/images/segments/appliance-repair-1.jpg', '/images/segments/appliance-repair-2.jpg'],
+    answerQuestion: 'Best invoicing app for appliance repair technicians',
+    answerText: 'SMASH is built for callout-based appliance repair businesses — washing machines, fridges, ovens, dishwashers. Set your callout fee, hourly rate, and parts markup once. Describe the job, SMASH generates a GST-compliant invoice with labour, parts, and callout listed separately, sent in under 60 seconds.',
+    problemTitle: 'The appliance repair invoicing problem',
+    problems: [
+      { problem: 'Callout fee on every job', reality: 'Always the same fee — always re-typed on every invoice.' },
+      { problem: 'Part numbers and markups', reality: 'A $40 pump is a $72 line item. That maths should not happen in a hot laundry.' },
+      { problem: 'Diagnostics-only callouts', reality: 'Some jobs are callout + diagnostic only — a common scenario that gets invoiced wrong half the time.' },
+      { problem: '5+ callouts a day', reality: 'Invoice them tonight? Or forget which one had the second trip booked.' },
+    ],
+    voiceExamples: [
+      { voice: '"Washing machine repair at 14 Grant Street. Replaced the drain pump, 45 minutes labour. Callout as normal."', result: 'Callout + 0.75 hrs labour + drain pump (marked up) = $245.00 + GST' },
+      { voice: '"Fridge diagnostic at the Richmond apartment. Found a faulty compressor, quoted a repair but did not proceed. Diagnostic callout only."', result: 'Diagnostic callout only = $135.00 + GST' },
+      { voice: '"Commercial oven at the Fitzroy cafe. Two hours work, new thermostat, part at standard markup. Commercial rate."', result: 'Commercial callout + 2 hrs @ commercial rate + thermostat = $585.00 + GST' },
+    ],
+    features: [
+      { title: 'Callout fee defaults', body: 'Your callout fee is added automatically to every job. Different fees for weekend, after-hours, or distance? Set those as presets too.' },
+      { title: 'Parts with markup', body: 'Store your parts catalog with buy price and markup. SMASH prices each part automatically when you mention it.' },
+      { title: 'Diagnostic-only jobs', body: 'Clean diagnostic-only invoice format for callouts where the repair did not proceed. One voice cue away.' },
+      { title: 'Residential vs commercial rates', body: 'Two rate sheets: residential and commercial. Mention the job type and SMASH uses the right one.' },
+      { title: 'Multi-callout days', body: '5 jobs a day? Invoice each one from the van between callouts.' },
+      { title: 'Online payments', body: 'Clients pay by card from the invoice link — no bank details over the phone while you pack up.' },
+    ],
+    blogPosts: [
+      { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Callout + labour + parts in under a minute.' },
+      { slug: 'stop-admin-sundays-voice-invoicing', title: 'Stop Admin Sundays', desc: 'If you are still catching up on callouts on Sunday nights, voice invoicing was built for you.' },
+      { slug: 'how-to-get-invoices-paid-faster-tradie-secrets', title: 'Get Paid Faster', desc: 'Sending from the driveway is worth four working days on average.' },
+    ],
+    faqs: [
+      { q: 'Can I include a callout fee on every invoice automatically?', a: 'Yes. Callout defaults can be on or off per trade. Set it once and every new invoice starts with your callout fee included.' },
+      { q: 'Can I invoice a diagnostic-only callout?', a: 'Yes. Mention "diagnostic only" in the voice input and SMASH produces a diagnostic-only invoice with your callout fee.' },
+      { q: 'Can I store part numbers and markups?', a: 'Yes. Parts catalog with buy price and markup rule. SMASH applies the markup on every invoice.' },
+      { q: 'Can I use different rates for weekend or after-hours work?', a: 'Yes. Set preset rates — weekend, after-hours, public holiday — and mention the label in your voice note.' },
+      { q: 'Does the customer pay online?', a: 'Yes. Every invoice includes a payment link; customers pay by card directly.' },
+      { q: 'Is GST included correctly?', a: 'Yes. ATO-compliant invoices with ABN, GST breakdown per line, and sequential invoice numbers.' },
+    ],
+    ctaH1: ['Every callout.', 'Every repair.', 'Every part.'],
+    ctaSub: 'Free to download. No credit card. First invoice in minutes.',
+    relatedSlugs: ['it-repair', 'handymen', 'mobile-mechanics'],
+  },
+
+  // ─────────────────────────────────────────────
+  // SECURITY INSTALLERS
+  // ─────────────────────────────────────────────
+  {
+    slug: 'security-installers',
+    name: 'Security System Installers',
+    tradeLabel: 'For Security Installers',
+    seo: {
+      title: 'Invoicing for Security System Installers | CCTV & Alarm Invoice App | SMASH',
+      description: 'Invoice alarm, CCTV, and access control installations on the spot. Voice-to-invoice with GST, ABN, and itemised labour + equipment. Under 60 seconds.',
+      keywords: 'security installer invoice app, CCTV installation invoice, alarm system invoice Australia, access control invoice, cabling invoice app',
+      ogTitle: 'Invoicing for Security Installers — SMASH',
+      ogDescription: 'System armed. Invoice sent. Before you leave the site.',
+    },
+    heroH1: ['System armed.', 'Invoice sent.', 'Before you lock up.'],
+    heroSub: 'Alarm, CCTV, and access-control installs are labour-heavy with a lot of equipment lines. SMASH turns a 60-second voice note into a clean, line-itemised invoice — equipment priced, labour hours logged, GST handled.',
+    appScreen: 'invoice',
+    heroImage: '/images/segments/security-installers-hero.jpg',
+    tradePhotos: ['/images/segments/security-installers-1.jpg', '/images/segments/security-installers-2.jpg'],
+    answerQuestion: 'Best invoicing app for security system installers',
+    answerText: 'SMASH fits alarm, CCTV, and access-control installers who quote and invoice a mix of equipment + labour + optional monitoring. Store your equipment catalog, labour rates, and service tiers once. Describe the job out loud and SMASH generates a GST-compliant invoice with every line priced correctly.',
+    problemTitle: 'The security install invoicing problem',
+    problems: [
+      { problem: 'Lots of line items per job', reality: '8 cameras, 100m cable, one NVR, labour. Typed one finger at a time on a phone.' },
+      { problem: 'Quote → invoice conversion', reality: 'Clients accept the quote; you still spend 15 minutes re-keying it as an invoice.' },
+      { problem: 'Residential vs commercial pricing', reality: 'Different equipment tiers and labour rates. Easy to mix up on a busy day.' },
+      { problem: 'Monitoring and maintenance add-ons', reality: 'Monthly monitoring, annual service — extra line items that routinely get forgotten.' },
+    ],
+    voiceExamples: [
+      { voice: '"CCTV install at 12 Harrow Road. Four Hikvision 4MP bullets, one 8-channel NVR, 60 metres of Cat 6, half a day labour, residential rate."', result: '4× 4MP bullet + 8-ch NVR + 60m Cat 6 + 4 hrs @ residential rate = $1,980.00 + GST' },
+      { voice: '"Alarm upgrade at the Smiths\'. Replaced the panel, added two motion sensors, keypad, two hours labour. Add 12-month monitoring."', result: 'Panel + 2× PIR + keypad + 2 hrs labour + 12 mo monitoring = $1,345.00 + GST' },
+      { voice: '"Access control at the Southbank office. Two HID readers, controller, magnetic locks, cabling, six hours labour, commercial rate."', result: '2× HID reader + controller + 2× mag lock + cabling + 6 hrs @ commercial = $3,480.00 + GST' },
+    ],
+    features: [
+      { title: 'Equipment catalog', body: 'Store every SKU you fit with buy price and markup. Mention a part and SMASH lists it at the right price.' },
+      { title: 'Residential + commercial rates', body: 'Two labour rate cards that SMASH switches between based on the job type in your voice note.' },
+      { title: 'Quote → invoice in one tap', body: 'Once a client accepts a quote, convert to a full invoice without re-keying anything.' },
+      { title: 'Monitoring and service add-ons', body: 'Pre-defined recurring line items — 12-month monitoring, annual service — ready to append.' },
+      { title: 'Cable runs by the metre', body: 'Store metre rates for Cat 6, coax, alarm cable. Mention metres and SMASH prices it.' },
+      { title: 'GST-compliant PDFs', body: 'Every invoice is ATO-compliant with ABN, GST, sequential numbering — and looks tidy enough for commercial clients.' },
+    ],
+    blogPosts: [
+      { slug: 'voice-to-quote-feature', title: 'Voice to Quote', desc: 'Turn a walk-through conversation into a priced quote, then convert the accepted quote to an invoice with one tap.' },
+      { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Long equipment lists, short invoicing time.' },
+      { slug: 'why-tradies-hate-phones-for-admin', title: 'Why Typing on Phones Fails', desc: 'Typing 8 line items on a phone is exactly why installs get invoiced a week late.' },
+    ],
+    faqs: [
+      { q: 'Can SMASH handle long equipment lists on one invoice?', a: 'Yes. Store your equipment catalog; mention each item in the voice note and SMASH lists every one as a priced line item.' },
+      { q: 'Can I convert a quote to an invoice?', a: 'Yes. Once a client accepts the quote, convert it to a full invoice in one tap — no re-keying.' },
+      { q: 'Can I charge different rates for residential vs commercial jobs?', a: 'Yes. Two rate cards, switched by the job type in your voice input.' },
+      { q: 'Can I add recurring monitoring or service as a line item?', a: 'Yes. Pre-defined recurring items are one mention away.' },
+      { q: 'Can I price cable by the metre?', a: 'Yes. Store metre rates for each cable type; SMASH multiplies by the metres you mention.' },
+      { q: 'Is GST handled automatically?', a: 'Yes. ABN and GST are on every invoice by default.' },
+    ],
+    ctaH1: ['Every camera.', 'Every metre.', 'Every hour.'],
+    ctaSub: 'Free to download. No credit card. First invoice in minutes.',
+    relatedSlugs: ['electricians', 'it-repair', 'hvac'],
+  },
+
+  // ─────────────────────────────────────────────
+  // FENCERS
+  // ─────────────────────────────────────────────
+  {
+    slug: 'fencers',
+    name: 'Fencing Contractors',
+    tradeLabel: 'For Fencers',
+    seo: {
+      title: 'Invoicing for Fencing Contractors | Fencing Invoice App Australia | SMASH',
+      description: 'Quote and invoice fencing jobs by the metre. Posts, panels, gates, labour — voice-to-invoice in under 60 seconds. GST-compliant PDFs.',
+      keywords: 'fencing invoice app, fence contractor invoice, colorbond fence quote app, timber fencing invoice, fencing quote Australia',
+      ogTitle: 'Invoicing for Fencers — SMASH',
+      ogDescription: 'Last post in. Invoice sent. Before the ute is loaded.',
+    },
+    heroH1: ['Last post in.', 'Invoice sent.', 'Before the ute is loaded.'],
+    heroSub: 'Fencing is priced by the metre, by the post, by the gate — and invoicing it at the desk means double handling. SMASH prices it while you walk the line, voice-first.',
+    appScreen: 'quote',
+    heroImage: '/images/segments/fencers-hero.jpg',
+    tradePhotos: ['/images/segments/fencers-1.jpg', '/images/segments/fencers-2.jpg'],
+    answerQuestion: 'Best invoicing app for fencing contractors',
+    answerText: 'SMASH is built for fencing contractors who quote and invoice by the metre — Colorbond, timber paling, post-and-rail, pool fencing. Set your metre rates for each fence type once; describe the job and SMASH prices posts, panels, gates, and labour as separate line items on a GST-compliant invoice in under 60 seconds.',
+    problemTitle: 'The fencing invoicing problem',
+    problems: [
+      { problem: 'Metres × rate × type', reality: 'Colorbond is one rate, timber another, pool glass a third — maths on a tailgate in 38°.' },
+      { problem: 'Posts, panels, rails, gates', reality: 'Four part types on a single job, all priced separately.' },
+      { problem: 'Removal and disposal of the old fence', reality: 'Always forgotten on the invoice — and sometimes forgotten on the quote.' },
+      { problem: 'Gate hardware and custom extras', reality: 'Latches, drop bolts, self-closing hinges — small items that pile up and disappear from the bill.' },
+    ],
+    voiceExamples: [
+      { voice: '"28 metres of 1.8m Colorbond at 44 Pine Street. One 900mm pedestrian gate, standard latch. Remove old timber fence, 28 metres, and disposal."', result: '28m Colorbond @ rate + 900mm gate + removal 28m + disposal = $5,840.00 + GST' },
+      { voice: '"14 metres of treated pine paling, 1.8m high, residential rate. Two double-rail runs. Half a day labour for two."', result: '14m timber paling + 2× double-rail + 4 hrs × 2 labour = $2,180.00 + GST' },
+      { voice: '"Pool fence at the Byron property. 32 metres of frameless glass, six gate panels, compliant latches. Commercial rate for labour, three days for two."', result: '32m frameless glass + 6× gate + compliant latch × 6 + 3 days × 2 commercial labour = quoted line items + GST' },
+    ],
+    features: [
+      { title: 'Metre rates per fence type', body: 'Colorbond, timber paling, post-and-rail, pool glass — each with its own metre rate. Mention the type and SMASH uses the right one.' },
+      { title: 'Gate catalog', body: 'Store standard gate sizes (single, double, sliding) with their own pricing. Mention a gate and it lands on the invoice.' },
+      { title: 'Removal + disposal', body: 'Pre-defined removal rates by fence type. One voice cue adds both lines.' },
+      { title: 'Hardware catalog', body: 'Latches, drop bolts, hinges — priced line items that stop being forgotten.' },
+      { title: 'Residential vs commercial labour', body: 'Two labour rates with one voice switch.' },
+      { title: 'Quote → invoice conversion', body: 'Once the client signs off on the quote, convert to an invoice without re-keying.' },
+    ],
+    blogPosts: [
+      { slug: 'voice-to-quote-feature', title: 'Voice to Quote', desc: 'Walk the line, talk the job, print the quote.' },
+      { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Metres, posts, gates — one voice note, one clean invoice.' },
+      { slug: 'how-to-get-invoices-paid-faster-tradie-secrets', title: 'Get Paid Faster', desc: 'Why same-day invoicing after a fencing job is worth real money.' },
+    ],
+    faqs: [
+      { q: 'Can SMASH price by the metre?', a: 'Yes. Store metre rates for each fence type; SMASH multiplies by the metres you mention in the voice note.' },
+      { q: 'Can I include removal of the old fence as a line item?', a: 'Yes. Removal rates per fence type are presets; one voice cue adds the removal + disposal lines.' },
+      { q: 'Can I price gates and hardware separately?', a: 'Yes. Gates and hardware live in your catalog as priced items — mentioned once in the voice input, listed cleanly on the invoice.' },
+      { q: 'Can I convert a quote to an invoice?', a: 'Yes. When the client accepts, convert the quote to a full invoice in one tap.' },
+      { q: 'Does it work for pool fencing?', a: 'Yes. Frameless glass, semi-frameless, aluminium pool fence — each a separate type with its own metre rate. Compliant-latch and hinge hardware are priced presets.' },
+      { q: 'Does it handle GST?', a: 'Yes. ATO-compliant invoices with ABN and GST — on by default.' },
+    ],
+    ctaH1: ['Every metre.', 'Every post.', 'Every gate.'],
+    ctaSub: 'Free to download. No credit card. First invoice in minutes.',
+    relatedSlugs: ['concreters', 'gardeners', 'handymen'],
+  },
 ];
 
 export const segmentBySlug = Object.fromEntries(segments.map(s => [s.slug, s]));

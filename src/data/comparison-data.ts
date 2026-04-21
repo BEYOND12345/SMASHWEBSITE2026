@@ -552,6 +552,426 @@ const comparisons: ComparisonData[] = [
       },
     ],
   },
+
+  // ─────────────────────────────────────────────
+  // TRADIFY
+  // ─────────────────────────────────────────────
+  {
+    slug: 'smash-vs-tradify',
+    competitor: 'Tradify',
+    competitorShort: 'Tradify',
+    metaTitle: 'SMASH vs Tradify | Voice-to-Invoice vs Tradie Job Management',
+    metaDescription: 'SMASH vs Tradify for sole traders and small crews. Compare voice-to-invoice in 60 seconds vs full job management. Pricing, features, and which is right for you.',
+    heroHeadline: 'Tradify manages\nthe office.\nSMASH works\non the job.',
+    heroSub: 'Tradify is a capable NZ-born job management tool. For sole traders who just want to finish a job, invoice, and get paid — it is usually more software than the job actually needs.',
+    verdict: 'Solo operator? SMASH is faster, cheaper, and designed for the van. Running a crew that needs scheduling and timesheets? Tradify.',
+    verdictSub: 'SMASH and Tradify solve different problems. The question is not which is better — it is which matches how you actually work.',
+    lossAversion: 'Every hour you spend learning Tradify, setting up price books, and clicking through job cards is an hour of site time. Tradies who adopt over-spec software for a one-person business usually go back to the notebook within a month.',
+    outcomeStat: [
+      { stat: '60 sec', label: 'to send an invoice with SMASH' },
+      { stat: '$0', label: 'free plan vs Tradify paid-only' },
+      { stat: '0', label: 'price books to build manually' },
+    ],
+    quickFilter: {
+      chooseThem: [
+        'You run a crew and need job scheduling + dispatch',
+        'You want timesheets and staff tracking',
+        'You have a deep price book you want to maintain',
+        'You need full job cards with notes, photos, history',
+      ],
+      chooseUs: [
+        'You are a sole trader or a team of 1–2',
+        'You want to invoice without opening a laptop',
+        'You want AI to learn your rates, not type them in',
+        'You want a free plan and no onboarding call',
+      ],
+    },
+    testimonials: [
+      {
+        quote: 'Tradify was great at what it did — I just did not need most of it. SMASH does the one thing I actually care about: invoice, fast.',
+        name: 'Brad K.',
+        trade: 'Handyman, Geelong',
+        switchedFrom: 'Tradify',
+      },
+      {
+        quote: 'I tried Tradify for two weeks. The setup alone broke me. SMASH was sending real invoices inside 10 minutes.',
+        name: 'Jess H.',
+        trade: 'Painter, Hobart',
+        switchedFrom: 'Tradify',
+      },
+      {
+        quote: 'Finally an app that does not assume I have a back-office person. I am the back-office person.',
+        name: 'Mick R.',
+        trade: 'Tiler, Perth',
+      },
+    ],
+    smashPrice: 'From $0 (free plan)',
+    themPrice: 'From $29 USD/user/month',
+    features: [
+      { label: 'Voice-to-invoice', smash: true, them: false },
+      { label: 'Send invoice in under 60 seconds', smash: true, them: false },
+      { label: 'AI learns your rates from old invoices', smash: true, them: false },
+      { label: 'Free plan', smash: true, them: false },
+      { label: 'No per-user pricing', smash: true, them: false },
+      { label: 'GST-compliant invoices', smash: true, them: true },
+      { label: 'Online payment collection', smash: true, them: true },
+      { label: 'Customer records', smash: true, them: true },
+      { label: 'Quote → invoice workflow', smash: true, them: true },
+      { label: 'Job scheduling & dispatch', smash: false, them: true },
+      { label: 'Staff timesheets', smash: false, them: true },
+      { label: 'Detailed price books', smash: false, them: true },
+    ],
+    theyDoWell: [
+      { title: 'Job management depth', desc: 'Tradify handles quotes → jobs → invoices with scheduling, timesheets, and staff tracking. If you run a crew, the workflow is genuinely good.' },
+      { title: 'Price book management', desc: 'If you like maintaining a structured price book with hundreds of SKUs, Tradify gives you the tools to do it.' },
+      { title: 'Xero / QuickBooks integration', desc: 'Tradify syncs both ways with Xero and QuickBooks. For an accounting-heavy business, that matters.' },
+    ],
+    weWin: [
+      { title: 'Voice speed', desc: 'SMASH turns a 30-second voice note into a finished, sent invoice. Tradify has you clicking through screens to build the same thing.' },
+      { title: 'Zero price-book setup', desc: 'Upload a couple of your existing invoices and SMASH learns how you price work. No building price books by hand.' },
+      { title: 'Pricing for one', desc: 'Tradify is per user. SMASH is flat-rate — and has a real free plan. For a solo op the difference is hundreds a year.' },
+      { title: 'No onboarding required', desc: 'Tradify expects a setup process. SMASH is usable in five minutes and useful in ten.' },
+    ],
+    theyAreFor: 'Trade businesses with employees, dispatch needs, and a structured back-office. If you have admin staff and a company-wide price book, Tradify is built for you.',
+    weAreFor: 'Solo tradies and small crews who want the shortest possible path from finishing a job to money in the bank.',
+    closingLine: 'Running a team with dispatch and timesheets? Tradify. One person losing weekends to invoicing? SMASH.',
+    faq: [
+      {
+        q: 'Is SMASH a real Tradify alternative?',
+        a: 'For solo tradies, yes. SMASH replaces the quote-and-invoice part of Tradify with voice input and AI pricing. If you need dispatch, timesheets, or multi-user workflows, Tradify still does things SMASH does not.',
+      },
+      {
+        q: 'How does SMASH compare on price?',
+        a: 'Tradify is billed per user, starting around $29 USD per user per month. SMASH has a free plan and a Pro plan at $22.99 AUD — flat rate, not per user.',
+      },
+      {
+        q: 'Can I switch my Tradify client list over?',
+        a: 'Export your clients from Tradify as CSV and add them to SMASH. Your Tradify job history stays in Tradify — SMASH builds pricing intelligence from your first few new jobs.',
+      },
+      {
+        q: 'Does SMASH connect to Xero like Tradify does?',
+        a: 'Xero and QuickBooks sync is on the SMASH roadmap. Today SMASH exports clean, GST-compliant PDFs you can attach to your accounting system.',
+      },
+      {
+        q: 'Can SMASH handle GST correctly for Australian tradies?',
+        a: 'Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, and sequential invoice numbers. Per-line GST is calculated automatically.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // INVOICE2GO
+  // ─────────────────────────────────────────────
+  {
+    slug: 'smash-vs-invoice2go',
+    competitor: 'Invoice2go',
+    competitorShort: 'Invoice2go',
+    metaTitle: 'SMASH vs Invoice2go | Voice Invoicing vs Mobile Template App',
+    metaDescription: 'SMASH vs Invoice2go: a template-based mobile invoicer vs voice-to-invoice AI for tradies. Compare speed, features, pricing, and which actually works from a van.',
+    heroHeadline: 'Invoice2go is\na template.\nSMASH is\na conversation.',
+    heroSub: 'Invoice2go has been around for a decade and does one thing: templates on your phone. SMASH is the next step — describe the job out loud and the invoice writes itself, priced the way you price.',
+    verdict: 'If typing on a phone is working for you, Invoice2go is fine. If you want to stop typing entirely, SMASH is a different category.',
+    verdictSub: 'Both live on your phone. Only one lets you send a finished invoice without touching a keyboard.',
+    lossAversion: 'Every tap on a tiny phone keyboard costs you a few seconds — multiplied by every invoice, every week, that is hours per month. SMASH removes the typing step entirely.',
+    outcomeStat: [
+      { stat: '30 sec', label: 'voice description → full invoice' },
+      { stat: '0', label: 'line items typed on a phone keyboard' },
+      { stat: '$0', label: 'free plan vs Invoice2go paywall' },
+    ],
+    quickFilter: {
+      chooseThem: [
+        'You want a polished, long-established template invoicer',
+        'You already have Invoice2go set up and like it',
+        'You do not want AI anywhere near your workflow',
+        'Your invoicing volume is very low and templates are plenty',
+      ],
+      chooseUs: [
+        'You want to speak, not type, an invoice',
+        'You want SMASH to learn your rates automatically',
+        'You want AU-specific GST and ABN handling by default',
+        'You want a real free plan with real invoices',
+      ],
+    },
+    testimonials: [
+      {
+        quote: 'Invoice2go worked. It was just slow. SMASH cut my invoicing down to a 30-second voice note.',
+        name: 'Gareth P.',
+        trade: 'Plumber, Newcastle',
+        switchedFrom: 'Invoice2go',
+      },
+      {
+        quote: 'I used Invoice2go for three years. The moment I heard I could just talk an invoice out, I switched that afternoon.',
+        name: 'Lauren S.',
+        trade: 'Cleaner, Adelaide',
+        switchedFrom: 'Invoice2go',
+      },
+      {
+        quote: 'My fingers are too big for a phone keyboard. SMASH fixed that problem in a way I did not know was possible.',
+        name: 'Dino V.',
+        trade: 'Concreter, Melbourne',
+      },
+    ],
+    smashPrice: 'From $0 (free plan)',
+    themPrice: 'From $5.99 USD/month',
+    features: [
+      { label: 'Voice-to-invoice', smash: true, them: false },
+      { label: 'AI learns your pricing', smash: true, them: false },
+      { label: 'Free plan with real invoices', smash: true, them: false },
+      { label: 'Built specifically for tradies', smash: true, them: false },
+      { label: 'Australian GST + ABN by default', smash: true, them: 'Supported, configurable' },
+      { label: 'Mobile-first invoicing', smash: true, them: true },
+      { label: 'PDF output', smash: true, them: true },
+      { label: 'Online payment collection', smash: true, them: true },
+      { label: 'Estimates / quotes', smash: true, them: true },
+      { label: 'Time tracking', smash: false, them: true },
+      { label: 'Multi-currency invoicing', smash: 'Coming soon', them: true },
+    ],
+    theyDoWell: [
+      { title: 'Mature product', desc: 'Invoice2go has been shipping for over a decade. The core template-based flow is polished and predictable.' },
+      { title: 'Multi-industry breadth', desc: 'Built for freelancers, creatives, and small businesses — not just tradies. If you are a consultant with occasional invoicing needs, it works fine.' },
+      { title: 'Simple time tracking', desc: 'Built-in stopwatch and basic time tracking for hourly work.' },
+    ],
+    weWin: [
+      { title: 'Voice-first, not template-first', desc: 'Invoice2go is a form you fill in. SMASH is a conversation. Huge difference when you are on a job site with tools in your hand.' },
+      { title: 'AI pricing', desc: 'SMASH reads your existing invoices and matches your pricing style automatically. Invoice2go has you typing line items by hand.' },
+      { title: 'Built for AU tradies specifically', desc: 'GST, ABN, ATO-compliant invoice format, trade-specific voice recognition. Invoice2go is a generic tool retrofitted for anyone.' },
+      { title: 'Free plan with real invoices', desc: 'Invoice2go\'s free tier is extremely limited. SMASH\'s free plan gives you functional invoicing from day one.' },
+    ],
+    theyAreFor: 'Freelancers and small-business owners who want a simple mobile template invoicer and do not care about voice input or trade-specific workflow.',
+    weAreFor: 'Australian tradies and service businesses who want to speak a job description and have a GST-compliant invoice sent before they leave the driveway.',
+    closingLine: 'Happy typing templates on a phone? Invoice2go. Want to stop typing entirely? SMASH.',
+    faq: [
+      {
+        q: 'Is SMASH faster than Invoice2go?',
+        a: 'Substantially. Invoice2go is a template you fill in. SMASH turns a 30-second voice description into a complete invoice. For repeat jobs, SMASH is typically 5–10× faster.',
+      },
+      {
+        q: 'How does pricing compare?',
+        a: 'Invoice2go starts at around $5.99 USD/month with paid tiers up to $39.99. SMASH has a free plan and a Pro plan at $22.99 AUD. Both are affordable — SMASH is the only one with a truly usable free tier.',
+      },
+      {
+        q: 'Can SMASH import my Invoice2go clients?',
+        a: 'Export your client list from Invoice2go as CSV and add contacts to SMASH. Invoice history stays in Invoice2go.',
+      },
+      {
+        q: 'Does SMASH have the same templates Invoice2go has?',
+        a: 'SMASH generates a clean, consistent, GST-compliant invoice automatically — there is no template picker because SMASH is designed around speed, not visual customisation. Colour, logo and business details are yours.',
+      },
+      {
+        q: 'Is SMASH mobile-only like Invoice2go?',
+        a: 'SMASH is mobile-first. The core workflow is your phone — which is the point. Web access is on the roadmap.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // JOIST
+  // ─────────────────────────────────────────────
+  {
+    slug: 'smash-vs-joist',
+    competitor: 'Joist',
+    competitorShort: 'Joist',
+    metaTitle: 'SMASH vs Joist | Voice Invoicing for Tradies vs Contractor App',
+    metaDescription: 'SMASH vs Joist for contractors and tradies. Compare voice-to-invoice AI vs a template-based estimating app. Pricing, features, and which fits how you actually work.',
+    heroHeadline: 'Joist makes\nestimates.\nSMASH turns\nvoice into paid.',
+    heroSub: 'Joist is a North-American-born estimating and invoicing app for contractors. It is fine software. But it still makes you type every line item on a phone — and it is built around the US market, not Australian tradies.',
+    verdict: 'Joist is a solid template-based contractor app. SMASH is voice-first, AI-priced, and built for AU / NZ / UK tradies from day one.',
+    verdictSub: 'Both do estimates and invoices on a phone. Only one lets you speak the job and skip the typing.',
+    lossAversion: 'Typing line items on a phone on a hot day with dirty hands is exactly the moment invoicing gets skipped. Every skipped invoice is a week your money sits in someone else\'s account instead of yours.',
+    outcomeStat: [
+      { stat: '60 sec', label: 'speak → full invoice in SMASH' },
+      { stat: 'AU / NZ / UK', label: 'built for these markets first' },
+      { stat: '$0', label: 'free plan with real invoices' },
+    ],
+    quickFilter: {
+      chooseThem: [
+        'You are a US-based contractor and want Joist\'s ecosystem',
+        'You prefer form-based estimates with detailed sections',
+        'You already use Joist and want to keep the client history',
+        'You need Joist-specific integrations (HomeAdvisor etc.)',
+      ],
+      chooseUs: [
+        'You want to talk rather than type your invoice',
+        'You want AI to learn your rates from existing invoices',
+        'You are in AU / NZ / UK and want local tax handling',
+        'You want a truly free plan, not just a trial',
+      ],
+    },
+    testimonials: [
+      {
+        quote: 'Joist is built for the American market. I am a sparkie in Brisbane — SMASH just fits better.',
+        name: 'Jarrod W.',
+        trade: 'Electrician, Brisbane',
+        switchedFrom: 'Joist',
+      },
+      {
+        quote: 'I liked Joist\'s estimate layout. What I did not like was typing every item. Voice fixed that.',
+        name: 'Corey B.',
+        trade: 'Painter, Auckland',
+        switchedFrom: 'Joist',
+      },
+      {
+        quote: 'SMASH got me paid faster. Simple as that. Joist had more form fields than I needed.',
+        name: 'Leo T.',
+        trade: 'Handyman, Sydney',
+      },
+    ],
+    smashPrice: 'From $0 (free plan)',
+    themPrice: 'Free tier + paid from $13.99 USD/month',
+    features: [
+      { label: 'Voice-to-invoice', smash: true, them: false },
+      { label: 'AI pricing that learns your rates', smash: true, them: false },
+      { label: 'Built for AU / NZ / UK tradies', smash: true, them: false },
+      { label: 'GST-compliant by default (AU)', smash: true, them: 'Configurable' },
+      { label: 'Estimates / quotes', smash: true, them: true },
+      { label: 'Professional PDF invoices', smash: true, them: true },
+      { label: 'Online payment collection', smash: true, them: true },
+      { label: 'Client records and history', smash: true, them: true },
+      { label: 'Free plan with real invoices', smash: true, them: 'Limited' },
+      { label: 'HomeAdvisor / Angi lead integration', smash: false, them: true },
+    ],
+    theyDoWell: [
+      { title: 'Established in the US contractor space', desc: 'Joist has years of traction with US and Canadian contractors. The estimate flow is well-worn.' },
+      { title: 'HomeAdvisor / Angi integration', desc: 'If lead-gen via those US marketplaces matters to you, Joist plays nicely with that ecosystem.' },
+      { title: 'Photo attachments on line items', desc: 'Attach a before/after photo to a specific line on an estimate.' },
+    ],
+    weWin: [
+      { title: 'Voice, not forms', desc: 'Joist is a form you fill in. SMASH turns a voice note into a completed, sent invoice. The difference is entire hours per week.' },
+      { title: 'AU / NZ / UK tax handling', desc: 'GST, VAT, ABN, NZBN, UTR — SMASH treats local markets as first-class, not an afterthought.' },
+      { title: 'AI that learns your pricing', desc: 'Upload existing invoices; SMASH learns your rates. Joist has you entering every item manually.' },
+      { title: 'Real free plan', desc: 'SMASH\'s free tier gives you functional invoicing. Joist\'s free tier is limited and steers hard towards paid.' },
+    ],
+    theyAreFor: 'North American contractors who want a mature template-based estimate + invoice app with HomeAdvisor/Angi integrations.',
+    weAreFor: 'AU, NZ and UK tradies who want voice-first, AI-priced invoicing with local tax handling from the first invoice.',
+    closingLine: 'US contractor in the HomeAdvisor ecosystem? Joist. AU / NZ / UK tradie who wants to stop typing? SMASH.',
+    faq: [
+      {
+        q: 'Is SMASH a direct Joist alternative?',
+        a: 'For tradies outside North America, yes — and often better, because SMASH is voice-first and handles local tax rules natively. For US contractors deep in the HomeAdvisor/Angi ecosystem, Joist still has ecosystem advantages SMASH does not.',
+      },
+      {
+        q: 'Does SMASH work for US or Canadian contractors?',
+        a: 'US and CA versions are on the waitlist — see /us and /ca. The app launches with USD / CAD pricing and state / provincial tax handling.',
+      },
+      {
+        q: 'What does SMASH cost compared to Joist?',
+        a: 'Joist has a free tier with limits, and paid from $13.99 USD/month. SMASH has a genuinely usable free plan and Pro at $22.99 AUD — flat rate, no per-user fees.',
+      },
+      {
+        q: 'Can I import my Joist client list?',
+        a: 'Export clients from Joist as CSV and add them to SMASH. Joist estimate history stays in Joist.',
+      },
+      {
+        q: 'Why voice instead of forms?',
+        a: 'Because the fastest way a tradie describes a job is how they would tell a mate: "Supplied and installed 250L Rheem, four hours labour, call-out." Forms are the slow way. Voice is how you already speak.',
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // ROUNDED
+  // ─────────────────────────────────────────────
+  {
+    slug: 'smash-vs-rounded',
+    competitor: 'Rounded',
+    competitorShort: 'Rounded',
+    metaTitle: 'SMASH vs Rounded | Voice Invoicing for Tradies vs Freelancer Accounting',
+    metaDescription: 'SMASH vs Rounded for Australian sole traders. Voice-to-invoice built for tradies vs freelancer accounting with a web-first flow. Feature, pricing, and fit comparison.',
+    heroHeadline: 'Rounded is for\nfreelancers.\nSMASH is for\nthe trades.',
+    heroSub: 'Rounded is a well-built Australian accounting app for freelancers and consultants. SMASH is a voice-to-invoice app for tradies who work with their hands, not a keyboard.',
+    verdict: 'Rounded is a desk tool for freelancers who live in browser tabs. SMASH is a job-site tool for tradies who need the invoice sent before they leave.',
+    verdictSub: 'Both are Australian. Both handle GST. Only one is designed around voice input and trade-specific workflow.',
+    lossAversion: 'Every tradie who tries to use a desk-first accounting tool on site ends up invoicing "later" — and later usually means Sunday night, when half the job details have faded.',
+    outcomeStat: [
+      { stat: '60 sec', label: 'invoice sent from the job' },
+      { stat: '100%', label: 'GST + ABN handled automatically' },
+      { stat: '$0', label: 'free plan vs Rounded paid-only' },
+    ],
+    quickFilter: {
+      chooseThem: [
+        'You are a freelancer or consultant, not a tradie',
+        'You live in a browser and enjoy spreadsheet-style ledgers',
+        'You want full BAS + PAYG + expense tracking in one app',
+        'You bill in currencies other than AUD regularly',
+      ],
+      chooseUs: [
+        'You are a sole trader in the trades / services',
+        'You want to invoice from the van, not the desk',
+        'You want AI to write the invoice for you from voice',
+        'You want a real free plan with real GST invoices',
+      ],
+    },
+    testimonials: [
+      {
+        quote: 'Rounded is for people sitting at a desk. I am a plumber. I needed something I could use with one hand.',
+        name: 'Simon T.',
+        trade: 'Plumber, Sydney',
+        switchedFrom: 'Rounded',
+      },
+      {
+        quote: 'Rounded is a great little app for what it does. It just was not built for a job site.',
+        name: 'Nat G.',
+        trade: 'Gardener, Adelaide',
+        switchedFrom: 'Rounded',
+      },
+      {
+        quote: 'SMASH is the first invoicing app that felt made for how I actually work — voice, mobile, fast.',
+        name: 'Ant J.',
+        trade: 'Mobile mechanic, Perth',
+      },
+    ],
+    smashPrice: 'From $0 (free plan)',
+    themPrice: 'From $19.95 AUD/month',
+    features: [
+      { label: 'Voice-to-invoice', smash: true, them: false },
+      { label: 'AI learns your rates from old invoices', smash: true, them: false },
+      { label: 'Designed for job-site use', smash: true, them: false },
+      { label: 'Free plan with real invoices', smash: true, them: false },
+      { label: 'GST-compliant by default', smash: true, them: true },
+      { label: 'ABN on every invoice', smash: true, them: true },
+      { label: 'Online payment collection', smash: true, them: true },
+      { label: 'Quote → invoice workflow', smash: true, them: true },
+      { label: 'Expense tracking', smash: false, them: true },
+      { label: 'BAS / PAYG reporting', smash: false, them: true },
+      { label: 'Multi-currency invoicing', smash: 'Coming soon', them: true },
+    ],
+    theyDoWell: [
+      { title: 'Full freelancer accounting', desc: 'Rounded handles invoicing, expenses, and basic BAS prep in one place. For a consultant or designer, it is a complete package.' },
+      { title: 'Clean web app', desc: 'Great desktop interface. If you do your admin at a desk, it is comfortable to work in.' },
+      { title: 'AU-focused tax tooling', desc: 'Built for Australian sole traders. GST and ABN are first-class, not retrofitted.' },
+    ],
+    weWin: [
+      { title: 'Voice-first, not desk-first', desc: 'Rounded assumes you are at a keyboard. SMASH assumes you are on a job with tools in your hand — and builds the whole experience around that.' },
+      { title: 'AI pricing, no manual setup', desc: 'Upload a couple of existing invoices; SMASH reads them and learns how you price. No line-item library to build.' },
+      { title: 'Trade-specific voice recognition', desc: 'SMASH understands "supplied and installed Rheem 250L" or "25m of 15mm copper." Rounded expects you to type it.' },
+      { title: 'Real free plan', desc: 'Rounded is paid-only from day one. SMASH\'s free plan gives you real GST invoices with no credit card.' },
+    ],
+    theyAreFor: 'Australian freelancers and consultants who want a full self-employed accounting toolkit with expenses, BAS prep, and desktop-class invoicing.',
+    weAreFor: 'Australian tradies and service businesses who want to speak a job description and have a GST-compliant invoice sent in under 60 seconds.',
+    closingLine: 'Freelancer at a desk who wants full accounting? Rounded. Tradie on a job who wants to get paid? SMASH.',
+    faq: [
+      {
+        q: 'Is Rounded a good fit for tradies?',
+        a: 'Rounded is built for freelancers and consultants. It handles GST and ABN well — but the flow assumes you are at a desk typing. For tradies who work on site, the friction adds up.',
+      },
+      {
+        q: 'Does SMASH replace full accounting software like Rounded?',
+        a: 'No. SMASH is focused on the quote-to-paid workflow. Expenses, BAS prep, and deeper accounting are not in scope. Pair SMASH with Rounded or Xero for the books.',
+      },
+      {
+        q: 'How does pricing compare?',
+        a: 'Rounded starts at $19.95 AUD/month and has no free plan. SMASH is free to start and $22.99 AUD/month for Pro.',
+      },
+      {
+        q: 'Will SMASH integrate with Rounded?',
+        a: 'Xero and QuickBooks integrations are on the roadmap. A Rounded integration is not currently planned — the overlap with SMASH is mostly on the invoicing side where SMASH is already native.',
+      },
+      {
+        q: 'Can SMASH handle GST for Australian sole traders?',
+        a: 'Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, and sequential invoice numbers — calculated per line item, automatically.',
+      },
+    ],
+  },
 ];
 
 export const comparisonBySlug: Record<string, ComparisonData> = Object.fromEntries(

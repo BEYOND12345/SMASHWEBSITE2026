@@ -31,6 +31,10 @@ import { SmashVsMyob } from './pages/smash-vs-myob';
 import { SmashVsServiceM8 } from './pages/smash-vs-servicem8';
 import { SmashVsQuickBooks } from './pages/smash-vs-quickbooks';
 import { SmashVsFergus } from './pages/smash-vs-fergus';
+import { SmashVsTradify } from './pages/smash-vs-tradify';
+import { SmashVsInvoice2go } from './pages/smash-vs-invoice2go';
+import { SmashVsJoist } from './pages/smash-vs-joist';
+import { SmashVsRounded } from './pages/smash-vs-rounded';
 import { BlogList } from './pages/blog-list';
 import { BlogPost } from './pages/blog-post';
 import { BlogAdmin } from './pages/admin/blog-admin';
@@ -55,6 +59,10 @@ import { ForArborists } from './pages/for-arborists';
 import { ForPoolMaintenance } from './pages/for-pool-maintenance';
 import { ForSolarInstallers } from './pages/for-solar-installers';
 import { ForRubbishRemoval } from './pages/for-rubbish-removal';
+import { ForItRepair } from './pages/for-it-repair';
+import { ForApplianceRepair } from './pages/for-appliance-repair';
+import { ForSecurityInstallers } from './pages/for-security-installers';
+import { ForFencers } from './pages/for-fencers';
 
 // International coming-soon / country landing pages
 import { CountryNZ } from './pages/country-nz';
@@ -101,6 +109,10 @@ function App() {
         <Route path="/smash-vs-servicem8" element={<SmashVsServiceM8 />} />
         <Route path="/smash-vs-quickbooks" element={<SmashVsQuickBooks />} />
         <Route path="/smash-vs-fergus" element={<SmashVsFergus />} />
+        <Route path="/smash-vs-tradify" element={<SmashVsTradify />} />
+        <Route path="/smash-vs-invoice2go" element={<SmashVsInvoice2go />} />
+        <Route path="/smash-vs-joist" element={<SmashVsJoist />} />
+        <Route path="/smash-vs-rounded" element={<SmashVsRounded />} />
 
         {/* Segment pages */}
         <Route path="/for-cleaners" element={<ForCleaners />} />
@@ -121,6 +133,10 @@ function App() {
         <Route path="/for-pool-maintenance" element={<ForPoolMaintenance />} />
         <Route path="/for-solar-installers" element={<ForSolarInstallers />} />
         <Route path="/for-rubbish-removal" element={<ForRubbishRemoval />} />
+        <Route path="/for-it-repair" element={<ForItRepair />} />
+        <Route path="/for-appliance-repair" element={<ForApplianceRepair />} />
+        <Route path="/for-security-installers" element={<ForSecurityInstallers />} />
+        <Route path="/for-fencers" element={<ForFencers />} />
 
         {/* International landing pages (coming soon / waitlist) */}
         <Route path="/nz" element={<CountryNZ />} />

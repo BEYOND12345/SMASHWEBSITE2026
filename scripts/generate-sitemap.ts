@@ -85,6 +85,10 @@ async function generateSitemap() {
     { loc: '/smash-vs-servicem8',   lastmod: today, changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-quickbooks',  lastmod: today, changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-fergus',      lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-tradify',     lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-invoice2go',  lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-joist',       lastmod: today, changefreq: 'monthly', priority: '0.9' },
+    { loc: '/smash-vs-rounded',     lastmod: today, changefreq: 'monthly', priority: '0.9' },
 
     // Segment / trade pages
     { loc: '/for-cleaners',         lastmod: today, changefreq: 'monthly', priority: '0.8' },
@@ -105,6 +109,10 @@ async function generateSitemap() {
     { loc: '/for-pool-maintenance', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/for-solar-installers', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/for-rubbish-removal',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-it-repair',            lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-appliance-repair',     lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-security-installers',  lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/for-fencers',              lastmod: today, changefreq: 'monthly', priority: '0.8' },
 
     // International landing pages (waitlist — live country is root)
     { loc: '/nz', lastmod: today, changefreq: 'weekly', priority: '0.8' },
