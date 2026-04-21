@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
+import { hreflangAlternates } from '../data/country-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
@@ -36,7 +37,7 @@ const faqs = [
   },
   {
     q: "Is it available globally?",
-    a: "SMASH is currently live on iOS. The materials catalog and GST features are optimised for Australia, with international markets (NZ, UK, US, Canada) planned. The core voice-to-invoice flow works for any service business anywhere."
+    a: "SMASH is live in Australia today and on iOS. New Zealand, the United Kingdom, the United States and Canada are next — each with localised tax handling (GST, VAT, state sales tax, HST/PST), local currency, and local business-number fields. Join the waitlist for your market at /nz, /uk, /us or /ca."
   }
 ];
 
@@ -63,8 +64,8 @@ export function AiInvoicing() {
     <>
       <SEO
         title="AI Invoicing App | AI Invoice Generator | SMASH Invoices"
-        description="AI invoicing that builds your invoice from a voice description. Speak the job for 30 seconds — SMASH generates a professional, priced invoice automatically. No typing required."
-        keywords="AI invoicing app, AI invoice generator, AI invoice software, artificial intelligence invoicing, automated invoice generation"
+        description="AI invoicing that builds your invoice from a voice description. Speak the job for 30 seconds — SMASH generates a professional, priced, tax-compliant invoice automatically. Live in Australia; coming to the UK, US, Canada and NZ."
+        keywords="AI invoicing app, AI invoice generator, AI invoice software, artificial intelligence invoicing, automated invoice generation, AI invoicing UK, AI invoicing USA, AI invoicing Canada"
         ogTitle="AI Invoicing — Invoice Generated from Your Voice | SMASH Invoices"
         ogDescription="Speak the job. SMASH builds the invoice automatically. The fastest AI invoicing app for service businesses."
         ogImage="https://smashinvoices.com/og-image.png"
@@ -72,6 +73,7 @@ export function AiInvoicing() {
         twitterTitle="AI Invoicing | SMASH Invoices"
         twitterDescription="Speak the job. SMASH builds the invoice automatically. Under 60 seconds."
         canonical="https://smashinvoices.com/ai-invoicing"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
@@ -95,8 +97,11 @@ export function AiInvoicing() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
               Your invoice.<br />Built from<br />your words.
             </h1>
-            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-8">
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
               Describe the job out loud. SMASH generates a professional, priced, tax-compliant invoice in under 60 seconds. No typing. No templates. No admin.
+            </p>
+            <p className="font-body text-sm text-white/45 max-w-2xl mb-8">
+              Live in Australia. Coming to <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">

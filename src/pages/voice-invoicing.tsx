@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
+import { hreflangAlternates } from '../data/country-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { Check, ChevronDown, Star, ArrowRight, Mic, FileText, Send, ThumbsUp, DollarSign } from 'lucide-react';
@@ -31,7 +32,11 @@ const faqs = [
   },
   {
     q: "Does voice invoicing work in Australia?",
-    a: "Yes. SMASH is built specifically for Australia — GST calculations, ABN display, ATO-compliant invoice format, and Australian trade materials pricing are all built in. Prices are in AUD."
+    a: "Yes. SMASH is live in Australia today — GST calculations, ABN display, ATO-compliant invoice format, and Australian trade materials pricing are all built in. Prices are in AUD."
+  },
+  {
+    q: "Does voice invoicing work outside Australia?",
+    a: "Yes — New Zealand, the United Kingdom, the United States, and Canada are next. Each launches with local tax rules (GST, VAT, sales tax, HST/PST), local currency, and local business-number fields. Join the waitlist at /nz, /uk, /us, or /ca for early access."
   },
   {
     q: "Is voice invoicing available on Android?",
@@ -62,12 +67,13 @@ export function VoiceInvoicing() {
     <>
       <SEO
         title="Voice Invoicing — What It Is and How It Works | SMASH"
-        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Learn what voice invoicing is, how it works, and why tradies use it."
-        keywords="voice invoicing, what is voice invoicing, voice to invoice, voice invoicing app Australia, how voice invoicing works"
+        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Live for Australian tradies today; coming to the UK, US, Canada and NZ. Learn what it is, how it works, and why tradies use it."
+        keywords="voice invoicing, what is voice invoicing, voice to invoice, voice invoicing app Australia, voice invoicing UK, voice invoicing USA, voice invoicing Canada, voice invoicing New Zealand, how voice invoicing works"
         ogTitle="Voice Invoicing — What It Is and How It Works | SMASH"
         ogDescription="Voice invoicing explained: describe the job out loud, invoice built automatically. The category defined."
         ogUrl="https://smashinvoices.com/voice-invoicing"
         canonical="https://smashinvoices.com/voice-invoicing"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createBreadcrumbSchema([
@@ -101,8 +107,11 @@ export function VoiceInvoicing() {
               Voice<br />
               <span className="text-accent">Invoicing.</span>
             </h1>
-            <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-10">
+            <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-4">
               Describe a job out loud. Invoice built automatically. Sent before you leave the driveway.
+            </p>
+            <p className="font-body text-sm text-slate-500 max-w-2xl leading-relaxed mb-10">
+              Live in Australia today. Coming to <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>
             <a
               href={APP_STORE_URL}

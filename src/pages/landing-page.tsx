@@ -108,7 +108,7 @@ export function LandingPage() {
               className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-6 animate-hero-reveal"
               style={{ animationDelay: '0ms' }}
             >
-              Voice to Invoice — Australia
+              Voice to Invoice — Australia <span className="text-accent/60">· UK / US / CA / NZ next</span>
             </p>
 
             {/* H1 — staggered line-by-line */}
@@ -173,6 +173,20 @@ export function LandingPage() {
               </div>
               <p className="font-body text-sm text-white/40 font-medium">
                 No credit card required · Free to start
+              </p>
+            </div>
+
+            {/* Global waitlist strip */}
+            <div className="mt-6 animate-hero-reveal" style={{ animationDelay: '720ms' }}>
+              <p className="font-body text-xs text-white/40 font-medium">
+                Outside Australia? Early access lists open:{' '}
+                <Link to="/nz" className="underline decoration-accent/50 hover:text-white">NZ</Link>
+                {' · '}
+                <Link to="/uk" className="underline decoration-accent/50 hover:text-white">UK</Link>
+                {' · '}
+                <Link to="/us" className="underline decoration-accent/50 hover:text-white">US</Link>
+                {' · '}
+                <Link to="/ca" className="underline decoration-accent/50 hover:text-white">CA</Link>
               </p>
             </div>
           </div>
