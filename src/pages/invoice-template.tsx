@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -349,6 +350,7 @@ export function InvoiceTemplate() {
         description="Free Australian invoice template. ATO-compliant tax invoice format with ABN, GST breakdown, and payment terms. Download free or generate by voice with SMASH."
         keywords="free invoice template australia, invoice template word australia, tax invoice template australia, gst invoice template"
         canonical="https://smashinvoices.com/invoice-template"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createCalculatorSchema({

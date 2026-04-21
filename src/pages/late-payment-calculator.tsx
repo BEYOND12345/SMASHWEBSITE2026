@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -346,6 +347,7 @@ export function LatePaymentCalculator() {
         description="Calculate interest on overdue invoices in Australia. Work out how much you're owed on a late payment using the standard commercial rate."
         keywords="late payment calculator australia, overdue invoice interest calculator, invoice interest calculator australia, commercial late payment interest"
         canonical="https://smashinvoices.com/late-payment-calculator"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createCalculatorSchema({

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
@@ -65,6 +66,7 @@ export function Tools() {
         description="Free tools and calculators for Australian tradies. GST calculator, invoice generator, quote builder, hourly rate calculator, profit calculator and more. No signup required."
         keywords="tradie tools australia, free business calculators tradies, gst calculator, invoice generator australia, hourly rate calculator tradies"
         canonical="https://smashinvoices.com/tools"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createBreadcrumbSchema([

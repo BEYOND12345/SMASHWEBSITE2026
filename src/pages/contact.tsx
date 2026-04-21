@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { Bug, MessageSquare, CreditCard, Users, Newspaper } from 'lucide-react';
@@ -22,6 +23,7 @@ export function Contact() {
         twitterTitle="Contact — SMASH Invoices"
         twitterDescription="Questions about SMASH Invoices? Get in touch."
         canonical="https://smashinvoices.com/contact"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

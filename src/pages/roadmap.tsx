@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -96,6 +97,7 @@ export function Roadmap() {
         ogTitle="SMASH Roadmap — What's Coming"
         ogDescription="See what's being built, what's shipping soon, and what's planned for SMASH Invoices."
         canonical="https://smashinvoices.com/roadmap"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

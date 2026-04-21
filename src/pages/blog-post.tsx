@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import {
@@ -109,6 +110,7 @@ export function BlogPost() {
         twitterDescription={post.meta_description || post.excerpt}
         twitterImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
         canonical={articleUrl}
+        hreflangs={hreflangAlternates.map(h => ({ hreflang: h.hreflang, href: articleUrl }))}
       />
 
       <StructuredData

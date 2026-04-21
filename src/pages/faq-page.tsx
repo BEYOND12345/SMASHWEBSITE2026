@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { ChevronDown, ArrowRight, Star } from 'lucide-react';
@@ -168,6 +169,7 @@ export function FAQPage() {
         twitterTitle="Voice Invoicing FAQ — SMASH Invoices"
         twitterDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works."
         canonical="https://smashinvoices.com/faq"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createBreadcrumbSchema([

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -580,6 +581,7 @@ export function InvoiceGenerator() {
         ogTitle="Free Invoice Generator for Tradies — SMASH"
         ogDescription="Voice-powered invoice generator for Australian tradies. ATO-compliant tax invoices in 60 seconds. Free to start."
         canonical="https://smashinvoices.com/invoice-generator"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createCalculatorSchema({

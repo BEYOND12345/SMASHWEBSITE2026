@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -413,6 +414,7 @@ export function ProfitCalculator() {
         description="Free job profit calculator for Australian tradies. Enter your materials, labour and overhead costs — instantly see what to charge, your profit margin, and your markup. Free to use."
         keywords="job profit calculator australia, tradie profit margin calculator, materials markup calculator, how much to charge for labour and materials australia, profit margin calculator tradies"
         canonical="https://smashinvoices.com/profit-calculator"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createCalculatorSchema({

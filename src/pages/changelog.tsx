@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
@@ -118,6 +119,7 @@ export function Changelog() {
         ogTitle="SMASH Changelog — Every Update"
         ogDescription="Every update to SMASH Invoices. See what's new, improved, and fixed."
         canonical="https://smashinvoices.com/changelog"
+        hreflangs={hreflangAlternates}
       />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, ArrowRight, Star } from 'lucide-react';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
@@ -24,6 +25,7 @@ export function Founder() {
         twitterTitle="Meet Dan — Founder of SMASH Invoices"
         twitterDescription="A working handyman who built voice to invoice software because typing quotes was slowing him down."
         canonical="https://smashinvoices.com/founder"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createBreadcrumbSchema([

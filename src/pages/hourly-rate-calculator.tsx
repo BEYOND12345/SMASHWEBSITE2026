@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo';
+import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -395,6 +396,7 @@ export function HourlyRateCalculator() {
         description="Free hourly rate calculator for Australian tradies. Work out what you need to charge to hit your income goal — including overhead, super, tax, and profit margin."
         keywords="tradie hourly rate calculator, hourly rate calculator australia, what to charge per hour australia, trade hourly rate"
         canonical="https://smashinvoices.com/hourly-rate-calculator"
+        hreflangs={hreflangAlternates}
       />
 
       <StructuredData data={createCalculatorSchema({
