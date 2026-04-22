@@ -12,6 +12,7 @@ import { VoiceInvoicing } from './pages/voice-invoicing';
 import { AiInvoicing } from './pages/ai-invoicing';
 import { GstCompliantInvoicing } from './pages/gst-compliant-invoicing';
 import { InvoiceOnMobile } from './pages/invoice-on-mobile';
+import { ChromeExtension } from './pages/chrome-extension';
 import { Roadmap } from './pages/roadmap';
 import { Changelog } from './pages/changelog';
 
@@ -98,6 +99,7 @@ function App() {
         <Route path="/ai-invoicing" element={<AiInvoicing />} />
         <Route path="/gst-compliant-invoicing" element={<GstCompliantInvoicing />} />
         <Route path="/invoice-on-mobile" element={<InvoiceOnMobile />} />
+        <Route path="/chrome-extension" element={<ChromeExtension />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/changelog" element={<Changelog />} />
 
@@ -146,7 +148,7 @@ function App() {
         <Route path="/for-security-installers" element={<ForSecurityInstallers />} />
         <Route path="/for-fencers" element={<ForFencers />} />
 
-        {/* International landing pages (coming soon / waitlist) */}
+        {/* International landing pages — live in NZ, UK, US, CA */}
         <Route path="/nz" element={<CountryNZ />} />
         <Route path="/uk" element={<CountryUK />} />
         <Route path="/us" element={<CountryUS />} />

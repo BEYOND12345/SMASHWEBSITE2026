@@ -88,7 +88,7 @@ export const integrations: IntegrationData[] = [
       { step: 4, title: 'Payments + reconciliation',      body: 'The moment the customer pays, SMASH records it and marks the matching QBO invoice paid.' },
     ],
     faqs: [
-      { q: 'When will the QuickBooks integration be available?',                      a: 'The QuickBooks Online integration is scheduled to launch alongside the US and Canada rollout. Join the waitlist to be notified the moment it goes live.' },
+      { q: 'When will the QuickBooks integration be available?',                      a: 'The QuickBooks Online integration is on the roadmap and a priority for the US and Canadian markets. Join the waitlist to be notified the moment it goes live.' },
       { q: 'Which QuickBooks version is supported?',                                   a: 'QuickBooks Online. Desktop versions of QuickBooks are not supported.' },
       { q: 'Will it handle US state sales tax correctly?',                             a: 'Yes. SMASH uses the sales tax agencies and rates configured in your QuickBooks Online company, applied per line.' },
       { q: 'Will it work in Canada with HST / GST / PST?',                             a: 'Yes. SMASH reads your QuickBooks Online Canadian tax setup and applies the right combination of HST, GST and PST by province.' },

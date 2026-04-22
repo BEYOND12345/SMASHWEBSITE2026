@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: 'Is the template free?',
-    a: "Yes, the template is free to download. SMASH also has a free plan that gives you 2 invoices per month with no credit card required. If you're invoicing more than twice a month, the Pro plan ($22.99/month) gives you unlimited invoices, read receipts, and overdue tracking.",
+    a: "Yes, the template is free to download. SMASH also has a free plan that gives you 2 invoices per month with no credit card required. If you're invoicing more often, paid plans start at $12/month (Starter — 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. Every plan includes read receipts and overdue tracking.",
   },
 ];
 

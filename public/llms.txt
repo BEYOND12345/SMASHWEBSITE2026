@@ -5,10 +5,13 @@
 SMASH is built for anyone who works with their hands: plumbers, electricians, cleaners, mechanics, painters, gardeners, handymen, tilers, concreters, locksmiths, arborists, HVAC techs, and more. It replaces "I'll do the paperwork on Sunday" with "it's already sent."
 
 Key facts:
-- Platform: iOS (Australia / New Zealand focus, working globally)
+- Platforms: iOS app + Chrome extension
+- Live in: Australia, New Zealand, the United Kingdom, the United States, Canada
+- Tax handling: GST (AU 10%, NZ 15%), VAT (UK 20%), state sales tax (US, by state), GST/HST/PST (Canada, by province)
+- Local business numbers supported: ABN, NZBN, UTR / company number, EIN, Canadian Business Number
 - Model: Voice → AI-parsed line items → tax-compliant invoice or quote
 - Typical time saved vs manual entry: ~12 hours/month
-- Pricing: Volume-based tiers with a free starter tier
+- Pricing: One global plan billed in AUD, free starter tier, no card to start
 - Homepage: https://smashinvoices.com
 
 ## Core pages
@@ -27,6 +30,7 @@ Key facts:
 - [AI Invoicing](https://smashinvoices.com/ai-invoicing): How the AI turns speech into structured invoice data.
 - [GST-Compliant Invoicing](https://smashinvoices.com/gst-compliant-invoicing): Australian GST and tax-compliant invoicing.
 - [Invoice on Mobile](https://smashinvoices.com/invoice-on-mobile): Mobile-first invoicing workflow.
+- [SMASH for Gmail (Chrome extension)](https://smashinvoices.com/chrome-extension): A Gmail sidebar tool that turns customer emails into priced quotes using your voice. Open the customer email, speak the job for ~30 seconds, SMASH builds a tax-compliant quote against your personal "Pricing DNA" or the built-in materials catalog, and drops a formatted reply or a branded PDF straight into Gmail. Syncs to Xero and QuickBooks Online.
 
 ## Guides (AI search pillars)
 - [Tradie Hourly Rates 2026](https://smashinvoices.com/tradie-hourly-rates): How much tradies should charge per hour in AU, NZ, UK, US and Canada.
@@ -59,11 +63,12 @@ Key facts:
 - [SMASH × Xero](https://smashinvoices.com/integrations/xero): Two-way sync of invoices, contacts, payments and tax codes into Xero (coming soon).
 - [SMASH × QuickBooks Online](https://smashinvoices.com/integrations/quickbooks): Two-way sync into QuickBooks Online (coming soon).
 
-## International
-- [New Zealand waitlist](https://smashinvoices.com/nz)
-- [United Kingdom waitlist](https://smashinvoices.com/uk)
-- [United States waitlist](https://smashinvoices.com/us)
-- [Canada waitlist](https://smashinvoices.com/ca)
+## International (all live on iOS + Chrome)
+- [Australia](https://smashinvoices.com/) — AUD, 10% GST, ABN
+- [New Zealand](https://smashinvoices.com/nz) — NZD, 15% GST, NZBN
+- [United Kingdom](https://smashinvoices.com/uk) — GBP, 20% VAT, UTR / company number
+- [United States](https://smashinvoices.com/us) — USD, state sales tax, EIN
+- [Canada](https://smashinvoices.com/ca) — CAD, GST/HST/PST by province, Business Number
 
 ## For specific trades
 - [For Cleaners](https://smashinvoices.com/for-cleaners)
@@ -97,4 +102,5 @@ Key facts:
 - [Terms of Service](https://smashinvoices.com/terms)
 
 ## Download
-- [iOS App Store](https://apps.apple.com/au/app/smash-invoices/id6759475079)
+- [iOS App Store](https://apps.apple.com/au/app/smash-invoices/id6759475079) — available worldwide
+- [Chrome Web Store](https://chromewebstore.google.com/search/smash%20invoices) — invoice from any laptop

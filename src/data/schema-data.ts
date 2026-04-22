@@ -4,12 +4,12 @@ export const organizationSchema = {
   "name": "SMASH Invoices",
   "url": "https://smashinvoices.com",
   "logo": "https://smashinvoices.com/og-image.png",
-  "description": "Voice-first quoting and invoicing app for Australian sole traders. Speak a job description and get a GST-compliant quote in under 60 seconds, sent to the customer before you leave the job site.",
+  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Speak a job description and get a tax-compliant quote (GST, VAT, sales tax or HST/PST) in under 60 seconds, sent to the customer before you leave the job site. Live in Australia, New Zealand, the UK, the US and Canada on iOS and Chrome.",
   "founder": {
     "@type": "Person",
     "name": "Dan Neale"
   },
-  "areaServed": "AU",
+  "areaServed": ["AU", "NZ", "GB", "US", "CA"],
   "identifier": {
     "@type": "PropertyValue",
     "name": "ABN",
@@ -28,7 +28,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "name": "SMASH Invoices",
   "url": "https://smashinvoices.com",
-  "description": "Voice-first quoting and invoicing app for Australian sole traders.",
+  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Live in Australia, New Zealand, the UK, the US and Canada on iOS and Chrome.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://smashinvoices.com/blog?search={search_term_string}",
@@ -42,20 +42,21 @@ export const softwareApplicationSchema = {
   "name": "SMASH Invoices",
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "InvoicingApplication",
-  "operatingSystem": "iOS",
+  "operatingSystem": "iOS, Chrome (extension)",
   "url": "https://smashinvoices.com",
   "downloadUrl": "https://apps.apple.com/app/id6759475079",
-  "description": "Voice-first quoting and invoicing app for Australian sole traders and tradespeople. Speak a job description aloud and get a GST-compliant, professionally formatted quote in under 60 seconds — with your own prices, materials priced automatically, customer approval portal, and payment built in.",
+  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Speak a job description aloud and get a tax-compliant, professionally formatted quote in under 60 seconds — with your own prices, materials priced automatically, customer approval portal, and payment built in. Live in Australia, New Zealand, the UK, the US and Canada on iOS and as a Chrome extension.",
   "featureList": [
     "Voice-to-quote in under 60 seconds",
-    "GST-compliant invoicing",
+    "Tax-compliant invoicing (GST, VAT, sales tax, HST/PST)",
     "Personal pricing catalog",
-    "2,250+ item Australian materials catalog",
+    "2,250+ item materials catalog",
     "Customer approval portal",
     "Built-in payment acceptance",
     "Invoice read receipts",
-    "ABN support",
-    "PDF export"
+    "Local business-number support (ABN, NZBN, UTR, EIN, BN)",
+    "PDF export",
+    "Available on iOS and Chrome"
   ],
   "offers": [
     {
@@ -68,8 +69,9 @@ export const softwareApplicationSchema = {
     {
       "@type": "Offer",
       "name": "Starter",
-      "price": "14.99",
+      "price": "12",
       "priceCurrency": "AUD",
+      "description": "20 quotes per month",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "billingDuration": "P1M"
@@ -78,16 +80,28 @@ export const softwareApplicationSchema = {
     {
       "@type": "Offer",
       "name": "Pro",
-      "price": "24.99",
+      "price": "29",
       "priceCurrency": "AUD",
+      "description": "35 quotes per month",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "billingDuration": "P1M"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Unlimited",
+      "price": "49",
+      "priceCurrency": "AUD",
+      "description": "Unlimited quotes",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "billingDuration": "P1M"
       }
     }
   ],
-  "inLanguage": "en-AU",
-  "countriesSupported": "AU"
+  "inLanguage": ["en-AU", "en-NZ", "en-GB", "en-US", "en-CA"],
+  "countriesSupported": ["AU", "NZ", "GB", "US", "CA"]
 };
 
 export const homepageFaqSchema = {
@@ -147,7 +161,7 @@ export const homepageFaqSchema = {
       "name": "Is SMASH Invoices free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SMASH Invoices has a free plan with limited quotes per month. Paid plans start at $14.99 AUD per month for the Starter tier, with Pro available at $24.99 AUD per month. All plans include full GST compliance, ABN support, and the voice-to-quote feature."
+        "text": "SMASH Invoices has a free plan with 2 quotes per month. Paid plans are Starter at $12 AUD/month (20 quotes), Pro at $29 AUD/month (35 quotes — most popular), and Unlimited at $49 AUD/month (unlimited quotes). All plans include the full feature set — GST compliance, ABN support, the voice-to-quote feature, and Xero/QuickBooks sync."
       }
     }
   ]

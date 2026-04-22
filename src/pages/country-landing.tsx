@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ArrowRight, Check } from 'lucide-react';
+import { ChevronDown, Apple, Chrome } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -13,25 +13,11 @@ interface CountryLandingProps {
   data: CountryData;
 }
 
+const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+
 export function CountryLanding({ data }: CountryLandingProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  // Waitlist signup uses a mailto handoff for now — the backend form
-  // will be swapped in when the country-specific product launches.
-  const waitlistMailto = `mailto:dan@smashinvoices.com?subject=${encodeURIComponent(
-    `SMASH ${data.code} waitlist`,
-  )}&body=${encodeURIComponent(
-    `Hi, please add me to the SMASH ${data.name} waitlist.\n\nEmail: ${email}\nTrade / work I do:\n`,
-  )}`;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    window.location.href = waitlistMailto;
-  };
 
   return (
     <>
@@ -65,7 +51,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28">
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-5">
-              {data.flagEmoji} Coming to {data.name}
+              {data.flagEmoji} Live in {data.name}
             </p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
               {data.heroHook}
@@ -74,32 +60,30 @@ export function CountryLanding({ data }: CountryLandingProps) {
               {data.heroSub}
             </p>
 
-            {/* Waitlist form */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                className="flex-1 px-5 py-4 rounded-2xl bg-white/10 text-white placeholder-white/40 border border-white/20 focus:border-accent focus:outline-none font-body"
-              />
-              <button
-                type="submit"
-                className="px-7 py-4 rounded-2xl bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-2"
+            {/* Download CTAs — iOS App Store + Chrome Web Store */}
+            <div className="flex flex-col sm:flex-row gap-3 max-w-lg">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
               >
-                Join waitlist <ArrowRight size={16} strokeWidth={2.5} />
-              </button>
-            </form>
-
-            {submitted && (
-              <p className="mt-4 text-accent text-sm font-semibold">
-                Thanks — we will email you the moment SMASH is live in {data.name}. Check your mail client for a confirmation draft.
-              </p>
-            )}
+                <Apple size={18} strokeWidth={2.5} />
+                Download on iOS
+              </a>
+              <a
+                href={CHROME_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 text-white font-display text-sm uppercase tracking-widest hover:bg-white/20 transition-all border border-white/15"
+              >
+                <Chrome size={18} strokeWidth={2.5} />
+                Get the Chrome extension
+              </a>
+            </div>
 
             <p className="mt-4 text-white/50 text-xs font-body">
-              No spam. Priority onboarding for early {data.demonym} users. Unsubscribe in one click.
+              Free to start. No credit card required. Same plan worldwide.
             </p>
           </AnimateIn>
         </div>
@@ -115,7 +99,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
             SMASH is a voice-to-invoice app for {data.demonym} sole traders and contractors —
             {' '}{data.audience}. You describe the job out loud, SMASH writes a professional
             {' '}{data.taxLabel.replace(/\s*\(.*\)/, '')}-compliant invoice in {data.currency.code} and sends it to your customer,
-            all in under 60 seconds.
+            all in under 60 seconds. Live on iOS and Chrome today.
           </p>
         </div>
       </section>
@@ -137,7 +121,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
               <AnimateIn key={i} direction="up">
                 <div className="rounded-3xl border border-slate-100 hover:border-accent transition-all p-8 h-full">
                   <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-5">
-                    <Check size={18} className="text-brand" strokeWidth={3} />
+                    <Apple size={18} className="text-brand" strokeWidth={2.5} />
                   </div>
                   <h3 className="font-display text-xl uppercase tracking-tight text-brand mb-3 leading-tight">
                     {r.title}
@@ -169,9 +153,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
               </div>
               <div className="bg-white rounded-2xl p-6 border border-slate-100">
                 <p className="font-display text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-2">Status</p>
-                <p className="font-display text-2xl text-brand">
-                  {data.live ? 'Live' : 'Waitlist'}
-                </p>
+                <p className="font-display text-2xl text-brand">Live</p>
               </div>
             </div>
           </AnimateIn>
@@ -215,27 +197,31 @@ export function CountryLanding({ data }: CountryLandingProps) {
       <section className="bg-brand py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter leading-[0.9] text-white mb-4">
-            Be first when SMASH lands in {data.name}.
+            Get SMASH for {data.name}.
           </h2>
           <p className="font-body text-white/60 mb-8 text-lg">
-            Early {data.demonym} users get priority onboarding and a direct line to the founder.
+            Free to start. No credit card. Works on iOS and as a Chrome extension.
           </p>
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-            <input
-              type="email"
-              required
-              placeholder="your@email.com"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="flex-1 px-5 py-4 rounded-2xl bg-white/10 text-white placeholder-white/40 border border-white/20 focus:border-accent focus:outline-none font-body"
-            />
-            <button
-              type="submit"
-              className="px-7 py-4 rounded-2xl bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-2"
+          <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Join waitlist <ArrowRight size={16} strokeWidth={2.5} />
-            </button>
-          </form>
+              <Apple size={18} strokeWidth={2.5} />
+              Download on iOS
+            </a>
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 text-white font-display text-sm uppercase tracking-widest hover:bg-white/20 transition-all border border-white/15"
+            >
+              <Chrome size={18} strokeWidth={2.5} />
+              Get Chrome extension
+            </a>
+          </div>
         </div>
       </section>
 

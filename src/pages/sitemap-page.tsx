@@ -37,6 +37,7 @@ const sections: Section[] = [
       { to: '/ai-invoicing',              label: 'AI invoicing',     note: 'How the AI turns speech into line items' },
       { to: '/gst-compliant-invoicing',   label: 'GST-compliant invoicing', note: 'ATO-ready tax invoices, coming soon for VAT / HST / sales tax' },
       { to: '/invoice-on-mobile',         label: 'Invoice on mobile', note: 'Mobile-first invoicing on site' },
+      { to: '/chrome-extension',          label: 'SMASH for Gmail',   note: 'Chrome extension that turns customer emails into priced quotes by voice — synced to Xero and QuickBooks' },
     ],
   },
   {
@@ -116,13 +117,13 @@ const sections: Section[] = [
   },
   {
     heading: 'Countries',
-    intro: 'Where SMASH is live and where waitlists are open.',
+    intro: 'SMASH is live everywhere on iOS and Chrome — country pages cover local tax, currency and business-number formats.',
     links: [
-      { to: '/',    label: 'Australia',       note: 'Live · AUD · GST' },
-      { to: '/nz',  label: 'New Zealand',     note: 'Waitlist · NZD · GST' },
-      { to: '/uk',  label: 'United Kingdom',  note: 'Waitlist · GBP · VAT' },
-      { to: '/us',  label: 'United States',   note: 'Waitlist · USD · Sales tax' },
-      { to: '/ca',  label: 'Canada',          note: 'Waitlist · CAD · GST / HST / PST' },
+      { to: '/',    label: 'Australia',       note: 'Live · AUD · GST (10%)' },
+      { to: '/nz',  label: 'New Zealand',     note: 'Live · NZD · GST (15%)' },
+      { to: '/uk',  label: 'United Kingdom',  note: 'Live · GBP · VAT (20%)' },
+      { to: '/us',  label: 'United States',   note: 'Live · USD · State sales tax' },
+      { to: '/ca',  label: 'Canada',          note: 'Live · CAD · GST / HST / PST' },
     ],
   },
   {
@@ -147,7 +148,7 @@ export function SitemapPage() {
     <>
       <SEO
         title="Sitemap | SMASH Invoices"
-        description="Every SMASH Invoices page in one place — product, comparisons, free tools, trade-specific landing pages, integrations, international waitlists and legal."
+        description="Every SMASH Invoices page in one place — product, comparisons, free tools, trade-specific landing pages, integrations, country pages and legal."
         canonical={url}
         ogTitle="Sitemap | SMASH Invoices"
         ogDescription="Every SMASH Invoices page in one place."

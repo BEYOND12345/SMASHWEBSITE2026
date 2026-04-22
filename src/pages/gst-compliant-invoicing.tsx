@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Does SMASH handle GST, VAT, HST and sales tax for other countries?",
-    a: "Yes. SMASH currently ships AU GST today and will support NZ GST (15%), UK VAT (20%), Canadian GST/HST/PST and US state sales tax as each country launches. You can join the waitlist for NZ, UK, US and Canada now."
+    a: "Yes. SMASH ships with AU GST (10%), NZ GST (15%), UK VAT (20%), Canadian GST/HST/PST and US state sales tax built in. Pick your country during onboarding and every invoice is formatted to local tax rules from the first job."
   },
   {
     q: "Does SMASH calculate GST automatically?",
@@ -64,10 +64,10 @@ export function GstCompliantInvoicing() {
     <>
       <SEO
         title="GST Compliant Invoicing App | Tax Invoice Generator Australia | SMASH"
-        description="Generate ATO-compliant tax invoices instantly. ABN included, GST calculated, line items itemised. Every invoice is legally correct — automatically. Built for Australia today; NZ, UK, US and Canada tax coming next."
+        description="Generate tax-compliant invoices instantly. ABN included, GST/VAT calculated, line items itemised. Every invoice is legally correct — automatically. Live in Australia, New Zealand, the UK, the US and Canada — tax handled per market."
         keywords="GST compliant invoice, tax invoice Australia, GST invoice generator, ATO invoice requirements, ABN invoice, GST invoice app, VAT invoice app, HST invoice app, sales tax invoice app"
         ogTitle="GST-Compliant Invoicing — SMASH"
-        ogDescription="Tax invoices that meet every ATO requirement. Generated in under 60 seconds. Coming next to NZ, UK, US and Canada."
+        ogDescription="Tax-compliant invoices generated in under 60 seconds — GST in Australia and NZ, VAT in the UK, sales tax in the US, HST/PST in Canada. Live on iOS and Chrome."
         canonical="https://smashinvoices.com/gst-compliant-invoicing"
         hreflangs={hreflangAlternates}
       />
@@ -293,7 +293,7 @@ export function GstCompliantInvoicing() {
                   { label: "Works on phone, on site", smash: true, sheet: false, xero: false },
                   { label: "Under 60 seconds per invoice", smash: true, sheet: false, xero: false },
                   { label: "Sends PDF to client directly", smash: true, sheet: false, xero: true },
-                  { label: "Price for solo operators", smash: "$22.99/mo", sheet: "Free", xero: "$78+/mo" },
+                  { label: "Price for solo operators", smash: "$12/mo", sheet: "Free", xero: "$78+/mo" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border">
                     <td className="py-4 pr-6 text-sm font-bold text-brand leading-[1.15]">{row.label}</td>

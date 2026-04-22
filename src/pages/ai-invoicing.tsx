@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Is it available globally?",
-    a: "SMASH is live in Australia today and on iOS. New Zealand, the United Kingdom, the United States and Canada are next — each with localised tax handling (GST, VAT, state sales tax, HST/PST), local currency, and local business-number fields. Join the waitlist for your market at /nz, /uk, /us or /ca."
+    a: "SMASH is live globally — Australia, New Zealand, the United Kingdom, the United States and Canada — on iOS and as a Chrome extension. Each market gets localised tax handling (GST, VAT, state sales tax, HST/PST), local currency, and local business-number fields. Pick your country during onboarding."
   }
 ];
 
@@ -64,7 +64,7 @@ export function AiInvoicing() {
     <>
       <SEO
         title="AI Invoicing App | AI Invoice Generator | SMASH Invoices"
-        description="AI invoicing that builds your invoice from a voice description. Speak the job for 30 seconds — SMASH generates a professional, priced, tax-compliant invoice automatically. Live in Australia; coming to the UK, US, Canada and NZ."
+        description="AI invoicing that builds your invoice from a voice description. Speak the job for 30 seconds — SMASH generates a professional, priced, tax-compliant invoice automatically. Live worldwide on iOS and Chrome — Australia, NZ, the UK, the US and Canada."
         keywords="AI invoicing app, AI invoice generator, AI invoice software, artificial intelligence invoicing, automated invoice generation, AI invoicing UK, AI invoicing USA, AI invoicing Canada"
         ogTitle="AI Invoicing — Invoice Generated from Your Voice | SMASH Invoices"
         ogDescription="Speak the job. SMASH builds the invoice automatically. The fastest AI invoicing app for service businesses."
@@ -101,7 +101,7 @@ export function AiInvoicing() {
               Describe the job out loud. SMASH generates a professional, priced, tax-compliant invoice in under 60 seconds. No typing. No templates. No admin.
             </p>
             <p className="font-body text-sm text-white/45 max-w-2xl mb-8">
-              Live in Australia. Coming to <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
+              Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">

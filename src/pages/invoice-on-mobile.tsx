@@ -60,7 +60,7 @@ export function InvoiceOnMobile() {
     <>
       <SEO
         title="Invoice on Mobile | Invoice from Your Phone | SMASH Invoices"
-        description="Invoice from your phone without typing. Speak the job, SMASH builds the invoice. Send a professional PDF before you leave the job site. Live in Australia; coming to New Zealand, the UK, the US and Canada."
+        description="Invoice from your phone without typing. Speak the job, SMASH builds the invoice. Send a professional PDF before you leave the job site. Live worldwide on iOS and Chrome — Australia, New Zealand, the UK, the US and Canada."
         keywords="invoice on mobile, invoice from phone, mobile invoicing app, iPhone invoice app, invoice on site, voice invoice phone, mobile invoicing UK, mobile invoicing USA, mobile invoicing Canada, mobile invoicing New Zealand"
         ogTitle="Invoice on Mobile — SMASH"
         ogDescription="Speak the job. Invoice sent. Before you leave the driveway."

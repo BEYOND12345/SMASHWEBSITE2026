@@ -29,8 +29,8 @@ import { AnimateIn } from '../components/animate-in';
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const homeFaqs = [
-  { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for Australian tradies. Describe the job out loud and get a professional, GST-compliant invoice in under 60 seconds. Free to start, no credit card required." },
-  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 2 invoices per month — no credit card needed. The Pro plan ($22.99/month) gives unlimited invoices, Stripe payments, read receipts, and customer history." },
+  { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
+  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 2 invoices per month — no credit card needed. Paid plans start at $12/month (Starter, 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. Every plan includes Stripe payments, read receipts and customer history." },
   { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
   { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
 ];
@@ -57,17 +57,17 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SEO
-        title="Tradie Invoicing App Australia | SMASH — Quote &amp; Invoice in 60 Seconds"
-        description="The invoicing &amp; quoting app built for Australian tradies. Speak a job description and get a GST-compliant invoice in under 60 seconds. Free to start. No typing, no laptop."
-        keywords="tradie invoicing app, tradie quoting software, invoicing software for tradies, tradie quoting app, tradie invoice app australia, voice invoicing australia, GST invoice app, tradie quoting tool, invoice app for tradies, mobile invoicing app australia"
-        ogTitle="Tradie Invoicing App Australia | SMASH — Quote in 60 Seconds"
-        ogDescription="The invoicing app built for Australian tradies. Speak a job and get a GST-compliant quote in 60 seconds. Free to start."
-        ogUrl="https://smashinvoices.com"
+        title="Voice to Invoice & Quote Software for Tradies | SMASH Invoices"
+        description="The invoicing and quoting app built for tradies and service businesses. Speak a job description and get a tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start. No typing, no laptop."
+        keywords="tradie invoicing app, tradie quoting software, invoicing software for tradies, tradie quoting app, voice invoicing, voice to invoice, voice invoicing UK, voice invoicing USA, voice invoicing Canada, voice invoicing New Zealand, voice invoicing Australia, GST invoice app, VAT invoice app, mobile invoicing app, Chrome invoicing extension, Gmail quoting tool"
+        ogTitle="Voice to Invoice & Quote Software for Tradies | SMASH Invoices"
+        ogDescription="The invoicing app for tradies and service businesses. Speak a job and get a tax-compliant quote in 60 seconds. Live in AU, NZ, UK, US and CA — on iOS and Chrome. Free to start."
+        ogUrl="https://smashinvoices.com/"
         twitterTitle="Voice to Invoice & Quote Software | SMASH"
         twitterDescription="Generate invoices 4x faster with voice. Just talk - SMASH creates professional invoices instantly."
         ogImage="https://smashinvoices.com/hero_image.png"
         twitterImage="https://smashinvoices.com/hero_image.png"
-        canonical="https://smashinvoices.com"
+        canonical="https://smashinvoices.com/"
         hreflangs={hreflangAlternates}
       />
 
@@ -108,7 +108,7 @@ export function LandingPage() {
               className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-6 animate-hero-reveal"
               style={{ animationDelay: '0ms' }}
             >
-              Voice to Invoice — Australia <span className="text-accent/60">· UK / US / CA / NZ next</span>
+              Voice to Invoice — Live in AU <span className="text-accent/60">· NZ · UK · US · CA</span>
             </p>
 
             {/* H1 — staggered line-by-line */}
@@ -176,10 +176,12 @@ export function LandingPage() {
               </p>
             </div>
 
-            {/* Global waitlist strip */}
+            {/* Global availability strip */}
             <div className="mt-6 animate-hero-reveal" style={{ animationDelay: '720ms' }}>
               <p className="font-body text-xs text-white/40 font-medium">
-                Outside Australia? Early access lists open:{' '}
+                Live worldwide on iOS &amp; Chrome:{' '}
+                <Link to="/" className="underline decoration-accent/50 hover:text-white">AU</Link>
+                {' · '}
                 <Link to="/nz" className="underline decoration-accent/50 hover:text-white">NZ</Link>
                 {' · '}
                 <Link to="/uk" className="underline decoration-accent/50 hover:text-white">UK</Link>

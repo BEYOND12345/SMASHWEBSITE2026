@@ -32,11 +32,11 @@ const faqs = [
   },
   {
     q: "Does voice invoicing work in Australia?",
-    a: "Yes. SMASH is live in Australia today — GST calculations, ABN display, ATO-compliant invoice format, and Australian trade materials pricing are all built in. Prices are in AUD."
+    a: "Yes. Australia is the founding market — GST calculations, ABN display, ATO-compliant invoice format, and a 2,250+ item materials catalog are all built in, with invoices in AUD. SMASH also runs live in NZ, the UK, the US and Canada with each market's local tax and currency."
   },
   {
     q: "Does voice invoicing work outside Australia?",
-    a: "Yes — New Zealand, the United Kingdom, the United States, and Canada are next. Each launches with local tax rules (GST, VAT, sales tax, HST/PST), local currency, and local business-number fields. Join the waitlist at /nz, /uk, /us, or /ca for early access."
+    a: "Yes — SMASH is live in Australia, New Zealand, the United Kingdom, the United States, and Canada. Each market gets local tax rules (GST, VAT, state sales tax, HST/PST), local currency, and local business-number fields. Download from your country's App Store, or use the Chrome extension on any laptop."
   },
   {
     q: "Is voice invoicing available on Android?",
@@ -67,7 +67,7 @@ export function VoiceInvoicing() {
     <>
       <SEO
         title="Voice Invoicing — What It Is and How It Works | SMASH"
-        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Live for Australian tradies today; coming to the UK, US, Canada and NZ. Learn what it is, how it works, and why tradies use it."
+        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Learn what it is, how it works, and why tradies use it."
         keywords="voice invoicing, what is voice invoicing, voice to invoice, voice invoicing app Australia, voice invoicing UK, voice invoicing USA, voice invoicing Canada, voice invoicing New Zealand, how voice invoicing works"
         ogTitle="Voice Invoicing — What It Is and How It Works | SMASH"
         ogDescription="Voice invoicing explained: describe the job out loud, invoice built automatically. The category defined."
@@ -111,7 +111,7 @@ export function VoiceInvoicing() {
               Describe a job out loud. Invoice built automatically. Sent before you leave the driveway.
             </p>
             <p className="font-body text-sm text-slate-500 max-w-2xl leading-relaxed mb-10">
-              Live in Australia today. Coming to <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
+              Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>
             <a
               href={APP_STORE_URL}
@@ -481,7 +481,7 @@ export function VoiceInvoicing() {
                 <span className="text-accent">Start talking.</span>
               </h2>
               <p className="font-body text-xl text-slate-400 leading-relaxed max-w-lg">
-                SMASH is the voice invoicing app built for Australian tradies. Free to try. No card needed.
+                SMASH is the voice invoicing app built for tradies and service businesses. Live in Australia, NZ, the UK, the US and Canada. Free to try. No card needed.
               </p>
               <div className="flex items-center gap-2 mt-4">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-accent fill-accent" />)}

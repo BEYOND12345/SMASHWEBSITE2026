@@ -459,7 +459,9 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             <Link to="/blog" className="hover:text-white/60 transition-colors">Blog</Link>
           </p>
           <p className="mt-4 text-xs text-white/30 font-medium">
-            Live in Australia · Coming to{' '}
+            Live worldwide on iOS &amp; Chrome ·{' '}
+            <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>
+            {', '}
             <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>
             {', '}
             <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>

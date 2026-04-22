@@ -420,7 +420,7 @@ function renderPost(post: BlogPost): string {
       url: SITE_URL,
       logo: `${SITE_URL}/favicon.svg`,
       description:
-        'Voice-to-invoice software for tradies, contractors and service businesses. Live in Australia; launching next in New Zealand, the UK, the US and Canada.',
+        'Voice-to-invoice software for tradies, contractors and service businesses. Live globally on iOS and Chrome — Australia, New Zealand, the United Kingdom, the United States and Canada.',
       areaServed: ['AU', 'NZ', 'GB', 'US', 'CA'],
       sameAs: [APP_STORE_URL],
     },
@@ -548,8 +548,9 @@ ${schemas
       <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome</a>
     </div>
     <div style="margin-top:14px;">
-      Live in Australia · Waitlists open for
-      <a href="/nz">NZ</a>,
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
       <a href="/uk">UK</a>,
       <a href="/us">US</a> and
       <a href="/ca">Canada</a>

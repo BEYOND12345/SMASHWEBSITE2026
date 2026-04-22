@@ -78,6 +78,7 @@ async function generateSitemap() {
     { loc: '/ai-invoicing',            lastmod: today, changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', lastmod: today, changefreq: 'monthly', priority: '0.8' },
     { loc: '/invoice-on-mobile',       lastmod: today, changefreq: 'monthly', priority: '0.8' },
+    { loc: '/chrome-extension',        lastmod: today, changefreq: 'monthly', priority: '0.9' },
 
     // Comparison pages
     { loc: '/smash-vs-xero',        lastmod: today, changefreq: 'monthly', priority: '0.9' },

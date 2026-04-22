@@ -108,11 +108,11 @@ const faqs = [
     questions: [
       {
         question: "How much does SMASH cost?",
-        answer: "SMASH is free to start — 10 quotes per month, no credit card required, no time limit on the free plan. When you're ready to go unlimited: Starter is $14.99 AUD/month for unlimited quotes and invoices. Pro is $24.99 AUD/month with priority support and advanced features. If you're invoicing daily, the app pays for itself on the first job of the month."
+        answer: "SMASH is free to start — 2 quotes per month, no credit card required, no time limit on the free plan. When you're ready for more volume: Starter is $12 AUD/month (20 quotes), Pro is $29 AUD/month (35 quotes — most popular), and Unlimited is $49 AUD/month for unlimited quotes. Every plan includes the full feature set, including Xero/QuickBooks sync. If you're invoicing daily, the app pays for itself on the first job of the month."
       },
       {
         question: "Is there a free trial?",
-        answer: "The free plan isn't a trial — it's a permanent free tier. You get 10 quotes a month for free, forever, with no credit card required. For most people, using SMASH free for even one week is enough to know whether they want to keep going. Try it on a couple of real jobs. See how it feels."
+        answer: "The free plan isn't a trial — it's a permanent free tier. You get 2 quotes a month for free, forever, with no credit card required. For most people, using SMASH free for even one week is enough to know whether they want to keep going. Try it on a couple of real jobs. See how it feels."
       },
       {
         question: "What do I need to get started?",
@@ -160,7 +160,7 @@ export function FAQPage() {
     <>
       <SEO
         title="FAQ | Voice Invoicing Questions Answered | SMASH Invoices"
-        description="Get answers to common questions about voice-to-invoice software, pricing, payments, and how SMASH works for service businesses in Australia."
+        description="Get answers to common questions about voice-to-invoice software, pricing, payments, and how SMASH works for tradies and service businesses in Australia, New Zealand, the UK, the US and Canada."
         keywords="voice invoicing FAQ, invoice questions, how does voice to invoice work, voice invoicing pricing, mobile invoicing questions"
         ogTitle="Voice Invoicing FAQ — SMASH Invoices"
         ogDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works for service businesses."

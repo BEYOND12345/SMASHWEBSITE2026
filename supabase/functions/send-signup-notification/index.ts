@@ -13,6 +13,7 @@ interface SignupData {
   trade_type?: string;
   quotes_per_week?: string;
   message?: string;
+  source?: string;
 }
 
 Deno.serve(async (req: Request) => {
@@ -78,6 +79,10 @@ Deno.serve(async (req: Request) => {
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 12px 0; font-weight: 600;">Quotes Per Week:</td>
             <td style="padding: 12px 0;">${signupData.quotes_per_week || 'Not provided'}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; font-weight: 600;">Source page:</td>
+            <td style="padding: 12px 0;"><code style="background: #edf2f7; padding: 2px 6px; border-radius: 4px;">${signupData.source || 'Not tracked'}</code></td>
           </tr>
         </table>
 

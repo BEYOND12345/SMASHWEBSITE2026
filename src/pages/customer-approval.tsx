@@ -91,7 +91,8 @@ export function CustomerApproval() {
               Send quotes and invoices as links, not PDFs. Read receipts fire the moment the customer opens them. One tap to approve. One tap to pay. Signed, audited, enforceable.
             </p>
             <p className="font-body text-sm text-white/40 max-w-2xl leading-relaxed mb-10">
-              Live in Australia · Waitlists open for{' '}
+              Live worldwide on iOS &amp; Chrome ·{' '}
+              <Link to="/" className="underline decoration-accent/60 hover:text-white">AU</Link>{' · '}
               <Link to="/nz" className="underline decoration-accent/60 hover:text-white">NZ</Link>{' · '}
               <Link to="/uk" className="underline decoration-accent/60 hover:text-white">UK</Link>{' · '}
               <Link to="/us" className="underline decoration-accent/60 hover:text-white">US</Link>{' · '}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Check, Eye, Zap, Star } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
@@ -12,36 +11,16 @@ import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6759475079";
 
-type CurrencyCode = 'AUD' | 'NZD' | 'GBP' | 'USD' | 'CAD';
-
-interface Currency {
-  code: CurrencyCode;
-  symbol: string;
-  label: string;
-  flag: string;
-  live: boolean;
-  waitlistPath?: string;
-  taxLabel: string;
-}
-
-const currencies: Currency[] = [
-  { code: 'AUD', symbol: '$',  label: 'AUD (Australia)',      flag: '🇦🇺', live: true,                              taxLabel: 'GST' },
-  { code: 'NZD', symbol: '$',  label: 'NZD (New Zealand)',    flag: '🇳🇿', live: false, waitlistPath: '/nz',        taxLabel: 'GST' },
-  { code: 'GBP', symbol: '£',  label: 'GBP (United Kingdom)', flag: '🇬🇧', live: false, waitlistPath: '/uk',        taxLabel: 'VAT' },
-  { code: 'USD', symbol: '$',  label: 'USD (United States)',  flag: '🇺🇸', live: false, waitlistPath: '/us',        taxLabel: 'Sales tax' },
-  { code: 'CAD', symbol: '$',  label: 'CAD (Canada)',         flag: '🇨🇦', live: false, waitlistPath: '/ca',        taxLabel: 'GST/HST/PST' },
-];
-
-// Indicative international launch pricing. AUD values are the live
-// figures today; the rest are currency-equivalent targets for the
-// upcoming multi-market launch (subject to final review before billing
-// goes live in each market).
+// Single global pricing in AUD — same plan worldwide. Invoices you send
+// to your customers default to your local currency (AUD / NZD / GBP /
+// USD / CAD); the subscription itself is billed in AUD on the same
+// plan in every market.
 type TierName = 'Free' | 'Starter' | 'Pro' | 'Unlimited';
-const tierPricing: Record<TierName, Record<CurrencyCode, string>> = {
-  Free:      { AUD: '0',      NZD: '0',      GBP: '0',      USD: '0',      CAD: '0'      },
-  Starter:   { AUD: '14.99',  NZD: '16.99',  GBP: '7.99',   USD: '9.99',   CAD: '13.99'  },
-  Pro:       { AUD: '24.99',  NZD: '27.99',  GBP: '13.99',  USD: '16.99',  CAD: '22.99'  },
-  Unlimited: { AUD: '39.99',  NZD: '44.99',  GBP: '21.99',  USD: '27.99',  CAD: '36.99'  },
+const tierPricing: Record<TierName, string> = {
+  Free:      '0',
+  Starter:   '12',
+  Pro:       '29',
+  Unlimited: '49',
 };
 
 interface Tier {
@@ -53,10 +32,10 @@ interface Tier {
 }
 
 const tiers: Tier[] = [
-  { name: 'Free',      volume: '2 quotes / month',   description: 'Try it risk-free. No card needed.',             highlight: false                         },
-  { name: 'Starter',   volume: '15 quotes / month',  description: 'For sole traders picking up the pace.',         highlight: false                         },
-  { name: 'Pro',       volume: '50 quotes / month',  description: 'The plan most tradies land on.',                highlight: true,  badge: 'Most Popular'  },
-  { name: 'Unlimited', volume: 'Unlimited quotes',   description: 'For high-volume operators and crews.',          highlight: false                         },
+  { name: 'Free',      volume: '2 quotes / month',   description: 'Test SMASH on real jobs. No card needed.',      highlight: false                         },
+  { name: 'Starter',   volume: '20 quotes / month',  description: 'Built for the side-hustle and weekenders.',     highlight: false                         },
+  { name: 'Pro',       volume: '35 quotes / month',  description: 'For service pros quoting every day.',           highlight: true,  badge: 'Most Popular'  },
+  { name: 'Unlimited', volume: 'Unlimited quotes',   description: 'For lead-rich businesses and crews.',           highlight: false                         },
 ];
 
 const features = [
@@ -93,25 +72,27 @@ const faqs = [
     answer: 'SMASH sends you a real-time notification the moment your customer opens the invoice or quote. So you know exactly when to follow up — no more chasing blindly.',
   },
   {
-    question: 'Which currencies will SMASH support?',
-    answer: 'SMASH bills in Australian Dollars (AUD) today. New Zealand Dollars (NZD), British Pounds (GBP), US Dollars (USD), and Canadian Dollars (CAD) are the next launch currencies. Each market launches with local tax handling — GST in AU/NZ, VAT in the UK, state sales tax in the US, GST/HST/PST in Canada.',
+    question: 'Which currencies does SMASH support?',
+    answer: 'Invoices you send your customers default to your local currency — AUD in Australia, NZD in New Zealand, GBP in the UK, USD in the US, CAD in Canada. Each market also gets local tax handling: GST in AU/NZ, VAT in the UK, state sales tax in the US, GST/HST/PST in Canada. The subscription itself is billed in AUD on the same plan everywhere.',
   },
   {
-    question: 'When will SMASH be available in my country?',
-    answer: 'Live in Australia today. New Zealand, the United Kingdom, the United States and Canada are the next wave — join the waitlist at /nz, /uk, /us or /ca and we will email you the moment the app is live in your App Store.',
+    question: 'Is SMASH available in my country?',
+    answer: 'Yes — SMASH is live in Australia, New Zealand, the United Kingdom, the United States and Canada. Download from your country\'s App Store, or use the Chrome extension on any laptop. Free to start, no credit card required.',
+  },
+  {
+    question: 'Why is the subscription priced in AUD?',
+    answer: 'SMASH is built in Australia and we keep one global plan so the price never moves on you when exchange rates shift. Same plan, same features, same price — wherever you work. Stripe handles the currency conversion at checkout.',
   },
 ];
 
 export function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [currencyCode, setCurrencyCode] = useState<CurrencyCode>('AUD');
-  const currency = currencies.find(c => c.code === currencyCode)!;
 
   return (
     <>
       <SEO
         title="Pricing | SMASH Invoices — Voice Invoicing for Tradies"
-        description="Simple volume-based pricing for SMASH Invoices. Free plan, plus Starter / Pro / Unlimited tiers. AUD live today; NZD, GBP, USD and CAD at launch in each market. Every plan includes the full feature set — just more quotes as you grow."
+        description="Simple volume-based pricing for SMASH Invoices. Free, Starter $12, Pro $29 and Unlimited $49 — every plan includes the full feature set. Billed in AUD; invoices send in your local currency (AUD, NZD, GBP, USD, CAD)."
         keywords="SMASH Invoices pricing, voice invoicing app pricing, invoice app Australia price, invoice app UK pricing, invoice app USA pricing, invoice app Canada pricing, invoice app NZ pricing"
         ogUrl="https://smashinvoices.com/pricing"
         canonical="https://smashinvoices.com/pricing"
@@ -132,7 +113,7 @@ export function Pricing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/40 mb-4">
-              Pricing — {currency.flag} {currency.code}
+              Pricing — One global plan
             </p>
             <h1 className="font-display text-6xl md:text-8xl lg:text-[112px] uppercase tracking-tighter leading-[0.88] text-white mb-6">
               Pay for<br />
@@ -142,34 +123,16 @@ export function Pricing() {
               Every plan includes the full feature set. The only difference is volume. Start free — no card needed.
             </p>
 
-            {/* Currency switcher */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full bg-white/5 border border-white/10">
-              {currencies.map(c => {
-                const active = c.code === currencyCode;
-                return (
-                  <button
-                    key={c.code}
-                    onClick={() => setCurrencyCode(c.code)}
-                    className={`px-4 py-2 rounded-full text-xs font-display uppercase tracking-widest transition-all ${
-                      active ? 'bg-accent text-brand' : 'text-white/60 hover:text-white'
-                    }`}
-                    aria-pressed={active}
-                  >
-                    <span className="mr-1.5">{c.flag}</span>
-                    {c.code}
-                  </button>
-                );
-              })}
+            {/* Global availability badge */}
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10">
+              <span className="font-display text-[11px] uppercase tracking-widest text-white/60">Live in</span>
+              <span className="text-base">🇦🇺 🇳🇿 🇬🇧 🇺🇸 🇨🇦</span>
+              <span className="font-display text-[11px] uppercase tracking-widest text-white/40">on iOS &amp; Chrome</span>
             </div>
 
-            {!currency.live && (
-              <p className="mt-5 font-body text-sm text-accent">
-                Indicative {currency.code} launch pricing.{' '}
-                <Link to={currency.waitlistPath!} className="underline hover:text-white">
-                  Join the waitlist →
-                </Link>
-              </p>
-            )}
+            <p className="mt-5 font-body text-sm text-white/50 max-w-md mx-auto">
+              Subscription billed in AUD worldwide. Invoices to your customers send in your local currency with the right tax format.
+            </p>
           </AnimateIn>
         </div>
       </section>
@@ -189,7 +152,7 @@ export function Pricing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {tiers.map((tier) => {
-              const price = tierPricing[tier.name][currencyCode];
+              const price = tierPricing[tier.name];
               const isFree = price === '0';
               return (
                 <AnimateIn key={tier.name} direction="up">
@@ -215,13 +178,13 @@ export function Pricing() {
 
                     <div className="flex items-end gap-1 mb-2">
                       <span className="font-display text-5xl tracking-tighter leading-none text-brand">
-                        {isFree ? 'Free' : `${currency.symbol}${price}`}
+                        {isFree ? 'Free' : `$${price}`}
                       </span>
                     </div>
                     <p className={`font-body text-sm mb-1 ${
                       tier.highlight ? 'text-brand/70' : 'text-slate-400'
                     }`}>
-                      {!isFree && `/ month ${currency.code}`}
+                      {!isFree && '/ month AUD'}
                       {isFree && 'no card required'}
                     </p>
 
@@ -243,29 +206,18 @@ export function Pricing() {
                     </p>
 
                     <div className="mt-auto">
-                      {currency.live ? (
-                        <a
-                          href={APP_STORE_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full block text-center py-4 rounded-2xl font-display text-sm uppercase tracking-widest transition-all bg-brand text-white hover:brightness-110"
-                        >
-                          {isFree ? 'Start Free' : 'Get Started'}
-                        </a>
-                      ) : (
-                        <Link
-                          to={currency.waitlistPath!}
-                          className="w-full block text-center py-4 rounded-2xl font-display text-sm uppercase tracking-widest transition-all bg-brand text-white hover:brightness-110"
-                        >
-                          Join {currency.code} waitlist
-                        </Link>
-                      )}
+                      <a
+                        href={APP_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full block text-center py-4 rounded-2xl font-display text-sm uppercase tracking-widest transition-all bg-brand text-white hover:brightness-110"
+                      >
+                        {isFree ? 'Start Free' : 'Get Started'}
+                      </a>
                       <p className={`text-center font-body text-xs mt-3 ${
                         tier.highlight ? 'text-brand/50' : 'text-slate-400'
                       }`}>
-                        {currency.live
-                          ? (isFree ? 'No account needed to try' : 'Cancel anytime · No lock-in')
-                          : `Priced in ${currency.code} at launch · ${currency.taxLabel} included`}
+                        {isFree ? 'No account needed to try' : 'Cancel anytime · No lock-in'}
                       </p>
                     </div>
                   </div>
@@ -275,9 +227,7 @@ export function Pricing() {
           </div>
 
           <p className="mt-10 text-center font-body text-xs text-slate-400 max-w-2xl mx-auto">
-            {currency.live
-              ? 'All prices in AUD and include GST. Payments processed securely through Stripe.'
-              : `Indicative ${currency.code} pricing shown for comparison. Final ${currency.code} pricing is locked in before the app launches in ${currency.label.split('(')[1]?.replace(')', '') ?? currency.code}. Until then, join the waitlist.`}
+            All prices in AUD and include GST. Same plan worldwide — Stripe converts at checkout to your local card currency. Customer-facing invoices send in your local currency (AUD, NZD, GBP, USD, CAD).
           </p>
         </div>
       </section>

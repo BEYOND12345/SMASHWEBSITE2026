@@ -129,7 +129,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What does SMASH cost vs Xero?',
-        a: 'SMASH starts at $0 with 2 free quotes per month. SMASH Pro is $22.99/month. Xero starts from $39/month. Many tradies run both at a combined cost under what Xero alone would cost if they\'re on a higher tier.',
+        a: 'SMASH starts at $0 with 2 free quotes per month, with paid plans from $12/month (Starter, 20 quotes) up to $49/month (Unlimited). Xero starts from $39/month. Many tradies run both at a combined cost under what Xero alone would cost if they\'re on a higher tier.',
       },
       {
         q: 'How long does it take to get set up?',
@@ -212,7 +212,7 @@ const comparisons: ComparisonData[] = [
       { title: 'Zero setup', desc: 'SMASH reads a couple of your old invoices and learns your rates on day one. MYOB requires configuring accounts, items, tax codes, and payment terms before you send a single invoice.' },
       { title: 'Actually mobile', desc: 'MYOB has a mobile app. It\'s not the same as being designed for mobile. SMASH was built from scratch to be used in one hand at a job site.' },
       { title: 'Voice input changes everything', desc: 'Describing a job out loud is 10x faster than tapping through MYOB\'s interface on a phone screen. Most tradies don\'t invoice until they\'re back at a desk — SMASH removes that delay entirely.' },
-      { title: 'Simpler pricing', desc: 'SMASH Free is $0. SMASH Pro is $22.99. No per-employee costs, no add-on modules, no surprises.' },
+      { title: 'Simpler pricing', desc: 'SMASH Free is $0. Paid plans are $12, $29 or $49/month — flat. No per-employee costs, no add-on modules, no surprises.' },
     ],
     theyAreFor: 'Businesses with employees, payroll, superannuation obligations, or those who need BAS lodgement tools and a full accounting system.',
     weAreFor: 'Solo tradies and small service businesses who need professional quotes and invoices sent fast — without the complexity of full accounting software.',
@@ -232,7 +232,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Is SMASH really free?',
-        a: 'Yes. SMASH Free gives you 2 quotes per month at $0, no credit card required. SMASH Pro is $22.99/month with unlimited quotes. You can try it today without entering payment details.',
+        a: 'Yes. SMASH Free gives you 2 quotes per month at $0, no credit card required. Paid plans start at $12/month (Starter — 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. You can try it today without entering payment details.',
       },
       {
         q: 'What if I don\'t like it?',
@@ -332,7 +332,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What\'s the real cost difference?',
-        a: 'ServiceM8 starts at $29/month and increases with users and features. SMASH Free is $0, SMASH Pro is $22.99/month — flat, no per-user fees. For a solo tradie, that\'s a meaningful saving.',
+        a: 'ServiceM8 starts at $29/month and increases with users and features. SMASH Free is $0, paid plans are $12, $29 or $49/month — flat, no per-user fees. For a solo tradie, that\'s a meaningful saving.',
       },
       {
         q: 'How long does SMASH take to set up?',
@@ -540,7 +540,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What about the price difference?',
-        a: 'Fergus starts at around $45/month and scales up with users. SMASH Free is $0, SMASH Pro is $22.99/month — flat rate, no per-user fees. For a solo operator, that\'s a real saving.',
+        a: 'Fergus starts at around $45/month and scales up with users. SMASH Free is $0, paid plans are $12, $29 or $49/month — flat rate, no per-user fees. For a solo operator, that\'s a real saving.',
       },
       {
         q: 'Does SMASH do job costing like Fergus?',
@@ -642,7 +642,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does SMASH compare on price?',
-        a: 'Tradify is billed per user, starting around $29 USD per user per month. SMASH has a free plan and a Pro plan at $22.99 AUD — flat rate, not per user.',
+        a: 'Tradify is billed per user, starting around $29 USD per user per month. SMASH has a free plan and paid plans at $12, $29 or $49 AUD/month — flat rate, not per user.',
       },
       {
         q: 'Can I switch my Tradify client list over?',
@@ -747,7 +747,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does pricing compare?',
-        a: 'Invoice2go starts at around $5.99 USD/month with paid tiers up to $39.99. SMASH has a free plan and a Pro plan at $22.99 AUD. Both are affordable — SMASH is the only one with a truly usable free tier.',
+        a: 'Invoice2go starts at around $5.99 USD/month with paid tiers up to $39.99. SMASH has a free plan and paid plans from $12 AUD/month (Starter — 20 quotes) up to $49 AUD/month (Unlimited). Both are affordable — SMASH is the only one with a truly usable free tier.',
       },
       {
         q: 'Can SMASH import my Invoice2go clients?',
@@ -851,11 +851,11 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Does SMASH work for US or Canadian contractors?',
-        a: 'US and CA versions are on the waitlist — see /us and /ca. The app launches with USD / CAD pricing and state / provincial tax handling.',
+        a: 'Yes — SMASH is live in the US and Canada. Download from your country\'s App Store or use the Chrome extension. State sales tax (US) and GST/HST/PST by province (Canada) are built in, and invoices send in USD or CAD.',
       },
       {
         q: 'What does SMASH cost compared to Joist?',
-        a: 'Joist has a free tier with limits, and paid from $13.99 USD/month. SMASH has a genuinely usable free plan and Pro at $22.99 AUD — flat rate, no per-user fees.',
+        a: 'Joist has a free tier with limits, and paid from $13.99 USD/month. SMASH has a genuinely usable free plan and paid plans at $12, $29 or $49 AUD/month — flat rate, no per-user fees.',
       },
       {
         q: 'Can I import my Joist client list?',
@@ -960,7 +960,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does pricing compare?',
-        a: 'Rounded starts at $19.95 AUD/month and has no free plan. SMASH is free to start and $22.99 AUD/month for Pro.',
+        a: 'Rounded starts at $19.95 AUD/month and has no free plan. SMASH is free to start, with paid plans from $12 AUD/month (Starter, 20 quotes) up to $49 AUD/month (Unlimited).',
       },
       {
         q: 'Will SMASH integrate with Rounded?',

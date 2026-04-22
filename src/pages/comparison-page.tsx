@@ -626,7 +626,9 @@ export function ComparisonPage({ data }: Props) {
             </div>
 
             <p className="mt-5 font-body text-xs text-brand/50 font-medium text-center">
-              Live in Australia · Waitlists open for{' '}
+              Live worldwide on iOS &amp; Chrome ·{' '}
+              <Link to="/" className="underline decoration-accent/60 hover:text-brand">AU</Link>
+              {', '}
               <Link to="/nz" className="underline decoration-accent/60 hover:text-brand">NZ</Link>
               {', '}
               <Link to="/uk" className="underline decoration-accent/60 hover:text-brand">UK</Link>

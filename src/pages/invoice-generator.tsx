@@ -85,7 +85,7 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is the invoice generator free?',
-    a: 'Yes — SMASH has a free plan that lets you send 2 invoices per month with no credit card required. The free web invoice builder on this page is also completely free with no signup. Upgrade to the Pro plan ($22.99/month) for unlimited invoices, read receipts, and overdue tracking.',
+    a: 'Yes — SMASH has a free plan that lets you send 2 invoices per month with no credit card required. The free web invoice builder on this page is also completely free with no signup. Paid plans start at $12/month (Starter — 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month for unlimited invoices, read receipts and overdue tracking.',
   },
   {
     q: 'Are SMASH invoices ATO-compliant?',
@@ -579,7 +579,7 @@ export function InvoiceGenerator() {
         description="Australia's fastest invoice generator. Describe the job out loud — get an ATO-compliant tax invoice with Stripe payment link in under 60 seconds. Free to start."
         keywords="free invoice generator australia, tradie invoice generator, invoice generator app, tax invoice generator australia, GST invoice generator"
         ogTitle="Free Invoice Generator for Tradies — SMASH"
-        ogDescription="Voice-powered invoice generator for Australian tradies. ATO-compliant tax invoices in 60 seconds. Free to start."
+        ogDescription="Voice-powered invoice generator for tradies and service businesses. Tax-compliant invoices in 60 seconds — GST, VAT, sales tax or HST. Free to start."
         canonical="https://smashinvoices.com/invoice-generator"
         hreflangs={hreflangAlternates}
       />

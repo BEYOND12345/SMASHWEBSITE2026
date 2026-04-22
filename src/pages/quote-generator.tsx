@@ -82,7 +82,7 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is SMASH really free?',
-    a: 'Yes. The free plan gives you 2 quotes per month, forever, with no credit card needed to start. If you need unlimited quotes, the Pro plan is $22.99/month. You can also use the quote builder on this page for free, with no download or login required.',
+    a: 'Yes. The free plan gives you 2 quotes per month, forever, with no credit card needed to start. Paid plans start at $12/month (Starter, 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. You can also use the quote builder on this page for free, with no download or login required.',
   },
   {
     q: 'Does it work on Android?',
@@ -506,7 +506,7 @@ export function QuoteGenerator() {
         description="Australia's fastest quote generator. Describe the job out loud — get a professional, GST-compliant quote in 60 seconds. Free to start. iPhone app for tradies."
         keywords="free quote generator australia, tradie quote generator, quote generator app, invoice quote generator, GST quote generator australia"
         ogTitle="Free Quote Generator for Tradies — SMASH"
-        ogDescription="Voice-powered quote generator for Australian tradies. Professional quotes in 60 seconds. Free to start."
+        ogDescription="Voice-powered quote generator for tradies and service businesses. Professional quotes in 60 seconds. Live in Australia, NZ, the UK, the US and Canada. Free to start."
         canonical="https://smashinvoices.com/quote-generator"
         hreflangs={hreflangAlternates}
       />

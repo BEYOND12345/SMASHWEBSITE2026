@@ -21,19 +21,21 @@ export function SignupForm() {
     setSubmitStatus('idle');
     setErrorMessage('');
 
+    const source = typeof window !== 'undefined' ? window.location.pathname : 'unknown';
+    const payload = {
+      email: formData.email,
+      name: formData.name || null,
+      phone: formData.phone || null,
+      trade_type: formData.trade_type || null,
+      quotes_per_week: formData.quotes_per_week || null,
+      message: formData.message || null,
+      source,
+    };
+
     try {
       const { error } = await supabase
         .from('beta_signups')
-        .insert([
-          {
-            email: formData.email,
-            name: formData.name || null,
-            phone: formData.phone || null,
-            trade_type: formData.trade_type || null,
-            quotes_per_week: formData.quotes_per_week || null,
-            message: formData.message || null
-          }
-        ]);
+        .insert([payload]);
 
       if (error) {
         console.error('Supabase insert error:', error);
@@ -54,7 +56,7 @@ export function SignupForm() {
               'Authorization': `Bearer ${supabaseKey}`,
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(payload),
           });
 
           const result = await response.json();
@@ -276,7 +278,7 @@ export function SignupForm() {
             </button>
 
             <p className="text-base text-brand/90 text-center font-medium leading-[1.15] pt-2">
-              No spam. Just updates about early access and new features.
+              No spam. Just product updates and the occasional new feature.
             </p>
           </form>
         )}

@@ -204,6 +204,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/ai-invoicing" className={linkClass}>AI Invoicing</Link></li>
                 <li><Link to="/gst-compliant-invoicing" className={linkClass}>GST Invoicing</Link></li>
                 <li><Link to="/invoice-on-mobile" className={linkClass}>Invoice on Mobile</Link></li>
+                <li><Link to="/chrome-extension" className={linkClass}>SMASH for Gmail</Link></li>
               </FooterSection>
 
               <FooterSection title="Guides">
@@ -246,31 +247,11 @@ export function Footer({ showCTA = false }: FooterProps) {
               </FooterSection>
 
               <FooterSection title="Countries">
-                <li>
-                  <Link to="/" className={linkClass}>
-                    Australia <span className="text-white/30 font-medium">· Live</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/nz" className={linkClass}>
-                    New Zealand <span className="text-white/30 font-medium">· Waitlist</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/uk" className={linkClass}>
-                    United Kingdom <span className="text-white/30 font-medium">· Waitlist</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/us" className={linkClass}>
-                    United States <span className="text-white/30 font-medium">· Waitlist</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/ca" className={linkClass}>
-                    Canada <span className="text-white/30 font-medium">· Waitlist</span>
-                  </Link>
-                </li>
+                <li><Link to="/" className={linkClass}>Australia</Link></li>
+                <li><Link to="/nz" className={linkClass}>New Zealand</Link></li>
+                <li><Link to="/uk" className={linkClass}>United Kingdom</Link></li>
+                <li><Link to="/us" className={linkClass}>United States</Link></li>
+                <li><Link to="/ca" className={linkClass}>Canada</Link></li>
               </FooterSection>
 
               <FooterSection title="Legal">

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Voice Invoicing Accurate Enough to Trust?</title>
+  <meta name="description" content="Yes — when the app knows your pricing. SMASH Invoices learns your rates from your own invoices. Specific job descriptions produce accurate invoices from day one.">
+  <meta name="keywords" content="is voice invoicing accurate">
+  <meta name="author" content="Dan Reeve">
+  <link rel="canonical" href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Same-URL hreflang alternates: content is globally-relevant; per-country
+       product pages live at /nz /uk /us /ca. -->
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="alternate" hreflang="en-AU"     href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="alternate" hreflang="en-NZ"     href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="alternate" hreflang="en-GB"     href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="alternate" hreflang="en-US"     href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <link rel="alternate" hreflang="en-CA"     href="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <meta property="og:site_name" content="SMASH Invoices">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Is Voice Invoicing Accurate Enough to Trust?">
+  <meta property="og:description" content="Yes — when the app knows your pricing. SMASH Invoices learns your rates from your own invoices. Specific job descriptions produce accurate invoices from day one.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/is-voice-invoicing-accurate">
+  <meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU">
+  <meta property="article:published_time" content="2026-04-06T14:00:00.000Z">
+  <meta property="article:modified_time" content="2026-04-06T14:00:00.000Z">
+  <meta property="article:author" content="Dan Reeve">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Is Voice Invoicing Accurate Enough to Trust?">
+  <meta name="twitter:description" content="Yes — when the app knows your pricing. SMASH Invoices learns your rates from your own invoices. Specific job descriptions produce accurate invoices from day one.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+  --bg: #0A0A0A;
+  --bg-soft: #111;
+  --surface: rgba(255,255,255,0.04);
+  --surface-strong: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.1);
+  --text: #F5F5F5;
+  --text-muted: rgba(255,255,255,0.65);
+  --text-dim: rgba(255,255,255,0.45);
+  --accent: #D9F99D;
+  --accent-ink: #0A0A0A;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  }
+  .nav-brand {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800; letter-spacing: 0.02em;
+  color: #fff; font-size: 22px; text-transform: uppercase;
+  }
+  .nav-links { display: none; gap: 28px; }
+  .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: #fff; text-decoration: none; }
+  .nav-cta {
+  background: var(--accent); color: var(--accent-ink);
+  padding: 9px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.01em;
+  }
+  .nav-cta:hover { filter: brightness(0.95); text-decoration: none; }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+  main { padding: 48px 0 64px; }
+  .back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--accent); font-size: 14px; font-weight: 600;
+  margin-bottom: 28px;
+  }
+  h1.post-title {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+  color: #fff;
+  }
+  .post-meta {
+  display: flex; flex-wrap: wrap; gap: 14px 22px;
+  color: var(--text-muted); font-size: 14px; font-weight: 500;
+  margin-bottom: 28px;
+  }
+  .post-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .featured-img {
+  border-radius: 16px; overflow: hidden;
+  background: var(--surface);
+  margin: 0 0 40px;
+  border: 1px solid var(--border);
+  }
+  .takeaways {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin: 0 0 40px;
+  }
+  .takeaways h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-size: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+  margin: 0 0 12px; color: var(--accent);
+  }
+  .takeaways ul { margin: 0; padding-left: 20px; }
+  .takeaways li { margin: 6px 0; color: var(--text); }
+  .prose h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.6vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 48px 0 16px;
+  color: #fff;
+  }
+  .prose h3 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 32px 0 12px;
+  color: #fff;
+  }
+  .prose p { margin: 0 0 18px; color: rgba(255,255,255,0.85); }
+  .prose ul, .prose ol { margin: 0 0 18px; padding-left: 22px; }
+  .prose li { margin: 8px 0; color: rgba(255,255,255,0.85); }
+  .prose strong { color: #fff; }
+  .prose blockquote {
+  margin: 24px 0;
+  padding: 12px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: rgba(255,255,255,0.85);
+  border-radius: 0 10px 10px 0;
+  }
+  .prose img { border-radius: 12px; margin: 24px 0; }
+  .prose code {
+  background: var(--surface-strong);
+  padding: 2px 6px; border-radius: 6px;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  }
+  .prose pre {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 16px; border-radius: 12px;
+  overflow-x: auto;
+  }
+  .prose a { border-bottom: 1px solid rgba(217,249,157,0.4); }
+  .prose a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+  .faq { margin: 56px 0 0; }
+  .faq h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800; font-size: clamp(28px, 4vw, 36px);
+  margin: 0 0 20px; color: #fff;
+  }
+  .faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 10px;
+  }
+  .faq summary {
+  cursor: pointer; font-weight: 600; color: #fff; font-size: 16px;
+  list-style: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; float: right; color: var(--accent); font-weight: 700; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details[open] summary { margin-bottom: 8px; }
+  .faq p { color: var(--text-muted); margin: 8px 0 0; }
+  .cta-card {
+  margin: 56px 0 0;
+  background: linear-gradient(135deg, rgba(217,249,157,0.12), rgba(217,249,157,0.04));
+  border: 1px solid rgba(217,249,157,0.25);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  }
+  .cta-card h3 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-size: 28px; font-weight: 800; margin: 0 0 10px; color: #fff;
+  }
+  .cta-card p { color: var(--text-muted); margin: 0 0 20px; }
+  .cta-btn {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 12px 24px; border-radius: 999px;
+  font-weight: 700; font-size: 15px;
+  }
+  .cta-btn:hover { filter: brightness(0.95); text-decoration: none; }
+  .author-card {
+  margin: 48px 0 0;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 15px;
+  }
+  .author-card strong { color: #fff; }
+  footer {
+  margin-top: 80px;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 14px;
+  text-align: center;
+  }
+  footer a { color: var(--text-muted); margin: 0 10px; }
+  footer a:hover { color: #fff; text-decoration: none; }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is Voice Invoicing Accurate Enough to Trust?","description":"Yes — when the app knows your pricing. SMASH Invoices learns your rates from your own invoices. Specific job descriptions produce accurate invoices from day one.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-04-06T14:00:00.000Z","dateModified":"2026-04-06T14:00:00.000Z","author":{"@type":"Person","name":"Dan Reeve"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/is-voice-invoicing-accurate"},"keywords":"is voice invoicing accurate","wordCount":1042,"articleSection":"Blog","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"Is Voice Invoicing Accurate Enough to Trust?","item":"https://smashinvoices.com/blog/is-voice-invoicing-accurate"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SMASH Invoices","url":"https://smashinvoices.com","logo":"https://smashinvoices.com/favicon.svg","description":"Voice-to-invoice software for tradies, contractors and service businesses. Live globally on iOS and Chrome — Australia, New Zealand, the United Kingdom, the United States and Canada.","areaServed":["AU","NZ","GB","US","CA"],"sameAs":["https://apps.apple.com/au/app/smash-invoices/id6759475079"]}</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">SMASH</a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="nav-cta" rel="nofollow">Get the app</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="container">
+      <a href="/blog" class="back-link">← Back to Blog</a>
+      <header>
+        <h1 class="post-title">Is Voice Invoicing Accurate Enough to Trust?</h1>
+        <div class="post-meta">
+          <span>By Dan Reeve</span>
+          <span><time datetime="2026-04-06T14:00:00.000Z">7 April 2026</time></span>
+          
+          <span>5 min read</span>
+        </div>
+        
+      </header>
+
+      
+
+      <div class="prose"><p><strong>By Dan Reeve</strong> — Working handyman and founder of SMASH Invoices.
+Dan has been a sole trader for over a decade and built SMASH after losing $1,200 in uninvoiced jobs in a single year. He still takes on handyman work and uses SMASH on every job.
+<a href="https://smashinvoices.com/about">About Dan →</a></p>
+<p>Yes, when the app knows your pricing. Voice invoicing apps that use a personal pricing catalog — where your rates are stored from your own past invoices — achieve accuracy equivalent to manually typed invoices. <a href="https://deepgram.com/learn/nova-2-speech-to-text-model">Deepgram Nova-2</a>, the transcription engine used by SMASH Invoices, achieves 95%+ accuracy for natural speech including Australian accents and trade terminology. SMASH Invoices learns your rates from an initial invoice upload and uses those rates on every subsequent job. The primary variable is description quality: specific descriptions produce accurate invoices; vague descriptions require review.</p>
+<hr>
+<h2>The accuracy question is really two questions</h2>
+<p>When people ask &quot;is voice invoicing accurate?&quot;, they&#39;re usually asking two different things:</p>
+<p><strong>Question 1: Does the app correctly hear what I say?</strong>
+Speech-to-text accuracy for English in quiet environments is consistently above 95% with modern transcription technology. Background noise (traffic, tools, radio) reduces this. Speaking clearly, close to the phone, in a brief natural description produces reliable transcription. For trades terminology — &quot;P-trap,&quot; &quot;GPO,&quot; &quot;flexi hose&quot; — accuracy depends on whether the app is trained for trade language specifically.</p>
+<p><strong>Question 2: Does the app price the job correctly?</strong>
+This depends entirely on whether the app knows your prices. A generic pricing engine will return industry averages — which may be significantly different from what you charge. An app that has learned your rates from your own invoices will return your prices every time.</p>
+<p>SMASH Invoices solves both. Deepgram Nova-2 transcription is purpose-built for natural speech including Australian accents and trade terminology. Pricing is personalised from your own invoice uploads — so the labour rate, the call-out fee, and the standard service charges are yours, not an average.</p>
+<hr>
+<h2>What good accuracy looks like in practice</h2>
+<p>You describe: &quot;Replaced kitchen mixer tap. Labour one hour. New Caroma mixer tap, two flexi hoses, thread seal.&quot;</p>
+<p>The invoice generates:</p>
+<ul>
+<li>Labour — 1 hour @ [your saved rate]</li>
+<li>Caroma mixer tap — [catalog price]</li>
+<li>Flexi hose × 2 — [catalog price]</li>
+<li>Thread seal — [catalog price]</li>
+<li>GST — calculated</li>
+<li>Total — [correct]</li>
+</ul>
+<p>You review. It looks right. You send.</p>
+<p>That&#39;s a standard job. Under 25 seconds from speaking to sending. Accurate. Professional. GST-compliant.</p>
+<hr>
+<h2>When to review before sending</h2>
+<p>There are three situations that warrant a second look before hitting send:</p>
+<p><strong>1. Unusual or complex jobs.</strong> Jobs involving specialist materials, custom rates, or job-specific arrangements should be reviewed. The app will generate the best invoice it can from your description, but unusual work deserves a human check.</p>
+<p><strong>2. New materials not in the catalog.</strong> If you describe a material the app hasn&#39;t seen before, it may substitute a closest match or flag it for manual entry. This happens less as your personal catalog grows.</p>
+<p><strong>3. Negotiated prices.</strong> If the customer has been given a quote at a specific price that differs from your catalog rate, review the invoice before sending to ensure the line items match the approved quote.</p>
+<p>For standard repeat jobs — the vast majority of what most sole traders do — the invoice generates accurately on the first attempt.</p>
+<blockquote>
+<p>&quot;I was skeptical. Tried a voice invoice on a job I knew well — standard clean, three bedrooms. Came out exactly right. Same prices as I&#39;d type manually. Haven&#39;t manually typed an invoice since.&quot;
+— <strong>Renee O., Cleaner, Newcastle NSW</strong> [PLACEHOLDER]</p>
+</blockquote>
+<hr>
+<h2>The accuracy improves over time</h2>
+<p>SMASH Invoices gets more accurate the more you use it. Every confirmed invoice feeds back into your personal catalog. The app learns the specific language you use for your services, the materials you use most often, the customers you invoice regularly.</p>
+<p>After ten jobs, it knows your business patterns. After fifty jobs, it anticipates them. The accuracy that starts at 90%+ on day one approaches near-total accuracy for repeat jobs within a few months of regular use.</p>
+<p>The answer to &quot;is it accurate enough to trust?&quot; is yes — from day one for standard jobs, and better every day after.</p>
+<hr>
+<h2>Frequently asked questions</h2>
+<p><strong>How accurate is voice recognition for tradespeople in Australia?</strong>
+Modern voice transcription technology achieves 95%+ accuracy in clear conditions for Australian English. Apps using Deepgram Nova-2 or equivalent transcription are trained on natural speech including regional accents and professional terminology. Accuracy decreases in high-noise environments — speaking clearly near the microphone in a moment of relative quiet produces the most reliable results.</p>
+<p><strong>Will a voice invoicing app understand trade terminology?</strong>
+Yes, if the app is specifically designed for trades invoicing. SMASH Invoices uses transcription trained on natural speech and an AI extraction layer that understands trade terminology — P-trap, GPO, flexi hose, circuit breaker, silicone sealant — and maps them to correct materials catalog items. Generic voice assistants (Siri, Google Assistant) do not have this trade-specific recognition.</p>
+<p><strong>What happens if the voice invoice prices a material incorrectly?</strong>
+If a line item is incorrect, tap to edit before sending. The review step before sending is the quality check. For common materials and services, the generated invoice will match your catalog. For unusual items, manual adjustment takes seconds — and the correction is saved to your personal catalog for future accuracy.</p>
+<p><strong>Does voice invoicing work with an Australian accent?</strong>
+Yes. SMASH Invoices uses Deepgram Nova-2 transcription, which is trained on diverse accents including Australian English. Users across all states report reliable transcription without needing to modify their natural speech or pronunciation.</p>
+<p><strong>How does SMASH Invoices learn my personal pricing?</strong>
+During initial setup, you upload 1–3 of your existing invoices — any format, any style. SMASH Invoices uses AI vision to read and extract your line items, rates, and pricing structure, building a personal catalog. This catalog is used as the default pricing for every subsequent invoice. You can add, edit, or remove items from your catalog at any time.</p>
+<hr>
+<p><strong>Try it on a job you know well. See the result in 20 seconds.</strong>
+<a href="https://smashinvoices.com">Start Free →</a></p>
+</div>
+
+      
+
+      <aside class="cta-card">
+        <h3>Ready to stop typing invoices?</h3>
+        <p>SMASH turns your voice into professional invoices and quotes in under 60 seconds. Built for tradies.</p>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download SMASH Invoices</a>
+      </aside>
+
+      <div class="author-card"><strong>About Dan Reeve</strong><br>Working handyman and founder of SMASH Invoices. Dan has been a sole trader for over a decade and built SMASH after losing $1,200 in uninvoiced jobs in a single year.</div>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice invoicing</a>
+      <a href="/tradie-hourly-rates">Hourly rates</a>
+      <a href="/materials-pricing">Materials pricing</a>
+      <a href="/customer-approval">Customer approval</a>
+      <a href="/tools">Free tools</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/faq">FAQ</a>
+      <a href="/sitemap">Sitemap</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">App Store</a>
+      <a href="https://chromewebstore.google.com/search/smash%20invoices" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome</a>
+    </div>
+    <div style="margin-top:14px;">
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body>
+</html>

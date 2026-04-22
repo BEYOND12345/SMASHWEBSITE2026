@@ -96,6 +96,7 @@ export function Nav() {
             <Link to="/how-it-works" className={mobileLinkClass}>How It Works</Link>
             <Link to="/voice-invoicing" className={mobileLinkClass}>Voice Invoicing</Link>
             <Link to="/ai-invoicing" className={mobileLinkClass}>AI Invoicing</Link>
+            <Link to="/chrome-extension" className={mobileLinkClass}>SMASH for Gmail</Link>
 
             <div className={mobileSectionHeading}>Tools</div>
             <Link to="/tools" className={mobileLinkClass}>All Free Tools</Link>

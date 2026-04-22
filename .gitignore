@@ -20,8 +20,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Never commit the default dev .env or local overrides (may contain secrets)
 .env
+.env.local
+.env.*.local
+
+# DO commit .env.production: only contains the PUBLIC Vite VITE_SUPABASE_URL
+# and anon key, both of which are baked into the shipped JS bundle anyway and
+# protected by Supabase RLS. Safe + intentional.
+!.env.production
 
 # Local Claude / Cursor worktrees (not part of shipped site)
 .claude/
 .claire/
+
+# Supabase CLI cache
+supabase/.temp/
