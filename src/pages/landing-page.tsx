@@ -287,8 +287,15 @@ export function LandingPage() {
           "No setup. No configuration. Just talk and it works like you.",
         ]}
         image={
-          <div className="flex items-end justify-center w-full overflow-visible h-[280px] sm:h-[370px] md:h-[450px] lg:h-auto">
-            <div className="relative flex items-end justify-center scale-[0.5] sm:scale-[0.65] md:scale-[0.8] lg:scale-90 xl:scale-100 origin-bottom">
+          <div className="flex items-start justify-center w-full overflow-visible h-[400px] sm:h-[490px] md:h-[560px] lg:h-auto">
+            {/* Mobile: single phone (the analyzer payoff) avoids the two-phone overlap on a narrow viewport. */}
+            <div className="md:hidden scale-[0.65] sm:scale-[0.75] origin-top animate-float-delayed">
+              <PhoneMockup>
+                <AnalyzerScreen />
+              </PhoneMockup>
+            </div>
+            {/* Tablet+: the original overlapping pair. */}
+            <div className="relative hidden md:flex items-start justify-center scale-[0.8] lg:scale-90 xl:scale-100 origin-top">
               <div className="animate-float-slow -mr-6">
                 <PhoneMockup>
                   <ScannerScreen />
@@ -373,8 +380,15 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase",
         ]}
         image={
-          <div className="flex items-end justify-center w-full overflow-visible h-[260px] sm:h-[330px] md:h-[400px] lg:h-auto">
-            <div className="flex items-end justify-center gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom">
+          <div className="flex items-start justify-center w-full overflow-visible h-[440px] sm:h-[480px] md:h-[440px] lg:h-auto">
+            {/* Mobile: single phone (the payment payoff) keeps the section short and unambiguous. */}
+            <div className="md:hidden scale-[0.7] sm:scale-[0.78] origin-top animate-float">
+              <PhoneMockup size="small">
+                <AppScreen type="portal" />
+              </PhoneMockup>
+            </div>
+            {/* Tablet+: the original two-phone composition. */}
+            <div className="hidden md:flex items-start justify-center gap-4 lg:gap-6 scale-[0.85] lg:scale-95 xl:scale-100 origin-top">
               <div className="animate-float">
                 <PhoneMockup size="small">
                   <AppScreen type="estimates-static" />
@@ -413,8 +427,8 @@ export function LandingPage() {
           "Never miss follow-ups",
         ]}
         image={
-          <div className="flex items-end justify-center lg:justify-start w-full overflow-visible h-[350px] sm:h-[440px] md:h-[510px] lg:h-auto">
-            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom animate-float">
+          <div className="flex items-start justify-center lg:justify-start w-full overflow-visible h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto">
+            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-top animate-float">
               <PhoneMockup>
                 <AppScreen type="estimates" />
               </PhoneMockup>
@@ -440,8 +454,8 @@ export function LandingPage() {
           "Faster repeat work",
         ]}
         image={
-          <div className="flex items-end justify-center lg:justify-start w-full overflow-visible h-[350px] sm:h-[440px] md:h-[510px] lg:h-auto">
-            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-bottom animate-float">
+          <div className="flex items-start justify-center lg:justify-start w-full overflow-visible h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto">
+            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-top animate-float">
               <PhoneMockup>
                 <AppScreen type="customer-management" />
               </PhoneMockup>
