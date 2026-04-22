@@ -8,6 +8,7 @@
     "build": "vite build && npm run prerender && npm run sitemap",
     "prerender": "tsx scripts/prerender-blog.ts",
     "sitemap": "tsx scripts/generate-sitemap.ts",
+    "indexnow": "tsx scripts/indexnow.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
