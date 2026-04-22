@@ -1,0 +1,46 @@
+name: IndexNow ping
+
+# Auto-pings Bing / Yahoo / Yandex whenever the sitemap changes on main, so
+# search engines re-crawl new and updated URLs within hours instead of waiting
+# for organic discovery. Google does NOT support IndexNow — Google indexing is
+# handled separately via Search Console (sitemap resubmit + URL inspection).
+#
+# Triggers:
+#   - Push to main that touches public/sitemap.xml (normal content releases)
+#   - Manual "Run workflow" button in the GitHub Actions UI (for re-pings)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/sitemap.xml'
+      - 'scripts/indexnow.ts'
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    name: Submit sitemap URLs to IndexNow
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Submit URLs to IndexNow
+        # Never fail the workflow on a transient Bing error — this is a
+        # best-effort signal, not a blocking step.
+        continue-on-error: true
+        run: npm run indexnow
