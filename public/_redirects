@@ -1,10 +1,16 @@
 # Netlify redirects — served for every request.
 # Rules are evaluated top-to-bottom; first match wins.
 
-# Normalise trailing slashes on blog post URLs -> canonical (no trailing slash)
-/blog/:slug/          /blog/:slug          301!
-
-# Serve the pre-rendered static HTML for blog posts
+# Serve the pre-rendered static HTML for blog posts.
+#
+# Netlify matches :slug trailing-slash-agnostically by default, so this single
+# rewrite handles both /blog/<slug> and /blog/<slug>/ with a 200 status. The
+# canonical URL (no trailing slash) is declared in each post's <link rel=
+# "canonical"> tag, which is how Google picks a preferred version.
+#
+# A previous attempt to 301-normalise "/blog/:slug/" -> "/blog/:slug" caused
+# an infinite redirect loop because Netlify's agnostic matching made rule 1
+# fire on BOTH variants. Do not reintroduce that normalisation here.
 /blog/:slug           /blog/:slug/index.html   200
 
 # SPA fallback for every other route
