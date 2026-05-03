@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle, ArrowRight } from 'lucide-react';
+import { Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle, ArrowRight, BarChart3 } from 'lucide-react';
 
 const ALL_TOOLS = [
   {
@@ -50,6 +50,13 @@ const ALL_TOOLS = [
     desc: 'See how many days overdue and how much interest is owed.',
     icon: AlertCircle,
     keywords: ['late payment', 'overdue', 'interest', 'unpaid invoice', 'payment terms', 'debt'],
+  },
+  {
+    slug: '/tradie-hourly-rates',
+    name: 'Tradie Hourly Rates',
+    desc: 'See real rate ranges by trade before setting your prices.',
+    icon: BarChart3,
+    keywords: ['hourly', 'rate', 'tradie rate', 'cleaner rate', 'handyman rate', 'charge per hour', 'pricing'],
   },
 ];
 

@@ -21,6 +21,7 @@ import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+const CHROME_STORE_URL = "https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel";
 
 // ── FAQ accordion ─────────────────────────────────────────────────────────────
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
@@ -101,12 +102,14 @@ export function SegmentPage({ data }: { data: SegmentData }) {
                 >
                   Start Free
                 </a>
-                <Link
-                  to="/how-it-works"
+                <a
+                  href={CHROME_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-base uppercase tracking-wide hover:bg-white/10 transition-all"
                 >
-                  See How It Works
-                </Link>
+                  Add to Chrome
+                </a>
               </div>
               {/* Trust row */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
@@ -287,6 +290,35 @@ export function SegmentPage({ data }: { data: SegmentData }) {
         </div>
       </section>
 
+      {/* ── CLUSTER LINKS ──────────────────────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="text-accent font-black text-xs uppercase tracking-widest mb-5 text-center">Build the whole workflow</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 text-center">
+            The tools {data.name.toLowerCase()} need, connected.
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { to: '/voice-invoicing', title: 'Voice invoicing', body: 'Describe the job out loud and send the invoice before admin piles up.' },
+              { to: '/invoice-generator', title: 'Free invoice generator', body: 'Build a tax-compliant invoice manually, then see how SMASH automates it.' },
+              { to: '/quote-generator', title: 'Free quote generator', body: 'Price the next job and turn the quote into an approval link.' },
+              { to: '/hourly-rate-calculator', title: 'Hourly rate calculator', body: 'Work out what you should charge before setting your catalog rates.' },
+              { to: '/chrome-extension', title: 'SMASH for Gmail', body: 'Turn customer emails into quotes and invoices without leaving the inbox.' },
+              { to: '/pricing', title: 'Pricing', body: 'Start free. Paid plans unlock unlimited invoices and accounting sync.' },
+            ].map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="bg-white rounded-[24px] border-2 border-border p-6 hover:border-accent transition-colors group"
+              >
+                <h3 className="text-base font-black text-brand uppercase tracking-tighter leading-[0.95] mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
+                <p className="font-body text-sm text-brand/55 font-medium leading-[1.5]">{item.body}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── TESTIMONIALS ───────────────────────────────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -427,12 +459,14 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             >
               Start Free
             </a>
-            <Link
-              to="/pricing"
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-base uppercase tracking-wide hover:bg-white/10 transition-all"
             >
-              See Pricing
-            </Link>
+              Add to Chrome
+            </a>
           </div>
           {/* Trust strip */}
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-6">

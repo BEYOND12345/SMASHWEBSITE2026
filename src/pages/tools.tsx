@@ -8,7 +8,7 @@ import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
-import { Star, ArrowRight, Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle } from 'lucide-react';
+import { Star, ArrowRight, Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle, BarChart3 } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
@@ -56,6 +56,12 @@ const tools = [
     desc: 'Calculate exactly how many days overdue and how much interest has accrued on an unpaid invoice.',
     href: '/late-payment-calculator',
   },
+  {
+    icon: BarChart3,
+    name: 'Tradie Hourly Rates',
+    desc: 'See real Australian rate ranges for cleaners, handymen, gardeners, painters, mechanics, plumbers and electricians.',
+    href: '/tradie-hourly-rates',
+  },
 ];
 
 export function Tools() {
@@ -97,7 +103,7 @@ export function Tools() {
                 </div>
                 <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
               </div>
-              <span className="font-body text-xs text-white/40 font-medium">7 tools · Free to use · No account required</span>
+              <span className="font-body text-xs text-white/40 font-medium">8 tools · Free to use · No account required</span>
             </div>
           </AnimateIn>
         </div>
