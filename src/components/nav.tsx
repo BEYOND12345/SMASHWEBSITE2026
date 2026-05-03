@@ -109,6 +109,7 @@ export function Nav() {
             <Link to="/tradie-hourly-rates" className={mobileLinkClass}>Tradie Hourly Rates</Link>
             <Link to="/materials-pricing" className={mobileLinkClass}>Materials Pricing</Link>
             <Link to="/customer-approval" className={mobileLinkClass}>Customer Approval</Link>
+            <Link to="/for-ndis-support-workers" className={mobileLinkClass}>NDIS Invoicing</Link>
 
             <div className={mobileSectionHeading}>Company</div>
             <Link to="/integrations" className={mobileLinkClass}>Integrations</Link>

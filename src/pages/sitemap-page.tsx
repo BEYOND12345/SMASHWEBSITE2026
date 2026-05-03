@@ -47,6 +47,7 @@ const sections: Section[] = [
       { to: '/tradie-hourly-rates', label: 'Tradie hourly rates',  note: 'What to charge per hour in AU, NZ, UK, US and Canada' },
       { to: '/materials-pricing',   label: 'Materials pricing',    note: 'Landed cost, fair markup, personal catalog' },
       { to: '/customer-approval',   label: 'Customer approval',    note: 'One-tap approval, read receipts, legally binding' },
+      { to: '/for-ndis-support-workers', label: 'NDIS invoicing',  note: 'Participant numbers, weekly support invoices and repeat billing' },
     ],
   },
   {
@@ -113,6 +114,7 @@ const sections: Section[] = [
       { to: '/for-appliance-repair',  label: 'For appliance repair' },
       { to: '/for-security-installers', label: 'For security installers' },
       { to: '/for-fencers',           label: 'For fencers' },
+      { to: '/for-ndis-support-workers', label: 'For NDIS support workers' },
     ],
   },
   {

@@ -175,6 +175,7 @@ async function generateSitemap() {
     { loc: '/tradie-hourly-rates', srcFiles: ['src/pages/tradie-hourly-rates.tsx'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/materials-pricing',   srcFiles: ['src/pages/materials-pricing.tsx'],   changefreq: 'monthly', priority: '0.85' },
     { loc: '/customer-approval',   srcFiles: ['src/pages/customer-approval.tsx'],   changefreq: 'monthly', priority: '0.85' },
+    { loc: '/for-ndis-support-workers', srcFiles: ['src/pages/ndis-invoicing.tsx'], changefreq: 'monthly', priority: '0.85' },
 
     // Human-readable sitemap (for discovery + AI crawlers)
     { loc: '/sitemap', srcFiles: ['src/pages/sitemap-page.tsx'], changefreq: 'weekly', priority: '0.5' },

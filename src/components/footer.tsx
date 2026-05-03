@@ -209,6 +209,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/tradie-hourly-rates" className={linkClass}>Tradie hourly rates</Link></li>
                 <li><Link to="/materials-pricing" className={linkClass}>Materials pricing</Link></li>
                 <li><Link to="/customer-approval" className={linkClass}>Customer approval</Link></li>
+                <li><Link to="/for-ndis-support-workers" className={linkClass}>NDIS invoicing</Link></li>
               </FooterSection>
             </div>
 
@@ -284,7 +285,7 @@ export function Footer({ showCTA = false }: FooterProps) {
 
         <FooterDisclosure
           title="Browse by industry"
-          count={22}
+          count={23}
           cols="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
         >
           <li><Link to="/for-cleaners" className={linkClass}>Cleaners</Link></li>
@@ -309,6 +310,7 @@ export function Footer({ showCTA = false }: FooterProps) {
           <li><Link to="/for-appliance-repair" className={linkClass}>Appliance Repair</Link></li>
           <li><Link to="/for-security-installers" className={linkClass}>Security Installers</Link></li>
           <li><Link to="/for-fencers" className={linkClass}>Fencers</Link></li>
+          <li><Link to="/for-ndis-support-workers" className={linkClass}>NDIS Support Workers</Link></li>
         </FooterDisclosure>
 
         {/* ── BOTTOM LINE ────────────────────────────────────── */}

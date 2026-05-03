@@ -36,7 +36,7 @@ Key facts:
 - [Tradie Hourly Rates 2026](https://smashinvoices.com/tradie-hourly-rates): How much tradies should charge per hour in AU, NZ, UK, US and Canada.
 - [Materials Pricing](https://smashinvoices.com/materials-pricing): How to price materials in a quote — landed cost, fair markup, personal catalog.
 - [Customer Approval](https://smashinvoices.com/customer-approval): One-tap quote approval, read receipts, legally-binding electronic signatures.
-- NDIS support: Optional 9-digit NDIS participant numbers are stored per customer, printed automatically in the Bill To block on every invoice/quote PDF, and visible on public portal links.
+- [NDIS Invoicing](https://smashinvoices.com/for-ndis-support-workers): Optional 9-digit NDIS participant numbers are stored per customer, printed automatically in the Bill To block on every invoice/quote PDF, and visible on public portal links.
 - Repeat invoices: Sent, approved and paid cards can be repeated into a new draft with the same client, line items and job title, dated today.
 
 ## Free tools
@@ -95,6 +95,7 @@ Key facts:
 - [For Appliance Repair](https://smashinvoices.com/for-appliance-repair)
 - [For Security Installers](https://smashinvoices.com/for-security-installers)
 - [For Fencers](https://smashinvoices.com/for-fencers)
+- [For NDIS Support Workers](https://smashinvoices.com/for-ndis-support-workers)
 
 ## Blog
 - [Blog index](https://smashinvoices.com/blog): All articles, indexed and kept up to date.

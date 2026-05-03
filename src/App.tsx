@@ -78,6 +78,7 @@ import { NotFound } from './pages/not-found';
 import { TradieHourlyRates } from './pages/tradie-hourly-rates';
 import { MaterialsPricing } from './pages/materials-pricing';
 import { CustomerApproval } from './pages/customer-approval';
+import { NdisInvoicing } from './pages/ndis-invoicing';
 
 function App() {
   return (
@@ -163,6 +164,7 @@ function App() {
         <Route path="/tradie-hourly-rates" element={<TradieHourlyRates />} />
         <Route path="/materials-pricing" element={<MaterialsPricing />} />
         <Route path="/customer-approval" element={<CustomerApproval />} />
+        <Route path="/for-ndis-support-workers" element={<NdisInvoicing />} />
 
         {/* Human-readable sitemap */}
         <Route path="/sitemap" element={<SitemapPage />} />
