@@ -6,10 +6,8 @@ interface FooterProps {
   showCTA?: boolean;
 }
 
-// Single source of truth for the two store destinations so they're easy to
-// swap when the Chrome Web Store listing goes live.
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const linkClass =
   'text-base text-white/70 hover:text-accent transition-colors font-semibold';

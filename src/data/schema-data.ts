@@ -54,6 +54,8 @@ export const softwareApplicationSchema = {
     "Customer approval portal",
     "Built-in payment acceptance",
     "Invoice read receipts",
+    "Optional NDIS participant numbers per customer",
+    "Repeat invoice button for recurring work",
     "Local business-number support (ABN, NZBN, UTR, EIN, BN)",
     "PDF export",
     "Available on iOS and Chrome"
@@ -64,14 +66,14 @@ export const softwareApplicationSchema = {
       "name": "Free",
       "price": "0",
       "priceCurrency": "AUD",
-      "description": "Limited quotes per month"
+      "description": "5 invoices per month"
     },
     {
       "@type": "Offer",
       "name": "Starter",
-      "price": "12",
+      "price": "15",
       "priceCurrency": "AUD",
-      "description": "20 quotes per month",
+      "description": "Unlimited invoices with Xero, QuickBooks and CSV export",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "billingDuration": "P1M"
@@ -80,9 +82,9 @@ export const softwareApplicationSchema = {
     {
       "@type": "Offer",
       "name": "Pro",
-      "price": "29",
+      "price": "25",
       "priceCurrency": "AUD",
-      "description": "35 quotes per month",
+      "description": "Unlimited invoices",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "billingDuration": "P1M"
@@ -91,9 +93,9 @@ export const softwareApplicationSchema = {
     {
       "@type": "Offer",
       "name": "Unlimited",
-      "price": "49",
+      "price": "35",
       "priceCurrency": "AUD",
-      "description": "Unlimited quotes",
+      "description": "Unlimited invoices",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
         "billingDuration": "P1M"
@@ -161,7 +163,7 @@ export const homepageFaqSchema = {
       "name": "Is SMASH Invoices free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SMASH Invoices has a free plan with 2 quotes per month. Paid plans are Starter at $12 AUD/month (20 quotes), Pro at $29 AUD/month (35 quotes — most popular), and Unlimited at $49 AUD/month (unlimited quotes). All plans include the full feature set — GST compliance, ABN support, the voice-to-quote feature, and Xero/QuickBooks sync."
+        "text": "SMASH Invoices has a free plan with 5 invoices per month. Paid web plans start with Starter at $15 AUD/month for unlimited invoices, Xero and QuickBooks sync, and CSV export. Pro is $25 AUD/month and Unlimited is $35 AUD/month. iOS App Store subscriptions may show Apple pricing of $14.99, $24.99 and $39.99 AUD."
       }
     }
   ]

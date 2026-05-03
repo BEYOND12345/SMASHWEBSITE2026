@@ -85,7 +85,7 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is the invoice generator free?',
-    a: 'Yes — SMASH has a free plan that lets you send 2 invoices per month with no credit card required. The free web invoice builder on this page is also completely free with no signup. Paid plans start at $12/month (Starter — 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month for unlimited invoices, read receipts and overdue tracking.',
+    a: 'Yes — SMASH has a free plan that lets you send 5 invoices per month with no credit card required. The free web invoice builder on this page is also completely free with no signup. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing, with read receipts and overdue tracking.',
   },
   {
     q: 'Are SMASH invoices ATO-compliant?',
@@ -651,7 +651,7 @@ export function InvoiceGenerator() {
                 </div>
                 <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
               </div>
-              <span className="font-body text-xs text-white/40 font-medium">2 invoices free/month · No credit card · iPhone</span>
+              <span className="font-body text-xs text-white/40 font-medium">5 invoices free/month · No credit card · iPhone</span>
             </div>
           </AnimateIn>
         </div>

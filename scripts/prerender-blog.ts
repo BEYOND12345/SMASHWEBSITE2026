@@ -52,7 +52,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const SITE_URL = 'https://smashinvoices.com';
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 interface FAQItem { question: string; answer: string }
 
@@ -107,6 +107,13 @@ function formatDate(iso: string): string {
 
 function renderJsonLd(obj: unknown): string {
   return JSON.stringify(obj).replace(/</g, '\\u003c');
+}
+
+function normalizeProductCopy(html: string): string {
+  return html
+    .replace(/SMASH cost: \$29\/month = \$348\/year/g, 'SMASH cost: from $15/month = $180/year')
+    .replace(/SMASH costs \$29\/month/g, 'SMASH starts at $15/month')
+    .replace(/For \$29\/month, dedicated voice invoicing/g, 'From $15/month, dedicated voice invoicing');
 }
 
 function buildArticleSchema(post: BlogPost, url: string): object {
@@ -429,7 +436,7 @@ function renderPost(post: BlogPost): string {
     schemas.push(buildFaqSchema(post.faq_data));
   }
 
-  return `<!DOCTYPE html>
+  return normalizeProductCopy(`<!DOCTYPE html>
 <html lang="en-AU">
 <head>
   <meta charset="UTF-8">
@@ -558,7 +565,7 @@ ${schemas
     <div style="margin-top:14px;">© ${new Date().getFullYear()} SMASH Invoices · smashinvoices.com</div>
   </footer>
 </body>
-</html>`;
+</html>`);
 }
 
 async function prerenderBlogPosts() {

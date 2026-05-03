@@ -32,7 +32,7 @@ const testimonials = [
 
 const featureFaqs = [
   { question: "How does SMASH generate a quote from voice?", answer: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation." },
-  { question: "Does SMASH produce GST-compliant invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description — all required fields for a valid Australian tax invoice." },
+  { question: "Does SMASH produce GST and NDIS-ready invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description. If a customer has an NDIS participant number saved, SMASH prints it automatically in the Bill To block and shows it on the portal link." },
   { question: "Can customers pay directly from the quote link?", answer: "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing." },
   { question: "What is the personal pricing catalog?", answer: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds." },
 ];
@@ -216,7 +216,7 @@ export function Features() {
                 Build your price list once. Every time you mention a service you offer, SMASH fills in your price automatically. Your rates. Every time. No guessing.
               </p>
               <ul className="space-y-2 mb-6">
-                {["Set your own prices for any service", "Matched from your voice automatically", "Gets faster with every job", "Under 30 seconds for repeat work"].map(item => (
+                {["Set your own prices for any service", "Matched from your voice automatically", "Gets faster with every job", "Repeat last invoice in one tap"].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm font-medium text-brand/70">
                     <ChevronRight size={16} className="shrink-0 mt-0.5 text-accent" strokeWidth={2.5} />
                     {item}
@@ -261,10 +261,10 @@ export function Features() {
                 <h3 className="text-xl font-black text-brand uppercase tracking-tighter leading-[0.88]">Invoice sent before you leave</h3>
               </div>
               <p className="font-body text-brand/70 font-medium leading-[1.5] mb-4">
-                The entire flow — speak the job, review the quote, send it — takes under 60 seconds. For repeat jobs with your catalog, under 30. No other invoicing method comes close.
+                The entire flow — speak the job, review the quote, send it — takes under 60 seconds. For repeat jobs, tap Repeat to create a new draft with the same client, line items and job title. No other invoicing method comes close.
               </p>
               <ul className="space-y-2 mb-6">
-                {["Under 60 seconds, new job", "Under 30 seconds, repeat work", "Quote sent before you leave the driveway", "No other app matches this speed"].map(item => (
+                {["Under 60 seconds, new job", "One tap for repeat work", "Quote sent before you leave the driveway", "No other app matches this speed"].map(item => (
                   <li key={item} className="flex items-start gap-2 text-sm font-medium text-brand/70">
                     <ChevronRight size={16} className="shrink-0 mt-0.5 text-accent" strokeWidth={2.5} />
                     {item}
@@ -353,7 +353,7 @@ export function Features() {
               Know exactly where<br />your money is.
             </h2>
             <p className="font-body text-brand/60 font-medium leading-[1.5] max-w-2xl mb-12 md:mb-16">
-              SMASH tracks what's been quoted, approved, invoiced, and paid. No spreadsheet. No mental queue. No forgotten jobs.
+            SMASH tracks what's been quoted, approved, invoiced, and paid. Customer profiles store addresses, job history and optional NDIS participant numbers. No spreadsheet. No mental queue. No forgotten jobs.
             </p>
           </AnimateIn>
 
@@ -477,8 +477,8 @@ export function Features() {
                 a: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation."
               },
               {
-                q: "Does SMASH produce GST-compliant invoices?",
-                a: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description — all required fields for a valid Australian tax invoice."
+                q: "Does SMASH produce GST and NDIS-ready invoices?",
+                a: "Yes. Every invoice SMASH generates includes your ABN, GST, invoice date and itemised job description. Save a customer's optional 9-digit NDIS participant number once and SMASH adds it to every PDF and portal link for that customer."
               },
               {
                 q: "Can customers pay directly from the quote link?",
@@ -486,7 +486,7 @@ export function Features() {
               },
               {
                 q: "What is the personal pricing catalog?",
-                a: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds."
+                a: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. For recurring work, the Repeat button creates a fresh draft from the last sent, approved or paid invoice."
               },
             ].map((faq, i) => (
               <div key={i} className="py-6">

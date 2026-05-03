@@ -11,14 +11,14 @@ Key facts:
 - Local business numbers supported: ABN, NZBN, UTR / company number, EIN, Canadian Business Number
 - Model: Voice → AI-parsed line items → tax-compliant invoice or quote
 - Typical time saved vs manual entry: ~12 hours/month
-- Pricing: One global plan billed in AUD, free starter tier, no card to start
+- Pricing: Free includes 5 invoices per month; paid web plans start at $15/month with unlimited invoices
 - Homepage: https://smashinvoices.com
 
 ## Core pages
 - [Home](https://smashinvoices.com/): Product overview and sign-up.
 - [How it works](https://smashinvoices.com/how-it-works): Step-by-step walk-through of the voice-to-invoice flow.
 - [Features](https://smashinvoices.com/features): Full capability list — voice, quotes, GST, mobile-first, client CRM.
-- [Pricing](https://smashinvoices.com/pricing): Volume-based tiers with a free starter plan.
+- [Pricing](https://smashinvoices.com/pricing): Feature-based tiers. Free includes 5 invoices per month; Starter unlocks unlimited invoices plus Xero, QuickBooks and CSV export from $15/month.
 - [FAQ](https://smashinvoices.com/faq): Common questions about accuracy, trades supported, tax compliance, pricing.
 - [Contact](https://smashinvoices.com/contact): Support and sales.
 - [Founder](https://smashinvoices.com/founder): Why SMASH exists.
@@ -30,12 +30,14 @@ Key facts:
 - [AI Invoicing](https://smashinvoices.com/ai-invoicing): How the AI turns speech into structured invoice data.
 - [GST-Compliant Invoicing](https://smashinvoices.com/gst-compliant-invoicing): Australian GST and tax-compliant invoicing.
 - [Invoice on Mobile](https://smashinvoices.com/invoice-on-mobile): Mobile-first invoicing workflow.
-- [SMASH for Gmail (Chrome extension)](https://smashinvoices.com/chrome-extension): A Gmail sidebar tool that turns customer emails into priced quotes using your voice. Open the customer email, speak the job for ~30 seconds, SMASH builds a tax-compliant quote against your personal "Pricing DNA" or the built-in materials catalog, and drops a formatted reply or a branded PDF straight into Gmail. Syncs to Xero and QuickBooks Online.
+- [SMASH for Gmail (Chrome extension)](https://smashinvoices.com/chrome-extension): A Gmail sidebar tool that turns customer emails into priced quotes and invoices using your voice. The SMASH icon lives in Gmail and a Generate Invoice button appears beside Send in compose; both open the side panel. Speak the job for ~30 seconds, SMASH builds a tax-compliant quote or invoice against your personal "Pricing DNA" or materials catalog, then drops a formatted reply or branded PDF into Gmail. Syncs to Xero and QuickBooks Online.
 
 ## Guides (AI search pillars)
 - [Tradie Hourly Rates 2026](https://smashinvoices.com/tradie-hourly-rates): How much tradies should charge per hour in AU, NZ, UK, US and Canada.
 - [Materials Pricing](https://smashinvoices.com/materials-pricing): How to price materials in a quote — landed cost, fair markup, personal catalog.
 - [Customer Approval](https://smashinvoices.com/customer-approval): One-tap quote approval, read receipts, legally-binding electronic signatures.
+- NDIS support: Optional 9-digit NDIS participant numbers are stored per customer, printed automatically in the Bill To block on every invoice/quote PDF, and visible on public portal links.
+- Repeat invoices: Sent, approved and paid cards can be repeated into a new draft with the same client, line items and job title, dated today.
 
 ## Free tools
 - [Tools hub](https://smashinvoices.com/tools): All calculators and templates.
@@ -60,8 +62,8 @@ Key facts:
 
 ## Integrations
 - [Integrations hub](https://smashinvoices.com/integrations): All current and upcoming SMASH integrations.
-- [SMASH × Xero](https://smashinvoices.com/integrations/xero): Two-way sync of invoices, contacts, payments and tax codes into Xero (coming soon).
-- [SMASH × QuickBooks Online](https://smashinvoices.com/integrations/quickbooks): Two-way sync into QuickBooks Online (coming soon).
+- [SMASH × Xero](https://smashinvoices.com/integrations/xero): Two-way sync of invoices, contacts, payments and tax codes into Xero on paid plans from Starter.
+- [SMASH × QuickBooks Online](https://smashinvoices.com/integrations/quickbooks): Two-way sync into QuickBooks Online on paid plans from Starter.
 
 ## International (all live on iOS + Chrome)
 - [Australia](https://smashinvoices.com/) — AUD, 10% GST, ABN
@@ -103,4 +105,4 @@ Key facts:
 
 ## Download
 - [iOS App Store](https://apps.apple.com/au/app/smash-invoices/id6759475079) — available worldwide
-- [Chrome Web Store](https://chromewebstore.google.com/search/smash%20invoices) — invoice from any laptop
+- [Chrome Web Store](https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel) — invoice from any laptop

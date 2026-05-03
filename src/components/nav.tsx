@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X, Apple, Chrome } from 'lucide-react';
 
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const desktopLinkClass =
   'hidden md:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide';

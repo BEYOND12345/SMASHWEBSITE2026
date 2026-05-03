@@ -18,9 +18,9 @@ const APP_STORE_URL = "https://apps.apple.com/app/id6759475079";
 type TierName = 'Free' | 'Starter' | 'Pro' | 'Unlimited';
 const tierPricing: Record<TierName, string> = {
   Free:      '0',
-  Starter:   '12',
-  Pro:       '29',
-  Unlimited: '49',
+  Starter:   '15',
+  Pro:       '25',
+  Unlimited: '35',
 };
 
 interface Tier {
@@ -32,32 +32,34 @@ interface Tier {
 }
 
 const tiers: Tier[] = [
-  { name: 'Free',      volume: '2 quotes / month',   description: 'Test SMASH on real jobs. No card needed.',      highlight: false                         },
-  { name: 'Starter',   volume: '20 quotes / month',  description: 'Built for the side-hustle and weekenders.',     highlight: false                         },
-  { name: 'Pro',       volume: '35 quotes / month',  description: 'For service pros quoting every day.',           highlight: true,  badge: 'Most Popular'  },
-  { name: 'Unlimited', volume: 'Unlimited quotes',   description: 'For lead-rich businesses and crews.',           highlight: false                         },
+  { name: 'Free',      volume: '5 invoices / month', description: 'Feel the product on real jobs. No card needed.', highlight: false                         },
+  { name: 'Starter',   volume: 'Unlimited invoices', description: 'Unlock accounting sync and CSV export.',         highlight: true,  badge: 'Best Value'    },
+  { name: 'Pro',       volume: 'Unlimited invoices', description: 'For service pros invoicing every week.',         highlight: false                         },
+  { name: 'Unlimited', volume: 'Unlimited invoices', description: 'For busy operators and crews.',                  highlight: false                         },
 ];
 
 const features = [
   'Voice-to-invoice in under 60 seconds',
   'Tax-compliant invoices and quotes',
+  'NDIS participant numbers on every PDF',
+  'Repeat last invoice in one tap',
   'See the second your customer opens the invoice',
   'Send via SMS, email, or WhatsApp',
   'Customer payment tracking',
   'Localised tax format (GST / VAT / Sales tax)',
   'PDF download and share',
   'Job history and customer records',
-  'Xero and QuickBooks export (coming soon)',
+  'Xero, QuickBooks and CSV export on paid plans',
 ];
 
 const faqs = [
   {
     question: 'Is the free plan really free forever?',
-    answer: 'Yes. No credit card, no time limit. You get 2 quotes per month to try SMASH risk-free. When you\'re ready to do more, upgrading takes 30 seconds in the app.',
+    answer: 'Yes. No credit card, no time limit. You get 5 invoices per month to try SMASH risk-free. When you\'re ready for unlimited invoices, Starter begins at $15/month on web pricing.',
   },
   {
     question: 'What\'s the difference between plans?',
-    answer: 'Volume only. Every plan gets the full SMASH feature set — voice-to-invoice, tax handling, open receipts, payment tracking, everything. The only limit is how many quotes you send per month.',
+    answer: 'Free gives you 5 invoices per month. Every paid plan includes unlimited invoices, while Starter unlocks accounting sync to Xero and QuickBooks plus CSV export from $15/month.',
   },
   {
     question: 'Can I switch plans at any time?',
@@ -81,7 +83,7 @@ const faqs = [
   },
   {
     question: 'Why is the subscription priced in AUD?',
-    answer: 'SMASH is built in Australia and we keep one global plan so the price never moves on you when exchange rates shift. Same plan, same features, same price — wherever you work. Stripe handles the currency conversion at checkout.',
+    answer: 'SMASH is built in Australia and keeps simple web pricing in AUD. Stripe handles currency conversion at checkout. iOS App Store subscriptions may show Apple prices of $14.99, $24.99 and $39.99 AUD.',
   },
 ];
 
@@ -92,7 +94,7 @@ export function Pricing() {
     <>
       <SEO
         title="Pricing | SMASH Invoices — Voice Invoicing for Tradies"
-        description="Simple volume-based pricing for SMASH Invoices. Free, Starter $12, Pro $29 and Unlimited $49 — every plan includes the full feature set. Billed in AUD; invoices send in your local currency (AUD, NZD, GBP, USD, CAD)."
+        description="Simple feature-based pricing for SMASH Invoices. Free includes 5 invoices/month; paid plans start at $15/month with unlimited invoices, Xero and QuickBooks sync, and CSV export. Billed in AUD; invoices send in your local currency."
         keywords="SMASH Invoices pricing, voice invoicing app pricing, invoice app Australia price, invoice app UK pricing, invoice app USA pricing, invoice app Canada pricing, invoice app NZ pricing"
         ogUrl="https://smashinvoices.com/pricing"
         canonical="https://smashinvoices.com/pricing"
@@ -113,14 +115,14 @@ export function Pricing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/40 mb-4">
-              Pricing — One global plan
+              Pricing — unlimited on paid
             </p>
             <h1 className="font-display text-6xl md:text-8xl lg:text-[112px] uppercase tracking-tighter leading-[0.88] text-white mb-6">
-              Pay for<br />
-              <span className="text-accent">what you use.</span>
+              Five free.<br />
+              <span className="text-accent">Unlimited from $15.</span>
             </h1>
             <p className="font-body text-xl text-white/60 max-w-xl mx-auto leading-relaxed mb-8">
-              Every plan includes the full feature set. The only difference is volume. Start free — no card needed.
+              Free gives you 5 invoices to feel the product. Starter unlocks unlimited invoices and accounting sync from $15/month.
             </p>
 
             {/* Global availability badge */}
@@ -227,7 +229,7 @@ export function Pricing() {
           </div>
 
           <p className="mt-10 text-center font-body text-xs text-slate-400 max-w-2xl mx-auto">
-            All prices in AUD and include GST. Same plan worldwide — Stripe converts at checkout to your local card currency. Customer-facing invoices send in your local currency (AUD, NZD, GBP, USD, CAD).
+                Web prices in AUD and include GST. Paid plans include unlimited invoices; iOS subscriptions may show Apple prices of $14.99 / $24.99 / $39.99 AUD. Customer-facing invoices send in your local currency (AUD, NZD, GBP, USD, CAD).
           </p>
         </div>
       </section>
@@ -238,13 +240,13 @@ export function Pricing() {
           <AnimateIn direction="up">
             <div className="text-center mb-12">
               <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">
-                Every plan
+                Built in
               </p>
               <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-brand">
-                Everything included.<br />No feature-gating.
+                Compliance without<br />admin drag.
               </h2>
               <p className="font-body text-xl text-slate-500 mt-4 max-w-xl mx-auto leading-relaxed">
-                We don't hide features behind higher tiers. Every SMASH subscriber gets the full toolkit from day one.
+                NDIS numbers, repeat invoices and read receipts keep recurring work moving without rebuilding the same invoice every week.
               </p>
             </div>
           </AnimateIn>

@@ -40,7 +40,7 @@ const comparisons: ComparisonData[] = [
     metaDescription: 'SMASH vs Xero: which is right for tradies? Voice-to-invoice in 60 seconds vs full accounting software. Compare features, pricing, and who each is actually built for.',
     heroHeadline: 'SMASH quotes.\nXero does\nthe books.',
     heroSub: 'SMASH and Xero are built for different parts of your business — and soon they\'ll work together. Use SMASH to invoice on the job in 60 seconds. Use Xero for the accounting. Best of both worlds.',
-    verdict: 'Quote on the job. Books in Xero. Xero integration coming soon.',
+    verdict: 'Quote on the job. Books in Xero. Xero sync on Starter.',
     verdictSub: 'SMASH is built for the gap between finishing a job and getting paid. Xero is built for everything that happens after. Together, they cover the whole picture.',
     lossAversion: 'Every invoice you delay until you\'re back at a desk is money that takes longer to collect — and a job detail you\'re more likely to forget. Tradies who invoice on the spot get paid an average of 4 days faster.',
     outcomeStat: [
@@ -108,12 +108,12 @@ const comparisons: ComparisonData[] = [
       { title: 'Built for the job site', desc: 'SMASH was designed to be used in one hand, standing next to a ute. Xero was designed to be used at a desk. For on-the-job invoicing, there\'s no comparison.' },
       { title: 'Voice beats typing', desc: 'Talk for 30 seconds and your invoice is done. No menus, no fields, no keyboard. SMASH removes the friction that stops tradies invoicing on the spot.' },
       { title: 'No learning curve', desc: 'SMASH learns your rates from your first few jobs. No chart of accounts, no setup, no training. Download and go.' },
-      { title: 'Coming together', desc: 'Xero integration is on the SMASH roadmap. Soon you\'ll be able to push invoices straight from SMASH into Xero — job site to accountant, seamlessly.' },
+      { title: 'Built to work together', desc: 'Xero sync unlocks on Starter and above. Push invoices straight from SMASH into Xero — job site to accountant, without double entry.' },
     ],
     theyAreFor: 'Businesses that need full accounting — payroll, bank reconciliation, tax compliance, or those whose accountant already uses Xero.',
     weAreFor: 'Tradies who need to quote and invoice fast on the job. And soon: tradies who want both — SMASH speed on site, Xero for the books.',
-    closingLine: 'Use SMASH to get paid on the job. Use Xero for the books. Soon, they\'ll talk to each other.',
-    exportNote: 'When the Xero integration launches, every invoice you create in SMASH will push automatically into your Xero account — line items, GST, client details, all of it. Your accountant gets the full picture, job by job, in real time. No re-entering data. No spreadsheets. No chasing receipts. Everything you\'ve already invoiced in SMASH will be there waiting.',
+    closingLine: 'Use SMASH to get paid on the job. Use Xero for the books. Starter connects them.',
+    exportNote: 'With Xero sync enabled, every invoice you create in SMASH can push automatically into your Xero account — line items, GST, client details, all of it. Your accountant gets the full picture, job by job, in real time. No re-entering data. No spreadsheets. No chasing receipts.',
     faq: [
       {
         q: 'Does SMASH replace Xero?',
@@ -125,11 +125,11 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Will my invoices work with my Xero account?',
-        a: 'SMASH generates GST-compliant, ATO-ready invoices that can be exported as PDF or CSV. Native Xero integration is on the roadmap — when it launches, invoices will push across automatically.',
+        a: 'Yes. SMASH generates GST-compliant, ATO-ready invoices that can be exported as PDF or CSV. Starter and above also unlock Xero sync so invoices can push across automatically.',
       },
       {
         q: 'What does SMASH cost vs Xero?',
-        a: 'SMASH starts at $0 with 2 free quotes per month, with paid plans from $12/month (Starter, 20 quotes) up to $49/month (Unlimited). Xero starts from $39/month. Many tradies run both at a combined cost under what Xero alone would cost if they\'re on a higher tier.',
+        a: 'SMASH starts at $0 with 5 free invoices per month. Starter is $15/month on web pricing and includes unlimited invoices, Xero and QuickBooks sync, and CSV export. Xero starts from $39/month. Many tradies run both at a combined cost under what Xero alone would cost if they\'re on a higher tier.',
       },
       {
         q: 'How long does it take to get set up?',
@@ -212,7 +212,7 @@ const comparisons: ComparisonData[] = [
       { title: 'Zero setup', desc: 'SMASH reads a couple of your old invoices and learns your rates on day one. MYOB requires configuring accounts, items, tax codes, and payment terms before you send a single invoice.' },
       { title: 'Actually mobile', desc: 'MYOB has a mobile app. It\'s not the same as being designed for mobile. SMASH was built from scratch to be used in one hand at a job site.' },
       { title: 'Voice input changes everything', desc: 'Describing a job out loud is 10x faster than tapping through MYOB\'s interface on a phone screen. Most tradies don\'t invoice until they\'re back at a desk — SMASH removes that delay entirely.' },
-      { title: 'Simpler pricing', desc: 'SMASH Free is $0. Paid plans are $12, $29 or $49/month — flat. No per-employee costs, no add-on modules, no surprises.' },
+      { title: 'Simpler pricing', desc: 'SMASH Free is $0 with 5 invoices/month. Paid web plans are $15, $25 or $35/month with unlimited invoices — flat, no per-employee costs, no surprises.' },
     ],
     theyAreFor: 'Businesses with employees, payroll, superannuation obligations, or those who need BAS lodgement tools and a full accounting system.',
     weAreFor: 'Solo tradies and small service businesses who need professional quotes and invoices sent fast — without the complexity of full accounting software.',
@@ -232,7 +232,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Is SMASH really free?',
-        a: 'Yes. SMASH Free gives you 2 quotes per month at $0, no credit card required. Paid plans start at $12/month (Starter — 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. You can try it today without entering payment details.',
+        a: 'Yes. SMASH Free gives you 5 invoices per month at $0, no credit card required. Paid web plans start at $15/month with unlimited invoices, Xero and QuickBooks sync, and CSV export. You can try it today without entering payment details.',
       },
       {
         q: 'What if I don\'t like it?',
@@ -332,7 +332,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What\'s the real cost difference?',
-        a: 'ServiceM8 starts at $29/month and increases with users and features. SMASH Free is $0, paid plans are $12, $29 or $49/month — flat, no per-user fees. For a solo tradie, that\'s a meaningful saving.',
+        a: 'ServiceM8 starts at $29/month and increases with users and features. SMASH Free is $0, paid web plans are $15, $25 or $35/month with unlimited invoices — flat, no per-user fees. For a solo tradie, that\'s a meaningful saving.',
       },
       {
         q: 'How long does SMASH take to set up?',
@@ -352,7 +352,7 @@ const comparisons: ComparisonData[] = [
     metaDescription: 'SMASH vs QuickBooks for Australian tradies. Voice-to-invoice in 60 seconds vs full accounting software. Which is right for your trade business?',
     heroHeadline: 'SMASH invoices\non the job.\nQuickBooks\ndoes the books.',
     heroSub: 'SMASH and QuickBooks do different things — and soon they\'ll work together. Use SMASH to send invoices in 60 seconds from your phone. Use QuickBooks for accounting and reporting. No double entry.',
-    verdict: 'Quote on the job. Books in QuickBooks. Integration coming soon.',
+    verdict: 'Quote on the job. Books in QuickBooks. Sync on Starter.',
     verdictSub: 'SMASH removes the typing. QuickBooks handles the numbers. Together they cover everything a tradie needs — without the admin.',
     lossAversion: 'Every invoice you create manually in QuickBooks on a desktop is time you\'re not billing. Tradies using desktop accounting tools to invoice average 15-20 minutes per invoice. SMASH averages 60 seconds.',
     outcomeStat: [
@@ -419,13 +419,13 @@ const comparisons: ComparisonData[] = [
     weWin: [
       { title: 'Built for the job site', desc: 'SMASH was built for Australian tradies invoicing on the go — GST, ABN, ATO-compliant, iPhone-first. QuickBooks is accounting software with a mobile app bolted on.' },
       { title: 'Voice is everything', desc: 'QuickBooks has no voice input. SMASH removes the keyboard entirely. Describe the job, done.' },
-      { title: 'Actually free to start', desc: 'SMASH has a genuinely free plan — 2 quotes per month, no card needed. QuickBooks\' free trial expires after 30 days.' },
-      { title: 'Coming together', desc: 'QuickBooks integration is on the SMASH roadmap. Soon you\'ll push invoices from SMASH into QuickBooks automatically — no double entry, no spreadsheets.' },
+      { title: 'Actually free to start', desc: 'SMASH has a genuinely free plan — 5 invoices per month, no card needed. QuickBooks\' free trial expires after 30 days.' },
+      { title: 'Built to work together', desc: 'QuickBooks sync unlocks on Starter and above. Push invoices from SMASH into QuickBooks automatically — no double entry, no spreadsheets.' },
     ],
     theyAreFor: 'Small businesses that need affordable accounting with payroll, expense tracking, and reporting. Great for those already in the QuickBooks ecosystem.',
     weAreFor: 'Australian tradies who need to quote and invoice instantly on the job. And soon: tradies who want SMASH speed on site with QuickBooks keeping the books.',
-    closingLine: 'Use SMASH to invoice on the job. Use QuickBooks for the books. Integration coming soon — no double entry required.',
-    exportNote: 'When the QuickBooks integration launches, every invoice created in SMASH pushes straight into QuickBooks automatically — line items, GST, client details and all. No re-entering anything. No copying and pasting. Your books stay up to date without you touching QuickBooks at all. Everything you\'ve already invoiced in SMASH will be there ready to go.',
+    closingLine: 'Use SMASH to invoice on the job. Use QuickBooks for the books. Starter connects them — no double entry required.',
+    exportNote: 'With QuickBooks sync enabled, every invoice created in SMASH can push straight into QuickBooks automatically — line items, GST, client details and all. No re-entering anything. No copying and pasting. Your books stay up to date without you touching QuickBooks.',
     faq: [
       {
         q: 'Does SMASH replace QuickBooks?',
@@ -433,11 +433,11 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Will my SMASH invoices work with QuickBooks?',
-        a: 'SMASH invoices export as PDF and CSV today. Native QuickBooks integration is on the roadmap — when it launches, invoices will push across automatically with zero re-entry.',
+        a: 'Yes. SMASH invoices export as PDF and CSV today. Starter and above also unlock QuickBooks sync so invoices can push across automatically with zero re-entry.',
       },
       {
         q: 'QuickBooks has a free trial. Is SMASH free too?',
-        a: 'SMASH Free is permanently free — 2 quotes per month, no card required, no expiry. It\'s not a trial. QuickBooks\' free tier expires after 30 days.',
+        a: 'SMASH Free is permanently free — 5 invoices per month, no card required, no expiry. It\'s not a trial. QuickBooks\' free tier expires after 30 days.',
       },
       {
         q: 'How fast is setup compared to QuickBooks?',
@@ -540,7 +540,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What about the price difference?',
-        a: 'Fergus starts at around $45/month and scales up with users. SMASH Free is $0, paid plans are $12, $29 or $49/month — flat rate, no per-user fees. For a solo operator, that\'s a real saving.',
+        a: 'Fergus starts at around $45/month and scales up with users. SMASH Free is $0, paid web plans are $15, $25 or $35/month with unlimited invoices — flat rate, no per-user fees. For a solo operator, that\'s a real saving.',
       },
       {
         q: 'Does SMASH do job costing like Fergus?',
@@ -642,7 +642,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does SMASH compare on price?',
-        a: 'Tradify is billed per user, starting around $29 USD per user per month. SMASH has a free plan and paid plans at $12, $29 or $49 AUD/month — flat rate, not per user.',
+        a: 'Tradify is billed per user, starting around $29 USD per user per month. SMASH has a free plan and paid web plans at $15, $25 or $35 AUD/month with unlimited invoices — flat rate, not per user.',
       },
       {
         q: 'Can I switch my Tradify client list over?',
@@ -650,7 +650,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'Does SMASH connect to Xero like Tradify does?',
-        a: 'Xero and QuickBooks sync is on the SMASH roadmap. Today SMASH exports clean, GST-compliant PDFs you can attach to your accounting system.',
+        a: 'Yes. Xero and QuickBooks sync unlock on Starter and above. SMASH also exports clean, GST-compliant PDFs and CSVs when you need them.',
       },
       {
         q: 'Can SMASH handle GST correctly for Australian tradies?',
@@ -747,7 +747,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does pricing compare?',
-        a: 'Invoice2go starts at around $5.99 USD/month with paid tiers up to $39.99. SMASH has a free plan and paid plans from $12 AUD/month (Starter — 20 quotes) up to $49 AUD/month (Unlimited). Both are affordable — SMASH is the only one with a truly usable free tier.',
+        a: 'Invoice2go starts at around $5.99 USD/month with paid tiers up to $39.99. SMASH has a free plan and paid web plans from $15 AUD/month with unlimited invoices. Both are affordable — SMASH is the only one with a truly usable free tier.',
       },
       {
         q: 'Can SMASH import my Invoice2go clients?',
@@ -855,7 +855,7 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'What does SMASH cost compared to Joist?',
-        a: 'Joist has a free tier with limits, and paid from $13.99 USD/month. SMASH has a genuinely usable free plan and paid plans at $12, $29 or $49 AUD/month — flat rate, no per-user fees.',
+        a: 'Joist has a free tier with limits, and paid from $13.99 USD/month. SMASH has a genuinely usable free plan and paid web plans at $15, $25 or $35 AUD/month with unlimited invoices — flat rate, no per-user fees.',
       },
       {
         q: 'Can I import my Joist client list?',
@@ -960,11 +960,11 @@ const comparisons: ComparisonData[] = [
       },
       {
         q: 'How does pricing compare?',
-        a: 'Rounded starts at $19.95 AUD/month and has no free plan. SMASH is free to start, with paid plans from $12 AUD/month (Starter, 20 quotes) up to $49 AUD/month (Unlimited).',
+        a: 'Rounded starts at $19.95 AUD/month and has no free plan. SMASH is free to start, with paid web plans from $15 AUD/month and unlimited invoices on every paid tier.',
       },
       {
         q: 'Will SMASH integrate with Rounded?',
-        a: 'Xero and QuickBooks integrations are on the roadmap. A Rounded integration is not currently planned — the overlap with SMASH is mostly on the invoicing side where SMASH is already native.',
+        a: 'Xero and QuickBooks sync unlock on Starter and above. A Rounded integration is not currently planned — the overlap with SMASH is mostly on the invoicing side where SMASH is already native.',
       },
       {
         q: 'Can SMASH handle GST for Australian sole traders?',

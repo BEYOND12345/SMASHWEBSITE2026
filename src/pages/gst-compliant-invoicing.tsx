@@ -293,7 +293,7 @@ export function GstCompliantInvoicing() {
                   { label: "Works on phone, on site", smash: true, sheet: false, xero: false },
                   { label: "Under 60 seconds per invoice", smash: true, sheet: false, xero: false },
                   { label: "Sends PDF to client directly", smash: true, sheet: false, xero: true },
-                  { label: "Price for solo operators", smash: "$12/mo", sheet: "Free", xero: "$78+/mo" },
+                  { label: "Price for solo operators", smash: "From $15/mo", sheet: "Free", xero: "$78+/mo" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border">
                     <td className="py-4 pr-6 text-sm font-bold text-brand leading-[1.15]">{row.label}</td>

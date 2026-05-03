@@ -82,7 +82,7 @@ const comparison: CompRow[] = [
 const faqs = [
   {
     q: 'Is SMASH really free?',
-    a: 'Yes. The free plan gives you 2 quotes per month, forever, with no credit card needed to start. Paid plans start at $12/month (Starter, 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. You can also use the quote builder on this page for free, with no download or login required.',
+    a: 'Yes. The free plan gives you 5 invoices per month, forever, with no credit card needed to start. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing. You can also use the quote builder on this page for free, with no download or login required.',
   },
   {
     q: 'Does it work on Android?',

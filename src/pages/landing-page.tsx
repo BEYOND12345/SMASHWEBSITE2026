@@ -30,7 +30,7 @@ const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079
 
 const homeFaqs = [
   { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
-  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 2 invoices per month — no credit card needed. Paid plans start at $12/month (Starter, 20 quotes), with Pro at $29/month (35 quotes) and Unlimited at $49/month. Every plan includes Stripe payments, read receipts and customer history." },
+  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 5 invoices per month — no credit card needed. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing." },
   { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
   { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
 ];
@@ -337,6 +337,8 @@ export function LandingPage() {
                   'Already knows your rates and jobs',
                   'Scope written for you automatically',
                   'GST handled, nothing to calculate',
+                  'NDIS numbers included automatically',
+                  'Repeat last invoice in one tap',
                   'Quote becomes invoice in one tap',
                   'Customer pays right there and then',
                 ].map((item, i) => (
@@ -443,17 +445,18 @@ export function LandingPage() {
       <FeatureSection
         background="slate"
         imagePosition="left"
-        title="REPEAT CLIENTS REMEMBERED"
+        title="REPEAT WORK REMEMBERED"
         description={
           <p className="font-body">
-            Client history pulled up instantly. Repeat work done faster.
+            Client history pulled up instantly. Repeat last invoice in one tap.
           </p>
         }
         bullets={[
-          "Details linked to quotes",
+          "NDIS participant numbers saved per customer",
+          "NDIS printed automatically in the Bill To block",
+          "Repeat sent, approved or paid invoices as new drafts",
+          "Same client, line items and job title — dated today",
           "Addresses saved",
-          "Past quotes visible",
-          "Faster repeat work",
         ]}
         image={
           <div className="flex items-start justify-center lg:justify-start w-full overflow-visible h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto">

@@ -31,6 +31,10 @@ const faqs = [
         answer: "The approved quote automatically converts to an invoice. You see it in your dashboard. You see a read receipt the moment they open it. And when they pay, you get notified instantly. No manual follow-up. No guessing whether to call them."
       },
       {
+        question: "Can I repeat a weekly invoice without rebuilding it?",
+        answer: "Yes. Sent, approved and paid invoice or quote cards have a Repeat button. Tap it and SMASH creates a new draft with the same client, line items and job title, dated today — perfect for weekly NDIS support shifts and recurring jobs."
+      },
+      {
         question: "Can I edit the quote before sending it?",
         answer: "Always. You review every quote before it goes out. If SMASH missed something or got a price wrong, tap any line to edit — change quantities, add items, adjust labour hours. The more you use it, the better it gets at matching exactly how you work."
       }
@@ -79,6 +83,10 @@ const faqs = [
       {
         question: "Can anyone else see my quotes and invoices?",
         answer: "No. Your quotes and invoices are only visible to you — and to the specific customer you share a link with. Sharing a quote creates a unique, private link that only works for that quote. No other SMASH users, no third parties, and no one at SMASH can see your business data without your permission."
+      },
+      {
+        question: "Can customers see their NDIS participant number on the portal?",
+        answer: "Yes. When you save an optional 9-digit NDIS participant number on a customer profile, SMASH shows it on that customer's public invoice or quote portal and prints it in the Bill To block on every PDF."
       }
     ]
   },
@@ -99,7 +107,7 @@ const faqs = [
       },
       {
         question: "Does SMASH replace my accounting software?",
-        answer: "No. SMASH handles invoicing and quoting only — one thing, done well. You'll still use Xero, QuickBooks, or MYOB for tax, payroll, and financial reporting. SMASH just makes the invoicing part 4x faster. Integration with accounting software is coming soon."
+        answer: "No. SMASH handles invoicing and quoting only — one thing, done well. You'll still use Xero, QuickBooks, or MYOB for tax, payroll, and financial reporting. Starter and above unlock Xero and QuickBooks sync so SMASH invoices can flow into your books."
       }
     ]
   },
@@ -108,11 +116,11 @@ const faqs = [
     questions: [
       {
         question: "How much does SMASH cost?",
-        answer: "SMASH is free to start — 2 quotes per month, no credit card required, no time limit on the free plan. When you're ready for more volume: Starter is $12 AUD/month (20 quotes), Pro is $29 AUD/month (35 quotes — most popular), and Unlimited is $49 AUD/month for unlimited quotes. Every plan includes the full feature set, including Xero/QuickBooks sync. If you're invoicing daily, the app pays for itself on the first job of the month."
+        answer: "SMASH is free to start — 5 invoices per month, no credit card required, no time limit on the free plan. Starter is $15 AUD/month on web pricing and unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export. Pro is $25/month and Unlimited is $35/month. If you're invoicing daily, the app pays for itself on the first job of the month."
       },
       {
         question: "Is there a free trial?",
-        answer: "The free plan isn't a trial — it's a permanent free tier. You get 2 quotes a month for free, forever, with no credit card required. For most people, using SMASH free for even one week is enough to know whether they want to keep going. Try it on a couple of real jobs. See how it feels."
+        answer: "The free plan isn't a trial — it's a permanent free tier. You get 5 invoices a month for free, forever, with no credit card required. For most people, using SMASH free for even one week is enough to know whether they want to keep going. Try it on a couple of real jobs. See how it feels."
       },
       {
         question: "What do I need to get started?",

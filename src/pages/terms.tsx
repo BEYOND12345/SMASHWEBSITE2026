@@ -96,7 +96,7 @@ export function Terms() {
               </p>
               <h3 className="text-lg font-black text-brand mt-6 mb-2">Free plan</h3>
               <p className="font-body leading-[1.6]">
-                The free plan includes 2 quotes per month at no charge, with no credit card required. We reserve the right to adjust free plan limits with reasonable notice.
+                The free plan includes 5 invoices per month at no charge, with no credit card required. We reserve the right to adjust free plan limits with reasonable notice.
               </p>
               <h3 className="text-lg font-black text-brand mt-6 mb-2">Upgrades and downgrades</h3>
               <p className="font-body leading-[1.6]">

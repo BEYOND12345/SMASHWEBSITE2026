@@ -41,7 +41,7 @@ const faqs = [
 ];
 
 const steps = [
-  { h: 'Send a link, not a PDF',       b: 'SMASH gives every quote and invoice a unique URL. One tap opens it on any phone.', Icon: CheckCircle2 },
+  { h: 'Send a link, not a PDF',       b: 'SMASH gives every quote and invoice a unique URL. One tap opens it on any phone, with NDIS participant numbers shown when saved.', Icon: CheckCircle2 },
   { h: 'See when they open it',        b: 'Read receipts fire the moment the customer views the link — no more guessing.',    Icon: Eye },
   { h: 'One-tap approve and pay',      b: 'Approve button on every quote. Pay Now button on every invoice. Typed signature captured for the audit trail.', Icon: CheckCircle2 },
   { h: 'Get notified in real time',    b: 'Push notification on every open, approval, decline, change-request and payment. You always know where a job stands.', Icon: Bell },
@@ -125,7 +125,7 @@ export function CustomerApproval() {
               Short answer
             </p>
             <p className="font-body text-xl md:text-2xl font-bold text-brand leading-relaxed">
-              Send the quote as a link. The customer opens it on their phone, taps Approve, types their name, and signs off. You get a read receipt when they opened it, a notification when they approved, and a legally-enforceable audit trail — in AU, NZ, UK, US and Canada.
+              Send the quote as a link. The customer opens it on their phone, sees their NDIS participant number if saved, taps Approve, types their name, and signs off. You get a read receipt when they opened it, a notification when they approved, and a legally-enforceable audit trail — in AU, NZ, UK, US and Canada.
             </p>
           </div>
         </div>

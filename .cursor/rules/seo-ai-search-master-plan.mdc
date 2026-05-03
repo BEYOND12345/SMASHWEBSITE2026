@@ -1,0 +1,62 @@
+---
+description: SEO and AI search north-star strategy for SMASH Invoices website work
+alwaysApply: true
+---
+
+# SMASH SEO & AI Search North Star
+
+Every SEO/content decision should connect back to:
+
+> The fastest way for self-employed service workers to invoice — by voice.
+
+If a keyword, page, or content asset does not reinforce speed, voice, and self-employed service workers, challenge whether it should be built.
+
+## Strategic Pillars
+
+- **Anti-admin:** Position against the admin task and the pile of uninvoiced jobs, not primarily against competitor apps.
+- **Voice-first:** Voice invoicing is the moat. Protect existing `/voice-invoicing` rankings and do not change its title/meta without explicit instruction.
+- **Trade and service specific:** Use deep ICP specificity for cleaners, handymen, gardeners, mobile mechanics, plumbers, electricians, NDIS support workers, etc. Generic is for Xero.
+- **Two equal surfaces:** Chrome extension and iOS app are both first-class entry points. Promote both where relevant.
+- **Tools as acquisition:** Free tools are not side pages; they are SEO assets and should link into feature, ICP, and conversion pages.
+
+## Language Rules
+
+- Use "service businesses" or "self-employed service workers" as the broad umbrella.
+- Use trade-specific language on ICP pages and ads.
+- Prefer outcome language over tech language. Avoid "GPT", "Deepgram", and "machine learning" in customer copy.
+- Do not say "easy"; show the low-friction workflow.
+- Prefer "under 60 seconds" or "before you leave the driveway" over vague speed claims.
+- Primary CTA is **Start Free**.
+
+## Priority Clusters
+
+1. Voice invoicing / voice to invoice
+2. AI invoicing and ChatGPT-origin content
+3. Free tools: invoice generator, quote generator, GST calculator, invoice template, hourly rate calculator, tradie hourly rates
+4. Cleaners cluster first, then handymen, gardeners, mobile mechanics, plumbers, electricians
+5. Gmail / Chrome invoice extension
+6. NDIS invoicing and participant-number compliance
+
+## Per-Page SEO Checklist
+
+- Unique title, meta description, OG title, OG description, and canonical.
+- One H1 containing the page intent.
+- Definitive 2-3 sentence answer block near the top for AI citation.
+- FAQ section where useful, with FAQ schema.
+- Minimum two internal links to relevant SMASH pages.
+- Both Chrome and iOS CTAs where relevant.
+- Sitemap updated for any new URL.
+- Mobile checked at 375px before launch.
+
+## Tool Funnel Principle
+
+Each tool must act as both a useful standalone answer and a conversion step:
+
+- User solves a real problem with the tool.
+- Page explains the manual pain.
+- CTA connects the tool to SMASH doing the same job by voice.
+- Tool links to relevant ICP pages and feature pages.
+
+## Protected Rule
+
+Do not change `/voice-invoicing` title/meta unless the user explicitly asks. It is a confirmed ranking asset.

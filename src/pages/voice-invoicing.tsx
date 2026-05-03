@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Does voice invoicing work in Australia?",
-    a: "Yes. Australia is the founding market — GST calculations, ABN display, ATO-compliant invoice format, and a 2,250+ item materials catalog are all built in, with invoices in AUD. SMASH also runs live in NZ, the UK, the US and Canada with each market's local tax and currency."
+    a: "Yes. Australia is the founding market — GST calculations, ABN display, ATO-compliant invoice format, optional NDIS participant numbers, and a 2,250+ item materials catalog are all built in, with invoices in AUD. SMASH also runs live in NZ, the UK, the US and Canada with each market's local tax and currency."
   },
   {
     q: "Does voice invoicing work outside Australia?",
@@ -87,7 +87,7 @@ export function VoiceInvoicing() {
         steps: [
           { name: 'Describe the job out loud', text: 'Speak naturally for 20–30 seconds — what you did, materials used, time taken. No script or format required.' },
           { name: 'Software builds the invoice', text: 'In under 10 seconds, a structured, priced, GST-compliant invoice is generated automatically from your speech.' },
-          { name: 'Review and edit', text: 'Check the invoice on screen. Edit any line items, adjust prices, add notes. Nothing leaves without your approval.' },
+          { name: 'Review and edit', text: 'Check the invoice on screen. Edit line items, adjust prices, add notes, and confirm any saved NDIS participant number. Nothing leaves without your approval.' },
           { name: 'Send to customer', text: 'Send the invoice as a link via SMS, email, or WhatsApp. Customer receives it instantly on their phone.' },
           { name: 'Customer approves and pays', text: 'Customer opens the link, approves with one tap, and pays. You receive a notification the moment they open it.' },
         ],

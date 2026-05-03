@@ -22,7 +22,7 @@ import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 // ── Copy data ────────────────────────────────────────────────────────────────
 // All headlines stay sentence-case in the source — Tailwind `uppercase` class
@@ -32,9 +32,9 @@ const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoi
 const steps = [
   {
     n: '01',
-    title: 'Open the email.',
+    title: 'Open Gmail.',
     body:
-      "SMASH reads the customer's name and email straight from your open Gmail thread. No copying, no pasting, no setup.",
+      'Click the SMASH icon in the Gmail top bar or the Generate Invoice button beside Send. The side panel opens without leaving your inbox.',
   },
   {
     n: '02',
@@ -52,16 +52,16 @@ const steps = [
     n: '04',
     title: 'Format and send.',
     body:
-      'Need an Estimate instead of a Quote? Swap it with one click. Then drop a clean, formatted reply straight into your Gmail thread, or generate a branded PDF to attach.',
+      'Need an invoice instead of a quote? Swap it with one click. Then drop a clean reply into Gmail, attach a branded PDF, and optionally append the SMASH signature from Settings.',
   },
 ];
 
 const features = [
   {
     icon: Inbox,
-    title: 'Your prices. In every quote. Automatically.',
+    title: 'Generate invoices without leaving Gmail.',
     body:
-      'Build your catalog once. Every time you speak a service, SMASH already knows what you charge. It gets faster every time you use it. After a few weeks, regular work invoices itself in under 20 seconds.',
+      'SMASH lives inside Gmail: top-bar icon, compose toolbar button, and a side panel that builds invoices from the customer email or your voice.',
   },
   {
     icon: FileDown,
@@ -73,7 +73,7 @@ const features = [
     icon: Send,
     title: 'They approve it. They pay it. Done.',
     body:
-      "Customers get a link in the email. One tap to approve from their phone. One tap to pay. You'll know the second they open it. No more \"I never got it.\"",
+      "Customers get a public link in the email. One tap to approve from their phone. One tap to pay. NDIS participant numbers show on the portal and PDF when saved on the customer.",
   },
   {
     icon: Check,
@@ -94,30 +94,30 @@ const tiers = [
   {
     name: 'Free',
     price: '0',
-    volume: '2 quotes a month',
-    pitch: 'Test SMASH on real jobs.',
+    volume: '5 invoices a month',
+    pitch: 'Feel SMASH on real jobs.',
     highlight: false,
   },
   {
     name: 'Starter',
-    price: '12',
-    volume: '20 quotes a month',
-    pitch: 'Built for the side-hustle and weekenders.',
-    highlight: false,
+    price: '15',
+    volume: 'Unlimited invoices',
+    pitch: 'Accounting sync and CSV export included.',
+    highlight: true,
+    badge: 'Best Value',
   },
   {
     name: 'Pro',
-    price: '29',
-    volume: '35 quotes a month',
-    pitch: 'For service pros quoting every day.',
-    highlight: true,
-    badge: 'Most Popular',
+    price: '25',
+    volume: 'Unlimited invoices',
+    pitch: 'For service pros invoicing every week.',
+    highlight: false,
   },
   {
     name: 'Unlimited',
-    price: '49',
-    volume: 'Unlimited quotes',
-    pitch: 'For lead-rich businesses and crews.',
+    price: '35',
+    volume: 'Unlimited invoices',
+    pitch: 'For busy operators and crews.',
     highlight: false,
   },
 ];
@@ -153,7 +153,7 @@ const faqs = [
   },
   {
     q: 'What happens if I hit my free limit?',
-    a: "Your first 2 quotes every month are totally free. If you hit the cap, you'll get a prompt to upgrade. Paid plans start at just $12/month.",
+    a: "Your first 5 invoices every month are free. If you hit the cap, you'll get a prompt to upgrade. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month.",
   },
   {
     q: 'Do my customers need to download an app?',
@@ -204,6 +204,7 @@ function GmailMockup() {
         </div>
         <span className="text-slate-700 font-bold text-sm">Inbox</span>
         <span className="ml-auto text-[10px] text-slate-400 font-medium">1 of 248</span>
+          <span className="ml-2 px-2 py-1 rounded-full bg-brand text-accent text-[8px] font-black uppercase tracking-widest">SMASH</span>
       </div>
 
       <div className="grid grid-cols-5">
@@ -227,6 +228,9 @@ function GmailMockup() {
           <div className="flex gap-2 pt-2">
             <div className="px-2.5 py-1 rounded bg-slate-100 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
               Reply
+            </div>
+            <div className="px-2.5 py-1 rounded bg-accent text-brand text-[9px] font-black uppercase tracking-wider">
+              Generate Invoice
             </div>
             <div className="px-2.5 py-1 rounded bg-slate-100 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
               Forward
@@ -300,10 +304,10 @@ export function ChromeExtension() {
     <>
       <SEO
         title="SMASH for Gmail — Voice-Powered Quotes from Your Inbox | SMASH Invoices"
-        description="The SMASH Invoices Chrome extension is a Gmail sidebar tool that turns customer emails into priced quotes using your voice. Open the email, speak the job for 30 seconds, send a professional GST-compliant quote — synced to Xero or QuickBooks. Built for self-employed service pros."
+        description="The SMASH Invoices Chrome extension lives inside Gmail. Click the SMASH icon or Generate Invoice beside Send, speak the job for 30 seconds, and create a professional invoice or quote without leaving your inbox."
         keywords="SMASH for Gmail, Gmail invoice extension, voice quote chrome extension, gmail quote sidebar, voice to invoice gmail, chrome extension for tradies, gmail invoicing, photographer invoicing, freelancer quote tool"
         ogTitle="SMASH for Gmail — The Fastest Way to Clear Your Inbox"
-        ogDescription="Turn customer emails into priced quotes in under 60 seconds. Speak the job. Reply without leaving Gmail."
+        ogDescription="Generate invoices without leaving your inbox — SMASH lives inside Gmail."
         ogUrl="https://smashinvoices.com/chrome-extension"
         canonical="https://smashinvoices.com/chrome-extension"
         hreflangs={hreflangAlternates}
@@ -337,7 +341,7 @@ export function ChromeExtension() {
                   <span className="text-accent">inbox.</span>
                 </h1>
                 <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-md">
-                  Turn customer emails into priced quotes in under 60 seconds. Speak the job, let SMASH do the math, and reply without ever leaving Gmail.
+                  Generate invoices without leaving your inbox. The SMASH icon in Gmail and Generate Invoice button beside Send both open the side panel.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
@@ -377,7 +381,7 @@ export function ChromeExtension() {
             What is SMASH for Gmail?
           </p>
           <p className="text-lg md:text-xl font-bold text-brand leading-[1.3]">
-            The SMASH Invoices Chrome extension is a Gmail sidebar tool that turns customer emails into priced quotes using your voice. Built for self-employed service workers and freelancers, you simply open a customer email, speak the job details for 30 seconds, and SMASH automatically builds a professional, GST-compliant quote using your personal rates. It syncs directly to Xero and QuickBooks Online without any manual typing.
+            The SMASH Invoices Chrome extension is a Gmail side panel that turns customer emails into priced invoices and quotes using your voice. Built for self-employed service workers and freelancers, you click the SMASH icon or Generate Invoice beside Send, speak the job details for 30 seconds, and SMASH builds a professional, tax-compliant invoice using your personal rates. It syncs directly to Xero and QuickBooks Online without manual typing.
           </p>
         </div>
       </section>
@@ -533,10 +537,10 @@ export function ChromeExtension() {
               Pricing
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-5 text-center max-w-2xl mx-auto">
-              Pay for volume,<br />not features.
+              Five free.<br />Unlimited from $15.
             </h2>
             <p className="font-body text-white/65 font-medium text-base sm:text-lg text-center max-w-2xl mx-auto leading-[1.5] mb-12">
-              We don't hold features back for higher tiers. Every plan gets Xero/QuickBooks sync, PDF exports, the customer portal and the materials catalog. Lock in our introductory launch pricing for life.
+              Free gives you 5 invoices to feel the product. Starter unlocks unlimited invoices, Xero/QuickBooks sync and CSV export from $15/month.
             </p>
           </AnimateIn>
 

@@ -21,11 +21,11 @@ const hubFaqs = [
   },
   {
     q: 'Which accounting integrations are planned?',
-    a: 'Xero and QuickBooks Online are confirmed. MYOB, Wave, FreshBooks and Sage are on the roadmap. Join the relevant waitlist to be notified when each one goes live.',
+    a: 'Xero and QuickBooks Online are live on paid SMASH plans from Starter. MYOB, Wave, FreshBooks and Sage remain on the roadmap.',
   },
   {
     q: 'Will the integrations work in every SMASH country?',
-    a: 'Yes. The Xero integration launches across Australia, New Zealand, the UK, the US and Canada. The QuickBooks Online integration launches across the US, Canada, the UK and Australia, aligned with the SMASH country rollout.',
+    a: 'Yes. Xero sync works across Australia, New Zealand, the UK, the US and Canada. QuickBooks Online sync supports the US, Canada, the UK and Australia.',
   },
   {
     q: 'Will there be Zapier / Make / API access?',
@@ -33,7 +33,7 @@ const hubFaqs = [
   },
   {
     q: 'Does integration cost extra on top of my SMASH plan?',
-    a: 'No extra SMASH charge for the integration itself. You continue to pay your Xero or QuickBooks subscription directly.',
+    a: 'Xero and QuickBooks sync unlock on Starter and above. Starter is $15/month on web pricing and includes unlimited invoices plus CSV export. You continue to pay your accounting software subscription directly.',
   },
 ];
 
@@ -44,10 +44,10 @@ export function Integrations() {
     <>
       <SEO
         title="SMASH Invoices Integrations | Xero, QuickBooks and more"
-        description="SMASH integrates with the accounting tools tradies already use. Xero and QuickBooks Online first, with MYOB, Zapier and an API on the roadmap. Voice invoicing on site, clean books in the office."
+        description="SMASH integrates with the accounting tools tradies already use. Xero and QuickBooks Online unlock on Starter from $15/month with unlimited invoices and CSV export. Voice invoicing on site, clean books in the office."
         keywords="SMASH integrations, SMASH Xero integration, SMASH QuickBooks integration, invoicing app Xero, invoicing app QuickBooks, tradie accounting integration"
         ogTitle="SMASH Invoices Integrations | Xero, QuickBooks and more"
-        ogDescription="Voice invoicing on site, clean books in the office. SMASH integrates with Xero and QuickBooks Online, with MYOB, Zapier and an API on the roadmap."
+        ogDescription="Voice invoicing on site, clean books in the office. SMASH integrates with Xero and QuickBooks Online from Starter."
         ogUrl={url}
         canonical={url}
         hreflangs={hreflangAlternates}

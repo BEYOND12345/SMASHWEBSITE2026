@@ -98,7 +98,7 @@ const releases: Release[] = [
       { type: 'new', text: 'One-tap email send to customer' },
       { type: 'new', text: 'AI learns your labour rates and pricing style from your first few quotes' },
       { type: 'new', text: 'Quote list with status tracking' },
-      { type: 'new', text: 'Free plan — 2 quotes per month, no card needed' },
+      { type: 'new', text: 'Free plan — 5 invoices per month, no card needed' },
     ],
   },
 ];

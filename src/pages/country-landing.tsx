@@ -14,7 +14,7 @@ interface CountryLandingProps {
 }
 
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/search/smash%20invoices';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 export function CountryLanding({ data }: CountryLandingProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
