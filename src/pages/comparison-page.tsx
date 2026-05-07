@@ -536,6 +536,30 @@ export function ComparisonPage({ data }: Props) {
         </div>
       </section>
 
+      {/* ── INTERNAL LINKS STRIP ─────────────────────────────────── */}
+      {data.relatedLinks && data.relatedLinks.length > 0 && (
+        <section className="bg-brand py-12 border-t border-white/6">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+            <AnimateIn direction="up">
+              <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-5 text-center">
+                Explore SMASH
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {data.relatedLinks.map(link => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/55 font-black text-xs uppercase tracking-widest hover:text-accent hover:border-accent/30 hover:bg-accent/5 transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
+      )}
+
       {/* ── WHO IS EACH FOR ───────────────────────────────────────── */}
       <section className="bg-surface py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">

@@ -67,14 +67,48 @@ export const countries: CountryData[] = [
     live: true,
     heroHook: 'Voice to GST-compliant invoice. Before you leave the driveway.',
     heroSub: 'Built for Australian sole traders. GST, ABN, ATO-compliant invoices — sent from your phone, on site, in under 60 seconds.',
-    reasons: [],
+    reasons: [
+      {
+        title: '10% GST built in, ATO-compliant from day one',
+        body: 'Every invoice SMASH generates is ATO-compliant — ABN on the document, sequential invoice numbers, GST calculated per line item. No spreadsheets, no manual maths.',
+      },
+      {
+        title: 'ABN on every invoice, automatically',
+        body: 'Enter your ABN once during setup and it appears on every invoice and quote you ever send. No checklist. No forgetting.',
+      },
+      {
+        title: 'Built for Australian trades',
+        body: 'Voice recognition trained on Australian trade language — "25mm copper," "Clipsal switches," "call-out fee." SMASH understands what you do and prices it the way you do.',
+      },
+      {
+        title: 'Free plan, then $15/$25/$35 AUD/month',
+        body: 'Start free with 5 invoices a month. Upgrade to Starter ($15), Pro ($25), or Unlimited ($35) when you\'re ready. Flat rate — no per-user fees, no contract.',
+      },
+    ],
     audience: 'plumbers, sparkies, chippies, cleaners, gardeners, handymen, mobile mechanics',
     seo: {
-      title: 'Voice to Invoice & Quote Software for Tradies | SMASH Invoices',
-      description: 'Voice-to-invoice for Australian tradies. Talk, send a GST-compliant invoice in under 60 seconds. Built for sole traders, plumbers, sparkies, cleaners.',
-      keywords: 'invoice app Australia, tradie invoicing, GST invoice, voice invoicing, ABN invoice software, Xero alternative',
+      title: 'Voice Invoicing App for Australian Tradies | SMASH Invoices',
+      description: 'Voice-to-invoice for Australian tradies. Talk, send a GST-compliant invoice with your ABN in under 60 seconds. Free plan available. Built for plumbers, sparkies, cleaners, and more.',
+      keywords: 'invoice app Australia, tradie invoicing, GST invoice app, voice invoicing Australia, ABN invoice software, Xero alternative tradies',
     },
-    faqs: [],
+    faqs: [
+      {
+        q: 'Does SMASH produce ATO-compliant invoices in Australia?',
+        a: 'Yes. Every invoice SMASH generates is ATO-compliant: it includes your ABN, a sequential invoice number, the date, 10% GST itemised per line, and a total with GST shown separately — exactly as required.',
+      },
+      {
+        q: 'Does SMASH work with GST in Australia?',
+        a: 'Yes. GST is applied automatically at 10% to every line item. SMASH shows the GST amount separately on every invoice so your customers can see exactly what they\'re paying — no manual maths, no calculator.',
+      },
+      {
+        q: 'What does SMASH cost in Australia?',
+        a: 'SMASH Free gives you 5 invoices per month at $0 — no credit card needed. Starter is $15 AUD/month with unlimited invoices and Xero/QuickBooks sync. Pro is $25 AUD/month and Unlimited is $35 AUD/month. All plans are flat rate with no per-user fees.',
+      },
+      {
+        q: 'Can SMASH export to Xero or MYOB for my accountant?',
+        a: 'Xero sync is available on Starter and above — invoices push from SMASH into your Xero account automatically. QuickBooks sync is also included on Starter+. For MYOB, SMASH exports GST-compliant CSV files your accountant can import.',
+      },
+    ],
   },
   {
     slug: 'nz',
@@ -95,7 +129,7 @@ export const countries: CountryData[] = [
     reasons: [
       {
         title: 'Built for 15% GST out of the box',
-        body: 'SMASH handles NZ GST automatically. No spreadsheets. No manual maths. Every invoice is compliant.',
+        body: 'SMASH handles NZ GST automatically. No spreadsheets. No manual maths. Every invoice is IRD-compliant with your NZBN and GST number on the document.',
       },
       {
         title: 'NZD pricing, NZBN on every invoice',
@@ -112,14 +146,18 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparkies, builders, landscapers, cleaners, painters',
     seo: {
-      title: 'Voice-to-Invoice App for New Zealand Tradies | SMASH Invoices',
-      description: 'Live in NZ: voice-to-invoice with 15% GST and NZD pricing, built for Kiwi sole traders. Free to start on iOS and Chrome.',
-      keywords: 'invoice app New Zealand, NZ invoicing software, GST invoice NZ, tradie app Kiwi, voice to invoice New Zealand, Xero alternative NZ',
+      title: 'Voice Invoicing App for New Zealand Tradies | SMASH Invoices NZ',
+      description: 'Voice-to-invoice for NZ tradies. Talk, send a 15% GST invoice in NZD with your NZBN in under 60 seconds. Free to start on iOS and Chrome. Built for Kiwi sole traders.',
+      keywords: 'invoice app New Zealand, NZ invoicing software, GST invoice NZ, NZBN invoice, tradie app Kiwi, voice to invoice New Zealand, Xero alternative NZ',
     },
     faqs: [
       {
-        q: 'Does SMASH handle New Zealand GST (15%)?',
-        a: 'Yes. Set your country to New Zealand during onboarding and every invoice defaults to 15% GST, in NZD, with your NZBN on the document.',
+        q: 'Does SMASH work with GST in New Zealand?',
+        a: 'Yes. Set your country to New Zealand during onboarding and every invoice automatically applies 15% GST, shows the GST amount separately, and includes your NZBN and GST number — exactly as required by the IRD.',
+      },
+      {
+        q: 'Can I use SMASH to create tax invoices in NZ?',
+        a: 'Yes. SMASH produces compliant NZ tax invoices: NZBN on the document, 15% GST itemised per line, sequential invoice numbering, and your business details. Your customers can use them to claim GST inputs.',
       },
       {
         q: 'Is SMASH available in New Zealand?',
@@ -130,8 +168,12 @@ export const countries: CountryData[] = [
         a: 'Invoices you send your customers default to NZD. Subscription pricing is billed in AUD on the same plan everywhere — same price for every country.',
       },
       {
-        q: 'Does it work for my trade?',
-        a: 'SMASH is built for sole traders and small crews: plumbers, sparkies, builders, landscapers, cleaners, painters, mobile mechanics. Voice recognition is trained on trade language.',
+        q: 'Does SMASH support Xero for NZ tradies?',
+        a: 'Xero and QuickBooks sync are available on Starter ($15 AUD/month) and above. SMASH invoices push into Xero automatically — your accountant gets GST-correct line items in NZD without you re-entering anything.',
+      },
+      {
+        q: 'Does it work for my trade in New Zealand?',
+        a: 'SMASH is built for sole traders and small crews: plumbers, sparkies, builders, landscapers, cleaners, painters, mobile mechanics. Voice recognition is trained on trade language, including common NZ trade terminology.',
       },
     ],
   },
@@ -154,11 +196,11 @@ export const countries: CountryData[] = [
     reasons: [
       {
         title: 'VAT-compliant from the first invoice',
-        body: 'SMASH handles 20% VAT by default, with flat-rate and standard schemes supported. Every PDF ticks the HMRC boxes.',
+        body: 'SMASH handles 20% VAT by default, with flat-rate and standard schemes supported. Every PDF ticks the HMRC boxes — VAT number, invoice number, and itemised VAT shown.',
       },
       {
         title: 'GBP pricing, UK-formatted invoices',
-        body: 'Currency in GBP. Your company number and VAT number on every document. Clients see a professional British invoice — not a translated import.',
+        body: 'Currency in GBP. Your company number or UTR and VAT number on every document. Clients see a professional British invoice — not a translated import.',
       },
       {
         title: 'Built for sole traders and limited companies',
@@ -166,19 +208,23 @@ export const countries: CountryData[] = [
       },
       {
         title: 'Available on iOS and Chrome',
-        body: 'Download the SMASH app from the UK App Store, or pin the Chrome extension to invoice from a laptop or van office. Free to start.',
+        body: 'Download the SMASH app from the UK App Store, or pin the Chrome extension to invoice from a laptop or van office. Free to start, no credit card.',
       },
     ],
     audience: 'plumbers, sparks, joiners, brickies, gas engineers, landscapers, domestic cleaners',
     seo: {
-      title: 'Voice-to-Invoice App for UK Sole Traders & Contractors | SMASH',
-      description: 'Live in the UK: voice-to-invoice with 20% VAT, GBP pricing, built for British sole traders and limited companies. Free to start on iOS and Chrome.',
-      keywords: 'invoice app UK, VAT invoice app, UK contractor invoicing, sole trader invoice software UK, voice to invoice UK, QuickBooks alternative UK',
+      title: 'Voice Invoicing App for UK Sole Traders & Tradespeople | SMASH',
+      description: 'Voice-to-invoice for UK sole traders and tradespeople. Talk, send a VAT-compliant invoice in GBP with your UTR or company number in under 60 seconds. Free to start on iOS and Chrome.',
+      keywords: 'invoice app UK, VAT invoice app, UK tradespeople invoicing, sole trader invoice software UK, voice to invoice UK, CIS invoicing, QuickBooks alternative UK',
     },
     faqs: [
       {
-        q: 'Does SMASH handle UK VAT?',
-        a: 'Yes. Every invoice defaults to 20% VAT. Flat-rate scheme and VAT-exempt statuses are supported. Your VAT number appears on every PDF.',
+        q: 'Can I use SMASH for VAT invoices in the UK?',
+        a: 'Yes. SMASH produces fully HMRC-compliant VAT invoices in GBP: your VAT number on the document, 20% VAT itemised per line, sequential invoice numbers, and your company number or UTR. Standard and flat-rate VAT schemes are both supported.',
+      },
+      {
+        q: 'Does SMASH handle UK VAT correctly?',
+        a: 'Yes. Every invoice defaults to 20% VAT. You can also set VAT-exempt status for services that don\'t carry VAT. Your VAT number appears on every PDF and the VAT amount is shown separately as required by HMRC.',
       },
       {
         q: 'Is SMASH available in the UK?',
@@ -186,11 +232,15 @@ export const countries: CountryData[] = [
       },
       {
         q: 'Is pricing in GBP?',
-        a: 'Invoices you send your customers default to GBP. Subscription pricing is billed in AUD on the same plan everywhere — same price for every country.',
+        a: 'Invoices you send your customers are in GBP. Subscription pricing is billed in AUD — same flat rate for every country. No per-user fees, no contract.',
       },
       {
         q: 'Does it work for limited companies as well as sole traders?',
-        a: 'Yes. You pick your business type during onboarding and SMASH formats invoices correctly — sole trader UTR or company number, VAT registered or not.',
+        a: 'Yes. Pick your business type during onboarding — sole trader with UTR or limited company with company number — and SMASH formats every invoice correctly from then on. VAT registered or not, both are supported.',
+      },
+      {
+        q: 'Can SMASH help with CIS invoicing for UK subcontractors?',
+        a: 'SMASH generates professional invoices that subcontractors send to main contractors, including your UTR and the correct labour and materials breakdown. CIS tax deduction handling is on the roadmap — export to CSV for your accountant in the meantime.',
       },
     ],
   },
@@ -213,11 +263,11 @@ export const countries: CountryData[] = [
     reasons: [
       {
         title: 'State sales tax, handled per invoice',
-        body: 'Set your state and county once. SMASH applies the right sales tax rate to every line item — no calculator, no lookup.',
+        body: 'Set your state and county once. SMASH applies the correct sales tax rate to every line item automatically — no lookup, no calculator.',
       },
       {
         title: 'USD pricing, EIN on every invoice',
-        body: 'Invoices in USD. Your EIN on every PDF. Payment by card or ACH. Built for 1099 contractors and small LLCs.',
+        body: 'Invoices in USD. Your EIN on every PDF. Payment by card or ACH. Built for 1099 contractors, sole proprietors, and small LLCs.',
       },
       {
         title: 'Works for the trades Americans run',
@@ -230,26 +280,30 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC techs, electricians, plumbers, handymen, lawn care, mobile detailing, pressure washing, house cleaning',
     seo: {
-      title: 'Voice-to-Invoice App for US Contractors | SMASH Invoices',
-      description: 'Live in the US: voice-to-invoice for 1099 contractors and service pros. USD pricing, state sales tax handled, EIN on every invoice. Free on iOS and Chrome.',
-      keywords: 'invoice app US, contractor invoicing app, 1099 invoicing, handyman invoicing app USA, voice to invoice USA, QuickBooks alternative contractors',
+      title: 'Voice Invoicing App for US Contractors & Tradespeople | SMASH',
+      description: 'Voice-to-invoice for 1099 contractors and US service pros. Talk, send an invoice in USD with state sales tax and your EIN in under 60 seconds. Free to start on iOS and Chrome.',
+      keywords: 'invoice app US, contractor invoicing app, 1099 invoicing, handyman invoicing app USA, voice to invoice USA, QuickBooks alternative contractors, service business invoicing',
     },
     faqs: [
       {
         q: 'Does SMASH handle US state sales tax?',
-        a: 'Yes. You set your state (and county, if applicable) and SMASH applies the correct sales tax rate to every invoice automatically.',
+        a: 'Yes. You set your state (and county, if applicable) once during onboarding and SMASH applies the correct sales tax rate to every invoice automatically — no lookup tables, no manual entry.',
+      },
+      {
+        q: 'Can I use SMASH as a 1099 contractor or sole proprietor?',
+        a: 'Yes. SMASH is built for 1099 contractors, sole proprietors, and small LLCs. Pick your business type during onboarding — EIN or SSN, sole prop or LLC — and invoices are formatted correctly from day one. Your EIN appears on every invoice.',
       },
       {
         q: 'Is SMASH available in the United States?',
         a: 'Yes — SMASH is live on the US App Store and as a Chrome extension. Free to start, no credit card required.',
       },
       {
-        q: 'Will it work for 1099 contractors and small LLCs?',
-        a: 'Yes. You pick your business type during onboarding. EIN or SSN, sole proprietor or LLC — SMASH formats invoices correctly from day one.',
+        q: 'How does SMASH compare to QuickBooks for US contractors?',
+        a: 'QuickBooks is a full accounting platform — great for bookkeeping, payroll, and tax prep. SMASH is built for one thing: getting an invoice sent from your phone in 60 seconds. Many US contractors use both — SMASH on the job, QuickBooks for the accountant. SMASH exports clean CSV and PDF that your accountant can import.',
       },
       {
-        q: 'Does it integrate with QuickBooks?',
-        a: 'QuickBooks Online sync is on the integrations roadmap. In the meantime, SMASH exports clean CSV and PDF for your accountant.',
+        q: 'Does SMASH work for service businesses, not just construction trades?',
+        a: 'Yes. SMASH works great for any service business that invoices on the go: lawn care, pressure washing, house cleaning, mobile detailing, pest control, IT repair. If you finish a job and need to send an invoice before you leave, SMASH was built for you.',
       },
     ],
   },
@@ -265,22 +319,22 @@ export const countries: CountryData[] = [
     currency: { code: 'CAD', symbol: '$' },
     taxLabel: 'GST / HST / PST (configurable by province)',
     taxRate: 'GST 5% + provincial',
-    businessNumberLabel: 'Business Number',
+    businessNumberLabel: 'Business Number (BN)',
     live: true,
     heroHook: 'Voice-to-invoice. Built for Canadian contractors.',
     heroSub: 'Describe the job, SMASH writes a CAD invoice with the right GST/HST/PST for your province and your Business Number on it, and sends it to your customer — all in under 60 seconds. Live on iOS and Chrome today.',
     reasons: [
       {
         title: 'GST, HST, PST — by province, automatically',
-        body: 'Pick your province once. SMASH applies the correct combination of GST, HST or PST to every invoice — Ontario, BC, Alberta, Quebec, all supported.',
+        body: 'Pick your province once. SMASH applies the correct combination of GST, HST or PST to every invoice — Ontario, BC, Alberta, Quebec and all other provinces supported.',
       },
       {
         title: 'CAD pricing, Business Number on every invoice',
-        body: 'Invoices default to CAD. Your Business Number appears on every PDF. Clients see a Canadian invoice — not a retrofit.',
+        body: 'Invoices default to CAD. Your Business Number (BN) appears on every PDF. Clients see a professional Canadian invoice — not a retrofit.',
       },
       {
         title: 'Bilingual support on the roadmap',
-        body: 'English at launch. French UI and French-language invoices for Quebec are on the way.',
+        body: 'English at launch. French UI and French-language invoices for Quebec contractors are on the roadmap.',
       },
       {
         title: 'Available on iOS and Chrome',
@@ -289,14 +343,18 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC technicians, electricians, plumbers, landscapers, snow removal, cleaning, handymen',
     seo: {
-      title: 'Voice-to-Invoice App for Canadian Contractors | SMASH Invoices',
-      description: 'Live in Canada: voice-to-invoice with GST/HST/PST by province, CAD pricing, Business Number on every invoice. Free on iOS and Chrome.',
-      keywords: 'invoice app Canada, contractor invoicing Canada, GST HST invoice app, Canadian sole trader invoicing, voice to invoice Canada, QuickBooks alternative Canada',
+      title: 'Voice Invoicing App for Canadian Contractors | SMASH Invoices CA',
+      description: 'Voice-to-invoice for Canadian contractors. Talk, send an invoice in CAD with GST/HST/PST by province and your Business Number in under 60 seconds. Free to start on iOS and Chrome.',
+      keywords: 'invoice app Canada, contractor invoicing Canada, GST HST invoice app, Canadian sole trader invoicing, voice to invoice Canada, QuickBooks alternative Canada, BN invoice',
     },
     faqs: [
       {
-        q: 'Does SMASH handle GST, HST and PST?',
-        a: 'Yes. Pick your province during onboarding and SMASH applies the correct combination of GST, HST or PST to every invoice — no manual maths.',
+        q: 'Does SMASH handle GST, HST and PST in Canada?',
+        a: 'Yes. Pick your province during onboarding — Ontario (HST 13%), BC (GST + PST), Alberta (GST only), Quebec (GST + QST), and all others — and SMASH applies the correct tax combination to every invoice automatically. No manual maths.',
+      },
+      {
+        q: 'Can I use SMASH as a Canadian sole proprietor or small business?',
+        a: 'Yes. SMASH is built for Canadian sole proprietors, independent contractors, and small service businesses. Your Business Number (BN) appears on every invoice and the correct provincial tax is applied automatically.',
       },
       {
         q: 'Is SMASH available in Canada?',
@@ -304,11 +362,11 @@ export const countries: CountryData[] = [
       },
       {
         q: 'Will pricing be in CAD?',
-        a: 'Invoices you send your customers default to CAD. Subscription pricing is billed in AUD on the same plan everywhere — same price for every country.',
+        a: 'Invoices you send your customers default to CAD. Subscription pricing is billed in AUD on the same plan everywhere — same flat rate for every country, no per-user fees.',
       },
       {
-        q: 'Will there be French language support?',
-        a: 'English at launch. French UI and French-language invoices for Quebec are on the roadmap.',
+        q: 'Will there be French language support for Quebec?',
+        a: 'English at launch. French UI and French-language invoices for Quebec contractors are on the roadmap. If French-language invoicing is important to you, vote for it on the roadmap page.',
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronDown, Apple, Chrome } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, Apple, Chrome, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -190,6 +191,36 @@ export function CountryLanding({ data }: CountryLandingProps) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINKS STRIP */}
+      <section className="bg-slate-50 py-12 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">
+              Explore SMASH
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {[
+                { label: 'How voice invoicing works', to: '/voice-invoicing' },
+                { label: 'Pricing', to: '/pricing' },
+                { label: 'All features', to: '/features' },
+                { label: 'GST-compliant invoicing', to: '/gst-compliant-invoicing' },
+                { label: 'How it works', to: '/how-it-works' },
+                { label: 'Compare alternatives', to: '/smash-vs-xero' },
+              ].map(link => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-slate-200 text-brand font-display text-xs uppercase tracking-wider hover:border-accent hover:text-accent transition-all"
+                >
+                  {link.label}
+                  <ArrowRight size={11} strokeWidth={2.5} />
+                </Link>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
