@@ -433,8 +433,9 @@ export function HourlyRateCalculator() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free Rate Calculator</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Stop guessing.<br />
-              <span className="text-accent">Know your rate.</span>
+              Tradie Hourly Rate<br />
+              Calculator Australia —<br />
+              <span className="text-accent">What Should I Charge?</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
               Enter your income goal, weeks worked, and overhead — get your minimum rate, recommended rate, and day rate. Built for Australian tradies.
@@ -711,6 +712,33 @@ export function HourlyRateCalculator() {
             currentSlug="/hourly-rate-calculator"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Hourly rates by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Electricians', href: '/for-electricians' },
+              { label: 'Plumbers', href: '/for-plumbers' },
+              { label: 'Painters', href: '/for-painters' },
+              { label: 'HVAC', href: '/for-hvac' },
+              { label: 'Mobile Mechanics', href: '/for-mobile-mechanics' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/tradie-hourly-rates" className="text-accent font-semibold hover:underline">tradie hourly rates guide</Link> · <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

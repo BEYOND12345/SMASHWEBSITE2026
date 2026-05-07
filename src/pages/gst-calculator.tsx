@@ -378,8 +378,9 @@ export function GstCalculator() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free GST Calculator</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Add or remove GST.<br />
-              <span className="text-accent">Instantly.</span>
+              Free GST Calculator<br />
+              Australia — Add or<br />
+              <span className="text-accent">Remove 10% GST Instantly.</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
               Free Australian GST calculator. Enter a price, choose add or remove, and get the exact GST amount, ex-GST price, and inc-GST total. No signup needed.
@@ -650,6 +651,33 @@ export function GstCalculator() {
             currentSlug="/gst-calculator"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">GST invoicing by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Plumbers', href: '/for-plumbers' },
+              { label: 'Electricians', href: '/for-electricians' },
+              { label: 'HVAC', href: '/for-hvac' },
+              { label: 'Pest Control', href: '/for-pest-control' },
+              { label: 'Solar Installers', href: '/for-solar-installers' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

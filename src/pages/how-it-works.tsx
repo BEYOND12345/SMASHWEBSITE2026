@@ -42,6 +42,14 @@ const faqs = [
     q: "What does the customer receive?",
     a: "A professional PDF quote or invoice delivered by email or SMS. It includes your business name, ABN, itemised line items, GST, and a payment link. They can approve and pay directly from their phone — no login, no app required."
   },
+  {
+    q: "Does SMASH work for NDIS support workers?",
+    a: "Yes. SMASH is used by NDIS support workers across Australia. You can save each client's 9-digit NDIS participant number on their profile — SMASH prints it automatically in the Bill To block on every PDF and shows it on the client portal link. For recurring NDIS shifts, use the Repeat button to create a new draft from the last invoice with one tap."
+  },
+  {
+    q: "Can I repeat the same invoice weekly without rebuilding it?",
+    a: "Yes. Tap Repeat on any sent, approved or paid invoice card and SMASH creates a new draft with the same client, line items, and job title, dated today. Perfect for weekly NDIS support shifts, regular cleaning jobs, pool maintenance rounds, and any recurring work. Saves 2–3 minutes per recurring invoice."
+  },
 ];
 
 const testimonials = [
@@ -122,11 +130,11 @@ export function HowItWorks() {
   return (
     <>
       <SEO
-        title="How It Works | Voice-to-Invoice in Under 60 Seconds | SMASH Invoices"
-        description="Learn how SMASH turns your voice into professional invoices in under 60 seconds. Simple 4-step process: speak, review, send, get paid. No typing required."
-        keywords="how voice invoicing works, voice to invoice process, automated invoicing workflow, voice invoicing Australia"
-        ogTitle="How SMASH Voice-to-Invoice Works"
-        ogDescription="Speak your job details, SMASH creates the invoice, send with one tap, get paid in 48 hours. That simple."
+        title="How SMASH Works: Voice-to-Invoice in 60 Seconds — No Typing | SMASH"
+        description="SMASH turns your voice into an ATO-compliant invoice in under 60 seconds. 4-step process: speak the job, SMASH builds the quote, send with one tap, get paid via Stripe. Works in Australia, NZ, UK, US, Canada."
+        keywords="how voice invoicing works, voice to invoice australia, how smash works, voice quote app australia, tradie invoicing app how it works"
+        ogTitle="How SMASH Voice Invoicing Works — Job to Paid in 60 Seconds"
+        ogDescription="Speak your job details, SMASH builds an ATO-compliant invoice with GST, send with one tap, get paid via Stripe. No typing. Works in Australia, NZ, UK, US and Canada."
         ogImage="https://smashinvoices.com/hero_image.png"
         ogUrl="https://smashinvoices.com/how-it-works"
         twitterTitle="How SMASH Voice-to-Invoice Works"
@@ -166,10 +174,13 @@ export function HowItWorks() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
             <AnimateIn direction="up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] mb-6 md:mb-8 uppercase tracking-tighter">
-                How SMASH Works
+                How SMASH Voice Invoicing Works
               </h1>
-              <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.5] mb-6 md:mb-8">
+              <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.5] mb-4 md:mb-6">
                 From finished job to paid invoice. In under 60 seconds. No typing.
+              </p>
+              <p className="font-body text-base text-white/60 font-medium max-w-2xl mx-auto leading-[1.5] mb-6 md:mb-8">
+                SMASH is the only invoicing app that turns a voice description into a tax-compliant invoice — with GST (Australia &amp; NZ), VAT (UK), or sales tax (US/Canada) — and a Stripe Pay Now button, in under 60 seconds. Supports NDIS participant numbers and repeat invoices.
               </p>
               <div className="flex items-center justify-center gap-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">

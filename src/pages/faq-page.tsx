@@ -19,6 +19,10 @@ const faqs = [
         answer: "After finishing a job, open SMASH and tap the microphone. Describe the job out loud — the same way you'd explain it to a mate. SMASH listens, builds a structured quote with line items, pricing, and your business details — and has it ready to send before you've put your tools away. The whole thing takes about 30 seconds."
       },
       {
+        question: "How accurate is the voice AI?",
+        answer: "Highly accurate for trade terminology, labour descriptions, and materials — the AI is specifically trained on trade language and invoice structures, not generic speech. Most users find accuracy is very high from the first use. You always review the generated invoice before sending, so any errors can be corrected in 2–3 taps. Over time, SMASH learns your specific rates, job names, and pricing style — accuracy improves further as it personalises to how you work."
+      },
+      {
         question: "How does SMASH know my rates from day one?",
         answer: "When you sign up, upload 2–3 of your existing invoices. SMASH reads them and learns how you price — your hourly rate, how you handle GST, your usual jobs, your line item style. From your very first quote, it prices the way you price. No spreadsheets. No setup screens. No templates to fill in."
       },
@@ -108,6 +112,14 @@ const faqs = [
       {
         question: "Does SMASH replace my accounting software?",
         answer: "No. SMASH handles invoicing and quoting only — one thing, done well. You'll still use Xero, QuickBooks, or MYOB for tax, payroll, and financial reporting. Starter and above unlock Xero and QuickBooks sync so SMASH invoices can flow into your books."
+      },
+      {
+        question: "Does SMASH work for NDIS support workers?",
+        answer: "Yes. SMASH is actively used by NDIS support workers across Australia. You can save each client's 9-digit NDIS participant number on their profile — SMASH prints it automatically in the Bill To block on every invoice PDF and displays it on the public client portal link. Use the Repeat button for recurring weekly shifts: one tap creates a new invoice with the same client, line items, and job description, dated today."
+      },
+      {
+        question: "Does SMASH work for businesses outside Australia?",
+        answer: "Yes. SMASH operates in Australia (10% GST, ABN), New Zealand (15% GST, NZBN), the United Kingdom (20% VAT, UTR/company number), the United States (state sales tax, EIN), and Canada (GST/HST/PST by province, Business Number). The correct tax rate and local business number format applies automatically based on your market."
       }
     ]
   },
@@ -167,11 +179,11 @@ export function FAQPage() {
   return (
     <>
       <SEO
-        title="FAQ | Voice Invoicing Questions Answered | SMASH Invoices"
-        description="Get answers to common questions about voice-to-invoice software, pricing, payments, and how SMASH works for tradies and service businesses in Australia, New Zealand, the UK, the US and Canada."
-        keywords="voice invoicing FAQ, invoice questions, how does voice to invoice work, voice invoicing pricing, mobile invoicing questions"
-        ogTitle="Voice Invoicing FAQ — SMASH Invoices"
-        ogDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works for service businesses."
+        title="SMASH FAQ: Voice Invoicing, NDIS, Pricing, Accuracy — All Questions Answered"
+        description="Everything about SMASH voice invoicing: how accurate is the voice AI, does it work for NDIS, what does it cost, how to repeat invoices, GST/VAT compliance, Android availability. Tradies and service businesses."
+        keywords="smash invoicing FAQ, voice invoicing FAQ, NDIS invoicing questions, tradie invoicing app FAQ, voice accuracy invoicing, repeat invoices, how does smash work"
+        ogTitle="SMASH FAQ — Voice Invoicing, NDIS, Pricing, Accuracy"
+        ogDescription="How accurate is the voice AI? Does SMASH work for NDIS? What does it cost? Can I repeat invoices? All your questions answered."
         ogImage="https://smashinvoices.com/og-image.png"
         ogUrl="https://smashinvoices.com/faq"
         twitterTitle="Voice Invoicing FAQ — SMASH Invoices"
@@ -202,10 +214,13 @@ export function FAQPage() {
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
             <AnimateIn direction="up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-                Frequently Asked Questions
+                SMASH Voice Invoicing:<br />Frequently Asked<br />Questions
               </h1>
-              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-6">
-                Everything you need to know about voice-to-invoice software and how SMASH works.
+              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
+                SMASH is AI voice invoicing software for tradies and service businesses. Speak a job description — get a tax-compliant invoice in under 60 seconds, with a Stripe Pay Now button. Free to start.
+              </p>
+              <p className="font-body text-base text-white/55 font-medium leading-[1.5] max-w-2xl mb-6">
+                Common questions about voice accuracy, NDIS invoicing, repeat invoices, pricing, GST/VAT compliance, and Android support — answered below.
               </p>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
                 <div className="flex items-center gap-0.5">

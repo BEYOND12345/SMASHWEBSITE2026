@@ -384,8 +384,9 @@ export function LatePaymentCalculator() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free Late Payment Calculator</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Late invoices.<br />
-              <span className="text-accent">Real money owed.</span>
+              Overdue Invoice Calculator<br />
+              Australia — Interest on<br />
+              <span className="text-accent">Late Payments.</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
               Calculate exactly how much interest is owed on an overdue invoice. Enter the amount, due date, and rate — see the total owed right now.
@@ -662,6 +663,33 @@ export function LatePaymentCalculator() {
             currentSlug="/late-payment-calculator"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Get paid faster by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Concreters', href: '/for-concreters' },
+              { label: 'Tilers', href: '/for-tilers' },
+              { label: 'Plumbers', href: '/for-plumbers' },
+              { label: 'Electricians', href: '/for-electricians' },
+              { label: 'Pest Control', href: '/for-pest-control' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/invoice-generator" className="text-accent font-semibold hover:underline">invoice generator</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

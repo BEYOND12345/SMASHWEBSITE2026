@@ -107,6 +107,14 @@ const faqs = [
     q: 'Can I invoice in Australian dollars?',
     a: 'Yes — SMASH is built specifically for Australia. All amounts are in AUD, GST is calculated at the Australian rate of 10%, and your ABN appears on every invoice. There\'s no setup needed to configure currency or tax rates — it works correctly for Australian businesses out of the box.',
   },
+  {
+    q: 'How do I make an invoice in Australia?',
+    a: 'A valid Australian tax invoice requires: your business name and ABN, the words "Tax Invoice" at the top, the invoice date, a unique sequential invoice number, a description of goods or services supplied, and the GST amount or statement that the price includes GST. SMASH generates all of this automatically — describe the job out loud for 30 seconds and get an ATO-compliant invoice ready to send. No template, no manual calculation, no formatting required.',
+  },
+  {
+    q: 'Is there a free invoice generator with no signup?',
+    a: 'Yes — the invoice builder on this page is completely free with no account required. Enter your details, add line items, and use it right here in your browser. For recurring invoicing with voice input, GST auto-calculation, read receipts, and a Stripe Pay Now button, download SMASH. The free plan gives you 5 invoices per month with no credit card.',
+  },
 ];
 
 // ── Interactive Invoice Builder ──────────────────────────────
@@ -618,8 +626,8 @@ export function InvoiceGenerator() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free invoice generator</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Stop emailing<br />
-              Word docs.<br />
+              Free Invoice Generator<br />
+              Australia — ATO Tax<br />
               <span className="text-accent">Invoice in 60s.</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
@@ -922,6 +930,33 @@ export function InvoiceGenerator() {
             currentSlug="/invoice-generator"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Invoice by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Plumbers', href: '/for-plumbers' },
+              { label: 'Electricians', href: '/for-electricians' },
+              { label: 'Cleaners', href: '/for-cleaners' },
+              { label: 'Painters', href: '/for-painters' },
+              { label: 'Handymen', href: '/for-handymen' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

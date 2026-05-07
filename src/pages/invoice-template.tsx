@@ -86,6 +86,14 @@ const faqs = [
     q: 'Is the template free?',
     a: "Yes, the template is free to download. SMASH also has a free plan that gives you 5 invoices per month with no credit card required. If you're invoicing more often, Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing. Every plan includes read receipts and overdue tracking.",
   },
+  {
+    q: 'What does the ATO require on an Australian invoice?',
+    a: "The ATO requires tax invoices over $82.50 to include: your business name and ABN, the words 'Tax Invoice', the invoice date, a unique invoice number, a description of each item or service supplied, the price of each item, and the GST amount or a statement that the total includes GST. This template includes every required field. SMASH generates all these fields automatically from a voice description — no manual entry.",
+  },
+  {
+    q: 'Can I use this invoice template for NDIS services?',
+    a: "Yes. The template format is suitable for NDIS support workers and disability service providers. When invoicing NDIS participants, include your business name, ABN, the participant's NDIS number, and a clear description of the support provided with the corresponding NDIS line item number where applicable. SMASH allows you to store each client's NDIS participant number and prints it automatically on every invoice and PDF for that client.",
+  },
 ];
 
 // Static invoice preview — today's date, due date 7 days from today
@@ -387,11 +395,12 @@ export function InvoiceTemplate() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free Invoice Template</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              ATO-compliant.<br />
-              <span className="text-accent">Professional. Free.</span>
+              Download Free Invoice<br />
+              Template Australia —<br />
+              <span className="text-accent">ATO-Compliant. GST Ready.</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
-              Free Australian invoice template with ABN, GST breakdown, and payment terms built in. Download it — or generate one in 60 seconds with SMASH.
+              Download Australia's most-used free invoice template — ATO-compliant with ABN, GST breakdown, sequential invoice numbering, and payment terms built in. Or generate it automatically with SMASH in 60 seconds by voice.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
@@ -420,7 +429,7 @@ export function InvoiceTemplate() {
               </p>
             </div>
             <p className="font-body text-brand/65 font-medium text-base leading-[1.6] max-w-2xl mx-auto mb-8">
-              Preview Australia's most-used invoice format below. ATO-compliant, GST-ready, professional. Download the template free — or use SMASH to auto-generate this from voice in under 60 seconds.
+              Download Australia's most-used ATO-compliant invoice template — free, with no account required. Includes all fields the ATO requires: ABN, GST breakdown, sequential invoice number, invoice date, and itemised services. Or use SMASH to auto-generate this from voice in under 60 seconds — no template management needed.
             </p>
             <InvoiceTemplatePreview />
           </AnimateIn>
@@ -664,6 +673,33 @@ export function InvoiceTemplate() {
             currentSlug="/invoice-template"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Invoice templates by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Cleaners', href: '/for-cleaners' },
+              { label: 'Plumbers', href: '/for-plumbers' },
+              { label: 'Electricians', href: '/for-electricians' },
+              { label: 'NDIS Support Workers', href: '/for-ndis-support-workers' },
+              { label: 'Gardeners', href: '/for-gardeners' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/invoice-generator" className="text-accent font-semibold hover:underline">interactive invoice generator</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

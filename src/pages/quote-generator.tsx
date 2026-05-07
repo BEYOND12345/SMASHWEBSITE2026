@@ -104,6 +104,14 @@ const faqs = [
     q: 'What if I need to edit the quote?',
     a: 'You have full control before anything goes out. Review each line item, change prices, add or remove items, update the description or notes. SMASH shows you a preview of the quote before sending — nothing leaves without your approval.',
   },
+  {
+    q: 'How do I create a professional quote in Australia?',
+    a: 'A professional Australian quote should include your business name, ABN, quote number, date, a clear description of services with itemised pricing, GST breakdown, and payment terms. SMASH generates all of this automatically from a voice description — describe the job out loud and get a professional GST-compliant quote in under 60 seconds. No template, no typing, no manual calculations.',
+  },
+  {
+    q: 'Is there a free quote generator with no account required?',
+    a: 'Yes — the quote builder on this page is completely free with no login or download required. Build a professional quote right here in your browser. For quotes from voice in 60 seconds with your saved rates, download SMASH. The free plan includes 5 invoices and quotes per month with no credit card needed.',
+  },
 ];
 
 // ── Interactive Quote Builder ─────────────────────────────────
@@ -545,8 +553,9 @@ export function QuoteGenerator() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free quote generator</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Stop typing quotes.<br />
-              <span className="text-accent">Just talk.</span>
+              Free Quote Generator<br />
+              Australia — Professional<br />
+              <span className="text-accent">Quotes in 60 Seconds.</span>
             </h1>
             <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
               SMASH is the only quote generator built for Australian tradies. Describe the job out loud
@@ -851,6 +860,33 @@ export function QuoteGenerator() {
             currentSlug="/quote-generator"
             title="More free tools"
           />
+        </div>
+      </section>
+
+      {/* ── TRADE LINKS ──────────────────────────────────────── */}
+      <section className="bg-surface py-10 border-t border-brand/8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="font-black text-xs uppercase tracking-widest text-brand/40 mb-4">Quote by trade</p>
+          <div className="flex flex-wrap gap-3 mb-5">
+            {[
+              { label: 'Painters', href: '/for-painters' },
+              { label: 'Handymen', href: '/for-handymen' },
+              { label: 'Gardeners', href: '/for-gardeners' },
+              { label: 'Tilers', href: '/for-tilers' },
+              { label: 'Concreters', href: '/for-concreters' },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                to={t.href}
+                className="px-4 py-2 rounded-full border border-brand/20 font-black text-xs uppercase tracking-widest text-brand/60 hover:border-accent hover:text-accent transition-all"
+              >
+                {t.label}
+              </Link>
+            ))}
+          </div>
+          <p className="font-body text-xs text-brand/40 font-medium">
+            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+          </p>
         </div>
       </section>
 

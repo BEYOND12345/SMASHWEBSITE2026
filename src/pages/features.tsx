@@ -31,21 +31,23 @@ const testimonials = [
 ];
 
 const featureFaqs = [
+  { question: "What is SMASH?", answer: "SMASH is AI-powered voice invoicing software for tradies and service businesses. You describe a job out loud for 20–30 seconds — SMASH transcribes your speech, extracts line items, calculates GST (or VAT, HST, or sales tax depending on your market), and generates a professional, tax-compliant invoice ready to send in under 60 seconds. No typing, no templates, no app navigation. Used by plumbers, electricians, cleaners, painters, NDIS support workers, and more across Australia, New Zealand, the UK, the US, and Canada." },
   { question: "How does SMASH generate a quote from voice?", answer: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation." },
-  { question: "Does SMASH produce GST and NDIS-ready invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description. If a customer has an NDIS participant number saved, SMASH prints it automatically in the Bill To block and shows it on the portal link." },
+  { question: "Does SMASH produce GST and NDIS-ready invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description. If a customer has an NDIS participant number saved, SMASH prints it automatically in the Bill To block and shows it on the portal link. For NDIS support workers, this means no more manually typing participant numbers — save it once per client and every invoice is NDIS-ready." },
   { question: "Can customers pay directly from the quote link?", answer: "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing." },
-  { question: "What is the personal pricing catalog?", answer: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds." },
+  { question: "What is the personal pricing catalog and repeat invoices?", answer: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. For recurring work — weekly cleaning, regular NDIS shifts, scheduled maintenance — tap Repeat on any sent, approved or paid invoice to create a new draft with the same client, line items and job title, dated today. After a few weeks of use, repeat jobs invoice themselves in under 30 seconds." },
+  { question: "Does SMASH work for UK, US, Canadian, and New Zealand businesses?", answer: "Yes. SMASH handles tax compliance across all 5 markets: 10% GST in Australia, 15% GST in New Zealand, 20% VAT in the UK, state-by-state sales tax in the US, and GST/HST/PST by province in Canada. Local business registration numbers (ABN, NZBN, UTR, EIN, Canadian Business Number) are supported in each market." },
 ];
 
 export function Features() {
   return (
     <>
       <SEO
-        title="Tradie Invoicing App Features | Voice Quotes, GST, Payments | SMASH"
-        description="SMASH features: voice-to-quote in 60 seconds, 2,250+ item Australian materials catalog, GST-compliant invoicing, Stripe payments, read receipts, and overdue tracking. Built for Australian tradies."
-        keywords="tradie invoicing app features, tradie quoting software features, voice invoicing australia, GST invoice app, tradie quoting tool, invoice app for tradies australia"
-        ogTitle="SMASH Invoices — Features"
-        ogDescription="Voice-to-quote in 60 seconds. Personal pricing catalog. Customer approval portal. Everything you need to get paid without the admin."
+        title="SMASH Features: Voice Invoicing, GST, NDIS, Repeat Invoices | SMASH Invoices"
+        description="SMASH turns your voice into an ATO-compliant invoice in 60 seconds. Features: voice-to-quote, 2,250+ AU materials catalog, GST/VAT/HST/sales tax compliance, NDIS participant numbers, repeat invoices, Stripe payments, and read receipts."
+        keywords="voice invoicing features, tradie invoicing app features, GST invoice app australia, NDIS invoicing, repeat invoices, voice quote generator, invoice app for tradies"
+        ogTitle="SMASH Features — Voice Invoicing, GST, NDIS, Repeat Invoices"
+        ogDescription="Voice-to-invoice in 60 seconds. NDIS participant numbers. Repeat invoices. GST/VAT/HST/sales tax compliance. Everything a tradie needs to get paid without the admin."
         ogImage="https://smashinvoices.com/og-image.png"
         ogUrl="https://smashinvoices.com/features"
         twitterTitle="SMASH Invoices — Features"
@@ -76,10 +78,13 @@ export function Features() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Features</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-              Everything built<br />to get you paid.
+              SMASH Features:<br />Voice Invoicing,<br />GST, NDIS &amp; More.
             </h1>
-            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-8">
-              SMASH is the fastest way to send an invoice. Every feature exists to close the gap between finishing a job and getting paid for it.
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
+              SMASH is AI-powered invoicing software for tradies and service businesses. Describe a job by voice — get an ATO-compliant tax invoice with a Stripe payment link in under 60 seconds. Free to start.
+            </p>
+            <p className="font-body text-base text-white/60 font-medium leading-[1.5] max-w-2xl mb-8">
+              Works in Australia (GST), New Zealand (GST), UK (VAT), US (sales tax), and Canada (GST/HST/PST). Supports NDIS participant numbers, repeat invoices, and Xero/QuickBooks sync.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -404,13 +409,18 @@ export function Features() {
           <p className="font-body text-white/60 font-medium leading-[1.5] mb-10 max-w-xl">
             SMASH works for any service business that quotes and invoices jobs. See how it fits your trade.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
             {[
               { label: "Cleaners", href: "/for-cleaners" },
               { label: "Handymen", href: "/for-handymen" },
-              { label: "Gardeners", href: "/for-gardeners" },
+              { label: "HVAC", href: "/for-hvac" },
               { label: "Painters", href: "/for-painters" },
-              { label: "Mobile mechanics", href: "/for-mobile-mechanics" },
+              { label: "NDIS Workers", href: "/for-ndis-support-workers" },
+              { label: "Pest Control", href: "/for-pest-control" },
+              { label: "Electricians", href: "/for-electricians" },
+              { label: "Plumbers", href: "/for-plumbers" },
+              { label: "Gardeners", href: "/for-gardeners" },
+              { label: "Mobile Mechanics", href: "/for-mobile-mechanics" },
             ].map((seg) => (
               <Link
                 key={seg.href}
@@ -471,27 +481,10 @@ export function Features() {
             Feature questions
           </h2>
           <div className="bg-white rounded-[32px] border-2 border-border px-4 sm:px-8 divide-y divide-border">
-            {[
-              {
-                q: "How does SMASH generate a quote from voice?",
-                a: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation."
-              },
-              {
-                q: "Does SMASH produce GST and NDIS-ready invoices?",
-                a: "Yes. Every invoice SMASH generates includes your ABN, GST, invoice date and itemised job description. Save a customer's optional 9-digit NDIS participant number once and SMASH adds it to every PDF and portal link for that customer."
-              },
-              {
-                q: "Can customers pay directly from the quote link?",
-                a: "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing."
-              },
-              {
-                q: "What is the personal pricing catalog?",
-                a: "Your pricing catalog is a list of services and prices you build once inside SMASH. When you describe a job, SMASH matches your words to items in your catalog and fills in your prices automatically. For recurring work, the Repeat button creates a fresh draft from the last sent, approved or paid invoice."
-              },
-            ].map((faq, i) => (
+            {featureFaqs.map((faq, i) => (
               <div key={i} className="py-6">
-                <p className="font-bold text-brand mb-2">{faq.q}</p>
-                <p className="font-body text-brand/60 font-medium text-sm leading-[1.5]">{faq.a}</p>
+                <p className="font-bold text-brand mb-2">{faq.question}</p>
+                <p className="font-body text-brand/60 font-medium text-sm leading-[1.5]">{faq.answer}</p>
               </div>
             ))}
           </div>
