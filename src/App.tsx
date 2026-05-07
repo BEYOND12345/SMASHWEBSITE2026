@@ -1,88 +1,103 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// LandingPage is kept as a static import — it is the "/" route and must render
+// on first paint without any async chunk delay.
 import { LandingPage } from './pages/landing-page';
-import { Founder } from './pages/founder';
-import { HowItWorks } from './pages/how-it-works';
-import { FAQPage } from './pages/faq-page';
-import { Pricing } from './pages/pricing';
-import { Privacy } from './pages/privacy';
-import { Terms } from './pages/terms';
-import { Contact } from './pages/contact';
-import { Features } from './pages/features';
-import { VoiceInvoicing } from './pages/voice-invoicing';
-import { AiInvoicing } from './pages/ai-invoicing';
-import { GstCompliantInvoicing } from './pages/gst-compliant-invoicing';
-import { InvoiceOnMobile } from './pages/invoice-on-mobile';
-import { ChromeExtension } from './pages/chrome-extension';
-import { Roadmap } from './pages/roadmap';
-import { Changelog } from './pages/changelog';
+
+// All other pages are lazily loaded so Vite splits them into separate chunks.
+const Founder = lazy(() => import('./pages/founder').then(m => ({ default: m.Founder })));
+const HowItWorks = lazy(() => import('./pages/how-it-works').then(m => ({ default: m.HowItWorks })));
+const FAQPage = lazy(() => import('./pages/faq-page').then(m => ({ default: m.FAQPage })));
+const Pricing = lazy(() => import('./pages/pricing').then(m => ({ default: m.Pricing })));
+const Privacy = lazy(() => import('./pages/privacy').then(m => ({ default: m.Privacy })));
+const Terms = lazy(() => import('./pages/terms').then(m => ({ default: m.Terms })));
+const Contact = lazy(() => import('./pages/contact').then(m => ({ default: m.Contact })));
+const Features = lazy(() => import('./pages/features').then(m => ({ default: m.Features })));
+const VoiceInvoicing = lazy(() => import('./pages/voice-invoicing').then(m => ({ default: m.VoiceInvoicing })));
+const AiInvoicing = lazy(() => import('./pages/ai-invoicing').then(m => ({ default: m.AiInvoicing })));
+const GstCompliantInvoicing = lazy(() => import('./pages/gst-compliant-invoicing').then(m => ({ default: m.GstCompliantInvoicing })));
+const InvoiceOnMobile = lazy(() => import('./pages/invoice-on-mobile').then(m => ({ default: m.InvoiceOnMobile })));
+const ChromeExtension = lazy(() => import('./pages/chrome-extension').then(m => ({ default: m.ChromeExtension })));
+const Roadmap = lazy(() => import('./pages/roadmap').then(m => ({ default: m.Roadmap })));
+const Changelog = lazy(() => import('./pages/changelog').then(m => ({ default: m.Changelog })));
 
 // Tool pages
-import { QuoteGenerator } from './pages/quote-generator';
-import { InvoiceGenerator } from './pages/invoice-generator';
-import { GstCalculator } from './pages/gst-calculator';
-import { InvoiceTemplate } from './pages/invoice-template';
-import { HourlyRateCalculator } from './pages/hourly-rate-calculator';
-import { LatePaymentCalculator } from './pages/late-payment-calculator';
-import { ProfitCalculator } from './pages/profit-calculator';
-import { Tools } from './pages/tools';
+const QuoteGenerator = lazy(() => import('./pages/quote-generator').then(m => ({ default: m.QuoteGenerator })));
+const InvoiceGenerator = lazy(() => import('./pages/invoice-generator').then(m => ({ default: m.InvoiceGenerator })));
+const GstCalculator = lazy(() => import('./pages/gst-calculator').then(m => ({ default: m.GstCalculator })));
+const InvoiceTemplate = lazy(() => import('./pages/invoice-template').then(m => ({ default: m.InvoiceTemplate })));
+const HourlyRateCalculator = lazy(() => import('./pages/hourly-rate-calculator').then(m => ({ default: m.HourlyRateCalculator })));
+const LatePaymentCalculator = lazy(() => import('./pages/late-payment-calculator').then(m => ({ default: m.LatePaymentCalculator })));
+const ProfitCalculator = lazy(() => import('./pages/profit-calculator').then(m => ({ default: m.ProfitCalculator })));
+const Tools = lazy(() => import('./pages/tools').then(m => ({ default: m.Tools })));
 
 // Comparison pages
-import { SmashVsXero } from './pages/smash-vs-xero';
-import { SmashVsMyob } from './pages/smash-vs-myob';
-import { SmashVsServiceM8 } from './pages/smash-vs-servicem8';
-import { SmashVsQuickBooks } from './pages/smash-vs-quickbooks';
-import { SmashVsFergus } from './pages/smash-vs-fergus';
-import { SmashVsTradify } from './pages/smash-vs-tradify';
-import { SmashVsInvoice2go } from './pages/smash-vs-invoice2go';
-import { SmashVsJoist } from './pages/smash-vs-joist';
-import { SmashVsRounded } from './pages/smash-vs-rounded';
-import { BlogList } from './pages/blog-list';
-import { BlogPost } from './pages/blog-post';
-import { BlogAdmin } from './pages/admin/blog-admin';
-import { BlogEditor } from './pages/admin/blog-editor';
+const SmashVsXero = lazy(() => import('./pages/smash-vs-xero').then(m => ({ default: m.SmashVsXero })));
+const SmashVsMyob = lazy(() => import('./pages/smash-vs-myob').then(m => ({ default: m.SmashVsMyob })));
+const SmashVsServiceM8 = lazy(() => import('./pages/smash-vs-servicem8').then(m => ({ default: m.SmashVsServiceM8 })));
+const SmashVsQuickBooks = lazy(() => import('./pages/smash-vs-quickbooks').then(m => ({ default: m.SmashVsQuickBooks })));
+const SmashVsFergus = lazy(() => import('./pages/smash-vs-fergus').then(m => ({ default: m.SmashVsFergus })));
+const SmashVsTradify = lazy(() => import('./pages/smash-vs-tradify').then(m => ({ default: m.SmashVsTradify })));
+const SmashVsInvoice2go = lazy(() => import('./pages/smash-vs-invoice2go').then(m => ({ default: m.SmashVsInvoice2go })));
+const SmashVsJoist = lazy(() => import('./pages/smash-vs-joist').then(m => ({ default: m.SmashVsJoist })));
+const SmashVsRounded = lazy(() => import('./pages/smash-vs-rounded').then(m => ({ default: m.SmashVsRounded })));
+const BlogList = lazy(() => import('./pages/blog-list').then(m => ({ default: m.BlogList })));
+const BlogPost = lazy(() => import('./pages/blog-post').then(m => ({ default: m.BlogPost })));
+const BlogAdmin = lazy(() => import('./pages/admin/blog-admin').then(m => ({ default: m.BlogAdmin })));
+const BlogEditor = lazy(() => import('./pages/admin/blog-editor').then(m => ({ default: m.BlogEditor })));
 
 // Segment pages
-import { ForCleaners } from './pages/for-cleaners';
-import { ForPlumbers } from './pages/for-plumbers';
-import { ForElectricians } from './pages/for-electricians';
-import { ForHandymen } from './pages/for-handymen';
-import { ForPainters } from './pages/for-painters';
-import { ForGardeners } from './pages/for-gardeners';
-import { ForMobileMechanics } from './pages/for-mobile-mechanics';
-import { ForHvac } from './pages/for-hvac';
-import { ForPestControl } from './pages/for-pest-control';
-import { ForConcreters } from './pages/for-concreters';
-import { ForTilers } from './pages/for-tilers';
-import { ForLocksmiths } from './pages/for-locksmiths';
-import { ForCarDetailers } from './pages/for-car-detailers';
-import { ForDogGroomers } from './pages/for-dog-groomers';
-import { ForArborists } from './pages/for-arborists';
-import { ForPoolMaintenance } from './pages/for-pool-maintenance';
-import { ForSolarInstallers } from './pages/for-solar-installers';
-import { ForRubbishRemoval } from './pages/for-rubbish-removal';
-import { ForItRepair } from './pages/for-it-repair';
-import { ForApplianceRepair } from './pages/for-appliance-repair';
-import { ForSecurityInstallers } from './pages/for-security-installers';
-import { ForFencers } from './pages/for-fencers';
+const ForCleaners = lazy(() => import('./pages/for-cleaners').then(m => ({ default: m.ForCleaners })));
+const ForPlumbers = lazy(() => import('./pages/for-plumbers').then(m => ({ default: m.ForPlumbers })));
+const ForElectricians = lazy(() => import('./pages/for-electricians').then(m => ({ default: m.ForElectricians })));
+const ForHandymen = lazy(() => import('./pages/for-handymen').then(m => ({ default: m.ForHandymen })));
+const ForPainters = lazy(() => import('./pages/for-painters').then(m => ({ default: m.ForPainters })));
+const ForGardeners = lazy(() => import('./pages/for-gardeners').then(m => ({ default: m.ForGardeners })));
+const ForMobileMechanics = lazy(() => import('./pages/for-mobile-mechanics').then(m => ({ default: m.ForMobileMechanics })));
+const ForHvac = lazy(() => import('./pages/for-hvac').then(m => ({ default: m.ForHvac })));
+const ForPestControl = lazy(() => import('./pages/for-pest-control').then(m => ({ default: m.ForPestControl })));
+const ForConcreters = lazy(() => import('./pages/for-concreters').then(m => ({ default: m.ForConcreters })));
+const ForTilers = lazy(() => import('./pages/for-tilers').then(m => ({ default: m.ForTilers })));
+const ForLocksmiths = lazy(() => import('./pages/for-locksmiths').then(m => ({ default: m.ForLocksmiths })));
+const ForCarDetailers = lazy(() => import('./pages/for-car-detailers').then(m => ({ default: m.ForCarDetailers })));
+const ForDogGroomers = lazy(() => import('./pages/for-dog-groomers').then(m => ({ default: m.ForDogGroomers })));
+const ForArborists = lazy(() => import('./pages/for-arborists').then(m => ({ default: m.ForArborists })));
+const ForPoolMaintenance = lazy(() => import('./pages/for-pool-maintenance').then(m => ({ default: m.ForPoolMaintenance })));
+const ForSolarInstallers = lazy(() => import('./pages/for-solar-installers').then(m => ({ default: m.ForSolarInstallers })));
+const ForRubbishRemoval = lazy(() => import('./pages/for-rubbish-removal').then(m => ({ default: m.ForRubbishRemoval })));
+const ForItRepair = lazy(() => import('./pages/for-it-repair').then(m => ({ default: m.ForItRepair })));
+const ForApplianceRepair = lazy(() => import('./pages/for-appliance-repair').then(m => ({ default: m.ForApplianceRepair })));
+const ForSecurityInstallers = lazy(() => import('./pages/for-security-installers').then(m => ({ default: m.ForSecurityInstallers })));
+const ForFencers = lazy(() => import('./pages/for-fencers').then(m => ({ default: m.ForFencers })));
 
-// International coming-soon / country landing pages
-import { CountryNZ } from './pages/country-nz';
-import { CountryUK } from './pages/country-uk';
-import { CountryUS } from './pages/country-us';
-import { CountryCA } from './pages/country-ca';
-import { Integrations } from './pages/integrations';
-import { IntegrationsXero } from './pages/integrations-xero';
-import { IntegrationsQuickBooks } from './pages/integrations-quickbooks';
-import { SitemapPage } from './pages/sitemap-page';
-import { NotFound } from './pages/not-found';
-import { TradieHourlyRates } from './pages/tradie-hourly-rates';
-import { MaterialsPricing } from './pages/materials-pricing';
-import { CustomerApproval } from './pages/customer-approval';
-import { NdisInvoicing } from './pages/ndis-invoicing';
+// International landing pages
+const CountryNZ = lazy(() => import('./pages/country-nz').then(m => ({ default: m.CountryNZ })));
+const CountryUK = lazy(() => import('./pages/country-uk').then(m => ({ default: m.CountryUK })));
+const CountryUS = lazy(() => import('./pages/country-us').then(m => ({ default: m.CountryUS })));
+const CountryCA = lazy(() => import('./pages/country-ca').then(m => ({ default: m.CountryCA })));
+const Integrations = lazy(() => import('./pages/integrations').then(m => ({ default: m.Integrations })));
+const IntegrationsXero = lazy(() => import('./pages/integrations-xero').then(m => ({ default: m.IntegrationsXero })));
+const IntegrationsQuickBooks = lazy(() => import('./pages/integrations-quickbooks').then(m => ({ default: m.IntegrationsQuickBooks })));
+const SitemapPage = lazy(() => import('./pages/sitemap-page').then(m => ({ default: m.SitemapPage })));
+const NotFound = lazy(() => import('./pages/not-found').then(m => ({ default: m.NotFound })));
+const TradieHourlyRates = lazy(() => import('./pages/tradie-hourly-rates').then(m => ({ default: m.TradieHourlyRates })));
+const MaterialsPricing = lazy(() => import('./pages/materials-pricing').then(m => ({ default: m.MaterialsPricing })));
+const CustomerApproval = lazy(() => import('./pages/customer-approval').then(m => ({ default: m.CustomerApproval })));
+const NdisInvoicing = lazy(() => import('./pages/ndis-invoicing').then(m => ({ default: m.NdisInvoicing })));
+
+/** Minimal loading fallback — dark background matches the site shell so there
+ *  is no flash of white while a route chunk downloads. */
+function PageLoader() {
+  return (
+    <div style={{ minHeight: '100vh', background: '#0a0a0a' }} aria-hidden="true" />
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <Suspense fallback={<PageLoader />}>
       <Routes>
         {/* Core pages */}
         <Route path="/" element={<LandingPage />} />
@@ -179,6 +194,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
