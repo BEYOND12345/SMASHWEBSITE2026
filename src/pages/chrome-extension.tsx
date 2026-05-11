@@ -127,7 +127,7 @@ function HeroMockup() {
         </div>
 
         {/* SMASH sidebar — right */}
-        <div className="col-span-2 bg-brand p-4 space-y-3 border-l border-slate-200">
+        <div className="col-span-2 bg-[#0D1117] p-4 space-y-3 border-l border-slate-200">
           <div className="flex items-center justify-between">
             <span className="text-white font-black text-sm tracking-tight">SMASH<span className="text-accent">.</span></span>
             <span className="text-[8px] uppercase tracking-widest text-white/40 font-bold">Sidebar</span>
@@ -343,21 +343,13 @@ export function ChromeExtension() {
                 <div className="flex items-center gap-4">
                   <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Syncs with</span>
                   <div className="flex items-center gap-3">
-                    {/* Xero */}
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                      <svg width="14" height="14" viewBox="0 0 40 40" fill="none">
-                        <circle cx="20" cy="20" r="20" fill="#13B5EA"/>
-                        <path d="M10 20l5.5-5.5 4.5 4.5 4.5-4.5L30 20l-5.5 5.5-4.5-4.5-4.5 4.5L10 20z" fill="white"/>
-                      </svg>
-                      <span className="text-[11px] font-black text-white/70">Xero</span>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#13B5EA]/15 border border-[#13B5EA]/30">
+                      <span className="w-2 h-2 rounded-full bg-[#13B5EA] inline-block shrink-0" />
+                      <span className="text-[11px] font-black text-[#13B5EA]">Xero</span>
                     </div>
-                    {/* QuickBooks */}
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                      <svg width="14" height="14" viewBox="0 0 40 40" fill="none">
-                        <circle cx="20" cy="20" r="20" fill="#2CA01C"/>
-                        <text x="20" y="26" textAnchor="middle" fill="white" fontSize="18" fontWeight="900" fontFamily="sans-serif">Q</text>
-                      </svg>
-                      <span className="text-[11px] font-black text-white/70">QuickBooks</span>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2CA01C]/15 border border-[#2CA01C]/30">
+                      <span className="w-2 h-2 rounded-full bg-[#2CA01C] inline-block shrink-0" />
+                      <span className="text-[11px] font-black text-[#2CA01C]">QuickBooks</span>
                     </div>
                   </div>
                 </div>
@@ -390,7 +382,7 @@ export function ChromeExtension() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimateIn direction="left">
-              <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-4">From email to quote</p>
+              <p className="font-display font-black text-accent text-[11px] uppercase tracking-[0.2em] mb-4">From email to quote</p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
                 Stop typing<br />invoices.<br />Just talk.
               </h2>
@@ -418,6 +410,29 @@ export function ChromeExtension() {
         </div>
       </section>
 
+      {/* ─── VIDEO DEMO ───────────────────────────────────────────── */}
+      <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">60 second demo</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-10 text-center">
+              See it in action.
+            </h2>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10">
+              <div className="aspect-video w-full bg-[#0D1117]">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/uNL733tYTf0"
+                  title="SMASH Invoices — 60 second demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* ─── STORY 2: PRICING DNA ─────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-28 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -427,7 +442,7 @@ export function ChromeExtension() {
               <PricingDNAMockup />
             </AnimateIn>
             <AnimateIn direction="right" className="order-1 lg:order-2">
-              <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-4">Pricing DNA</p>
+              <p className="font-display font-black text-accent text-[11px] uppercase tracking-[0.2em] mb-4">Pricing DNA</p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
                 It already<br />knows your<br />prices.
               </h2>
@@ -456,7 +471,7 @@ export function ChromeExtension() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimateIn direction="left">
-              <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-4">Professional. Paid-ready.</p>
+              <p className="font-display font-black text-accent text-[11px] uppercase tracking-[0.2em] mb-4">Professional. Paid-ready.</p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
                 Send the bill.<br />Get paid.
               </h2>
@@ -464,13 +479,13 @@ export function ChromeExtension() {
                 One click drops the quote into your Gmail reply. Your customer opens a clean portal link, taps Approve, taps Pay. Read receipts fire the moment they open it. NDIS participant numbers print automatically when saved. Syncs straight to Xero and QuickBooks.
               </p>
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface border-2 border-border">
-                  <svg width="14" height="14" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#13B5EA"/><path d="M10 20l5.5-5.5 4.5 4.5 4.5-4.5L30 20l-5.5 5.5-4.5-4.5-4.5 4.5L10 20z" fill="white"/></svg>
-                  <span className="text-[12px] font-black text-brand/70">Xero sync</span>
+                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#13B5EA]/15 border border-[#13B5EA]/30">
+                  <span className="w-2 h-2 rounded-full bg-[#13B5EA] inline-block shrink-0" />
+                  <span className="text-[12px] font-black text-[#13B5EA]">Xero sync</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface border-2 border-border">
-                  <svg width="14" height="14" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#2CA01C"/><text x="20" y="26" textAnchor="middle" fill="white" fontSize="18" fontWeight="900" fontFamily="sans-serif">Q</text></svg>
-                  <span className="text-[12px] font-black text-brand/70">QuickBooks sync</span>
+                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2CA01C]/15 border border-[#2CA01C]/30">
+                  <span className="w-2 h-2 rounded-full bg-[#2CA01C] inline-block shrink-0" />
+                  <span className="text-[12px] font-black text-[#2CA01C]">QuickBooks sync</span>
                 </div>
               </div>
               <div className="space-y-3">
@@ -494,32 +509,8 @@ export function ChromeExtension() {
         </div>
       </section>
 
-      {/* ─── FOUNDER NOTE ─────────────────────────────────────────── */}
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3">From the founder</p>
-            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
-              This hand<br />does not type.
-            </h2>
-            <div className="space-y-5 font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6]">
-              <p>I'm Dan. I built SMASH because I know the feeling of the Admin Wall — getting home, opening your inbox, seeing three quote requests, and watching your brain go completely blank.</p>
-              <p>You know you need to type out line items, calculate totals, format a PDF and reply. So you put it off. The quote never gets sent. You lose the job.</p>
-              <p className="text-brand font-bold">SMASH lives right in your Gmail and does the data entry for you. So you can get your time back.</p>
-            </div>
-            <div className="flex items-center gap-4 mt-8 pt-8 border-t border-border">
-              <div className="w-12 h-12 rounded-full bg-brand text-white font-black flex items-center justify-center text-lg">D</div>
-              <div>
-                <p className="font-display text-base text-brand uppercase tracking-tight">Dan Neale</p>
-                <p className="font-body text-xs text-brand/50 font-medium">Founder · SMASH Invoices</p>
-              </div>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
       {/* ─── CAPABILITY STRIP ─────────────────────────────────────── */}
-      <section className="bg-brand py-16 md:py-24">
+      <section className="bg-brand py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/40 mb-3 text-center">Everything in one sidebar</p>
@@ -540,7 +531,7 @@ export function ChromeExtension() {
             ].map(({ Icon, title, body }, i) => (
               <AnimateIn key={title} direction="up" delay={i * 50}>
                 <div className="bg-white/5 border-2 border-white/10 rounded-3xl p-6 h-full hover:border-accent/40 transition-colors">
-                  <div className="w-9 h-9 rounded-full bg-accent/15 flex items-center justify-center mb-4">
+                  <div className="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center mb-4">
                     <Icon size={16} className="text-accent" strokeWidth={2.5} />
                   </div>
                   <h3 className="text-base font-black text-white uppercase tracking-tighter leading-[0.95] mb-2">{title}</h3>
@@ -549,6 +540,30 @@ export function ChromeExtension() {
               </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── FOUNDER NOTE ─────────────────────────────────────────── */}
+      <section className="bg-surface py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3">From the founder</p>
+            <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
+              This hand<br />does not type.
+            </h2>
+            <div className="space-y-5 font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6]">
+              <p>I'm Dan. I built SMASH because I know the feeling of the Admin Wall — getting home, opening your inbox, seeing three quote requests, and watching your brain go completely blank.</p>
+              <p>You know you need to type out line items, calculate totals, format a PDF and reply. So you put it off. The quote never gets sent. You lose the job.</p>
+              <p className="text-brand font-bold">SMASH lives right in your Gmail and does the data entry for you. So you can get your time back.</p>
+            </div>
+            <div className="flex items-center gap-4 mt-8 pt-8 border-t border-border">
+              <div className="w-12 h-12 rounded-full bg-brand text-white font-black flex items-center justify-center text-lg">D</div>
+              <div>
+                <p className="font-display text-base text-brand uppercase tracking-tight">Dan Neale</p>
+                <p className="font-body text-xs text-brand/50 font-medium">Founder · SMASH Invoices</p>
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -597,8 +612,9 @@ export function ChromeExtension() {
       </section>
 
       {/* ─── TESTIMONIAL ──────────────────────────────────────────── */}
-      <section className="bg-surface py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <section className="bg-surface py-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,_#C8FF00_1px,_transparent_1px)] bg-[length:24px_24px]" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <div className="flex items-center justify-center gap-1 mb-5">
             {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-accent fill-accent" />)}
           </div>
@@ -633,11 +649,10 @@ export function ChromeExtension() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88]">
-              Talk the job.<br />Send the bill.<br />
-              <span className="text-accent">Done.</span>
+              Your inbox is<br />full of jobs.
             </h2>
             <p className="font-body text-lg text-white/65 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
-              Free on the Chrome Web Store. Install in one click. From email to paid in under 60 seconds.
+              SMASH turns them into invoices while you're still on the road.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
               <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
