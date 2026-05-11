@@ -6,7 +6,6 @@ import {
   Mic,
   Send,
   ChevronDown,
-  Check,
   Star,
   Lock,
   Inbox,
@@ -34,52 +33,52 @@ const steps = [
     n: '01',
     title: 'Open Gmail.',
     body:
-      'Click the SMASH icon in the Gmail top bar or the Generate Invoice button beside Send. The side panel opens without leaving your inbox.',
+      'The SMASH sidebar docks inside Gmail. When a quote request lands, SMASH reads the email and sets the customer as your active context automatically.',
   },
   {
     n: '02',
-    title: "Talk… or don't.",
+    title: 'Hold to record.',
     body:
-      'Hit the mic and describe the job in plain English ("standard package, 4 hours, travel fee"). Not in the mood to talk? Hit Generate from email and SMASH builds the quote straight from the customer\'s written request.',
+      'Hit Hold to Record and describe the job out loud — or tap Auto-draft from Email and SMASH builds the quote straight from what the customer wrote.',
   },
   {
     n: '03',
     title: 'Your prices, instantly.',
     body:
-      'SMASH matches the work against your personal Pricing DNA or our built-in materials catalog. The line items fill in. The math is done. The tax is calculated.',
+      'SMASH matches the work against your Pricing DNA and materials catalog. Line items fill in. GST calculated. Total ready. Under 60 seconds.',
   },
   {
     n: '04',
-    title: 'Format and send.',
+    title: 'One click to reply.',
     body:
-      'Need an invoice instead of a quote? Swap it with one click. Then drop a clean reply into Gmail, attach a branded PDF, and optionally append the SMASH signature from Settings.',
+      'Drop the quote into your Gmail reply with one click. Customer gets a professional link. One tap to approve. One tap to pay. Done.',
   },
 ];
 
 const features = [
   {
-    icon: Inbox,
-    title: 'Generate invoices without leaving Gmail.',
+    icon: Mic,
+    title: 'Stop typing invoices. Just talk.',
     body:
-      'SMASH lives inside Gmail: top-bar icon, compose toolbar button, and a side panel that builds invoices from the customer email or your voice.',
+      'Describe the job out loud — materials, hours, call-out fee — and SMASH builds the priced quote. No typing. No templates. No brain fog.',
+  },
+  {
+    icon: Inbox,
+    title: 'Auto-draft from email.',
+    body:
+      'Not in the mood to talk? Hit Auto-draft from Email and SMASH reads the customer\'s request and builds a quote from their words instead of yours.',
   },
   {
     icon: FileDown,
-    title: 'Materials priced automatically.',
+    title: 'It already knows your prices.',
     body:
-      'Stop guessing what parts cost. Over 2,250 Australian trade materials priced and built in. Speak the materials, the exact price drops into the quote.',
+      'Your Pricing DNA stores your rates, services and materials. The moment you describe a job, SMASH matches it to your catalog and fills in your numbers instantly.',
   },
   {
     icon: Send,
-    title: 'They approve it. They pay it. Done.',
+    title: 'Professional. Paid-ready.',
     body:
-      "Customers get a public link in the email. One tap to approve from their phone. One tap to pay. NDIS participant numbers show on the portal and PDF when saved on the customer.",
-  },
-  {
-    icon: Check,
-    title: 'One click to your accountant.',
-    body:
-      'Push your completed estimates and invoices straight to Xero or QuickBooks Online. No double-entry. No midnight bookkeeping.',
+      'One click drops the quote into your Gmail reply. Customer opens a clean portal link, taps Approve, taps Pay. NDIS participant numbers print automatically when saved.',
   },
 ];
 
@@ -212,18 +211,17 @@ function GmailMockup() {
         <div className="col-span-3 p-4 bg-white space-y-3">
           <div>
             <p className="text-[11px] font-bold text-slate-700 leading-tight">
-              Sarah Whitman
+              Johnathan Smith
             </p>
-            <p className="text-[10px] text-slate-400 leading-tight">to me · 9:14 AM</p>
+            <p className="text-[10px] text-slate-400 leading-tight">to me · 8:47 AM</p>
           </div>
           <p className="text-[11px] font-bold text-slate-800 leading-tight">
-            Quote — wedding photography, 14 June
+            Handyman job.
           </p>
           <div className="space-y-1.5 text-[10px] text-slate-500 leading-[1.4]">
-            <p>Hi — would love a quote for our wedding on June 14th.</p>
-            <p>Ceremony 2pm in Bangalow, reception in Byron.</p>
-            <p>Need 6 hours coverage, two photographers, all edited photos.</p>
-            <p className="text-slate-400">Thanks, Sarah</p>
+            <p>Hi — need a quote for replacing the copper piping and installing a new mixer tap in the kitchen.</p>
+            <p>Also a call-out fee if you can include that.</p>
+            <p className="text-slate-400">Thanks, Johnathan</p>
           </div>
           <div className="flex gap-2 pt-2">
             <div className="px-2.5 py-1 rounded bg-slate-100 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
@@ -245,48 +243,42 @@ function GmailMockup() {
               SMASH<span className="text-accent">.</span>
             </span>
             <span className="text-[8px] uppercase tracking-widest text-white/40 font-bold">
-              Gmail
+              Sidebar
             </span>
           </div>
 
-          <div className="rounded-xl bg-white/[0.06] border border-white/10 p-3">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center shrink-0">
-                <Mic size={13} className="text-brand" strokeWidth={3} />
-              </div>
-              <div className="min-w-0">
-                <p className="text-[9px] uppercase tracking-widest text-white/40 font-bold">Recording…</p>
-                <p className="text-[10px] text-white/85 font-medium truncate">"Premium package, 6 hrs, 2 shooters"</p>
-              </div>
-            </div>
-            <div className="flex items-end gap-[2px] h-5">
-              {[3, 5, 8, 12, 9, 14, 7, 11, 6, 10, 4, 8, 11, 5, 9, 7, 12, 6].map((h, i) => (
-                <span key={i} className="flex-1 bg-accent/70 rounded-sm" style={{ height: `${h * 6}%` }} />
-              ))}
-            </div>
+          {/* Active context */}
+          <div className="rounded-lg bg-white/[0.06] border border-white/10 p-2.5">
+            <p className="text-[8px] uppercase tracking-widest text-accent font-black mb-1">Active Context</p>
+            <p className="text-[10px] text-white font-bold leading-tight">Johnathan Smith</p>
+            <p className="text-[9px] text-white/45 font-medium truncate">jsmith@example.com</p>
           </div>
 
           <div className="rounded-xl bg-white/[0.04] border border-white/[0.08] p-3 space-y-1.5">
             <div className="flex justify-between text-[10px]">
-              <span className="text-white/55 font-medium truncate pr-2">Premium package</span>
-              <span className="text-white font-bold tabular-nums">$2,400</span>
+              <span className="text-white/55 font-medium truncate pr-2">Call-out fee</span>
+              <span className="text-white font-bold tabular-nums">$600</span>
             </div>
             <div className="flex justify-between text-[10px]">
-              <span className="text-white/55 font-medium truncate pr-2">2nd shooter, 6 hrs</span>
-              <span className="text-white font-bold tabular-nums">$720</span>
+              <span className="text-white/55 font-medium truncate pr-2">Replace copper piping</span>
+              <span className="text-white font-bold tabular-nums">$624</span>
             </div>
             <div className="flex justify-between text-[10px]">
-              <span className="text-white/55 font-medium truncate pr-2">Edits + delivery</span>
-              <span className="text-white font-bold tabular-nums">$480</span>
+              <span className="text-white/55 font-medium truncate pr-2">Mixer tap install</span>
+              <span className="text-white font-bold tabular-nums">$237</span>
             </div>
             <div className="border-t border-white/10 pt-1.5 flex justify-between text-[10px]">
               <span className="text-white/70 font-bold uppercase tracking-wider">Total inc. GST</span>
-              <span className="text-accent font-black tabular-nums">$3,960</span>
+              <span className="text-accent font-black tabular-nums">$1,497</span>
             </div>
           </div>
 
-          <button className="w-full rounded-full bg-accent text-brand font-black text-[10px] uppercase tracking-widest py-2.5 flex items-center justify-center gap-1.5">
-            <Send size={11} strokeWidth={3} />
+          <button className="w-full rounded-full bg-white/10 border border-white/15 text-white font-black text-[9px] uppercase tracking-widest py-2 flex items-center justify-center gap-1.5">
+            <Mic size={10} strokeWidth={3} />
+            Hold to Record
+          </button>
+          <button className="w-full rounded-full bg-accent text-brand font-black text-[9px] uppercase tracking-widest py-2 flex items-center justify-center gap-1.5">
+            <Send size={10} strokeWidth={3} />
             Drop into reply
           </button>
         </div>
@@ -337,11 +329,11 @@ export function ChromeExtension() {
                   </span>
                 </div>
                 <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-                  The fastest way<br />to clear your<br />
-                  <span className="text-accent">inbox.</span>
+                  Stop typing<br />invoices.<br />
+                  <span className="text-accent">Just talk.</span>
                 </h1>
                 <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-md">
-                  Generate invoices without leaving your inbox. The SMASH icon in Gmail and Generate Invoice button beside Send both open the side panel.
+                  Turn any email into a priced quote using your voice. SMASH lives inside Gmail — hold to record or auto-draft from the customer's email. From email to quote in under 60 seconds.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
@@ -381,7 +373,7 @@ export function ChromeExtension() {
             What is SMASH for Gmail?
           </p>
           <p className="text-lg md:text-xl font-bold text-brand leading-[1.3]">
-            The SMASH Invoices Chrome extension is a Gmail side panel that turns customer emails into priced invoices and quotes using your voice. Built for self-employed service workers and freelancers, you click the SMASH icon or Generate Invoice beside Send, speak the job details for 30 seconds, and SMASH builds a professional, tax-compliant invoice using your personal rates. It syncs directly to Xero and QuickBooks Online without manual typing.
+            SMASH for Gmail is a Chrome extension sidebar that docks inside your inbox and turns customer emails into priced quotes using your voice. Hold to Record and describe the job, or tap Auto-draft from Email and SMASH builds the quote from the customer's request. Your Pricing DNA matches your voice to your rates instantly — GST calculated, line items filled, professional portal link ready to drop into your reply.
           </p>
         </div>
       </section>
@@ -428,7 +420,7 @@ export function ChromeExtension() {
               Four steps
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-3xl mx-auto">
-              From email to paid<br />in 4 steps.
+              From email to quote<br />in under 60 seconds.
             </h2>
           </AnimateIn>
 
@@ -456,7 +448,7 @@ export function ChromeExtension() {
               Why it works
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
-              It already knows<br />your business.
+              It already knows<br />your prices.
             </h2>
           </AnimateIn>
 
@@ -486,7 +478,7 @@ export function ChromeExtension() {
               The proof
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
-              Why SMASH is<br />actually fast.
+              No manual entry.<br />No brain fog.<br />No missed details.
             </h2>
           </AnimateIn>
           <div className="overflow-x-auto bg-white rounded-3xl border-2 border-border p-2 sm:p-4">
@@ -666,10 +658,10 @@ export function ChromeExtension() {
           <Quote size={28} className="text-brand/30 mx-auto mb-4" />
           <blockquote>
             <p className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-[0.95] text-brand mb-6">
-              "I cleared eleven quote requests on a Sunday morning between coffees. None of them got typed. Three booked the same week."
+              "Customer emails a job request. I hold the button, describe it in 20 seconds, drop it into the reply. They've approved it before I've left the driveway."
             </p>
             <p className="font-body text-brand/50 text-sm">
-              Marcus W. — wedding photographer, Byron Bay
+              Marcus W. — plumber, Byron Bay
             </p>
           </blockquote>
         </div>
@@ -702,10 +694,10 @@ export function ChromeExtension() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88]">
-              Pin it to Gmail.<br />Clear your inbox.
+              Stop typing.<br />Start talking.
             </h2>
             <p className="font-body text-lg text-white/70 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
-              Free on the Chrome Web Store. One click to install. Send your first quote in under 60 seconds.
+              Free on the Chrome Web Store. Install in one click. From email to quote in under 60 seconds — no manual entry, no brain fog, no missed details.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
               <a
