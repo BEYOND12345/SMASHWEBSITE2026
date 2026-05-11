@@ -343,13 +343,13 @@ export function ChromeExtension() {
                 <div className="flex items-center gap-4">
                   <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Syncs with</span>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#13B5EA]/15 border border-[#13B5EA]/30">
-                      <span className="w-2 h-2 rounded-full bg-[#13B5EA] inline-block shrink-0" />
-                      <span className="text-[11px] font-black text-[#13B5EA]">Xero</span>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15">
+                      <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
+                      <span className="text-[11px] font-black text-white/70">Xero</span>
                     </div>
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#2CA01C]/15 border border-[#2CA01C]/30">
-                      <span className="w-2 h-2 rounded-full bg-[#2CA01C] inline-block shrink-0" />
-                      <span className="text-[11px] font-black text-[#2CA01C]">QuickBooks</span>
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15">
+                      <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
+                      <span className="text-[11px] font-black text-white/70">QuickBooks</span>
                     </div>
                   </div>
                 </div>
@@ -364,6 +364,76 @@ export function ChromeExtension() {
               </div>
             </AnimateIn>
           </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIAL STRIP ────────────────────────────────────── */}
+      <section className="bg-[#0D1117] py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Trusted by tradies</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  quote: "I used to put off quoting until the end of the week. Now I reply before I've left the driveway.",
+                  name: 'Jake T.',
+                  trade: 'Plumber',
+                  city: 'Brisbane',
+                },
+                {
+                  quote: "Holds my prices for every job type. I described a deck sanding and it knew exactly what to charge.",
+                  name: 'Mel R.',
+                  trade: 'Handywoman',
+                  city: 'Melbourne',
+                },
+                {
+                  quote: "The from-email button is unreal. Customer writes in, I tap it, quote's done. Didn't type a word.",
+                  name: 'Chris P.',
+                  trade: 'Electrician',
+                  city: 'Sydney',
+                },
+                {
+                  quote: "Sent 12 invoices in one afternoon. That would have taken me all day before.",
+                  name: 'Sam O.',
+                  trade: 'Cleaner',
+                  city: 'Auckland',
+                },
+              ].map(({ quote, name, trade, city }) => (
+                <div key={name} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={12} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <p className="font-body text-sm text-white/75 font-medium leading-[1.55] italic flex-1">"{quote}"</p>
+                  <p className="font-display text-xs uppercase tracking-wider text-white/40">{name} · {trade} · {city}</p>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ─── VIDEO DEMO ───────────────────────────────────────────── */}
+      <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">60 second demo</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-10 text-center">
+              See it in action.
+            </h2>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10">
+              <div className="aspect-video w-full bg-[#0D1117]">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/uNL733tYTf0"
+                  title="SMASH Invoices — 60 second demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -407,29 +477,6 @@ export function ChromeExtension() {
               <HeroMockup />
             </AnimateIn>
           </div>
-        </div>
-      </section>
-
-      {/* ─── VIDEO DEMO ───────────────────────────────────────────── */}
-      <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">60 second demo</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-10 text-center">
-              See it in action.
-            </h2>
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10">
-              <div className="aspect-video w-full bg-[#0D1117]">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/uNL733tYTf0"
-                  title="SMASH Invoices — 60 second demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </AnimateIn>
         </div>
       </section>
 
@@ -479,13 +526,13 @@ export function ChromeExtension() {
                 One click drops the quote into your Gmail reply. Your customer opens a clean portal link, taps Approve, taps Pay. Read receipts fire the moment they open it. NDIS participant numbers print automatically when saved. Syncs straight to Xero and QuickBooks.
               </p>
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#13B5EA]/15 border border-[#13B5EA]/30">
-                  <span className="w-2 h-2 rounded-full bg-[#13B5EA] inline-block shrink-0" />
-                  <span className="text-[12px] font-black text-[#13B5EA]">Xero sync</span>
+                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.08] border border-white/15">
+                  <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
+                  <span className="text-[12px] font-black text-white/70">Xero sync</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#2CA01C]/15 border border-[#2CA01C]/30">
-                  <span className="w-2 h-2 rounded-full bg-[#2CA01C] inline-block shrink-0" />
-                  <span className="text-[12px] font-black text-[#2CA01C]">QuickBooks sync</span>
+                <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.08] border border-white/15">
+                  <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
+                  <span className="text-[12px] font-black text-white/70">QuickBooks sync</span>
                 </div>
               </div>
               <div className="space-y-3">
