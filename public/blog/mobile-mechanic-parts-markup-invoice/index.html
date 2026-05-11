@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Mechanic Parts Markup Invoice Guide</title>
+  <meta name="description" content="Mobile mechanic parts markup invoice guide covering labour, parts, fluids, consumables, GST, payment terms and voice invoicing examples.">
+  <meta name="keywords" content="mobile mechanic parts markup invoice, mobile mechanic invoice, mechanic parts markup, mobile mechanic parts invoice, auto repair invoice app, mechanic invoice template, parts and labour invoice, mechanic materials pricing">
+  <meta name="author" content="SMASH Team">
+  <link rel="canonical" href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Same-URL hreflang alternates: content is globally-relevant; per-country
+       product pages live at /nz /uk /us /ca. -->
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="alternate" hreflang="en-AU"     href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="alternate" hreflang="en-NZ"     href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="alternate" hreflang="en-GB"     href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="alternate" hreflang="en-US"     href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <link rel="alternate" hreflang="en-CA"     href="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <meta property="og:site_name" content="SMASH Invoices">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mobile Mechanic Parts Markup Invoice Guide">
+  <meta property="og:description" content="Mobile mechanic parts markup invoice guide covering labour, parts, fluids, consumables, GST, payment terms and voice invoicing examples.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice">
+  <meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU">
+  <meta property="article:published_time" content="2026-05-11T01:21:13.160Z">
+  <meta property="article:modified_time" content="2026-05-11T01:21:13.160Z">
+  <meta property="article:author" content="SMASH Team">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mobile Mechanic Parts Markup Invoice Guide">
+  <meta name="twitter:description" content="Mobile mechanic parts markup invoice guide covering labour, parts, fluids, consumables, GST, payment terms and voice invoicing examples.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+  --bg: #0A0A0A;
+  --bg-soft: #111;
+  --surface: rgba(255,255,255,0.04);
+  --surface-strong: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.1);
+  --text: #F5F5F5;
+  --text-muted: rgba(255,255,255,0.65);
+  --text-dim: rgba(255,255,255,0.45);
+  --accent: #D9F99D;
+  --accent-ink: #0A0A0A;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  }
+  .nav-brand {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800; letter-spacing: 0.02em;
+  color: #fff; font-size: 22px; text-transform: uppercase;
+  }
+  .nav-links { display: none; gap: 28px; }
+  .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: #fff; text-decoration: none; }
+  .nav-cta {
+  background: var(--accent); color: var(--accent-ink);
+  padding: 9px 16px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.01em;
+  }
+  .nav-cta:hover { filter: brightness(0.95); text-decoration: none; }
+  @media (min-width: 860px) { .nav-links { display: flex; } }
+  main { padding: 48px 0 64px; }
+  .back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--accent); font-size: 14px; font-weight: 600;
+  margin-bottom: 28px;
+  }
+  h1.post-title {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+  color: #fff;
+  }
+  .post-meta {
+  display: flex; flex-wrap: wrap; gap: 14px 22px;
+  color: var(--text-muted); font-size: 14px; font-weight: 500;
+  margin-bottom: 28px;
+  }
+  .post-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .featured-img {
+  border-radius: 16px; overflow: hidden;
+  background: var(--surface);
+  margin: 0 0 40px;
+  border: 1px solid var(--border);
+  }
+  .takeaways {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin: 0 0 40px;
+  }
+  .takeaways h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-size: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+  margin: 0 0 12px; color: var(--accent);
+  }
+  .takeaways ul { margin: 0; padding-left: 20px; }
+  .takeaways li { margin: 6px 0; color: var(--text); }
+  .prose h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.6vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 48px 0 16px;
+  color: #fff;
+  }
+  .prose h3 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 32px 0 12px;
+  color: #fff;
+  }
+  .prose p { margin: 0 0 18px; color: rgba(255,255,255,0.85); }
+  .prose ul, .prose ol { margin: 0 0 18px; padding-left: 22px; }
+  .prose li { margin: 8px 0; color: rgba(255,255,255,0.85); }
+  .prose strong { color: #fff; }
+  .prose blockquote {
+  margin: 24px 0;
+  padding: 12px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: rgba(255,255,255,0.85);
+  border-radius: 0 10px 10px 0;
+  }
+  .prose img { border-radius: 12px; margin: 24px 0; }
+  .prose code {
+  background: var(--surface-strong);
+  padding: 2px 6px; border-radius: 6px;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  }
+  .prose pre {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 16px; border-radius: 12px;
+  overflow-x: auto;
+  }
+  .prose a { border-bottom: 1px solid rgba(217,249,157,0.4); }
+  .prose a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+  .faq { margin: 56px 0 0; }
+  .faq h2 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-weight: 800; font-size: clamp(28px, 4vw, 36px);
+  margin: 0 0 20px; color: #fff;
+  }
+  .faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 10px;
+  }
+  .faq summary {
+  cursor: pointer; font-weight: 600; color: #fff; font-size: 16px;
+  list-style: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; float: right; color: var(--accent); font-weight: 700; }
+  .faq details[open] summary::after { content: '−'; }
+  .faq details[open] summary { margin-bottom: 8px; }
+  .faq p { color: var(--text-muted); margin: 8px 0 0; }
+  .cta-card {
+  margin: 56px 0 0;
+  background: linear-gradient(135deg, rgba(217,249,157,0.12), rgba(217,249,157,0.04));
+  border: 1px solid rgba(217,249,157,0.25);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  }
+  .cta-card h3 {
+  font-family: 'Barlow Condensed', system-ui, sans-serif;
+  font-size: 28px; font-weight: 800; margin: 0 0 10px; color: #fff;
+  }
+  .cta-card p { color: var(--text-muted); margin: 0 0 20px; }
+  .cta-btn {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 12px 24px; border-radius: 999px;
+  font-weight: 700; font-size: 15px;
+  }
+  .cta-btn:hover { filter: brightness(0.95); text-decoration: none; }
+  .author-card {
+  margin: 48px 0 0;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 15px;
+  }
+  .author-card strong { color: #fff; }
+  footer {
+  margin-top: 80px;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 14px;
+  text-align: center;
+  }
+  footer a { color: var(--text-muted); margin: 0 10px; }
+  footer a:hover { color: #fff; text-decoration: none; }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Mobile Mechanic Parts Markup Invoices: Labour, Parts and Fluids","description":"Mobile mechanic parts markup invoice guide covering labour, parts, fluids, consumables, GST, payment terms and voice invoicing examples.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-11T01:21:13.160Z","dateModified":"2026-05-11T01:21:13.160Z","author":{"@type":"Person","name":"SMASH Team"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice"},"keywords":"mobile mechanic parts markup invoice, mobile mechanic invoice, mechanic parts markup, mobile mechanic parts invoice, auto repair invoice app, mechanic invoice template, parts and labour invoice, mechanic materials pricing","wordCount":638,"articleSection":"Blog","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"Mobile Mechanic Parts Markup Invoices: Labour, Parts and Fluids","item":"https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SMASH Invoices","url":"https://smashinvoices.com","logo":"https://smashinvoices.com/favicon.svg","description":"Voice-to-invoice software for tradies, contractors and service businesses. Live globally on iOS and Chrome — Australia, New Zealand, the United Kingdom, the United States and Canada.","areaServed":["AU","NZ","GB","US","CA"],"sameAs":["https://apps.apple.com/au/app/smash-invoices/id6759475079"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should mobile mechanics itemise parts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Itemising parts helps customers understand what was supplied and helps mechanics recover the cost of parts, fluids, consumables and markup."}},{"@type":"Question","name":"Can mobile mechanics charge parts markup?","acceptedAnswer":{"@type":"Answer","text":"Yes. Parts markup is common because it covers sourcing time, warranty risk, stock handling and supplier trips. Apply it consistently and keep the invoice clear."}},{"@type":"Question","name":"What parts should be saved in a mechanic pricing catalog?","acceptedAnswer":{"@type":"Answer","text":"Common saved items include oil, filters, brake pads, rotors, batteries, spark plugs, ignition coils, fluids, bulbs, wiper blades and consumables."}},{"@type":"Question","name":"What is the fastest way to invoice mobile mechanic parts?","acceptedAnswer":{"@type":"Answer","text":"The fastest workflow is to save common parts and markup rules, then describe the repair by voice. SMASH builds the labour, parts, GST and payment link in under 60 seconds."}}]}</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">SMASH</a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="nav-cta" rel="nofollow">Get the app</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="container">
+      <a href="/blog" class="back-link">← Back to Blog</a>
+      <header>
+        <h1 class="post-title">Mobile Mechanic Parts Markup Invoices: Labour, Parts and Fluids</h1>
+        <div class="post-meta">
+          <span>By SMASH Team</span>
+          <span><time datetime="2026-05-11T01:21:13.160Z">11 May 2026</time></span>
+          
+          <span>7 min read</span>
+        </div>
+        <figure class="featured-img"><img src="https://smashinvoices.com/hero_image.png" alt="Mobile mechanic itemising parts and labour from a driveway" loading="eager" fetchpriority="high"></figure>
+      </header>
+
+      <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>Mobile mechanic invoices should separate labour, diagnostics, parts, fluids, consumables and GST.</li><li>Parts markup should be applied consistently so margin is not lost or guessed after the job.</li><li>Saved parts catalogs help mechanics invoice from the driveway without typing every item.</li><li>SMASH turns mechanic job descriptions into itemised invoices by voice in under 60 seconds.</li></ul></aside>
+
+      <div class="prose"><p>A mobile mechanic invoice should separate labour, diagnostics, parts, fluids, consumables and GST so the customer can see what was supplied and what was done. If you charge parts markup, show the supplied parts clearly and apply the markup consistently rather than hiding it inside labour.</p>
+<p>This guide is for self-employed mobile mechanics who invoice from a driveway, roadside call-out or fleet yard. It links the manual structure to <a href="/for-mobile-mechanics">SMASH for mobile mechanics</a>, <a href="/materials-pricing">materials pricing</a>, the free <a href="/invoice-generator">invoice generator</a>, and <a href="/voice-invoicing">voice invoicing</a>.</p>
+<h2>What to include on a mobile mechanic parts invoice</h2>
+<p>Use this basic structure:</p>
+<ol>
+<li>Customer name and vehicle details.</li>
+<li>Job address or roadside location.</li>
+<li>Diagnostic, call-out or inspection fee if used.</li>
+<li>Labour line items with hours and rate.</li>
+<li>Parts supplied, quantity, unit price and markup if applicable.</li>
+<li>Fluids and consumables such as oil, coolant, brake cleaner or shop supplies.</li>
+<li>GST if your business is registered.</li>
+<li>Payment terms or a payment link.</li>
+</ol>
+<p>For example:</p>
+<blockquote>
+<p>Front brake service - labour, front brake pads, front rotors, brake cleaner and parts markup.</p>
+</blockquote>
+<p>That is clearer than a single line saying &quot;brake repair&quot;. It also protects margin because the supplied parts are visible.</p>
+<h2>Common parts mobile mechanics should save</h2>
+<p>Most mobile mechanics should keep a saved pricing catalog for:</p>
+<ul>
+<li>Engine oil by litre or service pack.</li>
+<li>Oil, air, cabin and fuel filters.</li>
+<li>Brake pads and rotors.</li>
+<li>Batteries.</li>
+<li>Spark plugs and ignition coils.</li>
+<li>Coolant, brake fluid and transmission fluid.</li>
+<li>Belts, wiper blades and bulbs.</li>
+<li>Consumables, disposal and environmental fees.</li>
+</ul>
+<p>If your costs change often, update the catalog as suppliers change pricing. The goal is not to memorise every part. The goal is to stop guessing when you are standing beside the vehicle.</p>
+<h2>How to show parts markup</h2>
+<p>Parts markup covers sourcing time, warranty risk, carrying stock, failed trips, supplier runs and vehicle stock. Customers usually understand parts pricing when the invoice is clear.</p>
+<p>You can show markup in two common ways:</p>
+<ul>
+<li>List the retail price you charge for each supplied part.</li>
+<li>Note that supplied parts include handling or markup in your terms.</li>
+</ul>
+<p>The important thing is consistency. If one job uses cost plus 15 percent and another uses random rounded prices, your records become harder to trust.</p>
+<p>For deeper setup, use <a href="/materials-pricing">materials pricing</a>. For one-off manual invoices, the free <a href="/invoice-generator">invoice generator</a> works. SMASH goes further by remembering parts, rates and markup rules.</p>
+<h2>Voice example</h2>
+<p>With <a href="/voice-invoicing">voice invoicing</a>, a mobile mechanic can say:</p>
+<blockquote>
+<p>&quot;Front pads and rotors on the Mazda 3. Two hours labour, supplied pads and two rotors at cost plus 15 percent, brake cleaner, customer approved before fitting.&quot;</p>
+</blockquote>
+<p>SMASH turns that into an itemised invoice with labour, parts, markup, consumables, GST and a payment link.</p>
+<h2>Quote before fitting larger parts</h2>
+<p>For expensive parts, quote before fitting. Use the free <a href="/quote-generator">quote generator</a>, or use the <a href="/chrome-extension">Chrome extension</a> to turn a Gmail request into a quote. Once approved, convert the quote into an invoice so the final bill matches what the customer accepted.</p>
+<h2>Mobile mechanic workflow with SMASH</h2>
+<p><a href="/for-mobile-mechanics">SMASH for mobile mechanics</a> is built for driveway and van-based work:</p>
+<ul>
+<li>Save labour, diagnostic, call-out and roadside rates.</li>
+<li>Save common parts, fluids and markup rules.</li>
+<li>Create quotes and invoices by voice.</li>
+<li>Record vehicle notes and customer approval.</li>
+<li>Send payment links from the phone.</li>
+<li>Sync invoices to Xero or QuickBooks on Starter and higher plans.</li>
+</ul>
+<p>The Free plan includes 5 invoices per month. Starter is $15/month for unlimited invoices plus accounting sync.</p>
+<h2>Bottom line</h2>
+<p>A good mobile mechanic invoice makes parts, labour and markup easy to approve. A faster system remembers the parts catalog and lets you invoice before the vehicle leaves the driveway.</p>
+</div>
+
+      <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Should mobile mechanics itemise parts?</summary><p>Yes. Itemising parts helps customers understand what was supplied and helps mechanics recover the cost of parts, fluids, consumables and markup.</p></details><details><summary>Can mobile mechanics charge parts markup?</summary><p>Yes. Parts markup is common because it covers sourcing time, warranty risk, stock handling and supplier trips. Apply it consistently and keep the invoice clear.</p></details><details><summary>What parts should be saved in a mechanic pricing catalog?</summary><p>Common saved items include oil, filters, brake pads, rotors, batteries, spark plugs, ignition coils, fluids, bulbs, wiper blades and consumables.</p></details><details><summary>What is the fastest way to invoice mobile mechanic parts?</summary><p>The fastest workflow is to save common parts and markup rules, then describe the repair by voice. SMASH builds the labour, parts, GST and payment link in under 60 seconds.</p></details></section>
+
+      <aside class="cta-card">
+        <h3>Ready to stop typing invoices?</h3>
+        <p>SMASH turns your voice into professional invoices and quotes in under 60 seconds. Built for tradies.</p>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download SMASH Invoices</a>
+      </aside>
+
+      <div class="author-card"><strong>About SMASH Team</strong><br>SMASH builds voice-to-invoice tools for self-employed service workers who want to send invoices before admin becomes a night-time job.</div>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice invoicing</a>
+      <a href="/tradie-hourly-rates">Hourly rates</a>
+      <a href="/materials-pricing">Materials pricing</a>
+      <a href="/customer-approval">Customer approval</a>
+      <a href="/tools">Free tools</a>
+      <a href="/integrations">Integrations</a>
+      <a href="/faq">FAQ</a>
+      <a href="/sitemap">Sitemap</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">App Store</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome</a>
+    </div>
+    <div style="margin-top:14px;">
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body>
+</html>
