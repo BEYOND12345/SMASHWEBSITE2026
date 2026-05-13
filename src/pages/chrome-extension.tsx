@@ -313,15 +313,18 @@ export function ChromeExtension() {
                 </div>
 
                 <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-                  Talk the job.<br />Send the bill.<br />
-                  <span className="text-accent">Done.</span>
+                  Stop juggling<br />software.<br />
+                  <span className="text-accent">Smash out invoices<br />directly in Gmail.</span>
                 </h1>
 
+                <p className="font-body text-lg text-white/75 font-medium leading-[1.5] mb-3 max-w-md">
+                  Finally, a magic QuickBooks &amp; Xero button for your inbox. Our sidebar scans your emails and generates your invoices using your own pricing and your own voice.
+                </p>
                 <p className="font-body text-lg text-white/75 font-medium leading-[1.5] mb-8 max-w-md">
-                  From email to paid in under 60 seconds. SMASH docks inside Gmail — tap Start Recording or From Email and your priced quote is ready before you've left the driveway.
+                  No new apps. No tab-jumping. Just click, send, and get back to your night.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3 mb-5">
                   <a
                     href={CHROME_STORE_URL}
                     target="_blank"
@@ -329,7 +332,7 @@ export function ChromeExtension() {
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
                   >
                     <Chrome size={17} strokeWidth={2.5} />
-                    Add to Chrome — Free
+                    Add to Chrome — It's Free
                   </a>
                   <Link
                     to="/how-it-works"
@@ -338,6 +341,8 @@ export function ChromeExtension() {
                     See how it works
                   </Link>
                 </div>
+
+                <p className="font-body text-sm text-white/50 font-medium italic mb-6">Quicker than a sparrow's fart.</p>
 
                 {/* Integration logos */}
                 <div className="flex items-center gap-4 flex-wrap">
@@ -353,8 +358,6 @@ export function ChromeExtension() {
                     </div>
                   </div>
                 </div>
-
-                <p className="font-body text-sm text-white/35 font-medium mt-5">No credit card needed. Send your first quote in 60 seconds.</p>
               </div>
             </AnimateIn>
 
