@@ -366,17 +366,12 @@ export function ChromeExtension() {
 
                 {/* Synced with logos */}
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="font-body font-black text-[10px] uppercase tracking-[0.2em] text-white/30">Synced with:</span>
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
-                    <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
-                      <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="22" fill="white">xero</text>
-                    </svg>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
-                    <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
-                      <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="18" fill="white">QuickBooks</text>
-                    </svg>
-                  </div>
+                  <span className="font-body font-black text-[10px] uppercase tracking-[0.2em] text-white/30">Works with:</span>
+                  <img
+                    src="/brand-logos.png"
+                    alt="Works with Xero, QuickBooks and Gmail"
+                    className="h-8 w-auto opacity-90"
+                  />
                 </div>
               </div>
             </AnimateIn>
