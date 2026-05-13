@@ -365,12 +365,12 @@ export function ChromeExtension() {
                 <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow's fart.</p>
 
                 {/* Works with logos */}
-                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-                  <span className="font-body font-black text-[11px] uppercase tracking-[0.2em] text-white/30">Works with</span>
+                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+                  <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30">Works with</span>
                   <img
                     src="/brand-logos.png"
                     alt="Works with Xero, QuickBooks and Gmail"
-                    className="h-10 sm:h-12 w-auto opacity-90"
+                    className="h-14 sm:h-16 w-auto opacity-100"
                   />
                 </div>
               </div>
