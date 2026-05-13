@@ -84,7 +84,7 @@ const tiers = [
 
 function HeroMockup() {
   return (
-    <div className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white">
+    <div className="relative w-full max-w-[560px] mx-auto scale-90 sm:scale-100 origin-top rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white">
       {/* Browser chrome */}
       <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-100 border-b border-slate-200">
         <div className="flex gap-1.5">
@@ -109,7 +109,7 @@ function HeroMockup() {
 
       <div className="grid grid-cols-5">
         {/* Email — left */}
-        <div className="col-span-3 p-4 bg-white space-y-3">
+        <div className="col-span-3 p-2 sm:p-4 bg-white space-y-3">
           <div>
             <p className="text-[11px] font-bold text-slate-700 leading-tight">Johnathan Smith</p>
             <p className="text-[10px] text-slate-400 leading-tight">to me · 8:47 AM</p>
@@ -127,7 +127,7 @@ function HeroMockup() {
         </div>
 
         {/* SMASH sidebar — right */}
-        <div className="col-span-2 bg-[#0D1117] p-4 space-y-3 border-l border-slate-200">
+        <div className="col-span-2 bg-[#0D1117] p-2 sm:p-4 space-y-3 border-l border-slate-200">
           <div className="flex items-center justify-between">
             <span className="text-white font-black text-sm tracking-tight">SMASH<span className="text-accent">.</span></span>
             <span className="text-[8px] uppercase tracking-widest text-white/40 font-bold">Sidebar</span>
@@ -340,7 +340,7 @@ export function ChromeExtension() {
                 </div>
 
                 {/* Integration logos */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-wrap">
                   <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Syncs with</span>
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15">
@@ -525,7 +525,7 @@ export function ChromeExtension() {
               <p className="font-body text-lg text-brand/65 font-medium leading-[1.6] mb-8 max-w-lg">
                 One click drops the quote into your Gmail reply. Your customer opens a clean portal link, taps Approve, taps Pay. Read receipts fire the moment they open it. NDIS participant numbers print automatically when saved. Syncs straight to Xero and QuickBooks.
               </p>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 flex-wrap mb-6">
                 <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.08] border border-white/15">
                   <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
                   <span className="text-[12px] font-black text-white/70">Xero sync</span>
