@@ -70,7 +70,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
                 className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                Download on iOS
+                Join Beta — iOS
               </a>
               <a
                 href={CHROME_STORE_URL}
@@ -241,7 +241,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
               className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
               <Apple size={18} strokeWidth={2.5} />
-              Download on iOS
+              Join Beta — iOS
             </a>
             <a
               href={CHROME_STORE_URL}

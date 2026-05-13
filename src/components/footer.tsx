@@ -145,7 +145,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 className="flex items-center gap-2 px-5 py-3 rounded-full bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                <span>App&nbsp;Store</span>
+                <span>Join Beta — iOS</span>
               </a>
               <a
                 href={CHROME_STORE_URL}

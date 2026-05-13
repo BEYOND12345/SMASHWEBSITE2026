@@ -182,7 +182,7 @@ export function Founder() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
                 >
-                  Start Free
+                  Join Beta
                 </a>
               </div>
               <div className="flex items-center gap-1.5">

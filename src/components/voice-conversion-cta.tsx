@@ -85,7 +85,7 @@ export function VoiceConversionCTA({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-brand font-display text-xs uppercase tracking-widest hover:brightness-95 transition-all whitespace-nowrap"
               >
-                Start Free
+                Join Beta
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <Link

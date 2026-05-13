@@ -18,7 +18,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const resolvedCtaUrl = ctaUrl ?? APP_STORE_URL;
-  const resolvedCtaLabel = ctaLabel ?? 'Start Free';
+  const resolvedCtaLabel = ctaLabel ?? 'Join Beta';
 
   // Close the menu when the route changes
   useEffect(() => {
@@ -130,7 +130,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                App Store
+                Join Beta — iOS
               </a>
               <a
                 href={CHROME_STORE_URL}

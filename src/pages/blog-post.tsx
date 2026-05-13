@@ -411,7 +411,7 @@ export function BlogPost() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
                 >
-                  Start Free
+                  Join Beta
                 </a>
                 <span className="font-body text-xs font-medium text-white/35">No credit card · Cancel anytime</span>
               </div>

@@ -93,7 +93,7 @@ export function Features() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
               >
-                Start Free
+                Join Beta
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <Link
@@ -530,7 +530,7 @@ export function Features() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Start Free
+              Join Beta
               <ArrowRight size={14} strokeWidth={2.5} />
             </a>
             <Link

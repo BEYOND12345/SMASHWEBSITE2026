@@ -100,7 +100,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-glow"
                 >
-                  Start Free
+                  Join Beta
                 </a>
                 <a
                   href={CHROME_STORE_URL}

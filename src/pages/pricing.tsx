@@ -214,7 +214,7 @@ export function Pricing() {
                         rel="noopener noreferrer"
                         className="w-full block text-center py-4 rounded-2xl font-display text-sm uppercase tracking-widest transition-all bg-brand text-white hover:brightness-110"
                       >
-                        {isFree ? 'Start Free' : 'Get Started'}
+                        {isFree ? 'Join Beta' : 'Join Beta'}
                       </a>
                       <p className={`text-center font-body text-xs mt-3 ${
                         tier.highlight ? 'text-brand/50' : 'text-slate-400'
@@ -360,7 +360,7 @@ export function Pricing() {
             className="shrink-0 font-display text-sm uppercase tracking-widest text-brand px-10 py-5 rounded-2xl text-base hover:brightness-95 transition-all"
             style={{ backgroundColor: '#DFFF00' }}
           >
-            Download Free
+            Join Beta
           </a>
         </div>
       </section>
