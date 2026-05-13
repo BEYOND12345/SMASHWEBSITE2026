@@ -333,7 +333,7 @@ export function ChromeExtension() {
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for Gmail</span>
                 </div>
 
-                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">Stop wasting time juggling software.</p>
+                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">STOP WASTING TIME.</p>
 
                 <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
                   <span className="block text-white">Smash out invoices</span>
@@ -363,16 +363,6 @@ export function ChromeExtension() {
                 </div>
 
                 <p className="font-body text-sm text-white/40 italic mt-3 mb-6">Quicker than a sparrow's fart.</p>
-
-                {/* Synced with logos */}
-                <div className="flex items-center gap-3 flex-wrap">
-                  <span className="font-body font-black text-[10px] uppercase tracking-[0.2em] text-white/30">Works with:</span>
-                  <img
-                    src="/brand-logos.png"
-                    alt="Works with Xero, QuickBooks and Gmail"
-                    className="h-8 w-auto opacity-90"
-                  />
-                </div>
               </div>
             </AnimateIn>
 
@@ -380,6 +370,16 @@ export function ChromeExtension() {
               <div className="md:pb-24">
                 <div className="rounded-[16px] overflow-hidden shadow-[0_0_60px_rgba(200,255,0,0.12)] border border-white/10">
                   <HeroVideo />
+                </div>
+                
+                {/* Works with logos */}
+                <div className="flex flex-col items-center justify-center gap-4 mt-8">
+                  <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with:</span>
+                  <img
+                    src="/brand-logos.png"
+                    alt="Works with Xero, QuickBooks and Gmail"
+                    className="h-12 sm:h-14 w-auto opacity-90"
+                  />
                 </div>
               </div>
             </AnimateIn>
