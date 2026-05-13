@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Chrome, Star, Quote } from 'lucide-react';
+import { Play, Star, Quote } from 'lucide-react';
 import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
@@ -27,7 +27,6 @@ import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const homeFaqs = [
   { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
@@ -90,7 +89,7 @@ export function LandingPage() {
       <Nav />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative text-white overflow-hidden">
+      <section className="relative text-white min-h-[90vh] overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
           <img
@@ -102,81 +101,105 @@ export function LandingPage() {
         </div>
 
         {/* Hero content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 py-16 md:py-20 lg:py-28">
+          <div className="max-w-3xl">
+            {/* Eyebrow */}
+            <p
+              className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-6 animate-hero-reveal"
+              style={{ animationDelay: '0ms' }}
+            >
+              Voice to Invoice — Live in AU <span className="text-accent/60">· NZ · UK · US · CA</span>
+            </p>
 
-            {/* ── Left column ── */}
-            <div className="py-16 md:py-24 lg:py-32">
+            {/* H1 — staggered line-by-line */}
+            <h1 className="font-black uppercase leading-[0.88] tracking-tighter mb-8 md:mb-10">
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
+                style={{ animationDelay: '80ms' }}
+              >
+                Just Talk.
+              </span>
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
+                style={{ animationDelay: '180ms' }}
+              >
+                SMASH does
+              </span>
+              <span
+                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl text-accent animate-hero-reveal"
+                style={{ animationDelay: '280ms' }}
+              >
+                the rest.
+              </span>
+            </h1>
 
-              {/* Lead-in problem statement */}
-              <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">
-                STOP WASTING TIME JUGGLING SOFTWARE.
-              </p>
+            {/* Subtitle */}
+            <p
+              className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mb-10 md:mb-12 font-medium leading-[1.3] max-w-2xl animate-hero-reveal"
+              style={{ animationDelay: '420ms' }}
+            >
+              Describe the job out loud. SMASH sends a professional invoice before you've left the driveway.
+            </p>
 
-              {/* Main headline */}
-              <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[56px] sm:text-[72px] md:text-[88px] lg:text-[108px] mt-0 mb-8">
-                <span className="block text-white">SMASH OUT INVOICES</span>
-                <span className="block text-accent">DIRECTLY IN GMAIL.</span>
-              </h1>
-
-              {/* Body copy */}
-              <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
-                The magic bridge for QuickBooks &amp; Xero. Our sidebar scans your emails and generates invoices using your own pricing and voice. No new apps. No tab-jumping. Done.
-              </p>
-
-              {/* CTA button */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href={CHROME_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3"
-                >
-                  <Chrome size={18} strokeWidth={2.5} />
-                  Add to Chrome — It's Free
-                </a>
-              </div>
-              <p className="font-body text-sm text-white/40 italic mt-3">
-                "Quicker than a sparrow's fart."
-              </p>
-
-              {/* Integration logos */}
-              <div className="flex items-center gap-3 flex-wrap mt-6">
-                <span className="font-body font-black text-[10px] uppercase tracking-[0.2em] text-white/30 mr-3">
-                  SYNCED WITH:
-                </span>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
-                  <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
-                    <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="22" fill="white">xero</text>
-                  </svg>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
-                  <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
-                    <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="18" fill="white">QuickBooks</text>
-                  </svg>
-                </div>
-              </div>
+            {/* CTAs */}
+            <div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 animate-hero-reveal"
+              style={{ animationDelay: '560ms' }}
+            >
+              <a
+                href="#signup-form"
+                className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3"
+              >
+                Start Free
+              </a>
+              <button className="px-8 py-4 rounded-[32px] bg-white/10 text-white border-2 border-white/15 font-black text-base uppercase tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-3">
+                <Play size={16} strokeWidth={2.5} />
+                Watch Demo
+              </button>
             </div>
 
-            {/* ── Right column — Video ── */}
-            <div className="relative w-full md:pb-8 hidden lg:block">
-              <div className="relative w-full max-w-[640px] mx-auto lg:max-w-none">
-                <div className="rounded-[16px] overflow-hidden shadow-[0_0_60px_rgba(200,255,0,0.12)] border border-white/10">
-                  <video
-                    src="/videos/hero-demo.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    className="w-full h-auto block"
-                    style={{ filter: 'brightness(1.08) contrast(1.04)' }}
-                  />
+            {/* Trust row */}
+            <div
+              className="flex flex-col sm:flex-row sm:items-center gap-3 animate-hero-reveal"
+              style={{ animationDelay: '650ms' }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
                 </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
               </div>
+              <p className="font-body text-sm text-white/40 font-medium">
+                No credit card required · Free to start
+              </p>
             </div>
 
+            {/* Global availability strip */}
+            <div className="mt-6 animate-hero-reveal" style={{ animationDelay: '720ms' }}>
+              <p className="font-body text-xs text-white/40 font-medium">
+                Live worldwide on iOS &amp; Chrome:{' '}
+                <Link to="/" className="underline decoration-accent/50 hover:text-white">AU</Link>
+                {' · '}
+                <Link to="/nz" className="underline decoration-accent/50 hover:text-white">NZ</Link>
+                {' · '}
+                <Link to="/uk" className="underline decoration-accent/50 hover:text-white">UK</Link>
+                {' · '}
+                <Link to="/us" className="underline decoration-accent/50 hover:text-white">US</Link>
+                {' · '}
+                <Link to="/ca" className="underline decoration-accent/50 hover:text-white">CA</Link>
+              </p>
+            </div>
           </div>
+        </div>
+
+        {/* Decorative: large ambient text */}
+        <div
+          className="absolute bottom-0 right-0 text-[200px] md:text-[320px] lg:text-[440px] font-black text-white/[0.025] leading-none tracking-tighter pointer-events-none select-none overflow-hidden"
+          aria-hidden="true"
+        >
+          60s
         </div>
       </section>
 
