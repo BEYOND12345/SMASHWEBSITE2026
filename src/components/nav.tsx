@@ -14,9 +14,11 @@ const mobileLinkClass =
 const mobileSectionHeading =
   'px-4 pt-4 pb-1 text-xs font-black uppercase tracking-widest text-white/40';
 
-export function Nav() {
+export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string } = {}) {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const resolvedCtaUrl = ctaUrl ?? APP_STORE_URL;
+  const resolvedCtaLabel = ctaLabel ?? 'Start Free';
 
   // Close the menu when the route changes
   useEffect(() => {
@@ -59,12 +61,12 @@ export function Nav() {
             <Link to="/blog" className={`${desktopLinkClass} hidden lg:block`}>Blog</Link>
 
             <a
-              href={APP_STORE_URL}
+              href={resolvedCtaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 px-4 sm:px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Start Free
+              {resolvedCtaLabel}
             </a>
 
             {/* Mobile hamburger */}

@@ -299,7 +299,7 @@ export function ChromeExtension() {
       <StructuredData data={createFAQSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
-      <Nav />
+      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel="Add to Chrome" />
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden">
@@ -333,7 +333,7 @@ export function ChromeExtension() {
                   </a>
                   <Link
                     to="/how-it-works"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
                   >
                     See how it works
                   </Link>
@@ -708,7 +708,7 @@ export function ChromeExtension() {
                 Add to Chrome — Free
               </a>
               <Link to="/voice-invoicing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-base uppercase tracking-wide hover:bg-white/10 transition-all">
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-base uppercase tracking-wide hover:bg-white hover:text-brand transition-all">
                 See how voice works
               </Link>
             </div>
