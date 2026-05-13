@@ -328,24 +328,23 @@ export function ChromeExtension() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <AnimateIn direction="left">
               <div className="pb-16 md:pb-24">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-4">
                   <Mail size={13} className="text-accent" strokeWidth={2.5} />
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for Gmail</span>
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-                  Stop juggling<br />software.<br />
-                  <span className="text-accent">Smash out invoices<br />directly in Gmail.</span>
+                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">Stop wasting time juggling software.</p>
+
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
+                  <span className="block text-white">Smash out invoices</span>
+                  <span className="block text-accent">directly in Gmail.</span>
                 </h1>
 
-                <p className="font-body text-lg text-white/75 font-medium leading-[1.5] mb-3 max-w-md">
-                  Finally, a magic QuickBooks &amp; Xero button for your inbox. Our sidebar scans your emails and generates your invoices using your own pricing and your own voice.
-                </p>
-                <p className="font-body text-lg text-white/75 font-medium leading-[1.5] mb-8 max-w-md">
-                  No new apps. No tab-jumping. Just click, send, and get back to your night.
+                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
+                  The magic bridge for QuickBooks &amp; Xero. Our sidebar scans your emails and generates invoices using your own pricing and voice. No new apps. No tab-jumping. Done.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 mb-5">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={CHROME_STORE_URL}
                     target="_blank"
@@ -363,20 +362,20 @@ export function ChromeExtension() {
                   </Link>
                 </div>
 
-                <p className="font-body text-sm text-white/50 font-medium italic mb-6">Quicker than a sparrow's fart.</p>
+                <p className="font-body text-sm text-white/40 italic mt-3 mb-6">Quicker than a sparrow's fart.</p>
 
-                {/* Integration logos */}
-                <div className="flex items-center gap-4 flex-wrap">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/30">Syncs with</span>
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15">
-                      <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
-                      <span className="text-[11px] font-black text-white/70">Xero</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/15">
-                      <span className="w-2 h-2 rounded-full bg-white/50 inline-block shrink-0" />
-                      <span className="text-[11px] font-black text-white/70">QuickBooks</span>
-                    </div>
+                {/* Synced with logos */}
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="font-body font-black text-[10px] uppercase tracking-[0.2em] text-white/30">Synced with:</span>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
+                    <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
+                      <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="22" fill="white">xero</text>
+                    </svg>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10">
+                    <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto opacity-70">
+                      <text x="0" y="20" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="18" fill="white">QuickBooks</text>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -384,10 +383,9 @@ export function ChromeExtension() {
 
             <AnimateIn direction="right">
               <div className="md:pb-24">
-                {/* ↓ Drop /public/videos/hero-demo.mp4 in place to activate.
-                    Compress to <3MB: ffmpeg -i raw.mp4 -vcodec libx264 -crf 28
-                    -preset slow -vf scale=1120:-2 -an -movflags faststart hero-demo.mp4 */}
-                <HeroVideo />
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_60px_rgba(200,255,0,0.12)] border border-white/10">
+                  <HeroVideo />
+                </div>
               </div>
             </AnimateIn>
           </div>
