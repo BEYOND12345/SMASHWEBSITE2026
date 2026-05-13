@@ -362,7 +362,17 @@ export function ChromeExtension() {
                   </Link>
                 </div>
 
-                <p className="font-body text-sm text-white/40 italic mt-3 mb-6">Quicker than a sparrow's fart.</p>
+                <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow's fart.</p>
+
+                {/* Works with logos */}
+                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                  <span className="font-body font-black text-[11px] uppercase tracking-[0.2em] text-white/30">Works with</span>
+                  <img
+                    src="/brand-logos.png"
+                    alt="Works with Xero, QuickBooks and Gmail"
+                    className="h-10 sm:h-12 w-auto opacity-90"
+                  />
+                </div>
               </div>
             </AnimateIn>
 
@@ -370,16 +380,6 @@ export function ChromeExtension() {
               <div className="md:pb-24">
                 <div className="rounded-[16px] overflow-hidden shadow-[0_0_60px_rgba(200,255,0,0.12)] border border-white/10">
                   <HeroVideo />
-                </div>
-                
-                {/* Works with logos */}
-                <div className="flex flex-col items-center justify-center gap-4 mt-8">
-                  <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with:</span>
-                  <img
-                    src="/brand-logos.png"
-                    alt="Works with Xero, QuickBooks and Gmail"
-                    className="h-12 sm:h-14 w-auto opacity-90"
-                  />
                 </div>
               </div>
             </AnimateIn>
