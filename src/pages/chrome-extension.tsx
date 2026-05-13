@@ -82,6 +82,27 @@ const tiers = [
 
 // ── Inline CSS mockups (placeholder until real screenshots provided) ──────────
 
+function HeroVideo() {
+  return (
+    <div className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0D1117]">
+      <video
+        src="/videos/hero-demo.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="w-full h-auto block"
+        style={{ aspectRatio: '16/10' }}
+      />
+      {/* Fallback shown while video loads or if file missing */}
+      <noscript>
+        <HeroMockup />
+      </noscript>
+    </div>
+  );
+}
+
 function HeroMockup() {
   return (
     <div className="relative w-full max-w-[560px] mx-auto scale-90 sm:scale-100 origin-top rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white">
@@ -363,7 +384,10 @@ export function ChromeExtension() {
 
             <AnimateIn direction="right">
               <div className="md:pb-24">
-                <HeroMockup />
+                {/* ↓ Drop /public/videos/hero-demo.mp4 in place to activate.
+                    Compress to <3MB: ffmpeg -i raw.mp4 -vcodec libx264 -crf 28
+                    -preset slow -vf scale=1120:-2 -an -movflags faststart hero-demo.mp4 */}
+                <HeroVideo />
               </div>
             </AnimateIn>
           </div>
