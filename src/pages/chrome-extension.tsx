@@ -387,6 +387,18 @@ export function ChromeExtension() {
         </div>
       </section>
 
+      {/* ─── INTEGRATION STRAP ────────────────────────────────────── */}
+      <section className="bg-brand border-t border-white/10 py-6 md:py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <p className="font-display font-black text-lg sm:text-xl md:text-2xl uppercase tracking-wide text-white mb-2">
+            Simple as: works with Gmail, QuickBooks, Xero, and as a standalone invoicing tool.
+          </p>
+          <p className="font-body text-sm sm:text-base text-white/50 font-medium">
+            Use something else? Email <a href="mailto:dan@smashinvoices.com.au" className="text-accent hover:underline transition-colors">dan@smashinvoices.com.au</a> and I'll add the extension to your network.
+          </p>
+        </div>
+      </section>
+
       {/* ─── TESTIMONIAL STRIP ────────────────────────────────────── */}
       <section className="bg-[#0D1117] py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
