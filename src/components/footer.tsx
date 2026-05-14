@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
-import { Facebook, Instagram, Apple, Chrome, ChevronDown } from 'lucide-react';
+import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube } from 'lucide-react';
 
 interface FooterProps {
   showCTA?: boolean;
@@ -161,6 +161,19 @@ export function Footer({ showCTA = false }: FooterProps) {
 
             <h3 className={`${headingClass} mb-3`}>Follow us</h3>
             <div className="flex gap-3">
+              <a
+                href="https://youtube.com/@smashinvoices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-full bg-white/10 hover:bg-accent transition-all flex items-center justify-center group"
+                aria-label="Subscribe to our YouTube channel"
+              >
+                <Youtube
+                  size={20}
+                  strokeWidth={2.5}
+                  className="text-white/70 group-hover:text-brand transition-colors"
+                />
+              </a>
               <a
                 href="https://facebook.com/smashquotes"
                 target="_blank"
