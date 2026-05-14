@@ -352,10 +352,10 @@ export function ChromeExtension() {
                     href={CHROME_STORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
                   >
                     <Chrome size={17} strokeWidth={2.5} />
-                    Add to Chrome — It's Free
+                    Add to Chrome
                   </a>
                   <Link
                     to="/how-it-works"
@@ -738,9 +738,9 @@ export function ChromeExtension() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
               <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow">
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap">
                 <Chrome size={18} strokeWidth={2.5} />
-                Add to Chrome — Free
+                Add to Chrome
               </a>
               <Link to="/voice-invoicing"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-base uppercase tracking-wide hover:bg-white hover:text-brand transition-all">
