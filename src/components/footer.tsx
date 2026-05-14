@@ -256,6 +256,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/changelog" className={linkClass}>Changelog</Link></li>
                 <li><Link to="/contact" className={linkClass}>Contact</Link></li>
                 <li><Link to="/sitemap" className={linkClass}>Sitemap</Link></li>
+                <li>
+                  <a href="https://www.youtube.com/@smashinvoices" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    YouTube
+                  </a>
+                </li>
               </FooterSection>
 
               <FooterSection title="Countries">
@@ -337,9 +342,19 @@ export function Footer({ showCTA = false }: FooterProps) {
                 ABN: 58 600 491 085
               </p>
             </div>
-            <p className="text-sm text-white/40 font-medium">
-              Built in Byron Bay, Australia
-            </p>
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.youtube.com/@smashinvoices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display text-xs uppercase tracking-widest text-slate-400 hover:text-white transition-colors"
+              >
+                YouTube
+              </a>
+              <p className="text-sm text-white/40 font-medium">
+                Built in Byron Bay, Australia
+              </p>
+            </div>
           </div>
         </div>
       </div>

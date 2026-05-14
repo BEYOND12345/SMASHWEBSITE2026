@@ -44,6 +44,7 @@ const SmashVsJoist = lazy(() => import('./pages/smash-vs-joist').then(m => ({ de
 const SmashVsRounded = lazy(() => import('./pages/smash-vs-rounded').then(m => ({ default: m.SmashVsRounded })));
 const BlogList = lazy(() => import('./pages/blog-list').then(m => ({ default: m.BlogList })));
 const BlogPost = lazy(() => import('./pages/blog-post').then(m => ({ default: m.BlogPost })));
+const FastestWayToInvoice2026 = lazy(() => import('./pages/blog/FastestWayToInvoice2026'));
 const BlogAdmin = lazy(() => import('./pages/admin/blog-admin').then(m => ({ default: m.BlogAdmin })));
 const BlogEditor = lazy(() => import('./pages/admin/blog-editor').then(m => ({ default: m.BlogEditor })));
 
@@ -186,6 +187,7 @@ function App() {
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/fastest-way-to-send-an-invoice-2026" element={<FastestWayToInvoice2026 />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
 
         {/* Admin */}
