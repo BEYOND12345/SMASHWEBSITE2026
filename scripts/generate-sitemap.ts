@@ -28,8 +28,9 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('Missing Supabase credentials. Please check your .env file.');
-  process.exit(1);
+  console.log('ℹ Supabase credentials not found — skipping sitemap generation.');
+  console.log('  The committed public/sitemap.xml will be used as-is.');
+  process.exit(0);
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);

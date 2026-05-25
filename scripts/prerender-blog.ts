@@ -44,8 +44,9 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('Missing Supabase credentials. Please check your .env file.');
-  process.exit(1);
+  console.log('ℹ Supabase credentials not found — skipping prerender step.');
+  console.log('  Pre-rendered HTML files already committed to public/blog/ will be used.');
+  process.exit(0);
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);
