@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastest Xero Quote Builder for Gmail — Chrome Extension | SMASH</title>
+  <meta name="description" content="Hubdoc handles incoming bills. It can&#039;t build outgoing quotes. If you&#039;re on Xero and quoting from Gmail, SMASH builds a complete, branded Xero quote in under 60 seconds.">
+  <meta name="keywords" content="xero quote builder gmail, xero gmail sidebar extension, how to quote faster in xero, quote builder xero chrome extension, xero gmail integration, xero quote from email">
+  <meta name="author" content="Dan Neale">
+  <link rel="canonical" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="alternate" hreflang="en-AU" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="alternate" hreflang="en-NZ" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="alternate" hreflang="en-GB" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="alternate" hreflang="en-US" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <link rel="alternate" hreflang="en-CA" href="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:site_name" content="SMASH Invoices"><meta property="og:type" content="article">
+  <meta property="og:title" content="Fastest Xero Quote Builder for Gmail — Chrome Extension | SMASH">
+  <meta property="og:description" content="Hubdoc handles incoming bills. It can&#039;t build outgoing quotes. If you&#039;re on Xero and quoting from Gmail, SMASH builds a complete, branded Xero quote in under 60 seconds.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/xero-quote-builder-gmail-extension"><meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU"><meta property="article:published_time" content="2026-05-25T08:00:00.000Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fastest Xero Quote Builder for Gmail — Chrome Extension | SMASH">
+  <meta name="twitter:description" content="Hubdoc handles incoming bills. It can&#039;t build outgoing quotes. If you&#039;re on Xero and quoting from Gmail, SMASH builds a complete, branded Xero quote in under 60 seconds.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0A0A0A;--bg-soft:#111;--surface:rgba(255,255,255,0.04);--surface-strong:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--accent:#D9F99D;--accent-ink:#0A0A0A;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:760px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
+    .nav-links{display:none;gap:28px;}
+    .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
+    .nav-links a:hover{color:#fff;text-decoration:none;}
+    .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;}
+    .nav-cta:hover{filter:brightness(0.95);text-decoration:none;}
+    @media(min-width:860px){.nav-links{display:flex;}}
+    main{padding:48px 0 64px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:14px;font-weight:600;margin-bottom:28px;}
+    h1.post-title{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,5.5vw,58px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 20px;color:#fff;}
+    .post-meta{display:flex;flex-wrap:wrap;gap:14px 22px;color:var(--text-muted);font-size:14px;font-weight:500;margin-bottom:28px;}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:0 0 40px;}
+    .takeaways h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 12px;color:var(--accent);}
+    .takeaways ul{margin:0;padding-left:20px;}
+    .takeaways li{margin:6px 0;color:var(--text);}
+    .prose h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,32px);line-height:1.15;letter-spacing:-0.01em;margin:48px 0 16px;color:#fff;}
+    .prose h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:21px;margin:32px 0 12px;color:#fff;}
+    .prose p{margin:0 0 18px;color:rgba(255,255,255,0.85);}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px;}
+    .prose li{margin:8px 0;color:rgba(255,255,255,0.85);}
+    .prose strong{color:#fff;}
+    .prose blockquote{margin:24px 0;padding:12px 20px;border-left:3px solid var(--accent);background:var(--surface);color:rgba(255,255,255,0.85);border-radius:0 10px 10px 0;}
+    .prose img{border-radius:12px;margin:24px 0;}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+    .prose th{background:var(--surface-strong);color:#fff;font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+    .prose td{padding:10px 14px;border:1px solid var(--border);color:rgba(255,255,255,0.8);}
+    .prose tr:nth-child(even) td{background:var(--surface);}
+    .prose a{border-bottom:1px solid rgba(217,249,157,0.4);}
+    .prose a:hover{text-decoration:none;border-bottom-color:var(--accent);}
+    .faq{margin:56px 0 0;}
+    .faq h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.8vw,34px);margin:0 0 20px;color:#fff;}
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:10px;}
+    .faq summary{cursor:pointer;font-weight:600;color:#fff;font-size:16px;list-style:none;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';float:right;color:var(--accent);font-weight:700;}
+    .faq details[open] summary::after{content:'−';}
+    .faq details[open] summary{margin-bottom:8px;}
+    .faq p{color:var(--text-muted);margin:8px 0 0;}
+    .cta-card{margin:56px 0 0;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.25);border-radius:20px;padding:32px;text-align:center;}
+    .cta-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;font-weight:800;margin:0 0 10px;color:#fff;}
+    .cta-card p{color:var(--text-muted);margin:0 0 20px;}
+    .cta-btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;}
+    .cta-btn:hover{filter:brightness(0.95);text-decoration:none;}
+    .author-card{margin:48px 0 0;padding:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px;}
+    .author-card strong{color:#fff;}
+    footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
+    footer a{color:var(--text-muted);margin:0 10px;}
+    footer a:hover{color:#fff;text-decoration:none;}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Fastest Xero Quote Builder for Gmail (And Why Hubdoc Won't Help You)","description":"Hubdoc handles incoming bills. It can't build outgoing quotes. If you're on Xero and quoting from Gmail, SMASH builds a complete, branded Xero quote in under 60 seconds.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-25T08:00:00.000Z","dateModified":"2026-05-25T08:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/xero-quote-builder-gmail-extension"},"keywords":"xero quote builder gmail, xero gmail sidebar extension, how to quote faster in xero, quote builder xero chrome extension, xero gmail integration, xero quote from email","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"The Fastest Xero Quote Builder for Gmail (And Why Hubdoc Won't Help You)","item":"https://smashinvoices.com/blog/xero-quote-builder-gmail-extension"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is SMASH different from Hubdoc?","acceptedAnswer":{"@type":"Answer","text":"Hubdoc is owned by Xero and included free with most Xero Business plans. It's an accounts payable document capture tool — it scans and processes incoming vendor bills and receipts. It cannot create, edit, or send outgoing client quotes or estimates. SMASH is an accounts receivable workflow tool. It lives in your Gmail sidebar, converts inbound client emails into draft quotes and invoices, and syncs them to Xero in under 60 seconds."}},{"@type":"Question","name":"Can SMASH follow up on outstanding quotes automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. Xero has automated invoice reminders but no native system for following up on issued quotations. SMASH includes a quote-chasing engine that monitors sent quotes and sends polite, customisable follow-up emails to prospects before their quote expires."}},{"@type":"Question","name":"Can I reconcile multiple payments at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. When a single customer payment covers multiple outstanding invoices, SMASH includes a reconciliation helper that lets you enter multiple invoice numbers or upload a CSV remittance file to auto-reconcile them in one action — instead of matching them one at a time in Xero's banking screen."}},{"@type":"Question","name":"What's wrong with Xero's native email-to-bills feature?","acceptedAnswer":{"@type":"Answer","text":"Xero's email-to-bills forces all imported documents to be tax-inclusive, overrides your organisation's default tax settings, ignores plain-text HTML email bodies, and fails to extract complex multi-line items. You still have to manually assign Chart of Accounts codes and tax rates before approval. It's an A/P shortcut with significant limitations — and it only covers bills coming in, not quotes going out."}},{"@type":"Question","name":"Does SMASH replace Xero?","acceptedAnswer":{"@type":"Answer","text":"No. SMASH works alongside your existing Xero setup. Your accountant logs into Xero as normal. Chart of accounts, tax codes, payment terms, and customer records are all preserved. SMASH is purely the quote-generation layer that sits between Gmail and Xero — the piece Xero itself never built."}}]}</script>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
+    <div class="nav-links">
+      <a href="/features">Features</a><a href="/pricing">Pricing</a>
+      <a href="/chrome-extension">Chrome Extension</a><a href="/blog">Blog</a>
+    </div>
+    <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
+  </div></nav>
+  <main><article class="container">
+    <a href="/blog" class="back-link">← All Articles</a>
+    <header>
+      <h1 class="post-title">The Fastest Xero Quote Builder for Gmail (And Why Hubdoc Won&#039;t Help You)</h1>
+      <div class="post-meta">
+        <span>By Dan Neale</span>
+        <span><time datetime="2026-05-25T08:00:00.000Z">25 May 2026</time></span>
+        <span>7 min read</span>
+      </div>
+    </header>
+    <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>Hubdoc (free with most Xero plans) is an accounts payable tool — it processes incoming supplier bills, not outgoing client quotes.</li><li>Xero&#039;s native email-to-bills feature only handles tax-inclusive imports and ignores plain-text email bodies.</li><li>SMASH is the accounts receivable layer Xero doesn&#039;t have — it builds outgoing quotes from Gmail in under 60 seconds.</li><li>Xero has no native follow-up engine for unaccepted quotes. SMASH includes an automated quote-chaser.</li><li>Reconciling multiple payments against one customer in Xero requires tedious manual matching. SMASH includes a bulk reconciliation helper.</li></ul></aside>
+    <div class="prose"><p>If your business handles five to twenty quotes a day on a desktop, the time lost switching between your Gmail inbox and your Xero account adds up fast. Context-switching between applications can cost 20 to 40% more time than staying in a single workflow — which means a quote that should take 3 minutes ends up taking 12.</p>
+<p>Xero is excellent accounting software. But it wasn&#39;t built to handle the moment a customer emails asking for a price. That specific workflow — inbox to priced quote to sent — is where the friction lives.</p>
+<div style="background:rgba(217,249,157,0.07);border:1px solid rgba(217,249,157,0.2);border-radius:10px;padding:18px 22px;margin:20px 0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;">
+  <span style="color:#D9F99D;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;">Time Recovery Equation</span><br>
+  <span style="color:#fff;font-size:15px;font-weight:600;">T_saved = N × (T_manual − T_smash)</span><br>
+  <span style="color:rgba(255,255,255,0.55);font-size:12px;">Where N = monthly quote volume, T_manual = 10–15 min per quote (manual), T_smash = under 60 seconds (SMASH)</span>
+</div><p>For a timber merchant or specialty supplier processing 25 custom RFQs per day, cutting $T_{manual}$ from 12 minutes to under 60 seconds recovers more than 180 hours of front-office labour per month.</p>
+<h2>The Hubdoc Confusion</h2>
+<p>Xero includes Hubdoc with most business plans at no extra cost, and it&#39;s easy to assume it handles the quoting problem. It doesn&#39;t.</p>
+<p>Hubdoc is an <strong>accounts payable</strong> tool. It scans and processes incoming supplier bills and receipts. It does nothing for outgoing client quotes or estimates. It cannot create a quote, send a quote, or push a draft estimate to Xero&#39;s quote queue.</p>
+<p>Xero also has a native email-to-bills feature, but it only handles tax-inclusive imports, ignores plain-text HTML email bodies, fails on multi-line items, and requires manual Chart of Accounts assignment before approval. It&#39;s a limited A/P shortcut — and again, it only works for bills coming in.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it handles</th>
+<th>Outgoing quotes?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hubdoc</td>
+<td>Incoming supplier bills and receipts</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Xero email-to-bills</td>
+<td>Tax-inclusive document imports</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Native Xero quoting</td>
+<td>Quotes built manually in Xero dashboard</td>
+<td>Slow — requires tab-switching</td>
+</tr>
+<tr>
+<td><strong>SMASH</strong></td>
+<td>Gmail inbox → Xero quote in one flow</td>
+<td>✓ — under 60 seconds</td>
+</tr>
+</tbody></table>
+<h2>How SMASH Builds Xero Quotes From Gmail</h2>
+<p><strong>Connect once.</strong> Authenticate with Xero via OAuth. Your customer contacts and live product/service SKU catalog sync to the SMASH sidebar immediately.</p>
+<p><strong>Open the email, scan it.</strong> A quote request arrives in Gmail. Click the SMASH button in your sidebar. The AI reads the email — customer name, job description, items requested — and maps them to your Xero catalog.</p>
+<p><strong>Review and push.</strong> Check line items, adjust margins if needed, confirm the tax code. Click Export to Xero. The quote appears in Xero under the correct customer record. If they&#39;re new to your books, their contact is created automatically.</p>
+<p><strong>Send and chase.</strong> Drop the quote into your Gmail reply or generate a portal link. SMASH&#39;s quote-chasing engine sends polite follow-ups before the quote expires — automatically, without you remembering to do it.</p>
+<h2>The Quote Follow-Up Problem (Also Fixed)</h2>
+<p>Xero has automated reminders for unpaid invoices. It has nothing for unaccepted quotes. This forces businesses to manually track open proposals, dig through sent email history, and write follow-up messages by hand.</p>
+<p>SMASH&#39;s quote-chaser runs automatically after a quote is sent. It monitors the status, and if no acceptance comes in before expiry, it sends a short, professional follow-up from your Gmail account on your behalf. No manual tracking. No forgotten quotes.</p>
+<h2>Bulk Reconciliation</h2>
+<p>One more long-standing Xero pain point: when a single customer payment covers multiple outstanding invoices, Xero requires you to match them individually in the banking screen. High-volume businesses end up clicking OK hundreds of times a month.</p>
+<p>SMASH includes a reconciliation helper. Enter multiple invoice numbers, or upload a simple CSV remittance advice file, and SMASH matches them in a single action.</p>
+<h2>What Xero Users Are Saying</h2>
+<blockquote>
+<p><em>&quot;We run a high-volume custom timber mill. Builders send cutting lists by email and matching those to our Xero inventory codes was a nightmare. SMASH reads the email, matches our SKUs, and drafts a priced quote instantly. Our front-office time has dropped by more than half.&quot;</em>
+<strong>— Dawie O., Operations Lead, Gowan Lea Timbers</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;The quote chaser is the feature I didn&#39;t know I needed. We were losing jobs because quotes were going cold and we weren&#39;t following up in time. That&#39;s not happening anymore.&quot;</em>
+<strong>— Sarah M., Business Development, Freshwater Landscaping Supply</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;I thought Hubdoc covered this. It doesn&#39;t — it&#39;s a completely different thing. Once I understood that, SMASH made immediate sense.&quot;</em>
+<strong>— Tom K., Director, Coastal Building Supplies</strong></p>
+</blockquote>
+<div style="margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;">
+  <p style="font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;">Stop switching tabs. Start smashing quotes.</p>
+  <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;">Free to install. No credit card. Live inside Gmail in 2 minutes.</p>
+  <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-block;background:#D9F99D;color:#0A0A0A;padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;">Add SMASH to Chrome — Free</a>
+</div><h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/gmail-to-xero-invoice-no-typing">Gmail to Xero: Turn Job Requests Into Invoices Without Typing</a></li>
+<li><a href="/blog/gmail-quickbooks-xero-bridge">The Gmail to QuickBooks Bridge</a></li>
+<li><a href="/blog/xero-too-complicated-sole-trader">Xero Too Complicated for a Sole Trader?</a></li>
+<li><a href="/integrations-xero">SMASH Xero Integration</a></li>
+</ul>
+</div>
+    <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>How is SMASH different from Hubdoc?</summary><p>Hubdoc is owned by Xero and included free with most Xero Business plans. It&#039;s an accounts payable document capture tool — it scans and processes incoming vendor bills and receipts. It cannot create, edit, or send outgoing client quotes or estimates. SMASH is an accounts receivable workflow tool. It lives in your Gmail sidebar, converts inbound client emails into draft quotes and invoices, and syncs them to Xero in under 60 seconds.</p></details><details><summary>Can SMASH follow up on outstanding quotes automatically?</summary><p>Yes. Xero has automated invoice reminders but no native system for following up on issued quotations. SMASH includes a quote-chasing engine that monitors sent quotes and sends polite, customisable follow-up emails to prospects before their quote expires.</p></details><details><summary>Can I reconcile multiple payments at once?</summary><p>Yes. When a single customer payment covers multiple outstanding invoices, SMASH includes a reconciliation helper that lets you enter multiple invoice numbers or upload a CSV remittance file to auto-reconcile them in one action — instead of matching them one at a time in Xero&#039;s banking screen.</p></details><details><summary>What&#039;s wrong with Xero&#039;s native email-to-bills feature?</summary><p>Xero&#039;s email-to-bills forces all imported documents to be tax-inclusive, overrides your organisation&#039;s default tax settings, ignores plain-text HTML email bodies, and fails to extract complex multi-line items. You still have to manually assign Chart of Accounts codes and tax rates before approval. It&#039;s an A/P shortcut with significant limitations — and it only covers bills coming in, not quotes going out.</p></details><details><summary>Does SMASH replace Xero?</summary><p>No. SMASH works alongside your existing Xero setup. Your accountant logs into Xero as normal. Chart of accounts, tax codes, payment terms, and customer records are all preserved. SMASH is purely the quote-generation layer that sits between Gmail and Xero — the piece Xero itself never built.</p></details></section>
+    <aside class="cta-card">
+      <h3>Your inbox is full of quotes waiting to happen.</h3>
+      <p>SMASH turns customer emails into priced, professional quotes in under 60 seconds — right inside Gmail. Syncs to Xero and QuickBooks. Free to install.</p>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome — Free</a>
+    </aside>
+    <div class="author-card"><strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH after 10 years as a handyman and trade supplier because he was sick of the tab-switching tax every time a job request landed in his inbox.</div>
+  </article></main>
+  <footer>
+    <div>
+      <a href="/">Home</a><a href="/blog">Blog</a><a href="/chrome-extension">Chrome Extension</a>
+      <a href="/pricing">Pricing</a><a href="/features">Features</a>
+      <a href="/integrations-xero">Xero Integration</a><a href="/integrations-quickbooks">QuickBooks Integration</a>
+      <a href="/voice-invoicing">Voice Invoicing</a><a href="/faq">FAQ</a>
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+    </div>
+    <div style="margin-top:14px;">Live in <a href="/">Australia</a>, <a href="/nz">New Zealand</a>, <a href="/uk">UK</a>, <a href="/us">US</a> and <a href="/ca">Canada</a></div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body></html>
