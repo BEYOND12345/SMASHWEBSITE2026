@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn a Gmail Email Into a Sent Invoice in 20 Seconds | SMASH</title>
+  <meta name="description" content="See how SMASH reads a job request email in Gmail and builds a GST-ready invoice in under 20 seconds. No typing. No tab-switching. Syncs to Xero and QuickBooks.">
+  <meta name="keywords" content="gmail invoice extension, voice to invoice chrome extension, email to invoice automatically, invoice from gmail, xero quickbooks gmail sync, tradie invoicing app">
+  <meta name="author" content="Dan Neale">
+  <link rel="canonical" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="alternate" hreflang="en-AU" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="alternate" hreflang="en-NZ" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="alternate" hreflang="en-GB" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="alternate" hreflang="en-US" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <link rel="alternate" hreflang="en-CA" href="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:site_name" content="SMASH Invoices">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Turn a Gmail Email Into a Sent Invoice in 20 Seconds | SMASH">
+  <meta property="og:description" content="See how SMASH reads a job request email in Gmail and builds a GST-ready invoice in under 20 seconds. No typing. No tab-switching. Syncs to Xero and QuickBooks.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds">
+  <meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU">
+  <meta property="article:published_time" content="2026-05-25T00:00:00.000Z">
+  <meta property="article:author" content="Dan Neale">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Turn a Gmail Email Into a Sent Invoice in 20 Seconds | SMASH">
+  <meta name="twitter:description" content="See how SMASH reads a job request email in Gmail and builds a GST-ready invoice in under 20 seconds. No typing. No tab-switching. Syncs to Xero and QuickBooks.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0A0A0A;--bg-soft:#111;--surface:rgba(255,255,255,0.04);--surface-strong:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--accent:#D9F99D;--accent-ink:#0A0A0A;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:760px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
+    .nav-links{display:none;gap:28px;}
+    .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
+    .nav-links a:hover{color:#fff;text-decoration:none;}
+    .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.01em;}
+    .nav-cta:hover{filter:brightness(0.95);text-decoration:none;}
+    @media(min-width:860px){.nav-links{display:flex;}}
+    main{padding:48px 0 64px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:14px;font-weight:600;margin-bottom:28px;}
+    h1.post-title{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:900;font-size:clamp(36px,6vw,60px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 20px;color:#fff;}
+    .post-meta{display:flex;flex-wrap:wrap;gap:14px 22px;color:var(--text-muted);font-size:14px;font-weight:500;margin-bottom:28px;}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:0 0 40px;}
+    .takeaways h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 12px;color:var(--accent);}
+    .takeaways ul{margin:0;padding-left:20px;}
+    .takeaways li{margin:6px 0;color:var(--text);}
+    .prose h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,34px);line-height:1.15;letter-spacing:-0.01em;margin:48px 0 16px;color:#fff;}
+    .prose h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:22px;margin:32px 0 12px;color:#fff;}
+    .prose p{margin:0 0 18px;color:rgba(255,255,255,0.85);}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px;}
+    .prose li{margin:8px 0;color:rgba(255,255,255,0.85);}
+    .prose strong{color:#fff;}
+    .prose blockquote{margin:24px 0;padding:12px 20px;border-left:3px solid var(--accent);background:var(--surface);color:rgba(255,255,255,0.85);border-radius:0 10px 10px 0;}
+    .prose img{border-radius:12px;margin:24px 0;}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;}
+    .prose th{background:var(--surface-strong);color:#fff;font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+    .prose td{padding:10px 14px;border:1px solid var(--border);color:rgba(255,255,255,0.8);}
+    .prose tr:nth-child(even) td{background:var(--surface);}
+    .prose a{border-bottom:1px solid rgba(217,249,157,0.4);}
+    .prose a:hover{text-decoration:none;border-bottom-color:var(--accent);}
+    .faq{margin:56px 0 0;}
+    .faq h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,4vw,36px);margin:0 0 20px;color:#fff;}
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:10px;}
+    .faq summary{cursor:pointer;font-weight:600;color:#fff;font-size:16px;list-style:none;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';float:right;color:var(--accent);font-weight:700;}
+    .faq details[open] summary::after{content:'−';}
+    .faq details[open] summary{margin-bottom:8px;}
+    .faq p{color:var(--text-muted);margin:8px 0 0;}
+    .cta-card{margin:56px 0 0;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.25);border-radius:20px;padding:32px;text-align:center;}
+    .cta-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;font-weight:800;margin:0 0 10px;color:#fff;}
+    .cta-card p{color:var(--text-muted);margin:0 0 20px;}
+    .cta-btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;}
+    .cta-btn:hover{filter:brightness(0.95);text-decoration:none;}
+    .author-card{margin:48px 0 0;padding:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px;}
+    .author-card strong{color:#fff;}
+    footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
+    footer a{color:var(--text-muted);margin:0 10px;}
+    footer a:hover{color:#fff;text-decoration:none;}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Turn a Gmail Email Into a Sent Invoice in 20 Seconds","description":"See how SMASH reads a job request email in Gmail and builds a GST-ready invoice in under 20 seconds. No typing. No tab-switching. Syncs to Xero and QuickBooks.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-25T00:00:00.000Z","dateModified":"2026-05-25T00:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds"},"keywords":"gmail invoice extension, voice to invoice chrome extension, email to invoice automatically, invoice from gmail, xero quickbooks gmail sync, tradie invoicing app","wordCount":825,"articleSection":"Blog","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"Turn a Gmail Email Into a Sent Invoice in 20 Seconds","item":"https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does SMASH work with any Gmail account?","acceptedAnswer":{"@type":"Answer","text":"Yes. SMASH works with any personal or Google Workspace Gmail account. Once you install the Chrome extension, a SMASH button appears in your Gmail toolbar whenever you open an email."}},{"@type":"Question","name":"Does my customer need to download anything?","acceptedAnswer":{"@type":"Answer","text":"No. Your customer gets a clean payment portal link in their email. They tap it, view the itemised quote, approve it, and pay — all from their phone browser. Nothing to download."}},{"@type":"Question","name":"How does SMASH know my prices?","acceptedAnswer":{"@type":"Answer","text":"When you sign up, you upload one old invoice PDF or a CSV of your services. SMASH reads your rates, job types, and materials and builds your Pricing DNA. After that, every time you describe a job by voice, your words map straight to your numbers."}},{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"SMASH needs a connection to process voice recordings and sync to Xero or QuickBooks. But your pricing catalog and customer history are cached locally, so you can check details even on a poor signal."}},{"@type":"Question","name":"Is my customer's data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. SMASH only reads the email thread you have open — it doesn't scan your entire inbox. Voice recordings are processed and deleted immediately after transcription. Customer data is encrypted at rest."}},{"@type":"Question","name":"What if the AI gets a line item wrong?","acceptedAnswer":{"@type":"Answer","text":"Everything is editable before you send. SMASH builds the draft and you review it. You can adjust quantities, prices, or add items before hitting send. It's a starting point, not a black box."}}]}</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/chrome-extension">Chrome Extension</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="container">
+      <a href="/blog" class="back-link">← All Articles</a>
+      <header>
+        <h1 class="post-title">Turn a Gmail Email Into a Sent Invoice in 20 Seconds</h1>
+        <div class="post-meta">
+          <span>By Dan Neale</span>
+          <span><time datetime="2026-05-25T00:00:00.000Z">25 May 2026</time></span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>SMASH reads your open Gmail email and extracts the job details automatically — no copy-pasting.</li><li>Voice-to-invoice: describe the job out loud for 20 seconds and line items are priced from your catalog.</li><li>Customer gets a secure approval and payment link. You see the read receipt the second they open it.</li><li>One click syncs the completed invoice to Xero or QuickBooks — no double entry.</li><li>Free to install. Works inside Gmail without switching tabs.</li></ul></aside>
+
+      <div class="prose"><p>Getting a quote request in your Gmail inbox should feel like progress. Instead, it feels like a task. You&#39;ve got to remember what you quoted last time, log into your accounting software, type out line items from memory, check the pricing, add GST, generate a PDF, attach it, write a covering reply — and do all of that when you&#39;re already tired from actually doing the work.</p>
+<p>That&#39;s the exact problem SMASH was built to fix.</p>
+<h2>Watch: Full Demo — Email to Invoice in Under 20 Seconds</h2>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:24px 0;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/uNL733tYTf0" title="Turn Emails Into Invoices in 20 Seconds | SMASH Chrome Extension" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div><p>In this demo you&#39;ll see the complete SMASH workflow: a real job request email → a voice recording → a priced, GST-ready invoice → customer approval → Xero sync. Start to finish in under two minutes. Real jobs take closer to 20 seconds once you&#39;ve got your pricing set up.</p>
+<h2>The Old Way vs the SMASH Way</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Manual</th>
+<th>SMASH</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Read the email</td>
+<td>Open Gmail</td>
+<td>Open Gmail</td>
+</tr>
+<tr>
+<td>Build the quote</td>
+<td>Switch to accounting software, type from memory</td>
+<td>Press SMASH — it reads the email</td>
+</tr>
+<tr>
+<td>Price the job</td>
+<td>Look up your rate sheet or guess</td>
+<td>Your Pricing DNA does it automatically</td>
+</tr>
+<tr>
+<td>Add GST</td>
+<td>Calculate manually</td>
+<td>Done</td>
+</tr>
+<tr>
+<td>Generate PDF</td>
+<td>Export, save, re-upload</td>
+<td>One click</td>
+</tr>
+<tr>
+<td>Send to customer</td>
+<td>Attach PDF, write covering email</td>
+<td>Drop into Gmail reply</td>
+</tr>
+<tr>
+<td>Get approval</td>
+<td>Hope they reply</td>
+<td>Customer taps a payment portal link</td>
+</tr>
+<tr>
+<td>Update your books</td>
+<td>Log into Xero/QuickBooks, enter again</td>
+<td>One-click sync</td>
+</tr>
+<tr>
+<td><strong>Total time</strong></td>
+<td><strong>15–25 minutes</strong></td>
+<td><strong>Under 60 seconds</strong></td>
+</tr>
+</tbody></table>
+<h2>How It Works — Step by Step</h2>
+<p><strong>0:15 — Reading the job request email</strong></p>
+<p>A customer emails asking for a quote. You open it, press the SMASH button in your Gmail toolbar, and SMASH opens as a sidebar. It&#39;s already read the email — customer name, job description, materials mentioned. You don&#39;t type a word.</p>
+<p><strong>0:45 — Recording the job by voice</strong></p>
+<p>Press record and describe the job out loud the way you&#39;d explain it to a mate: <em>&quot;eight hours labour, replace the front door jamb, new exterior door, hinges, lock set, call-out fee, material pickup.&quot;</em> Press stop. Done.</p>
+<p><strong>1:10 — How SMASH builds and prices the quote</strong></p>
+<p>SMASH takes your description, matches it to your Pricing DNA (your uploaded rates and the 2,500-item materials catalog), and builds a fully itemised, GST-ready quote. Every line item is editable before you send.</p>
+<p><strong>1:35 — Sending for customer approval</strong></p>
+<p>Drop the quote into your Gmail reply in one click. Your customer gets a clean portal link — no attachments. They tap it, review the itemised breakdown, approve it, and pay. You get a read receipt the second they open it.</p>
+<p><strong>1:50 — One-click sync to Xero and QuickBooks</strong></p>
+<p>Once the job&#39;s done, press Export. The invoice goes straight to your Xero or QuickBooks account — customer name, line items, totals, GST. Your bookkeeper sees it without you lifting another finger.</p>
+<h2>What Tradies Are Saying</h2>
+<blockquote>
+<p><em>&quot;I used to sit at my kitchen table for an hour every night doing quotes. Now I do them in the car before I drive away from the job. It&#39;s genuinely changed how I run my business.&quot;</em>
+<strong>— Luke F., plumber, Brisbane</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;The from-email button is the one. Customer writes in, I open it, press From Email, and the quote&#39;s done. I didn&#39;t type a single character.&quot;</em>
+<strong>— Amy C., cleaner, Auckland</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;My Xero stays up to date without me doing anything. The sync just works. That&#39;s worth the subscription on its own.&quot;</em>
+<strong>— Tony B., electrician, Sydney</strong></p>
+</blockquote>
+<div style="margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;">
+  <p style="font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;">Ready to stop typing quotes?</p>
+  <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;">Free to install. No credit card. Works inside Gmail in 2 minutes.</p>
+  <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-block;background:#D9F99D;color:#0A0A0A;padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;">Add SMASH to Chrome — Free</a>
+</div><h2>Who This Is Built For</h2>
+<p>SMASH is built for any self-employed service pro who gets job requests by email and hates the admin:</p>
+<ul>
+<li><strong>Plumbers, electricians, sparkies</strong> — high-volume quote requests, precise pricing</li>
+<li><strong>Cleaners and housekeepers</strong> — recurring jobs, repeat invoicing</li>
+<li><strong>Pest controllers</strong> — detailed service catalogs and inspection reports</li>
+<li><strong>Pool maintenance and HVAC</strong> — recurring service schedules</li>
+<li><strong>Solar installers</strong> — complex multi-item quotes</li>
+<li><strong>NDIS support workers</strong> — participant number tracking built in</li>
+<li><strong>Handymen and builders</strong> — varied job types, flexible pricing</li>
+</ul>
+<p>If your work starts with an email in Gmail, SMASH was built for you.</p>
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/pest-control-invoicing-gmail-csv-pricing">Pest Control Invoicing From Gmail — Upload CSV Pricing</a></li>
+<li><a href="/blog/gmail-to-xero-invoice-no-typing">Gmail to Xero: No Typing, No Tab-Switching</a></li>
+<li><a href="/blog/fastest-way-to-send-invoice-2026">The Fastest Way to Send an Invoice in 2026</a></li>
+<li><a href="/blog/voice-to-quote-feature">Voice to Quote: How SMASH Builds Your Estimate</a></li>
+</ul>
+</div>
+
+      <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Does SMASH work with any Gmail account?</summary><p>Yes. SMASH works with any personal or Google Workspace Gmail account. Once you install the Chrome extension, a SMASH button appears in your Gmail toolbar whenever you open an email.</p></details><details><summary>Does my customer need to download anything?</summary><p>No. Your customer gets a clean payment portal link in their email. They tap it, view the itemised quote, approve it, and pay — all from their phone browser. Nothing to download.</p></details><details><summary>How does SMASH know my prices?</summary><p>When you sign up, you upload one old invoice PDF or a CSV of your services. SMASH reads your rates, job types, and materials and builds your Pricing DNA. After that, every time you describe a job by voice, your words map straight to your numbers.</p></details><details><summary>Does it work offline?</summary><p>SMASH needs a connection to process voice recordings and sync to Xero or QuickBooks. But your pricing catalog and customer history are cached locally, so you can check details even on a poor signal.</p></details><details><summary>Is my customer&#039;s data safe?</summary><p>Yes. SMASH only reads the email thread you have open — it doesn&#039;t scan your entire inbox. Voice recordings are processed and deleted immediately after transcription. Customer data is encrypted at rest.</p></details><details><summary>What if the AI gets a line item wrong?</summary><p>Everything is editable before you send. SMASH builds the draft and you review it. You can adjust quantities, prices, or add items before hitting send. It&#039;s a starting point, not a black box.</p></details></section>
+
+      <aside class="cta-card">
+        <h3>Stop typing. Start talking.</h3>
+        <p>SMASH turns your voice into a professional invoice in under 60 seconds — right inside Gmail. Free to install.</p>
+        <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome — Free</a>
+      </aside>
+
+      <div class="author-card">
+        <strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH after 10 years as a handyman because he was tired of spending his evenings manually typing out quotes that should have taken 20 seconds.
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/chrome-extension">Chrome Extension</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice Invoicing</a>
+      <a href="/integrations-xero">Xero Integration</a>
+      <a href="/integrations-quickbooks">QuickBooks Integration</a>
+      <a href="/tradie-hourly-rates">Hourly Rates</a>
+      <a href="/tools">Free Tools</a>
+      <a href="/faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+    </div>
+    <div style="margin-top:14px;">
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body>
+</html>

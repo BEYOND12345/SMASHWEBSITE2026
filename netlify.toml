@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback — all routes that don't match a static file are served index.html
+# EXCEPT /blog/* which has pre-rendered static HTML files in dist/blog/
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_SUPABASE_URL = "https://mwshohajbmfmuphloqzd.supabase.co"
+  # Add VITE_SUPABASE_ANON_KEY in the Netlify dashboard → Site settings → Environment variables
+  # Do NOT commit the anon key here.

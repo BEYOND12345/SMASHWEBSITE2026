@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What QuickBooks Doesn&#039;t Have for Gmail Invoicing — And the Fix | SMASH</title>
+  <meta name="description" content="QuickBooks is great for your books. But there&#039;s no Chrome extension, no Gmail sidebar, no way to quote from your inbox without switching tabs. SMASH fills the gap.">
+  <meta name="keywords" content="quickbooks gmail integration, quickbooks chrome extension, gmail to quickbooks invoice, voice to invoice quickbooks, invoice app that works with quickbooks, quickbooks invoicing from email">
+  <meta name="author" content="Dan Neale">
+  <link rel="canonical" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="alternate" hreflang="en-AU" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="alternate" hreflang="en-NZ" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="alternate" hreflang="en-GB" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="alternate" hreflang="en-US" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <link rel="alternate" hreflang="en-CA" href="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:site_name" content="SMASH Invoices">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What QuickBooks Doesn&#039;t Have for Gmail Invoicing — And the Fix | SMASH">
+  <meta property="og:description" content="QuickBooks is great for your books. But there&#039;s no Chrome extension, no Gmail sidebar, no way to quote from your inbox without switching tabs. SMASH fills the gap.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing">
+  <meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU">
+  <meta property="article:published_time" content="2026-05-25T03:00:00.000Z">
+  <meta property="article:author" content="Dan Neale">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What QuickBooks Doesn&#039;t Have for Gmail Invoicing — And the Fix | SMASH">
+  <meta name="twitter:description" content="QuickBooks is great for your books. But there&#039;s no Chrome extension, no Gmail sidebar, no way to quote from your inbox without switching tabs. SMASH fills the gap.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0A0A0A;--bg-soft:#111;--surface:rgba(255,255,255,0.04);--surface-strong:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--accent:#D9F99D;--accent-ink:#0A0A0A;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:760px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
+    .nav-links{display:none;gap:28px;}
+    .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
+    .nav-links a:hover{color:#fff;text-decoration:none;}
+    .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.01em;}
+    .nav-cta:hover{filter:brightness(0.95);text-decoration:none;}
+    @media(min-width:860px){.nav-links{display:flex;}}
+    main{padding:48px 0 64px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:14px;font-weight:600;margin-bottom:28px;}
+    h1.post-title{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:900;font-size:clamp(36px,6vw,60px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 20px;color:#fff;}
+    .post-meta{display:flex;flex-wrap:wrap;gap:14px 22px;color:var(--text-muted);font-size:14px;font-weight:500;margin-bottom:28px;}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:0 0 40px;}
+    .takeaways h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 12px;color:var(--accent);}
+    .takeaways ul{margin:0;padding-left:20px;}
+    .takeaways li{margin:6px 0;color:var(--text);}
+    .prose h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,34px);line-height:1.15;letter-spacing:-0.01em;margin:48px 0 16px;color:#fff;}
+    .prose h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:22px;margin:32px 0 12px;color:#fff;}
+    .prose p{margin:0 0 18px;color:rgba(255,255,255,0.85);}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px;}
+    .prose li{margin:8px 0;color:rgba(255,255,255,0.85);}
+    .prose strong{color:#fff;}
+    .prose blockquote{margin:24px 0;padding:12px 20px;border-left:3px solid var(--accent);background:var(--surface);color:rgba(255,255,255,0.85);border-radius:0 10px 10px 0;}
+    .prose img{border-radius:12px;margin:24px 0;}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;}
+    .prose th{background:var(--surface-strong);color:#fff;font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+    .prose td{padding:10px 14px;border:1px solid var(--border);color:rgba(255,255,255,0.8);}
+    .prose tr:nth-child(even) td{background:var(--surface);}
+    .prose a{border-bottom:1px solid rgba(217,249,157,0.4);}
+    .prose a:hover{text-decoration:none;border-bottom-color:var(--accent);}
+    .faq{margin:56px 0 0;}
+    .faq h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,4vw,36px);margin:0 0 20px;color:#fff;}
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:10px;}
+    .faq summary{cursor:pointer;font-weight:600;color:#fff;font-size:16px;list-style:none;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';float:right;color:var(--accent);font-weight:700;}
+    .faq details[open] summary::after{content:'−';}
+    .faq details[open] summary{margin-bottom:8px;}
+    .faq p{color:var(--text-muted);margin:8px 0 0;}
+    .cta-card{margin:56px 0 0;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.25);border-radius:20px;padding:32px;text-align:center;}
+    .cta-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;font-weight:800;margin:0 0 10px;color:#fff;}
+    .cta-card p{color:var(--text-muted);margin:0 0 20px;}
+    .cta-btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;}
+    .cta-btn:hover{filter:brightness(0.95);text-decoration:none;}
+    .author-card{margin:48px 0 0;padding:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px;}
+    .author-card strong{color:#fff;}
+    footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
+    footer a{color:var(--text-muted);margin:0 10px;}
+    footer a:hover{color:#fff;text-decoration:none;}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What QuickBooks Doesn't Have (And Why I Built It)","description":"QuickBooks is great for your books. But there's no Chrome extension, no Gmail sidebar, no way to quote from your inbox without switching tabs. SMASH fills the gap.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-25T03:00:00.000Z","dateModified":"2026-05-25T03:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing"},"keywords":"quickbooks gmail integration, quickbooks chrome extension, gmail to quickbooks invoice, voice to invoice quickbooks, invoice app that works with quickbooks, quickbooks invoicing from email","wordCount":642,"articleSection":"Blog","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"What QuickBooks Doesn't Have (And Why I Built It)","item":"https://smashinvoices.com/blog/quickbooks-gmail-chrome-extension-missing"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will this mess with my existing QuickBooks data?","acceptedAnswer":{"@type":"Answer","text":"No. SMASH only adds new invoices to QuickBooks — it doesn't modify existing records. Your existing customers, accounts, tax codes, and settings are untouched. It connects via the official QuickBooks API."}},{"@type":"Question","name":"Do I need a certain QuickBooks plan to use SMASH?","acceptedAnswer":{"@type":"Answer","text":"SMASH works with QuickBooks Online (Simple Start, Essentials, Plus, and Advanced). It doesn't currently support QuickBooks Desktop."}},{"@type":"Question","name":"What happens if the customer isn't in my QuickBooks contacts yet?","acceptedAnswer":{"@type":"Answer","text":"SMASH creates the customer record in QuickBooks automatically using the name and email from the Gmail thread. You can review and edit the contact in QuickBooks after the invoice is created."}},{"@type":"Question","name":"Can I use SMASH with QuickBooks and Xero at the same time?","acceptedAnswer":{"@type":"Answer","text":"You can connect to one accounting platform at a time. Switch between them in your SMASH billing profile settings."}},{"@type":"Question","name":"I mostly quote over the phone, not by email. Does SMASH still help?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The voice-to-invoice feature doesn't require an email. Open SMASH, press Start Recording, describe the job out loud, and it builds the quote from your voice. Then push to QuickBooks."}}]}</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/chrome-extension">Chrome Extension</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="container">
+      <a href="/blog" class="back-link">← All Articles</a>
+      <header>
+        <h1 class="post-title">What QuickBooks Doesn&#039;t Have (And Why I Built It)</h1>
+        <div class="post-meta">
+          <span>By Dan Neale</span>
+          <span><time datetime="2026-05-25T03:00:00.000Z">25 May 2026</time></span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>QuickBooks has no Chrome extension and no Gmail sidebar — that gap means manual data entry on every quote.</li><li>SMASH lives inside Gmail and connects directly to QuickBooks, acting as the speed layer QB is missing.</li><li>Voice-to-invoice: describe the job out loud, SMASH prices it from your catalog and syncs to QuickBooks.</li><li>The whole flow — email to sent invoice to QuickBooks record — takes under two minutes.</li><li>Free to start. No disruption to your existing QuickBooks setup.</li></ul></aside>
+
+      <div class="prose"><p>I&#39;ve been a handyman for 10 years. For most of that time I&#39;ve paid QuickBooks $60 a month to keep my books straight. It&#39;s genuinely good accounting software — my accountant loves it, my records are clean, my BAS is straightforward.</p>
+<p>But there&#39;s one thing QuickBooks has never had: a Chrome extension. No Gmail sidebar. No way to take a job request sitting in my inbox and turn it into an invoice without opening a new tab, logging in, and typing everything out by hand.</p>
+<p>That gap costs me 20 minutes on every single quote. And when you&#39;re doing three or four quotes a day, that&#39;s over an hour of unpaid admin — every day.</p>
+<p>So I built SMASH.</p>
+<h2>Watch: QuickBooks + Gmail — The 2-Minute Invoice Demo</h2>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:24px 0;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/S3O2qjwfDiw" title="I've paid QuickBooks $60/month for 10 years and they still don't have this" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div><p>In this video you&#39;ll see the full voice-to-invoice workflow: a job request email → a 30-second voice recording → a complete priced quote → exported to QuickBooks. Under two minutes total.</p>
+<h2>What QuickBooks Does vs What SMASH Does</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>QuickBooks</th>
+<th>SMASH</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Track income and expenses</td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>BAS and tax reporting</td>
+<td>✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Turn a Gmail email into a quote</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Voice-to-invoice from your inbox</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Stay inside Gmail</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Build from your pricing catalog</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Customer payment portal link</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Push to QuickBooks with one click</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>SMASH isn&#39;t trying to replace QuickBooks. It&#39;s the piece QuickBooks never built — the Gmail front-end that does the data entry for you, then syncs the result straight into your books.</p>
+<h2>The Voice-to-Invoice Flow</h2>
+<p>You get a job request email. Open it. Press SMASH. The sidebar opens and it&#39;s already read the email.</p>
+<p>Press Start Recording. Describe the job out loud: <em>&quot;Eight hours to fix the deck, ten linear metres of blackbutt decking, call-out fee, liter of stain.&quot;</em> Press stop. Takes about 30 seconds.</p>
+<p>SMASH prices it. Your Pricing DNA maps your words to your rates. Line items fill in. GST calculated. Quote ready.</p>
+<p>Export to QuickBooks. One click. The invoice appears under the customer&#39;s name. New customers are created automatically.</p>
+<p>Start to finish: under two minutes.</p>
+<h2>What QuickBooks Users Are Saying</h2>
+<blockquote>
+<p><em>&quot;I genuinely didn&#39;t believe it would work the first time. I recorded myself describing a job for 30 seconds, and it had every line item right. I&#39;ve been using it every day since.&quot;</em>
+<strong>— Steve P., handyman, Gold Coast</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;I resisted anything new for years because I thought it would break my QuickBooks setup. It doesn&#39;t touch anything. It just adds invoices exactly the way I&#39;d enter them myself.&quot;</em>
+<strong>— Toni K., mobile mechanic, Adelaide</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;My favourite part is that I don&#39;t have to remember what I charged for things. SMASH just knows, because I uploaded my price list once at the start.&quot;</em>
+<strong>— Ray J., electrician, Wellington</strong></p>
+</blockquote>
+<div style="margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;">
+  <p style="font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;">Ready to stop typing quotes?</p>
+  <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;">Free to install. No credit card. Works inside Gmail in 2 minutes.</p>
+  <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-block;background:#D9F99D;color:#0A0A0A;padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;">Add SMASH to Chrome — Free</a>
+</div><h2>Your QuickBooks Setup Stays Exactly the Same</h2>
+<p>SMASH connects to QuickBooks via the official OAuth API. Your accountant&#39;s login still works. Your existing customers, accounts, and categories are untouched. SMASH only adds new invoices.</p>
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/gmail-email-to-invoice-20-seconds">Turn a Gmail Email Into a Sent Invoice in 20 Seconds</a></li>
+<li><a href="/blog/gmail-quickbooks-xero-bridge">The Gmail to QuickBooks Bridge</a></li>
+<li><a href="/blog/quickbooks-gmail-sidebar-tab-switching">Stop Juggling Tabs: The QuickBooks Sidebar for Gmail</a></li>
+<li><a href="/integrations-quickbooks">SMASH QuickBooks Integration</a></li>
+</ul>
+</div>
+
+      <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Will this mess with my existing QuickBooks data?</summary><p>No. SMASH only adds new invoices to QuickBooks — it doesn&#039;t modify existing records. Your existing customers, accounts, tax codes, and settings are untouched. It connects via the official QuickBooks API.</p></details><details><summary>Do I need a certain QuickBooks plan to use SMASH?</summary><p>SMASH works with QuickBooks Online (Simple Start, Essentials, Plus, and Advanced). It doesn&#039;t currently support QuickBooks Desktop.</p></details><details><summary>What happens if the customer isn&#039;t in my QuickBooks contacts yet?</summary><p>SMASH creates the customer record in QuickBooks automatically using the name and email from the Gmail thread. You can review and edit the contact in QuickBooks after the invoice is created.</p></details><details><summary>Can I use SMASH with QuickBooks and Xero at the same time?</summary><p>You can connect to one accounting platform at a time. Switch between them in your SMASH billing profile settings.</p></details><details><summary>I mostly quote over the phone, not by email. Does SMASH still help?</summary><p>Absolutely. The voice-to-invoice feature doesn&#039;t require an email. Open SMASH, press Start Recording, describe the job out loud, and it builds the quote from your voice. Then push to QuickBooks.</p></details></section>
+
+      <aside class="cta-card">
+        <h3>Stop typing. Start talking.</h3>
+        <p>SMASH turns your voice into a professional invoice in under 60 seconds — right inside Gmail. Free to install.</p>
+        <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome — Free</a>
+      </aside>
+
+      <div class="author-card">
+        <strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH after 10 years as a handyman because he was tired of spending his evenings manually typing out quotes that should have taken 20 seconds.
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/chrome-extension">Chrome Extension</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice Invoicing</a>
+      <a href="/integrations-xero">Xero Integration</a>
+      <a href="/integrations-quickbooks">QuickBooks Integration</a>
+      <a href="/tradie-hourly-rates">Hourly Rates</a>
+      <a href="/tools">Free Tools</a>
+      <a href="/faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+    </div>
+    <div style="margin-top:14px;">
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body>
+</html>

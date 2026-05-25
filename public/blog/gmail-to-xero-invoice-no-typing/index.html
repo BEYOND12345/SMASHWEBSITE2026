@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail to Xero Invoice — No Typing, No Tab-Switching | SMASH Chrome Extension</title>
+  <meta name="description" content="SMASH reads your Gmail job requests and pushes a complete, itemised invoice to Xero in under 60 seconds. No manual data entry. No copy-paste. See the full demo.">
+  <meta name="keywords" content="xero gmail integration, gmail to xero invoice, email to xero invoice automatically, xero chrome extension, voice to invoice xero, auto invoice xero gmail">
+  <meta name="author" content="Dan Neale">
+  <link rel="canonical" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="alternate" hreflang="en-AU" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="alternate" hreflang="en-NZ" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="alternate" hreflang="en-GB" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="alternate" hreflang="en-US" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <link rel="alternate" hreflang="en-CA" href="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:site_name" content="SMASH Invoices">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gmail to Xero Invoice — No Typing, No Tab-Switching | SMASH Chrome Extension">
+  <meta property="og:description" content="SMASH reads your Gmail job requests and pushes a complete, itemised invoice to Xero in under 60 seconds. No manual data entry. No copy-paste. See the full demo.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing">
+  <meta property="og:image" content="https://smashinvoices.com/hero_image.png">
+  <meta property="og:locale" content="en_AU">
+  <meta property="article:published_time" content="2026-05-25T02:00:00.000Z">
+  <meta property="article:author" content="Dan Neale">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gmail to Xero Invoice — No Typing, No Tab-Switching | SMASH Chrome Extension">
+  <meta name="twitter:description" content="SMASH reads your Gmail job requests and pushes a complete, itemised invoice to Xero in under 60 seconds. No manual data entry. No copy-paste. See the full demo.">
+  <meta name="twitter:image" content="https://smashinvoices.com/hero_image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0A0A0A;--bg-soft:#111;--surface:rgba(255,255,255,0.04);--surface-strong:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--accent:#D9F99D;--accent-ink:#0A0A0A;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:760px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
+    .nav-links{display:none;gap:28px;}
+    .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
+    .nav-links a:hover{color:#fff;text-decoration:none;}
+    .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.01em;}
+    .nav-cta:hover{filter:brightness(0.95);text-decoration:none;}
+    @media(min-width:860px){.nav-links{display:flex;}}
+    main{padding:48px 0 64px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:14px;font-weight:600;margin-bottom:28px;}
+    h1.post-title{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:900;font-size:clamp(36px,6vw,60px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 20px;color:#fff;}
+    .post-meta{display:flex;flex-wrap:wrap;gap:14px 22px;color:var(--text-muted);font-size:14px;font-weight:500;margin-bottom:28px;}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:0 0 40px;}
+    .takeaways h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 12px;color:var(--accent);}
+    .takeaways ul{margin:0;padding-left:20px;}
+    .takeaways li{margin:6px 0;color:var(--text);}
+    .prose h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,34px);line-height:1.15;letter-spacing:-0.01em;margin:48px 0 16px;color:#fff;}
+    .prose h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:22px;margin:32px 0 12px;color:#fff;}
+    .prose p{margin:0 0 18px;color:rgba(255,255,255,0.85);}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px;}
+    .prose li{margin:8px 0;color:rgba(255,255,255,0.85);}
+    .prose strong{color:#fff;}
+    .prose blockquote{margin:24px 0;padding:12px 20px;border-left:3px solid var(--accent);background:var(--surface);color:rgba(255,255,255,0.85);border-radius:0 10px 10px 0;}
+    .prose img{border-radius:12px;margin:24px 0;}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;}
+    .prose th{background:var(--surface-strong);color:#fff;font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+    .prose td{padding:10px 14px;border:1px solid var(--border);color:rgba(255,255,255,0.8);}
+    .prose tr:nth-child(even) td{background:var(--surface);}
+    .prose a{border-bottom:1px solid rgba(217,249,157,0.4);}
+    .prose a:hover{text-decoration:none;border-bottom-color:var(--accent);}
+    .faq{margin:56px 0 0;}
+    .faq h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,4vw,36px);margin:0 0 20px;color:#fff;}
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:10px;}
+    .faq summary{cursor:pointer;font-weight:600;color:#fff;font-size:16px;list-style:none;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';float:right;color:var(--accent);font-weight:700;}
+    .faq details[open] summary::after{content:'−';}
+    .faq details[open] summary{margin-bottom:8px;}
+    .faq p{color:var(--text-muted);margin:8px 0 0;}
+    .cta-card{margin:56px 0 0;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.25);border-radius:20px;padding:32px;text-align:center;}
+    .cta-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;font-weight:800;margin:0 0 10px;color:#fff;}
+    .cta-card p{color:var(--text-muted);margin:0 0 20px;}
+    .cta-btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;}
+    .cta-btn:hover{filter:brightness(0.95);text-decoration:none;}
+    .author-card{margin:48px 0 0;padding:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px;}
+    .author-card strong{color:#fff;}
+    footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
+    footer a{color:var(--text-muted);margin:0 10px;}
+    footer a:hover{color:#fff;text-decoration:none;}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Gmail to Xero: Turn Job Requests Into Invoices Without Typing a Word","description":"SMASH reads your Gmail job requests and pushes a complete, itemised invoice to Xero in under 60 seconds. No manual data entry. No copy-paste. See the full demo.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-25T02:00:00.000Z","dateModified":"2026-05-25T02:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing"},"keywords":"xero gmail integration, gmail to xero invoice, email to xero invoice automatically, xero chrome extension, voice to invoice xero, auto invoice xero gmail","wordCount":621,"articleSection":"Blog","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"Gmail to Xero: Turn Job Requests Into Invoices Without Typing a Word","item":"https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"47"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does SMASH connect directly to my Xero account?","acceptedAnswer":{"@type":"Answer","text":"Yes. You authenticate with Xero via OAuth when you set up the integration. After that, one click from the SMASH sidebar pushes the invoice straight to Xero. No manual copying."}},{"@type":"Question","name":"Will the invoice appear in Xero correctly — tax codes, account codes, all of it?","acceptedAnswer":{"@type":"Answer","text":"Yes. SMASH maps to your Xero account codes and tax rates. Your GST (or VAT in the UK) is calculated automatically based on your region. The invoice appears in Xero exactly as it would if you'd entered it manually."}},{"@type":"Question","name":"Can I send the invoice to the customer from Xero after pushing it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the invoice is in Xero you can send it from there as normal, or use the SMASH portal link to let the customer approve and pay via Stripe directly."}},{"@type":"Question","name":"What if I already have the customer in Xero?","acceptedAnswer":{"@type":"Answer","text":"SMASH checks your Xero contact list when syncing. If the customer already exists, the invoice is attached to their existing record. If they're new, SMASH creates the contact in Xero automatically."}},{"@type":"Question","name":"Does this work for quotes as well as invoices?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can create a quote in SMASH, send it to the customer for approval, and then convert it to an invoice and push to Xero once the job is complete."}}]}</script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
+      <div class="nav-links">
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/chrome-extension">Chrome Extension</a>
+        <a href="/blog">Blog</a>
+      </div>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
+    </div>
+  </nav>
+
+  <main>
+    <article class="container">
+      <a href="/blog" class="back-link">← All Articles</a>
+      <header>
+        <h1 class="post-title">Gmail to Xero: Turn Job Requests Into Invoices Without Typing a Word</h1>
+        <div class="post-meta">
+          <span>By Dan Neale</span>
+          <span><time datetime="2026-05-25T02:00:00.000Z">25 May 2026</time></span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>SMASH reads an incoming customer email in Gmail and builds a complete, priced invoice automatically.</li><li>The invoice pushes directly to Xero in one click — customer name, line items, GST, totals all matched.</li><li>No need to log into the Xero dashboard just to create a basic invoice.</li><li>Works alongside your existing Xero setup — your tax codes, chart of accounts, and branding are preserved.</li><li>Free to install. No credit card required to start.</li></ul></aside>
+
+      <div class="prose"><p>If you use Xero to run your books, you already know it&#39;s great accounting software. It keeps your records clean, your tax sorted, and your accountant happy.</p>
+<p>What it doesn&#39;t have is a way to take a job request from Gmail and turn it into a Xero invoice without switching tabs, logging in, and typing everything out by hand. That gap costs you 15–20 minutes every time you need to quote.</p>
+<p>SMASH fills that gap.</p>
+<h2>Watch: Gmail to Xero Invoice — Live Demo</h2>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:24px 0;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/Aw_9oXMEVME" title="Turn Job Requests Into Xero Invoices Without Typing a Word" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div><p>This is the full workflow: a customer email lands in Gmail → SMASH reads it → builds the itemised quote → syncs it to Xero. Under 60 seconds. No typing. No copy-paste. No logging into the Xero dashboard.</p>
+<h2>The Missing Link Between Gmail and Xero</h2>
+<table>
+<thead>
+<tr>
+<th>Without SMASH</th>
+<th>With SMASH</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Read email in Gmail</td>
+<td>Read email in Gmail</td>
+</tr>
+<tr>
+<td>Switch to Xero dashboard</td>
+<td>Press SMASH button — stays in Gmail</td>
+</tr>
+<tr>
+<td>Create new invoice manually</td>
+<td>SMASH reads email and builds quote</td>
+</tr>
+<tr>
+<td>Type customer name, look up contact</td>
+<td>Customer pulled from email automatically</td>
+</tr>
+<tr>
+<td>Enter line items from memory</td>
+<td>Line items matched from your catalog</td>
+</tr>
+<tr>
+<td>Calculate GST manually</td>
+<td>GST calculated for your region</td>
+</tr>
+<tr>
+<td>Save and send</td>
+<td>Drop into Gmail reply or send portal link</td>
+</tr>
+<tr>
+<td><strong>Total time: 15–20 mins</strong></td>
+<td><strong>Total time: under 60 seconds</strong></td>
+</tr>
+</tbody></table>
+<h2>How the Xero Integration Works</h2>
+<p><strong>SMASH reads the email.</strong> You get a job request. Open it, click the SMASH button. SMASH extracts the customer&#39;s name, email, and the job details from the body of the email.</p>
+<p><strong>From Email builds the quote.</strong> Press <em>From Email</em>. SMASH matches the job details to your SKUs and pricing catalog. Quantities, unit prices, GST — all done. You review it, adjust if needed.</p>
+<p><strong>One click to Xero.</strong> Press <em>Export to Xero</em>. SMASH authenticates via your Xero OAuth connection and creates the invoice. If the customer is already in your Xero contacts, it attaches to their record. New customers are created automatically.</p>
+<p><strong>The invoice is in Xero in under 60 seconds.</strong> You never had to leave Gmail.</p>
+<h2>What Xero Users Are Saying</h2>
+<blockquote>
+<p><em>&quot;I always thought the Xero mobile app was as good as it got. This is so much faster. The invoice is in Xero before I&#39;ve even replied to the customer&#39;s email.&quot;</em>
+<strong>— Sarah T., plumber, Christchurch</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;Our bookkeeper kept complaining that my Xero records were inconsistent. Since I started using SMASH, everything goes through the same flow and she hasn&#39;t mentioned it once.&quot;</em>
+<strong>— Marcus H., handyman, Sydney</strong></p>
+</blockquote>
+<blockquote>
+<p><em>&quot;I set it up in about 10 minutes. Connected to Xero, uploaded my pricing, opened an email, sent a quote. Couldn&#39;t believe it was that simple.&quot;</em>
+<strong>— Claire O., cleaner, Auckland</strong></p>
+</blockquote>
+<div style="margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;">
+  <p style="font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;">Ready to stop typing quotes?</p>
+  <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;">Free to install. No credit card. Works inside Gmail in 2 minutes.</p>
+  <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-block;background:#D9F99D;color:#0A0A0A;padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;">Add SMASH to Chrome — Free</a>
+</div><h2>Also Good to Know</h2>
+<p>SMASH works alongside your existing Xero setup — it doesn&#39;t replace it. Your accountant still logs into Xero as normal. Your chart of accounts, payment terms, and branding stay exactly as they are. SMASH is purely the speed layer between Gmail and Xero that Xero itself never built.</p>
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/gmail-email-to-invoice-20-seconds">Turn a Gmail Email Into a Sent Invoice in 20 Seconds</a></li>
+<li><a href="/blog/gmail-quickbooks-xero-bridge">The Gmail to QuickBooks Bridge</a></li>
+<li><a href="/blog/xero-too-complicated-sole-trader">Xero Too Complicated for a Sole Trader?</a></li>
+<li><a href="/integrations-xero">SMASH Xero Integration</a></li>
+</ul>
+</div>
+
+      <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Does SMASH connect directly to my Xero account?</summary><p>Yes. You authenticate with Xero via OAuth when you set up the integration. After that, one click from the SMASH sidebar pushes the invoice straight to Xero. No manual copying.</p></details><details><summary>Will the invoice appear in Xero correctly — tax codes, account codes, all of it?</summary><p>Yes. SMASH maps to your Xero account codes and tax rates. Your GST (or VAT in the UK) is calculated automatically based on your region. The invoice appears in Xero exactly as it would if you&#039;d entered it manually.</p></details><details><summary>Can I send the invoice to the customer from Xero after pushing it?</summary><p>Yes. Once the invoice is in Xero you can send it from there as normal, or use the SMASH portal link to let the customer approve and pay via Stripe directly.</p></details><details><summary>What if I already have the customer in Xero?</summary><p>SMASH checks your Xero contact list when syncing. If the customer already exists, the invoice is attached to their existing record. If they&#039;re new, SMASH creates the contact in Xero automatically.</p></details><details><summary>Does this work for quotes as well as invoices?</summary><p>Yes. You can create a quote in SMASH, send it to the customer for approval, and then convert it to an invoice and push to Xero once the job is complete.</p></details></section>
+
+      <aside class="cta-card">
+        <h3>Stop typing. Start talking.</h3>
+        <p>SMASH turns your voice into a professional invoice in under 60 seconds — right inside Gmail. Free to install.</p>
+        <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome — Free</a>
+      </aside>
+
+      <div class="author-card">
+        <strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH after 10 years as a handyman because he was tired of spending his evenings manually typing out quotes that should have taken 20 seconds.
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/chrome-extension">Chrome Extension</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/features">Features</a>
+      <a href="/voice-invoicing">Voice Invoicing</a>
+      <a href="/integrations-xero">Xero Integration</a>
+      <a href="/integrations-quickbooks">QuickBooks Integration</a>
+      <a href="/tradie-hourly-rates">Hourly Rates</a>
+      <a href="/tools">Free Tools</a>
+      <a href="/faq">FAQ</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+    </div>
+    <div style="margin-top:14px;">
+      Live in
+      <a href="/">Australia</a>,
+      <a href="/nz">New Zealand</a>,
+      <a href="/uk">UK</a>,
+      <a href="/us">US</a> and
+      <a href="/ca">Canada</a>
+    </div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body>
+</html>
