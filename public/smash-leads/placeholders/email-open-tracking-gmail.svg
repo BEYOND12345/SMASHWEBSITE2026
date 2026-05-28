@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Placeholder  email open tracking in Gmail">
+  <rect width="960" height="640" fill="#0D1117"/>
+  <text x="480" y="100" fill="#D9F99D" font-family="system-ui,sans-serif" font-size="20" font-weight="700" text-anchor="middle">PLACEHOLDER  email-open-tracking-gmail</text>
+  <rect x="120" y="160" width="720" height="360" rx="16" fill="#111827" stroke="rgba(217,249,157,0.25)"/>
+  <circle cx="200" cy="280" r="40" fill="#D9F99D" fill-opacity="0.2"/>
+  <text x="280" y="275" fill="#fff" font-family="system-ui,sans-serif" font-size="18" font-weight="600">Opened 2m ago</text>
+  <text x="280" y="305" fill="#9ca3af" font-family="system-ui,sans-serif" font-size="14">Desktop notification mockup</text>
+  <text x="480" y="580" fill="rgba(255,255,255,0.35)" font-family="system-ui,sans-serif" font-size="14" text-anchor="middle">Replace with real tracking UI screenshot</text>
+</svg>

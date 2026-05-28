@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Placeholder  Gmail CRM pipeline board">
+  <rect width="1200" height="720" fill="#0D1117"/>
+  <rect x="40" y="40" width="1120" height="80" rx="12" fill="#1a1f26" stroke="#D9F99D" stroke-width="2" stroke-opacity="0.35"/>
+  <text x="600" y="88" fill="#D9F99D" font-family="system-ui,sans-serif" font-size="22" font-weight="700" text-anchor="middle">PLACEHOLDER  gmail-crm-pipeline-board</text>
+  <rect x="40" y="150" width="350" height="500" rx="16" fill="#111827" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="425" y="150" width="350" height="500" rx="16" fill="#111827" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="810" y="150" width="350" height="500" rx="16" fill="#111827" stroke="rgba(255,255,255,0.12)"/>
+  <text x="215" y="200" fill="#9ca3af" font-family="system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">INBOUND</text>
+  <text x="600" y="200" fill="#9ca3af" font-family="system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">PROPOSAL SENT</text>
+  <text x="985" y="200" fill="#9ca3af" font-family="system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">CLOSED WON</text>
+  <text x="600" y="680" fill="rgba(255,255,255,0.35)" font-family="system-ui,sans-serif" font-size="16" text-anchor="middle">Replace with final screenshot or GIF (1200×720 recommended)</text>
+</svg>

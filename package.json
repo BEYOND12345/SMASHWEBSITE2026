@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:gmail-static && vite build && npm run prerender && npm run sitemap",
+    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && vite build && npm run prerender && npm run sitemap",
     "generate:gmail-static": "node --experimental-strip-types scripts/generate-gmail-landing-static.ts",
+    "generate:smash-leads-static": "node --experimental-strip-types scripts/generate-smash-leads-static.ts",
     "prerender": "tsx scripts/prerender-blog.ts",
     "sitemap": "tsx scripts/generate-sitemap.ts",
     "indexnow": "tsx scripts/indexnow.ts",

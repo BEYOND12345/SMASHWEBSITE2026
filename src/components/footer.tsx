@@ -283,6 +283,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                     SMASH for Gmail (Chrome)
                   </Link>
                 </li>
+                <li>
+                  <Link to="/smash-leads" className="text-base text-accent hover:text-white transition-colors font-black">
+                    Smash Leads — Gmail CRM
+                  </Link>
+                </li>
               </FooterSection>
 
               <FooterSection title="Guides">

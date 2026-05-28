@@ -87,6 +87,16 @@ const GmailXeroQuoteBuilder = lazy(() =>
   import('./pages/gmail-xero-quote-builder').then(m => ({ default: m.GmailXeroQuoteBuilder })),
 );
 const GmailInvoice = lazy(() => import('./pages/gmail-invoice').then(m => ({ default: m.GmailInvoice })));
+const SmashLeadsHub = lazy(() => import('./pages/smash-leads').then(m => ({ default: m.SmashLeadsHub })));
+const SmashLeadsStreakAlternative = lazy(() =>
+  import('./pages/smash-leads-streak-alternative').then(m => ({ default: m.SmashLeadsStreakAlternative })),
+);
+const SmashLeadsFreeGmailCrm = lazy(() =>
+  import('./pages/smash-leads-free-gmail-crm').then(m => ({ default: m.SmashLeadsFreeGmailCrm })),
+);
+const SmashLeadsColdEmailOutreach = lazy(() =>
+  import('./pages/smash-leads-cold-email-outreach').then(m => ({ default: m.SmashLeadsColdEmailOutreach })),
+);
 const SitemapPage = lazy(() => import('./pages/sitemap-page').then(m => ({ default: m.SitemapPage })));
 const NotFound = lazy(() => import('./pages/not-found').then(m => ({ default: m.NotFound })));
 const TradieHourlyRates = lazy(() => import('./pages/tradie-hourly-rates').then(m => ({ default: m.TradieHourlyRates })));
@@ -185,6 +195,12 @@ function App() {
         <Route path="/integrations/gmail-quickbooks-estimate-generator" element={<GmailQuickBooksEstimateGenerator />} />
         <Route path="/integrations/gmail-xero-quote-builder" element={<GmailXeroQuoteBuilder />} />
         <Route path="/gmail-invoice" element={<GmailInvoice />} />
+
+        {/* Smash Leads — Gmail CRM hub & spokes */}
+        <Route path="/smash-leads" element={<SmashLeadsHub />} />
+        <Route path="/smash-leads/alternatives/streak-crm" element={<SmashLeadsStreakAlternative />} />
+        <Route path="/smash-leads/free-gmail-crm" element={<SmashLeadsFreeGmailCrm />} />
+        <Route path="/smash-leads/solutions/cold-email-outreach" element={<SmashLeadsColdEmailOutreach />} />
 
         {/* Content pillars — AI search + evergreen SEO */}
         <Route path="/tradie-hourly-rates" element={<TradieHourlyRates />} />

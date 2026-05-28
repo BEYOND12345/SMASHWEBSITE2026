@@ -1356,4 +1356,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
+  <url>
+    <loc>https://smashinvoices.com/smash-leads</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/smash-leads/alternatives/streak-crm</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/smash-leads/free-gmail-crm</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/smash-leads/solutions/cold-email-outreach</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

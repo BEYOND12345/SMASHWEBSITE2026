@@ -80,6 +80,16 @@ const sections: Section[] = [
     ],
   },
   {
+    heading: 'Smash Leads (Gmail CRM)',
+    intro: 'AI CRM hub-and-spoke pages — pipelines, alternatives, free tier, outreach.',
+    links: [
+      { to: '/smash-leads', label: 'Gmail CRM hub' },
+      { to: '/smash-leads/alternatives/streak-crm', label: 'Streak CRM alternative' },
+      { to: '/smash-leads/free-gmail-crm', label: 'Free Gmail CRM' },
+      { to: '/smash-leads/solutions/cold-email-outreach', label: 'Cold email outreach CRM' },
+    ],
+  },
+  {
     heading: 'Integrations',
     intro: 'Accounting + automation plugs for SMASH.',
     links: [
