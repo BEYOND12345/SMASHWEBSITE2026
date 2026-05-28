@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play, Star, Quote } from 'lucide-react';
+import { Play, Star, Quote, Chrome, Mail, ArrowRight } from 'lucide-react';
 import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
@@ -26,7 +26,9 @@ import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
 
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
+const CHROME_STORE_URL =
+  'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const homeFaqs = [
   { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
@@ -143,7 +145,7 @@ export function LandingPage() {
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 animate-hero-reveal"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 animate-hero-reveal"
               style={{ animationDelay: '560ms' }}
             >
               <a
@@ -152,7 +154,17 @@ export function LandingPage() {
               >
                 Start Free
               </a>
-              <button className="px-8 py-4 rounded-[32px] bg-white/10 text-white border-2 border-white/15 font-black text-base uppercase tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-3">
+              <Link
+                to="/chrome-extension"
+                className="px-8 py-4 rounded-[32px] bg-white text-brand border-2 border-white font-black text-base uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-3"
+              >
+                <Chrome size={18} strokeWidth={2.5} />
+                SMASH for Gmail
+              </Link>
+              <button
+                type="button"
+                className="px-8 py-4 rounded-[32px] bg-white/10 text-white border-2 border-white/15 font-black text-base uppercase tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-3"
+              >
                 <Play size={16} strokeWidth={2.5} />
                 Watch Demo
               </button>
@@ -179,7 +191,11 @@ export function LandingPage() {
             {/* Global availability strip */}
             <div className="mt-6 animate-hero-reveal" style={{ animationDelay: '720ms' }}>
               <p className="font-body text-xs text-white/40 font-medium">
-                Live worldwide on iOS &amp; Chrome:{' '}
+                Live worldwide on{' '}
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="underline decoration-accent/50 hover:text-white">iOS</a>
+                {' & '}
+                <Link to="/chrome-extension" className="underline decoration-accent/50 hover:text-accent font-semibold">Gmail (Chrome)</Link>
+                :{' '}
                 <Link to="/" className="underline decoration-accent/50 hover:text-white">AU</Link>
                 {' · '}
                 <Link to="/nz" className="underline decoration-accent/50 hover:text-white">NZ</Link>
@@ -226,6 +242,74 @@ export function LandingPage() {
                   </Link>.
                 </p>
               </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── GMAIL EXTENSION ──────────────────────────────────────────────── */}
+      <section className="bg-brand py-16 md:py-24 lg:py-28 border-y border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <AnimateIn direction="left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
+                <Mail size={14} className="text-accent" strokeWidth={2.5} />
+                <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for Gmail</span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
+                Quote from your inbox.
+                <span className="block text-accent">No tab-switching.</span>
+              </h2>
+              <p className="font-body text-lg md:text-xl text-white/70 font-medium leading-[1.5] mb-8 max-w-xl">
+                The Chrome extension lives in your Gmail sidebar. Scan a customer email, match your packages, and send a priced quote in under 60 seconds — without opening Xero or QuickBooks.
+              </p>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                <Link
+                  to="/gmail-invoice"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+                >
+                  Gmail invoice extension
+                  <ArrowRight size={17} strokeWidth={2.5} />
+                </Link>
+                <Link
+                  to="/chrome-extension"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all"
+                >
+                  All Gmail features
+                </Link>
+                <a
+                  href={CHROME_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/30 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all"
+                >
+                  <Chrome size={17} strokeWidth={2.5} />
+                  Add to Chrome — Free
+                </a>
+              </div>
+              <p className="font-body text-sm text-white/45 mt-4">
+                Also:{' '}
+                <Link to="/integrations/gmail-xero-quote-builder" className="text-accent hover:underline">Xero quotes from Gmail</Link>
+                {' · '}
+                <Link to="/integrations/gmail-quickbooks-estimate-generator" className="text-accent hover:underline">QuickBooks estimates from Gmail</Link>
+              </p>
+            </AnimateIn>
+            <AnimateIn direction="right" delay={100}>
+              <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(200,255,0,0.12)] bg-[#0D1117]">
+                <video
+                  src="/videos/hero-demo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-auto block"
+                  style={{ aspectRatio: '16/10' }}
+                />
+              </div>
+              <p className="font-body text-sm text-white/40 text-center mt-4">
+                Works with Gmail, Xero, and QuickBooks Online
+              </p>
             </AnimateIn>
           </div>
         </div>

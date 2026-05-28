@@ -148,6 +148,51 @@ export function Integrations() {
               );
             })}
           </div>
+
+          <AnimateIn direction="up" className="mt-16">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-3 text-center">
+              Gmail Chrome extension
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-brand text-center mb-10">
+              Quote from your inbox — then sync to your ledger.
+            </h2>
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                {
+                  href: '/gmail-invoice',
+                  title: 'Gmail invoice extension',
+                  body: 'Send invoices and quotes from Gmail in under 60 seconds.',
+                },
+                {
+                  href: '/integrations/gmail-xero-quote-builder',
+                  title: 'Gmail + Xero quotes',
+                  body: 'Build Xero quotes inside your inbox without rekeying.',
+                },
+                {
+                  href: '/integrations/gmail-quickbooks-estimate-generator',
+                  title: 'Gmail + QuickBooks estimates',
+                  body: 'Push QBO estimates from customer emails — no CSV import.',
+                },
+              ].map((card) => (
+                <Link
+                  key={card.href}
+                  to={card.href}
+                  className="group block rounded-2xl border-2 border-slate-200 hover:border-accent p-6 transition-all bg-slate-50 hover:bg-white"
+                >
+                  <h3 className="font-display text-xl uppercase tracking-tight text-brand mb-2 group-hover:text-accent transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="font-body text-sm text-slate-600 leading-relaxed mb-4">{card.body}</p>
+                  <span className="font-display text-xs uppercase tracking-wider text-brand">Learn more →</span>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center mt-8">
+              <Link to="/chrome-extension" className="font-bold text-brand hover:text-accent underline-offset-2 hover:underline">
+                See all SMASH for Gmail features →
+              </Link>
+            </p>
+          </AnimateIn>
         </div>
       </section>
 

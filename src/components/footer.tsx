@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
-import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube, Mail, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   showCTA?: boolean;
@@ -96,27 +96,93 @@ function FooterDisclosure({
 
 export function Footer({ showCTA = false }: FooterProps) {
   return (
-    <footer className="bg-brand text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 md:py-14 lg:py-16">
-        {showCTA && (
-          <div className="text-center mb-10 md:mb-14 pb-10 md:pb-14 border-b border-white/10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-[0.88] uppercase tracking-tighter">
-              From Finished Job to Paid. In Under a Minute.
-            </h3>
-            <p className="text-base sm:text-lg text-white/80 font-medium mb-2 max-w-2xl mx-auto leading-[1.15]">
-              Describe the job out loud. SMASH does the rest.
-            </p>
-            <p className="text-sm text-white/50 font-medium mb-6 md:mb-8">
-              No credit card required.
-            </p>
+    <footer className="bg-brand text-white border-t-4 border-accent/40">
+      {/* ── MEGA DOWNLOAD STRIP (always visible) ───────────────── */}
+      <div className="bg-accent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 md:py-20 lg:py-24">
+          <p className="text-center text-brand/50 font-black text-xs uppercase tracking-[0.25em] mb-4">
+            Download SMASH
+          </p>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-4 md:mb-6">
+            Get paid faster.
+            <span className="block">Pick your workflow.</span>
+          </h2>
+          <p className="text-center font-body text-base md:text-lg text-brand/70 font-medium max-w-2xl mx-auto mb-10 md:mb-14">
+            Voice invoicing on iOS, or quote straight from Gmail with our Chrome extension. Free to start.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 max-w-5xl mx-auto">
             <Link
-              to="/#signup-form"
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow"
+              to="/chrome-extension"
+              className="group flex flex-col rounded-[28px] bg-brand p-8 md:p-10 border-2 border-brand hover:border-white/20 transition-all shadow-xl"
             >
-              Start Free
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+                  <Mail size={22} className="text-brand" strokeWidth={2.5} />
+                </div>
+                <span className="text-accent font-black text-xs uppercase tracking-[0.2em]">Most popular for desk work</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-3">
+                SMASH for Gmail
+              </h3>
+              <p className="font-body text-base text-white/65 font-medium leading-[1.5] mb-8 flex-1">
+                Chrome extension in your inbox. Scan emails, build quotes, sync to Xero &amp; QuickBooks — without leaving Gmail.
+              </p>
+              <span className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest group-hover:brightness-95 transition-all w-full sm:w-auto">
+                <Chrome size={18} strokeWidth={2.5} />
+                See Gmail extension
+                <ArrowRight size={16} strokeWidth={2.5} className="group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </Link>
+
+            <div className="flex flex-col rounded-[28px] bg-white p-8 md:p-10 border-2 border-white shadow-xl">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center">
+                  <Apple size={22} className="text-white" strokeWidth={2.5} />
+                </div>
+                <span className="text-brand/50 font-black text-xs uppercase tracking-[0.2em]">On the job site</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-3">
+                SMASH for iOS
+              </h3>
+              <p className="font-body text-base text-brand/65 font-medium leading-[1.5] mb-8 flex-1">
+                Talk the job on your phone. Professional invoice before you leave the driveway.
+              </p>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto"
+              >
+                <Apple size={18} strokeWidth={2.5} />
+                Join Beta — iOS
+              </a>
+            </div>
           </div>
-        )}
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-10">
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-brand font-bold text-sm uppercase tracking-wide hover:underline"
+            >
+              <Chrome size={16} strokeWidth={2.5} />
+              Or add to Chrome directly
+            </a>
+            {showCTA && (
+              <Link
+                to="/#signup-form"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-brand/30 text-brand font-black text-sm uppercase tracking-wider hover:bg-brand/5 transition-all"
+              >
+                Start free on web
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-20 lg:py-24">
 
         {/* ── PRIMARY ROW ────────────────────────────────────── */}
         <div className="lg:grid lg:grid-cols-12 lg:gap-10 mb-2 lg:mb-12">
@@ -135,27 +201,24 @@ export function Footer({ showCTA = false }: FooterProps) {
               Describe the job. Get paid. That's it.
             </p>
 
-            <h3 className={`${headingClass} mb-3`}>Download</h3>
-            <div className="flex gap-3 mb-6">
+            <h3 className={`${headingClass} mb-3`}>Quick download</h3>
+            <div className="flex flex-col gap-3 mb-6">
+              <Link
+                to="/chrome-extension"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-accent text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
+              >
+                <Chrome size={18} strokeWidth={2.5} />
+                <span>SMASH for Gmail</span>
+              </Link>
               <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download SMASH on the App Store"
-                className="flex items-center gap-2 px-5 py-3 rounded-full bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
                 <span>Join Beta — iOS</span>
-              </a>
-              <a
-                href={CHROME_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get the SMASH Chrome extension on the Chrome Web Store"
-                className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 text-white font-black text-sm uppercase tracking-wider hover:bg-white/20 transition-all border border-white/15"
-              >
-                <Chrome size={18} strokeWidth={2.5} />
-                <span>Chrome</span>
               </a>
             </div>
 
@@ -215,7 +278,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/ai-invoicing" className={linkClass}>AI Invoicing</Link></li>
                 <li><Link to="/gst-compliant-invoicing" className={linkClass}>GST Invoicing</Link></li>
                 <li><Link to="/invoice-on-mobile" className={linkClass}>Invoice on Mobile</Link></li>
-                <li><Link to="/chrome-extension" className={linkClass}>SMASH for Gmail</Link></li>
+                <li>
+                  <Link to="/chrome-extension" className="text-base text-accent hover:text-white transition-colors font-black">
+                    SMASH for Gmail (Chrome)
+                  </Link>
+                </li>
               </FooterSection>
 
               <FooterSection title="Guides">
@@ -241,6 +308,9 @@ export function Footer({ showCTA = false }: FooterProps) {
 
               <FooterSection title="Integrations">
                 <li><Link to="/integrations" className={linkClass}>All integrations</Link></li>
+                <li><Link to="/gmail-invoice" className={linkClass}>Gmail invoice extension</Link></li>
+                <li><Link to="/integrations/gmail-xero-quote-builder" className={linkClass}>Gmail + Xero quotes</Link></li>
+                <li><Link to="/integrations/gmail-quickbooks-estimate-generator" className={linkClass}>Gmail + QuickBooks estimates</Link></li>
                 <li><Link to="/integrations/xero" className={linkClass}>SMASH × Xero</Link></li>
                 <li><Link to="/integrations/quickbooks" className={linkClass}>SMASH × QuickBooks</Link></li>
               </FooterSection>

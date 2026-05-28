@@ -6,7 +6,7 @@
   NODE_VERSION = "20"
 
 # SPA fallback — all routes that don't match a static file are served index.html
-# EXCEPT /blog/* which has pre-rendered static HTML files in dist/blog/
+# EXCEPT /blog/* and Gmail landing routes which have pre-rendered static HTML in dist/
 [[redirects]]
   from = "/*"
   to = "/index.html"

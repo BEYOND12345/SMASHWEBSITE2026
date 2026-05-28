@@ -80,6 +80,13 @@ const CountryCA = lazy(() => import('./pages/country-ca').then(m => ({ default: 
 const Integrations = lazy(() => import('./pages/integrations').then(m => ({ default: m.Integrations })));
 const IntegrationsXero = lazy(() => import('./pages/integrations-xero').then(m => ({ default: m.IntegrationsXero })));
 const IntegrationsQuickBooks = lazy(() => import('./pages/integrations-quickbooks').then(m => ({ default: m.IntegrationsQuickBooks })));
+const GmailQuickBooksEstimateGenerator = lazy(() =>
+  import('./pages/gmail-quickbooks-estimate-generator').then(m => ({ default: m.GmailQuickBooksEstimateGenerator })),
+);
+const GmailXeroQuoteBuilder = lazy(() =>
+  import('./pages/gmail-xero-quote-builder').then(m => ({ default: m.GmailXeroQuoteBuilder })),
+);
+const GmailInvoice = lazy(() => import('./pages/gmail-invoice').then(m => ({ default: m.GmailInvoice })));
 const SitemapPage = lazy(() => import('./pages/sitemap-page').then(m => ({ default: m.SitemapPage })));
 const NotFound = lazy(() => import('./pages/not-found').then(m => ({ default: m.NotFound })));
 const TradieHourlyRates = lazy(() => import('./pages/tradie-hourly-rates').then(m => ({ default: m.TradieHourlyRates })));
@@ -175,6 +182,9 @@ function App() {
         <Route path="/integrations" element={<Integrations />} />
         <Route path="/integrations/xero" element={<IntegrationsXero />} />
         <Route path="/integrations/quickbooks" element={<IntegrationsQuickBooks />} />
+        <Route path="/integrations/gmail-quickbooks-estimate-generator" element={<GmailQuickBooksEstimateGenerator />} />
+        <Route path="/integrations/gmail-xero-quote-builder" element={<GmailXeroQuoteBuilder />} />
+        <Route path="/gmail-invoice" element={<GmailInvoice />} />
 
         {/* Content pillars — AI search + evergreen SEO */}
         <Route path="/tradie-hourly-rates" element={<TradieHourlyRates />} />

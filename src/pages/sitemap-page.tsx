@@ -84,8 +84,12 @@ const sections: Section[] = [
     intro: 'Accounting + automation plugs for SMASH.',
     links: [
       { to: '/integrations',               label: 'Integrations hub' },
-      { to: '/integrations/xero',          label: 'SMASH × Xero',               note: 'Coming soon' },
-      { to: '/integrations/quickbooks',    label: 'SMASH × QuickBooks Online',  note: 'Coming soon' },
+      { to: '/gmail-invoice',              label: 'Gmail invoice extension' },
+      { to: '/integrations/gmail-xero-quote-builder', label: 'Gmail + Xero quotes' },
+      { to: '/integrations/gmail-quickbooks-estimate-generator', label: 'Gmail + QuickBooks estimates' },
+      { to: '/integrations/xero',          label: 'SMASH × Xero' },
+      { to: '/integrations/quickbooks',    label: 'SMASH × QuickBooks Online' },
+      { to: '/chrome-extension',           label: 'SMASH for Gmail' },
     ],
   },
   {

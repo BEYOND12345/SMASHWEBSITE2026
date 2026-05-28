@@ -54,6 +54,13 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
 
           <div className="flex items-center gap-1 sm:gap-2">
             <Link to="/features" className={desktopLinkClass}>Features</Link>
+            <Link
+              to="/chrome-extension"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-black text-accent hover:text-white transition-colors uppercase tracking-wide"
+            >
+              <Chrome size={15} strokeWidth={2.5} />
+              Gmail
+            </Link>
             <Link to="/pricing" className={desktopLinkClass}>Pricing</Link>
             <Link to="/tools" className={`${desktopLinkClass} hidden lg:block`}>Tools</Link>
             <Link to="/integrations" className={`${desktopLinkClass} hidden lg:block`}>Integrations</Link>
@@ -98,7 +105,9 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
             <Link to="/how-it-works" className={mobileLinkClass}>How It Works</Link>
             <Link to="/voice-invoicing" className={mobileLinkClass}>Voice Invoicing</Link>
             <Link to="/ai-invoicing" className={mobileLinkClass}>AI Invoicing</Link>
-            <Link to="/chrome-extension" className={mobileLinkClass}>SMASH for Gmail</Link>
+            <Link to="/chrome-extension" className={`${mobileLinkClass} !text-accent font-black`}>
+              SMASH for Gmail — Chrome Extension
+            </Link>
 
             <div className={mobileSectionHeading}>Tools</div>
             <Link to="/tools" className={mobileLinkClass}>All Free Tools</Link>
