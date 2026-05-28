@@ -80,6 +80,16 @@ const sections: Section[] = [
     ],
   },
   {
+    heading: 'Programmatic SEO (pSEO)',
+    intro: 'Localized landing matrix — persona, alternatives, tax tools.',
+    links: [
+      { to: '/sitemap-directory', label: 'pSEO directory hub' },
+      { to: '/sitemap-directory/us/for', label: 'US persona pages' },
+      { to: '/sitemap-directory/uk/tool', label: 'UK tax invoice tools' },
+      { to: '/for/handyman', label: 'Handyman invoice (x-default)' },
+    ],
+  },
+  {
     heading: 'Smash Leads (Gmail CRM)',
     intro: 'AI CRM hub-and-spoke pages — pipelines, alternatives, free tier, outreach.',
     links: [

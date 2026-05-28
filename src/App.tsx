@@ -97,6 +97,12 @@ const SmashLeadsFreeGmailCrm = lazy(() =>
 const SmashLeadsColdEmailOutreach = lazy(() =>
   import('./pages/smash-leads-cold-email-outreach').then(m => ({ default: m.SmashLeadsColdEmailOutreach })),
 );
+const PseoPersonaRoute = lazy(() => import('./pages/pseo/pseo-persona-route').then(m => ({ default: m.PseoPersonaRoute })));
+const PseoAlternativeRoute = lazy(() => import('./pages/pseo/pseo-alternative-route').then(m => ({ default: m.PseoAlternativeRoute })));
+const PseoTaxToolRoute = lazy(() => import('./pages/pseo/pseo-tax-tool-route').then(m => ({ default: m.PseoTaxToolRoute })));
+const PseoSitemapDirectoryRoot = lazy(() => import('./pages/pseo/sitemap-directory').then(m => ({ default: m.PseoSitemapDirectoryRoot })));
+const PseoSitemapDirectoryCountry = lazy(() => import('./pages/pseo/sitemap-directory').then(m => ({ default: m.PseoSitemapDirectoryCountry })));
+const PseoSitemapDirectoryCategory = lazy(() => import('./pages/pseo/sitemap-directory').then(m => ({ default: m.PseoSitemapDirectoryCategory })));
 const SitemapPage = lazy(() => import('./pages/sitemap-page').then(m => ({ default: m.SitemapPage })));
 const NotFound = lazy(() => import('./pages/not-found').then(m => ({ default: m.NotFound })));
 const TradieHourlyRates = lazy(() => import('./pages/tradie-hourly-rates').then(m => ({ default: m.TradieHourlyRates })));
@@ -210,6 +216,16 @@ function App() {
 
         {/* Human-readable sitemap */}
         <Route path="/sitemap" element={<SitemapPage />} />
+
+        {/* Programmatic SEO — directory + localized landing matrix */}
+        <Route path="/sitemap-directory" element={<PseoSitemapDirectoryRoot />} />
+        <Route path="/sitemap-directory/:country/:category/page/:page" element={<PseoSitemapDirectoryCategory />} />
+        <Route path="/sitemap-directory/:country/:category" element={<PseoSitemapDirectoryCategory />} />
+        <Route path="/sitemap-directory/:country" element={<PseoSitemapDirectoryCountry />} />
+        <Route path="/for/:niche" element={<PseoPersonaRoute />} />
+        <Route path="/:country/for/:niche" element={<PseoPersonaRoute />} />
+        <Route path="/:country/alternatives/:software" element={<PseoAlternativeRoute />} />
+        <Route path="/:country/tool/:toolSlug" element={<PseoTaxToolRoute />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogList />} />
