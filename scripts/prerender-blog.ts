@@ -579,7 +579,8 @@ async function prerenderBlogPosts() {
 
   if (error) {
     console.error('Error fetching posts:', error);
-    process.exit(1);
+    console.log('ℹ Using committed public/blog/ static files instead.');
+    process.exit(0);
   }
 
   if (!posts || posts.length === 0) {

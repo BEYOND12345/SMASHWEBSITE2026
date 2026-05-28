@@ -1,17 +1,38 @@
-# Netlify redirects — served for every request.
-# Rules are evaluated top-to-bottom; first match wins.
+# Netlify/Bolt redirects — evaluated top-to-bottom; first match wins.
+# Static HTML rewrites MUST appear before the SPA catch-all so crawlers get
+# full pre-rendered content (Gmail landings, Smash Leads, pSEO pages).
 
-# Serve the pre-rendered static HTML for blog posts.
-#
-# Netlify matches :slug trailing-slash-agnostically by default, so this single
-# rewrite handles both /blog/<slug> and /blog/<slug>/ with a 200 status. The
-# canonical URL (no trailing slash) is declared in each post's <link rel=
-# "canonical"> tag, which is how Google picks a preferred version.
-#
-# A previous attempt to 301-normalise "/blog/:slug/" -> "/blog/:slug" caused
-# an infinite redirect loop because Netlify's agnostic matching made rule 1
-# fire on BOTH variants. Do not reintroduce that normalisation here.
+# Blog posts
 /blog/:slug           /blog/:slug/index.html   200
+
+# Gmail × accounting SEO landing pages
+/integrations/gmail-quickbooks-estimate-generator    /integrations/gmail-quickbooks-estimate-generator/index.html    200
+/integrations/gmail-xero-quote-builder               /integrations/gmail-xero-quote-builder/index.html               200
+/gmail-invoice                                       /gmail-invoice/index.html                                       200
+
+# Smash Leads CRM hub (before /:country/alternatives patterns)
+/smash-leads                                         /smash-leads/index.html                                         200
+/smash-leads/*                                       /smash-leads/:splat/index.html                                  200
+
+# pSEO persona pages (global + per-country)
+/for/:niche                                          /for/:niche/index.html                                          200
+/us/for/:niche                                       /us/for/:niche/index.html                                       200
+/uk/for/:niche                                       /uk/for/:niche/index.html                                       200
+/ca/for/:niche                                       /ca/for/:niche/index.html                                       200
+/au/for/:niche                                       /au/for/:niche/index.html                                       200
+/nz/for/:niche                                       /nz/for/:niche/index.html                                       200
+
+/us/alternatives/:software                           /us/alternatives/:software/index.html                           200
+/uk/alternatives/:software                           /uk/alternatives/:software/index.html                           200
+/ca/alternatives/:software                           /ca/alternatives/:software/index.html                           200
+/au/alternatives/:software                           /au/alternatives/:software/index.html                           200
+/nz/alternatives/:software                           /nz/alternatives/:software/index.html                           200
+
+/us/tool/:toolSlug                                   /us/tool/:toolSlug/index.html                                   200
+/uk/tool/:toolSlug                                   /uk/tool/:toolSlug/index.html                                   200
+/ca/tool/:toolSlug                                   /ca/tool/:toolSlug/index.html                                   200
+/au/tool/:toolSlug                                   /au/tool/:toolSlug/index.html                                   200
+/nz/tool/:toolSlug                                   /nz/tool/:toolSlug/index.html                                   200
 
 # SPA fallback for every other route
 /*                    /index.html              200

@@ -5,8 +5,118 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA fallback — all routes that don't match a static file are served index.html
-# EXCEPT /blog/* and Gmail landing routes which have pre-rendered static HTML in dist/
+# Pre-rendered static HTML — must come before SPA fallback
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/integrations/gmail-quickbooks-estimate-generator"
+  to = "/integrations/gmail-quickbooks-estimate-generator/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/integrations/gmail-xero-quote-builder"
+  to = "/integrations/gmail-xero-quote-builder/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/gmail-invoice"
+  to = "/gmail-invoice/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/smash-leads"
+  to = "/smash-leads/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/smash-leads/*"
+  to = "/smash-leads/:splat/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/for/:niche"
+  to = "/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/us/for/:niche"
+  to = "/us/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk/for/:niche"
+  to = "/uk/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ca/for/:niche"
+  to = "/ca/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/au/for/:niche"
+  to = "/au/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nz/for/:niche"
+  to = "/nz/for/:niche/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/us/alternatives/:software"
+  to = "/us/alternatives/:software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk/alternatives/:software"
+  to = "/uk/alternatives/:software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ca/alternatives/:software"
+  to = "/ca/alternatives/:software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/au/alternatives/:software"
+  to = "/au/alternatives/:software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nz/alternatives/:software"
+  to = "/nz/alternatives/:software/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/us/tool/:toolSlug"
+  to = "/us/tool/:toolSlug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk/tool/:toolSlug"
+  to = "/uk/tool/:toolSlug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ca/tool/:toolSlug"
+  to = "/ca/tool/:toolSlug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/au/tool/:toolSlug"
+  to = "/au/tool/:toolSlug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nz/tool/:toolSlug"
+  to = "/nz/tool/:toolSlug/index.html"
+  status = 200
+
+# SPA fallback — routes without static HTML
 [[redirects]]
   from = "/*"
   to = "/index.html"

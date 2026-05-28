@@ -80,7 +80,8 @@ async function generateSitemap() {
 
   if (error) {
     console.error('Error fetching blog posts:', error);
-    process.exit(1);
+    console.log('ℹ Using committed public/sitemap.xml instead.');
+    process.exit(0);
   }
 
   const baseUrl = 'https://smashinvoices.com';

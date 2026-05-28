@@ -7,6 +7,51 @@
       "dest": "/blog/$1/index.html",
       "status": 200
     },
+    {
+      "src": "^/integrations/gmail-quickbooks-estimate-generator/?$",
+      "dest": "/integrations/gmail-quickbooks-estimate-generator/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/integrations/gmail-xero-quote-builder/?$",
+      "dest": "/integrations/gmail-xero-quote-builder/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/gmail-invoice/?$",
+      "dest": "/gmail-invoice/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/smash-leads/?$",
+      "dest": "/smash-leads/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/smash-leads/(.+)/?$",
+      "dest": "/smash-leads/$1/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/for/([^/]+)/?$",
+      "dest": "/for/$1/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/(us|uk|ca|au|nz)/for/([^/]+)/?$",
+      "dest": "/$1/for/$2/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/(us|uk|ca|au|nz)/alternatives/([^/]+)/?$",
+      "dest": "/$1/alternatives/$2/index.html",
+      "status": 200
+    },
+    {
+      "src": "^/(us|uk|ca|au|nz)/tool/([^/]+)/?$",
+      "dest": "/$1/tool/$2/index.html",
+      "status": 200
+    },
     { "handle": "filesystem" },
     {
       "src": "/(.*)",

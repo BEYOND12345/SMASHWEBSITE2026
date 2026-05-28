@@ -10,9 +10,9 @@
     "generate:smash-leads-static": "node --experimental-strip-types scripts/generate-smash-leads-static.ts",
     "generate:pseo-static": "node --experimental-strip-types scripts/generate-pseo-static.ts",
     "verify:pseo": "node --experimental-strip-types scripts/verify-pseo.ts",
-    "prerender": "tsx scripts/prerender-blog.ts",
-    "sitemap": "tsx scripts/generate-sitemap.ts",
-    "indexnow": "tsx scripts/indexnow.ts",
+    "prerender": "node --experimental-strip-types scripts/prerender-blog.ts",
+    "sitemap": "node --experimental-strip-types scripts/generate-sitemap.ts",
+    "indexnow": "node --experimental-strip-types scripts/indexnow.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"

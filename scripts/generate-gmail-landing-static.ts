@@ -150,6 +150,7 @@ function buildPage(c: GmailLandingConfig): string {
   <title>${escapeHtml(c.seo.title)}</title>
   <meta name="description" content="${escapeHtml(c.seo.description)}" />
   <meta name="keywords" content="${escapeHtml(c.seo.keywords)}" />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="${canonical}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${canonical}" />
