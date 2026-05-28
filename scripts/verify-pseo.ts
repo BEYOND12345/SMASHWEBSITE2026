@@ -40,6 +40,22 @@ for (const page of pseoPageRegistry.slice(0, 20)) {
 if (scanned > 0) pass(`no raw placeholders in ${scanned} sampled static files`);
 else fail('no static pSEO files found — run generate:pseo-static first');
 
+// Static HTML quality
+console.log('\nStatic HTML quality:');
+const sample = pseoPageRegistry[0];
+const sampleFile = path.join(root, 'public', sample.path.replace(/^\//, ''), 'index.html');
+if (fs.existsSync(sampleFile)) {
+  const html = fs.readFileSync(sampleFile, 'utf-8');
+  if (html.includes('http-equiv="refresh"')) fail('static HTML uses meta refresh (redirect loop risk)');
+  else pass('no meta refresh in static HTML');
+  if (html.includes('rel="alternate" hreflang=')) pass('static HTML includes hreflang tags');
+  else fail('static HTML missing hreflang tags');
+  if (html.includes('rel="canonical"')) pass('static HTML includes canonical');
+  else fail('static HTML missing canonical');
+} else {
+  fail('sample static file missing — run generate:pseo-static');
+}
+
 // Hreflang reciprocity for persona cluster
 console.log('\nHreflang reciprocity (persona sample):');
 const sampleNiche = pseoNiches[0]?.slug ?? 'handyman';
