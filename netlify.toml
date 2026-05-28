@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
 
 # SPA fallback — all routes that don't match a static file are served index.html
 # EXCEPT /blog/* and Gmail landing routes which have pre-rendered static HTML in dist/
