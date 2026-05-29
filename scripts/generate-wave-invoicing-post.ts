@@ -144,7 +144,7 @@ const content = `If you are a freelancer, virtual assistant, or solo business ow
 
 Legacy platforms change their models as they scale. This guide explains what shifted on Wave's pricing plans and how to keep client invoicing automated at **$0/month** — without the admin tax.
 
-## Watch: Wave Invoicing Changes — Free Gmail Alternative (Full Demo)
+## Watch: Best Wave Invoicing Alternative for Gmail (Full Demo)
 
 <div class="video-embed">
   <iframe
@@ -237,12 +237,12 @@ Move billing to where client conversations already live. Cut application hopping
 
 const url = `${SITE_URL}/blog/${slug}`;
 const publishedIso = new Date(publishedAt).toISOString();
-const title = "Don't Pay For Wave Accounting: Use This Free Gmail Shortcut";
-const metaTitle = 'Wave Invoicing Alternative for Gmail — Free Chrome Extension Demo | SMASH';
+const title = 'Wave Invoicing Alternative: Free Gmail Shortcut (Skip the $19/mo Pro Plan)';
+const metaTitle = 'Wave Invoicing Alternative for Gmail — Free Demo (2026) | SMASH';
 const metaDescription =
-  'Wave free tier lost automation. See what changed on Starter vs Pro, the admin tax of manual billing, and a full Gmail demo of SMASH as a free Wave alternative for freelancers.';
+  'Wave free tier lost bank sync and payment reminders. Compare Starter vs Pro, avoid the admin tax, and see a free Wave invoicing alternative for Gmail — full SMASH demo.';
 const keywords =
-  'wave invoicing alternative, wave accounting free tier changes, wave gmail invoice, free invoice gmail, wave pro alternative, freelancer invoicing gmail, virtual assistant billing, smash invoices chrome extension, wave accounting replacement';
+  'wave invoicing alternative, wave accounting alternative, wave accounting free tier 2026, wave starter vs pro, wave pro alternative, free invoice gmail, freelancer invoicing gmail, virtual assistant billing, smash invoices chrome extension, wave accounting replacement';
 
 const schemas = [
   {
