@@ -28,6 +28,15 @@ export const B2B_CHROME_LANDING = {
   economicHook: {
     title: 'The Hard Math Behind Manual Quoting Data Entry',
     body: 'Industry benchmarks place the operational cost of processing a standard multi-line manual RFQ at $12–$15 in staff time per inquiry due to manual search and structural typos. SMASH collapses that to under $2 — raw email to structured draft in under 60 seconds, then a quick verification pass instead of line-by-line retyping.',
+    stats: [
+      { value: '$12–15 → <$2', label: 'Document handling cost per multi-line RFQ' },
+      { value: 'Under 60s', label: 'Raw customer email to structured quote draft' },
+      { value: '80% less', label: 'Manual quoting data entry per inquiry' },
+    ],
+  },
+  answerStrip: {
+    question: 'Is this another Accounts Payable tool?',
+    answer: 'No — SMASH lives on the Accounts Receivable and operations desk. It is built for the people sending quotes and invoices, not processing supplier bills.',
   },
   comparison: {
     headers: ['Quoting Lifecycle Stage', 'The Manual Grind', 'The SMASH Way'],

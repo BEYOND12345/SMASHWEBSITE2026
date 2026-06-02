@@ -8,6 +8,7 @@ import {
   Cloud,
   ChevronDown,
 } from 'lucide-react';
+import { B2bRfqMockup } from './B2bRfqMockup';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -22,7 +23,6 @@ import { SchemaMarkup } from '../SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../../data/schema-data';
 import { hreflangAlternates } from '../../data/country-data';
 import { B2B_CHROME_LANDING } from '../../data/b2b-chrome-landing';
-import { HeroVideo } from '../gmail-sidebar-mockups';
 
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 const c = B2B_CHROME_LANDING;
@@ -132,9 +132,12 @@ export function B2bChromeLandingPage() {
                 </div>
               </div>
             </AnimateIn>
-            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
-              <div className="md:pb-24 rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10">
-                <HeroVideo />
+            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-105 lg:translate-x-6">
+              <div className="md:pb-24">
+                <B2bRfqMockup />
+                <p className="text-center font-body text-xs text-white/30 font-medium italic mt-4">
+                  Live parse: four catalog matches, one line flagged for a verification pass.
+                </p>
               </div>
             </AnimateIn>
           </div>
@@ -146,9 +149,21 @@ export function B2bChromeLandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">The economics</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 text-center max-w-3xl mx-auto">
               {c.economicHook.title}
             </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border-2 border-border mb-10">
+              {c.economicHook.stats.map((stat) => (
+                <div key={stat.label} className="bg-white px-5 py-7 text-center">
+                  <p className="font-sans font-black text-brand uppercase tracking-tighter leading-[0.9] text-3xl sm:text-4xl tabular-nums mb-2">
+                    {stat.value}
+                  </p>
+                  <p className="font-body text-xs text-brand/55 font-semibold leading-[1.4]">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
             <blockquote className="max-w-3xl mx-auto border-l-4 border-accent bg-white rounded-r-2xl px-6 py-5 mb-12 shadow-sm">
               <p className="font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6] m-0">
                 <strong className="text-brand">The Operational Overhead Drain:</strong> {c.economicHook.body}
@@ -167,9 +182,16 @@ export function B2bChromeLandingPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {c.comparison.rows.map(([stage, manual, smash]) => (
+                  {c.comparison.rows.map(([stage, manual, smash], i) => (
                     <tr key={stage} className="border-t border-border even:bg-surface/80">
-                      <td className="px-4 py-4 font-black text-brand uppercase tracking-tight align-top w-[22%]">{stage}</td>
+                      <td className="px-4 py-4 align-top w-[24%]">
+                        <span className="flex items-start gap-2.5">
+                          <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-brand text-accent font-black text-[10px] flex items-center justify-center tabular-nums">
+                            {i + 1}
+                          </span>
+                          <span className="font-black text-brand uppercase tracking-tight leading-[1.05]">{stage}</span>
+                        </span>
+                      </td>
                       <td className="px-4 py-4 text-brand/60 font-medium align-top">{manual}</td>
                       <td className="px-4 py-4 text-brand font-bold align-top">{smash}</td>
                     </tr>
@@ -206,6 +228,14 @@ export function B2bChromeLandingPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ANSWER STRIP — AR not AP positioning */}
+      <section className="bg-accent py-10 md:py-14">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+          <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">{c.answerStrip.question}</p>
+          <p className="text-lg md:text-2xl font-bold text-brand leading-[1.3]">{c.answerStrip.answer}</p>
         </div>
       </section>
 

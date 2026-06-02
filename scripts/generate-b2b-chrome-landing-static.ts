@@ -22,8 +22,8 @@ function renderJsonLd(obj: unknown): string {
 
 const comparisonRows = c.comparison.rows
   .map(
-    ([stage, manual, smash]) =>
-      `<tr style="border-top:1px solid #e2e8f0;"><td style="padding:14px 16px;font-weight:800;text-transform:uppercase;">${escapeHtml(stage)}</td><td style="padding:14px 16px;color:#475569;">${escapeHtml(manual)}</td><td style="padding:14px 16px;font-weight:700;">${escapeHtml(smash)}</td></tr>`
+    ([stage, manual, smash], i) =>
+      `<tr style="border-top:1px solid #e2e8f0;"><td style="padding:14px 16px;font-weight:800;text-transform:uppercase;"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:999px;background:#0F172A;color:#DFFF00;font-size:11px;margin-right:8px;">${i + 1}</span>${escapeHtml(stage)}</td><td style="padding:14px 16px;color:#475569;">${escapeHtml(manual)}</td><td style="padding:14px 16px;font-weight:700;">${escapeHtml(smash)}</td></tr>`
   )
   .join('');
 
@@ -42,6 +42,13 @@ const faqHtml = c.faqs
   .join('');
 
 const trustBadges = c.trustBadges.map((b) => `<span style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-right:18px;">✓ ${escapeHtml(b)}</span>`).join('');
+
+const statBand = c.economicHook.stats
+  .map(
+    (s) =>
+      `<div style="background:#fff;color:#0F172A;border-radius:16px;padding:24px 18px;text-align:center;flex:1;min-width:180px;"><p style="font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:32px;line-height:0.9;margin:0 0 6px;">${escapeHtml(s.value)}</p><p style="font-size:12px;color:#475569;font-weight:600;margin:0;">${escapeHtml(s.label)}</p></div>`
+  )
+  .join('');
 
 const html = `<!DOCTYPE html>
 <html lang="en-AU">
@@ -84,8 +91,13 @@ const html = `<!DOCTYPE html>
     <p style="margin:28px 0;"><a class="cta" href="${CHROME}" rel="nofollow">${escapeHtml(c.hero.primaryCta)}</a><a href="#workflow-demo">${escapeHtml(c.hero.secondaryCta)}</a></p>
     <p style="margin:24px 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">${trustBadges}</p>
     <h2 style="margin-top:56px;font-size:32px;color:#fff;">${escapeHtml(c.economicHook.title)}</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;">${statBand}</div>
     <blockquote style="border-left:4px solid #DFFF00;background:rgba(255,255,255,0.05);padding:16px 20px;margin:20px 0;border-radius:0 12px 12px 0;color:rgba(255,255,255,0.75);"><strong style="color:#fff;">The Operational Overhead Drain:</strong> ${escapeHtml(c.economicHook.body)}</blockquote>
     <table><thead><tr>${c.comparison.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${comparisonRows}</tbody></table>
+    <section style="margin-top:48px;background:#DFFF00;color:#0F172A;padding:28px;border-radius:16px;">
+      <p style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:rgba(15,23,42,0.5);margin:0 0 8px;">${escapeHtml(c.answerStrip.question)}</p>
+      <p style="font-size:20px;font-weight:700;line-height:1.3;margin:0;">${escapeHtml(c.answerStrip.answer)}</p>
+    </section>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:48px 0;">${featureCards}</div>
     <section id="workflow-demo" style="margin-top:56px;"><p style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#DFFF00;font-weight:800;">90-second workflow</p><h2 style="font-size:32px;color:#fff;">${escapeHtml(c.demoVideo.headline)}</h2>
     <p style="color:rgba(255,255,255,0.55);max-width:640px;">${escapeHtml(c.demoVideo.subheadline)}</p>
