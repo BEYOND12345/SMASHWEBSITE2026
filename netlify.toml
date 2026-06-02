@@ -12,6 +12,11 @@
   status = 200
 
 [[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug/index.html"
+  status = 200
+
+[[redirects]]
   from = "/integrations/gmail-quickbooks-estimate-generator"
   to = "/integrations/gmail-quickbooks-estimate-generator/index.html"
   status = 200

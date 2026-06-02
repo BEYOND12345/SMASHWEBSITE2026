@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && npm run generate:pseo-static && vite build && npm run prerender && npm run sitemap",
+    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run sitemap && npm run verify:blog-deploy",
+    "generate:video-blog-static": "node --experimental-strip-types scripts/generate-video-blog-static.ts",
+    "verify:blog-deploy": "node --experimental-strip-types scripts/verify-blog-deploy.ts",
     "generate:gmail-static": "node --experimental-strip-types scripts/generate-gmail-landing-static.ts",
     "generate:smash-leads-static": "node --experimental-strip-types scripts/generate-smash-leads-static.ts",
     "generate:pseo-static": "node --experimental-strip-types scripts/generate-pseo-static.ts",

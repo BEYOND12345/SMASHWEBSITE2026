@@ -2,8 +2,9 @@
 # Static HTML rewrites MUST appear before the SPA catch-all so crawlers get
 # full pre-rendered content (Gmail landings, Smash Leads, pSEO pages).
 
-# Blog posts
+# Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200
+/blog/:slug/          /blog/:slug/index.html   200
 
 # Gmail × accounting SEO landing pages
 /integrations/gmail-quickbooks-estimate-generator    /integrations/gmail-quickbooks-estimate-generator/index.html    200
