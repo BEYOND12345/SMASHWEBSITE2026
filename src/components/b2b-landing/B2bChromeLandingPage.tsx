@@ -46,7 +46,7 @@ export function B2bChromeLandingPage() {
 
   const chromeAppSchema = {
     ...softwareApplicationSchema,
-    name: 'SMASH Invoices for Gmail — B2B AR',
+    name: c.productName,
     operatingSystem: 'Chrome',
     applicationCategory: 'BusinessApplication',
     downloadUrl: c.chromeStoreUrl,
@@ -77,7 +77,7 @@ export function B2bChromeLandingPage() {
       <StructuredData
         data={createVideoSchema({
           name: c.demoVideo.title,
-          description: c.demoVideo.description,
+          description: c.demoVideo.subheadline,
           thumbnailUrl: `https://i.ytimg.com/vi/${c.demoVideo.id}/maxresdefault.jpg`,
           embedUrl: `https://www.youtube.com/embed/${c.demoVideo.id}`,
           uploadDate: c.demoVideo.uploadDate,
@@ -206,9 +206,12 @@ export function B2bChromeLandingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="text-xs font-bold uppercase tracking-widest text-[#1a73e8] text-center mb-3">90-second workflow</p>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center mb-10">
-              See the verification pass in Gmail.
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center mb-4">
+              {c.demoVideo.headline}
             </h2>
+            <p className="font-body text-base text-slate-600 font-medium text-center leading-[1.6] mb-10 max-w-2xl mx-auto">
+              {c.demoVideo.subheadline}
+            </p>
             <div className="relative w-full rounded-xl overflow-hidden border border-slate-200 shadow-lg aspect-video bg-slate-900">
               <iframe
                 className="absolute inset-0 w-full h-full"
