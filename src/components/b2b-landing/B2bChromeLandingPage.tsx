@@ -2,11 +2,11 @@ import { useState } from 'react';
 import {
   Chrome,
   Mail,
-  Shield,
+  ShieldCheck,
   Search,
   UserCheck,
   Cloud,
-  Play,
+  ChevronDown,
 } from 'lucide-react';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
@@ -34,7 +34,7 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
     <div className="border-b border-border last:border-0">
       <button type="button" onClick={onClick} className="w-full flex items-center justify-between py-5 text-left gap-4">
         <span className="text-base font-black text-brand uppercase tracking-tighter leading-[0.88]">{q}</span>
-        <span className="text-accent font-bold text-xl shrink-0">{isOpen ? '−' : '+'}</span>
+        <ChevronDown size={18} className={`shrink-0 text-brand/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && <p className="font-body text-sm text-brand/70 font-medium leading-[1.5] pb-5">{a}</p>}
     </div>
@@ -88,51 +88,52 @@ export function B2bChromeLandingPage() {
       <Nav ctaUrl={c.chromeStoreUrl} ctaLabel="Add to Chrome" />
 
       {/* HERO */}
-      <section className="bg-[#f8f9fa] border-b border-slate-200 pt-16 pb-0 md:pt-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimateIn direction="left">
-              <div className="pb-16 md:pb-20">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-5">
-                  <Mail size={14} className="text-[#1a73e8]" strokeWidth={2.5} />
-                  <span className="text-slate-600 font-bold text-[11px] uppercase tracking-[0.14em]">{c.hero.eyebrow}</span>
+      <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <AnimateIn direction="left" className="lg:col-span-5">
+              <div className="pb-16 md:pb-24">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
+                  <Mail size={13} className="text-accent" strokeWidth={2.5} />
+                  <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.hero.eyebrow}</span>
                 </div>
-                <h1 className="font-sans font-black text-slate-900 leading-[1.05] text-[clamp(28px,4.5vw,44px)] tracking-tight mb-6">
-                  {c.hero.h1}
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[44px] sm:text-[56px] md:text-[64px] mb-7">
+                  <span className="block text-white">{c.hero.h1Lead}</span>
+                  <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
-                <p className="font-body text-base sm:text-lg text-slate-600 font-medium leading-[1.6] mb-8 max-w-xl">
+                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
                   {c.hero.subheadline}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={c.chromeStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-[#1a73e8] text-white font-bold text-sm hover:bg-[#1557b0] transition-colors shadow-sm"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
                   >
-                    <Chrome size={18} strokeWidth={2.5} />
+                    <Chrome size={17} strokeWidth={2.5} />
                     {c.hero.primaryCta}
                   </a>
                   <a
                     href="#workflow-demo"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
                   >
-                    <Play size={16} />
                     {c.hero.secondaryCta}
                   </a>
                 </div>
-                <div className="flex flex-wrap gap-x-5 gap-y-2 pt-6 border-t border-slate-200">
+                <div className="pt-7 mt-8 border-t border-white/10 flex flex-wrap gap-x-5 gap-y-3">
                   {c.trustBadges.map((badge) => (
-                    <span key={badge} className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500">
-                      <Shield size={12} className="text-slate-400" />
+                    <span key={badge} className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/45">
+                      <ShieldCheck size={13} className="text-accent" strokeWidth={2.5} />
                       {badge}
                     </span>
                   ))}
                 </div>
               </div>
             </AnimateIn>
-            <AnimateIn direction="right">
-              <div className="pb-16 md:pb-20 rounded-xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_rgba(0,0,0,0.08)] bg-white">
+            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
+              <div className="md:pb-24 rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10">
                 <HeroVideo />
               </div>
             </AnimateIn>
@@ -141,35 +142,36 @@ export function B2bChromeLandingPage() {
       </section>
 
       {/* ECONOMIC HOOK + COMPARISON */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="bg-surface py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center mb-8">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">The economics</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8 text-center max-w-3xl mx-auto">
               {c.economicHook.title}
             </h2>
-            <blockquote className="border-l-4 border-[#1a73e8] bg-slate-50 rounded-r-xl px-6 py-5 mb-12">
-              <p className="font-body text-base sm:text-lg text-slate-700 font-medium leading-[1.65] m-0">
-                <strong className="text-slate-900">The Operational Overhead Drain:</strong> {c.economicHook.body}
+            <blockquote className="max-w-3xl mx-auto border-l-4 border-accent bg-white rounded-r-2xl px-6 py-5 mb-12 shadow-sm">
+              <p className="font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6] m-0">
+                <strong className="text-brand">The Operational Overhead Drain:</strong> {c.economicHook.body}
               </p>
             </blockquote>
 
-            <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+            <div className="overflow-x-auto rounded-2xl border-2 border-border bg-white">
               <table className="w-full min-w-[640px] border-collapse text-left text-sm">
                 <thead>
-                  <tr className="bg-slate-50 border-b border-slate-200">
+                  <tr className="bg-brand text-white">
                     {c.comparison.headers.map((h) => (
-                      <th key={h} className="px-4 py-3.5 font-bold text-slate-900 text-xs uppercase tracking-wide">
+                      <th key={h} className="px-4 py-4 font-black uppercase tracking-wide text-xs sm:text-sm">
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {c.comparison.rows.map(([stage, manual, smash], i) => (
-                    <tr key={stage} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/80'}>
-                      <td className="px-4 py-4 font-semibold text-slate-900 align-top w-[22%]">{stage}</td>
-                      <td className="px-4 py-4 text-slate-600 align-top">{manual}</td>
-                      <td className="px-4 py-4 text-slate-800 align-top font-medium">{smash}</td>
+                  {c.comparison.rows.map(([stage, manual, smash]) => (
+                    <tr key={stage} className="border-t border-border even:bg-surface/80">
+                      <td className="px-4 py-4 font-black text-brand uppercase tracking-tight align-top w-[22%]">{stage}</td>
+                      <td className="px-4 py-4 text-brand/60 font-medium align-top">{manual}</td>
+                      <td className="px-4 py-4 text-brand font-bold align-top">{smash}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -180,55 +182,61 @@ export function B2bChromeLandingPage() {
       </section>
 
       {/* FEATURE GRID */}
-      <section className="bg-slate-50 py-16 md:py-24 border-y border-slate-200">
+      <section className="bg-brand py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {c.features.map((feature, i) => {
-                const Icon = FEATURE_ICONS[i] ?? Search;
-                return (
-                  <div key={feature.title} className="bg-white rounded-xl border border-slate-200 p-7 shadow-sm">
-                    <div className="w-10 h-10 rounded-lg bg-[#e8f0fe] flex items-center justify-center mb-5">
-                      <Icon size={20} className="text-[#1a73e8]" strokeWidth={2.5} />
-                    </div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-3">{feature.title}</h3>
-                    <p className="font-body text-sm text-slate-600 leading-[1.6] m-0">{feature.body}</p>
-                  </div>
-                );
-              })}
-            </div>
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/40 mb-3 text-center">Verified capabilities</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
+              Less typing. More verifying.
+            </h2>
           </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {c.features.map((feature, i) => {
+              const Icon = FEATURE_ICONS[i] ?? Search;
+              return (
+                <AnimateIn key={feature.title} direction="up" delay={i * 60}>
+                  <div className="bg-white/5 border-2 border-white/10 rounded-3xl p-7 h-full hover:border-accent/40 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-5">
+                      <Icon size={18} className="text-accent" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-lg font-black text-white uppercase tracking-tighter leading-[0.95] mb-3">{feature.title}</h3>
+                    <p className="font-body text-sm text-white/60 font-medium leading-[1.6] m-0">{feature.body}</p>
+                  </div>
+                </AnimateIn>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* 90-SEC DEMO */}
-      <section id="workflow-demo" className="bg-white py-16 md:py-24 scroll-mt-20">
+      <section id="workflow-demo" className="bg-[#0D1117] py-20 md:py-28 scroll-mt-20 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#1a73e8] text-center mb-3">90-second workflow</p>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center mb-4">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">90-second workflow</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4 text-center">
               {c.demoVideo.headline}
             </h2>
-            <p className="font-body text-base text-slate-600 font-medium text-center leading-[1.6] mb-10 max-w-2xl mx-auto">
+            <p className="font-body text-base text-white/55 font-medium text-center leading-[1.6] mb-10 max-w-2xl mx-auto">
               {c.demoVideo.subheadline}
             </p>
-            <div className="relative w-full rounded-xl overflow-hidden border border-slate-200 shadow-lg aspect-video bg-slate-900">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10 aspect-video">
               <iframe
-                className="absolute inset-0 w-full h-full"
+                className="w-full h-full"
                 src={`https://www.youtube.com/embed/${c.demoVideo.id}`}
                 title={c.demoVideo.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
-            <p className="text-center mt-8">
+            <p className="text-center mt-10">
               <a
                 href={c.chromeStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-[#1a73e8] text-white font-bold text-sm hover:bg-[#1557b0] transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
               >
-                <Chrome size={18} />
+                <Chrome size={18} strokeWidth={2.5} />
                 {c.hero.primaryCta}
               </a>
             </p>
@@ -237,11 +245,15 @@ export function B2bChromeLandingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-slate-50 py-16 md:py-20 border-t border-slate-200">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <h2 className="text-2xl font-black text-slate-900 text-center mb-8 uppercase tracking-tight">FAQ</h2>
-            <div className="bg-white rounded-xl border border-slate-200 px-6">
+            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 md:mb-14 text-center">
+              Frequently asked
+              <br />
+              questions
+            </h2>
+            <div className="bg-surface rounded-3xl border-2 border-border px-4 sm:px-8 py-2 sm:py-4">
               {c.faqs.map((faq, i) => (
                 <FAQItem
                   key={faq.q}
@@ -258,22 +270,22 @@ export function B2bChromeLandingPage() {
 
       {/* FOOTER CTA */}
       <section className="bg-brand py-16 md:py-24">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
-            <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.95] mb-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4">
               {c.footerCta.headline}
             </h2>
-            <p className="font-body text-base text-white/65 font-medium leading-[1.55] mb-8">{c.footerCta.subheadline}</p>
+            <p className="font-body text-lg text-white/65 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">{c.footerCta.subheadline}</p>
             <a
               href={c.chromeStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow"
             >
               <Chrome size={18} strokeWidth={2.5} />
               {c.footerCta.primaryCta}
             </a>
-            <p className="font-body text-xs text-white/40 mt-5">{c.footerCta.subtext}</p>
+            <p className="font-body text-sm text-white/35 font-medium mt-5">{c.footerCta.subtext}</p>
           </AnimateIn>
         </div>
       </section>

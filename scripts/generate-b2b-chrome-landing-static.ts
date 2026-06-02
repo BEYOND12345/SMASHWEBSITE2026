@@ -23,25 +23,25 @@ function renderJsonLd(obj: unknown): string {
 const comparisonRows = c.comparison.rows
   .map(
     ([stage, manual, smash]) =>
-      `<tr><td style="padding:12px 16px;font-weight:600;border:1px solid #e2e8f0;">${escapeHtml(stage)}</td><td style="padding:12px 16px;border:1px solid #e2e8f0;color:#475569;">${escapeHtml(manual)}</td><td style="padding:12px 16px;border:1px solid #e2e8f0;">${escapeHtml(smash)}</td></tr>`
+      `<tr style="border-top:1px solid #e2e8f0;"><td style="padding:14px 16px;font-weight:800;text-transform:uppercase;">${escapeHtml(stage)}</td><td style="padding:14px 16px;color:#475569;">${escapeHtml(manual)}</td><td style="padding:14px 16px;font-weight:700;">${escapeHtml(smash)}</td></tr>`
   )
   .join('');
 
 const featureCards = c.features
   .map(
     (f) =>
-      `<div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;"><h3 style="margin:0 0 12px;font-size:18px;color:#0f172a;">${escapeHtml(f.title)}</h3><p style="margin:0;color:#475569;font-size:14px;line-height:1.6;">${escapeHtml(f.body)}</p></div>`
+      `<div class="card"><h3 style="margin:0 0 12px;font-size:22px;color:#fff;">${escapeHtml(f.title)}</h3><p style="margin:0;color:rgba(255,255,255,0.6);font-size:14px;line-height:1.6;">${escapeHtml(f.body)}</p></div>`
   )
   .join('');
 
 const faqHtml = c.faqs
   .map(
     (f) =>
-      `<details style="border-bottom:1px solid #e2e8f0;padding:14px 0;"><summary style="cursor:pointer;font-weight:700;color:#0f172a;">${escapeHtml(f.q)}</summary><p style="color:#475569;margin:12px 0 0;">${escapeHtml(f.a)}</p></details>`
+      `<details style="border-bottom:1px solid rgba(255,255,255,0.12);padding:14px 0;"><summary style="cursor:pointer;font-weight:700;color:#fff;">${escapeHtml(f.q)}</summary><p style="color:rgba(255,255,255,0.6);margin:12px 0 0;">${escapeHtml(f.a)}</p></details>`
   )
   .join('');
 
-const trustBadges = c.trustBadges.map((b) => `<span style="font-size:12px;color:#64748b;margin-right:16px;">✓ ${escapeHtml(b)}</span>`).join('');
+const trustBadges = c.trustBadges.map((b) => `<span style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-right:18px;">✓ ${escapeHtml(b)}</span>`).join('');
 
 const html = `<!DOCTYPE html>
 <html lang="en-AU">
@@ -59,14 +59,16 @@ const html = `<!DOCTYPE html>
   <meta property="og:description" content="${escapeHtml(c.seo.ogDescription)}" />
   <meta property="og:image" content="https://smashinvoices.com/og-default.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#f8f9fa;color:#0f172a;line-height:1.6;}
-    a{color:#1a73e8;}main{max-width:900px;margin:0 auto;padding:32px 24px 64px;}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:#fff;border-bottom:1px solid #e2e8f0;}
-    .cta{display:inline-block;background:#1a73e8;color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;text-decoration:none;margin-right:12px;}
-    table{width:100%;border-collapse:collapse;font-size:14px;margin-top:24px;}
-    th{background:#f1f5f9;padding:12px 16px;text-align:left;border:1px solid #e2e8f0;font-size:12px;text-transform:uppercase;}
+    body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0F172A;color:#fff;line-height:1.6;}
+    h1,h2,h3{font-family:'Barlow Condensed',system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em;line-height:0.9;font-weight:900;}
+    a{color:#DFFF00;}main{max-width:900px;margin:0 auto;padding:32px 24px 64px;}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:#0F172A;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .cta{display:inline-block;background:#DFFF00;color:#0F172A;padding:14px 28px;border-radius:999px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;margin-right:12px;}
+    .card{background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.1);border-radius:24px;padding:24px;}
+    table{width:100%;border-collapse:collapse;font-size:14px;margin-top:24px;background:#fff;color:#0F172A;border-radius:16px;overflow:hidden;}
+    th{background:#0F172A;color:#fff;padding:14px 16px;text-align:left;font-size:12px;text-transform:uppercase;font-weight:800;}
   </style>
   <script type="application/ld+json">${renderJsonLd({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: c.breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: b.url })) })}</script>
   <script type="application/ld+json">${renderJsonLd({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: c.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })}</script>
@@ -76,29 +78,29 @@ const html = `<!DOCTYPE html>
 <body>
   <header class="nav"><a href="/" style="font-weight:800;text-decoration:none;color:#0f172a;">SMASH</a><a class="cta" href="${CHROME}" rel="nofollow">Add to Chrome — Free</a></header>
   <main>
-    <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#64748b;">${escapeHtml(c.hero.eyebrow)}</p>
-    <h1 style="font-size:clamp(28px,5vw,40px);line-height:1.1;margin:12px 0 20px;">${escapeHtml(c.hero.h1)}</h1>
-    <p style="font-size:18px;color:#475569;max-width:640px;">${escapeHtml(c.hero.subheadline)}</p>
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#DFFF00;font-weight:800;">${escapeHtml(c.hero.eyebrow)}</p>
+    <h1 style="font-size:clamp(34px,6vw,64px);margin:12px 0 20px;"><span style="color:#fff;">${escapeHtml(c.hero.h1Lead)}</span> <span style="color:#DFFF00;">${escapeHtml(c.hero.h1Accent)}</span></h1>
+    <p style="font-size:18px;color:rgba(255,255,255,0.7);max-width:640px;">${escapeHtml(c.hero.subheadline)}</p>
     <p style="margin:28px 0;"><a class="cta" href="${CHROME}" rel="nofollow">${escapeHtml(c.hero.primaryCta)}</a><a href="#workflow-demo">${escapeHtml(c.hero.secondaryCta)}</a></p>
-    <p style="margin:24px 0;padding-top:20px;border-top:1px solid #e2e8f0;">${trustBadges}</p>
-    <h2 style="margin-top:48px;font-size:24px;">${escapeHtml(c.economicHook.title)}</h2>
-    <blockquote style="border-left:4px solid #1a73e8;background:#f1f5f9;padding:16px 20px;margin:20px 0;border-radius:0 8px 8px 0;"><strong>The Operational Overhead Drain:</strong> ${escapeHtml(c.economicHook.body)}</blockquote>
+    <p style="margin:24px 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">${trustBadges}</p>
+    <h2 style="margin-top:56px;font-size:32px;color:#fff;">${escapeHtml(c.economicHook.title)}</h2>
+    <blockquote style="border-left:4px solid #DFFF00;background:rgba(255,255,255,0.05);padding:16px 20px;margin:20px 0;border-radius:0 12px 12px 0;color:rgba(255,255,255,0.75);"><strong style="color:#fff;">The Operational Overhead Drain:</strong> ${escapeHtml(c.economicHook.body)}</blockquote>
     <table><thead><tr>${c.comparison.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${comparisonRows}</tbody></table>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:48px 0;">${featureCards}</div>
-    <section id="workflow-demo"><h2 style="font-size:24px;">${escapeHtml(c.demoVideo.headline)}</h2>
-    <p style="color:#475569;max-width:640px;">${escapeHtml(c.demoVideo.subheadline)}</p>
-    <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;margin:20px 0;">
+    <section id="workflow-demo" style="margin-top:56px;"><p style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#DFFF00;font-weight:800;">90-second workflow</p><h2 style="font-size:32px;color:#fff;">${escapeHtml(c.demoVideo.headline)}</h2>
+    <p style="color:rgba(255,255,255,0.55);max-width:640px;">${escapeHtml(c.demoVideo.subheadline)}</p>
+    <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);margin:20px 0;">
       <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/${c.demoVideo.id}" title="${escapeHtml(c.demoVideo.title)}" allowfullscreen loading="lazy"></iframe>
     </div></section>
-    <section style="margin-top:48px;"><h2>FAQ</h2>${faqHtml}</section>
-    <section style="margin-top:56px;background:#0a0a0a;color:#fff;padding:40px 28px;border-radius:16px;text-align:center;">
-      <h2 style="color:#fff;margin:0 0 12px;">${escapeHtml(c.footerCta.headline)}</h2>
+    <section style="margin-top:56px;"><h2 style="font-size:32px;color:#fff;">FAQ</h2>${faqHtml}</section>
+    <section style="margin-top:56px;background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.1);padding:40px 28px;border-radius:24px;text-align:center;">
+      <h2 style="color:#fff;margin:0 0 12px;font-size:36px;">${escapeHtml(c.footerCta.headline)}</h2>
       <p style="color:rgba(255,255,255,0.65);">${escapeHtml(c.footerCta.subheadline)}</p>
-      <p style="margin:24px 0;"><a class="cta" href="${CHROME}" rel="nofollow" style="background:#D9F99D;color:#0a0a0a;">${escapeHtml(c.footerCta.primaryCta)}</a></p>
+      <p style="margin:24px 0;"><a class="cta" href="${CHROME}" rel="nofollow">${escapeHtml(c.footerCta.primaryCta)}</a></p>
       <p style="font-size:12px;color:rgba(255,255,255,0.4);">${escapeHtml(c.footerCta.subtext)}</p>
     </section>
   </main>
-  <footer style="text-align:center;padding:32px;color:#64748b;font-size:14px;"><a href="/">Home</a> · <a href="/chrome-extension">Chrome Extension</a> · <a href="/b2b-gmail-quoting">Quotes &amp; RFQs</a></footer>
+  <footer style="text-align:center;padding:32px;color:rgba(255,255,255,0.4);font-size:14px;"><a href="/">Home</a> · <a href="/chrome-extension">Chrome Extension</a> · <a href="/b2b-gmail-quoting">Quotes &amp; RFQs</a></footer>
 </body>
 </html>`;
 
