@@ -10,6 +10,8 @@
 /integrations/gmail-quickbooks-estimate-generator    /integrations/gmail-quickbooks-estimate-generator/index.html    200
 /integrations/gmail-xero-quote-builder               /integrations/gmail-xero-quote-builder/index.html               200
 /gmail-invoice                                       /gmail-invoice/index.html                                       200
+/xero                                                /xero/index.html                                                  200
+/xero/                                               /xero/index.html                                                  200
 
 # Smash Leads CRM hub (before /:country/alternatives patterns)
 /smash-leads                                         /smash-leads/index.html                                         200

@@ -1,4 +1,4 @@
-export type GmailLandingSlug = 'quickbooks' | 'xero' | 'gmail-invoice';
+export type GmailLandingSlug = 'quickbooks' | 'xero' | 'gmail-invoice' | 'xero-gmail';
 
 export interface GmailLandingStory {
   eyebrow: string;
@@ -400,6 +400,7 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       subcopy: 'Reply with a priced Xero quote from Gmail before the job goes to someone else.',
     },
     relatedPages: [
+      { label: 'Xero Gmail extension (overview)', href: '/xero' },
       { label: 'SMASH for Gmail (overview)', href: '/chrome-extension' },
       { label: 'Gmail + QuickBooks estimates', href: '/integrations/gmail-quickbooks-estimate-generator' },
       { label: 'Gmail invoice extension', href: '/gmail-invoice' },
@@ -573,6 +574,7 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
     },
     relatedPages: [
       { label: 'SMASH for Gmail (full feature page)', href: '/chrome-extension' },
+      { label: 'Xero Gmail extension', href: '/xero' },
       { label: 'Gmail + QuickBooks estimates', href: '/integrations/gmail-quickbooks-estimate-generator' },
       { label: 'Gmail + Xero quotes', href: '/integrations/gmail-xero-quote-builder' },
       { label: 'Voice invoicing on mobile', href: '/voice-invoicing' },
@@ -582,6 +584,178 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       { label: 'QuickBooks Gmail invoice shortcut', href: '/blog/quickbooks-gmail-invoice-shortcut' },
       { label: 'Wave invoicing alternative for Gmail', href: '/blog/wave-invoicing-alternative-gmail' },
       { label: 'Fastest voice invoice generator', href: '/blog/fastest-voice-invoice-generator-gmail' },
+    ],
+  },
+
+  'xero-gmail': {
+    slug: 'xero-gmail',
+    path: '/xero',
+    breadcrumbLabel: 'Xero Gmail Extension',
+    breadcrumbs: [
+      { name: 'Home', url: `${SITE}/` },
+      { name: 'Xero Gmail Extension', url: `${SITE}/xero` },
+    ],
+    seo: {
+      title: 'Xero Gmail Extension — Send Quotes & Invoices From Your Inbox | SMASH',
+      description:
+        'The Xero Gmail extension for freelancers and solo operators. Scan customer emails, build GST-ready quotes and invoices in Gmail, and sync to Xero — no rekeying, no xero.com tab.',
+      keywords:
+        'xero gmail extension, gmail to xero invoice, xero quote from gmail, email to xero quote, xero gmail sidebar, xero chrome extension gmail, smash invoices xero, send invoice from gmail xero',
+      ogTitle: 'SMASH — Xero Gmail Extension (Quotes & Invoices From Your Inbox)',
+      ogDescription:
+        'Stop retyping Gmail enquiries into Xero. From Email and voice-to-quote in the sidebar — sync quotes and invoices to Xero in under 60 seconds.',
+    },
+    hero: {
+      eyebrow: 'Xero Gmail extension',
+      preHeadline: 'YOU LIVE IN GMAIL. XERO IS YOUR LEDGER.',
+      h1White: 'Quote in Gmail.',
+      h1Accent: 'Sync to Xero.',
+      subcopy:
+        'SMASH is a Chrome extension that docks in your Gmail sidebar. Scan the customer’s email or talk the job — get a priced, tax-ready Xero quote or invoice, send from the same thread, and push the finished document to Xero without opening another tab.',
+      strapline:
+        'Built for Xero users who bill from email. OAuth sync to your Xero organisation. QuickBooks supported on the same sidebar.',
+    },
+    answerStrip: {
+      question: 'What is the best Xero Gmail extension?',
+      answer:
+        'SMASH adds a Xero-connected quote and invoice builder inside Gmail. Press From Email to scan the open message, or Start Recording to dictate the job. Line items map to your Xero products and services, tax codes apply automatically, and one click syncs the quote or invoice to Xero while Insert Reply attaches the PDF to your Gmail thread.',
+    },
+    integrationStrap: 'Simple as: read Gmail → build the Xero document → sync to your ledger → send from your inbox.',
+    integrationStrapSub:
+      'Works with Xero and Gmail on desktop Chrome. Need another stack? Email dan@smashinvoices.com.au',
+    youtubeVideoId: 'Aw_9oXMEVME',
+    youtubeTitle: 'Turn Job Requests Into Xero Invoices Without Typing — SMASH Gmail Demo',
+    youtubeDescription:
+      'Watch SMASH scan a customer email in Gmail, price line items from your Xero catalog, and sync a completed invoice to Xero without manual rekeying.',
+    youtubeUploadDate: '2026-01-15',
+    comparison: {
+      title: 'Manual Xero entry vs. SMASH in Gmail',
+      subtitle: 'Why desk-based operators stop opening xero.com for every quote.',
+      headers: ['Step', 'Typical Xero workflow', 'SMASH Xero Gmail extension'],
+      rows: [
+        ['Read customer email', 'Copy-paste into Xero', 'From Email scan in sidebar'],
+        ['Line items & tax', '10–15 min typing', 'Catalog + tax codes auto-applied'],
+        ['Send to client', 'Separate email + PDF export', 'Insert Reply in same Gmail thread'],
+        ['Ledger updated', 'Already in Xero', 'One-click sync — no double entry'],
+      ],
+    },
+    featuredTestimonial: {
+      quote:
+        'Builders email cutting lists. SMASH matches our Xero codes and syncs the quote while I’m still in the thread.',
+      attribution: 'Dawie O. — timber supplier, Queensland',
+    },
+    capabilityEyebrow: 'Xero + Gmail in one sidebar',
+    capabilityTitle: 'Outgoing quotes and invoices — not bill capture.',
+    testimonials: [
+      {
+        quote: 'I haven’t opened Xero on a laptop just to type a quote since I installed SMASH.',
+        name: 'James T.',
+        trade: 'Electrician',
+        city: 'Wellington',
+      },
+      {
+        quote: 'From Email pulls the scope from Gmail. Xero gets the same numbers I would have typed — in seconds.',
+        name: 'Claire M.',
+        trade: 'Commercial cleaner',
+        city: 'Auckland',
+      },
+      {
+        quote: 'Quote chaser follows up before jobs go cold. Xero never reminded me on open quotes.',
+        name: 'Nina K.',
+        trade: 'HVAC contractor',
+        city: 'Melbourne',
+      },
+      {
+        quote: 'Voice on site, From Email at the desk. Both land in the same Xero organisation.',
+        name: 'Marcus L.',
+        trade: 'Handyman',
+        city: 'Sydney',
+      },
+    ],
+    stories: [
+      {
+        eyebrow: 'From Gmail to Xero quote',
+        title: 'Scan it.\nPrice it.\nSync it.',
+        body: 'The customer already wrote the job in Gmail. SMASH extracts quantities, contacts, and scope, maps your Xero items and tax codes, and prepares a quote ready to sync — while you stay in the inbox.',
+        bullets: [
+          ['From Email', 'Structured Xero quote from the open Gmail message.'],
+          ['Live Xero items', 'Products and services synced via OAuth.'],
+          ['Insert Reply', 'Cover letter + PDF in the same thread.'],
+        ],
+      },
+      {
+        eyebrow: 'Voice to Xero lines',
+        title: 'Talk the job.\nSkip the ledger tab.',
+        body: 'Describe labour, materials, and call-out fees out loud. SMASH transcribes, matches your Xero price list, and builds line items with the right GST, VAT, or sales tax — then pushes to Xero when you approve.',
+        bullets: [
+          ['Natural speech', 'Explain the job like you would to the client.'],
+          ['Tax codes', 'Uses your Xero tax settings per line.'],
+          ['Under 60 seconds', 'Review in Gmail, sync, send.'],
+        ],
+        dark: true,
+      },
+      {
+        eyebrow: 'Accepted → invoiced in Xero',
+        title: 'Approve.\nPay.\nReconcile.',
+        body: 'Clients approve quotes from a mobile portal link. Accepted quotes convert to Xero invoices without retyping. Card payments reconcile against the invoice in Xero when the job is done.',
+        bullets: [
+          ['Quote chaser', 'Automated follow-ups on open Xero quotes.'],
+          ['Online accept', 'Client approves before work starts.'],
+          ['Payment sync', 'Stripe payments match your Xero invoice.'],
+        ],
+      },
+    ],
+    capabilities: [
+      { title: 'Xero OAuth sync', body: 'Connect once — quotes and invoices push to your organisation.' },
+      { title: 'Gmail From Email', body: 'Parse enquiries and attachments into Xero line items.' },
+      { title: 'Voice to quote', body: 'Dictate scope; SMASH fills priced Xero rows automatically.' },
+      { title: 'Xero catalog live', body: 'Items, contacts, and tax codes stay current in the sidebar.' },
+      { title: 'Quote or invoice', body: 'Same Gmail workflow for estimates and tax invoices.' },
+      { title: 'Quote chaser', body: 'Follow up on unaccepted quotes — beyond native Xero reminders.' },
+      { title: 'Multi-region tax', body: 'AU, NZ, UK, US, CA — Xero tax codes respected per line.' },
+      { title: 'Hubdoc is AP', body: 'Hubdoc captures bills in — SMASH creates outgoing quotes out.' },
+    ],
+    faqs: [
+      {
+        q: 'Does SMASH replace Xero?',
+        a: 'No. Xero stays your ledger, BAS, and accountant handoff. SMASH is the Gmail sidebar that builds and sends quotes and invoices faster, then syncs the finished record into Xero.',
+      },
+      {
+        q: 'How is SMASH different from Hubdoc or Xero email-to-inbox?',
+        a: 'Hubdoc and Xero inbox tools focus on supplier bills (accounts payable). SMASH creates outgoing client quotes and invoices from Gmail and syncs them to Xero receivables.',
+      },
+      {
+        q: 'Do I need to leave Gmail to sync to Xero?',
+        a: 'No. Build, send, and sync from the Chrome sidebar beside your inbox. Open xero.com only when your accountant needs you to — not for every customer email.',
+      },
+      {
+        q: 'Which Xero plans work with the Gmail extension?',
+        a: 'Any Xero organisation with quoting and invoicing enabled. Connect with OAuth in under a minute.',
+      },
+      {
+        q: 'Can I email the quote from Gmail, not Xero’s blue box?',
+        a: 'Yes. Insert Reply puts a professional cover letter and PDF in your Gmail compose window — sent from your address, not a generic accounting notification.',
+      },
+      {
+        q: 'What does the Xero Gmail extension cost?',
+        a: 'Five quotes or invoices per month free. Unlimited documents and Xero sync from $15/month on Starter.',
+      },
+    ],
+    finalCta: {
+      headline: 'Your inbox is where the job starts.',
+      subcopy: 'Install the Xero Gmail extension and sync the next quote before your competitor replies.',
+    },
+    relatedPages: [
+      { label: 'SMASH for Gmail (full feature page)', href: '/chrome-extension' },
+      { label: 'Gmail invoice extension', href: '/gmail-invoice' },
+      { label: 'Gmail + Xero quote builder', href: '/integrations/gmail-xero-quote-builder' },
+      { label: 'Xero integration hub', href: '/integrations/xero' },
+    ],
+    relatedBlog: [
+      { label: 'Gmail to Xero — no typing', href: '/blog/gmail-to-xero-invoice-no-typing' },
+      { label: 'Xero quote builder for Gmail', href: '/blog/xero-quote-builder-gmail-extension' },
+      { label: 'Gmail email to invoice in 20 seconds', href: '/blog/gmail-email-to-invoice-20-seconds' },
+      { label: 'Is Xero overkill for solo tradies?', href: '/blog/is-xero-overkill-for-solo-tradies' },
     ],
   },
 };

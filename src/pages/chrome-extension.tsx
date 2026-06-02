@@ -599,9 +599,10 @@ export function ChromeExtension() {
             <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter mb-8 text-center">
               Gmail workflows by platform
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { to: '/gmail-invoice', label: 'Gmail invoice extension', desc: 'General email-to-invoice and quoting in Gmail.' },
+                { to: '/xero', label: 'Xero Gmail extension', desc: 'Quotes and invoices from Gmail — sync to Xero.' },
                 { to: '/integrations/gmail-xero-quote-builder', label: 'Gmail + Xero quotes', desc: 'Xero quote builder in your inbox.' },
                 { to: '/integrations/gmail-quickbooks-estimate-generator', label: 'Gmail + QuickBooks estimates', desc: 'QBO estimates without CSV import.' },
               ].map((item) => (

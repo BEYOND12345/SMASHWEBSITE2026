@@ -87,6 +87,7 @@ const GmailXeroQuoteBuilder = lazy(() =>
   import('./pages/gmail-xero-quote-builder').then(m => ({ default: m.GmailXeroQuoteBuilder })),
 );
 const GmailInvoice = lazy(() => import('./pages/gmail-invoice').then(m => ({ default: m.GmailInvoice })));
+const XeroGmail = lazy(() => import('./pages/xero-gmail').then(m => ({ default: m.XeroGmail })));
 const SmashLeadsHub = lazy(() => import('./pages/smash-leads').then(m => ({ default: m.SmashLeadsHub })));
 const SmashLeadsStreakAlternative = lazy(() =>
   import('./pages/smash-leads-streak-alternative').then(m => ({ default: m.SmashLeadsStreakAlternative })),
@@ -201,6 +202,7 @@ function App() {
         <Route path="/integrations/gmail-quickbooks-estimate-generator" element={<GmailQuickBooksEstimateGenerator />} />
         <Route path="/integrations/gmail-xero-quote-builder" element={<GmailXeroQuoteBuilder />} />
         <Route path="/gmail-invoice" element={<GmailInvoice />} />
+        <Route path="/xero" element={<XeroGmail />} />
 
         {/* Smash Leads — Gmail CRM hub & spokes */}
         <Route path="/smash-leads" element={<SmashLeadsHub />} />

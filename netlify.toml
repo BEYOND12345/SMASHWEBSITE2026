@@ -32,6 +32,16 @@
   status = 200
 
 [[redirects]]
+  from = "/xero"
+  to = "/xero/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/xero/"
+  to = "/xero/index.html"
+  status = 200
+
+[[redirects]]
   from = "/smash-leads"
   to = "/smash-leads/index.html"
   status = 200
