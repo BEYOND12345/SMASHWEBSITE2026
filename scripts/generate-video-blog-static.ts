@@ -13,6 +13,7 @@ const scripts = [
   'scripts/generate-wave-invoicing-post.ts',
   'scripts/generate-photographer-post.ts',
   'scripts/generate-shorts-post.ts',
+  'scripts/generate-quickbooks-gmail-shortcut-post.ts',
 ];
 
 for (const script of scripts) {
