@@ -238,7 +238,7 @@ const posts: Post[] = [
 {
   slug: 'quickbooks-estimates-from-gmail',
   title: 'How to Create QuickBooks Estimates From Gmail — Without the 5-Tab Nightmare',
-  meta_title: 'Create QuickBooks Estimates From Gmail in 60 Seconds | SMASH',
+  meta_title: 'QuickBooks CSV Import Blocked? Gmail Estimate Workaround | SMASH Blog',
   meta_description: 'QuickBooks Online blocks CSV estimate imports across all tiers. SMASH bypasses this — scan a customer email in Gmail and push a complete QBO estimate in under 60 seconds.',
   excerpt: "QuickBooks Online has a native blocker on importing estimates. No CSV, no Excel, no IIF — across every tier including Advanced. Here's the workaround that actually works.",
   primary_keyword: 'create quickbooks estimates from gmail',

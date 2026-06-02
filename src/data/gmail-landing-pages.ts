@@ -233,10 +233,10 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       { label: 'QuickBooks integration hub', href: '/integrations/quickbooks' },
     ],
     relatedBlog: [
+      { label: 'QuickBooks Gmail invoice shortcut (video demo)', href: '/blog/quickbooks-gmail-invoice-shortcut' },
       { label: 'Create QuickBooks estimates from Gmail', href: '/blog/quickbooks-estimates-from-gmail' },
       { label: 'Stop juggling tabs — QBO sidebar', href: '/blog/quickbooks-gmail-sidebar-tab-switching' },
       { label: 'QBO Chrome extension gap', href: '/blog/quickbooks-gmail-chrome-extension-missing' },
-      { label: 'Gmail to QBO bridge', href: '/blog/gmail-quickbooks-xero-bridge' },
     ],
   },
 
@@ -579,9 +579,9 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
     ],
     relatedBlog: [
       { label: 'Gmail email to invoice in 20 seconds', href: '/blog/gmail-email-to-invoice-20-seconds' },
+      { label: 'QuickBooks Gmail invoice shortcut', href: '/blog/quickbooks-gmail-invoice-shortcut' },
+      { label: 'Wave invoicing alternative for Gmail', href: '/blog/wave-invoicing-alternative-gmail' },
       { label: 'Fastest voice invoice generator', href: '/blog/fastest-voice-invoice-generator-gmail' },
-      { label: 'Photographer quote from Gmail', href: '/blog/photographer-wedding-quote-gmail-60-seconds' },
-      { label: 'Fastest way to send an invoice', href: '/blog/fastest-way-to-send-invoice-2026' },
     ],
   },
 };

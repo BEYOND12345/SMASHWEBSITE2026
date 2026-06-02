@@ -12,6 +12,7 @@ import {
   Zap,
   RotateCcw,
   FileText,
+  Play,
 } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
@@ -24,6 +25,34 @@ import { hreflangAlternates } from '../data/country-data';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
 
 const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+
+/** YouTube cluster demos — links to blog posts (embed + VideoObject live there). */
+const clusterDemos = [
+  {
+    cluster: 'Competitor defection',
+    label: 'Wave invoicing alternative',
+    desc: 'Free tier lost automation? See the Gmail shortcut demo — skip the $19/mo Pro plan.',
+    to: '/blog/wave-invoicing-alternative-gmail',
+    thumb: 'https://i.ytimg.com/vi/MNXprMhipJw/hqdefault.jpg',
+    thumbAlt: 'Wave invoicing alternative Gmail demo',
+  },
+  {
+    cluster: 'Integration friction',
+    label: 'QuickBooks Gmail shortcut',
+    desc: 'Stop paying for QBO bloat. Voice + From Email billing in under 10 seconds from your inbox.',
+    to: '/blog/quickbooks-gmail-invoice-shortcut',
+    thumb: 'https://i.ytimg.com/vi/1DYbkEkx2ko/hqdefault.jpg',
+    thumbAlt: 'QuickBooks Gmail invoice shortcut desktop demo',
+  },
+  {
+    cluster: 'Speed to bill',
+    label: 'Email to invoice in 20 seconds',
+    desc: 'Scan the job request, price from your catalog, send — without leaving the Gmail thread.',
+    to: '/blog/gmail-email-to-invoice-20-seconds',
+    thumb: 'https://i.ytimg.com/vi/uNL733tYTf0/hqdefault.jpg',
+    thumbAlt: 'Turn Gmail email into sent invoice demo',
+  },
+] as const;
 
 const faqs = [
   {
@@ -513,6 +542,53 @@ export function ChromeExtension() {
             </p>
             <p className="font-body text-brand/50 text-sm">Marcus W. — plumber, Byron Bay</p>
           </blockquote>
+        </div>
+      </section>
+
+      {/* ─── YOUTUBE CLUSTER DEMOS ───────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24 border-y border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-body text-xs font-black uppercase tracking-[0.2em] text-brand/40 text-center mb-3">
+              High-intent walkthroughs
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter mb-3 text-center">
+              Fix your workflow — watch the demo
+            </h2>
+            <p className="font-body text-sm text-brand/55 font-medium text-center max-w-2xl mx-auto mb-10">
+              Raw desktop captures for freelancers and solo operators hitting paywalls, broken integrations, or inbox admin drag.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {clusterDemos.map((demo) => (
+                <Link
+                  key={demo.to}
+                  to={demo.to}
+                  className="group block rounded-2xl border-2 border-border bg-surface overflow-hidden hover:border-accent transition-colors"
+                >
+                  <div className="relative aspect-video bg-brand/5">
+                    <img
+                      src={demo.thumb}
+                      alt={demo.thumbAlt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-brand/20 group-hover:bg-brand/30 transition-colors">
+                      <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent text-brand">
+                        <Play size={20} className="ml-0.5" fill="currentColor" strokeWidth={0} />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <p className="font-body text-[10px] font-black uppercase tracking-[0.18em] text-accent mb-2">
+                      {demo.cluster}
+                    </p>
+                    <p className="font-black text-brand uppercase tracking-tight mb-2 leading-tight">{demo.label}</p>
+                    <p className="font-body text-sm text-brand/60 font-medium leading-snug">{demo.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
