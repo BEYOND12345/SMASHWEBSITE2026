@@ -42,6 +42,16 @@
   status = 200
 
 [[redirects]]
+  from = "/b2b-gmail-quoting"
+  to = "/b2b-gmail-quoting/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/b2b-gmail-quoting/"
+  to = "/b2b-gmail-quoting/index.html"
+  status = 200
+
+[[redirects]]
   from = "/smash-leads"
   to = "/smash-leads/index.html"
   status = 200
