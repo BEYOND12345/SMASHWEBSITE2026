@@ -41,7 +41,17 @@
   to = "/xero/index.html"
   status = 200
 
-# /b2b-gmail-quoting is a full React route (parity with /chrome-extension) — no static shadow.
+[[redirects]]
+  from = "/b2b-gmail-quoting"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/b2b-gmail-quoting/"
+  to = "/index.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/smash-leads"

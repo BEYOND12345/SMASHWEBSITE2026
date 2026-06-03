@@ -12,7 +12,11 @@
 /gmail-invoice                                       /gmail-invoice/index.html                                       200
 /xero                                                /xero/index.html                                                  200
 /xero/                                               /xero/index.html                                                  200
-# /b2b-gmail-quoting is a full React route (parity with /chrome-extension) — no static shadow.
+
+# Full React route (parity with /chrome-extension). Force this to the SPA shell
+# so stale static output can never shadow the animated hero.
+/b2b-gmail-quoting                                   /index.html                                                       200!
+/b2b-gmail-quoting/                                  /index.html                                                       200!
 
 # Smash Leads CRM hub (before /:country/alternatives patterns)
 /smash-leads                                         /smash-leads/index.html                                         200
