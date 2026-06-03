@@ -94,17 +94,24 @@ export function B2bChromeLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="pb-16 md:pb-24">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-4">
                   <Mail size={13} className="text-accent" strokeWidth={2.5} />
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.hero.eyebrow}</span>
                 </div>
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[44px] sm:text-[56px] md:text-[64px] mb-7">
-                  <span className="block text-white">{c.hero.h1Lead}</span>
+
+                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">
+                  {c.hero.preHeadline}
+                </p>
+
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
+                  <span className="block text-white">{c.hero.h1White}</span>
                   <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
+
                 <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
                   {c.hero.subheadline}
                 </p>
+
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={c.chromeStoreUrl}
@@ -122,22 +129,28 @@ export function B2bChromeLandingPage() {
                     {c.hero.secondaryCta}
                   </a>
                 </div>
-                <div className="pt-7 mt-8 border-t border-white/10 flex flex-wrap gap-x-5 gap-y-3">
+
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-5 mb-8">
                   {c.trustBadges.map((badge) => (
-                    <span key={badge} className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/45">
-                      <ShieldCheck size={13} className="text-accent" strokeWidth={2.5} />
+                    <span key={badge} className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-white/45">
+                      <ShieldCheck size={12} className="text-accent" strokeWidth={2.5} />
                       {badge}
                     </span>
                   ))}
                 </div>
+
+                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+                  <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30">Works with</span>
+                  <img src="/brand-logos.png" alt="Works with Xero, QuickBooks and Gmail" className="h-14 sm:h-16 w-auto" />
+                </div>
               </div>
             </AnimateIn>
-            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-105 lg:translate-x-6">
+
+            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
               <div className="md:pb-24">
-                <B2bRfqMockup />
-                <p className="text-center font-body text-xs text-white/30 font-medium italic mt-4">
-                  Live parse: four catalog matches, one line flagged for a verification pass.
-                </p>
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10 relative">
+                  <B2bRfqMockup />
+                </div>
               </div>
             </AnimateIn>
           </div>

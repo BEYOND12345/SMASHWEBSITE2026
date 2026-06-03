@@ -17,8 +17,9 @@ export const B2B_CHROME_LANDING = {
   hero: {
     eyebrow: 'SMASH Quotes & RFQs for Gmail',
     h1: 'Turn a 15-Minute RFQ Grind into a 5-Second Verification Pass.',
-    h1Lead: 'Turn a 15-minute RFQ grind into a',
-    h1Accent: '5-second verification pass.',
+    preHeadline: 'Turn a 15-minute RFQ grind',
+    h1White: 'into a 5-second',
+    h1Accent: 'verification pass.',
     subheadline:
       'The Chrome sidebar built for B2B distributors and wholesale AR desks. Match messy customer RFQs to your catalog with description fuzzy-matching, turn raw email into a structured draft in under 60 seconds, and verify flagged lines without leaving Gmail.',
     primaryCta: 'Add to Chrome — It’s Free',

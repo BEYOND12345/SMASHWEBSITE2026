@@ -86,7 +86,8 @@ const html = `<!DOCTYPE html>
   <header class="nav"><a href="/" style="font-weight:800;text-decoration:none;color:#0f172a;">SMASH</a><a class="cta" href="${CHROME}" rel="nofollow">Add to Chrome — Free</a></header>
   <main>
     <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:#DFFF00;font-weight:800;">${escapeHtml(c.hero.eyebrow)}</p>
-    <h1 style="font-size:clamp(34px,6vw,64px);margin:12px 0 20px;"><span style="color:#fff;">${escapeHtml(c.hero.h1Lead)}</span> <span style="color:#DFFF00;">${escapeHtml(c.hero.h1Accent)}</span></h1>
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.6);font-size:22px;margin:14px 0 6px;">${escapeHtml(c.hero.preHeadline)}</p>
+    <h1 style="font-size:clamp(40px,7vw,80px);margin:0 0 20px;"><span style="display:block;color:#fff;">${escapeHtml(c.hero.h1White)}</span><span style="display:block;color:#DFFF00;">${escapeHtml(c.hero.h1Accent)}</span></h1>
     <p style="font-size:18px;color:rgba(255,255,255,0.7);max-width:640px;">${escapeHtml(c.hero.subheadline)}</p>
     <p style="margin:28px 0;"><a class="cta" href="${CHROME}" rel="nofollow">${escapeHtml(c.hero.primaryCta)}</a><a href="#workflow-demo">${escapeHtml(c.hero.secondaryCta)}</a></p>
     <p style="margin:24px 0;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">${trustBadges}</p>
