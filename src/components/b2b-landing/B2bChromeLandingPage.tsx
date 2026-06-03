@@ -8,7 +8,7 @@ import {
   Cloud,
   ChevronDown,
 } from 'lucide-react';
-import { B2bRfqMockup } from './B2bRfqMockup';
+import { HeroVideo } from '../gmail-sidebar-mockups';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -149,7 +149,7 @@ export function B2bChromeLandingPage() {
             <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
               <div className="md:pb-24">
                 <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10 relative">
-                  <B2bRfqMockup />
+                  <HeroVideo />
                 </div>
               </div>
             </AnimateIn>
