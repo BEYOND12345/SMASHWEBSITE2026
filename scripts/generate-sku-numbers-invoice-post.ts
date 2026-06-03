@@ -101,7 +101,7 @@ const publishedAt = '2026-06-03T00:00:00.000Z';
 const title = 'How to Add SKU Numbers to an Invoice From a Customer Parts List';
 const metaTitle = 'How to Add SKU Numbers to an Invoice From a Parts List | SMASH';
 const metaDescription =
-  'Learn how to turn a messy customer parts list or purchase order into an itemized, SKU-matched invoice draft from Gmail without rebuilding rows in QuickBooks or Xero.';
+  'Step-by-step guide to adding SKU numbers to an invoice from a messy parts list or purchase order. See how SMASH matches item descriptions to SKUs inside Gmail.';
 const keywords =
   'how to add sku numbers to invoice, add sku to invoice, convert purchase order to invoice, parts and labor invoice template, sku matching invoice, itemized invoice from parts list, gmail invoice extension, b2b quoting software';
 
@@ -110,6 +110,11 @@ const faqData = [
     question: 'How do I add SKU numbers to an invoice?',
     answer:
       'Start with a catalog or price sheet that maps product descriptions to SKU numbers, prices, and units. Then match each customer-requested item to the correct catalog row before creating the invoice. SMASH speeds this up inside Gmail by parsing the customer email, matching descriptions to your uploaded catalog, and building the itemized draft for review.',
+  },
+  {
+    question: 'What fields should a SKU invoice include?',
+    answer:
+      'A SKU invoice should include SKU number, item description, quantity, unit of measure, unit price, tax treatment, line total, and any separate labor, freight, handling, or service rows.',
   },
   {
     question: 'Can I convert a purchase order to an invoice from Gmail?',
@@ -134,11 +139,11 @@ const faqData = [
 ];
 
 const keyTakeaways = [
-  'The fastest SKU invoice workflow starts with the customer email, PO, or parts list - not a blank invoice screen.',
-  'Customers rarely type perfect SKUs. Description fuzzy-matching plus human verification is safer than SKU-only matching.',
-  'The goal is not zero oversight. The goal is to turn manual data entry into a fast verification pass.',
+  'To add SKU numbers to an invoice, map each customer-requested item to a controlled catalog row before sending.',
+  'A strong SKU invoice includes SKU, description, quantity, unit, unit price, tax, line total, and separate labor or freight rows.',
+  'Customers rarely send perfect SKU numbers. Description fuzzy-matching plus human verification is safer than SKU-only matching.',
+  'The fastest workflow starts from the customer email, RFQ, or purchase order - not a blank invoice screen.',
   'SMASH is built for B2B distributors and AR desks using Gmail, Xero, and QuickBooks Online.',
-  'A good parts-and-labor invoice keeps SKU, description, quantity, unit price, labor, and totals visible in separate rows.',
 ];
 
 const content = `If a customer emails a parts list like this:
@@ -153,19 +158,22 @@ That is where most B2B invoicing time disappears. Not in the final invoice PDF. 
 
 This guide shows how to add SKU numbers to an invoice from a customer parts list without rebuilding every line by hand.
 
-## Watch: SKU Matching From Gmail to Invoice Draft
+## Short Answer: How to Add SKU Numbers to an Invoice
 
-<div class="video-embed">
-  <iframe
-    src="https://www.youtube.com/embed/${VIDEO_ID}"
-    title="How to add SKU numbers to an invoice from a customer parts list - SMASH"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
+To add SKU numbers to an invoice, you need to match every requested item against a controlled product catalog before the invoice is sent. Each invoice row should include the **SKU**, **plain-English description**, **quantity**, **unit of measure**, **unit price**, **tax treatment**, and **line total**.
 
-In the video, SMASH takes a customer item list inside Gmail, matches the descriptions against a catalog, flags uncertain rows, and turns the request into a structured draft. It is the same workflow B2B distributors use when a purchase order, RFQ, or "can you price this up?" email lands in the inbox.
+The problem is not the invoice layout. The problem is the matching step.
+
+When a customer writes "blue pipe, the 100 metre roll," your team has to decide which live catalog item that means. If they choose the wrong row, the invoice may still look professional, but the SKU, price, stock unit, or margin can be wrong.
+
+That is why the safest SKU invoice workflow is:
+
+1. Start from the customer email, RFQ, or purchase order.
+2. Extract each requested line item.
+3. Match the description to your catalog or price sheet.
+4. Pull the SKU, unit price, and unit of measure from the catalog.
+5. Flag uncertain matches before sending.
+6. Send or sync the verified invoice draft.
 
 ## Why SKU Invoicing Breaks Down
 
@@ -194,6 +202,23 @@ Your team then has to search the catalog, guess the product, check the price, co
 
 That is inventory pricing leakage: not dramatic, just a few wrong rows, old prices, or forgotten add-ons across hundreds of emails.
 
+## What a SKU Invoice Should Include
+
+A useful SKU invoice is not just a normal invoice with a product code squeezed into the description field. It should expose the information your customer, warehouse, and accounting system all need to agree on.
+
+| Field | Why it matters |
+| --- | --- |
+| SKU number | Connects the invoice row to the exact product in your catalog |
+| Item description | Gives the customer a readable version of what they ordered |
+| Quantity | Shows how many units, boxes, metres, or rolls are being billed |
+| Unit of measure | Prevents confusion between each, box, metre, roll, hour, or job |
+| Unit price | Shows the current controlled price for that SKU |
+| Line total | Makes the row auditable before the invoice is approved |
+| Tax / GST | Keeps the invoice compliant for accounting |
+| Labor, freight, handling | Keeps non-inventory charges separate from SKU stock rows |
+
+For a B2B distributor, this is where the invoice becomes more than a payment request. It becomes a clean record of exactly what was ordered, priced, and shipped.
+
 ## The Manual Way to Add SKU Numbers to an Invoice
 
 The old workflow usually looks like this:
@@ -208,7 +233,7 @@ The old workflow usually looks like this:
 
 That is fine for one invoice. It is painful when your AR or operations desk is doing it all morning.
 
-## The SMASH Way: Description Match First, SKU Second
+## The Better Workflow: Description Match First, SKU Second
 
 The better workflow is not "force every customer to type a perfect SKU."
 
@@ -251,6 +276,66 @@ That structure matters because parts and labor behave differently:
 
 SMASH does not remove your judgment. It removes the repetitive lookup and row-building.
 
+## Step-by-Step: From Customer Parts List to SKU-Matched Invoice
+
+Here is the practical workflow shown in the video, translated into an invoice process.
+
+### 1. Open the customer thread in Gmail
+
+Start where the request actually lives. Most SKU matching problems begin in an email, not in accounting software.
+
+The customer may send a written list, a rough RFQ, a forwarded purchase order, or a message like "same valves as last time." Keep that context visible while you build the draft.
+
+### 2. Parse the item list
+
+Pull each requested item into its own candidate row. Do not combine separate products into one description just because the customer wrote them in one paragraph.
+
+For example:
+
+- "20 x 15mm copper elbows" becomes one row.
+- "5 brass ball valves" becomes one row.
+- "100m blue PEX pipe" becomes one row.
+- "usual mixed fittings" becomes a low-confidence row.
+
+### 3. Match each description to the catalog
+
+This is the high-value step. A good matching workflow looks at the customer wording and maps it to your controlled catalog row.
+
+For example:
+
+| Customer wording | Catalog match | SKU |
+| --- | --- | --- |
+| 15mm copper elbows | 90 degree copper elbow, 15mm | CU-ELB-15-90 |
+| brass ball valves, 1 inch | Brass ball valve, 1 inch | BV-BRASS-1IN |
+| 100m blue PEX pipe | PEX-B pipe roll, blue, 100m | PEXB-BLUE-100M |
+| usual mixed fittings | Needs verification | Flagged |
+
+The customer does not need to know your exact SKU format. Your internal system does.
+
+### 4. Verify low-confidence rows
+
+Do not auto-send uncertain lines. If a phrase is vague, outdated, or customer-specific, it should be highlighted for review.
+
+Examples that should trigger a check:
+
+- "usual fittings"
+- "same as last order"
+- "large roll"
+- "standard valve"
+- "the cheaper one"
+
+That is the difference between useful automation and risky automation. SMASH is designed to make the review faster, not invisible.
+
+### 5. Add labor, freight, or handling separately
+
+Parts and labor should not be smashed into one vague line. If you charge picking, packing, delivery, installation, service labor, or handling, keep those rows separate.
+
+This makes the invoice easier to approve, easier to sync, and easier to audit later.
+
+### 6. Push the verified draft to your accounting system
+
+Once the rows are right, you can send the quote or invoice and sync the completed document to Xero or QuickBooks Online. The accounting system gets structured data instead of a manually rebuilt guess.
+
 ## Convert Purchase Order to Invoice Without ERP Complexity
 
 Large ERP systems can do SKU matching, but they are often too heavy for independent distributors, trade suppliers, and office teams that mostly live in Gmail.
@@ -267,6 +352,22 @@ SMASH handles that first-pass structure in the Gmail sidebar, then your team ver
 
 That is the difference between automation theatre and a usable AR workflow: the software does the grunt work, and the human keeps control.
 
+## SKU Matching vs SKU-Only Matching
+
+It sounds safer to demand exact SKUs from every customer. In practice, that often slows the sale down.
+
+Customers write what they know. They use trade shorthand, supplier nicknames, old product names, photos, previous-order language, and partial descriptions. If your workflow only accepts perfect SKUs, your team still ends up translating the request manually.
+
+Description matching solves the real inbox problem:
+
+| Approach | What happens |
+| --- | --- |
+| SKU-only matching | Fast when the customer knows the exact code, brittle when they do not |
+| Manual search | Flexible but slow, with high typo and stale-price risk |
+| Description matching + verification | Fast first pass, controlled catalog pricing, human review on uncertain rows |
+
+For B2B quoting and invoicing, the third option is usually the most practical.
+
 ## When You Should Not Auto-Match SKUs Blindly
 
 SKU matching can go wrong when:
@@ -278,6 +379,21 @@ SKU matching can go wrong when:
 - The line says "same as last time" but the last order had substitutions.
 
 That is why the SMASH workflow is a verification pass, not a black box. Low-confidence rows should stand out before the quote or invoice leaves your business.
+
+## Checklist Before You Send a SKU Invoice
+
+Before sending the final invoice, check:
+
+- Every customer-requested item has a matching row.
+- Every inventory row has a SKU.
+- Quantities and units match the customer request.
+- Current catalog prices are used.
+- Labor, freight, delivery, or handling are separate rows.
+- Ambiguous items are reviewed by a person.
+- Tax/GST treatment is correct.
+- The customer can understand the plain-English descriptions.
+
+That checklist is the real goal. The software should get you there faster.
 
 ## Related Reading
 
@@ -358,6 +474,18 @@ const schemas = [
 ];
 
 const contentHtml = (marked.parse(content) as string).replace(/<h1>/g, '<h2>').replace(/<\/h1>/g, '</h2>');
+const videoLeadHtml = `<section aria-label="SKU matching video walkthrough">
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube.com/embed/${VIDEO_ID}"
+      title="How to add SKU numbers to an invoice from a customer parts list - SMASH"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+  <p style="color:rgba(255,255,255,0.72);font-size:16px;margin:0 0 34px;">Watch the desktop workflow first: a customer parts list in Gmail becomes a structured, SKU-matched draft with uncertain rows flagged for verification.</p>
+</section>`;
 const takeawaysHtml = `<aside class="takeaways"><h2>Key Takeaways</h2><ul>${keyTakeaways.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}</ul></aside>`;
 const faqHtml = `<section class="faq"><h2>Frequently Asked Questions</h2>${faqData.map((f) => `<details><summary>${escapeHtml(f.question)}</summary><p>${escapeHtml(f.answer)}</p></details>`).join('')}</section>`;
 
@@ -414,6 +542,7 @@ ${schemas.map((s) => `  <script type="application/ld+json">${renderJsonLd(s)}</s
       </div>
     </header>
 
+    ${videoLeadHtml}
     ${takeawaysHtml}
     <div class="prose">${contentHtml}</div>
     ${faqHtml}
