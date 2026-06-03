@@ -79,11 +79,11 @@ export const B2B_CHROME_LANDING = {
     },
   ],
   demoVideo: {
-    id: 'S3O2qjwfDiw',
-    title: 'SMASH — QuickBooks estimates from Gmail (90-second workflow)',
+    id: 'M4zQQeICeyE',
+    title: 'SMASH Quotes & RFQs for Gmail — B2B workflow demo',
     headline: 'See the verification pass in Gmail.',
     subheadline:
-      'Same workflow for Xero or QuickBooks Online — this walkthrough uses QuickBooks. Watch a multi-line RFQ become a verified estimate draft without retyping.',
+      'Watch a multi-line RFQ become a verified quote draft without retyping. Built for B2B teams running Gmail, Xero, and QuickBooks Online.',
     uploadDate: '2026-01-15',
   },
   footerCta: {
