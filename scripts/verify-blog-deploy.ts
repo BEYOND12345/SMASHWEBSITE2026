@@ -14,6 +14,7 @@ const priorityPosts: { slug: string; label: string }[] = [
   { slug: 'photographer-wedding-quote-gmail-60-seconds', label: 'Photographer wedding quote' },
   { slug: 'fastest-voice-invoice-generator-gmail', label: 'Fastest voice invoice' },
   { slug: 'quickbooks-gmail-invoice-shortcut', label: 'QuickBooks Gmail shortcut' },
+  { slug: 'how-to-add-sku-numbers-to-invoice', label: 'SKU numbers invoice' },
 ];
 
 const videoPosts: { slug: string }[] = [

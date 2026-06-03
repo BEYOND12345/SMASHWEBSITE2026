@@ -14,6 +14,7 @@ const scripts = [
   'scripts/generate-photographer-post.ts',
   'scripts/generate-shorts-post.ts',
   'scripts/generate-quickbooks-gmail-shortcut-post.ts',
+  'scripts/generate-sku-numbers-invoice-post.ts',
 ];
 
 for (const script of scripts) {

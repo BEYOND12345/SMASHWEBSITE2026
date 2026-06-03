@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Add SKU Numbers to an Invoice From a Parts List | SMASH</title>
+  <meta name="description" content="Learn how to turn a messy customer parts list or purchase order into an itemized, SKU-matched invoice draft from Gmail without rebuilding rows in QuickBooks or Xero.">
+  <meta name="keywords" content="how to add sku numbers to invoice, add sku to invoice, convert purchase order to invoice, parts and labor invoice template, sku matching invoice, itemized invoice from parts list, gmail invoice extension, b2b quoting software">
+  <meta name="author" content="Dan Neale">
+  <link rel="canonical" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate" hreflang="x-default" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="alternate" hreflang="en-AU" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="alternate" hreflang="en-NZ" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="alternate" hreflang="en-GB" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="alternate" hreflang="en-US" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <link rel="alternate" hreflang="en-CA" href="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:site_name" content="SMASH Invoices"><meta property="og:type" content="article">
+  <meta property="og:title" content="How to Add SKU Numbers to an Invoice From a Parts List | SMASH">
+  <meta property="og:description" content="Learn how to turn a messy customer parts list or purchase order into an itemized, SKU-matched invoice draft from Gmail without rebuilding rows in QuickBooks or Xero.">
+  <meta property="og:url" content="https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice"><meta property="og:image" content="https://i.ytimg.com/vi/M4zQQeICeyE/maxresdefault.jpg">
+  <meta property="og:locale" content="en_AU"><meta property="article:published_time" content="2026-06-03T00:00:00.000Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Add SKU Numbers to an Invoice From a Parts List | SMASH">
+  <meta name="twitter:description" content="Learn how to turn a messy customer parts list or purchase order into an itemized, SKU-matched invoice draft from Gmail without rebuilding rows in QuickBooks or Xero.">
+  <meta name="twitter:image" content="https://i.ytimg.com/vi/M4zQQeICeyE/maxresdefault.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0A0A0A;--bg-soft:#111;--surface:rgba(255,255,255,0.04);--surface-strong:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--text-muted:rgba(255,255,255,0.65);--text-dim:rgba(255,255,255,0.45);--accent:#D9F99D;--accent-ink:#0A0A0A;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+    img{max-width:100%;height:auto;display:block;}
+    .container{max-width:780px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
+    .nav-links{display:none;gap:28px;}
+    .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
+    .nav-links a:hover{color:#fff;text-decoration:none;}
+    .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;}
+    .nav-cta:hover{filter:brightness(0.95);text-decoration:none;}
+    @media(min-width:860px){.nav-links{display:flex;}}
+    main{padding:48px 0 64px;}
+    .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:14px;font-weight:600;margin-bottom:28px;}
+    h1.post-title{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,5.5vw,60px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 20px;color:#fff;text-transform:uppercase;}
+    .post-meta{display:flex;flex-wrap:wrap;gap:14px 22px;color:var(--text-muted);font-size:14px;font-weight:500;margin-bottom:28px;}
+    .post-meta span{display:inline-flex;align-items:center;gap:6px;}
+    .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin:0 0 40px;}
+    .takeaways h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 12px;color:var(--accent);}
+    .takeaways ul{margin:0;padding-left:20px;}
+    .takeaways li{margin:6px 0;color:var(--text);}
+    .prose h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,34px);line-height:1.12;letter-spacing:-0.01em;margin:48px 0 16px;color:#fff;text-transform:uppercase;}
+    .prose h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:23px;margin:32px 0 12px;color:#fff;text-transform:uppercase;}
+    .prose p{margin:0 0 18px;color:rgba(255,255,255,0.85);}
+    .prose ul,.prose ol{margin:0 0 18px;padding-left:22px;}
+    .prose li{margin:8px 0;color:rgba(255,255,255,0.85);}
+    .prose strong{color:#fff;}
+    .prose blockquote{margin:24px 0;padding:12px 20px;border-left:3px solid var(--accent);background:var(--surface);color:rgba(255,255,255,0.85);border-radius:0 10px 10px 0;}
+    .prose table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+    .prose th{background:var(--surface-strong);color:#fff;font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+    .prose td{padding:10px 14px;border:1px solid var(--border);color:rgba(255,255,255,0.8);vertical-align:top;}
+    .prose tr:nth-child(even) td{background:var(--surface);}
+    .video-embed{position:relative;padding-bottom:56.25%;height:0;margin:28px 0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);box-shadow:0 0 60px rgba(217,249,157,0.06);}
+    .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+    .callout{margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;}
+    .callout p:first-child{font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;}
+    .callout p{color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;}
+    .callout a,.cta-btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;}
+    .faq{margin:56px 0 0;}
+    .faq h2{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.8vw,34px);margin:0 0 20px;color:#fff;text-transform:uppercase;}
+    .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:10px;}
+    .faq summary{cursor:pointer;font-weight:600;color:#fff;font-size:16px;list-style:none;}
+    .faq summary::-webkit-details-marker{display:none;}
+    .faq summary::after{content:'+';float:right;color:var(--accent);font-weight:700;}
+    .faq details[open] summary::after{content:'-';}
+    .faq details[open] summary{margin-bottom:8px;}
+    .faq p{color:var(--text-muted);margin:8px 0 0;}
+    .cta-card{margin:56px 0 0;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.25);border-radius:20px;padding:32px;text-align:center;}
+    .cta-card h3{font-family:'Barlow Condensed',system-ui,sans-serif;font-size:30px;font-weight:800;margin:0 0 10px;color:#fff;text-transform:uppercase;}
+    .cta-card p{color:var(--text-muted);margin:0 0 20px;}
+    .author-card{margin:48px 0 0;padding:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:15px;}
+    .author-card strong{color:#fff;}
+    footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
+    footer a{color:var(--text-muted);margin:0 10px;}
+    footer a:hover{color:#fff;text-decoration:none;}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Add SKU Numbers to an Invoice From a Customer Parts List","description":"Learn how to turn a messy customer parts list or purchase order into an itemized, SKU-matched invoice draft from Gmail without rebuilding rows in QuickBooks or Xero.","image":"https://i.ytimg.com/vi/M4zQQeICeyE/maxresdefault.jpg","datePublished":"2026-06-03T00:00:00.000Z","dateModified":"2026-06-03T00:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice"},"keywords":"how to add sku numbers to invoice, add sku to invoice, convert purchase order to invoice, parts and labor invoice template, sku matching invoice, itemized invoice from parts list, gmail invoice extension, b2b quoting software","inLanguage":"en-AU"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"How to Add SKU Numbers to an Invoice From a Customer Parts List","item":"https://smashinvoices.com/blog/how-to-add-sku-numbers-to-invoice"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"How to add SKU numbers to an invoice from a customer parts list","description":"Desktop Gmail walkthrough: parse a customer parts list, match descriptions to SKU rows, verify low-confidence items, and create a structured quote or invoice draft with SMASH.","thumbnailUrl":"https://i.ytimg.com/vi/M4zQQeICeyE/maxresdefault.jpg","uploadDate":"2026-06-03T00:00:00+10:00","contentUrl":"https://www.youtube.com/watch?v=M4zQQeICeyE","embedUrl":"https://www.youtube.com/embed/M4zQQeICeyE","publisher":{"@type":"Organization","name":"SMASH Invoices","url":"https://smashinvoices.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Quotes & RFQs for Gmail","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/b2b-gmail-quoting","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add SKU numbers to an invoice?","acceptedAnswer":{"@type":"Answer","text":"Start with a catalog or price sheet that maps product descriptions to SKU numbers, prices, and units. Then match each customer-requested item to the correct catalog row before creating the invoice. SMASH speeds this up inside Gmail by parsing the customer email, matching descriptions to your uploaded catalog, and building the itemized draft for review."}},{"@type":"Question","name":"Can I convert a purchase order to an invoice from Gmail?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the purchase order or parts list is in a Gmail thread, SMASH can read the line items, match them to your catalog, and prepare a quote or invoice draft that you verify before sending or syncing to Xero or QuickBooks Online."}},{"@type":"Question","name":"Do customers need to write exact SKUs?","acceptedAnswer":{"@type":"Answer","text":"No. The safer workflow is description matching with human verification. Customers often write shorthand, old part names, or messy descriptions. SMASH fuzzy-matches those descriptions to your catalog and flags uncertain rows for review."}},{"@type":"Question","name":"What is a parts and labor invoice template?","acceptedAnswer":{"@type":"Answer","text":"A parts and labor invoice template separates inventory items, quantities, SKUs, unit prices, and labor charges into clear rows. This helps customers verify the order and helps your accounting system track what was sold."}},{"@type":"Question","name":"Does SKU matching prevent pricing leakage?","acceptedAnswer":{"@type":"Answer","text":"It helps. When staff manually retype part names and prices, old rates and near-miss products can slip through. Matching against a controlled catalog keeps the draft closer to your current price sheet, while human review catches low-confidence lines."}}]}</script>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner">
+    <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
+    <div class="nav-links">
+      <a href="/features">Features</a><a href="/pricing">Pricing</a>
+      <a href="/chrome-extension">Chrome Extension</a><a href="/blog">Blog</a>
+    </div>
+    <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="nav-cta" rel="nofollow">Add to Chrome - Free</a>
+  </div></nav>
+
+  <main><article class="container">
+    <a href="/blog" class="back-link">← All Articles</a>
+    <header>
+      <h1 class="post-title">How to Add SKU Numbers to an Invoice From a Customer Parts List</h1>
+      <div class="post-meta">
+        <span>By Dan Neale</span>
+        <span><time datetime="2026-06-03T00:00:00.000Z">3 June 2026</time></span>
+        <span>8 min read</span>
+      </div>
+    </header>
+
+    <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>The fastest SKU invoice workflow starts with the customer email, PO, or parts list - not a blank invoice screen.</li><li>Customers rarely type perfect SKUs. Description fuzzy-matching plus human verification is safer than SKU-only matching.</li><li>The goal is not zero oversight. The goal is to turn manual data entry into a fast verification pass.</li><li>SMASH is built for B2B distributors and AR desks using Gmail, Xero, and QuickBooks Online.</li><li>A good parts-and-labor invoice keeps SKU, description, quantity, unit price, labor, and totals visible in separate rows.</li></ul></aside>
+    <div class="prose"><p>If a customer emails a parts list like this:</p>
+<blockquote>
+<p>&quot;Can you quote 20 x 15mm copper elbows, 5 brass ball valves, 100m blue PEX pipe, and the usual mixed fittings?&quot;</p>
+</blockquote>
+<p>...you have two jobs.</p>
+<p>First, understand what they meant. Second, turn that messy request into an itemized invoice or quote with the right <strong>SKU numbers, quantities, and current prices</strong>.</p>
+<p>That is where most B2B invoicing time disappears. Not in the final invoice PDF. In the translation step between customer language and your catalog.</p>
+<p>This guide shows how to add SKU numbers to an invoice from a customer parts list without rebuilding every line by hand.</p>
+<h2>Watch: SKU Matching From Gmail to Invoice Draft</h2>
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube.com/embed/M4zQQeICeyE"
+    title="How to add SKU numbers to an invoice from a customer parts list - SMASH"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div><p>In the video, SMASH takes a customer item list inside Gmail, matches the descriptions against a catalog, flags uncertain rows, and turns the request into a structured draft. It is the same workflow B2B distributors use when a purchase order, RFQ, or &quot;can you price this up?&quot; email lands in the inbox.</p>
+<h2>Why SKU Invoicing Breaks Down</h2>
+<p>Most invoicing tools assume the data is already clean.</p>
+<p>They give you fields like:</p>
+<ul>
+<li>SKU</li>
+<li>Description</li>
+<li>Quantity</li>
+<li>Unit price</li>
+<li>Tax</li>
+<li>Total</li>
+</ul>
+<p>That is fine once you know the exact product. It does not help when the customer writes the request in their own language.</p>
+<p>Real inbox requests look more like:</p>
+<ul>
+<li>&quot;15 mil elbows&quot;</li>
+<li>&quot;blue pipe, the 100 metre roll&quot;</li>
+<li>&quot;same valves as last time&quot;</li>
+<li>&quot;the fittings bundle&quot;</li>
+<li>&quot;PO attached - convert to invoice&quot;</li>
+</ul>
+<p>Your team then has to search the catalog, guess the product, check the price, copy the row into Xero or QuickBooks, and hope nothing changed since the last order.</p>
+<p>That is inventory pricing leakage: not dramatic, just a few wrong rows, old prices, or forgotten add-ons across hundreds of emails.</p>
+<h2>The Manual Way to Add SKU Numbers to an Invoice</h2>
+<p>The old workflow usually looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Manual action</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Read the request</td>
+<td>Scan the email, PO, or customer item list</td>
+<td>Miss a line or misunderstand shorthand</td>
+</tr>
+<tr>
+<td>2. Search the catalog</td>
+<td>Look up each item in a spreadsheet or inventory tool</td>
+<td>Pick the wrong near-match</td>
+</tr>
+<tr>
+<td>3. Copy SKU and price</td>
+<td>Rebuild rows in QuickBooks, Xero, or a template</td>
+<td>Structural typos and stale pricing</td>
+</tr>
+<tr>
+<td>4. Add labor or freight</td>
+<td>Manually add handling, labor, delivery, or call-out rows</td>
+<td>Forgotten margin</td>
+</tr>
+<tr>
+<td>5. Send for approval</td>
+<td>Attach or sync the final document</td>
+<td>More tab-switching</td>
+</tr>
+</tbody></table>
+<p>That is fine for one invoice. It is painful when your AR or operations desk is doing it all morning.</p>
+<h2>The SMASH Way: Description Match First, SKU Second</h2>
+<p>The better workflow is not &quot;force every customer to type a perfect SKU.&quot;</p>
+<p>The better workflow is:</p>
+<ol>
+<li>Let the customer write naturally.</li>
+<li>Parse the email or purchase order.</li>
+<li>Match descriptions to your catalog.</li>
+<li>Pull the SKU, price, and unit from your controlled price sheet.</li>
+<li>Flag uncertain lines for human verification.</li>
+<li>Push the verified draft into your accounting workflow.</li>
+</ol>
+<p>That is what SMASH is built for inside Gmail.</p>
+<p>The sidebar reads the open customer thread, compares the item descriptions against your uploaded price sheet, and builds the draft while your team stays in the inbox. If a line is ambiguous, it does not pretend to be magic. It flags the row so a person can check it.</p>
+<div class="callout">
+  <p>Messy parts list in. SKU-matched draft out.</p>
+  <p>Install SMASH for Gmail and turn item lookup into a verification pass.</p>
+  <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow">Add SMASH to Chrome - Free</a>
+</div><h2>Example: Parts and Labor Invoice Rows</h2>
+<p>A clean parts-and-labor invoice should separate the customer&#39;s request into rows your customer and accountant can both understand:</p>
+<table>
+<thead>
+<tr>
+<th>Invoice row</th>
+<th>SKU</th>
+<th>Description</th>
+<th>Quantity</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>CU-ELB-15-90</td>
+<td>90 degree copper elbow, 15mm</td>
+<td>20</td>
+<td>Part</td>
+</tr>
+<tr>
+<td>2</td>
+<td>BV-BRASS-1IN</td>
+<td>Brass ball valve, 1 inch</td>
+<td>5</td>
+<td>Part</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PEXB-BLUE-100M</td>
+<td>PEX-B pipe roll, blue</td>
+<td>1</td>
+<td>Part</td>
+</tr>
+<tr>
+<td>4</td>
+<td>LAB-PICK-PACK</td>
+<td>Pick, pack, and order handling</td>
+<td>1</td>
+<td>Labor/service</td>
+</tr>
+</tbody></table>
+<p>That structure matters because parts and labor behave differently:</p>
+<ul>
+<li>Parts need SKU, inventory, and pricing control.</li>
+<li>Labor needs time, rate, or service-package control.</li>
+<li>Freight and handling often need their own margin.</li>
+<li>Ambiguous customer language needs review before sending.</li>
+</ul>
+<p>SMASH does not remove your judgment. It removes the repetitive lookup and row-building.</p>
+<h2>Convert Purchase Order to Invoice Without ERP Complexity</h2>
+<p>Large ERP systems can do SKU matching, but they are often too heavy for independent distributors, trade suppliers, and office teams that mostly live in Gmail.</p>
+<p>If your customer sends a PO by email, the bottleneck is usually not accounting. It is extraction:</p>
+<ul>
+<li>Which lines are actually products?</li>
+<li>Which products map to live SKUs?</li>
+<li>Are the quantities units, boxes, metres, or rolls?</li>
+<li>Is labor, delivery, or handling missing?</li>
+<li>Which rows are low confidence?</li>
+</ul>
+<p>SMASH handles that first-pass structure in the Gmail sidebar, then your team verifies the draft before pushing it into Xero or QuickBooks Online.</p>
+<p>That is the difference between automation theatre and a usable AR workflow: the software does the grunt work, and the human keeps control.</p>
+<h2>When You Should Not Auto-Match SKUs Blindly</h2>
+<p>SKU matching can go wrong when:</p>
+<ul>
+<li>Customer terminology is outdated.</li>
+<li>Two products have similar names.</li>
+<li>A supplier changed packaging units.</li>
+<li>Pricing differs by customer, region, or contract.</li>
+<li>The line says &quot;same as last time&quot; but the last order had substitutions.</li>
+</ul>
+<p>That is why the SMASH workflow is a verification pass, not a black box. Low-confidence rows should stand out before the quote or invoice leaves your business.</p>
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/b2b-gmail-quoting">B2B Gmail quoting for AR teams</a> - RFQ to verified draft in Gmail</li>
+<li><a href="/chrome-extension">SMASH Chrome extension</a> - the full Gmail sidebar workflow</li>
+<li><a href="/gmail-invoice">Gmail invoice extension overview</a> - invoice from Gmail without tab switching</li>
+<li><a href="/integrations/gmail-xero-quote-builder">Gmail + Xero quote builder</a> - push quote drafts to Xero</li>
+<li><a href="/integrations/gmail-quickbooks-estimate-generator">Gmail + QuickBooks estimates</a> - build estimates from Gmail</li>
+</ul>
+</div>
+    <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>How do I add SKU numbers to an invoice?</summary><p>Start with a catalog or price sheet that maps product descriptions to SKU numbers, prices, and units. Then match each customer-requested item to the correct catalog row before creating the invoice. SMASH speeds this up inside Gmail by parsing the customer email, matching descriptions to your uploaded catalog, and building the itemized draft for review.</p></details><details><summary>Can I convert a purchase order to an invoice from Gmail?</summary><p>Yes. If the purchase order or parts list is in a Gmail thread, SMASH can read the line items, match them to your catalog, and prepare a quote or invoice draft that you verify before sending or syncing to Xero or QuickBooks Online.</p></details><details><summary>Do customers need to write exact SKUs?</summary><p>No. The safer workflow is description matching with human verification. Customers often write shorthand, old part names, or messy descriptions. SMASH fuzzy-matches those descriptions to your catalog and flags uncertain rows for review.</p></details><details><summary>What is a parts and labor invoice template?</summary><p>A parts and labor invoice template separates inventory items, quantities, SKUs, unit prices, and labor charges into clear rows. This helps customers verify the order and helps your accounting system track what was sold.</p></details><details><summary>Does SKU matching prevent pricing leakage?</summary><p>It helps. When staff manually retype part names and prices, old rates and near-miss products can slip through. Matching against a controlled catalog keeps the draft closer to your current price sheet, while human review catches low-confidence lines.</p></details></section>
+
+    <aside class="cta-card">
+      <h3>Turn messy parts lists into SKU-matched drafts</h3>
+      <p>SMASH lives in Gmail, matches customer descriptions to your catalog, and flags uncertain rows before you send.</p>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome - Free</a>
+    </aside>
+
+    <div class="author-card">
+      <strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH to kill the data-entry grind between customer emails, quotes, invoices, and accounting software.
+    </div>
+  </article></main>
+
+  <footer>
+    <div>
+      <a href="/">Home</a><a href="/blog">Blog</a><a href="/chrome-extension">Chrome Extension</a>
+      <a href="/b2b-gmail-quoting">B2B Gmail Quoting</a><a href="/pricing">Pricing</a><a href="/features">Features</a>
+      <a href="/gmail-invoice">Gmail Invoice</a>
+      <a href="/integrations/gmail-xero-quote-builder">Xero</a><a href="/integrations/gmail-quickbooks-estimate-generator">QuickBooks</a>
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+    </div>
+    <div style="margin-top:14px;">Live in <a href="/">Australia</a>, <a href="/nz">New Zealand</a>, <a href="/uk">UK</a>, <a href="/us">US</a> and <a href="/ca">Canada</a></div>
+    <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
+  </footer>
+</body></html>
