@@ -28,11 +28,6 @@
       "status": 200
     },
     {
-      "src": "^/b2b-gmail-quoting/?$",
-      "dest": "/b2b-gmail-quoting/index.html",
-      "status": 200
-    },
-    {
       "src": "^/smash-leads/?$",
       "dest": "/smash-leads/index.html",
       "status": 200
