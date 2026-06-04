@@ -127,14 +127,10 @@ export function B2bChromeLandingPage() {
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.hero.eyebrow}</span>
                 </div>
 
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.92] text-[38px] sm:text-[48px] md:text-[54px] mb-6">
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.92] text-[38px] sm:text-[48px] md:text-[54px] mb-8">
                   <span className="block text-white">{c.hero.h1Lead}</span>
                   <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
-
-                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-7 max-w-lg">
-                  {c.hero.subheadline}
-                </p>
 
                 <div className="flex flex-col gap-2.5 mb-8">
                   {c.hero.valueBullets.map((bullet) => (
