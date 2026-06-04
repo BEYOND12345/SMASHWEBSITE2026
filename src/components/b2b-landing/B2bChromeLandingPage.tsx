@@ -119,15 +119,15 @@ export function B2bChromeLandingPage() {
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10 items-center">
             <AnimateIn direction="left" className="lg:col-span-5">
-              <div className="pb-16 md:pb-24">
+              <div className="pb-12 md:pb-24">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                   <Mail size={13} className="text-accent" strokeWidth={2.5} />
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.hero.eyebrow}</span>
                 </div>
 
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.9] text-[44px] sm:text-[56px] md:text-[64px] mb-7">
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.92] text-[38px] sm:text-[48px] md:text-[54px] mb-6">
                   <span className="block text-white">{c.hero.h1Lead}</span>
                   <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
@@ -181,9 +181,9 @@ export function B2bChromeLandingPage() {
               </div>
             </AnimateIn>
 
-            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
-              <div className="md:pb-24">
-                <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(200,255,0,0.15)] border border-white/10 relative">
+            <AnimateIn direction="right" className="lg:col-span-7">
+              <div className="md:pb-24 lg:translate-x-3">
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_90px_rgba(200,255,0,0.18)] border border-white/10 relative [&>div]:max-w-none">
                   <HeroVideo />
                 </div>
               </div>
