@@ -28,7 +28,6 @@ export const B2B_CHROME_LANDING = {
     valueBulletsTail: 'In seconds. Right inside Gmail.',
     primaryCta: 'Add to Chrome — It’s Free',
     secondaryCta: 'Watch the Demo',
-    videoId: '83YnPyBr6sc',
   },
   trustBadges: ['Works with Gmail', 'Secured via OAuth', 'Xero Verified', 'QuickBooks Certified'],
   statement: {
