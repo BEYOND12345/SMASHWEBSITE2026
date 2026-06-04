@@ -351,7 +351,7 @@ export function B2bChromeLandingPage() {
               {c.pricing.title}
             </h2>
           </AnimateIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch max-w-3xl mx-auto">
             {c.pricing.plans.map((plan, i) => {
               const featured = 'featured' in plan && plan.featured;
               return (

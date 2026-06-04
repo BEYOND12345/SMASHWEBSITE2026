@@ -149,12 +149,6 @@ export const B2B_CHROME_LANDING = {
         body: 'Plans start at $14.99 AUD per month. At that price, recovering just two hours of admin re-keying per month completely covers the cost. Most users save that in their first afternoon.',
         featured: true,
       },
-      {
-        name: 'Founding Member',
-        price: 'Lifetime',
-        priceNote: 'Limited licenses',
-        body: 'Ask about our early-bird Lifetime Licenses to permanently lock in standalone features or accounting sync tools with zero recurring monthly fees.',
-      },
     ],
   },
   demoVideo: {
