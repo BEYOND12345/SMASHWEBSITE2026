@@ -302,7 +302,10 @@ export function B2bChromeLandingPage() {
                 allowFullScreen
               />
             </div>
-            <p className="text-center mt-10">
+            <p className="font-body text-base sm:text-lg text-brand/70 font-medium text-center leading-[1.6] mt-8 max-w-2xl mx-auto">
+              {c.demoVideo.caption}
+            </p>
+            <p className="text-center mt-7">
               <a
                 href={c.chromeStoreUrl}
                 target="_blank"

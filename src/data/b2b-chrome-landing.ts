@@ -30,9 +30,9 @@ export const B2B_CHROME_LANDING = {
   trustBadges: ['Works with Gmail', 'Secured via OAuth', 'Xero Verified', 'QuickBooks Certified'],
   statement: {
     eyebrow: 'Why SMASH',
-    lead: 'Turn an attached PDF purchase order, a raw customer email, or a quick voice note into a priced, professional document',
-    leadAccent: 'in under 60 seconds — without switching a single tab.',
-    body: 'Most billing and order-processing tools force you to leave your inbox, download attachments, and copy-paste every line by hand. SMASH lives cleanly inside your Gmail sidebar — whether you send five quotes a week or run a distribution desk handling hundreds, the time saved compounds fast.',
+    lead: 'Most billing and order-processing tools force you to leave your inbox, download attachments, open another platform, and copy-paste every line by hand.',
+    leadAccent: 'SMASH lives cleanly inside your Gmail sidebar.',
+    body: 'Whether you send five quotes a week or run a distribution desk handling hundreds, the time saved compounds fast — your data-entry workflow drops from an agonizing manual grind into a quick verification pass.',
     stats: [
       { value: 'Under 60s', label: 'PDF, email or voice → priced document' },
       { value: '80% less', label: 'Manual data entry per order' },
@@ -165,6 +165,8 @@ export const B2B_CHROME_LANDING = {
     headline: 'See an order go from inbox to invoice.',
     subheadline:
       'Watch a PDF purchase order, customer email, or voice note become a priced, matched document — without leaving Gmail or retyping a line.',
+    caption:
+      'Turn an attached PDF purchase order, a raw customer email, or a quick voice note into a priced, professional document in under 60 seconds — without switching a single tab.',
     uploadDate: '2026-01-15',
   },
   footerCta: {
