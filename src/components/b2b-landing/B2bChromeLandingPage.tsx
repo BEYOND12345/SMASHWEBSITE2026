@@ -200,6 +200,33 @@ export function B2bChromeLandingPage() {
         </div>
       </section>
 
+      {/* WHY / STATEMENT */}
+      <section className="bg-brand border-t border-white/10 py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[760px] h-[420px] bg-accent/[0.06] rounded-full blur-[150px] pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent mb-7 text-center">{c.statement.eyebrow}</p>
+            <p className="font-body font-semibold text-xl sm:text-2xl md:text-[30px] leading-[1.35] text-center max-w-3xl mx-auto mb-6">
+              <span className="text-white/85">{c.statement.lead} </span>
+              <span className="text-accent">{c.statement.leadAccent}</span>
+            </p>
+            <p className="font-body text-base sm:text-lg text-white/55 font-medium leading-[1.6] text-center max-w-2xl mx-auto mb-14">
+              {c.statement.body}
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 rounded-3xl overflow-hidden border-2 border-white/10">
+            {c.statement.stats.map((stat, i) => (
+              <AnimateIn key={stat.label} direction="up" delay={i * 70} className="h-full">
+                <div className="bg-brand h-full px-6 py-9 text-center">
+                  <p className="font-sans font-black uppercase tracking-tighter leading-[0.9] text-4xl sm:text-5xl text-accent tabular-nums mb-2.5">{stat.value}</p>
+                  <p className="font-body text-sm text-white/55 font-semibold leading-[1.4]">{stat.label}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* DUAL-MODE ARCHITECTURE */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">

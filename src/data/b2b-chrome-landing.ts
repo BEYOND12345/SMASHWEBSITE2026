@@ -19,7 +19,7 @@ export const B2B_CHROME_LANDING = {
     h1Lead: 'You’re already in Gmail.',
     h1Accent: 'Your quotes and invoices should be too.',
     subheadline:
-      'Most billing and order-processing tools force you to leave your inbox, download attachments, open another platform, copy-paste lines manually, and burn hours of your day. SMASH lives cleanly inside your Gmail sidebar, turning an attached PDF purchase order, a raw customer email, or a quick voice note into a priced, professional document in under 60 seconds — without switching a single tab. Whether you are an independent operator sending 5 quotes a week or a busy distribution desk handling hundreds, the time saved compounds fast. Your data-entry workflow drops from an agonizing manual grind into a 10-second verification pass.',
+      'Turn an attached PDF purchase order, a raw customer email, or a quick voice note into a priced, professional document in under 60 seconds — without switching a single tab.',
     valueBullets: [
       { from: 'PDF POs & RFQs', to: 'Quotes & Invoices' },
       { from: 'Customer Emails', to: 'Invoices' },
@@ -31,6 +31,17 @@ export const B2B_CHROME_LANDING = {
     videoId: '83YnPyBr6sc',
   },
   trustBadges: ['Works with Gmail', 'Secured via OAuth', 'Xero Verified', 'QuickBooks Certified'],
+  statement: {
+    eyebrow: 'Why SMASH',
+    lead: 'Most billing and order-processing tools force you to leave your inbox, download attachments, open another platform, and copy-paste every line by hand.',
+    leadAccent: 'SMASH lives cleanly inside your Gmail sidebar.',
+    body: 'Whether you send five quotes a week or run a distribution desk handling hundreds, the time saved compounds fast — your data-entry workflow drops from an agonizing manual grind into a quick verification pass.',
+    stats: [
+      { value: 'Under 60s', label: 'PDF, email or voice → priced document' },
+      { value: '80% less', label: 'Manual data entry per order' },
+      { value: '10-sec', label: 'Verification pass, not a full retype' },
+    ],
+  },
   dualMode: {
     eyebrow: 'Dual-mode architecture',
     title: 'One tool. Two core workflows.',
