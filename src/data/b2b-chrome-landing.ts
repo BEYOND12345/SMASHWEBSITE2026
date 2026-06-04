@@ -5,21 +5,21 @@ export const B2B_CHROME_LANDING = {
   chromeStoreUrl:
     'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel?utm_source=b2b-outreach&utm_medium=landing&utm_campaign=b2b-gmail-quoting',
   seo: {
-    title: 'SMASH for Gmail — Turn POs, Emails & Voice into Invoices | B2B Order Processing',
+    title: 'SMASH for Gmail — Turn POs, Emails & Voice into Quotes & Invoices',
     description:
-      'Process customer orders without leaving Gmail. SMASH turns attached PDF purchase orders, raw customer emails, or a quick voice note into priced quotes and invoices in under 60 seconds. Works fully standalone, or syncs to Xero and QuickBooks Online.',
+      'Send quotes and invoices without leaving Gmail. SMASH turns attached PDF purchase orders, raw customer emails, or a quick voice note into priced, professional documents in under 60 seconds. Works fully standalone, or syncs to Xero and QuickBooks Online.',
     keywords:
-      'gmail order processing, pdf purchase order to invoice, b2b invoicing chrome extension, sku matching gmail, standalone invoicing tool, wholesale distributor quoting, xero quickbooks gmail sidebar, rfq to quote, stripe invoice payments',
-    ogTitle: 'You’re already in Gmail. Your customer orders should be too.',
+      'gmail invoicing, pdf purchase order to invoice, b2b quoting chrome extension, fuzzy description matching, standalone invoicing tool, wave invoicing alternative, wholesale distributor quoting, xero quickbooks gmail sidebar, rfq to quote, stripe invoice payments',
+    ogTitle: 'You’re already in Gmail. Your quotes and invoices should be too.',
     ogDescription:
-      'SMASH lives in your Gmail sidebar and turns PDF POs, customer emails, and voice notes into priced, professional documents in under 60 seconds — standalone, or synced to Xero and QuickBooks Online.',
+      'SMASH lives in your Gmail sidebar and turns PDF POs, customer emails, and voice notes into priced quotes and invoices in under 60 seconds — standalone, or synced to Xero and QuickBooks Online.',
   },
   hero: {
-    eyebrow: 'SMASH for Gmail — B2B Order Processing',
+    eyebrow: 'SMASH for Gmail — Quotes, Invoices & Orders',
     h1Lead: 'You’re already in Gmail.',
-    h1Accent: 'Your customer orders should be too.',
+    h1Accent: 'Your quotes and invoices should be too.',
     subheadline:
-      'Most order processing tools force you to leave your inbox, download attachments, open another ledger, and copy-paste lines manually. SMASH lives cleanly inside your Gmail sidebar, turning an attached PDF purchase order, raw customer email, or quick voice note into a priced, professional document in under 60 seconds — without switching a single tab.',
+      'Most billing and order-processing tools force you to leave your inbox, download attachments, open another platform, copy-paste lines manually, and burn hours of your day. SMASH lives cleanly inside your Gmail sidebar, turning an attached PDF purchase order, a raw customer email, or a quick voice note into a priced, professional document in under 60 seconds — without switching a single tab. Whether you are an independent operator sending 5 quotes a week or a busy distribution desk handling hundreds, the time saved compounds fast. Your data-entry workflow drops from an agonizing manual grind into a 10-second verification pass.',
     valueBullets: [
       { from: 'PDF POs & RFQs', to: 'Quotes & Invoices' },
       { from: 'Customer Emails', to: 'Invoices' },
@@ -34,16 +34,17 @@ export const B2B_CHROME_LANDING = {
   dualMode: {
     eyebrow: 'Dual-mode architecture',
     title: 'One tool. Two core workflows.',
+    intro: 'SMASH is uniquely engineered to adapt entirely to how you run your business:',
     columns: [
       {
         tag: 'Standalone',
         title: 'The Complete Standalone System',
-        body: 'Don’t want to connect heavy accounting platforms just to process your daily wholesale order pipeline? SMASH works 100% independently. It acts as your full billing infrastructure with a built-in inventory catalog database, automated taxes, professional PDFs, read receipts, and direct Stripe card processing.',
+        body: 'Don’t want to pay $30 to $50 a month for heavy accounting software just to send client invoices? SMASH works 100% independently. It acts as your full billing infrastructure with a built-in catalog database, automated taxes, professional PDFs, read receipts, and direct Stripe card processing.',
       },
       {
         tag: 'Connected Ingestion',
         title: 'The Ingestion Power-Tool',
-        body: 'Already run your distribution business on Xero or QuickBooks Online? SMASH acts as a high-powered background automation layer. It extracts the client’s PDF order details, matches raw line items to your live accounting SKUs, drafts the invoice, and pushes it to your ledger in one click.',
+        body: 'Already run your business on Xero or QuickBooks Online? SMASH acts as a high-powered background automation layer. It extracts customer order details, uses smart fuzzy-matching to pair job requests with your live accounting SKUs, drafts the invoice, and pushes it to your ledger in one click.',
       },
     ],
   },
@@ -52,24 +53,24 @@ export const B2B_CHROME_LANDING = {
     title: 'What SMASH solves',
     items: [
       {
-        title: '10-Second PDF & SKU Ingestion Engine',
-        body: 'You are acting as a human API connector, retyping information that is already sitting right in a PDF attachment. SMASH reads incoming PDF purchase orders, extracts customer data, and uses an intelligent matching engine to instantly cross-reference raw vendor text against your preloaded inventory codes or personal catalog. No manual typing, no looking up SKUs, and zero catastrophic typos.',
+        title: '10-Second Ingestion & Matching Engine',
+        body: 'You are acting as a human API connector, retyping information that is already sitting right on your screen. SMASH reads incoming text and attached PDFs natively inside your browser, using description fuzzy-matching to pair sloppy customer text with your pricing catalog without needing rigid part numbers. Low-confidence lines are flagged for quick human verification, cutting manual data entry by 80% while keeping you completely in control.',
       },
       {
-        title: 'Escape Subscription Paywall Fatigue',
-        body: 'You shouldn’t have to rent expensive enterprise resource platforms just to quote a customer or process an order. If you are escaping rising cloud software costs, SMASH gives you a beautiful, independent order-processing setup natively inside your inbox for zero recurring platform bloat.',
+        title: 'Subscription paywall fatigue is real.',
+        body: 'You shouldn’t have to rent expensive enterprise platforms just to bill a client or quote a job. If you are escaping rising software paywalls (like Wave’s platform changes), SMASH gives you a beautiful, independent billing setup natively inside your inbox for zero recurring platform bloat.',
       },
       {
-        title: 'Real-Time Document Tracking',
-        body: 'You don’t know if the buyer even opened the quote or invoice. Every document sent via SMASH comes with real-time read receipts. You see exactly when they opened it — no more chasing blind or wondering if your mail hit their company’s spam folder.',
+        title: 'You don’t know if the customer even opened the document.',
+        body: 'Every invoice and quote sent via SMASH comes with real-time read receipts. You see exactly when they opened it — no more chasing blind or wondering if your mail hit the company’s spam folder.',
       },
       {
-        title: 'Frictionless Digital Sign-off & Payments',
-        body: 'Getting trade approval and getting paid takes too long. Commercial clients receive a clean, live link where they can review the sales quote, approve it with a click, and pay securely by card via Stripe instantly. No printing, no phone calls, and no waiting around on manual bank transfers.',
+        title: 'Getting approval and getting paid takes too long.',
+        body: 'Clients receive a clean, live link where they can review the quote, approve it with a click, and pay securely by card via Stripe instantly. No printing, no phone calls, and no waiting around on manual bank transfers.',
       },
       {
-        title: 'Instant Ledger Synchronization',
-        body: 'Your books are never current because double-entry is a pain. If you use legacy software, a single click pushes the completed invoice straight to Xero or QuickBooks. Your ledger stays perfectly updated without your admin team ever opening a financial dashboard.',
+        title: 'Your books are never current because double-entry is a pain.',
+        body: 'If you use legacy workflows, a single click pushes the completed document straight to Xero or QuickBooks Online via secure OAuth pipelines. Your ledger stays perfectly updated without your admin team ever opening a financial dashboard.',
       },
     ],
   },
@@ -86,7 +87,7 @@ export const B2B_CHROME_LANDING = {
         body: 'Instantly reads attached PDF Purchase Orders or RFQs in Chrome, transforming messy text lines into branded, itemized documents in 10 seconds flat.',
       },
       {
-        title: 'Fuzzy SKU-Matching Logic',
+        title: 'Fuzzy Description-Matching Logic',
         body: 'Instantly pairs unstandardized email keywords or PDF parts with your internal database pricing catalog or inventory ledger.',
       },
       {
@@ -95,7 +96,7 @@ export const B2B_CHROME_LANDING = {
       },
       {
         title: 'Voice Input Engine',
-        body: 'Describe the parts order out loud in the warehouse; SMASH translates it into itemized line items instantly right inside the sidebar.',
+        body: 'Describe the job details out loud on-site or in the warehouse; SMASH translates it into itemized line items instantly right inside the sidebar.',
       },
       {
         title: 'Materials & Inventory Catalog',
@@ -139,13 +140,13 @@ export const B2B_CHROME_LANDING = {
         name: 'Free Early-Access',
         price: 'Free',
         priceNote: 'No credit card required',
-        body: 'Available immediately. Start processing orders inside Gmail with no credit card required to get started.',
+        body: 'Free Early-Access tier available immediately. No credit card required to get started.',
       },
       {
         name: 'Premium & Operator',
         price: '$14.99',
         priceNote: 'AUD / month',
-        body: 'At that price, recovering just two hours of admin re-keying per month completely covers the cost. Most users save that in their first afternoon.',
+        body: 'Plans start at $14.99 AUD per month. At that price, recovering just two hours of admin re-keying per month completely covers the cost. Most users save that in their first afternoon.',
         featured: true,
       },
       {
@@ -161,7 +162,7 @@ export const B2B_CHROME_LANDING = {
     title: 'SMASH for Gmail — B2B order processing demo',
     headline: 'See an order go from inbox to invoice.',
     subheadline:
-      'Watch a PDF purchase order, customer email, or voice note become a priced, SKU-matched document — without leaving Gmail or retyping a line.',
+      'Watch a PDF purchase order, customer email, or voice note become a priced, matched document — without leaving Gmail or retyping a line.',
     uploadDate: '2026-01-15',
   },
   footerCta: {
@@ -178,14 +179,14 @@ export const B2B_CHROME_LANDING = {
     },
     {
       q: 'How does the PDF and email parsing work?',
-      a: 'SMASH reads the email payload or attached PDF natively inside your secure sidebar wrapper. It extracts the client’s order profile, identifies the raw line items, and instantly maps them to your internal inventory SKU codes. The perfect draft document is ready to validate in 10 seconds flat.',
+      a: 'SMASH reads the email text or attached PDF natively inside your secure sidebar sandbox. It extracts the client’s order profile, identifies the raw line items, and instantly maps them to your internal catalog codes. The perfect draft document is ready to validate in 10 seconds flat.',
     },
     {
-      q: 'Can I use this to completely replace legacy billing software?',
-      a: 'Yes. If you are looking for a streamlined, lightweight alternative to escape clunky platform changes, SMASH operates as an independent standalone system, giving you matching billing and Stripe capabilities directly inside Gmail.',
+      q: 'Can I use this to completely replace Wave or legacy billing software?',
+      a: 'Yes. If you are looking for a streamlined, lightweight alternative to escape platform changes, SMASH operates as an independent standalone system, giving you matching billing and Stripe capabilities directly inside Gmail.',
     },
     {
-      q: 'Are my commercial clients forced to create an account to pay me?',
+      q: 'Are my clients forced to create an account to pay me?',
       a: 'Not at all. They receive a standard web link accessible on any device where they can sign off on quotes or complete payments via Stripe in seconds.',
     },
     {
@@ -195,6 +196,6 @@ export const B2B_CHROME_LANDING = {
   ],
   breadcrumbs: [
     { name: 'Home', url: 'https://smashinvoices.com/' },
-    { name: 'Order Processing for Gmail', url: 'https://smashinvoices.com/b2b-gmail-quoting' },
+    { name: 'Quotes & Invoices for Gmail', url: 'https://smashinvoices.com/b2b-gmail-quoting' },
   ],
 } as const;

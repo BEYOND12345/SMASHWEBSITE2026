@@ -205,9 +205,12 @@ export function B2bChromeLandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">{c.dualMode.eyebrow}</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4 text-center max-w-2xl mx-auto">
               {c.dualMode.title}
             </h2>
+            <p className="font-body text-base sm:text-lg text-brand/60 font-medium leading-[1.55] mb-12 text-center max-w-2xl mx-auto">
+              {c.dualMode.intro}
+            </p>
           </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {c.dualMode.columns.map((col, i) => {
