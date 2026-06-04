@@ -3,10 +3,23 @@ import {
   Chrome,
   Mail,
   ShieldCheck,
-  Search,
-  UserCheck,
-  Cloud,
   ChevronDown,
+  ArrowRight,
+  Check,
+  Boxes,
+  Plug,
+  ScanLine,
+  Wallet,
+  Eye,
+  CreditCard,
+  RefreshCw,
+  FileText,
+  Search,
+  Mic,
+  UserCheck,
+  Download,
+  FileCheck,
+  Globe,
 } from 'lucide-react';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
@@ -26,7 +39,22 @@ import { B2B_CHROME_LANDING } from '../../data/b2b-chrome-landing';
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 const c = B2B_CHROME_LANDING;
 
-const FEATURE_ICONS = [Search, UserCheck, Cloud] as const;
+const DUAL_MODE_ICONS = [Boxes, Plug] as const;
+const PAIN_ICONS = [ScanLine, Wallet, Eye, CreditCard, RefreshCw] as const;
+const MATRIX_ICONS = [
+  FileText,
+  Search,
+  Mail,
+  Mic,
+  Boxes,
+  UserCheck,
+  CreditCard,
+  Eye,
+  RefreshCw,
+  Download,
+  FileCheck,
+  Globe,
+] as const;
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
@@ -93,23 +121,30 @@ export function B2bChromeLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="pb-16 md:pb-24">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                   <Mail size={13} className="text-accent" strokeWidth={2.5} />
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.hero.eyebrow}</span>
                 </div>
 
-                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">
-                  {c.hero.preHeadline}
-                </p>
-
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
-                  <span className="block text-white">{c.hero.h1White}</span>
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.9] text-[44px] sm:text-[56px] md:text-[64px] mb-7">
+                  <span className="block text-white">{c.hero.h1Lead}</span>
                   <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
 
-                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
+                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-7 max-w-lg">
                   {c.hero.subheadline}
                 </p>
+
+                <div className="flex flex-col gap-2.5 mb-8">
+                  {c.hero.valueBullets.map((bullet) => (
+                    <div key={bullet.from} className="flex items-center gap-2.5 text-sm sm:text-base">
+                      <span className="font-body font-semibold text-white/55">{bullet.from}</span>
+                      <ArrowRight size={15} className="text-accent shrink-0" strokeWidth={2.5} />
+                      <span className="font-sans font-black uppercase tracking-tight text-accent">{bullet.to}</span>
+                    </div>
+                  ))}
+                  <p className="font-body text-sm font-bold text-white/40 italic mt-1">{c.hero.valueBulletsTail}</p>
+                </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
@@ -165,85 +200,29 @@ export function B2bChromeLandingPage() {
         </div>
       </section>
 
-      {/* ECONOMIC HOOK + COMPARISON */}
+      {/* DUAL-MODE ARCHITECTURE */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">The economics</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-10 text-center max-w-3xl mx-auto">
-              {c.economicHook.title}
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border-2 border-border mb-10">
-              {c.economicHook.stats.map((stat) => (
-                <div key={stat.label} className="bg-white px-5 py-7 text-center">
-                  <p className="font-sans font-black text-brand uppercase tracking-tighter leading-[0.9] text-3xl sm:text-4xl tabular-nums mb-2">
-                    {stat.value}
-                  </p>
-                  <p className="font-body text-xs text-brand/55 font-semibold leading-[1.4]">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <blockquote className="max-w-3xl mx-auto border-l-4 border-accent bg-white rounded-r-2xl px-6 py-5 mb-12 shadow-sm">
-              <p className="font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6] m-0">
-                <strong className="text-brand">The Operational Overhead Drain:</strong> {c.economicHook.body}
-              </p>
-            </blockquote>
-
-            <div className="overflow-x-auto rounded-2xl border-2 border-border bg-white">
-              <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-                <thead>
-                  <tr className="bg-brand text-white">
-                    {c.comparison.headers.map((h) => (
-                      <th key={h} className="px-4 py-4 font-black uppercase tracking-wide text-xs sm:text-sm">
-                        {h}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {c.comparison.rows.map(([stage, manual, smash], i) => (
-                    <tr key={stage} className="border-t border-border even:bg-surface/80">
-                      <td className="px-4 py-4 align-top w-[24%]">
-                        <span className="flex items-start gap-2.5">
-                          <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-brand text-accent font-black text-[10px] flex items-center justify-center tabular-nums">
-                            {i + 1}
-                          </span>
-                          <span className="font-black text-brand uppercase tracking-tight leading-[1.05]">{stage}</span>
-                        </span>
-                      </td>
-                      <td className="px-4 py-4 text-brand/60 font-medium align-top">{manual}</td>
-                      <td className="px-4 py-4 text-brand font-bold align-top">{smash}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* FEATURE GRID */}
-      <section className="bg-brand py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/40 mb-3 text-center">Verified capabilities</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
-              Less typing. More verifying.
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">{c.dualMode.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
+              {c.dualMode.title}
             </h2>
           </AnimateIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {c.features.map((feature, i) => {
-              const Icon = FEATURE_ICONS[i] ?? Search;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {c.dualMode.columns.map((col, i) => {
+              const Icon = DUAL_MODE_ICONS[i] ?? Boxes;
               return (
-                <AnimateIn key={feature.title} direction="up" delay={i * 60}>
-                  <div className="bg-white/5 border-2 border-white/10 rounded-3xl p-7 h-full hover:border-accent/40 transition-colors">
-                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-5">
-                      <Icon size={18} className="text-accent" strokeWidth={2.5} />
+                <AnimateIn key={col.tag} direction="up" delay={i * 80}>
+                  <div className="bg-white border-2 border-border rounded-3xl p-8 h-full hover:border-accent transition-colors">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-11 h-11 rounded-full bg-brand flex items-center justify-center shrink-0">
+                        <Icon size={20} className="text-accent" strokeWidth={2.25} />
+                      </div>
+                      <span className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40">{col.tag}</span>
                     </div>
-                    <h3 className="text-lg font-black text-white uppercase tracking-tighter leading-[0.95] mb-3">{feature.title}</h3>
-                    <p className="font-body text-sm text-white/60 font-medium leading-[1.6] m-0">{feature.body}</p>
+                    <h3 className="text-2xl font-black text-brand uppercase tracking-tighter leading-[0.95] mb-4">{col.title}</h3>
+                    <p className="font-body text-base text-brand/65 font-medium leading-[1.6] m-0">{col.body}</p>
                   </div>
                 </AnimateIn>
               );
@@ -252,26 +231,51 @@ export function B2bChromeLandingPage() {
         </div>
       </section>
 
-      {/* ANSWER STRIP — AR not AP positioning */}
-      <section className="bg-accent py-10 md:py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-          <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">{c.answerStrip.question}</p>
-          <p className="text-lg md:text-2xl font-bold text-brand leading-[1.3]">{c.answerStrip.answer}</p>
+      {/* CORE PAIN RESOLUTION */}
+      <section className="bg-brand py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent mb-3 text-center">{c.painResolution.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
+              {c.painResolution.title}
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {c.painResolution.items.map((item, i) => {
+              const Icon = PAIN_ICONS[i] ?? ScanLine;
+              const isLastOdd = c.painResolution.items.length % 2 === 1 && i === c.painResolution.items.length - 1;
+              return (
+                <AnimateIn key={item.title} direction="up" delay={i * 50} className={isLastOdd ? 'md:col-span-2' : ''}>
+                  <div className="bg-white/5 border-2 border-white/10 rounded-3xl p-7 h-full hover:border-accent/40 transition-colors">
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                        <Icon size={19} className="text-accent" strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-black text-white uppercase tracking-tighter leading-[1.05] mb-2.5">{item.title}</h3>
+                        <p className="font-body text-sm text-white/60 font-medium leading-[1.6] m-0">{item.body}</p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimateIn>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* 90-SEC DEMO */}
-      <section id="workflow-demo" className="bg-[#0D1117] py-20 md:py-28 scroll-mt-20 overflow-hidden">
+      <section id="workflow-demo" className="bg-surface py-20 md:py-28 scroll-mt-20 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">90-second workflow</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4 text-center">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 text-center mb-3">See it in action</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-4 text-center">
               {c.demoVideo.headline}
             </h2>
-            <p className="font-body text-base text-white/55 font-medium text-center leading-[1.6] mb-10 max-w-2xl mx-auto">
+            <p className="font-body text-base text-brand/55 font-medium text-center leading-[1.6] mb-10 max-w-2xl mx-auto">
               {c.demoVideo.subheadline}
             </p>
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.6)] border border-white/10 aspect-video">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.25)] border-2 border-border aspect-video bg-[#0D1117]">
               <iframe
                 className="w-full h-full"
                 src={`https://www.youtube.com/embed/${c.demoVideo.id}`}
@@ -292,6 +296,107 @@ export function B2bChromeLandingPage() {
               </a>
             </p>
           </AnimateIn>
+        </div>
+      </section>
+
+      {/* DE-RISKING BANNER */}
+      <section className="bg-accent py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <AnimateIn direction="up">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-4">
+              {c.deRisking.title}
+            </h2>
+            <p className="font-body text-base sm:text-lg text-brand/75 font-semibold leading-[1.5] max-w-3xl mx-auto m-0">
+              {c.deRisking.body}
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* TECHNICAL FEATURE MATRIX */}
+      <section className="bg-brand py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/40 mb-3 text-center">{c.featureMatrix.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
+              {c.featureMatrix.title}
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 rounded-3xl overflow-hidden border-2 border-white/10">
+            {c.featureMatrix.items.map((item, i) => {
+              const Icon = MATRIX_ICONS[i] ?? Check;
+              return (
+                <div key={item.title} className="bg-brand p-6 hover:bg-white/[0.03] transition-colors">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 flex items-center justify-center mb-4">
+                    <Icon size={17} className="text-accent" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="text-sm font-black text-white uppercase tracking-tight leading-[1.1] mb-2">{item.title}</h3>
+                  <p className="font-body text-[13px] text-white/55 font-medium leading-[1.55] m-0">{item.body}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="bg-surface py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">{c.pricing.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-12 text-center">
+              {c.pricing.title}
+            </h2>
+          </AnimateIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+            {c.pricing.plans.map((plan, i) => {
+              const featured = 'featured' in plan && plan.featured;
+              return (
+                <AnimateIn key={plan.name} direction="up" delay={i * 70} className="h-full">
+                  <div
+                    className={`relative rounded-3xl p-8 h-full flex flex-col ${
+                      featured
+                        ? 'bg-brand border-2 border-accent shadow-[0_0_50px_rgba(223,255,0,0.15)]'
+                        : 'bg-white border-2 border-border'
+                    }`}
+                  >
+                    {featured && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-brand font-black text-[10px] uppercase tracking-widest">
+                        Most popular
+                      </span>
+                    )}
+                    <h3 className={`text-base font-black uppercase tracking-tight mb-4 ${featured ? 'text-accent' : 'text-brand'}`}>
+                      {plan.name}
+                    </h3>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className={`font-sans font-black uppercase tracking-tighter leading-none text-4xl ${featured ? 'text-white' : 'text-brand'}`}>
+                        {plan.price}
+                      </span>
+                    </div>
+                    <p className={`font-body text-xs font-semibold uppercase tracking-wide mb-5 ${featured ? 'text-white/45' : 'text-brand/45'}`}>
+                      {plan.priceNote}
+                    </p>
+                    <p className={`font-body text-sm font-medium leading-[1.6] mb-7 ${featured ? 'text-white/65' : 'text-brand/60'}`}>
+                      {plan.body}
+                    </p>
+                    <a
+                      href={c.chromeStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`mt-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-black text-sm uppercase tracking-widest transition-all ${
+                        featured
+                          ? 'bg-accent text-brand hover:brightness-95'
+                          : 'bg-brand text-white hover:bg-brand/90'
+                      }`}
+                    >
+                      <Chrome size={16} strokeWidth={2.5} />
+                      {c.hero.primaryCta}
+                    </a>
+                  </div>
+                </AnimateIn>
+              );
+            })}
+          </div>
         </div>
       </section>
 
