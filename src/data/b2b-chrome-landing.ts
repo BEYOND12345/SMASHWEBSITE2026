@@ -24,6 +24,7 @@ export const B2B_CHROME_LANDING = {
       'The Chrome sidebar built for B2B distributors and wholesale AR desks. Match messy customer RFQs to your catalog with description fuzzy-matching, turn raw email into a structured draft in under 60 seconds, and verify flagged lines without leaving Gmail.',
     primaryCta: 'Add to Chrome — It’s Free',
     secondaryCta: 'Watch 90-Sec Demo',
+    videoId: '83YnPyBr6sc',
   },
   trustBadges: ['Works with Gmail', 'Secured via OAuth', 'Xero Verified', 'QuickBooks Certified'],
   economicHook: {

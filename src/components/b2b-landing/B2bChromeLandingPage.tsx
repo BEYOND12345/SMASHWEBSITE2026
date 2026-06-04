@@ -8,7 +8,6 @@ import {
   Cloud,
   ChevronDown,
 } from 'lucide-react';
-import { HeroVideo } from '../gmail-sidebar-mockups';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -148,8 +147,17 @@ export function B2bChromeLandingPage() {
 
             <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
               <div className="md:pb-24">
-                <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10 relative">
-                  <HeroVideo />
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(223,255,0,0.15)] border border-white/10 relative bg-[#0D1117]">
+                  <div className="relative w-full" style={{ aspectRatio: '16 / 9' }}>
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src={`https://www.youtube.com/embed/${c.hero.videoId}?autoplay=1&mute=1&loop=1&playlist=${c.hero.videoId}&controls=0&modestbranding=1&rel=0&playsinline=1`}
+                      title={`${c.productName} — workflow demo`}
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      allowFullScreen
+                      loading="eager"
+                    />
+                  </div>
                 </div>
               </div>
             </AnimateIn>
