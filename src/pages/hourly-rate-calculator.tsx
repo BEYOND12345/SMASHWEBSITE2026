@@ -239,7 +239,7 @@ function HourlyRateCalc() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Join Beta
+              Download the iOS app
               <ArrowRight size={11} strokeWidth={3} />
             </a>
           </div>
@@ -348,7 +348,7 @@ function HourlyRateCalc() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Join Beta
+                Download the iOS app
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <p className="font-body text-xs font-medium text-brand/45 mt-3">No credit card · Free to start</p>
@@ -680,7 +680,7 @@ export function HourlyRateCalculator() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Join Beta
+                Download the iOS app
                 <ArrowRight size={15} strokeWidth={2.5} />
               </a>
               <Link

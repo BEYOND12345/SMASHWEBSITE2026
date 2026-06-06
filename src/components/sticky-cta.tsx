@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { APP_STORE_URL, NAV_CTA_LABEL } from '../data/download-urls';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,13 +13,6 @@ export function StickyCTA() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSignup = () => {
-    const signupForm = document.getElementById('signup-form');
-    if (signupForm) {
-      signupForm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div
@@ -36,12 +30,14 @@ export function StickyCTA() {
               Describe the job. Get paid. That's it.
             </div>
           </div>
-          <button
-            onClick={scrollToSignup}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2.5 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-wide hover:brightness-95 transition-all shadow-glow flex items-center gap-2"
           >
-            Start Free
-          </button>
+            {NAV_CTA_LABEL}
+          </a>
         </div>
       </div>
     </div>

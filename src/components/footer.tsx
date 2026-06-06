@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
 import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube, Mail, ArrowRight } from 'lucide-react';
+import {
+  APP_STORE_URL,
+  CHROME_STORE_URL,
+  IOS_DOWNLOAD_LABEL,
+} from '../data/download-urls';
 
 interface FooterProps {
   showCTA?: boolean;
 }
-
-const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const linkClass =
   'text-base text-white/70 hover:text-accent transition-colors font-semibold';
@@ -155,7 +157,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                Join Beta — iOS
+                {IOS_DOWNLOAD_LABEL}
               </a>
             </div>
           </div>
@@ -218,7 +220,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                <span>Join Beta — iOS</span>
+                <span>Download the iOS app</span>
               </a>
             </div>
 

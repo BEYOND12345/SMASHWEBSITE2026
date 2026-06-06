@@ -256,7 +256,7 @@ export function Roadmap() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
                   >
-                    Join Beta
+                    Download the iOS app
                   </a>
                   <Link
                     to="/how-it-works"

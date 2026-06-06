@@ -1,19 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Mic, ArrowRight } from 'lucide-react';
+import { APP_STORE_URL, IOS_CTA_LABEL } from '../data/download-urls';
 
 interface VoiceConversionCTAProps {
-  /** What the tool produces — "this invoice", "this quote", "this calculation" etc. */
   outputLabel: string;
-  /** Short, tool-specific headline. Fallback provided. */
   headline?: string;
-  /** Short, tool-specific sub. Fallback provided. */
   sub?: string;
-  /** App Store URL — defaults to the AU listing. */
   appStoreUrl?: string;
   variant?: 'light' | 'dark';
 }
-
-const DEFAULT_APP_STORE = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 
 /**
  * Conversion block dropped at the bottom of every free tool page. This is the
@@ -24,7 +19,7 @@ export function VoiceConversionCTA({
   outputLabel,
   headline,
   sub,
-  appStoreUrl = DEFAULT_APP_STORE,
+  appStoreUrl = APP_STORE_URL,
   variant = 'dark',
 }: VoiceConversionCTAProps) {
   const isDark = variant === 'dark';
@@ -85,7 +80,7 @@ export function VoiceConversionCTA({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-brand font-display text-xs uppercase tracking-widest hover:brightness-95 transition-all whitespace-nowrap"
               >
-                Join Beta
+                {IOS_CTA_LABEL}
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <Link

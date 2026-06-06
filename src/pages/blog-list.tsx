@@ -106,13 +106,12 @@ export function BlogList() {
               <p>Check back soon for insights on mobile invoicing and productivity!</p>
             </div>
           ) : (
-            <AnimateIn direction="up">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
+                <AnimateIn key={post.id} direction="up" delay={Math.min(index * 60, 300)}>
                 <Link
-                  key={post.id}
                   to={`/blog/${post.slug}`}
-                  className="group bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-accent/50"
+                  className="group bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-accent/50 block h-full"
                 >
                   {post.featured_image && (
                     <div className="aspect-[16/9] overflow-hidden bg-white/5">
@@ -158,9 +157,9 @@ export function BlogList() {
                     </div>
                   </div>
                 </Link>
+                </AnimateIn>
               ))}
             </div>
-            </AnimateIn>
           )}
         </div>
 
@@ -181,7 +180,7 @@ export function BlogList() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Join Beta
+                Download the iOS app
               </a>
               <div className="flex items-center gap-1.5">
                 <div className="flex items-center gap-0.5">

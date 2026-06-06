@@ -1,9 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Menu, X, Apple, Chrome } from 'lucide-react';
-
-const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+import {
+  APP_STORE_URL,
+  CHROME_STORE_URL,
+  IOS_DOWNLOAD_LABEL,
+  NAV_CTA_LABEL,
+} from '../data/download-urls';
 
 const desktopLinkClass =
   'hidden md:block px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide';
@@ -18,7 +21,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const resolvedCtaUrl = ctaUrl ?? APP_STORE_URL;
-  const resolvedCtaLabel = ctaLabel ?? 'Join Beta';
+  const resolvedCtaLabel = ctaLabel ?? NAV_CTA_LABEL;
 
   // Close the menu when the route changes
   useEffect(() => {
@@ -139,7 +142,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                Join Beta — iOS
+                {IOS_DOWNLOAD_LABEL}
               </a>
               <a
                 href={CHROME_STORE_URL}
@@ -148,7 +151,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white/10 border border-white/15 text-white font-black text-sm uppercase tracking-wider hover:bg-white/20 transition-all"
               >
                 <Chrome size={18} strokeWidth={2.5} />
-                Chrome
+                Add to Chrome
               </a>
             </div>
           </div>

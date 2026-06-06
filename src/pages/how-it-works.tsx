@@ -408,7 +408,7 @@ export function HowItWorks() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-[32px] bg-accent text-brand font-black text-base sm:text-lg uppercase tracking-wide hover:brightness-95 transition-all shadow-glow"
               >
-                Join Beta
+                Download the iOS app
                 <ArrowRight size={24} strokeWidth={3} />
               </a>
               {/* Trust strip */}

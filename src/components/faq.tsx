@@ -21,8 +21,8 @@ const faqs: FAQItem[] = [
     answer: 'The app is live and real service businesses are using it on real jobs. We\'re refining the experience based on feedback and adding features that actually matter. You get free access, we get to build something that works for how you actually work.'
   },
   {
-    question: 'What happens when I join?',
-    answer: 'You\'ll get an email within 24-48 hours with access and a download link. Use it on real jobs. Tell us what works and what doesn\'t. Your feedback shapes what gets built. Simple as that.'
+    question: 'How do I get started?',
+    answer: 'Download SMASH from the App Store on your iPhone or iPad. Free to start — no credit card required. Connect your accounting software, talk your first job, and send a professional invoice in under 60 seconds.'
   },
   {
     question: 'Where is this going?',

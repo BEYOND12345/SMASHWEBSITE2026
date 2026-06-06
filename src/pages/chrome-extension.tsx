@@ -29,7 +29,7 @@ import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '..
 import { hreflangAlternates } from '../data/country-data';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../data/download-urls';
 
 /** YouTube cluster demos — links to blog posts (embed + VideoObject live there). */
 const clusterDemos = [
@@ -641,7 +641,7 @@ export function ChromeExtension() {
                     <p className={`font-body text-sm font-medium leading-[1.5] mb-6 flex-1 ${t.highlight ? 'text-white/65' : 'text-brand/55'}`}>{t.pitch}</p>
                     <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center px-5 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all ${t.highlight ? 'bg-accent text-brand hover:brightness-95' : 'bg-brand text-white hover:bg-brand/90'}`}>
-                      Start Free
+                      {CHROME_CTA_LABEL}
                     </a>
                   </div>
                 </AnimateIn>

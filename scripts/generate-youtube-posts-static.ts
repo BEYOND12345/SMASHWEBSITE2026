@@ -246,7 +246,7 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
       <div class="nav-links">
         <a href="/features">Features</a>
         <a href="/pricing">Pricing</a>
-        <a href="/chrome-extension">Chrome Extension</a>
+        <a href="/chrome-extension">Add to Chrome</a>
         <a href="/blog">Blog</a>
       </div>
       <a href="${CHROME_STORE_URL}" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
@@ -287,7 +287,7 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
     <div>
       <a href="/">Home</a>
       <a href="/blog">Blog</a>
-      <a href="/chrome-extension">Chrome Extension</a>
+      <a href="/chrome-extension">Add to Chrome</a>
       <a href="/pricing">Pricing</a>
       <a href="/features">Features</a>
       <a href="/voice-invoicing">Voice Invoicing</a>
@@ -300,8 +300,8 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
       <a href="/terms">Terms</a>
     </div>
     <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">iOS App</a>
-      <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome Extension</a>
+      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">Download the iOS app</a>
+      <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Add to Chrome</a>
     </div>
     <div style="margin-top:14px;">
       Live in

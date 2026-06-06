@@ -53,7 +53,11 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const SITE_URL = 'https://smashinvoices.com';
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+const CHROME_STORE_URL =
+  'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+const IOS_CTA_LABEL = 'Download the iOS app';
+const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
+const CHROME_CTA_LABEL = 'Add to Chrome';
 
 interface FAQItem { question: string; answer: string }
 
@@ -497,7 +501,7 @@ ${schemas
         <a href="/how-it-works">How it works</a>
         <a href="/blog">Blog</a>
       </div>
-      <a href="${APP_STORE_URL}" class="nav-cta" rel="nofollow">Get the app</a>
+      <a href="${APP_STORE_URL}" class="nav-cta" rel="nofollow">${IOS_CTA_LABEL}</a>
     </div>
   </nav>
 
@@ -526,8 +530,9 @@ ${schemas
 
       <aside class="cta-card">
         <h3>Ready to stop typing invoices?</h3>
-        <p>SMASH turns your voice into professional invoices and quotes in under 60 seconds. Built for tradies.</p>
-        <a href="${APP_STORE_URL}" class="cta-btn" rel="nofollow">Download SMASH Invoices</a>
+        <p>SMASH turns your voice into professional invoices and quotes in under 60 seconds. Free on iOS and Chrome.</p>
+        <a href="${APP_STORE_URL}" class="cta-btn" rel="nofollow">${IOS_DOWNLOAD_LABEL}</a>
+        <a href="${CHROME_STORE_URL}" class="cta-btn" rel="nofollow" style="margin-left:10px;background:transparent;border:2px solid #D9F99D;color:#D9F99D;">${CHROME_CTA_LABEL}</a>
       </aside>
 
       ${authorBlock}
@@ -552,8 +557,8 @@ ${schemas
       <a href="/terms">Terms</a>
     </div>
     <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
-      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">App Store</a>
-      <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Chrome</a>
+      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">${IOS_DOWNLOAD_LABEL}</a>
+      <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">${CHROME_CTA_LABEL}</a>
     </div>
     <div style="margin-top:14px;">
       Live in

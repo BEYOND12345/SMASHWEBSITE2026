@@ -1,3 +1,8 @@
+import {
+  APP_STORE_URL,
+  IOS_CTA_LABEL,
+} from '../data/download-urls';
+
 interface InlineCTAProps {
   title: string;
   subtitle?: string;
@@ -5,13 +10,6 @@ interface InlineCTAProps {
 }
 
 export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAProps) {
-  const scrollToSignup = () => {
-    const signupForm = document.getElementById('signup-form');
-    if (signupForm) {
-      signupForm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   if (variant === 'secondary') {
     return (
       <section className="bg-brand py-10 md:py-14 lg:py-18">
@@ -24,12 +22,14 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
               {subtitle}
             </p>
           )}
-          <button
-            onClick={scrollToSignup}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow inline-flex items-center justify-center gap-2 sm:gap-3"
           >
-            Start Free
-          </button>
+            {IOS_CTA_LABEL}
+          </a>
         </div>
       </section>
     );
@@ -47,12 +47,14 @@ export function InlineCTA({ title, subtitle, variant = 'primary' }: InlineCTAPro
           </p>
         )}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-          <button
-            onClick={scrollToSignup}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-wider sm:tracking-widest hover:brightness-95 transition-all shadow-glow flex items-center justify-center gap-2 sm:gap-3"
           >
-            Start Free
-          </button>
+            {IOS_CTA_LABEL}
+          </a>
           <p className="text-sm sm:text-base text-white/70 font-medium">
             Free • No credit card
           </p>

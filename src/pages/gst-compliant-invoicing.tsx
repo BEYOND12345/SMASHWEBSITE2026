@@ -96,7 +96,7 @@ export function GstCompliantInvoicing() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-                  Join Beta
+                  Download the iOS app
                 </a>
                 <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
                   See How It Works
@@ -432,7 +432,7 @@ export function GstCompliantInvoicing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-              Join Beta
+              Download the iOS app
             </a>
             <Link to="/pricing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
               See Pricing

@@ -228,7 +228,7 @@ function buildPage(c: GmailLandingConfig): string {
     </section>
   </main>
   <footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:rgba(255,255,255,0.45);font-size:14px;">
-    <a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/chrome-extension">Chrome Extension</a> · <a href="/pricing">Pricing</a>
+    <a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/chrome-extension">Add to Chrome</a> · <a href="/pricing">Pricing</a>
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="${CHROME_STORE}">Chrome Web Store</a>.</p></noscript>

@@ -9,7 +9,7 @@ import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '..
 import { AnimateIn } from '../components/animate-in';
 import { hreflangAlternates } from '../data/country-data';
 
-const APP_STORE_URL = "https://apps.apple.com/app/id6759475079";
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 // Single global pricing in AUD — same plan worldwide. Invoices you send
 // to your customers default to your local currency (AUD / NZD / GBP /
@@ -214,7 +214,7 @@ export function Pricing() {
                         rel="noopener noreferrer"
                         className="w-full block text-center py-4 rounded-2xl font-display text-sm uppercase tracking-widest transition-all bg-brand text-white hover:brightness-110"
                       >
-                        {isFree ? 'Join Beta' : 'Join Beta'}
+                        {isFree ? 'Download the iOS app' : 'Download the iOS app'}
                       </a>
                       <p className={`text-center font-body text-xs mt-3 ${
                         tier.highlight ? 'text-brand/50' : 'text-slate-400'
@@ -360,7 +360,7 @@ export function Pricing() {
             className="shrink-0 font-display text-sm uppercase tracking-widest text-brand px-10 py-5 rounded-2xl text-base hover:brightness-95 transition-all"
             style={{ backgroundColor: '#DFFF00' }}
           >
-            Join Beta
+            Download the iOS app
           </a>
         </div>
       </section>

@@ -136,7 +136,7 @@ export function NdisInvoicing() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all">
                   <Apple size={17} strokeWidth={2.5} />
-                  Join Beta — iOS
+                  Download the iOS app
                 </a>
                 <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all">
                   <Chrome size={17} strokeWidth={2.5} />
@@ -294,7 +294,7 @@ export function NdisInvoicing() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all">
                 <Smartphone size={17} strokeWidth={2.5} />
-                Join Beta — iOS
+                Download the iOS app
               </a>
               <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all">
                 <Mail size={17} strokeWidth={2.5} />

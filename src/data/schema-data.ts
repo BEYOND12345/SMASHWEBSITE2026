@@ -44,7 +44,7 @@ export const softwareApplicationSchema = {
   "applicationSubCategory": "InvoicingApplication",
   "operatingSystem": "iOS, Chrome (extension)",
   "url": "https://smashinvoices.com",
-  "downloadUrl": "https://apps.apple.com/app/id6759475079",
+  "downloadUrl": "https://apps.apple.com/au/app/smash-invoices/id6759475079",
   "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Speak a job description aloud and get a tax-compliant, professionally formatted quote in under 60 seconds — with your own prices, materials priced automatically, customer approval portal, and payment built in. Live in Australia, New Zealand, the UK, the US and Canada on iOS and as a Chrome extension.",
   "featureList": [
     "Voice-to-quote in under 60 seconds",

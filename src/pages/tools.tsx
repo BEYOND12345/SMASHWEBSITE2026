@@ -158,7 +158,7 @@ export function Tools() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-105 transition-all"
                 >
-                  Join Beta
+                  Download the iOS app
                   <ArrowRight size={15} strokeWidth={2.5} />
                 </a>
                 <Link

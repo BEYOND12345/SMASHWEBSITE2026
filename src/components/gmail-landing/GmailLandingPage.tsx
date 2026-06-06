@@ -32,8 +32,7 @@ import type { GmailLandingConfig, GmailLandingStory } from '../../data/gmail-lan
 import { gmailLandingCanonical } from '../../data/gmail-landing-pages';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../gmail-sidebar-mockups';
 
-const CHROME_STORE_URL =
-  'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../../data/download-urls';
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 
 const tiers = [
@@ -458,7 +457,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                     rel="noopener noreferrer"
                     className={`inline-flex items-center justify-center px-5 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all ${t.highlight ? 'bg-accent text-brand hover:brightness-95' : 'bg-brand text-white hover:bg-brand/90'}`}
                   >
-                    Start Free
+                    {CHROME_CTA_LABEL}
                   </a>
                 </div>
               </AnimateIn>

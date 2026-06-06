@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play, Star, Quote, Chrome, Mail, ArrowRight } from 'lucide-react';
+import { Play, Star, Quote, Chrome, Mail, ArrowRight, Apple } from 'lucide-react';
 import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
@@ -25,10 +25,11 @@ import { DualPhoneSection } from '../components/dual-phone-section';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
-
-const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL =
-  'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+import {
+  APP_STORE_URL,
+  CHROME_STORE_URL,
+  IOS_CTA_LABEL,
+} from '../data/download-urls';
 
 const homeFaqs = [
   { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
@@ -143,31 +144,36 @@ export function LandingPage() {
               Describe the job out loud. SMASH sends a professional invoice before you've left the driveway.
             </p>
 
-            {/* CTAs */}
+            {/* CTAs — one primary, one secondary, demo as text link */}
             <div
-              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 animate-hero-reveal"
+              className="flex flex-col items-start gap-4 mb-6 animate-hero-reveal"
               style={{ animationDelay: '560ms' }}
             >
               <a
-                href="#signup-form"
-                className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
               >
-                Start Free
+                <Apple size={20} strokeWidth={2.5} />
+                {IOS_CTA_LABEL}
               </a>
-              <Link
-                to="/chrome-extension"
-                className="px-8 py-4 rounded-[32px] bg-white text-brand border-2 border-white font-black text-base uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-3"
-              >
-                <Chrome size={18} strokeWidth={2.5} />
-                SMASH for Gmail
-              </Link>
-              <button
-                type="button"
-                className="px-8 py-4 rounded-[32px] bg-white/10 text-white border-2 border-white/15 font-black text-base uppercase tracking-widest hover:bg-white/15 transition-all backdrop-blur-sm flex items-center justify-center gap-3"
-              >
-                <Play size={16} strokeWidth={2.5} />
-                Watch Demo
-              </button>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                <Link
+                  to="/chrome-extension"
+                  className="px-6 py-3 rounded-[32px] border-2 border-white/25 text-white/90 font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"
+                >
+                  <Chrome size={16} strokeWidth={2.5} />
+                  Prefer Gmail? Chrome extension
+                </Link>
+                <a
+                  href="#demo"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"
+                >
+                  <Play size={14} strokeWidth={2.5} />
+                  Watch demo
+                </a>
+              </div>
             </div>
 
             {/* Trust row */}
@@ -319,7 +325,7 @@ export function LandingPage() {
       <DualPhoneSection />
 
       {/* ── VIDEO DEMO ───────────────────────────────────────────────────── */}
-      <section className="bg-surface py-20 md:py-28">
+      <section id="demo" className="bg-surface py-20 md:py-28 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn className="text-center mb-12 md:mb-16">
             <p className="text-accent font-black text-xs uppercase tracking-widest mb-4">See it in action</p>
@@ -492,11 +498,6 @@ export function LandingPage() {
         }
       />
 
-      <InlineCTA
-        title="Stop Typing. Start Talking."
-        subtitle="Work with your hands. Not a keyboard."
-        variant="secondary"
-      />
 
       {/* ── TRACK HIGH-VOLUME QUOTING ─────────────────────────────────────── */}
       <FeatureSection
@@ -599,7 +600,7 @@ export function LandingPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Join Beta
+              Download the iOS app
             </a>
             <p className="font-body text-xs text-white/35 font-medium mt-3">No card needed · Cancel anytime</p>
           </AnimateIn>
