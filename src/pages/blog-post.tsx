@@ -14,11 +14,15 @@ import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Calendar, Clock, ArrowLeft, RefreshCw, Star } from 'lucide-react';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { Calendar, Clock, ArrowLeft, RefreshCw } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
+import { BlogWorkspaceRouter } from '../components/blog/blog-workspace-router';
+import { BlogConversionClose } from '../components/blog/blog-conversion-close';
+
+function stripLeadingH1(markdown: string): string {
+  return markdown.replace(/^\s*#\s+.+?\n+/, '');
+}
 
 interface BlogPost {
   id: string;
@@ -226,14 +230,16 @@ export function BlogPost() {
             </div>
           )}
 
+          <BlogWorkspaceRouter />
+
           <div className="prose prose-invert prose-lg max-w-none">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ children }) => (
-                  <h1 className="text-4xl font-black text-white mt-12 mb-6 tracking-tighter">
+                  <h2 className="text-3xl font-black text-white mt-8 mb-5 tracking-tighter">
                     {children}
-                  </h1>
+                  </h2>
                 ),
                 h2: ({ children }) => (
                   <div>
@@ -340,27 +346,33 @@ export function BlogPost() {
                 ),
               }}
             >
-              {post.content}
+              {stripLeadingH1(post.content)}
             </ReactMarkdown>
           </div>
 
-          {post.key_takeaways && post.key_takeaways.length > 0 && (
-            <div className="mt-16 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/30 rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center shrink-0">
-                  <span className="text-brand font-black text-xl">✓</span>
-                </div>
-                <h2 className="text-2xl font-black text-white">Key Takeaways</h2>
-              </div>
-              <div className="grid gap-4">
-                {post.key_takeaways.map((takeaway, index) => (
-                  <div key={index} className="flex items-start gap-4 bg-[#0A0A0A]/40 rounded-xl p-4 border border-accent/20">
-                    <span className="text-accent font-black text-lg mt-0.5 shrink-0">{index + 1}.</span>
-                    <span className="font-body text-white/90 leading-[1.5] font-medium">{takeaway}</span>
-                  </div>
+          {post.faq_data && post.faq_data.length > 0 && (
+            <section className="mt-16" aria-labelledby="blog-faq-heading">
+              <h2 id="blog-faq-heading" className="text-2xl font-black text-white mb-6 uppercase tracking-tighter">
+                Frequently asked questions
+              </h2>
+              <div className="space-y-3">
+                {post.faq_data.map((item, index) => (
+                  <details
+                    key={index}
+                    className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 group"
+                  >
+                    <summary className="font-bold text-white cursor-pointer list-none flex items-center justify-between gap-4">
+                      {item.question}
+                      <span className="text-accent font-black group-open:hidden">+</span>
+                      <span className="text-accent font-black hidden group-open:inline">−</span>
+                    </summary>
+                    <p className="font-body text-white/70 text-base leading-[1.5] mt-3 pt-3 border-t border-white/10">
+                      {item.answer}
+                    </p>
+                  </details>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
           {post.author_bio && (
@@ -390,33 +402,7 @@ export function BlogPost() {
             title="Free tools — use right now, no download"
           />
 
-          <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl p-8 md:p-12 border border-accent/20">
-              <div className="flex items-center gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="text-accent fill-accent" />
-                ))}
-                <span className="font-body text-xs font-semibold text-white/50 ml-2">4.9 App Store</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tighter leading-[0.88]">
-                Stop typing invoices.<br />Talk for 30 seconds.
-              </h3>
-              <p className="font-body text-white/75 text-base sm:text-lg mb-6 leading-[1.5] max-w-lg">
-                SMASH turns a voice description into a professional, ATO-compliant tax invoice — with a Pay Now button — before you've packed up your tools. No typing. No form. No GST maths.
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
-                >
-                  Download the iOS app
-                </a>
-                <span className="font-body text-xs font-medium text-white/35">No credit card · Cancel anytime</span>
-              </div>
-            </div>
-          </div>
+          <BlogConversionClose />
         </article>
 
         <Footer />

@@ -86,6 +86,81 @@
     footer{margin-top:80px;padding:40px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px;text-align:center;}
     footer a{color:var(--text-muted);margin:0 10px;}
     footer a:hover{color:#fff;text-decoration:none;}
+  
+    .workspace-router {
+      margin: 0 0 40px;
+      border: 1px solid rgba(217,249,157,0.25);
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(217,249,157,0.1), rgba(217,249,157,0.03));
+    }
+    .workspace-router-head {
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .workspace-router-head h2 {
+      margin: 0;
+      font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .workspace-grid { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .workspace-grid { grid-template-columns: 1fr 1fr; } }
+    .workspace-col { padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    @media (min-width: 768px) {
+      .workspace-col:first-child { border-right: 1px solid rgba(255,255,255,0.08); border-bottom: none; }
+      .workspace-col:last-child { border-bottom: none; }
+    }
+    .workspace-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-dim); font-weight: 700; margin: 0 0 8px;
+    }
+    .workspace-col p { margin: 0 0 12px; color: rgba(255,255,255,0.75); font-size: 15px; }
+    .workspace-col h3 {
+      margin: 0 0 6px; font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: 18px; text-transform: uppercase; color: #fff;
+    }
+    .workspace-btn {
+      display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 999px;
+      font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none;
+    }
+    .workspace-btn-accent { background: var(--accent); color: var(--accent-ink); }
+    .workspace-btn-white { background: #fff; color: var(--accent-ink); }
+    .workspace-regions {
+      padding: 16px 24px 20px; background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.08); font-size: 14px; color: rgba(255,255,255,0.65);
+    }
+    .workspace-regions strong { color: #fff; }
+    .conversion-close {
+      margin: 56px 0 0; padding: 28px; border-radius: 20px;
+      border: 1px solid rgba(217,249,157,0.25);
+      background: linear-gradient(135deg, rgba(217,249,157,0.14), rgba(217,249,157,0.04));
+    }
+    .conversion-close h2 {
+      font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: clamp(26px, 4vw, 34px); margin: 0 0 10px; text-transform: uppercase; color: #fff; line-height: 1.05;
+    }
+    .conversion-close .accent-line { color: var(--accent); display: block; }
+    .conversion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 24px; }
+    @media (min-width: 640px) { .conversion-grid { grid-template-columns: 1fr 1fr; } }
+    .conversion-item {
+      background: rgba(10,10,10,0.35); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 14px 16px;
+    }
+    .conversion-item strong {
+      display: block; color: var(--accent); font-size: 12px; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .conversion-item p { margin: 0; font-size: 14px; color: rgba(255,255,255,0.75); }
+    .conversion-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .conversion-btn-outline {
+      display: inline-block; padding: 12px 20px; border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.2); color: #fff; font-weight: 800;
+      font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;
+    }
+
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Create QuickBooks Estimates From Gmail — Without the 5-Tab Nightmare","description":"QuickBooks Online blocks CSV estimate imports across all tiers. SMASH bypasses this — scan a customer email in Gmail and push a complete QBO estimate in under 60 seconds.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-25T07:00:00.000Z","dateModified":"2026-05-25T07:00:00.000Z","author":{"@type":"Person","name":"Dan Neale"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/quickbooks-estimates-from-gmail"},"keywords":"create quickbooks estimates from gmail, import estimate into quickbooks online, quickbooks online estimate chrome extension, quickbooks gmail integration, quickbooks estimate from email, qbo estimate automation","inLanguage":"en-AU"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"How to Create QuickBooks Estimates From Gmail — Without the 5-Tab Nightmare","item":"https://smashinvoices.com/blog/quickbooks-estimates-from-gmail"}]}</script>
@@ -112,6 +187,31 @@
       </div>
     </header>
     <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>QuickBooks Online natively blocks importing estimates using CSV, Excel, or IIF files — even on the Advanced tier.</li><li>The typical manual quoting workflow from Gmail involves 5 separate browser tabs and 10–15 minutes of work per quote.</li><li>SMASH bypasses the import restriction entirely by acting as an AI parser directly inside Gmail.</li><li>Your QBO customer directory and live SKU catalog sync to the SMASH sidebar via secure OAuth 2.0.</li><li>The &quot;Line Lock&quot; feature prevents QBO from overwriting your custom description text when you change a SKU.</li></ul></aside>
+
+      <section class="workspace-router" aria-labelledby="workspace-heading">
+    <div class="workspace-router-head"><h2 id="workspace-heading">Choose your hands-free workspace</h2></div>
+    <div class="workspace-grid">
+      <div class="workspace-col">
+        <p class="workspace-label">On your laptop / desktop</p>
+        <p>Copying numbers from client emails or fumbling with manual dashboards?</p>
+        <h3>Get SMASH for Chrome</h3>
+        <p>Build and push line-itemed invoices from Gmail in under 20 seconds.</p>
+        <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="workspace-btn workspace-btn-accent" rel="nofollow">Add to Chrome — Free</a>
+        <p style="margin-top:14px;font-size:13px;"><a href="/chrome-extension">See Gmail extension features →</a></p>
+      </div>
+      <div class="workspace-col">
+        <p class="workspace-label">In your truck / on-site</p>
+        <p>Dirty hands, cracked screen, no patience for typing on glass?</p>
+        <h3>Get SMASH for mobile</h3>
+        <p>Talk for 30 seconds. Drive away with the invoice already sent.</p>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="workspace-btn workspace-btn-white" rel="nofollow">Download the iOS app</a>
+      </div>
+    </div>
+    <div class="workspace-regions">
+      <p style="margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);font-weight:700;">Global compliance regions</p>
+      <p style="margin:0;"><strong>US:</strong> Sales tax, QuickBooks sync · <strong>UK:</strong> VAT-compliant invoices · <strong>CA / NZ / AU:</strong> Local tax rules, Xero integration</p>
+    </div>
+  </section>
     <div class="prose"><p>If your sales desk runs on QuickBooks Online and Gmail, here is a frustrating fact you may have already discovered: QuickBooks Online natively blocks the import of estimates using CSV, Excel, or IIF files — across every subscription tier, including Advanced.</p>
 <p>That means every quote request that lands in your inbox becomes a manual job. You have to leave Gmail, log into QBO, navigate to the right customer, open a new estimate, and type everything in by hand. For a business processing 20 to 50 inbound requests a day, that&#39;s a serious operational drag.</p>
 <p>The average manual quoting sequence from Gmail to a sent QBO estimate involves five separate browser tabs and takes 10 to 15 minutes per quote.</p>
@@ -195,11 +295,20 @@
 </ul>
 </div>
     <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>Can I import estimates into QuickBooks Online from a CSV or Excel file?</summary><p>No — QuickBooks Online natively blocks direct import of estimate transactions using IIF, Excel, or CSV files across all subscription tiers, including QBO Advanced. SMASH bypasses this by acting as a browser-native data extractor. It reads the unstructured text from your email thread, maps line items to your active QBO catalog, and pushes a completed estimate straight to your account via the official API.</p></details><details><summary>What is the &#039;Line Lock&#039; feature and why does it matter?</summary><p>When you manually change a product SKU on a QBO invoice or estimate, QuickBooks automatically overwrites your custom description text — reverting it to the default catalog wording. This is a known, long-standing QBO behaviour. SMASH&#039;s Line Lock lets you freeze your custom description and quantity while toggling the underlying ledger SKU. Your negotiated specs and project notes stay exactly as you typed them.</p></details><details><summary>Does SMASH store my QuickBooks financial data?</summary><p>No. SMASH is built on a local-storage architecture. All QuickBooks integrations authenticate via official Intuit OAuth 2.0. We request read-only access to your email thread to scan content — we don&#039;t read your inbox. We never store, share, or sell your financial records, customer profiles, or transaction histories.</p></details><details><summary>How does SMASH handle the QBO branded email problem?</summary><p>In early 2026, QuickBooks rolled out uneditable Intuit-branded email templates that many customers report look spammy to corporate procurement departments. SMASH sends invoices and estimates directly from your Gmail account using Google OAuth 2.0 — completely bypassing Intuit&#039;s email formatting. Your customer sees a clean, branded email from your actual address.</p></details><details><summary>Does this work for wholesalers and distributors, not just tradies?</summary><p>Yes. SMASH is built for any business that receives unstructured quote requests by email and needs to turn them into formatted QBO estimates quickly. That includes B2B wholesalers, specialty suppliers, timber merchants, building materials distributors, and equipment dealers.</p></details></section>
-    <aside class="cta-card">
-      <h3>Your inbox is full of quotes waiting to happen.</h3>
-      <p>SMASH turns customer emails into priced, professional quotes in under 60 seconds — right inside Gmail. Syncs to Xero and QuickBooks. Free to install.</p>
-      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="cta-btn" rel="nofollow">Add SMASH to Chrome — Free</a>
-    </aside>
+    <aside class="conversion-close">
+    <h2>Stop losing admin hours.<span class="accent-line">Start getting paid faster.</span></h2>
+    <p style="color:rgba(255,255,255,0.75);margin:0 0 4px;">Voice on-site or Gmail at your desk — same professional invoices, same Pay Now button, zero keyboard tax.</p>
+    <div class="conversion-grid">
+      <div class="conversion-item"><strong>Pricing DNA</strong><p>Upload 2–3 old invoices. SMASH maps your labour rates and job types automatically.</p></div>
+      <div class="conversion-item"><strong>Read receipts</strong><p>Know the second a client opens your invoice link — follow up while you still have leverage.</p></div>
+      <div class="conversion-item"><strong>On-the-spot card payments</strong><p>Stripe checkout with Apple Pay, Google Pay and instant card processing on every invoice.</p></div>
+      <div class="conversion-item"><strong>Cloud ledger sync</strong><p>Push to Xero or QuickBooks without retyping line items or double-handling data.</p></div>
+    </div>
+    <div class="conversion-btns">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="conversion-btn-outline" rel="nofollow">Add to Chrome — Free</a>
+    </div>
+  </aside>
     <div class="author-card"><strong>About Dan Neale</strong><br>Dan is the founder of SMASH Invoices. He built SMASH after 10 years as a handyman and trade supplier because he was sick of the tab-switching tax every time a job request landed in his inbox.</div>
   </article></main>
   <footer>

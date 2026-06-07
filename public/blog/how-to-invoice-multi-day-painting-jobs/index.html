@@ -242,6 +242,81 @@
   }
   footer a { color: var(--text-muted); margin: 0 10px; }
   footer a:hover { color: #fff; text-decoration: none; }
+  
+    .workspace-router {
+      margin: 0 0 40px;
+      border: 1px solid rgba(217,249,157,0.25);
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(217,249,157,0.1), rgba(217,249,157,0.03));
+    }
+    .workspace-router-head {
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .workspace-router-head h2 {
+      margin: 0;
+      font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .workspace-grid { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .workspace-grid { grid-template-columns: 1fr 1fr; } }
+    .workspace-col { padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    @media (min-width: 768px) {
+      .workspace-col:first-child { border-right: 1px solid rgba(255,255,255,0.08); border-bottom: none; }
+      .workspace-col:last-child { border-bottom: none; }
+    }
+    .workspace-label {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-dim); font-weight: 700; margin: 0 0 8px;
+    }
+    .workspace-col p { margin: 0 0 12px; color: rgba(255,255,255,0.75); font-size: 15px; }
+    .workspace-col h3 {
+      margin: 0 0 6px; font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: 18px; text-transform: uppercase; color: #fff;
+    }
+    .workspace-btn {
+      display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 999px;
+      font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none;
+    }
+    .workspace-btn-accent { background: var(--accent); color: var(--accent-ink); }
+    .workspace-btn-white { background: #fff; color: var(--accent-ink); }
+    .workspace-regions {
+      padding: 16px 24px 20px; background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.08); font-size: 14px; color: rgba(255,255,255,0.65);
+    }
+    .workspace-regions strong { color: #fff; }
+    .conversion-close {
+      margin: 56px 0 0; padding: 28px; border-radius: 20px;
+      border: 1px solid rgba(217,249,157,0.25);
+      background: linear-gradient(135deg, rgba(217,249,157,0.14), rgba(217,249,157,0.04));
+    }
+    .conversion-close h2 {
+      font-family: 'Barlow Condensed', system-ui, sans-serif;
+      font-size: clamp(26px, 4vw, 34px); margin: 0 0 10px; text-transform: uppercase; color: #fff; line-height: 1.05;
+    }
+    .conversion-close .accent-line { color: var(--accent); display: block; }
+    .conversion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0 24px; }
+    @media (min-width: 640px) { .conversion-grid { grid-template-columns: 1fr 1fr; } }
+    .conversion-item {
+      background: rgba(10,10,10,0.35); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 14px 16px;
+    }
+    .conversion-item strong {
+      display: block; color: var(--accent); font-size: 12px; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .conversion-item p { margin: 0; font-size: 14px; color: rgba(255,255,255,0.75); }
+    .conversion-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .conversion-btn-outline {
+      display: inline-block; padding: 12px 20px; border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.2); color: #fff; font-weight: 800;
+      font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;
+    }
+
   </style>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Invoice Multi-Day Painting Jobs: Labour, Stages and Cashflow","description":"How to invoice multi-day painting jobs. Covers stage-based line items, progress invoicing, materials, GST, same-day invoicing and painter cashflow.","image":"https://smashinvoices.com/hero_image.png","datePublished":"2026-05-11T01:21:13.912Z","dateModified":"2026-05-11T01:21:13.912Z","author":{"@type":"Person","name":"SMASH Team"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/how-to-invoice-multi-day-painting-jobs"},"keywords":"how to invoice multi-day painting jobs, multi-day painting invoice, painter progress invoice, painting invoice stages, exterior painting invoice, painting materials invoice, painter invoice Australia, invoice for painters, painting cashflow","wordCount":997,"articleSection":"Blog","inLanguage":"en-AU"}</script>
@@ -278,6 +353,31 @@
       </header>
 
       <aside class="takeaways"><h2>Key Takeaways</h2><ul><li>Multi-day painting jobs should be invoiced with stage-based line items so clients understand what was done each day and why the job took the time it did.</li><li>Progress invoicing — a deposit or mid-job claim — keeps cashflow healthy on jobs lasting four or more days.</li><li>Invoice on the day of completion, not the following week, to avoid losing payment window days.</li><li>Materials should be listed with brand, product, colour and quantity on every invoice so clients and property managers have a permanent record.</li></ul></aside>
+
+      <section class="workspace-router" aria-labelledby="workspace-heading">
+    <div class="workspace-router-head"><h2 id="workspace-heading">Choose your hands-free workspace</h2></div>
+    <div class="workspace-grid">
+      <div class="workspace-col">
+        <p class="workspace-label">On your laptop / desktop</p>
+        <p>Copying numbers from client emails or fumbling with manual dashboards?</p>
+        <h3>Get SMASH for Chrome</h3>
+        <p>Build and push line-itemed invoices from Gmail in under 20 seconds.</p>
+        <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="workspace-btn workspace-btn-accent" rel="nofollow">Add to Chrome — Free</a>
+        <p style="margin-top:14px;font-size:13px;"><a href="/chrome-extension">See Gmail extension features →</a></p>
+      </div>
+      <div class="workspace-col">
+        <p class="workspace-label">In your truck / on-site</p>
+        <p>Dirty hands, cracked screen, no patience for typing on glass?</p>
+        <h3>Get SMASH for mobile</h3>
+        <p>Talk for 30 seconds. Drive away with the invoice already sent.</p>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="workspace-btn workspace-btn-white" rel="nofollow">Download the iOS app</a>
+      </div>
+    </div>
+    <div class="workspace-regions">
+      <p style="margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);font-weight:700;">Global compliance regions</p>
+      <p style="margin:0;"><strong>US:</strong> Sales tax, QuickBooks sync · <strong>UK:</strong> VAT-compliant invoices · <strong>CA / NZ / AU:</strong> Local tax rules, Xero integration</p>
+    </div>
+  </section>
 
       <div class="prose"><p>Multi-day painting jobs should be invoiced with each day or stage clearly described, so clients understand what was done on each day and the total reflects the full scope. The most common approach is a single invoice at job completion, but painters working on larger jobs of four days or more often use progress invoices — one at the start of prep and one at the end — to keep cashflow healthy and avoid long waits after the final coat.</p>
 <p>This guide covers the invoicing structure for residential, commercial and property management paint jobs that run more than one day.</p>
@@ -375,11 +475,20 @@
 
       <section class="faq"><h2>Frequently Asked Questions</h2><details><summary>How should painters invoice multi-day jobs?</summary><p>Invoice multi-day jobs with stage-based line items — prep, priming, topcoats — even on a single final invoice. This shows clients exactly what was done each day and protects the painter if the total is questioned.</p></details><details><summary>Should painters use progress invoicing?</summary><p>Yes, for jobs of four or more days. A deposit or mid-job progress claim keeps cashflow moving and reduces the risk of a large unpaid balance at the end of a long job.</p></details><details><summary>When should painters send the invoice on multi-day jobs?</summary><p>On the day of completion. Payment terms start from the invoice date, so every day of delay is a day lost from the payment window.</p></details><details><summary>Can SMASH invoice multi-day painting jobs?</summary><p>Yes. SMASH lets painters describe the full job scope by voice — including stages, materials and days — and send the invoice on the day the job finishes.</p></details></section>
 
-      <aside class="cta-card">
-        <h3>Ready to stop typing invoices?</h3>
-        <p>SMASH turns your voice into professional invoices and quotes in under 60 seconds. Built for tradies.</p>
-        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
-      </aside>
+      <aside class="conversion-close">
+    <h2>Stop losing admin hours.<span class="accent-line">Start getting paid faster.</span></h2>
+    <p style="color:rgba(255,255,255,0.75);margin:0 0 4px;">Voice on-site or Gmail at your desk — same professional invoices, same Pay Now button, zero keyboard tax.</p>
+    <div class="conversion-grid">
+      <div class="conversion-item"><strong>Pricing DNA</strong><p>Upload 2–3 old invoices. SMASH maps your labour rates and job types automatically.</p></div>
+      <div class="conversion-item"><strong>Read receipts</strong><p>Know the second a client opens your invoice link — follow up while you still have leverage.</p></div>
+      <div class="conversion-item"><strong>On-the-spot card payments</strong><p>Stripe checkout with Apple Pay, Google Pay and instant card processing on every invoice.</p></div>
+      <div class="conversion-item"><strong>Cloud ledger sync</strong><p>Push to Xero or QuickBooks without retyping line items or double-handling data.</p></div>
+    </div>
+    <div class="conversion-btns">
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
+      <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="conversion-btn-outline" rel="nofollow">Add to Chrome — Free</a>
+    </div>
+  </aside>
 
       <div class="author-card"><strong>About SMASH Team</strong><br>SMASH builds voice-to-invoice tools for self-employed service workers who want to send invoices before admin becomes a night-time job.</div>
     </article>
