@@ -177,9 +177,9 @@ export function B2bChromeLandingPage() {
               </div>
             </AnimateIn>
 
-            <AnimateIn direction="right" className="lg:col-span-7">
-              <div className="md:pb-24 lg:translate-x-3">
-                <div className="rounded-[16px] overflow-hidden shadow-[0_0_90px_rgba(200,255,0,0.18)] border border-white/10 relative [&>div]:max-w-none">
+            <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
+              <div className="md:pb-24 w-full flex justify-center">
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_90px_rgba(200,255,0,0.18)] border border-white/10 relative w-full max-w-[560px] [&>div]:max-w-none">
                   <HeroVideo />
                 </div>
               </div>

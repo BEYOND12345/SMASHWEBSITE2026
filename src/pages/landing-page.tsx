@@ -22,12 +22,14 @@ import {
 import { hreflangAlternates } from '../data/country-data';
 import { Footer } from '../components/footer';
 import { DualPhoneSection } from '../components/dual-phone-section';
+import { PhoneShowcase, DualPhoneStack, ScaledPhone } from '../components/phone-showcase';
 import { ScannerScreen } from '../components/scanner-screen';
 import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
 import {
   APP_STORE_URL,
   CHROME_STORE_URL,
+  CHROME_CTA_LABEL,
   IOS_CTA_LABEL,
 } from '../data/download-urls';
 
@@ -144,36 +146,38 @@ export function LandingPage() {
               Describe the job out loud. SMASH sends a professional invoice before you've left the driveway.
             </p>
 
-            {/* CTAs — one primary, one secondary, demo as text link */}
+            {/* CTAs — iOS primary (accent), Chrome Store secondary (white), demo as text */}
             <div
               className="flex flex-col items-start gap-4 mb-6 animate-hero-reveal"
               style={{ animationDelay: '560ms' }}
             >
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
-              >
-                <Apple size={20} strokeWidth={2.5} />
-                {IOS_CTA_LABEL}
-              </a>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-                <Link
-                  to="/chrome-extension"
-                  className="px-6 py-3 rounded-[32px] border-2 border-white/25 text-white/90 font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  <Chrome size={16} strokeWidth={2.5} />
-                  Prefer Gmail? Chrome extension
-                </Link>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
                 <a
-                  href="#demo"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover-glow transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
                 >
-                  <Play size={14} strokeWidth={2.5} />
-                  Watch demo
+                  <Apple size={20} strokeWidth={2.5} />
+                  {IOS_CTA_LABEL}
+                </a>
+                <a
+                  href={CHROME_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-[32px] bg-white text-brand border-2 border-white font-black text-base uppercase tracking-widest hover:brightness-95 transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
+                >
+                  <Chrome size={18} strokeWidth={2.5} />
+                  {CHROME_CTA_LABEL}
                 </a>
               </div>
+              <a
+                href="#demo"
+                className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"
+              >
+                <Play size={14} strokeWidth={2.5} />
+                Watch demo
+              </a>
             </div>
 
             {/* Trust row */}
@@ -379,27 +383,34 @@ export function LandingPage() {
           "No setup. No configuration. Just talk and it works like you.",
         ]}
         image={
-          <div className="flex items-start justify-center w-full overflow-visible h-[400px] sm:h-[490px] md:h-[560px] lg:h-auto">
-            {/* Mobile: single phone (the analyzer payoff) avoids the two-phone overlap on a narrow viewport. */}
-            <div className="md:hidden scale-[0.65] sm:scale-[0.75] origin-top animate-float-delayed">
+          <PhoneShowcase className="h-[400px] sm:h-[490px] md:h-[560px] lg:h-auto">
+            <ScaledPhone
+              className="md:hidden h-full"
+              scaleClassName="scale-[0.65] sm:scale-[0.75]"
+              float="float-delayed"
+            >
               <PhoneMockup>
                 <AnalyzerScreen />
               </PhoneMockup>
+            </ScaledPhone>
+            <div className="hidden md:block w-full">
+              <DualPhoneStack
+                scaleClassName="scale-[0.8] lg:scale-90 xl:scale-100"
+                backClassName="animate-float-slow -mr-6"
+                frontClassName="animate-float-delayed -ml-6"
+                backPhone={
+                  <PhoneMockup>
+                    <ScannerScreen />
+                  </PhoneMockup>
+                }
+                frontPhone={
+                  <PhoneMockup>
+                    <AnalyzerScreen />
+                  </PhoneMockup>
+                }
+              />
             </div>
-            {/* Tablet+: the original overlapping pair. */}
-            <div className="relative hidden md:flex items-start justify-center scale-[0.8] lg:scale-90 xl:scale-100 origin-top">
-              <div className="animate-float-slow -mr-6">
-                <PhoneMockup>
-                  <ScannerScreen />
-                </PhoneMockup>
-              </div>
-              <div className="animate-float-delayed -ml-6">
-                <PhoneMockup>
-                  <AnalyzerScreen />
-                </PhoneMockup>
-              </div>
-            </div>
-          </div>
+          </PhoneShowcase>
         }
       />
 
@@ -474,15 +485,21 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase",
         ]}
         image={
-          <div className="flex items-start justify-center w-full overflow-visible h-[440px] sm:h-[480px] md:h-[440px] lg:h-auto">
-            {/* Mobile: single phone (the payment payoff) keeps the section short and unambiguous. */}
-            <div className="md:hidden scale-[0.7] sm:scale-[0.78] origin-top animate-float">
+          <PhoneShowcase className="h-[440px] sm:h-[480px] md:h-[440px] lg:h-auto">
+            <ScaledPhone
+              className="md:hidden"
+              scaleClassName="scale-[0.7] sm:scale-[0.78]"
+              float="float"
+            >
               <PhoneMockup size="small">
                 <AppScreen type="portal" />
               </PhoneMockup>
-            </div>
-            {/* Tablet+: the original two-phone composition. */}
-            <div className="hidden md:flex items-start justify-center gap-4 lg:gap-6 scale-[0.85] lg:scale-95 xl:scale-100 origin-top">
+            </ScaledPhone>
+            <PhoneShowcase
+              layout="dual-row"
+              className="hidden md:flex"
+              scaleClassName="scale-[0.85] lg:scale-95 xl:scale-100"
+            >
               <div className="animate-float">
                 <PhoneMockup size="small">
                   <AppScreen type="estimates-static" />
@@ -493,8 +510,8 @@ export function LandingPage() {
                   <AppScreen type="portal" />
                 </PhoneMockup>
               </div>
-            </div>
-          </div>
+            </PhoneShowcase>
+          </PhoneShowcase>
         }
       />
 
@@ -516,13 +533,11 @@ export function LandingPage() {
           "Never miss follow-ups",
         ]}
         image={
-          <div className="flex items-start justify-center lg:justify-start w-full overflow-visible h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto">
-            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-top animate-float">
-              <PhoneMockup>
-                <AppScreen type="estimates" />
-              </PhoneMockup>
-            </div>
-          </div>
+          <ScaledPhone className="h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto" float="float">
+            <PhoneMockup>
+              <AppScreen type="estimates" />
+            </PhoneMockup>
+          </ScaledPhone>
         }
       />
 
@@ -544,13 +559,11 @@ export function LandingPage() {
           "Addresses saved",
         ]}
         image={
-          <div className="flex items-start justify-center lg:justify-start w-full overflow-visible h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto">
-            <div className="scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 origin-top animate-float">
-              <PhoneMockup>
-                <AppScreen type="customer-management" />
-              </PhoneMockup>
-            </div>
-          </div>
+          <ScaledPhone className="h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto" float="float">
+            <PhoneMockup>
+              <AppScreen type="customer-management" />
+            </PhoneMockup>
+          </ScaledPhone>
         }
       />
 

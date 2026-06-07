@@ -8,6 +8,7 @@ import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { FeatureSection } from '../components/feature-section';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { PhoneShowcase, ScaledPhone } from '../components/phone-showcase';
 import { ListeningScreen } from '../components/listening-screen';
 import { GeneratingScreen } from '../components/generating-screen';
 import { InlineCTA } from '../components/inline-cta';
@@ -242,11 +243,11 @@ export function HowItWorks() {
             "No typing. Ever."
           ]}
           image={
-            <div className="flex justify-center scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
+            <ScaledPhone float="none">
               <PhoneMockup>
                 <ListeningScreen />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
           }
         />
 
@@ -267,11 +268,11 @@ export function HowItWorks() {
             "Professional layout, ready to send"
           ]}
           image={
-            <div className="flex justify-center scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
+            <ScaledPhone float="none">
               <PhoneMockup>
                 <GeneratingScreen />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
           }
         />
 
@@ -298,14 +299,18 @@ export function HowItWorks() {
             "No back and forth"
           ]}
           image={
-            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100 w-full py-12">
+            <PhoneShowcase
+              layout="dual-row"
+              className="py-12"
+              scaleClassName="scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100"
+            >
               <PhoneMockup size="small">
                 <AppScreen type="estimates-static" />
               </PhoneMockup>
               <PhoneMockup size="small">
                 <AppScreen type="portal" />
               </PhoneMockup>
-            </div>
+            </PhoneShowcase>
           }
         />
 
@@ -326,11 +331,11 @@ export function HowItWorks() {
             "PDF and CSV export available"
           ]}
           image={
-            <div className="flex justify-center scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100 w-full">
+            <ScaledPhone float="none">
               <PhoneMockup>
                 <AppScreen type="customer-detail" />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
           }
         />
 

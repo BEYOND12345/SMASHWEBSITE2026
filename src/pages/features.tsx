@@ -6,6 +6,7 @@ import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '..
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { PhoneShowcase } from '../components/phone-showcase';
 import { DualPhoneSection } from '../components/dual-phone-section';
 import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronRight, Star, Quote, ArrowRight } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
@@ -338,14 +339,18 @@ export function Features() {
           </AnimateIn>
 
           {/* APP SCREENS — estimates + portal */}
-          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-16 scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top">
+          <PhoneShowcase
+            layout="dual-row"
+            className="mt-16"
+            scaleClassName="scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100"
+          >
             <PhoneMockup size="small">
               <AppScreen type="estimates-static" />
             </PhoneMockup>
             <PhoneMockup size="small">
               <AppScreen type="portal" />
             </PhoneMockup>
-          </div>
+          </PhoneShowcase>
         </div>
       </section>
 
@@ -388,14 +393,17 @@ export function Features() {
             </div>
 
             {/* APP SCREENS — estimates + customer management */}
-            <div className="flex items-center justify-center gap-4 sm:gap-6 scale-75 sm:scale-90 lg:scale-100 origin-center">
+            <PhoneShowcase
+              layout="dual-row"
+              scaleClassName="scale-75 sm:scale-90 lg:scale-100"
+            >
               <PhoneMockup>
                 <AppScreen type="estimates" />
               </PhoneMockup>
               <PhoneMockup>
                 <AppScreen type="customer-management" />
               </PhoneMockup>
-            </div>
+            </PhoneShowcase>
           </div>
         </div>
       </section>

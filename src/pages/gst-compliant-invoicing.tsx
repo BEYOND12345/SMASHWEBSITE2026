@@ -6,6 +6,7 @@ import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '..
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { ScaledPhone } from '../components/phone-showcase';
 import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
@@ -116,11 +117,11 @@ export function GstCompliantInvoicing() {
             </div>
             </AnimateIn>
             <AnimateIn direction="right">
-            <div className="flex justify-center md:justify-end">
+            <ScaledPhone>
               <PhoneMockup>
                 <AppScreen type="invoice" />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
             </AnimateIn>
           </div>
         </div>

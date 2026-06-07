@@ -55,7 +55,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
           </div>
 
           {image && (
-            <div className={`flex items-center justify-center mt-6 lg:mt-0 py-8 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
+            <div className={`flex w-full min-w-0 items-center justify-center mt-6 lg:mt-0 py-8 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
               {image}
             </div>
           )}

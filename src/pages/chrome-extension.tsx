@@ -13,11 +13,6 @@ import {
   RotateCcw,
   FileText,
   Play,
-  Search,
-  UserCheck,
-  RefreshCw,
-  Check,
-  ShieldCheck,
 } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { Nav } from '../components/nav';
@@ -28,7 +23,7 @@ import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
-
+import { MockupFrame } from '../components/phone-showcase';
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../data/download-urls';
 
 /** YouTube cluster demos — links to blog posts (embed + VideoObject live there). */
@@ -134,17 +129,12 @@ export function ChromeExtension() {
   return (
     <>
       <SEO
-        title="SMASH for Gmail — Turn RFQ & Quote Emails into Verified Drafts | SMASH Invoices"
-        description="A Chrome sidebar for sales, estimating, and AR/ops desks. SMASH parses messy RFQ and quote-request emails inside Gmail, fuzzy-matches them to your catalog, and turns a 15-minute grind into a 5-second verification pass — then syncs to Xero and QuickBooks Online."
-        keywords="gmail rfq chrome extension, quote request to invoice, ar billing automation gmail, b2b quoting sidebar, fuzzy match catalog pricing, estimating desk software, xero quickbooks gmail sync, order processing chrome extension, accounts receivable quoting"
-        ogTitle="Turn a 15-minute quoting grind into a 5-second verification pass."
-        ogDescription="SMASH docks inside Gmail for sales, estimating, and AR desks — parsing RFQ emails, fuzzy-matching to your catalog, and pushing verified drafts to Xero and QuickBooks Online."
+        title="SMASH for Gmail — Voice-Powered Quotes from Your Inbox | SMASH Invoices"
+        description="Talk the job. Send the bill. Done. The SMASH Chrome extension docks inside Gmail — start recording or auto-draft from email to build a priced, GST-ready quote in under 60 seconds."
+        keywords="SMASH for Gmail, Gmail invoice extension, voice quote chrome extension, gmail quote sidebar, voice to invoice gmail, chrome extension for tradies, gmail invoicing, talk the job send the bill"
+        ogTitle="SMASH for Gmail — Talk the Job. Send the Bill. Done."
+        ogDescription="From email to paid in under 60 seconds. SMASH docks inside Gmail — start recording or auto-draft from email."
         ogUrl="https://smashinvoices.com/chrome-extension"
-        ogImage="https://smashinvoices.com/hero_image.png"
-        ogType="website"
-        twitterTitle="Turn a 15-minute quoting grind into a 5-second verification pass."
-        twitterDescription="A Chrome sidebar for AR & ops desks: parse RFQ emails in Gmail, fuzzy-match to your catalog, verify, then sync to Xero or QuickBooks Online."
-        twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/chrome-extension"
         hreflangs={hreflangAlternates}
       />
@@ -165,7 +155,7 @@ export function ChromeExtension() {
       />
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
-      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel="Add to Chrome" />
+      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel={CHROME_CTA_LABEL} />
 
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
@@ -181,15 +171,15 @@ export function ChromeExtension() {
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for Gmail</span>
                 </div>
 
-                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">STOP RETYPING QUOTES.</p>
+                <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">STOP WASTING TIME.</p>
 
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[44px] sm:text-[58px] md:text-[72px] mb-8">
-                  <span className="block text-white">Turn a 15-minute quoting grind</span>
-                  <span className="block text-accent">into a 5-second verification pass.</span>
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
+                  <span className="block text-white">Smash out invoices</span>
+                  <span className="block text-accent">directly in Gmail.</span>
                 </h1>
 
                 <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
-                  A Chrome sidebar built for busy sales, estimating, and AR desks. SMASH reads messy customer quote requests right inside Gmail and matches them to your catalog — so your team verifies the draft instead of retyping it line by line.
+                  The magic bridge for QuickBooks &amp; Xero. Our sidebar scans your emails and generates invoices using your own pricing and voice. No new apps. No tab-jumping. Done.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -200,7 +190,7 @@ export function ChromeExtension() {
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
                   >
                     <Chrome size={17} strokeWidth={2.5} />
-                    Add to Chrome
+                    {CHROME_CTA_LABEL}
                   </a>
                   <Link
                     to="/how-it-works"
@@ -210,10 +200,7 @@ export function ChromeExtension() {
                   </Link>
                 </div>
 
-                <p className="font-body text-sm text-white/45 font-semibold mt-3 mb-8 flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-accent shrink-0" strokeWidth={2.5} />
-                  Works with Gmail. Syncs to Xero and QuickBooks Online.
-                </p>
+                <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow's fart.</p>
 
                 {/* Works with logos */}
                 <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
@@ -227,7 +214,7 @@ export function ChromeExtension() {
               </div>
             </AnimateIn>
 
-            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
+            <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
               <div className="md:pb-24">
                 <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(200,255,0,0.15)] border border-white/10 relative">
                   <HeroVideo />
@@ -250,145 +237,35 @@ export function ChromeExtension() {
         </div>
       </section>
 
-      {/* ─── OPERATIONAL MATRIX ───────────────────────────────────── */}
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3 text-center">The cost of manual quote entry</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-5 text-center max-w-3xl mx-auto">
-              Every RFQ costs you $12–$15 in admin time.
-            </h2>
-            <p className="font-body text-base sm:text-lg text-brand/60 font-medium leading-[1.55] mb-10 text-center max-w-2xl mx-auto">
-              Manual hunting, typing, and structural typos pile up on every inquiry. SMASH collapses raw email into a structured accounting draft in under 60 seconds — bringing it under $2 a quote.
-            </p>
-
-            <div className="overflow-x-auto rounded-2xl border-2 border-border bg-white">
-              <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-                <thead>
-                  <tr className="bg-brand text-white">
-                    <th className="px-4 py-4 font-black uppercase tracking-wide text-xs sm:text-sm">Quoting stage</th>
-                    <th className="px-4 py-4 font-black uppercase tracking-wide text-xs sm:text-sm">The Manual Grind</th>
-                    <th className="px-4 py-4 font-black uppercase tracking-wide text-xs sm:text-sm">The SMASH Way</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    [
-                      'Reading the RFQ',
-                      'Scroll the thread, decode a messy multi-line request, copy out the bits that matter.',
-                      'SMASH parses the full quote request natively in your Gmail sidebar.',
-                    ],
-                    [
-                      'Matching the catalog',
-                      'Hunt through price lists and spreadsheets to find each line item by hand.',
-                      'Text-description fuzzy-matching maps each line to your uploaded catalog — no strict SKUs needed.',
-                    ],
-                    [
-                      'Catching errors',
-                      'Hope nobody fat-fingered a price or dropped a line under deadline.',
-                      'Low-confidence or ambiguous lines are flagged for a quick human check.',
-                    ],
-                    [
-                      'Pushing to your books',
-                      'Re-type every itemized line into Xero or QuickBooks by hand.',
-                      'One click pushes the completed draft into Xero or QuickBooks Online via secure OAuth.',
-                    ],
-                  ].map(([stage, manual, smash], i) => (
-                    <tr key={stage} className="border-t border-border even:bg-surface/80">
-                      <td className="px-4 py-4 align-top w-[22%]">
-                        <span className="flex items-start gap-2.5">
-                          <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-brand text-accent font-black text-[10px] flex items-center justify-center tabular-nums">
-                            {i + 1}
-                          </span>
-                          <span className="font-black text-brand uppercase tracking-tight leading-[1.05]">{stage}</span>
-                        </span>
-                      </td>
-                      <td className="px-4 py-4 text-brand/55 font-medium align-top">{manual}</td>
-                      <td className="px-4 py-4 align-top">
-                        <span className="flex items-start gap-2">
-                          <Check size={15} className="text-accent shrink-0 mt-0.5" strokeWidth={3} />
-                          <span className="text-brand font-bold">{smash}</span>
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ─── AR CAPABILITY CARDS ──────────────────────────────────── */}
-      <section className="bg-brand py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent mb-3 text-center">Built for the order desk</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-2xl mx-auto">
-              Less retyping.<br />More verifying.
-            </h2>
-          </AnimateIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              {
-                Icon: Search,
-                title: 'Description Fuzzy-Matching',
-                body: 'Customers never send clean part numbers. SMASH maps sloppy descriptions to your uploaded price list, so nobody goes hunting for codes that don\'t line up.',
-              },
-              {
-                Icon: UserCheck,
-                title: 'Human-in-the-Loop Control',
-                body: 'You stay in charge. SMASH flags ambiguous or low-confidence lines, turning data entry into a fast approval workflow instead of a blind copy-paste.',
-              },
-              {
-                Icon: RefreshCw,
-                title: 'Native Cloud Accounting Sync',
-                body: 'Secure OAuth builds the itemized draft in real time, straight into Xero or QuickBooks Online — no CSV gymnastics, no tab-switching.',
-              },
-            ].map(({ Icon, title, body }, i) => (
-              <AnimateIn key={title} direction="up" delay={i * 70}>
-                <div className="bg-white/5 border-2 border-white/10 rounded-3xl p-7 h-full hover:border-accent/40 transition-colors">
-                  <div className="w-11 h-11 rounded-full bg-accent/20 flex items-center justify-center mb-5">
-                    <Icon size={19} className="text-accent" strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-lg font-black text-white uppercase tracking-tighter leading-[0.98] mb-3">{title}</h3>
-                  <p className="font-body text-sm text-white/60 font-medium leading-[1.6] m-0">{body}</p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── TESTIMONIAL STRIP ────────────────────────────────────── */}
       <section className="bg-[#0D1117] py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Trusted by busy desks</p>
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Trusted by tradies</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
-                  quote: "A 30-line RFQ used to eat my whole morning. Now I read the matched draft, fix two flagged lines, done.",
-                  name: 'Priya N.',
-                  trade: 'Office Manager',
+                  quote: "I used to put off quoting until the end of the week. Now I reply before I've left the driveway.",
+                  name: 'Jake T.',
+                  trade: 'Plumber',
                   city: 'Brisbane',
                 },
                 {
-                  quote: "It matches their sloppy descriptions to our price list. I'm checking the quote, not hunting for codes.",
-                  name: 'Daniel K.',
-                  trade: 'Estimator',
+                  quote: "Holds my prices for every job type. I described a deck sanding and it knew exactly what to charge.",
+                  name: 'Mel R.',
+                  trade: 'Handywoman',
                   city: 'Melbourne',
                 },
                 {
-                  quote: "The flagged lines are the whole game. I approve what's right, fix what's not, push it to Xero. No re-keying.",
-                  name: 'Sarah L.',
-                  trade: 'AR / Billing Admin',
+                  quote: "The from-email button is unreal. Customer writes in, I tap it, quote's done. Didn't type a word.",
+                  name: 'Chris P.',
+                  trade: 'Electrician',
                   city: 'Sydney',
                 },
                 {
-                  quote: "Our backlog used to spill into the next day. Now the inbox is clear before lunch and it syncs to QuickBooks.",
-                  name: 'Marcus D.',
-                  trade: 'Ops Coordinator',
+                  quote: "Sent 12 invoices in one afternoon. That would have taken me all day before.",
+                  name: 'Sam O.',
+                  trade: 'Cleaner',
                   city: 'Auckland',
                 },
               ].map(({ quote, name, trade, city }) => (
@@ -435,7 +312,7 @@ export function ChromeExtension() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">What is SMASH for Gmail?</p>
           <p className="text-lg md:text-xl font-bold text-brand leading-[1.3]">
-            SMASH for Gmail is a Chrome extension sidebar that docks inside your inbox. When a quote request or RFQ lands, SMASH parses the message and any attached PDF, fuzzy-matches each line to your uploaded catalog, and builds a priced, GST-ready draft in under 60 seconds. Low-confidence lines are flagged so you verify instead of retype — then one click pushes the draft into Xero or QuickBooks Online. Prefer to dictate a one-off? Voice input is there too.
+            SMASH for Gmail is a Chrome extension sidebar that docks inside your inbox. When a job request lands, tap Start Recording and describe the work out loud — or tap From Email and SMASH builds a priced quote directly from the customer's message. Your Pricing DNA matches your voice to your rates instantly, GST is calculated, and one click drops the quote into your Gmail reply.
           </p>
         </div>
       </section>
@@ -447,10 +324,10 @@ export function ChromeExtension() {
             <AnimateIn direction="left">
               <p className="font-display font-black text-accent text-[11px] uppercase tracking-[0.2em] mb-4">From email to quote</p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-6">
-                Read the draft.<br />Don't rebuild<br />the quote.
+                Stop typing<br />invoices.<br />Just talk.
               </h2>
               <p className="font-body text-lg text-brand/65 font-medium leading-[1.6] mb-8 max-w-lg">
-                A quote request lands in your inbox. Open the SMASH sidebar and it parses the RFQ, matches each line to your catalog, and builds a priced, GST-ready draft in under 60 seconds. You verify the flagged lines instead of retyping the whole thing. Prefer to dictate a one-off? Tap <strong className="text-brand">Start Recording</strong> and talk it through — voice is just one way in.
+                A job request lands in your inbox. Open the SMASH sidebar, tap <strong className="text-brand">Start Recording</strong>, and describe the work out loud — materials, hours, call-out fee. SMASH builds the priced, GST-ready quote in under 60 seconds. No typing. No templates. No brain fog.
               </p>
               <div className="space-y-3">
                 {[
@@ -465,9 +342,10 @@ export function ChromeExtension() {
                 ))}
               </div>
             </AnimateIn>
-            <AnimateIn direction="right">
-              {/* ↓ Replace with <img src="..." /> when screenshot is available */}
-              <HeroMockup />
+            <AnimateIn direction="right" className="flex w-full items-center justify-center">
+              <MockupFrame>
+                <HeroMockup />
+              </MockupFrame>
             </AnimateIn>
           </div>
         </div>
@@ -477,9 +355,10 @@ export function ChromeExtension() {
       <section className="bg-brand py-16 md:py-28 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <AnimateIn direction="left" className="order-2 lg:order-1">
-              {/* ↓ Replace with <img src="..." /> when screenshot is available */}
-              <PricingDNAMockup />
+            <AnimateIn direction="left" className="order-2 lg:order-1 flex w-full items-center justify-center">
+              <MockupFrame>
+                <PricingDNAMockup />
+              </MockupFrame>
             </AnimateIn>
             <AnimateIn direction="right" className="order-1 lg:order-2">
               <p className="font-display font-black text-accent text-[11px] uppercase tracking-[0.2em] mb-4">Pricing DNA</p>
@@ -541,9 +420,10 @@ export function ChromeExtension() {
                 ))}
               </div>
             </AnimateIn>
-            <AnimateIn direction="right">
-              {/* ↓ Replace with <img src="..." /> when screenshot is available */}
-              <QuoteMockup />
+            <AnimateIn direction="right" className="flex w-full items-center justify-center">
+              <MockupFrame>
+                <QuoteMockup />
+              </MockupFrame>
             </AnimateIn>
           </div>
         </div>
@@ -555,7 +435,7 @@ export function ChromeExtension() {
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-white/40 mb-3 text-center">Everything in one sidebar</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center max-w-3xl mx-auto">
-              ~80% less manual entry.<br />Fewer typos.<br />Nothing missed.
+              No manual entry.<br />No brain fog.<br />No missed details.
             </h2>
           </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -589,13 +469,12 @@ export function ChromeExtension() {
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-brand/40 mb-3">From the founder</p>
             <h2 className="text-4xl sm:text-5xl font-black text-brand uppercase tracking-tighter leading-[0.88] mb-8">
-              Verify the quote.<br />Don't rebuild it.
+              This hand<br />does not type.
             </h2>
             <div className="space-y-5 font-body text-base sm:text-lg text-brand/75 font-medium leading-[1.6]">
-              <p>I'm Dan. I built SMASH because I know the Admin Wall — opening the inbox, seeing a stack of quote requests, and watching the morning disappear into copy-paste.</p>
-              <p>A messy RFQ lands. You squint at it, hunt through the price list, retype every line into the accounting system, and pray you didn't fat-finger a total. So you put it off. The quote goes out late. You lose the job.</p>
-              <p>SMASH reads the request right in Gmail — typed, attached, or talked through — matches it to your catalog, and flags anything it's unsure about. You stay in control. You verify the draft instead of rebuilding it, and push it straight to Xero or QuickBooks.</p>
-              <p className="text-brand font-bold">Same work, about 80% less data entry. So you get your time back.</p>
+              <p>I'm Dan. I built SMASH because I know the feeling of the Admin Wall — getting home, opening your inbox, seeing three quote requests, and watching your brain go completely blank.</p>
+              <p>You know you need to type out line items, calculate totals, format a PDF and reply. So you put it off. The quote never gets sent. You lose the job.</p>
+              <p className="text-brand font-bold">SMASH lives right in your Gmail and does the data entry for you. So you can get your time back.</p>
             </div>
             <div className="flex items-center gap-4 mt-8 pt-8 border-t border-border">
               <div className="w-12 h-12 rounded-full bg-brand text-white font-black flex items-center justify-center text-lg">D</div>
@@ -641,7 +520,7 @@ export function ChromeExtension() {
                     <p className={`font-body text-sm font-medium leading-[1.5] mb-6 flex-1 ${t.highlight ? 'text-white/65' : 'text-brand/55'}`}>{t.pitch}</p>
                     <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
                       className={`inline-flex items-center justify-center px-5 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all ${t.highlight ? 'bg-accent text-brand hover:brightness-95' : 'bg-brand text-white hover:bg-brand/90'}`}>
-                      {CHROME_CTA_LABEL}
+                      Start Free
                     </a>
                   </div>
                 </AnimateIn>
@@ -662,9 +541,9 @@ export function ChromeExtension() {
           <Quote size={28} className="text-brand/30 mx-auto mb-4" />
           <blockquote>
             <p className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-[0.95] text-brand mb-6">
-              "A customer dumps a 40-line parts request in an email. SMASH matches it to our catalog, flags the three it's unsure about, I check those, and it's in Xero. What took half a morning takes five minutes."
+              "Customer emails a job request. I hold the button, describe it in 20 seconds, drop it into the reply. They've approved it before I've left the driveway."
             </p>
-            <p className="font-body text-brand/50 text-sm">Renee T. — operations coordinator, Byron Bay</p>
+            <p className="font-body text-brand/50 text-sm">Marcus W. — plumber, Byron Bay</p>
           </blockquote>
         </div>
       </section>
@@ -765,20 +644,20 @@ export function ChromeExtension() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88]">
-              Clear the inbox<br />backlog before lunch.
+              Your inbox is<br />full of jobs.
             </h2>
             <p className="font-body text-lg text-white/65 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">
-              Independent B2B suppliers, distributors, and operations teams use SMASH to turn quote-request emails into accounting-ready drafts — cutting manual data entry by around 80%.
+              SMASH turns them into invoices while you're still on the road.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
               <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap">
                 <Chrome size={18} strokeWidth={2.5} />
-                Add to Chrome
+                {CHROME_CTA_LABEL}
               </a>
-              <Link to="/how-it-works"
+              <Link to="/voice-invoicing"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-base uppercase tracking-wide hover:bg-white hover:text-brand transition-all">
-                See how quoting works
+                See how voice works
               </Link>
             </div>
             <p className="text-sm text-white/35 font-medium">No credit card needed. Cancel anytime.</p>

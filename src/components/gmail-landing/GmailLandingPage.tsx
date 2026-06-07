@@ -31,6 +31,7 @@ import { hreflangAlternates } from '../../data/country-data';
 import type { GmailLandingConfig, GmailLandingStory } from '../../data/gmail-landing-pages';
 import { gmailLandingCanonical } from '../../data/gmail-landing-pages';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../gmail-sidebar-mockups';
+import { MockupFrame } from '../phone-showcase';
 
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../../data/download-urls';
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
@@ -86,11 +87,11 @@ function StorySection({ story, mockup, imageFirst }: { story: GmailLandingStory;
     <section className={`${dark ? 'bg-brand' : 'bg-white'} py-16 md:py-28 overflow-hidden`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <AnimateIn direction="left" className={imageFirst ? 'order-2 lg:order-1' : ''}>
-            {imageFirst ? mockup : <StoryContent story={story} dark={dark} />}
+          <AnimateIn direction="left" className={`flex w-full items-center justify-center ${imageFirst ? 'order-2 lg:order-1' : ''}`}>
+            {imageFirst ? <MockupFrame>{mockup}</MockupFrame> : <StoryContent story={story} dark={dark} />}
           </AnimateIn>
-          <AnimateIn direction="right" className={imageFirst ? 'order-1 lg:order-2' : ''}>
-            {imageFirst ? <StoryContent story={story} dark={dark} /> : mockup}
+          <AnimateIn direction="right" className={`flex w-full items-center justify-center ${imageFirst ? 'order-1 lg:order-2' : ''}`}>
+            {imageFirst ? <StoryContent story={story} dark={dark} /> : <MockupFrame>{mockup}</MockupFrame>}
           </AnimateIn>
         </div>
       </div>
@@ -154,7 +155,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
       />
       <SchemaMarkup schemas={[aiOrgSchema, chromeAppSchema]} />
 
-      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel="Add to Chrome" />
+      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel={CHROME_CTA_LABEL} />
 
       {/* HERO */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
@@ -183,7 +184,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
                   >
                     <Chrome size={17} strokeWidth={2.5} />
-                    Add to Chrome
+                    {CHROME_CTA_LABEL}
                   </a>
                   <Link
                     to="/how-it-works"
@@ -199,7 +200,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                 </div>
               </div>
             </AnimateIn>
-            <AnimateIn direction="right" className="lg:col-span-7 lg:scale-110 lg:translate-x-8">
+            <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
               <div className="md:pb-24 rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(200,255,0,0.15)] border border-white/10">
                 <HeroVideo />
               </div>
@@ -520,7 +521,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
               >
                 <Chrome size={18} strokeWidth={2.5} />
-                Add to Chrome
+                {CHROME_CTA_LABEL}
               </a>
               <Link
                 to="/voice-invoicing"

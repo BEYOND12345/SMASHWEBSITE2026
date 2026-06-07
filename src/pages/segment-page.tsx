@@ -10,6 +10,7 @@ import {
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
+import { DualPhoneStack } from '../components/phone-showcase';
 import { Check, ChevronDown, Star } from 'lucide-react';
 import { useState } from 'react';
 import { ListeningScreen } from '../components/listening-screen';
@@ -126,19 +127,19 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             </div>
 
             {/* Right — phones */}
-            <div className="flex items-end justify-center lg:justify-end overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
-              <div className="relative flex items-end justify-center scale-[0.6] sm:scale-[0.75] lg:scale-[0.85] xl:scale-100 origin-bottom">
-                <div className="relative z-0 -rotate-6 -mr-8">
+            <div className="flex w-full items-end justify-center overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
+              <DualPhoneStack
+                backPhone={
                   <PhoneMockup>
                     <GeneratingScreen />
                   </PhoneMockup>
-                </div>
-                <div className="relative z-10 -ml-8">
+                }
+                frontPhone={
                   <PhoneMockup>
                     <ListeningScreen />
                   </PhoneMockup>
-                </div>
-              </div>
+                }
+              />
             </div>
 
           </div>
@@ -219,19 +220,21 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             </div>
 
             {/* Right — phones */}
-            <div className="flex items-center justify-center lg:justify-end overflow-visible py-10 lg:py-0">
-              <div className="relative flex items-end justify-center scale-[0.6] sm:scale-[0.75] lg:scale-[0.85] xl:scale-100 origin-bottom">
-                <div className="relative z-0 -rotate-6 -mr-8">
+            <div className="flex w-full items-center justify-center overflow-visible py-10 lg:py-0">
+              <DualPhoneStack
+                backClassName="relative z-0 -rotate-6 -mr-8"
+                frontClassName="relative z-10 -ml-8"
+                backPhone={
                   <PhoneMockup>
                     <ScannerScreen />
                   </PhoneMockup>
-                </div>
-                <div className="relative z-10 -ml-8">
+                }
+                frontPhone={
                   <PhoneMockup>
                     <AnalyzerScreen />
                   </PhoneMockup>
-                </div>
-              </div>
+                }
+              />
             </div>
 
           </div>

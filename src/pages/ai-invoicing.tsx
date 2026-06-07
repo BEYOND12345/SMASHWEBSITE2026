@@ -7,6 +7,7 @@ import { hreflangAlternates } from '../data/country-data';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
+import { ScaledPhone } from '../components/phone-showcase';
 import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
@@ -157,11 +158,11 @@ export function AiInvoicing() {
             </div>
             </AnimateIn>
             <AnimateIn direction="right">
-            <div className="flex justify-center scale-75 sm:scale-90 lg:scale-100 origin-center">
+            <ScaledPhone scaleClassName="scale-75 sm:scale-90 lg:scale-100">
               <PhoneMockup>
                 <AppScreen type="estimates-static" />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
             </AnimateIn>
           </div>
         </div>

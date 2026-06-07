@@ -5,6 +5,7 @@ import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
 import { Footer } from '../components/footer';
 import { PhoneMockup } from '../components/phone-mockup';
+import { ScaledPhone } from '../components/phone-showcase';
 import { ListeningScreen } from '../components/listening-screen';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
@@ -196,11 +197,11 @@ export function Founder() {
             </div>
             </AnimateIn>
             <AnimateIn direction="right">
-            <div className="flex justify-center scale-[0.65] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100">
+            <ScaledPhone scaleClassName="scale-[0.65] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100">
               <PhoneMockup>
                 <ListeningScreen />
               </PhoneMockup>
-            </div>
+            </ScaledPhone>
             </AnimateIn>
           </div>
         </div>
