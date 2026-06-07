@@ -43,13 +43,19 @@ loadEnv();
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
+const isMainModule =
+  process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
+
 if (!supabaseUrl || !supabaseKey) {
-  console.log('ℹ Supabase credentials not found — skipping prerender step.');
-  console.log('  Pre-rendered HTML files already committed to public/blog/ will be used.');
-  process.exit(0);
+  if (isMainModule) {
+    console.log('ℹ Supabase credentials not found — skipping prerender step.');
+    console.log('  Pre-rendered HTML files already committed to public/blog/ will be used.');
+    process.exit(0);
+  }
 }
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase =
+  supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 const SITE_URL = 'https://smashinvoices.com';
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
@@ -61,7 +67,7 @@ const CHROME_CTA_LABEL = 'Add to Chrome — Free';
 
 interface FAQItem { question: string; answer: string }
 
-interface BlogPost {
+export interface BlogPost {
   id: string;
   title: string;
   slug: string;
@@ -554,7 +560,7 @@ function renderConversionCloseHtml(): string {
   </aside>`;
 }
 
-function renderPost(post: BlogPost): string {
+export function renderPost(post: BlogPost): string {
   const url = `${SITE_URL}/blog/${post.slug}`;
   const title = post.meta_title || `${post.title} | SMASH Invoices Blog`;
   const description = post.meta_description || post.excerpt;
@@ -737,6 +743,11 @@ ${schemas
 }
 
 async function prerenderBlogPosts() {
+  if (!supabase) {
+    console.log('ℹ Supabase client unavailable.');
+    process.exit(0);
+  }
+
   console.log('Fetching blog posts from Supabase...');
 
   const { data: posts, error } = await supabase
@@ -785,4 +796,7 @@ async function prerenderBlogPosts() {
   if (writeDist) console.log('   Also copied to dist/blog/ for local preview.');
 }
 
-prerenderBlogPosts();
+const isMain = isMainModule;
+if (isMain) {
+  prerenderBlogPosts();
+}
