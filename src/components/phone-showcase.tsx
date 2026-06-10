@@ -30,7 +30,7 @@ export function PhoneShowcase({
       </div>
     ) : layout === 'dual-overlap' ? (
       <div
-        className={`relative flex items-end justify-center mx-auto origin-bottom ${scaleClassName}`}
+        className={`relative flex w-full items-center justify-center mx-auto origin-center ${scaleClassName}`}
       >
         {children}
       </div>
@@ -69,7 +69,7 @@ interface ScaledPhoneProps {
 export function ScaledPhone({
   children,
   className = '',
-  scaleClassName = 'scale-[0.6] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100',
+  scaleClassName = 'scale-100',
   float = 'none',
 }: ScaledPhoneProps) {
   return (
@@ -95,14 +95,17 @@ export function DualPhoneStack({
   backPhone,
   frontPhone,
   className = '',
-  scaleClassName = 'scale-[0.6] sm:scale-[0.75] lg:scale-[0.85] xl:scale-100',
-  backClassName = 'relative z-0 -rotate-6 -mr-8 animate-float-slow',
-  frontClassName = 'relative z-10 -ml-8 animate-float-delayed',
+  scaleClassName = 'scale-[0.52] sm:scale-[0.62] md:scale-[0.82] lg:scale-[0.92] xl:scale-100',
+  backClassName = 'relative z-0 -rotate-6 shrink-0 animate-float-slow',
+  frontClassName = 'relative z-10 -ml-10 sm:-ml-14 lg:-ml-20 shrink-0 animate-float-delayed',
 }: DualPhoneStackProps) {
   return (
     <PhoneShowcase layout="dual-overlap" className={className} scaleClassName={scaleClassName}>
-      <div className={backClassName}>{backPhone}</div>
-      <div className={frontClassName}>{frontPhone}</div>
+      {/* w-fit + mx-auto keeps the overlap group's visual centroid on the column midline */}
+      <div className="relative mx-auto flex w-fit max-w-full items-end justify-center">
+        <div className={backClassName}>{backPhone}</div>
+        <div className={frontClassName}>{frontPhone}</div>
+      </div>
     </PhoneShowcase>
   );
 }

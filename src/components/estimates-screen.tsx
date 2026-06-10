@@ -10,14 +10,14 @@ const ESTIMATES = [
 ];
 
 const EstimateCard = ({ est }: { est: typeof ESTIMATES[number] }) => (
-  <div className="bg-white rounded-3xl p-5 shadow-sm border border-slate-50 shrink-0">
-    <div className="flex justify-between items-start mb-4">
-      <div className="flex gap-4">
-        <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center font-bold text-[#0F172A] text-lg">
+  <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-50 shrink-0">
+    <div className="flex justify-between items-start mb-3">
+      <div className="flex min-w-0 gap-3">
+        <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center font-bold text-[#0F172A] text-base shrink-0">
           {est.initials}
         </div>
-        <div>
-          <h3 className="font-extrabold text-[#0F172A] text-sm leading-tight mb-1 uppercase tracking-tight">
+        <div className="min-w-0">
+          <h3 className="font-extrabold text-[#0F172A] text-[13px] leading-tight mb-1 uppercase tracking-tight">
             {est.title}
           </h3>
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
@@ -32,7 +32,7 @@ const EstimateCard = ({ est }: { est: typeof ESTIMATES[number] }) => (
       </div>
     </div>
 
-    <div className="flex justify-between items-center mt-6">
+    <div className="flex justify-between items-center mt-5">
       <div className="flex items-center gap-4">
         <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">{est.date}</span>
         <div className="flex items-center gap-1.5">
@@ -49,17 +49,15 @@ const EstimateCard = ({ est }: { est: typeof ESTIMATES[number] }) => (
           )}
         </div>
       </div>
-      <span className="text-xl font-extrabold text-[#0F172A] tracking-tighter">{est.amount}</span>
+      <span className="text-lg font-extrabold text-[#0F172A] tracking-tighter">{est.amount}</span>
     </div>
   </div>
 );
 
 export const EstimatesScreen = () => {
   return (
-    <div className="pt-14 pb-32 px-6 bg-[#F8FAFC] min-h-full overflow-hidden">
-      <div className="mb-6" />
-
-      <div className="flex gap-3 mb-6">
+    <div className="h-full w-full px-6 py-12 box-border bg-[#F8FAFC] overflow-hidden flex flex-col justify-center">
+      <div className="flex gap-3 mb-5">
         <div className="flex-1 relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
           <input
@@ -73,7 +71,7 @@ export const EstimatesScreen = () => {
         </button>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3.5">
         {ESTIMATES.slice(0, 4).map((est) => (
           <EstimateCard key={est.id} est={est} />
         ))}

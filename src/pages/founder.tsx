@@ -197,7 +197,7 @@ export function Founder() {
             </div>
             </AnimateIn>
             <AnimateIn direction="right">
-            <ScaledPhone scaleClassName="scale-[0.65] sm:scale-75 md:scale-[0.85] lg:scale-95 xl:scale-100">
+            <ScaledPhone>
               <PhoneMockup>
                 <ListeningScreen />
               </PhoneMockup>

@@ -11,22 +11,20 @@ export const DualPhoneSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-          <AnimateIn direction="left" className="flex w-full items-end justify-center overflow-visible">
-            <div className="relative h-[300px] sm:h-[390px] md:h-[460px] lg:h-auto flex w-full items-end justify-center overflow-visible">
-              <DualPhoneStack
-                scaleClassName="scale-[0.52] sm:scale-[0.68] md:scale-[0.82] lg:scale-100"
-                backPhone={
-                  <PhoneMockup>
-                    <GeneratingScreen />
-                  </PhoneMockup>
-                }
-                frontPhone={
-                  <PhoneMockup>
-                    <ListeningScreen />
-                  </PhoneMockup>
-                }
-              />
-            </div>
+          <AnimateIn direction="left" className="flex w-full items-center justify-center overflow-visible">
+            <DualPhoneStack
+              scaleClassName="scale-[0.52] sm:scale-[0.62] md:scale-[0.82] lg:scale-100"
+              backPhone={
+                <PhoneMockup>
+                  <GeneratingScreen />
+                </PhoneMockup>
+              }
+              frontPhone={
+                <PhoneMockup>
+                  <ListeningScreen />
+                </PhoneMockup>
+              }
+            />
           </AnimateIn>
 
           <AnimateIn direction="right" className="min-w-0">

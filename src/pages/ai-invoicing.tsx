@@ -158,7 +158,7 @@ export function AiInvoicing() {
             </div>
             </AnimateIn>
             <AnimateIn direction="right">
-            <ScaledPhone scaleClassName="scale-75 sm:scale-90 lg:scale-100">
+            <ScaledPhone>
               <PhoneMockup>
                 <AppScreen type="estimates-static" />
               </PhoneMockup>

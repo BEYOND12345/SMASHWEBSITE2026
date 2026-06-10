@@ -16,8 +16,8 @@ export const ListeningScreen = () => {
   };
 
   return (
-    <div className="h-full px-6 flex flex-col justify-center bg-white font-sans">
-      <div className="flex flex-col items-center">
+    <div className="h-full w-full px-6 py-16 box-border flex flex-col items-center justify-center bg-white font-sans">
+      <div className="flex w-full max-w-[280px] flex-col items-center">
         <div className="relative w-32 h-32 mb-8">
           <div className="relative w-full h-full bg-[#1E293B] rounded-full flex items-center justify-center shadow-xl">
             <div className="flex items-end gap-1.5 h-12">
@@ -39,8 +39,8 @@ export const ListeningScreen = () => {
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">REC</span>
         </div>
 
-        <div className="w-full px-2">
-          <div className="flex justify-between items-center mb-5">
+        <div className="w-full max-w-[260px] mx-auto">
+          <div className="flex justify-center items-center gap-6 mb-5">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Live Hints</span>
             <div className="flex items-center gap-1.5">
               <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
@@ -48,21 +48,21 @@ export const ListeningScreen = () => {
             </div>
           </div>
 
-          <div className="space-y-3.5">
+          <div className="space-y-3.5 flex flex-col items-center">
             {['Job Address', 'Customer Name', 'Scope of Work', 'Materials Needed'].map((hint, i) => (
               <motion.div
                 key={hint}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center justify-between"
+                className="grid w-full grid-cols-[20px_1fr] items-center gap-3"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full border-2 border-slate-200 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                  </div>
-                  <span className="text-[13px] font-semibold text-slate-400 uppercase tracking-wide">{hint}</span>
+                <div className="w-5 h-5 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0">
+                  <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
                 </div>
+                <span className="text-[13px] font-semibold text-slate-400 uppercase tracking-wide text-left">
+                  {hint}
+                </span>
               </motion.div>
             ))}
           </div>

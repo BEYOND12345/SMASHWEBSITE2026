@@ -24,7 +24,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
   const descClass = background === 'brand' ? 'text-white/75' : 'text-brand/65';
 
   return (
-    <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className} overflow-hidden`}>
+    <section className={`${bgClass} py-10 md:py-14 lg:py-20 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className={`${image ? 'grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20' : 'max-w-3xl'} items-center ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''}`}>
           <div className={`min-w-0 ${imagePosition === 'left' ? 'lg:order-2' : ''}`}>
@@ -55,7 +55,7 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
           </div>
 
           {image && (
-            <div className={`flex w-full min-w-0 items-center justify-center mt-6 lg:mt-0 py-8 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
+            <div className={`flex w-full min-w-0 items-center justify-center mt-6 lg:mt-0 py-4 md:py-8 ${imagePosition === 'left' ? 'lg:order-1' : ''}`}>
               {image}
             </div>
           )}

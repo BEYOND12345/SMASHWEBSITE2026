@@ -127,7 +127,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             </div>
 
             {/* Right — phones */}
-            <div className="flex w-full items-end justify-center overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
+            <div className="flex w-full items-center justify-center overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
               <DualPhoneStack
                 backPhone={
                   <PhoneMockup>
@@ -222,8 +222,6 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             {/* Right — phones */}
             <div className="flex w-full items-center justify-center overflow-visible py-10 lg:py-0">
               <DualPhoneStack
-                backClassName="relative z-0 -rotate-6 -mr-8"
-                frontClassName="relative z-10 -ml-8"
                 backPhone={
                   <PhoneMockup>
                     <ScannerScreen />

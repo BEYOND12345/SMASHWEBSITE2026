@@ -79,9 +79,9 @@ export function InvoiceOnMobile() {
       <Nav />
 
       {/* HERO */}
-      <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden">
+      <section className="bg-brand pt-16 pb-12 md:pt-24 md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <AnimateIn direction="left">
             <div className="pb-16 md:pb-24">
               <p className="text-accent font-black text-xs uppercase tracking-widest mb-4">Mobile Invoicing</p>

@@ -16,8 +16,8 @@ const ACTIVITY = [
 ];
 
 export const CustomerDetailScreen = () => (
-  <div className="h-full px-5 flex flex-col justify-center bg-[#F8FAFC]">
-    <div className="flex flex-col">
+  <div className="h-full w-full px-6 py-14 box-border flex flex-col items-center justify-center bg-[#F8FAFC] overflow-hidden">
+    <div className="flex w-full flex-col">
       <div className="text-center mb-5">
         <h1 className="text-[28px] font-black text-[#0F172A] tracking-tight mb-1.5">{CUSTOMER.name}</h1>
         <div className="flex flex-col items-center gap-0.5">

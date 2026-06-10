@@ -342,7 +342,7 @@ export function Features() {
           <PhoneShowcase
             layout="dual-row"
             className="mt-16"
-            scaleClassName="scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100"
+            scaleClassName="scale-[0.72] sm:scale-[0.82] md:scale-90 lg:scale-100"
           >
             <PhoneMockup size="small">
               <AppScreen type="estimates-static" />
@@ -395,7 +395,7 @@ export function Features() {
             {/* APP SCREENS — estimates + customer management */}
             <PhoneShowcase
               layout="dual-row"
-              scaleClassName="scale-75 sm:scale-90 lg:scale-100"
+              scaleClassName="scale-[0.6] sm:scale-[0.72] md:scale-[0.82] lg:scale-[0.92] xl:scale-100"
             >
               <PhoneMockup>
                 <AppScreen type="estimates" />

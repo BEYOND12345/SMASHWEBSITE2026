@@ -5,6 +5,10 @@ import { CustomerDetailScreen } from './customer-detail-screen';
 import { PortalScreen } from './portal-screen';
 import { EstimatesScreenStatic } from './estimates-screen-static';
 
+/** Logical iPhone viewport — screens are authored at this width. */
+const LOGICAL_WIDTH = 375;
+const LOGICAL_HEIGHT = 812;
+
 interface PhoneMockupProps {
   children: React.ReactNode;
   className?: string;
@@ -12,26 +16,28 @@ interface PhoneMockupProps {
   size?: 'standard' | 'small';
 }
 
-export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = '', floating = false, size = 'standard' }) => {
-  const isSmall = size === 'small';
-  const sizeClasses = isSmall
-    ? 'w-[240px] h-[520px] rounded-[40px] border-[6px]'
-    : 'w-[280px] h-[640px] rounded-[48px] border-[7px]';
-
-  const scale = isSmall ? 240 / 375 : 280 / 375;
-  const innerHeight = isSmall ? 520 / scale : 850;
+export const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className = '', size = 'standard' }) => {
+  const frameW = size === 'small' ? 240 : 296;
+  const frameH = Math.round((frameW / LOGICAL_WIDTH) * LOGICAL_HEIGHT);
+  const borderPx = size === 'small' ? 6 : 7;
+  const radius = size === 'small' ? 40 : 48;
+  const scale = frameW / LOGICAL_WIDTH;
 
   return (
-    <div className={`relative ${floating ? '' : ''} ${className}`}>
-      <div className={`relative ${sizeClasses} bg-[#0F172A] border-[#0F172A] overflow-hidden shadow-2xl`}>
+    <div className={`relative shrink-0 ${className}`} style={{ width: frameW, height: frameH }}>
+      <div
+        className="absolute inset-0 overflow-hidden bg-[#0F172A] shadow-2xl"
+        style={{ borderRadius: radius, border: `${borderPx}px solid #0F172A` }}
+      >
+        {/* Absolutely positioned so the 812px logical canvas does not expand layout
+            and get clipped by overflow:hidden (which caused top-heavy content + cut-off bottom). */}
         <div
-          className="overflow-hidden"
+          className="absolute"
           style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-            width: 375,
-            height: innerHeight,
-            transform: `scale(${scale})`,
-            transformOrigin: 'top left',
+            width: LOGICAL_WIDTH,
+            height: LOGICAL_HEIGHT,
+            transform: `translate(${-borderPx}px, ${-borderPx}px) scale(${scale})`,
+            transformOrigin: '0 0',
           }}
         >
           {children}
@@ -61,8 +67,8 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
 
   if (type === 'quote') {
     return (
-      <div className="w-full h-full bg-white p-6 overflow-hidden">
-        <div className="text-center mb-4">
+      <div className="w-full h-full bg-white px-6 py-14 box-border overflow-hidden flex flex-col justify-center">
+        <div className="text-center mb-5">
           <div className="font-black text-lg text-slate-900 mb-1">QUOTE #1042</div>
           <div className="text-xs text-slate-500">Alex Thompson</div>
         </div>
@@ -104,7 +110,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
         <div className="h-16 bg-white border-b border-slate-100 flex items-center justify-center">
           <div className="text-slate-900 font-black text-xs tracking-widest uppercase">Pricing Library</div>
         </div>
-        <div className="flex-1 p-4 space-y-2 overflow-hidden">
+        <div className="flex-1 px-6 py-6 space-y-3 overflow-hidden flex flex-col justify-center">
           <div className="bg-white rounded-xl p-3 border border-slate-100">
             <div className="font-bold text-slate-900 text-xs mb-1">Merbau Decking</div>
             <div className="text-sm font-black text-brand">$120/m²</div>
@@ -128,8 +134,8 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
 
   if (type === 'invoice') {
     return (
-      <div className="w-full h-full bg-white p-6 overflow-hidden">
-        <div className="text-center mb-4">
+      <div className="w-full h-full bg-white px-6 py-14 box-border overflow-hidden flex flex-col justify-center">
+        <div className="text-center mb-5">
           <div className="text-brand text-xs font-bold mb-2 bg-white inline-block px-3 py-1 rounded-full border border-accent">
             INVOICE
           </div>
@@ -162,7 +168,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
         <div className="h-16 bg-white border-b border-slate-100 flex items-center justify-center">
           <div className="text-slate-900 font-black text-xs tracking-widest uppercase">Client Details</div>
         </div>
-        <div className="flex-1 p-4">
+        <div className="flex-1 px-6 py-6 flex flex-col justify-center">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 mb-3">
             <div className="text-xs text-slate-500 mb-1">CLIENT</div>
             <div className="font-black text-slate-900">Alex Thompson</div>
@@ -187,7 +193,7 @@ export const AppScreen: React.FC<AppScreenProps> = ({ type }) => {
   }
 
   if (type === 'customer-detail') {
-    return <EstimatesScreen />;
+    return <CustomerDetailScreen />;
   }
 
   if (type === 'estimates') {

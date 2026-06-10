@@ -1,7 +1,7 @@
 export function ScannerScreen() {
   return (
-    <div className="h-full flex flex-col justify-center px-8 bg-white text-[#0F172A]">
-      <div className="flex flex-col items-center text-center mb-10">
+    <div className="h-full w-full px-6 py-16 box-border flex flex-col items-center justify-center bg-white text-[#0F172A]">
+      <div className="flex w-full max-w-[280px] flex-col items-center text-center mb-10">
         <h2 className="text-3xl font-black tracking-tighter uppercase leading-[0.95] mb-6">
           Set up pricing in 30 seconds
         </h2>
@@ -10,7 +10,7 @@ export function ScannerScreen() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex w-full max-w-[280px] flex-col items-center gap-6">
         <button className="w-full h-16 rounded-[24px] bg-[#E2FF00] text-[#0F172A] font-black uppercase tracking-widest text-[11px] shadow-xl shadow-[#E2FF00]/30">
           Upload Invoices
         </button>

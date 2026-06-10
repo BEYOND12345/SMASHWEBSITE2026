@@ -383,21 +383,15 @@ export function LandingPage() {
           "No setup. No configuration. Just talk and it works like you.",
         ]}
         image={
-          <PhoneShowcase className="h-[400px] sm:h-[490px] md:h-[560px] lg:h-auto">
-            <ScaledPhone
-              className="md:hidden h-full"
-              scaleClassName="scale-[0.65] sm:scale-[0.75]"
-              float="float-delayed"
-            >
-              <PhoneMockup>
+          <PhoneShowcase className="pt-2 pb-6 md:py-0">
+            <div className="md:hidden w-full flex justify-center">
+              <PhoneMockup className="mx-auto">
                 <AnalyzerScreen />
               </PhoneMockup>
-            </ScaledPhone>
+            </div>
             <div className="hidden md:block w-full">
               <DualPhoneStack
                 scaleClassName="scale-[0.8] lg:scale-90 xl:scale-100"
-                backClassName="animate-float-slow -mr-6"
-                frontClassName="animate-float-delayed -ml-6"
                 backPhone={
                   <PhoneMockup>
                     <ScannerScreen />
@@ -485,13 +479,13 @@ export function LandingPage() {
           "Everything tracked automatically — nothing to chase",
         ]}
         image={
-          <PhoneShowcase className="h-[440px] sm:h-[480px] md:h-[440px] lg:h-auto">
+          <PhoneShowcase className="py-6 md:py-0">
             <ScaledPhone
               className="md:hidden"
-              scaleClassName="scale-[0.7] sm:scale-[0.78]"
+              scaleClassName="scale-100"
               float="float"
             >
-              <PhoneMockup size="small">
+              <PhoneMockup>
                 <AppScreen type="portal" />
               </PhoneMockup>
             </ScaledPhone>
@@ -533,7 +527,7 @@ export function LandingPage() {
           "Never miss follow-ups",
         ]}
         image={
-          <ScaledPhone className="h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto" float="float">
+          <ScaledPhone className="py-6 md:py-0" float="float">
             <PhoneMockup>
               <AppScreen type="estimates" />
             </PhoneMockup>
@@ -559,7 +553,7 @@ export function LandingPage() {
           "Addresses saved",
         ]}
         image={
-          <ScaledPhone className="h-[460px] sm:h-[560px] md:h-[620px] lg:h-auto" float="float">
+          <ScaledPhone className="py-6 md:py-0" float="float">
             <PhoneMockup>
               <AppScreen type="customer-management" />
             </PhoneMockup>

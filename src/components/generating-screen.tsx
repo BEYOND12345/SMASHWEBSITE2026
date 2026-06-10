@@ -13,8 +13,8 @@ export const GeneratingScreen = () => {
   }, []);
 
   return (
-    <div className="h-full px-6 flex flex-col justify-center bg-white">
-      <div className="flex flex-col items-center">
+    <div className="h-full w-full px-6 py-16 box-border flex flex-col items-center justify-center bg-white">
+      <div className="flex w-full max-w-[280px] flex-col items-center">
         <div className="relative w-32 h-32 mb-8">
           <svg className="w-full h-full -rotate-90" viewBox="0 0 128 128">
             <circle
@@ -40,7 +40,7 @@ export const GeneratingScreen = () => {
           Turning voice into a professional document...
         </p>
 
-        <div className="w-full">
+        <div className="w-full max-w-[280px] mx-auto">
           <div className="flex gap-1.5 mb-5">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className={`h-2.5 flex-1 rounded-full ${progress >= i * 20 ? 'bg-[#E2FF00]' : 'bg-slate-100'}`} />

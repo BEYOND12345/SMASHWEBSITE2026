@@ -302,7 +302,7 @@ export function HowItWorks() {
             <PhoneShowcase
               layout="dual-row"
               className="py-12"
-              scaleClassName="scale-[0.55] sm:scale-[0.7] md:scale-[0.85] lg:scale-95 xl:scale-100"
+              scaleClassName="scale-[0.72] sm:scale-[0.82] md:scale-90 lg:scale-100"
             >
               <PhoneMockup size="small">
                 <AppScreen type="estimates-static" />
