@@ -4,11 +4,9 @@ import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
 import { FeatureSection } from '../components/feature-section';
 import { SEO } from '../components/seo';
-import { SignupForm } from '../components/signup-form';
 import { StickyCTA } from '../components/sticky-cta';
 import { SignupFAB } from '../components/signup-fab';
 import { InlineCTA } from '../components/inline-cta';
-import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
 import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema, createFAQSchema } from '../components/structured-data';
@@ -565,13 +563,6 @@ export function LandingPage() {
         }
       />
 
-      {/* ── SOCIAL PROOF ─────────────────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <SocialProof />
-        </div>
-      </section>
-
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -623,9 +614,6 @@ export function LandingPage() {
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <FAQ />
-
-      {/* ── SIGNUP FORM ──────────────────────────────────────────────────── */}
-      <SignupForm />
 
       <Footer showCTA />
     </div>

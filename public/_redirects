@@ -2,6 +2,12 @@
 # Static HTML rewrites MUST appear before the SPA catch-all so crawlers get
 # full pre-rendered content (Gmail landings, Smash Leads, pSEO pages).
 
+# Legal + support — static HTML for Chrome Web Store URL verification
+/privacy              /privacy/index.html      200
+/privacy/             /privacy/index.html      200
+/support              /support/index.html      200
+/support/             /support/index.html      200
+
 # Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200
 /blog/:slug/          /blog/:slug/index.html   200

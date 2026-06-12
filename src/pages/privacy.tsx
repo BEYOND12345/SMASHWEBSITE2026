@@ -105,7 +105,7 @@ export function Privacy() {
                 <li><strong>OpenAI</strong> — quote generation from transcribed speech (openai.com/privacy)</li>
                 <li><strong>RevenueCat</strong> — subscription management for iOS (revenuecat.com/privacy)</li>
                 <li><strong>Apple</strong> — App Store distribution (apple.com/privacy)</li>
-                <li><strong>Vercel</strong> — website hosting (vercel.com/legal/privacy-policy)</li>
+                <li><strong>Netlify</strong> — website hosting (netlify.com/privacy)</li>
               </ul>
               <p className="font-body mt-4 leading-[1.6]">We only share data with these providers to the extent necessary to deliver the service.</p>
             </div>

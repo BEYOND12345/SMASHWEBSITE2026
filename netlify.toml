@@ -5,6 +5,27 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Legal + support — static HTML for Chrome Web Store URL verification
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/support"
+  to = "/support/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/support/"
+  to = "/support/index.html"
+  status = 200
+
 # Pre-rendered static HTML — must come before SPA fallback
 [[redirects]]
   from = "/blog/:slug"
