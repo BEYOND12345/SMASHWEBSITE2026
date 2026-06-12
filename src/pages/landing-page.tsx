@@ -28,6 +28,7 @@ import { AnalyzerScreen } from '../components/analyzer-screen';
 import { AnimateIn } from '../components/animate-in';
 import {
   APP_STORE_URL,
+  CHROME_STORE_RATING_LABEL,
   CHROME_STORE_URL,
   CHROME_CTA_LABEL,
   IOS_CTA_LABEL,
@@ -171,6 +172,9 @@ export function LandingPage() {
                   {CHROME_CTA_LABEL}
                 </a>
               </div>
+              <p className="font-body text-xs font-semibold text-white/50">
+                ★★★★★ {CHROME_STORE_RATING_LABEL}
+              </p>
               <a
                 href="#demo"
                 className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"

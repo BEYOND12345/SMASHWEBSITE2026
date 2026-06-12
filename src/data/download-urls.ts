@@ -16,3 +16,24 @@ export const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
 
 /** Chrome extension CTA. */
 export const CHROME_CTA_LABEL = 'Add to Chrome — Free';
+
+/** Live Chrome Web Store rating — update when store stats change. */
+export const CHROME_STORE_RATING = {
+  ratingValue: '5',
+  reviewCount: '15',
+  bestRating: '5',
+  worstRating: '1',
+} as const;
+
+export const CHROME_STORE_RATING_LABEL = `${CHROME_STORE_RATING.ratingValue}.0 · ${CHROME_STORE_RATING.reviewCount} Chrome Web Store reviews`;
+
+/** JSON-LD AggregateRating for Chrome extension SoftwareApplication schema. */
+export function chromeStoreAggregateRatingSchema() {
+  return {
+    '@type': 'AggregateRating' as const,
+    ratingValue: CHROME_STORE_RATING.ratingValue,
+    reviewCount: CHROME_STORE_RATING.reviewCount,
+    bestRating: CHROME_STORE_RATING.bestRating,
+    worstRating: CHROME_STORE_RATING.worstRating,
+  };
+}

@@ -69,7 +69,16 @@ for (const { slug } of videoPosts) {
   if (!html.includes('youtube.com/embed')) {
     fail(`${slug}/index.html has no YouTube embed`);
   }
-  console.log(`✓ ${slug} — embed present`);
+  if (!html.includes('VideoObject')) {
+    fail(`${slug}/index.html has no VideoObject schema — GSC video/rich-result errors`);
+  }
+  if (!html.includes('"reviewCount":"15"')) {
+    fail(`${slug}/index.html missing Chrome Web Store reviewCount 15 in JSON-LD`);
+  }
+  if (!html.includes('Chrome Web Store reviews')) {
+    fail(`${slug}/index.html missing visible Chrome Web Store rating text`);
+  }
+  console.log(`✓ ${slug} — embed + VideoObject + Chrome rating OK`);
 }
 
 const redirects = path.join(root, 'dist', '_redirects');

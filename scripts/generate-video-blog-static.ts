@@ -15,6 +15,7 @@ const scripts = [
   'scripts/generate-shorts-post.ts',
   'scripts/generate-quickbooks-gmail-shortcut-post.ts',
   'scripts/generate-sku-numbers-invoice-post.ts',
+  'scripts/generate-youtube-posts-static.ts',
 ];
 
 for (const script of scripts) {

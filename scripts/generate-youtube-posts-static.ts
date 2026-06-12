@@ -21,14 +21,20 @@ const __dirname = dirname(__filename);
 
 marked.setOptions({ gfm: true, breaks: false });
 
+import {
+  APP_STORE_URL,
+  CHROME_STORE_RATING_LABEL,
+  CHROME_STORE_URL,
+  chromeStoreAggregateRatingSchema,
+} from '../src/data/download-urls.ts';
+
 const SITE_URL = 'https://smashinvoices.com';
-const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 const chromeCTA = `
 <div style="margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(217,249,157,0.12),rgba(217,249,157,0.04));border:1px solid rgba(217,249,157,0.3);border-radius:16px;text-align:center;">
   <p style="font-size:20px;font-weight:800;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;">Ready to stop typing quotes?</p>
-  <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:15px;">Free to install. No credit card. Works inside Gmail in 2 minutes.</p>
+  <p style="color:rgba(255,255,255,0.65);margin:0 0 8px;font-size:15px;">Free to install. No credit card. Works inside Gmail in 2 minutes.</p>
+  <p style="color:rgba(255,255,255,0.55);margin:0 0 20px;font-size:14px;">★★★★★ ${CHROME_STORE_RATING_LABEL} · <a href="${CHROME_STORE_URL}" rel="nofollow" style="color:#D9F99D;text-decoration:underline;">Chrome Web Store</a></p>
   <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-block;background:#D9F99D;color:#0A0A0A;padding:12px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;">Add SMASH to Chrome — Free</a>
 </div>
 `;
@@ -62,6 +68,15 @@ function formatDate(iso: string): string {
 
 function renderJsonLd(obj: unknown): string {
   return JSON.stringify(obj).replace(/</g, '\\u003c');
+}
+
+/** Pull the first YouTube embed from post markdown/HTML for VideoObject schema. */
+function parseVideoFromContent(content: string): { id: string; title: string } | null {
+  const match = content.match(
+    /youtube\.com\/embed\/([A-Za-z0-9_-]+)[^>]*title="([^"]+)"/,
+  );
+  if (!match) return null;
+  return { id: match[1], title: match[2] };
 }
 
 function inlineStyles(): string {
@@ -186,8 +201,27 @@ function renderPost(post: Post): string {
     },
     url: `${SITE_URL}/chrome-extension`,
     downloadUrl: CHROME_STORE_URL,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '47' },
+    aggregateRating: chromeStoreAggregateRatingSchema(),
   };
+
+  const videoMeta = parseVideoFromContent(contentMd);
+  const videoSchema = videoMeta
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: videoMeta.title,
+        description: post.meta_description,
+        thumbnailUrl: `https://i.ytimg.com/vi/${videoMeta.id}/maxresdefault.jpg`,
+        uploadDate: publishedIso,
+        contentUrl: `https://www.youtube.com/watch?v=${videoMeta.id}`,
+        embedUrl: `https://www.youtube.com/embed/${videoMeta.id}`,
+        publisher: {
+          '@type': 'Organization',
+          name: 'SMASH Invoices',
+          url: SITE_URL,
+        },
+      }
+    : null;
 
   const faqSchema = post.faq_data.length > 0 ? {
     '@context': 'https://schema.org',
@@ -199,7 +233,13 @@ function renderPost(post: Post): string {
     })),
   } : null;
 
-  const schemas = [articleSchema, breadcrumbSchema, softwareSchema, ...(faqSchema ? [faqSchema] : [])];
+  const schemas = [
+    articleSchema,
+    breadcrumbSchema,
+    ...(videoSchema ? [videoSchema] : []),
+    softwareSchema,
+    ...(faqSchema ? [faqSchema] : []),
+  ];
 
   return `<!DOCTYPE html>
 <html lang="en-AU">
