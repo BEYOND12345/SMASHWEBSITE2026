@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run sitemap && npm run verify:blog-deploy",
+    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run generate:video-blog-static && npm run patch:voice-blog-meta && npm run sync:blog-dist && npm run sitemap && npm run verify:blog-deploy",
+    "sync:blog-dist": "node --experimental-strip-types scripts/sync-blog-to-dist.ts",
+    "sync:voice-blog-supabase": "node --experimental-strip-types scripts/sync-voice-cluster-blog-supabase.ts",
+    "generate:voice-static": "node --experimental-strip-types scripts/generate-voice-invoicing-static.ts",
+    "patch:voice-blog-meta": "node --experimental-strip-types scripts/patch-voice-cluster-blog-meta.ts",
     "generate:legal-static": "node --experimental-strip-types scripts/generate-legal-static.ts",
     "generate:video-blog-static": "node --experimental-strip-types scripts/generate-video-blog-static.ts",
     "verify:blog-deploy": "node --experimental-strip-types scripts/verify-blog-deploy.ts",

@@ -58,6 +58,22 @@ const supabase =
   supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 const SITE_URL = 'https://smashinvoices.com';
+
+/** Hand-maintained static pages with VideoObject schema — do not overwrite from Supabase. */
+const PROTECTED_BLOG_SLUGS = new Set([
+  'wave-invoicing-alternative-gmail',
+  'photographer-wedding-quote-gmail-60-seconds',
+  'fastest-voice-invoice-generator-gmail',
+  'quickbooks-gmail-invoice-shortcut',
+  'how-to-add-sku-numbers-to-invoice',
+  'gmail-email-to-invoice-20-seconds',
+  'gmail-to-xero-invoice-no-typing',
+  'gmail-quickbooks-xero-bridge',
+  'quickbooks-gmail-chrome-extension-missing',
+  'quickbooks-gmail-sidebar-tab-switching',
+  'fastest-way-to-send-invoice-2026',
+  'pest-control-invoicing-gmail-csv-pricing',
+]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
@@ -713,7 +729,8 @@ ${schemas
       <a href="/blog">Blog</a>
       <a href="/pricing">Pricing</a>
       <a href="/features">Features</a>
-      <a href="/voice-invoicing">Voice invoicing</a>
+      <a href="/voice-invoicing">Send invoice fast</a>
+      <a href="/gmail-invoice">Gmail invoice</a>
       <a href="/tradie-hourly-rates">Hourly rates</a>
       <a href="/materials-pricing">Materials pricing</a>
       <a href="/customer-approval">Customer approval</a>
@@ -777,7 +794,12 @@ async function prerenderBlogPosts() {
   const writeDist = fs.existsSync(distPath);
   if (writeDist) fs.mkdirSync(distBlogPath, { recursive: true });
 
+  let skipped = 0;
   for (const post of posts) {
+    if (PROTECTED_BLOG_SLUGS.has(post.slug)) {
+      skipped++;
+      continue;
+    }
     const html = renderPost(post as BlogPost);
     const postDir = path.join(blogPath, post.slug);
     fs.mkdirSync(postDir, { recursive: true });
@@ -792,7 +814,11 @@ async function prerenderBlogPosts() {
   }
 
   console.log('');
-  console.log(`✅ Pre-rendered ${posts.length} blog posts to public/blog/`);
+  const rendered = posts.length - skipped;
+  console.log(`✅ Pre-rendered ${rendered} blog posts to public/blog/`);
+  if (skipped > 0) {
+    console.log(`   Skipped ${skipped} hand-maintained video posts (VideoObject schema).`);
+  }
   if (writeDist) console.log('   Also copied to dist/blog/ for local preview.');
 }
 
