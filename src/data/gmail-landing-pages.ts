@@ -423,29 +423,28 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       { name: 'Gmail Invoice Extension', url: `${SITE}/gmail-invoice` },
     ],
     seo: {
-      title: 'Gmail Invoice Extension — Turn Email Into a Sent Invoice in 20 Seconds | SMASH',
+      title: 'Email to Invoice — Quote From the Gmail Thread | SMASH',
       description:
-        'You are already in Gmail. SMASH reads the open thread, prices from your catalog, and builds a GST-ready invoice — verify and send without leaving email. Syncs to Xero and QuickBooks.',
-      keywords:
-        'gmail invoice extension, email to invoice, send invoice from gmail, gmail invoice generator, invoice in gmail, gmail quoting tool, gmail xero invoice',
-      ogTitle: 'Gmail Invoice Extension — Send From the Thread | SMASH',
+        'SMASH reads the customer\'s email in a Gmail sidebar, builds the quote from your pricing, and you send it from the thread. Verify in 30 seconds instead of retyping for 20 minutes.',
+      keywords: '',
+      ogTitle: 'Email to Invoice — Quote From the Gmail Thread | SMASH',
       ogDescription:
-        'Work request in your inbox? SMASH prices it from your catalog and sends from the same thread — under 60 seconds.',
+        'Turn the customer email into a priced quote. Verify in 30 seconds, send from the same Gmail thread.',
     },
     hero: {
-      eyebrow: 'Gmail invoice extension',
-      preHeadline: 'YOU’RE ALREADY IN GMAIL.',
-      h1White: 'Send the invoice',
-      h1Accent: 'from the thread.',
+      eyebrow: 'Email to invoice',
+      preHeadline: 'REQUEST SITTING IN YOUR INBOX.',
+      h1White: 'Turn the email into the invoice.',
+      h1Accent: 'Reply from the thread.',
       subcopy:
-        'SMASH docks in your Gmail sidebar. Scan the customer’s email or talk the job — get a priced, tax-ready invoice or quote, attach it to your reply, and collect payment. No new app. No copy-paste into spreadsheets.',
+        'SMASH docks in your Gmail sidebar. It reads the open thread, matches your catalog, flags unknowns — you verify and send a tax-ready quote from the same reply.',
       strapline:
-        'Chrome extension for Gmail. Syncs to Xero and QuickBooks. iOS app for on-site voice invoicing.',
+        'Chrome extension for Gmail. Works with Xero and QuickBooks. iPhone app for on-site voice quoting.',
     },
     answerStrip: {
-      question: 'What is the best Gmail invoice extension?',
+      question: 'What is email to invoice?',
       answer:
-        'SMASH is a Chrome extension that adds an invoice and quote builder to Gmail. It reads open customer emails (From Email), accepts voice dictation (Start Recording), applies your saved pricing, generates GST- or VAT-ready PDFs, and lets you send from the same thread with approval and pay links. Completed documents sync to Xero or QuickBooks Online.',
+        'Email to invoice means turning a customer request in Gmail into a priced quote or invoice without leaving the thread. SMASH reads the open email, prices from your catalog, and lets you verify and send from the same reply — typically in under 60 seconds.',
     },
     integrationStrap: 'Simple as: works with Gmail, Xero, QuickBooks, and as a standalone invoicing tool.',
     integrationStrapSub:

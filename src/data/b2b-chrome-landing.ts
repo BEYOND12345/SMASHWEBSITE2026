@@ -5,19 +5,18 @@ export const B2B_CHROME_LANDING = {
   chromeStoreUrl:
     'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel?utm_source=b2b-outreach&utm_medium=landing&utm_campaign=b2b-gmail-quoting',
   seo: {
-    title: 'SMASH for Gmail — Turn POs, Emails & Voice into Quotes & Invoices',
+    title: 'RFQ to Quote in Gmail — Suppliers & Wholesalers | SMASH',
     description:
-      'Send quotes and invoices without leaving Gmail. SMASH turns attached PDF purchase orders, raw customer emails, or a quick voice note into priced, professional documents in under 60 seconds. Works fully standalone, or syncs to Xero and QuickBooks Online.',
-    keywords:
-      'gmail invoicing, pdf purchase order to invoice, b2b quoting chrome extension, fuzzy description matching, standalone invoicing tool, wave invoicing alternative, wholesale distributor quoting, xero quickbooks gmail sidebar, rfq to quote, stripe invoice payments',
-    ogTitle: 'You’re already in Gmail. Your quotes and invoices should be too.',
+      '30 RFQs a week at 20 minutes each is a full day of retyping. SMASH reads the RFQ in Gmail, matches your catalog and prices, you verify and send. Free to install.',
+    keywords: '',
+    ogTitle: 'RFQ to Quote in Gmail — Suppliers & Wholesalers | SMASH',
     ogDescription:
-      'SMASH lives in your Gmail sidebar and turns PDF POs, customer emails, and voice notes into priced quotes and invoices in under 60 seconds — standalone, or synced to Xero and QuickBooks Online.',
+      'Your inbox is your order queue. SMASH reads RFQs in Gmail, matches your catalog, you verify and send — without retyping.',
   },
   hero: {
-    eyebrow: 'SMASH for Gmail — Quotes, Invoices & Orders',
-    h1Lead: 'You’re already in Gmail.',
-    h1Accent: 'Your quotes and invoices should be too.',
+    eyebrow: 'RFQ to quote in Gmail',
+    h1Lead: 'Your inbox is your order queue.',
+    h1Accent: 'Stop typing it into a quote.',
     valueBullets: [
       { from: 'PDF POs & RFQs', to: 'Quotes & Invoices' },
       { from: 'Customer Emails', to: 'Invoices' },

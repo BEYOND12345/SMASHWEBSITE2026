@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:gmail-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run generate:video-blog-static && npm run patch:voice-blog-meta && npm run retrofit:blog-action-plan-v1 && npm run sync:blog-dist && npm run sitemap && npm run verify:blog-deploy",
+    "build": "npm run generate:gmail-static && npm run generate:voice-static && npm run generate:main-pages-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run generate:video-blog-static && npm run patch:voice-blog-meta && npm run retrofit:blog-action-plan-v1 && npm run sync:blog-dist && npm run sitemap && npm run verify:blog-deploy",
+    "generate:main-pages-static": "node --experimental-strip-types scripts/generate-main-pages-static.ts",
     "sync:blog-dist": "node --experimental-strip-types scripts/sync-blog-to-dist.ts",
     "sync:voice-blog-supabase": "node --experimental-strip-types scripts/sync-voice-cluster-blog-supabase.ts",
     "sync:action-plan-blog-supabase": "node --experimental-strip-types scripts/sync-action-plan-blog-supabase.ts",

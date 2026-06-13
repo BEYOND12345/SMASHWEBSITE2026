@@ -140,6 +140,25 @@ Video Gmail posts (deferred from 301 — still valid index targets).
 
 ---
 
+## Batch 5 — Main Pages Spec v1 (after deploy)
+
+Re-index refreshed Level 1 pages (static HTML + new titles):
+
+1. https://smashinvoices.com/
+2. https://smashinvoices.com/voice-invoicing
+3. https://smashinvoices.com/gmail-invoice
+4. https://smashinvoices.com/chrome-extension
+5. https://smashinvoices.com/b2b-gmail-quoting
+6. https://smashinvoices.com/pricing
+7. https://smashinvoices.com/us
+8. https://smashinvoices.com/uk
+9. https://smashinvoices.com/nz
+10. https://smashinvoices.com/ca
+
+**Verify:** Test live URL shows spec title/H1 and self-referencing canonical (not homepage shell).
+
+---
+
 ## Progress tracker
 
 | Batch | Date | Submitted? | Notes |
@@ -148,3 +167,4 @@ Video Gmail posts (deferred from 301 — still valid index targets).
 | 2 | 14 Jun | ☐ | Homepage FAQ + voice survivors |
 | 3 | 15 Jun | ☐ | Trade how-tos with impressions |
 | 4 | 16 Jun | ☐ | Video Gmail cluster |
+| 5 | After main pages deploy | ☐ | Level 1 spec v1 refresh |

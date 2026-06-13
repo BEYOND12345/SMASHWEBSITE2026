@@ -130,6 +130,7 @@ async function generateSitemap() {
     { loc: '/ai-invoicing',            srcFiles: ['src/pages/ai-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', srcFiles: ['src/pages/gst-compliant-invoicing.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/chrome-extension',        srcFiles: ['src/pages/chrome-extension.tsx'], changefreq: 'monthly', priority: '0.9' },
+    { loc: '/b2b-gmail-quoting',       srcFiles: ['src/data/b2b-chrome-landing.ts', 'public/b2b-gmail-quoting/index.html'], changefreq: 'monthly', priority: '0.85' },
 
     // Comparison pages — share comparison-data so any price update bumps them all
     { loc: '/smash-vs-xero',        srcFiles: ['src/pages/smash-vs-xero.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },

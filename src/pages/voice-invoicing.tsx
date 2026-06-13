@@ -4,6 +4,7 @@ import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSch
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
+import { mainPages } from '../data/main-pages-seo';
 import { RelatedTools } from '../components/related-tools';
 import { Footer } from '../components/footer';
 import { Check, ChevronDown, Star, ArrowRight, Mic, FileText, Send, ThumbsUp, DollarSign } from 'lucide-react';
@@ -64,11 +65,10 @@ export function VoiceInvoicing() {
   return (
     <>
       <SEO
-        title="Send an Invoice in 30 Seconds — Talk, Verify, Send | SMASH"
-        description="Finished the job? Describe it out loud. SMASH builds a priced invoice from your catalog in ~30 seconds — nothing guessed. iPhone app + Gmail extension. Start free."
-        keywords="voice to invoice, send invoice after job, invoice without typing, fastest way to invoice, invoice from phone, on the job invoice, voice invoicing"
-        ogTitle="Send an Invoice in 30 Seconds — Talk, Verify, Send | SMASH"
-        ogDescription="Talk for 30 seconds. SMASH prices the job from your catalog. Verify. Send — before you leave the site."
+        title={mainPages.voiceInvoicing.title}
+        description={mainPages.voiceInvoicing.description}
+        ogTitle={mainPages.voiceInvoicing.title}
+        ogDescription={mainPages.voiceInvoicing.description}
         ogUrl="https://smashinvoices.com/voice-invoicing"
         canonical="https://smashinvoices.com/voice-invoicing"
         hreflangs={hreflangAlternates}
@@ -101,10 +101,11 @@ export function VoiceInvoicing() {
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-6">
               Finished the job — customer wants a number
             </p>
-            <h1 className="font-display text-[48px] md:text-[72px] lg:text-[96px] uppercase tracking-tighter leading-[0.9] text-white mb-8 max-w-5xl">
+            <h1 className="font-display text-[48px] md:text-[72px] lg:text-[96px] uppercase tracking-tighter leading-[0.9] text-white mb-4 max-w-5xl">
               Send the invoice<br />
-              <span className="text-accent">before you leave.</span>
+              <span className="text-accent">before you leave the job</span>
             </h1>
+            <p className="font-body text-base text-slate-500 mb-4">You do the work. SMASH does the rest.</p>
             <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-4">
               Talk for 30 seconds. SMASH builds a priced invoice from your catalog — nothing guessed. Verify. Send.
             </p>

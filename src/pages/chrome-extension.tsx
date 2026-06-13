@@ -22,6 +22,7 @@ import { StructuredData, createBreadcrumbSchema, createFAQSchema, createVideoSch
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
+import { mainPages } from '../data/main-pages-seo';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
 import { MockupFrame } from '../components/phone-showcase';
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../data/download-urls';
@@ -129,11 +130,10 @@ export function ChromeExtension() {
   return (
     <>
       <SEO
-        title="Gmail Invoice Extension — Send From the Thread | SMASH"
-        description="You are already in Gmail. SMASH reads the open thread or takes voice dictation, prices from your catalog, and sends a GST-ready invoice — under 60 seconds. Syncs to Xero and QuickBooks."
-        keywords="gmail invoice extension, email to invoice, send invoice from gmail, gmail quote sidebar, voice to invoice gmail, smash chrome extension"
-        ogTitle="Gmail Invoice Extension — Send From the Thread | SMASH"
-        ogDescription="Work request in your inbox? Price from your catalog and send without leaving Gmail."
+        title={mainPages.chromeExtension.title}
+        description={mainPages.chromeExtension.description}
+        ogTitle={mainPages.chromeExtension.title}
+        ogDescription={mainPages.chromeExtension.description}
         ogUrl="https://smashinvoices.com/chrome-extension"
         canonical="https://smashinvoices.com/chrome-extension"
         hreflangs={hreflangAlternates}
@@ -173,10 +173,11 @@ export function ChromeExtension() {
 
                 <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">STOP WASTING TIME.</p>
 
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
-                  <span className="block text-white">Smash out invoices</span>
-                  <span className="block text-accent">directly in Gmail.</span>
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-4">
+                  <span className="block text-white">The Gmail sidebar that</span>
+                  <span className="block text-accent">turns requests into quotes</span>
                 </h1>
+                <p className="font-body text-base text-slate-500 mb-8">You do the work. SMASH does the rest.</p>
 
                 <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">
                   The magic bridge for QuickBooks &amp; Xero. Our sidebar scans your emails and generates invoices using your own pricing and voice. No new apps. No tab-jumping. Done.

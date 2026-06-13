@@ -30,13 +30,9 @@ import {
   CHROME_CTA_LABEL,
   IOS_CTA_LABEL,
 } from '../data/download-urls';
+import { mainPages, BRAND_LINE } from '../data/main-pages-seo';
 
-const homeFaqs = [
-  { question: "What is SMASH Invoices?", answer: "SMASH lets you send the invoice before you leave the job. Describe the work out loud on iPhone or scan the Gmail thread at your desk — get a priced, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada. Free to start, no credit card required." },
-  { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 5 invoices per month — no credit card needed. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing." },
-  { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
-  { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
-];
+const homeFaqs = mainPages.home.faqs!.map((f) => ({ question: f.question, answer: f.answer }));
 
 const testimonials = [
   {
@@ -60,14 +56,13 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SEO
-        title="Send the Invoice Before You Leave — Voice to Invoice | SMASH"
-        description="Talk for 30 seconds on iPhone or scan Gmail at your desk. SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds. AU, NZ, UK, US, CA. Free to start."
-        keywords="send invoice after job, voice to invoice, voice invoicing, invoice without typing, gmail invoice extension, fastest way to send invoice, GST invoice app, mobile invoicing app"
-        ogTitle="Send the Invoice Before You Leave | SMASH"
-        ogDescription="Talk, verify against your catalog, send in under 60 seconds. iPhone in the field or Gmail at your desk. Free to start."
+        title={mainPages.home.title}
+        description={mainPages.home.description}
+        ogTitle={mainPages.home.title}
+        ogDescription={mainPages.home.description}
         ogUrl="https://smashinvoices.com/"
-        twitterTitle="Send the Invoice Before You Leave | SMASH"
-        twitterDescription="Voice to invoice in under 60 seconds. iPhone on site or Gmail at your desk."
+        twitterTitle={mainPages.home.title}
+        twitterDescription={mainPages.home.description}
         ogImage="https://smashinvoices.com/hero_image.png"
         twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/"
@@ -111,37 +106,30 @@ export function LandingPage() {
               className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-6 animate-hero-reveal"
               style={{ animationDelay: '0ms' }}
             >
-              Voice to Invoice — Live in AU <span className="text-accent/60">· NZ · UK · US · CA</span>
+              Quote in under 60 seconds · AU · NZ · UK · US · CA
             </p>
 
-            {/* H1 — staggered line-by-line */}
-            <h1 className="font-black uppercase leading-[0.88] tracking-tighter mb-8 md:mb-10">
+            <h1 className="font-black uppercase leading-[0.88] tracking-tighter mb-4 md:mb-6">
               <span
-                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
+                className="block text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl animate-hero-reveal text-white"
                 style={{ animationDelay: '80ms' }}
               >
-                Just Talk.
-              </span>
-              <span
-                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl animate-hero-reveal"
-                style={{ animationDelay: '180ms' }}
-              >
-                SMASH does
-              </span>
-              <span
-                className="block text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl text-accent animate-hero-reveal"
-                style={{ animationDelay: '280ms' }}
-              >
-                the rest.
+                {mainPages.home.h1}
               </span>
             </h1>
 
-            {/* Subtitle */}
+            <p
+              className="font-body text-lg sm:text-xl text-white/70 mb-6 animate-hero-reveal font-semibold"
+              style={{ animationDelay: '160ms' }}
+            >
+              {BRAND_LINE}
+            </p>
+
             <p
               className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mb-10 md:mb-12 font-medium leading-[1.3] max-w-2xl animate-hero-reveal"
               style={{ animationDelay: '420ms' }}
             >
-              Describe the job out loud. SMASH sends a professional invoice before you've left the driveway.
+              Customer email or 20 seconds of talking → priced, tax-ready quote. Verify in 30 seconds, send, get back to work.
             </p>
 
             {/* CTAs — iOS primary (accent), Chrome Store secondary (white), demo as text */}
@@ -227,6 +215,26 @@ export function LandingPage() {
           aria-hidden="true"
         >
           60s
+        </div>
+      </section>
+
+      {/* ── ROUTE CHOOSER (spec v1) ─────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Link to="/voice-invoicing" className="group rounded-3xl border-2 border-slate-200 p-8 hover:border-accent transition-colors">
+              <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Quoting from a job?</p>
+              <h2 className="text-2xl font-black text-brand mb-3">iPhone — voice on site</h2>
+              <p className="text-slate-600 mb-4">Talk for 20 seconds, verify your catalog, send before you leave.</p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand group-hover:gap-3 transition-all">Start Free <ArrowRight size={16} /></span>
+            </Link>
+            <Link to="/gmail-invoice" className="group rounded-3xl border-2 border-slate-200 p-8 hover:border-accent transition-colors">
+              <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Quoting from an inbox?</p>
+              <h2 className="text-2xl font-black text-brand mb-3">Chrome — Gmail sidebar</h2>
+              <p className="text-slate-600 mb-4">Read the thread, match your pricing, reply with the quote attached.</p>
+              <span className="inline-flex items-center gap-2 font-bold text-brand group-hover:gap-3 transition-all">Add to Chrome — Free <ArrowRight size={16} /></span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -612,6 +620,15 @@ export function LandingPage() {
       <BlogPreview />
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      {/* ── ANSWER BLOCK (spec v1) ───────────────────────────────────────── */}
+      <section className="bg-slate-50 py-12 border-t border-slate-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-lg text-slate-700 leading-relaxed">
+            <strong>Short answer:</strong> {mainPages.home.answerBlock}
+          </p>
+        </div>
+      </section>
+
       <FAQ items={homeFaqs} />
 
       <Footer showCTA />

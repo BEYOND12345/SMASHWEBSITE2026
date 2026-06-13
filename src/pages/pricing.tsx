@@ -8,6 +8,7 @@ import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { AnimateIn } from '../components/animate-in';
 import { hreflangAlternates } from '../data/country-data';
+import { mainPages } from '../data/main-pages-seo';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -93,9 +94,10 @@ export function Pricing() {
   return (
     <>
       <SEO
-        title="Pricing — Send Unlimited Invoices From $15/mo | SMASH"
-        description="Free: 5 invoices/month, no card. Paid from $15/month: unlimited invoices, Xero and QuickBooks sync, CSV export. iPhone voice + Gmail extension on every plan."
-        keywords="SMASH pricing, invoice app pricing, send invoice fast app, voice to invoice pricing, gmail invoice extension price"
+        title={mainPages.pricing.title}
+        description={mainPages.pricing.description}
+        ogTitle={mainPages.pricing.title}
+        ogDescription={mainPages.pricing.description}
         ogUrl="https://smashinvoices.com/pricing"
         canonical="https://smashinvoices.com/pricing"
         hreflangs={hreflangAlternates}

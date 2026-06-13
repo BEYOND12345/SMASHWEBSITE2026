@@ -67,7 +67,7 @@ export function SEO({
     }
 
     if (keywords) {
-      updateMetaTag('meta[name="keywords"]', keywords);
+      // meta keywords ignored by Google — deprecated site-wide (Main Pages Spec v1)
     }
 
     if (ogTitle) {

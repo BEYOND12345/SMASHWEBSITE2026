@@ -85,16 +85,74 @@
   status = 200
 
 [[redirects]]
-  from = "/b2b-gmail-quoting"
-  to = "/index.html"
+  from = "/chrome-extension"
+  to = "/chrome-extension/index.html"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/chrome-extension/"
+  to = "/chrome-extension/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/b2b-gmail-quoting"
+  to = "/b2b-gmail-quoting/index.html"
+  status = 200
 
 [[redirects]]
   from = "/b2b-gmail-quoting/"
-  to = "/index.html"
+  to = "/b2b-gmail-quoting/index.html"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/nz"
+  to = "/nz/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nz/"
+  to = "/nz/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk"
+  to = "/uk/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk/"
+  to = "/uk/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/us"
+  to = "/us/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/us/"
+  to = "/us/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ca"
+  to = "/ca/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ca/"
+  to = "/ca/index.html"
+  status = 200
 
 [[redirects]]
   from = "/smash-leads"

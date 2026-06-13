@@ -146,9 +146,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparkies, builders, landscapers, cleaners, painters',
     seo: {
-      title: 'Send Invoices Fast — GST Invoicing New Zealand | SMASH',
+      title: 'Invoice App New Zealand — Quote in Under 60 Seconds | SMASH',
       description: 'Talk or scan Gmail. Send a 15% GST invoice in NZD with your NZBN in under 60 seconds. iOS + Chrome. Free to start. Xero sync on Starter.',
-      keywords: 'invoice app New Zealand, send invoice fast NZ, GST invoice NZ, NZBN invoice, voice to invoice New Zealand, gmail invoice NZ',
+      keywords: '',
     },
     faqs: [
       {
@@ -213,9 +213,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparks, joiners, brickies, gas engineers, landscapers, domestic cleaners',
     seo: {
-      title: 'Send the Invoice Before You Leave — VAT Invoices UK | SMASH',
+      title: 'Invoice App the United Kingdom — Quote in Under 60 Seconds | SMASH',
       description: 'Talk for 30 seconds or scan Gmail. VAT-compliant invoice in GBP with your UTR or company number — under 60 seconds. iOS + Chrome. Free to start.',
-      keywords: 'invoice app UK, send invoice fast UK, VAT invoice app, sole trader invoice software UK, voice to invoice UK, gmail invoice extension UK',
+      keywords: '',
     },
     faqs: [
       {
@@ -280,9 +280,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC techs, electricians, plumbers, handymen, lawn care, mobile detailing, pressure washing, house cleaning',
     seo: {
-      title: 'Send Invoices in 60 Seconds — US Contractors & 1099 | SMASH',
+      title: 'Invoice App the United States — Quote in Under 60 Seconds | SMASH',
       description: 'Talk or scan Gmail. Send a USD invoice with state sales tax and your EIN in under 60 seconds. Built for 1099 contractors and service businesses. iOS + Chrome.',
-      keywords: 'invoice app US, send invoice fast, 1099 invoicing, voice to invoice USA, contractor invoicing app, gmail invoice extension',
+      keywords: '',
     },
     faqs: [
       {
@@ -343,9 +343,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC technicians, electricians, plumbers, landscapers, snow removal, cleaning, handymen',
     seo: {
-      title: 'Send Invoices Fast — GST/HST Invoicing Canada | SMASH',
+      title: 'Invoice App Canada — Quote in Under 60 Seconds | SMASH',
       description: 'Talk or scan Gmail. Send a CAD invoice with GST/HST/PST by province and your Business Number in under 60 seconds. iOS + Chrome. Free to start.',
-      keywords: 'invoice app Canada, send invoice fast Canada, GST HST invoice app, voice to invoice Canada, gmail invoice extension Canada, BN invoice',
+      keywords: '',
     },
     faqs: [
       {
