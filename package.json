@@ -12,6 +12,7 @@
     "generate:voice-static": "node --experimental-strip-types scripts/generate-voice-invoicing-static.ts",
     "patch:voice-blog-meta": "node --experimental-strip-types scripts/patch-voice-cluster-blog-meta.ts",
     "retrofit:blog-action-plan-v1": "node --experimental-strip-types scripts/blog-retrofit-action-plan-v1.ts",
+    "apply:gmail-consolidation-redirects": "node --experimental-strip-types scripts/apply-gmail-consolidation-redirects.ts",
     "generate:legal-static": "node --experimental-strip-types scripts/generate-legal-static.ts",
     "generate:video-blog-static": "node --experimental-strip-types scripts/generate-video-blog-static.ts",
     "verify:blog-deploy": "node --experimental-strip-types scripts/verify-blog-deploy.ts",

@@ -8,6 +8,27 @@
 /support              /support/index.html      200
 /support/             /support/index.html      200
 
+# Week 2 — Gmail consolidation 301s (auto-generated)
+/blog/bulk-goods-wholesaler-quoting-gmail     /gmail-invoice     301!
+/blog/bulk-goods-wholesaler-quoting-gmail/    /gmail-invoice     301!
+/blog/fencing-gate-balustrade-quoting-gmail     /gmail-invoice     301!
+/blog/fencing-gate-balustrade-quoting-gmail/    /gmail-invoice     301!
+/blog/garden-shed-kit-barn-quoting-gmail     /gmail-invoice     301!
+/blog/garden-shed-kit-barn-quoting-gmail/    /gmail-invoice     301!
+/blog/it-reseller-msp-quote-automation-gmail     /gmail-invoice     301!
+/blog/it-reseller-msp-quote-automation-gmail/    /gmail-invoice     301!
+/blog/print-signage-custom-quote-gmail     /gmail-invoice     301!
+/blog/print-signage-custom-quote-gmail/    /gmail-invoice     301!
+/blog/service-trade-invoice-gmail-sidebar     /gmail-invoice     301!
+/blog/service-trade-invoice-gmail-sidebar/    /gmail-invoice     301!
+/blog/shipping-container-quote-builder-gmail     /gmail-invoice     301!
+/blog/shipping-container-quote-builder-gmail/    /gmail-invoice     301!
+/blog/quickbooks-estimates-from-gmail     /blog/gmail-quickbooks-xero-bridge     301!
+/blog/quickbooks-estimates-from-gmail/    /blog/gmail-quickbooks-xero-bridge     301!
+/blog/xero-quote-builder-gmail-extension     /blog/gmail-to-xero-invoice-no-typing     301!
+/blog/xero-quote-builder-gmail-extension/    /blog/gmail-to-xero-invoice-no-typing     301!
+# End Gmail consolidation 301s
+
 # Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200
 /blog/:slug/          /blog/:slug/index.html   200
