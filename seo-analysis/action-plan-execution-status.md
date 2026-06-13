@@ -17,19 +17,19 @@
 | `/gmail-invoice` sitemap entry | ✅ |
 | Build pipeline retrofit guard | ✅ prerender skip + post-build retrofit |
 | Supabase meta sync (6 slugs) | ✅ `npm run sync:action-plan-blog-supabase` |
-| `gsc-indexing-batch-1.md` | ✅ Dan’s 10 URLs for today |
+| `gsc-indexing-master-queue.md` | ✅ Batches 1–4 + 23 do-not-submit URLs |
+| Week 2 Gmail 301s (9 posts) | ✅ `9e1709b` |
+| Week 2 Voice 301s (14 posts) | ✅ `014747e` |
 
-## Not done yet (next deploy batch)
+## Not done yet
 
 | Task | Owner |
 |------|-------|
-| GSC URL re-index requests (10 today) | Dan — see `gsc-indexing-batch-1.md` |
-| Homepage FAQ re-index (batch 2) | Dan — after verifying live FAQ |
-| GRP-001 gmail consolidation (13 → 3–4) + 301s | Week 2 — see `next-stage-week2.md` |
-| GRP-008 voice consolidation (8 → 3) + 301s | Week 2 |
+| GSC indexing Batch 1 (13 Jun) | Dan — if not done |
+| GSC indexing Batch 2 (14 Jun) | Dan — **tomorrow** — see master queue |
 | GRP-007 template hub merge (20 → 1) | Week 3 |
-| GRP-003/004 trade how-to survivors (A3 template) | Ongoing |
-| Orphan fix across ~60 survivors | Post-consolidation |
+| GRP-003 trade template survivors (A3 template) | Ongoing |
+| Orphan fix across survivors | Post-consolidation |
 | Keyword Planner 403 fix | Dan |
 
 ## Success checkpoints
