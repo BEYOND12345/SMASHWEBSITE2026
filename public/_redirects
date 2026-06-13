@@ -8,6 +8,7 @@
 /support              /support/index.html      200
 /support/             /support/index.html      200
 
+
 # Week 2 — Gmail consolidation 301s (auto-generated)
 /blog/bulk-goods-wholesaler-quoting-gmail     /gmail-invoice     301!
 /blog/bulk-goods-wholesaler-quoting-gmail/    /gmail-invoice     301!
@@ -28,6 +29,37 @@
 /blog/xero-quote-builder-gmail-extension     /blog/gmail-to-xero-invoice-no-typing     301!
 /blog/xero-quote-builder-gmail-extension/    /blog/gmail-to-xero-invoice-no-typing     301!
 # End Gmail consolidation 301s
+
+# Week 2 — Voice consolidation 301s (auto-generated)
+/blog/how-to-invoice-as-a-carpenter-australia     /voice-invoicing     301!
+/blog/how-to-invoice-as-a-carpenter-australia/    /voice-invoicing     301!
+/blog/how-to-invoice-as-a-gardener-australia     /voice-invoicing     301!
+/blog/how-to-invoice-as-a-gardener-australia/    /voice-invoicing     301!
+/blog/how-to-invoice-as-a-painter-australia     /voice-invoicing     301!
+/blog/how-to-invoice-as-a-painter-australia/    /voice-invoicing     301!
+/blog/how-to-invoice-as-a-mobile-mechanic-australia     /voice-invoicing     301!
+/blog/how-to-invoice-as-a-mobile-mechanic-australia/    /voice-invoicing     301!
+/blog/ai-voice-invoicing-2026-standard     /voice-invoicing     301!
+/blog/ai-voice-invoicing-2026-standard/    /voice-invoicing     301!
+/blog/cleaning-services-voice-invoicing-tradie     /voice-invoicing     301!
+/blog/cleaning-services-voice-invoicing-tradie/    /voice-invoicing     301!
+/blog/driveway-concrete-asphalt-voice-invoicing     /voice-invoicing     301!
+/blog/driveway-concrete-asphalt-voice-invoicing/    /voice-invoicing     301!
+/blog/fergus-alternative-voice-invoicing-tradie     /voice-invoicing     301!
+/blog/fergus-alternative-voice-invoicing-tradie/    /voice-invoicing     301!
+/blog/handymen-multi-skill-voice-invoicing-tradie     /voice-invoicing     301!
+/blog/handymen-multi-skill-voice-invoicing-tradie/    /voice-invoicing     301!
+/blog/mobile-mechanic-toolkit-voice-to-invoice     /voice-invoicing     301!
+/blog/mobile-mechanic-toolkit-voice-to-invoice/    /voice-invoicing     301!
+/blog/smash-xero-voice-invoicing-accounting     /voice-invoicing     301!
+/blog/smash-xero-voice-invoicing-accounting/    /voice-invoicing     301!
+/blog/voice-to-estimate-build-bids-without-pen     /voice-invoicing     301!
+/blog/voice-to-estimate-build-bids-without-pen/    /voice-invoicing     301!
+/blog/voice-to-quote-feature     /voice-invoicing     301!
+/blog/voice-to-quote-feature/    /voice-invoicing     301!
+/blog/voice-to-crm-ai-learns-customers     /voice-invoicing     301!
+/blog/voice-to-crm-ai-learns-customers/    /voice-invoicing     301!
+# End Voice consolidation 301s
 
 # Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200

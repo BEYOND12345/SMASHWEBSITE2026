@@ -17,7 +17,20 @@
 
 ## Tomorrow (Batch 2) — homepage FAQ refresh
 
-1. https://smashinvoices.com/ — Test live URL → confirm single FAQPage → Request indexing
+**→ See `gsc-indexing-master-queue.md` for full queue (Batches 1–4 + do-not-submit list).**
+
+Batch 2 (14 Jun) — 10 URLs:
+
+1. https://smashinvoices.com/
+2. https://smashinvoices.com/gmail-invoice
+3. https://smashinvoices.com/blog/gmail-to-xero-invoice-no-typing
+4. https://smashinvoices.com/blog/fastest-voice-invoice-generator-gmail
+5. https://smashinvoices.com/blog/the-60-second-invoice-voice-to-invoice
+6. https://smashinvoices.com/blog/fastest-way-to-send-invoice-2026
+7. https://smashinvoices.com/blog/stop-admin-sundays-voice-invoicing
+8. https://smashinvoices.com/blog/is-voice-invoicing-accurate
+9. https://smashinvoices.com/blog/beyond-chatgpt-dedicated-voice-invoicing
+10. https://smashinvoices.com/blog/invoice-without-typing
 
 ## Per URL checklist
 

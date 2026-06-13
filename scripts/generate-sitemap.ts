@@ -3,7 +3,7 @@ import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
-import { GMAIL_REDIRECTED_SLUGS } from './gmail-consolidation-redirects.ts';
+import { ALL_CONSOLIDATION_REDIRECTED_SLUGS } from './consolidation-redirects.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -199,7 +199,7 @@ async function generateSitemap() {
     lastmod: post.updated_at.split('T')[0],
     changefreq: 'monthly',
     priority: '0.8',
-  })) || []).filter((p) => !GMAIL_REDIRECTED_SLUGS.has(p.loc.replace('/blog/', '')));
+  })) || []).filter((p) => !ALL_CONSOLIDATION_REDIRECTED_SLUGS.has(p.loc.replace('/blog/', '')));
 
   const allPages = [...resolvedStatic, ...blogPages];
 

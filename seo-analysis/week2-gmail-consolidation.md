@@ -44,15 +44,12 @@
 - `quickbooks-gmail-sidebar-tab-switching`
 - `pest-control-invoicing-gmail-csv-pricing`
 
-## Phase 2 — GRP-008 voice (next)
+## Phase 2 — GRP-008 voice
 
-Survivors: `the-60-second-invoice-voice-to-invoice`, `fastest-way-to-send-invoice-2026`, `stop-admin-sundays-voice-invoicing`  
-301 niche voice posts → `/voice-invoicing`
+✅ **Done** — 14 posts 301 → `/voice-invoicing`. See `week2-voice-consolidation.md`.
 
-## GSC after deploy
+Survivors: `the-60-second-invoice-voice-to-invoice`, `fastest-way-to-send-invoice-2026`, `stop-admin-sundays-voice-invoicing` (+ mechanism + trade posts with impressions)
 
-Do **not** waste indexing slots on redirected URLs. Request indexing for:
+## GSC
 
-- `/gmail-invoice`
-- `/blog/gmail-quickbooks-xero-bridge`
-- `/blog/gmail-email-to-invoice-20-seconds`
+See **`gsc-indexing-master-queue.md`** — Batch 2 (tomorrow 14 Jun) is your primary list.
