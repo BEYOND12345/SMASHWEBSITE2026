@@ -13,16 +13,19 @@
 | B3 `how-to-invoice-appliance-repair-callouts` | ✅ static HTML + Bucket B |
 | `consolidation-directives.csv` | ✅ all 12 GRP rows |
 | `scripts/blog-retrofit-action-plan-v1.ts` | ✅ `npm run retrofit:blog-action-plan-v1` |
-
-Each retrofit includes: answer block, title/meta/H1, FAQPage schema, related links (pillars + siblings), register CTA, `dateModified` 2026-06-13.
+| Homepage FAQ triple-schema fix | ✅ deployed |
+| `/gmail-invoice` sitemap entry | ✅ |
+| Build pipeline retrofit guard | ✅ prerender skip + post-build retrofit |
+| Supabase meta sync (6 slugs) | ✅ `npm run sync:action-plan-blog-supabase` |
+| `gsc-indexing-batch-1.md` | ✅ Dan’s 10 URLs for today |
 
 ## Not done yet (next deploy batch)
 
 | Task | Owner |
 |------|-------|
-| Supabase `blog_posts` meta sync for 6 retrofitted slugs | Cursor / deploy |
-| GSC URL re-index requests for 6 URLs | Dan |
-| GRP-001 gmail consolidation (13 → 3–4) + 301s | Week 2 |
+| GSC URL re-index requests (10 today) | Dan — see `gsc-indexing-batch-1.md` |
+| Homepage FAQ re-index (batch 2) | Dan — after verifying live FAQ |
+| GRP-001 gmail consolidation (13 → 3–4) + 301s | Week 2 — see `next-stage-week2.md` |
 | GRP-008 voice consolidation (8 → 3) + 301s | Week 2 |
 | GRP-007 template hub merge (20 → 1) | Week 3 |
 | GRP-003/004 trade how-to survivors (A3 template) | Ongoing |

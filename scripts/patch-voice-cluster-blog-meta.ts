@@ -59,22 +59,6 @@ export const VOICE_CLUSTER_PATCHES: Patch[] = [
     keywords: 'is voice invoicing accurate, voice to invoice, catalog pricing invoice',
   },
   {
-    slug: 'how-long-to-send-invoice-after-job-australia',
-    title: 'How Long Should You Wait to Send an Invoice After a Job? | SMASH',
-    description:
-      'The best time to invoice is before you leave the site. Why waiting until tonight loses detail — and how to send in under 60 seconds.',
-    keywords:
-      'how long to send invoice after job, send invoice immediately, fastest way to invoice australia',
-  },
-  {
-    slug: 'word-vs-excel-vs-app-for-invoices',
-    title: 'Word vs Excel vs App for Invoices — Or Talk for 30 Seconds | SMASH',
-    description:
-      'Templates take 15+ minutes. Apps still mean typing. Compare Word, Excel, and invoicing apps — plus the fastest path: describe the job out loud.',
-    keywords:
-      'word vs excel invoice, invoicing app, fastest way to send invoice, invoice without typing',
-  },
-  {
     slug: 'beyond-chatgpt-dedicated-voice-invoicing',
     title: 'Why a Dedicated Invoicing Tool Beats ChatGPT for Sending Invoices | SMASH',
     description:

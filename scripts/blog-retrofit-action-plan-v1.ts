@@ -16,7 +16,7 @@ const MODIFIED_DISPLAY = '13 June 2026';
 
 type CtaMode = 'both' | 'ios' | 'chrome';
 
-type RetrofitSpec = {
+export type RetrofitSpec = {
   slug: string;
   title: string;
   meta: string;
@@ -29,7 +29,7 @@ type RetrofitSpec = {
   keywords: string;
 };
 
-const SPECS: RetrofitSpec[] = [
+export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
   {
     slug: 'word-vs-excel-vs-app-for-invoices',
     title: 'Word vs Excel vs Invoice App: Which Gets You Paid Faster?',
@@ -437,17 +437,28 @@ function patchHtml(html: string, spec: RetrofitSpec): string {
   return out;
 }
 
-let ok = 0;
-for (const spec of SPECS) {
-  const file = path.join(BLOG, spec.slug, 'index.html');
-  if (!fs.existsSync(file)) {
-    console.warn(`✗ missing ${file}`);
-    continue;
+export function runActionPlanRetrofit(): number {
+  let ok = 0;
+  for (const spec of ACTION_PLAN_SPECS) {
+    const file = path.join(BLOG, spec.slug, 'index.html');
+    if (!fs.existsSync(file)) {
+      console.warn(`✗ missing ${file}`);
+      continue;
+    }
+    const html = fs.readFileSync(file, 'utf-8');
+    fs.writeFileSync(file, patchHtml(html, spec));
+    console.log(`✓ retrofitted public/blog/${spec.slug}/index.html`);
+    ok++;
   }
-  const html = fs.readFileSync(file, 'utf-8');
-  fs.writeFileSync(file, patchHtml(html, spec));
-  console.log(`✓ retrofitted public/blog/${spec.slug}/index.html`);
-  ok++;
+  return ok;
 }
 
-console.log(`\nDone: ${ok}/${SPECS.length} posts`);
+const isMain =
+  process.argv[1] &&
+  path.resolve(process.argv[1]) ===
+    path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'blog-retrofit-action-plan-v1.ts');
+
+if (isMain) {
+  const ok = runActionPlanRetrofit();
+  console.log(`\nDone: ${ok}/${ACTION_PLAN_SPECS.length} posts`);
+}

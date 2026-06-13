@@ -62,6 +62,7 @@ const SITE_URL = 'https://smashinvoices.com';
 
 /** Hand-maintained static pages with VideoObject schema — do not overwrite from Supabase. */
 const PROTECTED_BLOG_SLUGS = new Set([
+  // Video / Gmail hand-maintained posts (VideoObject schema)
   'wave-invoicing-alternative-gmail',
   'photographer-wedding-quote-gmail-60-seconds',
   'fastest-voice-invoice-generator-gmail',
@@ -74,6 +75,12 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'quickbooks-gmail-sidebar-tab-switching',
   'fastest-way-to-send-invoice-2026',
   'pest-control-invoicing-gmail-csv-pricing',
+  // Blog Action Plan v1 — hand-retrofitted static HTML (do not prerender over)
+  'word-vs-excel-vs-app-for-invoices',
+  'how-long-to-send-invoice-after-job-australia',
+  'how-to-invoice-as-an-electrician-australia',
+  'can-chatgpt-generate-invoices-tradie-guide',
+  'how-to-invoice-appliance-repair-callouts',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =
