@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { marked } from 'marked';
+import { googleAdsClickTrackingHtml, googleAdsHeadHtml } from './google-ads-snippet.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -673,6 +674,7 @@ export function renderPost(post: BlogPost): string {
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>${inlineStyles()}</style>
+${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
 
 ${schemas
   .map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</script>`)
@@ -755,6 +757,7 @@ ${schemas
     </div>
     <div style="margin-top:14px;">© ${new Date().getFullYear()} SMASH Invoices · smashinvoices.com</div>
   </footer>
+${googleAdsClickTrackingHtml(process.env.VITE_GOOGLE_ADS_ID)}
 </body>
 </html>`);
 }

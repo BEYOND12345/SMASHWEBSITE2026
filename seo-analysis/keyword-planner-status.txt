@@ -1,0 +1,27 @@
+Google Ads Keyword Planner API test — 13 Jun 2026
+
+Result: FAILED (HTTP 403 PERMISSION_DENIED)
+
+Error code: USER_PERMISSION_DENIED
+
+Full message:
+User doesn't have permission to access customer. Note: If you're accessing a client customer, the manager's customer id must be set in the 'login-customer-id' header. See https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid
+
+API response excerpt:
+{
+  "error": {
+    "code": 403,
+    "message": "The caller does not have permission",
+    "status": "PERMISSION_DENIED",
+    "details": [{
+      "errors": [{
+        "errorCode": { "authorizationError": "USER_PERMISSION_DENIED" }
+      }]
+    }]
+  }
+}
+
+Requested keywords (not retrieved):
+voice to invoice, email to invoice, invoice from gmail, gmail invoice, on the job invoice, mobile invoicing, quote to invoice, gmail xero, gmail quickbooks, invoice app, free invoice app, invoice from phone, best invoice app for small business
+
+Requested geos: AU and US (separate) — not executed due to auth failure.

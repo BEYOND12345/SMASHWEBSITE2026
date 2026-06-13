@@ -13,35 +13,33 @@ import { Nav } from '../components/nav';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
+const YOUTUBE_DEMO_ID = 'uNL733tYTf0';
+
 const faqs = [
   {
-    q: "What is voice invoicing?",
-    a: "Voice invoicing is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. Instead of typing, you speak — the software transcribes and interprets what you said, then generates a tax-compliant invoice ready to send."
+    q: 'How fast can I send an invoice after a job?',
+    a: 'Under 60 seconds for a typical job: talk for 20–30 seconds, verify line items SMASH matched to your catalog, then send. Once your Price Hub is set up, many invoices are out in under 30 seconds.',
   },
   {
-    q: "How accurate is voice invoicing?",
-    a: "SMASH handles natural speech including trade terminology, accents, and background noise. It's designed for job sites, not offices. You get a full review screen before anything is sent, so you can catch and fix any misinterpretations before the customer sees it."
+    q: 'What is voice to invoice?',
+    a: 'Voice to invoice means describing the completed job out loud and having software build a structured, priced invoice from your speech. SMASH matches what you said to your own rates and materials — unmatched items are flagged for you, not guessed.',
   },
   {
-    q: "How long does voice invoicing take?",
-    a: "Under 60 seconds end-to-end for a new job — speak, review, send. Under 30 seconds once your pricing catalog is set up. Voice processing takes approximately 7 seconds, quote generation under 10 seconds total."
+    q: 'Can I invoice without typing?',
+    a: 'Yes. On iPhone you speak the job. In Gmail you can scan the open email thread, upload a PDF, or use voice in the sidebar. You always review before anything is sent.',
   },
   {
-    q: "What trades does voice invoicing work for?",
-    a: "Any trade or service business that quotes jobs verbally: cleaners, plumbers, electricians, painters, handymen, gardeners, mobile mechanics, pest control, HVAC, concreters, tilers — if you can describe the work out loud, SMASH can build the invoice from it."
+    q: 'Does SMASH use my own prices?',
+    a: 'Yes. Invoices are built from your Price Hub — your labour rates, fees, and catalog. SMASH does not invent prices. If it cannot match an item confidently, it flags it for you to price manually.',
   },
   {
-    q: "Does voice invoicing work in Australia?",
-    a: "Yes. Australia is the founding market — GST calculations, ABN display, ATO-compliant invoice format, optional NDIS participant numbers, and a 2,250+ item materials catalog are all built in, with invoices in AUD. SMASH also runs live in NZ, the UK, the US and Canada with each market's local tax and currency."
+    q: 'Does this work in Australia?',
+    a: 'Yes. GST, ABN fields, and ATO-compliant tax invoice layout are built in, with a 2,250+ item materials catalog. SMASH also runs in NZ, the UK, the US, and Canada with local tax and currency.',
   },
   {
-    q: "Does voice invoicing work outside Australia?",
-    a: "Yes — SMASH is live in Australia, New Zealand, the United Kingdom, the United States, and Canada. Each market gets local tax rules (GST, VAT, state sales tax, HST/PST), local currency, and local business-number fields. Download from your country's App Store, or use the Chrome extension on any laptop."
+    q: 'iPhone only?',
+    a: 'The voice-first field app is iOS (iPhone). For desk work, the Chrome extension runs inside Gmail on any laptop — email scan, PDF upload, or voice in the sidebar. Android app is not available yet.',
   },
-  {
-    q: "Is voice invoicing available on Android?",
-    a: "SMASH is currently available on iOS (iPhone). Android support is coming. The web-based quote generator at smashinvoices.com works on any device in the meantime."
-  }
 ];
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
@@ -66,11 +64,11 @@ export function VoiceInvoicing() {
   return (
     <>
       <SEO
-        title="Voice Invoicing — What It Is and How It Works | SMASH"
-        description="Voice invoicing is the process of describing a job out loud and having software build an invoice automatically. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Learn what it is, how it works, and why tradies use it."
-        keywords="voice invoicing, what is voice invoicing, voice to invoice, voice invoicing app Australia, voice invoicing UK, voice invoicing USA, voice invoicing Canada, voice invoicing New Zealand, how voice invoicing works"
-        ogTitle="Voice Invoicing — What It Is and How It Works | SMASH"
-        ogDescription="Voice invoicing explained: describe the job out loud, invoice built automatically. The category defined."
+        title="Send an Invoice in 30 Seconds — Talk, Verify, Send | SMASH"
+        description="Finished the job? Describe it out loud. SMASH builds a priced invoice from your catalog in ~30 seconds — nothing guessed. iPhone app + Gmail extension. Start free."
+        keywords="voice to invoice, send invoice after job, invoice without typing, fastest way to invoice, invoice from phone, on the job invoice, voice invoicing"
+        ogTitle="Send an Invoice in 30 Seconds — Talk, Verify, Send | SMASH"
+        ogDescription="Talk for 30 seconds. SMASH prices the job from your catalog. Verify. Send — before you leave the site."
         ogUrl="https://smashinvoices.com/voice-invoicing"
         canonical="https://smashinvoices.com/voice-invoicing"
         hreflangs={hreflangAlternates}
@@ -78,11 +76,11 @@ export function VoiceInvoicing() {
 
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', url: 'https://smashinvoices.com' },
-        { name: 'Voice Invoicing', url: 'https://smashinvoices.com/voice-invoicing' },
+        { name: 'Send invoice fast', url: 'https://smashinvoices.com/voice-invoicing' },
       ])} />
       <StructuredData data={createFAQSchema(faqs.map(f => ({ question: f.q, answer: f.a })))} />
       <StructuredData data={createHowToSchema({
-        name: 'How Voice Invoicing Works',
+        name: 'How to Send an Invoice Before You Leave the Job',
         description: 'The complete workflow from job done to invoice sent using voice invoicing software.',
         steps: [
           { name: 'Describe the job out loud', text: 'Speak naturally for 20–30 seconds — what you did, materials used, time taken. No script or format required.' },
@@ -96,33 +94,68 @@ export function VoiceInvoicing() {
 
       <Nav />
 
-      {/* ── HERO — CATEGORY DEFINITION ───────────────────────── */}
+      {/* ── HERO — PROBLEM → SOLUTION ────────────────────────── */}
       <section className="bg-black py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-6">
-              The category defined
+              Finished the job — customer wants a number
             </p>
-            <h1 className="font-display text-[64px] md:text-[96px] lg:text-[120px] uppercase tracking-tighter leading-[0.88] text-white mb-8 max-w-5xl">
-              Voice<br />
-              <span className="text-accent">Invoicing.</span>
+            <h1 className="font-display text-[48px] md:text-[72px] lg:text-[96px] uppercase tracking-tighter leading-[0.9] text-white mb-8 max-w-5xl">
+              Send the invoice<br />
+              <span className="text-accent">before you leave.</span>
             </h1>
             <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-4">
-              Describe a job out loud. Invoice built automatically. Sent before you leave the driveway.
+              Talk for 30 seconds. SMASH builds a priced invoice from your catalog — nothing guessed. Verify. Send.
             </p>
             <p className="font-body text-sm text-slate-500 max-w-2xl leading-relaxed mb-10">
               Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-display text-sm uppercase tracking-widest text-brand px-8 py-4 rounded-2xl hover:brightness-95 transition-all"
-              style={{ backgroundColor: '#DFFF00' }}
-            >
-              Download the iOS app
-              <ArrowRight size={16} strokeWidth={2.5} />
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 font-display text-sm uppercase tracking-widest text-brand px-8 py-4 rounded-2xl hover:brightness-95 transition-all"
+                style={{ backgroundColor: '#DFFF00' }}
+              >
+                Get iPhone app — Start free
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </a>
+              <Link
+                to="/chrome-extension"
+                className="inline-flex items-center gap-3 font-display text-sm uppercase tracking-widest text-white border border-white/20 px-8 py-4 rounded-2xl hover:border-accent transition-all"
+              >
+                Add to Gmail — Start free
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </Link>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── DEMO VIDEO ───────────────────────────────────────── */}
+      <section className="bg-black pb-16 md:pb-24 border-b border-white/10">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-4 text-center">
+              60-second demo
+            </p>
+            <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-900" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${YOUTUBE_DEMO_ID}?rel=0&modestbranding=1`}
+                title="Fastest way to send an invoice — SMASH demo"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <p className="font-body text-sm text-slate-500 text-center mt-4">
+              <a href="https://www.youtube.com/@smashinvoices" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:no-underline">
+                More demos on YouTube
+              </a>
+            </p>
           </AnimateIn>
         </div>
       </section>
@@ -139,7 +172,7 @@ export function VoiceInvoicing() {
               <strong className="text-brand">Voice invoicing</strong> is the process of describing a completed job out loud and having software automatically build a structured, priced invoice from your speech. Instead of opening an app and typing, you speak — the software transcribes and interprets what you said, then generates a tax-compliant invoice ready to send to your customer.
             </p>
             <p className="font-body text-lg text-slate-500 leading-relaxed mb-6">
-              Voice invoicing eliminates the single biggest reason tradespeople and contractors fail to invoice on the day: the friction of typing. When you can describe a job the same way you'd explain it to a mate — and have the invoice ready in under a minute — invoicing on the day becomes the default, not the exception.
+              Most people fail to invoice on the day because typing waits until tonight — and tonight never comes. When you can describe the job the way you would to a colleague and have a priced draft in under a minute, sending before you leave becomes the default.
             </p>
             <p className="font-body text-lg text-slate-500 leading-relaxed">
               The term covers both <em>voice-to-invoice</em> (converting speech directly into an invoice) and <em>voice-to-quote</em> (building a quote or estimate from spoken job descriptions). In practice, the same technology handles both.
@@ -157,7 +190,7 @@ export function VoiceInvoicing() {
               The invoicing problem no one solved.
             </h2>
             <p className="font-body text-xl text-slate-500 max-w-2xl leading-relaxed mb-16">
-              Tradies and contractors have always known what needs to be invoiced. The problem was never the work — it was the paperwork.
+              You know what the job was. The problem was never the work — it was stopping to type it up when the customer has already moved on.
             </p>
           </AnimateIn>
 
@@ -165,7 +198,7 @@ export function VoiceInvoicing() {
             {[
               {
                 stat: '$8,684',
-                label: 'Average uninvoiced work per tradie per year',
+                label: 'Average uninvoiced work per operator per year',
                 body: 'Not because the jobs weren\'t done. Because invoicing felt like too much effort after a full day on site.',
               },
               {
@@ -191,41 +224,44 @@ export function VoiceInvoicing() {
         </div>
       </section>
 
-      {/* ── WHO IT'S FOR ─────────────────────────────────────── */}
+      {/* ── WHEN YOU NEED IT ─────────────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">Who uses it</p>
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-4">When you need it</p>
             <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9] text-brand mb-6 max-w-3xl">
-              Built for anyone who works with their hands.
+              Same problem. Any job.
             </h2>
             <p className="font-body text-xl text-slate-500 max-w-2xl leading-relaxed mb-12">
-              Voice invoicing works for any trade or service business where jobs are quoted and invoiced on site — not at a desk.
+              If you finish work on site and the customer wants a number before you drive away — this is for you.
             </p>
           </AnimateIn>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { trade: 'Plumbers', link: '/for-plumbers' },
-              { trade: 'Electricians', link: '/for-electricians' },
-              { trade: 'Painters', link: '/for-painters' },
-              { trade: 'Cleaners', link: '/for-cleaners' },
-              { trade: 'Handymen', link: '/for-handymen' },
-              { trade: 'Gardeners', link: '/for-gardeners' },
-              { trade: 'Mobile Mechanics', link: '/for-mobile-mechanics' },
-              { trade: 'HVAC Technicians', link: '/for-hvac' },
-              { trade: 'Pest Control', link: '/for-pest-control' },
-              { trade: 'Concreters', link: '/for-concreters' },
-              { trade: 'Tilers', link: '/for-tilers' },
-              { trade: 'Arborists', link: '/for-arborists' },
+              { scene: 'Customer waiting at the van', body: 'They want a price now. You talk for 30 seconds instead of promising "I\'ll email tonight".' },
+              { scene: 'Between appointments', body: 'Stack three jobs — invoice each one before the next, not at midnight.' },
+              { scene: 'Hands full, no laptop', body: 'Phone in pocket. Voice in. Priced draft out. No keyboard.' },
+              { scene: 'Inbox full of RFQs', body: 'On desktop, the Gmail extension reads the open thread and matches your catalog — same verify-and-send flow.' },
             ].map((item) => (
-              <Link
-                key={item.trade}
-                to={item.link}
-                className="bg-slate-50 rounded-4xl p-5 border border-slate-100 hover:border-accent hover:bg-white transition-all"
+              <div
+                key={item.scene}
+                className="bg-slate-50 rounded-4xl p-6 border border-slate-100 hover:border-accent transition-all"
               >
-                <span className="font-display text-sm uppercase tracking-tight text-brand">{item.trade}</span>
-              </Link>
+                <p className="font-display text-sm uppercase tracking-tight text-brand mb-2">{item.scene}</p>
+                <p className="font-body text-sm text-slate-500 leading-relaxed">{item.body}</p>
+              </div>
             ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link to="/blog/the-60-second-invoice-voice-to-invoice" className="text-brand underline hover:no-underline">
+              Voice to invoice in 60 seconds →
+            </Link>
+            <Link to="/blog/how-long-to-send-invoice-after-job-australia" className="text-brand underline hover:no-underline">
+              How long to wait after a job →
+            </Link>
+            <Link to="/gmail-invoice" className="text-brand underline hover:no-underline">
+              Gmail invoicing →
+            </Link>
           </div>
         </div>
       </section>
@@ -321,8 +357,8 @@ export function VoiceInvoicing() {
                 body: 'SMASH uses professional-grade voice transcription tuned for trade terminology, Australian accents, and noisy environments. You don\'t need to speak slowly or use special words. Say it the way you\'d explain it to an apprentice.',
               },
               {
-                title: 'AI interpretation of job descriptions',
-                body: 'The transcription is processed by an AI model trained to identify line items, labour time, materials, rates, and customer details from natural job descriptions. It fills gaps intelligently using your pricing catalog and job history.',
+                title: 'Structured line items from natural speech',
+                body: 'SMASH identifies labour, materials, quantities, and customer details from how you describe the job — then matches them to your Price Hub. Unmatched items are flagged; nothing is silently invented.',
               },
               {
                 title: 'Your personal pricing catalog',
@@ -359,29 +395,26 @@ export function VoiceInvoicing() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                trade: 'Cleaner',
-                link: '/for-cleaners',
-                quote: '"3-bed standard clean, Mrs Johnson, Indooroopilly, took about 3 hours, the usual rate."',
-                result: 'Quote built: 3hr standard clean, correct rate, GST included, customer link ready.',
+                scene: 'After a site visit',
+                quote: '"3-hour standard service, Johnson residence, usual rate plus materials as discussed."',
+                result: 'Labour + materials from your catalog, GST included, send link ready.',
               },
               {
-                trade: 'Handyman',
-                link: '/for-handymen',
-                quote: '"Fixed the fence gate out the back — two new hinges and a latch, about 2 hours labour."',
-                result: 'Quote built: labour + materials priced from catalog, sent in 45 seconds.',
+                scene: 'Quick repair',
+                quote: '"Replaced the gate hardware — two hinges and a latch, about two hours on site."',
+                result: 'Line items priced from catalog, verified and sent in under a minute.',
               },
               {
-                trade: 'Painter',
-                link: '/for-painters',
-                quote: '"Bedroom and hallway, 2 coats, used about 15 litres of paint, took 2 days."',
-                result: 'Quote built: paint materials priced, labour rate applied, PDF ready.',
+                scene: 'Multi-day job',
+                quote: '"Two rooms, two coats, about fifteen litres of product, two days on site."',
+                result: 'Materials and labour matched to your rates — draft ready to send.',
               },
             ].map((ex) => (
-              <AnimateIn key={ex.trade} direction="up">
+              <AnimateIn key={ex.scene} direction="up">
                 <div className="bg-white/5 rounded-4xl border border-white/10 p-8 hover:border-accent transition-all">
-                  <Link to={ex.link} className="inline-block font-display text-[10px] uppercase tracking-widest bg-accent text-brand px-3 py-1.5 rounded-full mb-5 hover:brightness-95 transition-all">
-                    {ex.trade}
-                  </Link>
+                  <span className="inline-block font-display text-[10px] uppercase tracking-widest bg-accent text-brand px-3 py-1.5 rounded-full mb-5">
+                    {ex.scene}
+                  </span>
                   <p className="font-body text-lg text-white/80 italic leading-relaxed mb-6">{ex.quote}</p>
                   <div className="border-t border-white/10 pt-5 flex items-start gap-3">
                     <Check size={16} className="text-accent shrink-0 mt-0.5" strokeWidth={3} />
@@ -481,7 +514,7 @@ export function VoiceInvoicing() {
                 <span className="text-accent">Start talking.</span>
               </h2>
               <p className="font-body text-xl text-slate-400 leading-relaxed max-w-lg">
-                SMASH is the voice invoicing app built for tradies and service businesses. Live in Australia, NZ, the UK, the US and Canada. Free to try. No card needed.
+                The fastest way to send an invoice after a job — iPhone or Gmail. Your catalog. Your prices. Start free.
               </p>
               <div className="flex items-center gap-2 mt-4">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-accent fill-accent" />)}
@@ -500,7 +533,7 @@ export function VoiceInvoicing() {
               Download the iOS app
               <ArrowRight size={16} strokeWidth={2.5} />
             </a>
-            <p className="font-body text-xs text-white/30 text-center">No account needed · 2 free quotes/month</p>
+            <p className="font-body text-xs text-white/30 text-center">Start free · No card needed</p>
           </div>
         </div>
       </section>

@@ -423,14 +423,14 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       { name: 'Gmail Invoice Extension', url: `${SITE}/gmail-invoice` },
     ],
     seo: {
-      title: 'Gmail Invoice Extension — Send Invoices & Quotes From Your Inbox | SMASH',
+      title: 'Gmail Invoice Extension — Turn Email Into a Sent Invoice in 20 Seconds | SMASH',
       description:
-        'The Gmail invoice extension for tradies and service businesses. Voice or email-to-invoice in under 60 seconds. GST-ready PDFs, client pay links, sync to Xero and QuickBooks.',
+        'You are already in Gmail. SMASH reads the open thread, prices from your catalog, and builds a GST-ready invoice — verify and send without leaving email. Syncs to Xero and QuickBooks.',
       keywords:
-        'gmail invoice extension, send invoice from gmail, gmail invoice generator, email to invoice chrome extension, invoice in gmail, gmail quoting tool, smash invoices gmail',
-      ogTitle: 'SMASH — Gmail Invoice & Quote Extension',
+        'gmail invoice extension, email to invoice, send invoice from gmail, gmail invoice generator, invoice in gmail, gmail quoting tool, gmail xero invoice',
+      ogTitle: 'Gmail Invoice Extension — Send From the Thread | SMASH',
       ogDescription:
-        'Turn customer emails into sent invoices without leaving Gmail. Voice, scan, price, send — under 60 seconds.',
+        'Work request in your inbox? SMASH prices it from your catalog and sends from the same thread — under 60 seconds.',
     },
     hero: {
       eyebrow: 'Gmail invoice extension',

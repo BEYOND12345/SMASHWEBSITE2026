@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // LandingPage is kept as a static import — it is the "/" route and must render
 // on first paint without any async chunk delay.
@@ -17,7 +17,6 @@ const Features = lazy(() => import('./pages/features').then(m => ({ default: m.F
 const VoiceInvoicing = lazy(() => import('./pages/voice-invoicing').then(m => ({ default: m.VoiceInvoicing })));
 const AiInvoicing = lazy(() => import('./pages/ai-invoicing').then(m => ({ default: m.AiInvoicing })));
 const GstCompliantInvoicing = lazy(() => import('./pages/gst-compliant-invoicing').then(m => ({ default: m.GstCompliantInvoicing })));
-const InvoiceOnMobile = lazy(() => import('./pages/invoice-on-mobile').then(m => ({ default: m.InvoiceOnMobile })));
 const ChromeExtension = lazy(() => import('./pages/chrome-extension').then(m => ({ default: m.ChromeExtension })));
 const Roadmap = lazy(() => import('./pages/roadmap').then(m => ({ default: m.Roadmap })));
 const Changelog = lazy(() => import('./pages/changelog').then(m => ({ default: m.Changelog })));
@@ -141,7 +140,7 @@ function App() {
         <Route path="/voice-invoicing" element={<VoiceInvoicing />} />
         <Route path="/ai-invoicing" element={<AiInvoicing />} />
         <Route path="/gst-compliant-invoicing" element={<GstCompliantInvoicing />} />
-        <Route path="/invoice-on-mobile" element={<InvoiceOnMobile />} />
+        <Route path="/invoice-on-mobile" element={<Navigate to="/voice-invoicing" replace />} />
         <Route path="/chrome-extension" element={<ChromeExtension />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/changelog" element={<Changelog />} />

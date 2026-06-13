@@ -53,6 +53,28 @@
   status = 200
 
 [[redirects]]
+  from = "/voice-invoicing"
+  to = "/voice-invoicing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/voice-invoicing/"
+  to = "/voice-invoicing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/invoice-on-mobile"
+  to = "/voice-invoicing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/invoice-on-mobile/"
+  to = "/voice-invoicing"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/xero"
   to = "/xero/index.html"
   status = 200

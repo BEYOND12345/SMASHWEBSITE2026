@@ -44,10 +44,10 @@ export function Integrations() {
     <>
       <SEO
         title="SMASH Invoices Integrations | Xero, QuickBooks and more"
-        description="SMASH integrates with the accounting tools tradies already use. Xero and QuickBooks Online unlock on Starter from $15/month with unlimited invoices and CSV export. Voice invoicing on site, clean books in the office."
-        keywords="SMASH integrations, SMASH Xero integration, SMASH QuickBooks integration, invoicing app Xero, invoicing app QuickBooks, tradie accounting integration"
-        ogTitle="SMASH Invoices Integrations | Xero, QuickBooks and more"
-        ogDescription="Voice invoicing on site, clean books in the office. SMASH integrates with Xero and QuickBooks Online from Starter."
+        description="Invoice on site or in Gmail — books stay clean in Xero or QuickBooks. Sync unlocks on Starter from $15/month with unlimited invoices and CSV export."
+        keywords="SMASH integrations, SMASH Xero integration, SMASH QuickBooks integration, gmail xero invoice, email to invoice xero, invoicing app QuickBooks"
+        ogTitle="SMASH Integrations — Xero & QuickBooks Sync"
+        ogDescription="Send from the field or Gmail. Push to Xero or QuickBooks when you are ready — no re-keying."
         ogUrl={url}
         canonical={url}
         hreflangs={hreflangAlternates}
@@ -77,7 +77,7 @@ export function Integrations() {
               Plug SMASH into the accounting tools you already trust.
             </h1>
             <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mb-10">
-              Voice invoicing on site. Xero or QuickBooks in the office. Every invoice, contact, tax code and payment kept in sync — no double-entry, no end-of-month mess.
+              Send from iPhone or Gmail. Xero or QuickBooks in the office. Every invoice, contact, tax code and payment kept in sync — no double-entry, no end-of-month mess.
             </p>
           </AnimateIn>
         </div>

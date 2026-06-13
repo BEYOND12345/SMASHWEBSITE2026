@@ -16,6 +16,10 @@
 /integrations/gmail-quickbooks-estimate-generator    /integrations/gmail-quickbooks-estimate-generator/index.html    200
 /integrations/gmail-xero-quote-builder               /integrations/gmail-xero-quote-builder/index.html               200
 /gmail-invoice                                       /gmail-invoice/index.html                                       200
+/voice-invoicing                                     /voice-invoicing/index.html                                     200
+/voice-invoicing/                                    /voice-invoicing/index.html                                     200
+/invoice-on-mobile                                   /voice-invoicing                                                301!
+/invoice-on-mobile/                                  /voice-invoicing                                                301!
 /xero                                                /xero/index.html                                                  200
 /xero/                                               /xero/index.html                                                  200
 

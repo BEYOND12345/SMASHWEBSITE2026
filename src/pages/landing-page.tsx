@@ -15,7 +15,6 @@ import {
   organizationSchema as aiOrgSchema,
   websiteSchema as aiWebsiteSchema,
   softwareApplicationSchema,
-  homepageFaqSchema,
 } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
 import { Footer } from '../components/footer';
@@ -33,7 +32,7 @@ import {
 } from '../data/download-urls';
 
 const homeFaqs = [
-  { question: "What is SMASH Invoices?", answer: "SMASH is a voice-to-invoice app for tradies and service businesses. Describe the job out loud and get a professional, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start, no credit card required." },
+  { question: "What is SMASH Invoices?", answer: "SMASH lets you send the invoice before you leave the job. Describe the work out loud on iPhone or scan the Gmail thread at your desk — get a priced, tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada. Free to start, no credit card required." },
   { question: "Is SMASH free to use?", answer: "Yes. SMASH has a free plan with 5 invoices per month — no credit card needed. Starter unlocks unlimited invoices, Xero and QuickBooks sync, and CSV export from $15/month on web pricing." },
   { question: "How fast can I send an invoice?", answer: "Under 60 seconds. Talk for 30 seconds describing the job, review the invoice, tap send. Your client receives a professional PDF with a Pay Now button before you've packed up your tools." },
   { question: "Does SMASH work for GST invoices?", answer: "Yes. Every SMASH invoice is ATO-compliant with your ABN, GST breakdown, sequential invoice numbers, and all required tax invoice fields. GST is calculated automatically per line item." },
@@ -61,14 +60,14 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SEO
-        title="Voice to Invoice & Quote Software for Tradies | SMASH Invoices"
-        description="The invoicing and quoting app built for tradies and service businesses. Speak a job description and get a tax-compliant invoice in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada — on iOS and Chrome. Free to start. No typing, no laptop."
-        keywords="tradie invoicing app, tradie quoting software, invoicing software for tradies, tradie quoting app, voice invoicing, voice to invoice, voice invoicing UK, voice invoicing USA, voice invoicing Canada, voice invoicing New Zealand, voice invoicing Australia, GST invoice app, VAT invoice app, mobile invoicing app, Chrome invoicing extension, Gmail quoting tool"
-        ogTitle="Voice to Invoice & Quote Software for Tradies | SMASH Invoices"
-        ogDescription="The invoicing app for tradies and service businesses. Speak a job and get a tax-compliant quote in 60 seconds. Live in AU, NZ, UK, US and CA — on iOS and Chrome. Free to start."
+        title="Send the Invoice Before You Leave — Voice to Invoice | SMASH"
+        description="Talk for 30 seconds on iPhone or scan Gmail at your desk. SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds. AU, NZ, UK, US, CA. Free to start."
+        keywords="send invoice after job, voice to invoice, voice invoicing, invoice without typing, gmail invoice extension, fastest way to send invoice, GST invoice app, mobile invoicing app"
+        ogTitle="Send the Invoice Before You Leave | SMASH"
+        ogDescription="Talk, verify against your catalog, send in under 60 seconds. iPhone in the field or Gmail at your desk. Free to start."
         ogUrl="https://smashinvoices.com/"
-        twitterTitle="Voice to Invoice & Quote Software | SMASH"
-        twitterDescription="Generate invoices 4x faster with voice. Just talk - SMASH creates professional invoices instantly."
+        twitterTitle="Send the Invoice Before You Leave | SMASH"
+        twitterDescription="Voice to invoice in under 60 seconds. iPhone on site or Gmail at your desk."
         ogImage="https://smashinvoices.com/hero_image.png"
         twitterImage="https://smashinvoices.com/hero_image.png"
         canonical="https://smashinvoices.com/"
@@ -86,7 +85,7 @@ export function LandingPage() {
         uploadDate: "2026-01-01"
       })} />
       <StructuredData data={createFAQSchema(homeFaqs)} />
-      <SchemaMarkup schemas={[aiOrgSchema, aiWebsiteSchema, softwareApplicationSchema, homepageFaqSchema]} />
+      <SchemaMarkup schemas={[aiOrgSchema, aiWebsiteSchema, softwareApplicationSchema]} />
 
       <StickyCTA />
       <SignupFAB />
@@ -613,7 +612,7 @@ export function LandingPage() {
       <BlogPreview />
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <FAQ />
+      <FAQ items={homeFaqs} />
 
       <Footer showCTA />
     </div>

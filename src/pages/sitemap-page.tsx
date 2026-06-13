@@ -18,7 +18,7 @@ const sections: Section[] = [
   {
     heading: 'Core',
     links: [
-      { to: '/',               label: 'Home',          note: 'Voice-to-invoice for tradies and service workers' },
+      { to: '/',               label: 'Home',          note: 'Send the invoice before you leave the job' },
       { to: '/how-it-works',   label: 'How it works',  note: 'The voice-to-invoice flow in three steps' },
       { to: '/features',       label: 'All features',  note: 'Every capability in the SMASH app' },
       { to: '/pricing',        label: 'Pricing',       note: 'AU / NZ / UK / US / CA — indicative launch pricing' },
@@ -31,18 +31,18 @@ const sections: Section[] = [
   },
   {
     heading: 'Product & category',
-    intro: 'Category-defining pages for voice invoicing and AI invoicing.',
+    intro: 'Send before you leave — field (voice) and desk (Gmail) registers.',
     links: [
-      { to: '/voice-invoicing',           label: 'Voice invoicing',  note: 'Category overview and AI-answer page' },
+      { to: '/voice-invoicing',           label: 'Send invoice fast',  note: 'Voice pillar — talk, verify, send' },
+      { to: '/gmail-invoice',             label: 'Gmail invoice',      note: 'Desk pillar — email thread to sent invoice' },
       { to: '/ai-invoicing',              label: 'AI invoicing',     note: 'How the AI turns speech into line items' },
       { to: '/gst-compliant-invoicing',   label: 'GST-compliant invoicing', note: 'ATO-ready tax invoices, coming soon for VAT / HST / sales tax' },
-      { to: '/invoice-on-mobile',         label: 'Invoice on mobile', note: 'Mobile-first invoicing on site' },
       { to: '/chrome-extension',          label: 'SMASH for Gmail',   note: 'Chrome extension that turns customer emails into priced quotes by voice — synced to Xero and QuickBooks' },
     ],
   },
   {
     heading: 'Guides',
-    intro: 'Content pillars answering the questions tradies ask AI search engines.',
+    intro: 'Content pillars for sending invoices faster — voice, Gmail, and speed.',
     links: [
       { to: '/tradie-hourly-rates', label: 'Tradie hourly rates',  note: 'What to charge per hour in AU, NZ, UK, US and Canada' },
       { to: '/materials-pricing',   label: 'Materials pricing',    note: 'Landed cost, fair markup, personal catalog' },
@@ -66,7 +66,7 @@ const sections: Section[] = [
   },
   {
     heading: 'Comparisons',
-    intro: 'Where SMASH sits next to the apps tradies already know.',
+    intro: 'Where SMASH sits next to accounting and field-service apps.',
     links: [
       { to: '/smash-vs-xero',         label: 'SMASH vs Xero' },
       { to: '/smash-vs-myob',         label: 'SMASH vs MYOB' },

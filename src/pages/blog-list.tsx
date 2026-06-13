@@ -11,6 +11,14 @@ import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
 
+const VOICE_CLUSTER = [
+  { slug: 'the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice in 60 seconds' },
+  { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice (demo)' },
+  { slug: 'how-long-to-send-invoice-after-job-australia', label: 'How long to wait after a job' },
+  { slug: 'invoice-without-typing', label: 'Invoice without typing' },
+  { slug: 'gmail-email-to-invoice-20-seconds', label: 'Gmail email to invoice in 20 seconds' },
+];
+
 interface BlogPost {
   id: string;
   title: string;
@@ -49,15 +57,15 @@ export function BlogList() {
   return (
     <>
       <SEO
-        title="Voice to Invoice Blog | SMASH — Invoicing Tips for Service Businesses"
-        description="Tips and insights on voice-to-invoice technology, getting paid faster, and invoicing for tradies and service businesses across Australia, NZ, UK, US and Canada."
-        keywords="voice to invoice, voice to quote, invoice generation tips, quick invoicing software, service business invoice tips, fast quote generation, tradie invoicing, contractor invoicing"
-        ogTitle="SMASH Blog — Voice to Invoice Tips"
-        ogDescription="Tips and insights on voice-to-invoice technology, getting paid faster, and invoicing for service businesses."
+        title="Send Invoices Faster — Blog | SMASH"
+        description="How to send an invoice before you leave the job — voice, Gmail, and speed. Problem-first guides for anyone who quotes and invoices on the go."
+        keywords="send invoice after job, voice to invoice, fastest way to invoice, invoice without typing, email to invoice, gmail invoice"
+        ogTitle="Send Invoices Faster — SMASH Blog"
+        ogDescription="How to send an invoice before you leave the job. Voice, Gmail, speed — problem-first guides."
         ogImage="https://smashinvoices.com/hero_image.png"
         ogUrl="https://smashinvoices.com/blog"
-        twitterTitle="SMASH Blog — Voice to Invoice Tips"
-        twitterDescription="Tips on voice-to-invoice technology, getting paid faster, and invoicing for service businesses."
+        twitterTitle="Send Invoices Faster — SMASH Blog"
+        twitterDescription="Send the invoice before you leave the job — guides for voice and Gmail."
         canonical="https://smashinvoices.com/blog"
         hreflangs={hreflangAlternates}
       />
@@ -69,8 +77,8 @@ export function BlogList() {
       <StructuredData data={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "SMASH Blog — Voice to Invoice Tips",
-        "description": "Tips and insights on voice to invoice technology, getting paid faster, and invoicing for service businesses.",
+        "name": "SMASH Blog — Send invoices faster",
+        "description": "Problem-first guides on sending invoices fast — voice and Gmail.",
         "url": "https://smashinvoices.com/blog",
         "inLanguage": "en-AU",
         "publisher": {
@@ -83,6 +91,25 @@ export function BlogList() {
       <div className="min-h-screen bg-[#0A0A0A]">
         <Nav />
 
+        <section className="border-b border-white/10 bg-white/5">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-3">Start here</p>
+            <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-white mb-4">Send the invoice before you leave the job</h2>
+            <p className="text-slate-400 max-w-2xl mb-6">Voice on iPhone, email in Gmail — same verify-and-send flow.</p>
+            <div className="flex flex-wrap gap-3 mb-4">
+              <Link to="/voice-invoicing" className="inline-flex items-center gap-2 rounded-full bg-accent text-brand px-5 py-2.5 text-sm font-bold">Voice invoicing pillar →</Link>
+              <a href="https://www.youtube.com/@smashinvoices" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-5 py-2.5 text-sm font-semibold hover:border-accent">YouTube demos</a>
+            </div>
+            <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
+              {VOICE_CLUSTER.map((item) => (
+                <li key={item.slug}>
+                  <Link to={`/blog/${item.slug}`} className="text-accent text-sm font-semibold underline hover:no-underline">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
           <AnimateIn direction="up">
             <header className="mb-16">
@@ -90,8 +117,7 @@ export function BlogList() {
                 Blog
               </h1>
               <p className="font-body text-xl text-white/70 max-w-3xl leading-[1.5]">
-                Insights, tips, and stories about mobile invoicing, billing on the go, and productivity
-                for contractors and small businesses.
+                Problem → solution guides: send the invoice before you leave the job. Voice on iPhone, email in Gmail.
               </p>
             </header>
           </AnimateIn>

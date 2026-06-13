@@ -64,11 +64,11 @@ export function AiInvoicing() {
   return (
     <>
       <SEO
-        title="AI Invoicing App | AI Invoice Generator | SMASH Invoices"
-        description="AI invoicing that builds your invoice from a voice description. Speak the job for 30 seconds — SMASH generates a professional, priced, tax-compliant invoice automatically. Live worldwide on iOS and Chrome — Australia, NZ, the UK, the US and Canada."
-        keywords="AI invoicing app, AI invoice generator, AI invoice software, artificial intelligence invoicing, automated invoice generation, AI invoicing UK, AI invoicing USA, AI invoicing Canada"
-        ogTitle="AI Invoicing — Invoice Generated from Your Voice | SMASH Invoices"
-        ogDescription="Speak the job. SMASH builds the invoice automatically. The fastest AI invoicing app for service businesses."
+        title="AI Invoicing — Send Before You Leave, Priced From Your Catalog | SMASH"
+        description="AI invoicing that matches your catalog, not the internet. Talk for 30 seconds on iPhone or scan Gmail — priced, tax-compliant invoice in under 60 seconds. AU, NZ, UK, US, CA."
+        keywords="AI invoicing app, AI invoice generator, send invoice after job, voice to invoice, automated invoice generation, invoice without typing"
+        ogTitle="AI Invoicing — Catalog Prices, Verify Before Send | SMASH"
+        ogDescription="Describe the job. SMASH matches your rates and materials — you verify, then send. Under 60 seconds."
         ogImage="https://smashinvoices.com/og-image.png"
         ogUrl="https://smashinvoices.com/ai-invoicing"
         twitterTitle="AI Invoicing | SMASH Invoices"
@@ -109,7 +109,7 @@ export function AiInvoicing() {
                 Download the iOS app
               </a>
               <Link to="/voice-invoicing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
-                How Voice Invoicing Works
+                Send invoice fast
               </Link>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
@@ -331,7 +331,7 @@ export function AiInvoicing() {
                   <Star key={i} size={11} className="text-accent fill-accent" />
                 ))}
               </div>
-              <span className="font-body text-xs font-semibold text-white/60">Real tradies, real results</span>
+              <span className="font-body text-xs font-semibold text-white/60">Real jobs, real invoices</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter leading-[0.88] text-white">
               Sceptical? So were they.

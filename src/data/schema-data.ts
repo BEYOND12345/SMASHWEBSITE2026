@@ -4,7 +4,7 @@ export const organizationSchema = {
   "name": "SMASH Invoices",
   "url": "https://smashinvoices.com",
   "logo": "https://smashinvoices.com/og-image.png",
-  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Speak a job description and get a tax-compliant quote (GST, VAT, sales tax or HST/PST) in under 60 seconds, sent to the customer before you leave the job site. Live in Australia, New Zealand, the UK, the US and Canada on iOS and Chrome.",
+  "description": "Send the invoice before you leave the job. Talk on iPhone or scan Gmail at your desk — SMASH prices from your catalog and sends a tax-compliant invoice (GST, VAT, sales tax or HST/PST) in under 60 seconds. Live in Australia, New Zealand, the UK, the US and Canada.",
   "founder": {
     "@type": "Person",
     "name": "Dan Neale"
@@ -28,7 +28,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "name": "SMASH Invoices",
   "url": "https://smashinvoices.com",
-  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Live in Australia, New Zealand, the UK, the US and Canada on iOS and Chrome.",
+  "description": "Send invoices fast from iPhone (voice) or Gmail (email scan). Catalog pricing, tax compliance, pay links. AU, NZ, UK, US, CA.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://smashinvoices.com/blog?search={search_term_string}",
@@ -45,7 +45,7 @@ export const softwareApplicationSchema = {
   "operatingSystem": "iOS, Chrome (extension)",
   "url": "https://smashinvoices.com",
   "downloadUrl": "https://apps.apple.com/au/app/smash-invoices/id6759475079",
-  "description": "Voice-first quoting and invoicing app for sole traders, tradies and contractors. Speak a job description aloud and get a tax-compliant, professionally formatted quote in under 60 seconds — with your own prices, materials priced automatically, customer approval portal, and payment built in. Live in Australia, New Zealand, the UK, the US and Canada on iOS and as a Chrome extension.",
+  "description": "Send the invoice before you leave. Describe the job out loud on iPhone or scan the Gmail thread — SMASH matches your catalog, builds a tax-compliant quote or invoice in under 60 seconds, with approval portal and payment built in. AU, NZ, UK, US, CA.",
   "featureList": [
     "Voice-to-quote in under 60 seconds",
     "Tax-compliant invoicing (GST, VAT, sales tax, HST/PST)",

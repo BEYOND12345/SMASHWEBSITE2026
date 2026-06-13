@@ -93,9 +93,9 @@ export function Pricing() {
   return (
     <>
       <SEO
-        title="Pricing | SMASH Invoices — Voice Invoicing for Tradies"
-        description="Simple feature-based pricing for SMASH Invoices. Free includes 5 invoices/month; paid plans start at $15/month with unlimited invoices, Xero and QuickBooks sync, and CSV export. Billed in AUD; invoices send in your local currency."
-        keywords="SMASH Invoices pricing, voice invoicing app pricing, invoice app Australia price, invoice app UK pricing, invoice app USA pricing, invoice app Canada pricing, invoice app NZ pricing"
+        title="Pricing — Send Unlimited Invoices From $15/mo | SMASH"
+        description="Free: 5 invoices/month, no card. Paid from $15/month: unlimited invoices, Xero and QuickBooks sync, CSV export. iPhone voice + Gmail extension on every plan."
+        keywords="SMASH pricing, invoice app pricing, send invoice fast app, voice to invoice pricing, gmail invoice extension price"
         ogUrl="https://smashinvoices.com/pricing"
         canonical="https://smashinvoices.com/pricing"
         hreflangs={hreflangAlternates}

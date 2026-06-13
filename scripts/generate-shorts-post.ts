@@ -317,7 +317,7 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
       <a href="/">Home</a><a href="/blog">Blog</a><a href="/chrome-extension">Add to Chrome</a>
       <a href="/pricing">Pricing</a><a href="/features">Features</a>
       <a href="/integrations-xero">Xero</a><a href="/integrations-quickbooks">QuickBooks</a>
-      <a href="/voice-invoicing">Voice Invoicing</a><a href="/faq">FAQ</a>
+      <a href="/voice-invoicing">Send invoice fast</a><a href="/gmail-invoice">Gmail invoice</a><a href="/faq">FAQ</a>
       <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
     </div>
     <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">

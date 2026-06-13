@@ -56,8 +56,8 @@ const clusterDemos = [
 
 const faqs = [
   {
-    q: 'Do I need to be a tradie to use this?',
-    a: 'Not at all. SMASH is built for any self-employed service pro who hates admin. Photographers, dog groomers, cleaners, consultants and mobile mechanics use SMASH to kill the brain fog and clear their inboxes.',
+    q: 'Who is this for?',
+    a: 'Anyone who quotes and invoices from Gmail and wants to stop re-typing the same job details. SMASH is for sole operators and small teams who bill from their inbox — scan the email, verify prices, send from the thread.',
   },
   {
     q: 'How does it know my prices?',
@@ -129,11 +129,11 @@ export function ChromeExtension() {
   return (
     <>
       <SEO
-        title="SMASH for Gmail — Voice-Powered Quotes from Your Inbox | SMASH Invoices"
-        description="Talk the job. Send the bill. Done. The SMASH Chrome extension docks inside Gmail — start recording or auto-draft from email to build a priced, GST-ready quote in under 60 seconds."
-        keywords="SMASH for Gmail, Gmail invoice extension, voice quote chrome extension, gmail quote sidebar, voice to invoice gmail, chrome extension for tradies, gmail invoicing, talk the job send the bill"
-        ogTitle="SMASH for Gmail — Talk the Job. Send the Bill. Done."
-        ogDescription="From email to paid in under 60 seconds. SMASH docks inside Gmail — start recording or auto-draft from email."
+        title="Gmail Invoice Extension — Send From the Thread | SMASH"
+        description="You are already in Gmail. SMASH reads the open thread or takes voice dictation, prices from your catalog, and sends a GST-ready invoice — under 60 seconds. Syncs to Xero and QuickBooks."
+        keywords="gmail invoice extension, email to invoice, send invoice from gmail, gmail quote sidebar, voice to invoice gmail, smash chrome extension"
+        ogTitle="Gmail Invoice Extension — Send From the Thread | SMASH"
+        ogDescription="Work request in your inbox? Price from your catalog and send without leaving Gmail."
         ogUrl="https://smashinvoices.com/chrome-extension"
         canonical="https://smashinvoices.com/chrome-extension"
         hreflangs={hreflangAlternates}
@@ -241,7 +241,7 @@ export function ChromeExtension() {
       <section className="bg-[#0D1117] py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Trusted by tradies</p>
+            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Works inside Gmail</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {

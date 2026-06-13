@@ -93,8 +93,8 @@ export function HowItWorks() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Create Invoices with Voice Using SMASH",
-    "description": "Learn how to create professional invoices in under 60 seconds using voice commands with SMASH Invoices",
+    "name": "How to Send an Invoice Before You Leave the Job",
+    "description": "Talk for 30 seconds, verify line items from your catalog, send — under 60 seconds with SMASH",
     "totalTime": "PT1M",
     "step": [
       {
@@ -131,15 +131,15 @@ export function HowItWorks() {
   return (
     <>
       <SEO
-        title="How SMASH Works: Voice-to-Invoice in 60 Seconds — No Typing | SMASH"
-        description="SMASH turns your voice into an ATO-compliant invoice in under 60 seconds. 4-step process: speak the job, SMASH builds the quote, send with one tap, get paid via Stripe. Works in Australia, NZ, UK, US, Canada."
-        keywords="how voice invoicing works, voice to invoice australia, how smash works, voice quote app australia, tradie invoicing app how it works"
-        ogTitle="How SMASH Voice Invoicing Works — Job to Paid in 60 Seconds"
-        ogDescription="Speak your job details, SMASH builds an ATO-compliant invoice with GST, send with one tap, get paid via Stripe. No typing. Works in Australia, NZ, UK, US and Canada."
+        title="Send an Invoice Before You Leave — How SMASH Works | SMASH"
+        description="Finished the job? Talk for 30 seconds, verify line items from your catalog, send. Field (iPhone voice) or desk (Gmail extension). GST-ready in Australia, NZ, UK, US, Canada."
+        keywords="send invoice after job, how smash works, voice to invoice, fastest way to invoice, invoice without typing"
+        ogTitle="Send the Invoice Before You Leave — How SMASH Works"
+        ogDescription="Talk, verify against your catalog, send in under 60 seconds. iPhone in the field or Gmail at your desk. No typing."
         ogImage="https://smashinvoices.com/hero_image.png"
         ogUrl="https://smashinvoices.com/how-it-works"
-        twitterTitle="How SMASH Voice-to-Invoice Works"
-        twitterDescription="Speak your job details, SMASH creates the invoice, send with one tap. Under 60 seconds, no typing."
+        twitterTitle="Send the Invoice Before You Leave — How SMASH Works"
+        twitterDescription="Talk for 30 seconds, verify, send. Under 60 seconds end to end. iPhone or Gmail."
         canonical="https://smashinvoices.com/how-it-works"
         hreflangs={hreflangAlternates}
       />
@@ -175,10 +175,10 @@ export function HowItWorks() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
             <AnimateIn direction="up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] mb-6 md:mb-8 uppercase tracking-tighter">
-                How SMASH Voice Invoicing Works
+                Send the invoice before you leave.
               </h1>
               <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.5] mb-4 md:mb-6">
-                From finished job to paid invoice. In under 60 seconds. No typing.
+                Talk for 30 seconds. Verify. Send. Under 60 seconds end to end.
               </p>
               <p className="font-body text-base text-white/60 font-medium max-w-2xl mx-auto leading-[1.5] mb-6 md:mb-8">
                 SMASH is the only invoicing app that turns a voice description into a tax-compliant invoice — with GST (Australia &amp; NZ), VAT (UK), or sales tax (US/Canada) — and a Stripe Pay Now button, in under 60 seconds. Supports NDIS participant numbers and repeat invoices.
@@ -192,7 +192,7 @@ export function HowItWorks() {
                   </div>
                   <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
                 </div>
-                <span className="font-body text-sm text-white/40 font-medium">Used by tradies across Australia</span>
+                <span className="font-body text-sm text-white/40 font-medium">Field app + Gmail extension</span>
               </div>
             </AnimateIn>
           </div>

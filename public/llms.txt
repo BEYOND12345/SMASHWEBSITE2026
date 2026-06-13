@@ -1,15 +1,15 @@
 # SMASH Invoices
 
-> Voice-to-invoice software for tradies and service businesses. Speak into your phone on the job site, and SMASH generates a professional invoice or quote in under 60 seconds — no typing, no laptop, no admin backlog.
+> Send the invoice before you leave the job. Talk for 30 seconds on iPhone (field) or scan the Gmail thread at your desk — SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds.
 
-SMASH is built for anyone who works with their hands: plumbers, electricians, cleaners, mechanics, painters, gardeners, handymen, tilers, concreters, locksmiths, arborists, HVAC techs, and more. It replaces "I'll do the paperwork on Sunday" with "it's already sent."
+SMASH replaces "I'll do the paperwork tonight" with "it's already sent." Two registers: iPhone voice on site, Chrome extension inside Gmail. No typing, no tab-switching, no guessed prices.
 
 Key facts:
 - Platforms: iOS app + Chrome extension
 - Live in: Australia, New Zealand, the United Kingdom, the United States, Canada
 - Tax handling: GST (AU 10%, NZ 15%), VAT (UK 20%), state sales tax (US, by state), GST/HST/PST (Canada, by province)
 - Local business numbers supported: ABN, NZBN, UTR / company number, EIN, Canadian Business Number
-- Model: Voice → AI-parsed line items → tax-compliant invoice or quote
+- Model: Voice or email → catalog-matched line items → verify → send
 - Typical time saved vs manual entry: ~12 hours/month
 - Pricing: Free includes 5 invoices per month; paid web plans start at $15/month with unlimited invoices
 - Homepage: https://smashinvoices.com
@@ -26,10 +26,11 @@ Key facts:
 - [Changelog](https://smashinvoices.com/changelog): Recent shipped updates.
 
 ## Product / category pages
-- [Voice Invoicing](https://smashinvoices.com/voice-invoicing): The category-definition page for voice-to-invoice.
-- [AI Invoicing](https://smashinvoices.com/ai-invoicing): How the AI turns speech into structured invoice data.
+- [Send invoice fast (voice)](https://smashinvoices.com/voice-invoicing): Problem-solution pillar — send the invoice before you leave the job. Voice on iPhone, catalog pricing, verify before send.
+- [Gmail invoice extension](https://smashinvoices.com/gmail-invoice): Desk register — turn the open email thread into a priced, sent invoice without leaving Gmail. Syncs to Xero and QuickBooks.
+- [AI Invoicing](https://smashinvoices.com/ai-invoicing): AI invoicing that prices from your catalog — talk on iPhone or scan Gmail, verify, send.
+- [Integrations](https://smashinvoices.com/integrations): Xero and QuickBooks sync from Starter — send in the field or Gmail, push when ready.
 - [GST-Compliant Invoicing](https://smashinvoices.com/gst-compliant-invoicing): Australian GST and tax-compliant invoicing.
-- [Invoice on Mobile](https://smashinvoices.com/invoice-on-mobile): Mobile-first invoicing workflow.
 - [SMASH for Gmail (Chrome extension)](https://smashinvoices.com/chrome-extension): A Gmail sidebar tool that turns customer emails into priced quotes and invoices using your voice. The SMASH icon lives in Gmail and a Generate Invoice button appears beside Send in compose; both open the side panel. Speak the job for ~30 seconds, SMASH builds a tax-compliant quote or invoice against your personal "Pricing DNA" or materials catalog, then drops a formatted reply or branded PDF into Gmail. Syncs to Xero and QuickBooks Online.
 
 ## Guides (AI search pillars)

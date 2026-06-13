@@ -179,15 +179,15 @@ export function FAQPage() {
   return (
     <>
       <SEO
-        title="SMASH FAQ: Voice Invoicing, NDIS, Pricing, Accuracy — All Questions Answered"
-        description="Everything about SMASH voice invoicing: how accurate is the voice AI, does it work for NDIS, what does it cost, how to repeat invoices, GST/VAT compliance, Android availability. Tradies and service businesses."
-        keywords="smash invoicing FAQ, voice invoicing FAQ, NDIS invoicing questions, tradie invoicing app FAQ, voice accuracy invoicing, repeat invoices, how does smash work"
-        ogTitle="SMASH FAQ — Voice Invoicing, NDIS, Pricing, Accuracy"
-        ogDescription="How accurate is the voice AI? Does SMASH work for NDIS? What does it cost? Can I repeat invoices? All your questions answered."
+        title="SMASH FAQ — Send Fast, Catalog Pricing, NDIS, Xero Sync | SMASH"
+        description="How fast can you send an invoice? Does SMASH use your prices? NDIS, repeat invoices, GST/VAT, Gmail extension, Xero sync, pricing, and Android — answered."
+        keywords="smash invoicing FAQ, send invoice after job, voice to invoice FAQ, NDIS invoicing questions, gmail invoice extension FAQ, catalog pricing invoice"
+        ogTitle="SMASH FAQ — Speed, Accuracy, Pricing, Integrations"
+        ogDescription="Send before you leave. Catalog-matched prices. NDIS, repeat invoices, tax compliance — all questions answered."
         ogImage="https://smashinvoices.com/og-image.png"
         ogUrl="https://smashinvoices.com/faq"
-        twitterTitle="Voice Invoicing FAQ — SMASH Invoices"
-        twitterDescription="Common questions about voice-to-invoice software, pricing, payments, and how SMASH works."
+        twitterTitle="SMASH FAQ — Send Invoices Faster"
+        twitterDescription="Speed, catalog pricing, NDIS, Gmail, Xero — common questions answered."
         canonical="https://smashinvoices.com/faq"
         hreflangs={hreflangAlternates}
       />
@@ -214,10 +214,10 @@ export function FAQPage() {
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
             <AnimateIn direction="up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-                SMASH Voice Invoicing:<br />Frequently Asked<br />Questions
+                Questions about<br />sending invoices<br />faster.
               </h1>
               <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
-                SMASH is AI voice invoicing software for tradies and service businesses. Speak a job description — get a tax-compliant invoice in under 60 seconds, with a Stripe Pay Now button. Free to start.
+                Talk on iPhone or scan Gmail — SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds. Free to start.
               </p>
               <p className="font-body text-base text-white/55 font-medium leading-[1.5] max-w-2xl mb-6">
                 Common questions about voice accuracy, NDIS invoicing, repeat invoices, pricing, GST/VAT compliance, and Android support — answered below.
@@ -228,7 +228,7 @@ export function FAQPage() {
                     <Star key={i} size={10} className="text-accent fill-accent" />
                   ))}
                 </div>
-                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store · Used by tradies across Australia</span>
+                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store · Field app + Gmail extension</span>
               </div>
             </AnimateIn>
           </div>

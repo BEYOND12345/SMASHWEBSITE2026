@@ -65,8 +65,8 @@ export const countries: CountryData[] = [
     taxRate: '10%',
     businessNumberLabel: 'ABN',
     live: true,
-    heroHook: 'Voice to GST-compliant invoice. Before you leave the driveway.',
-    heroSub: 'Built for Australian sole traders. GST, ABN, ATO-compliant invoices — sent from your phone, on site, in under 60 seconds.',
+    heroHook: 'Send the GST invoice before you leave.',
+    heroSub: 'Talk on iPhone or scan Gmail. GST, ABN, ATO-compliant — priced from your catalog in under 60 seconds.',
     reasons: [
       {
         title: '10% GST built in, ATO-compliant from day one',
@@ -87,9 +87,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparkies, chippies, cleaners, gardeners, handymen, mobile mechanics',
     seo: {
-      title: 'Voice Invoicing App for Australian Tradies | SMASH Invoices',
-      description: 'Voice-to-invoice for Australian tradies. Talk, send a GST-compliant invoice with your ABN in under 60 seconds. Free plan available. Built for plumbers, sparkies, cleaners, and more.',
-      keywords: 'invoice app Australia, tradie invoicing, GST invoice app, voice invoicing Australia, ABN invoice software, Xero alternative tradies',
+      title: 'Send the Invoice Before You Leave — GST Invoices Australia | SMASH',
+      description: 'Talk for 30 seconds on iPhone or scan Gmail. SMASH sends a GST-compliant invoice with your ABN in under 60 seconds. Free plan. Syncs to Xero and QuickBooks.',
+      keywords: 'invoice app Australia, send invoice after job, GST invoice app, voice to invoice Australia, ABN invoice software, gmail invoice extension',
     },
     faqs: [
       {
@@ -124,8 +124,8 @@ export const countries: CountryData[] = [
     taxRate: '15%',
     businessNumberLabel: 'NZBN',
     live: true,
-    heroHook: 'Voice-to-invoice. Built for Kiwi sole traders.',
-    heroSub: 'Describe the job, SMASH writes a 15% GST invoice in NZD with your NZBN on it, and sends it to your customer — all in under 60 seconds. Live on iOS and Chrome today.',
+    heroHook: 'Send the invoice before you leave.',
+    heroSub: 'Describe the job on iPhone or in Gmail — 15% GST invoice in NZD with your NZBN, sent in under 60 seconds.',
     reasons: [
       {
         title: 'Built for 15% GST out of the box',
@@ -146,9 +146,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparkies, builders, landscapers, cleaners, painters',
     seo: {
-      title: 'Voice Invoicing App for New Zealand Tradies | SMASH Invoices NZ',
-      description: 'Voice-to-invoice for NZ tradies. Talk, send a 15% GST invoice in NZD with your NZBN in under 60 seconds. Free to start on iOS and Chrome. Built for Kiwi sole traders.',
-      keywords: 'invoice app New Zealand, NZ invoicing software, GST invoice NZ, NZBN invoice, tradie app Kiwi, voice to invoice New Zealand, Xero alternative NZ',
+      title: 'Send Invoices Fast — GST Invoicing New Zealand | SMASH',
+      description: 'Talk or scan Gmail. Send a 15% GST invoice in NZD with your NZBN in under 60 seconds. iOS + Chrome. Free to start. Xero sync on Starter.',
+      keywords: 'invoice app New Zealand, send invoice fast NZ, GST invoice NZ, NZBN invoice, voice to invoice New Zealand, gmail invoice NZ',
     },
     faqs: [
       {
@@ -191,8 +191,8 @@ export const countries: CountryData[] = [
     taxRate: '20%',
     businessNumberLabel: 'Company number / UTR',
     live: true,
-    heroHook: 'Voice-to-invoice. Built for UK sole traders and contractors.',
-    heroSub: 'Describe the job, SMASH writes a VAT-compliant invoice in GBP and sends it to your customer — all in under 60 seconds. Live on iOS and Chrome today.',
+    heroHook: 'Send the VAT invoice before you leave.',
+    heroSub: 'Talk on site or scan Gmail at your desk — VAT-compliant invoice in GBP, sent in under 60 seconds.',
     reasons: [
       {
         title: 'VAT-compliant from the first invoice',
@@ -213,9 +213,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'plumbers, sparks, joiners, brickies, gas engineers, landscapers, domestic cleaners',
     seo: {
-      title: 'Voice Invoicing App for UK Sole Traders & Tradespeople | SMASH',
-      description: 'Voice-to-invoice for UK sole traders and tradespeople. Talk, send a VAT-compliant invoice in GBP with your UTR or company number in under 60 seconds. Free to start on iOS and Chrome.',
-      keywords: 'invoice app UK, VAT invoice app, UK tradespeople invoicing, sole trader invoice software UK, voice to invoice UK, CIS invoicing, QuickBooks alternative UK',
+      title: 'Send the Invoice Before You Leave — VAT Invoices UK | SMASH',
+      description: 'Talk for 30 seconds or scan Gmail. VAT-compliant invoice in GBP with your UTR or company number — under 60 seconds. iOS + Chrome. Free to start.',
+      keywords: 'invoice app UK, send invoice fast UK, VAT invoice app, sole trader invoice software UK, voice to invoice UK, gmail invoice extension UK',
     },
     faqs: [
       {
@@ -258,8 +258,8 @@ export const countries: CountryData[] = [
     taxRate: 'varies by state',
     businessNumberLabel: 'EIN',
     live: true,
-    heroHook: 'Voice-to-invoice. Built for American contractors.',
-    heroSub: 'Describe the job, SMASH writes an invoice in USD with the right state sales tax and your EIN on it, and sends it to your customer — all in under 60 seconds. Live on iOS and Chrome today.',
+    heroHook: 'Send the invoice before you leave the job.',
+    heroSub: 'Voice on iPhone or email scan in Gmail — USD invoice with state sales tax and your EIN, sent in under 60 seconds.',
     reasons: [
       {
         title: 'State sales tax, handled per invoice',
@@ -280,9 +280,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC techs, electricians, plumbers, handymen, lawn care, mobile detailing, pressure washing, house cleaning',
     seo: {
-      title: 'Voice Invoicing App for US Contractors & Tradespeople | SMASH',
-      description: 'Voice-to-invoice for 1099 contractors and US service pros. Talk, send an invoice in USD with state sales tax and your EIN in under 60 seconds. Free to start on iOS and Chrome.',
-      keywords: 'invoice app US, contractor invoicing app, 1099 invoicing, handyman invoicing app USA, voice to invoice USA, QuickBooks alternative contractors, service business invoicing',
+      title: 'Send Invoices in 60 Seconds — US Contractors & 1099 | SMASH',
+      description: 'Talk or scan Gmail. Send a USD invoice with state sales tax and your EIN in under 60 seconds. Built for 1099 contractors and service businesses. iOS + Chrome.',
+      keywords: 'invoice app US, send invoice fast, 1099 invoicing, voice to invoice USA, contractor invoicing app, gmail invoice extension',
     },
     faqs: [
       {
@@ -321,8 +321,8 @@ export const countries: CountryData[] = [
     taxRate: 'GST 5% + provincial',
     businessNumberLabel: 'Business Number (BN)',
     live: true,
-    heroHook: 'Voice-to-invoice. Built for Canadian contractors.',
-    heroSub: 'Describe the job, SMASH writes a CAD invoice with the right GST/HST/PST for your province and your Business Number on it, and sends it to your customer — all in under 60 seconds. Live on iOS and Chrome today.',
+    heroHook: 'Send the invoice before you leave.',
+    heroSub: 'Talk on iPhone or scan Gmail — CAD invoice with GST/HST/PST for your province and your Business Number, sent in under 60 seconds.',
     reasons: [
       {
         title: 'GST, HST, PST — by province, automatically',
@@ -343,9 +343,9 @@ export const countries: CountryData[] = [
     ],
     audience: 'HVAC technicians, electricians, plumbers, landscapers, snow removal, cleaning, handymen',
     seo: {
-      title: 'Voice Invoicing App for Canadian Contractors | SMASH Invoices CA',
-      description: 'Voice-to-invoice for Canadian contractors. Talk, send an invoice in CAD with GST/HST/PST by province and your Business Number in under 60 seconds. Free to start on iOS and Chrome.',
-      keywords: 'invoice app Canada, contractor invoicing Canada, GST HST invoice app, Canadian sole trader invoicing, voice to invoice Canada, QuickBooks alternative Canada, BN invoice',
+      title: 'Send Invoices Fast — GST/HST Invoicing Canada | SMASH',
+      description: 'Talk or scan Gmail. Send a CAD invoice with GST/HST/PST by province and your Business Number in under 60 seconds. iOS + Chrome. Free to start.',
+      keywords: 'invoice app Canada, send invoice fast Canada, GST HST invoice app, voice to invoice Canada, gmail invoice extension Canada, BN invoice',
     },
     faqs: [
       {

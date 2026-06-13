@@ -106,7 +106,7 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
             <Link to="/features" className={mobileLinkClass}>Features</Link>
             <Link to="/pricing" className={mobileLinkClass}>Pricing</Link>
             <Link to="/how-it-works" className={mobileLinkClass}>How It Works</Link>
-            <Link to="/voice-invoicing" className={mobileLinkClass}>Voice Invoicing</Link>
+            <Link to="/voice-invoicing" className={mobileLinkClass}>Send invoice fast</Link>
             <Link to="/ai-invoicing" className={mobileLinkClass}>AI Invoicing</Link>
             <Link to="/chrome-extension" className={`${mobileLinkClass} !text-accent font-black`}>
               SMASH for Gmail — Chrome Extension

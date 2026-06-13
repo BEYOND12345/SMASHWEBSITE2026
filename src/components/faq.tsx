@@ -1,40 +1,22 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { StructuredData, createFAQSchema } from './structured-data';
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-const faqs: FAQItem[] = [
-  {
-    question: 'Why did you build this?',
-    answer: 'Watching people write quotes in their trucks, on site, between jobs. Always rushed. Always messy. Most just text a rough number and hope it sticks. There had to be a better way that actually fit how the work gets done.'
-  },
-  {
-    question: 'Who is SMASH for?',
-    answer: 'Anyone sending multiple quotes a week. Electricians, plumbers, builders, landscapers, carpenters. If you\'re quoting on site or between jobs, this is for you. Voice recognition is trained on trade terminology, materials, and real job language.'
-  },
-  {
-    question: 'Where is SMASH right now?',
-    answer: 'The app is live and real service businesses are using it on real jobs. We\'re refining the experience based on feedback and adding features that actually matter. You get free access, we get to build something that works for how you actually work.'
-  },
-  {
-    question: 'How do I get started?',
-    answer: 'Download SMASH from the App Store on your iPhone or iPad. Free to start — no credit card required. Connect your accounting software, talk your first job, and send a professional invoice in under 60 seconds.'
-  },
-  {
-    question: 'Where is this going?',
-    answer: 'The goal is simple: make quoting so fast you never put it off. Next up: job tracking, payment integrations, and deeper client management. But the core stays the same—talk, send, get approved, invoice.'
-  },
-  {
-    question: 'Is my data safe?',
-    answer: 'Absolutely. This is a professional application with enterprise-grade encryption. Your quotes, client details, and business data are secure. We take this seriously because we know you do too.'
-  }
-];
+type Props = {
+  items: FAQItem[];
+  heading?: string;
+  subheading?: string;
+};
 
-export function FAQ() {
+export function FAQ({
+  items,
+  heading = 'Common questions',
+  subheading = 'Voice on iPhone or Gmail at your desk — answers in under 60 seconds',
+}: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -43,21 +25,20 @@ export function FAQ() {
 
   return (
     <section className="bg-slate-50 py-20 lg:py-28">
-      <StructuredData data={createFAQSchema(faqs)} />
       <div className="max-w-4xl mx-auto px-8 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-7 text-brand uppercase leading-[0.88]">
-            Questions About SMASH
+            {heading}
           </h2>
           <p className="text-xl md:text-2xl text-slate-700 font-medium leading-[1.15]">
-            The story, the vision, and where we are now
+            {subheading}
           </p>
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {items.map((faq, index) => (
             <div
-              key={index}
+              key={faq.question}
               className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden transition-all duration-300 hover:border-brand/30"
             >
               <button

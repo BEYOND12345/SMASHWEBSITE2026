@@ -32,7 +32,7 @@ const testimonials = [
 ];
 
 const featureFaqs = [
-  { question: "What is SMASH?", answer: "SMASH is AI-powered voice invoicing software for tradies and service businesses. You describe a job out loud for 20–30 seconds — SMASH transcribes your speech, extracts line items, calculates GST (or VAT, HST, or sales tax depending on your market), and generates a professional, tax-compliant invoice ready to send in under 60 seconds. No typing, no templates, no app navigation. Used by plumbers, electricians, cleaners, painters, NDIS support workers, and more across Australia, New Zealand, the UK, the US, and Canada." },
+  { question: "What is SMASH?", answer: "SMASH is invoicing software that lets you send before you leave the job. Describe the work out loud for 20–30 seconds (iPhone) or scan the Gmail thread (Chrome extension) — SMASH matches your catalog, calculates GST (or VAT, HST, or sales tax), and builds a tax-compliant invoice ready to send in under 60 seconds. No typing, no templates, no tab-switching. Live in Australia, New Zealand, the UK, the US, and Canada." },
   { question: "How does SMASH generate a quote from voice?", answer: "You describe the job out loud for 20–30 seconds — the same way you'd explain it to a mate. SMASH transcribes your speech, matches items against your personal pricing catalog and materials database, and builds a structured, priced quote automatically. No typing, no templates, no app navigation." },
   { question: "Does SMASH produce GST and NDIS-ready invoices?", answer: "Yes. Every invoice SMASH generates includes your ABN, a GST line item, the invoice date, and an itemised job description. If a customer has an NDIS participant number saved, SMASH prints it automatically in the Bill To block and shows it on the portal link. For NDIS support workers, this means no more manually typing participant numbers — save it once per client and every invoice is NDIS-ready." },
   { question: "Can customers pay directly from the quote link?", answer: "Yes. Every quote includes a link your customer opens on their phone. They review the quote, approve it with one tap, and can pay immediately via Stripe. No phone calls, no printing, no chasing." },
@@ -44,11 +44,11 @@ export function Features() {
   return (
     <>
       <SEO
-        title="SMASH Features: Voice Invoicing, GST, NDIS, Repeat Invoices | SMASH Invoices"
-        description="SMASH turns your voice into an ATO-compliant invoice in 60 seconds. Features: voice-to-quote, 2,250+ AU materials catalog, GST/VAT/HST/sales tax compliance, NDIS participant numbers, repeat invoices, Stripe payments, and read receipts."
-        keywords="voice invoicing features, tradie invoicing app features, GST invoice app australia, NDIS invoicing, repeat invoices, voice quote generator, invoice app for tradies"
-        ogTitle="SMASH Features — Voice Invoicing, GST, NDIS, Repeat Invoices"
-        ogDescription="Voice-to-invoice in 60 seconds. NDIS participant numbers. Repeat invoices. GST/VAT/HST/sales tax compliance. Everything a tradie needs to get paid without the admin."
+        title="SMASH Features — Send Invoices Fast, GST-Ready, From Phone or Gmail | SMASH"
+        description="Send the invoice before you leave: voice on iPhone, email scan in Gmail, your catalog prices, GST/VAT/HST compliance, NDIS numbers, repeat invoices, Stripe pay links, and read receipts."
+        keywords="send invoice fast, voice to invoice, gmail invoice extension, GST invoice app, NDIS invoicing, repeat invoices, invoice without typing"
+        ogTitle="SMASH Features — Send Before You Leave"
+        ogDescription="Voice on site or Gmail at your desk. Catalog pricing, tax compliance, NDIS, repeat invoices, pay links — under 60 seconds."
         ogImage="https://smashinvoices.com/og-image.png"
         ogUrl="https://smashinvoices.com/features"
         twitterTitle="SMASH Invoices — Features"
@@ -79,10 +79,10 @@ export function Features() {
           <AnimateIn direction="up">
             <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Features</p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-              SMASH Features:<br />Voice Invoicing,<br />GST, NDIS &amp; More.
+              Send fast.<br />Price from your catalog.<br />Get paid.
             </h1>
             <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
-              SMASH is AI-powered invoicing software for tradies and service businesses. Describe a job by voice — get an ATO-compliant tax invoice with a Stripe payment link in under 60 seconds. Free to start.
+              Talk on iPhone or scan Gmail — SMASH builds a tax-compliant invoice from your rates and materials in under 60 seconds. Free to start.
             </p>
             <p className="font-body text-base text-white/60 font-medium leading-[1.5] max-w-2xl mb-8">
               Works in Australia (GST), New Zealand (GST), UK (VAT), US (sales tax), and Canada (GST/HST/PST). Supports NDIS participant numbers, repeat invoices, and Xero/QuickBooks sync.
@@ -446,7 +446,7 @@ export function Features() {
       <section className="bg-brand py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-3 text-center">From tradies using SMASH</p>
+            <p className="text-xs font-black uppercase tracking-widest text-white/30 mb-3 text-center">From people using SMASH</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-12 text-center">
               What they say
             </h2>

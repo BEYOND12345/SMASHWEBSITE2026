@@ -124,10 +124,10 @@ async function generateSitemap() {
     { loc: '/profit-calculator',        srcFiles: ['src/pages/profit-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
 
     // Feature / product pages
-    { loc: '/voice-invoicing',         srcFiles: ['src/pages/voice-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
+    { loc: '/voice-invoicing',         srcFiles: ['src/pages/voice-invoicing.tsx', 'public/voice-invoicing/index.html'], changefreq: 'weekly', priority: '1.0' },
+    { loc: '/gmail-invoice',           srcFiles: ['public/gmail-invoice/index.html', 'scripts/generate-gmail-landing-static.ts'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/ai-invoicing',            srcFiles: ['src/pages/ai-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', srcFiles: ['src/pages/gst-compliant-invoicing.tsx'], changefreq: 'monthly', priority: '0.8' },
-    { loc: '/invoice-on-mobile',       srcFiles: ['src/pages/invoice-on-mobile.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/chrome-extension',        srcFiles: ['src/pages/chrome-extension.tsx'], changefreq: 'monthly', priority: '0.9' },
 
     // Comparison pages — share comparison-data so any price update bumps them all
