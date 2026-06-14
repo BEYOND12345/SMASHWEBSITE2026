@@ -27,6 +27,17 @@ const videoPosts: { slug: string }[] = [
   { slug: 'pest-control-invoicing-gmail-csv-pricing' },
 ];
 
+/** GSC Batch 2 voice survivors — must exist as static HTML in dist/ (not SPA 404). */
+const gscVoiceSurvivors: { slug: string; label: string }[] = [
+  { slug: 'beyond-chatgpt-dedicated-voice-invoicing', label: 'Beyond ChatGPT voice post' },
+  { slug: 'stop-admin-sundays-voice-invoicing', label: 'Stop Admin Sundays' },
+  { slug: 'the-60-second-invoice-voice-to-invoice', label: '60-second invoice' },
+  { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way 2026' },
+  { slug: 'fastest-voice-invoice-generator-gmail', label: 'Fastest voice Gmail' },
+  { slug: 'invoice-without-typing', label: 'Invoice without typing' },
+  { slug: 'is-voice-invoicing-accurate', label: 'Voice accuracy' },
+];
+
 function fail(msg: string): never {
   console.error(`✗ verify:blog-deploy — ${msg}`);
   process.exit(1);
@@ -35,6 +46,14 @@ function fail(msg: string): never {
 if (!fs.existsSync(distBlog)) {
   fail('dist/blog/ missing — Vite build did not copy public/blog/. Bolt deploy will 5xx blog URLs.');
 }
+
+const distPostCount = fs
+  .readdirSync(distBlog)
+  .filter((d) => fs.existsSync(path.join(distBlog, d, 'index.html'))).length;
+if (distPostCount < 150) {
+  fail(`dist/blog/ has only ${distPostCount} posts (expected ≥150). sync:blog-dist may have failed.`);
+}
+console.log(`✓ dist/blog/ — ${distPostCount} static posts`);
 
 for (const { slug, label } of priorityPosts) {
   const file = path.join(distBlog, slug, 'index.html');
@@ -79,6 +98,21 @@ for (const { slug } of videoPosts) {
     fail(`${slug}/index.html missing visible Chrome Web Store rating text`);
   }
   console.log(`✓ ${slug} — embed + VideoObject + Chrome rating OK`);
+}
+
+for (const { slug, label } of gscVoiceSurvivors) {
+  const file = path.join(distBlog, slug, 'index.html');
+  if (!fs.existsSync(file)) {
+    fail(`missing dist/blog/${slug}/index.html (${label}). GSC will 404 this URL.`);
+  }
+  const html = fs.readFileSync(file, 'utf-8');
+  if (html.includes('<div id="root">') && !html.includes('<article')) {
+    fail(`${slug}/index.html looks like SPA shell, not static blog HTML`);
+  }
+  if (!html.includes(`<link rel="canonical" href="https://smashinvoices.com/blog/${slug}"`)) {
+    fail(`${slug}/index.html canonical tag missing or wrong`);
+  }
+  console.log(`✓ ${slug} — GSC voice survivor OK`);
 }
 
 const redirects = path.join(root, 'dist', '_redirects');

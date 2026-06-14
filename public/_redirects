@@ -61,6 +61,10 @@
 /blog/voice-to-crm-ai-learns-customers/    /voice-invoicing     301!
 # End Voice consolidation 301s
 
+# Sitemap typo fix — wrong slug was listed as fastest-way-to-send-an-invoice-2026
+/blog/fastest-way-to-send-an-invoice-2026     /blog/fastest-way-to-send-invoice-2026     301!
+/blog/fastest-way-to-send-an-invoice-2026/    /blog/fastest-way-to-send-invoice-2026     301!
+
 # Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200
 /blog/:slug/          /blog/:slug/index.html   200

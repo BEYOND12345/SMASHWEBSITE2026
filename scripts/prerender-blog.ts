@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { marked } from 'marked';
 import { googleAdsClickTrackingHtml, googleAdsHeadHtml } from './google-ads-snippet.ts';
+import { GMAIL_SURVIVOR_SLUGS } from './gmail-consolidation-redirects.ts';
+import { VOICE_SURVIVOR_SLUGS } from './voice-consolidation-redirects.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -60,25 +62,22 @@ const supabase =
 
 const SITE_URL = 'https://smashinvoices.com';
 
-/** Hand-maintained static pages with VideoObject schema — do not overwrite from Supabase. */
+/** Hand-maintained / SEO-critical static HTML — never overwrite from Supabase prerender. */
 const PROTECTED_BLOG_SLUGS = new Set([
+  // Gmail + voice cluster survivors (North Star meta + static HTML)
+  ...GMAIL_SURVIVOR_SLUGS,
+  ...VOICE_SURVIVOR_SLUGS,
   // Video / Gmail hand-maintained posts (VideoObject schema)
   'wave-invoicing-alternative-gmail',
   'photographer-wedding-quote-gmail-60-seconds',
-  'fastest-voice-invoice-generator-gmail',
   'quickbooks-gmail-invoice-shortcut',
   'how-to-add-sku-numbers-to-invoice',
-  'gmail-email-to-invoice-20-seconds',
-  'gmail-to-xero-invoice-no-typing',
-  'gmail-quickbooks-xero-bridge',
   'quickbooks-gmail-chrome-extension-missing',
   'quickbooks-gmail-sidebar-tab-switching',
-  'fastest-way-to-send-invoice-2026',
   'pest-control-invoicing-gmail-csv-pricing',
   // Blog Action Plan v1 — hand-retrofitted static HTML (do not prerender over)
   'word-vs-excel-vs-app-for-invoices',
   'how-long-to-send-invoice-after-job-australia',
-  'how-to-invoice-as-an-electrician-australia',
   'can-chatgpt-generate-invoices-tradie-guide',
   'how-to-invoice-appliance-repair-callouts',
 ]);
