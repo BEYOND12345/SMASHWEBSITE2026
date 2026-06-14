@@ -2,6 +2,7 @@
  * Generate static HTML for Level 1 main pages (crawler-grade).
  * Run: npm run generate:main-pages-static
  */
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -11,7 +12,7 @@ import {
   SITE,
 } from '../src/data/main-pages-seo.ts';
 import { countries } from '../src/data/country-data.ts';
-import { buildStaticPage, writeStaticPage } from './lib/static-page-template.ts';
+import { buildFaqSchema, buildStaticPage, writeStaticPage } from './lib/static-page-template.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
@@ -47,7 +48,23 @@ for (const c of countries.filter((x) => x.slug !== 'au')) {
   console.log(`✓ ${c.path}`);
 }
 
-// Homepage note: root index.html is updated separately in vite source (index.html)
+const HOMEPAGE_FAQ_MARKER = 'Structured data: FAQPage (homepage';
+const faqBlockPattern = /    <!-- Structured data: FAQPage \(homepage[\s\S]*?<\/script>\n\n/g;
+const indexPath = path.join(root, 'index.html');
+let indexHtml = fs.readFileSync(indexPath, 'utf8');
+const homeFaqs = mainPages.home.faqs ?? [];
+const faqJson = JSON.stringify(buildFaqSchema(homeFaqs), null, 2)
+  .split('\n')
+  .map((line, i) => (i === 0 ? line : `    ${line}`))
+  .join('\n');
+const faqBlock = `    <!-- ${HOMEPAGE_FAQ_MARKER} — synced from main-pages-seo.ts) -->\n    <script type="application/ld+json">\n    ${faqJson}\n    </script>\n\n`;
+indexHtml = indexHtml.replace(faqBlockPattern, '');
+indexHtml = indexHtml.replace(
+  '    <link rel="preconnect" href="https://fonts.googleapis.com">',
+  `${faqBlock}    <link rel="preconnect" href="https://fonts.googleapis.com">`
+);
+fs.writeFileSync(indexPath, indexHtml);
+console.log(`✓ / (homepage FAQPage in index.html — ${homeFaqs.length} questions)`);
+
 console.log(`\n✅ Main page static HTML written under ${publicDir}`);
 console.log(`   Pillars /voice-invoicing and /gmail-invoice: run generate:voice-static + generate:gmail-static`);
-console.log(`   Homepage shell: edit ${path.join(root, 'index.html')} (served at ${SITE}/)`);

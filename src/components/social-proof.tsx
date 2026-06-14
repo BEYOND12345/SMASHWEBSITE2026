@@ -1,36 +1,19 @@
-import { useState, useEffect } from 'react';
-import { Users, CheckCircle, TrendingUp } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { Star, CheckCircle, TrendingUp } from 'lucide-react';
+import { CHROME_STORE_RATING } from '../data/download-urls';
 
 export function SocialProof() {
-  const [signupCount, setSignupCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    const fetchSignupCount = async () => {
-      const { count, error } = await supabase
-        .from('beta_signups')
-        .select('*', { count: 'exact', head: true });
-
-      if (!error && count !== null) {
-        setSignupCount(count);
-      }
-    };
-
-    fetchSignupCount();
-  }, []);
-
   return (
     <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border-2 border-slate-200">
       <div className="grid md:grid-cols-3 gap-8 text-center">
         <div className="flex flex-col items-center">
           <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-            <Users className="text-brand" size={32} strokeWidth={2.5} />
+            <Star className="text-brand fill-brand" size={32} strokeWidth={2.5} />
           </div>
           <div className="text-4xl font-black text-brand mb-2">
-            {signupCount !== null ? `${signupCount}+` : '100+'}
+            {CHROME_STORE_RATING.ratingValue}★
           </div>
           <div className="text-sm font-bold text-slate-600 uppercase tracking-wide">
-            Early Users
+            Tradie Trusted
           </div>
         </div>
 
@@ -91,7 +74,7 @@ export function SocialProof() {
               />
             </div>
           </div>
-          <p>Electricians, plumbers, and builders testing now</p>
+          <p>Tried and tested by specialist tradies</p>
         </div>
       </div>
     </div>

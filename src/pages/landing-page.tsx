@@ -7,9 +7,10 @@ import { SEO } from '../components/seo';
 import { StickyCTA } from '../components/sticky-cta';
 import { SignupFAB } from '../components/signup-fab';
 import { InlineCTA } from '../components/inline-cta';
+import { SocialProof } from '../components/social-proof';
 import { FAQ } from '../components/faq';
 import { BlogPreview } from '../components/blog-preview';
-import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema, createFAQSchema } from '../components/structured-data';
+import { StructuredData, organizationSchema, webApplicationSchema, websiteSchema, createVideoSchema } from '../components/structured-data';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import {
   organizationSchema as aiOrgSchema,
@@ -79,7 +80,6 @@ export function LandingPage() {
         embedUrl: "https://www.youtube.com/embed/gr_iAEvyIQY",
         uploadDate: "2026-01-01"
       })} />
-      <StructuredData data={createFAQSchema(homeFaqs)} />
       <SchemaMarkup schemas={[aiOrgSchema, aiWebsiteSchema, softwareApplicationSchema]} />
 
       <StickyCTA />
@@ -569,6 +569,13 @@ export function LandingPage() {
           </ScaledPhone>
         }
       />
+
+      {/* ── SOCIAL PROOF ─────────────────────────────────────────────────── */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <SocialProof />
+        </div>
+      </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
       <section className="bg-brand py-16 md:py-24">

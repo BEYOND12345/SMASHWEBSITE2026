@@ -20,6 +20,18 @@ export function ld(obj: unknown): string {
   return JSON.stringify(obj).replace(/</g, '\\u003c');
 }
 
+export function buildFaqSchema(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+}
+
 function hreflangTags(): string {
   return HREFLANG_LINKS.map(
     (l) => `  <link rel="alternate" hreflang="${l.hreflang}" href="${esc(l.href)}">`
@@ -38,17 +50,7 @@ function ctaHtml(mode: MainPageSeo['cta']): string {
 
 export function buildStaticPage(page: MainPageSeo, extraBody = ''): string {
   const canonical = `${SITE}${page.path}`;
-  const faqLd = page.faqs?.length
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: page.faqs.map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: { '@type': 'Answer', text: f.answer },
-        })),
-      }
-    : null;
+  const faqLd = page.faqs?.length ? buildFaqSchema(page.faqs) : null;
   const webPageLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
