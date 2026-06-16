@@ -22,6 +22,7 @@ import {
   Globe,
 } from 'lucide-react';
 import { HeroVideo } from '../gmail-sidebar-mockups';
+import { HERO_VIDEO_B2B_QUOTE_SKU } from '../../data/download-urls';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -180,7 +181,10 @@ export function B2bChromeLandingPage() {
             <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
               <div className="md:pb-24">
                 <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(200,255,0,0.15)] border border-white/10 relative">
-                  <HeroVideo />
+                  <HeroVideo
+                    src={HERO_VIDEO_B2B_QUOTE_SKU}
+                    title="Quote request to priced PDF with SKU matching in Gmail"
+                  />
                 </div>
               </div>
             </AnimateIn>

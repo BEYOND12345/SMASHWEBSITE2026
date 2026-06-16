@@ -1,3 +1,7 @@
+/** Hero demo loops — muted autoplay in page heroes. */
+export const HERO_VIDEO_DEFAULT = '/videos/hero-demo.mp4';
+export const HERO_VIDEO_B2B_QUOTE_SKU = '/videos/quote-request-pdf-sku-match.mp4';
+
 /** Official download destinations — single source of truth for CTAs site-wide. */
 export const APP_STORE_URL =
   'https://apps.apple.com/au/app/smash-invoices/id6759475079';

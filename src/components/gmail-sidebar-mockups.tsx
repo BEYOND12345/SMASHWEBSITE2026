@@ -1,10 +1,20 @@
 import { Mail, Mic } from 'lucide-react';
+import { HERO_VIDEO_DEFAULT } from '../../data/download-urls';
 
-export function HeroVideo() {
+type HeroVideoProps = {
+  src?: string;
+  title?: string;
+};
+
+export function HeroVideo({
+  src = HERO_VIDEO_DEFAULT,
+  title = 'SMASH Gmail invoice demo',
+}: HeroVideoProps) {
   return (
     <div className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0D1117]">
       <video
-        src="/videos/hero-demo.mp4"
+        src={src}
+        title={title}
         autoPlay
         muted
         loop

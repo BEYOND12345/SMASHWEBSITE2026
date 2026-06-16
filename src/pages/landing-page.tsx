@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { HERO_VIDEO_DEFAULT } from '../data/download-urls';
 import { Play, Star, Quote, Chrome, Mail, ArrowRight, Apple } from 'lucide-react';
 import { Nav } from '../components/nav';
 import { PhoneMockup, AppScreen } from '../components/phone-mockup';
@@ -316,7 +317,7 @@ export function LandingPage() {
             <AnimateIn direction="right" delay={100}>
               <div className="rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(200,255,0,0.12)] bg-[#0D1117]">
                 <video
-                  src="/videos/hero-demo.mp4"
+                  src={HERO_VIDEO_DEFAULT}
                   autoPlay
                   muted
                   loop
