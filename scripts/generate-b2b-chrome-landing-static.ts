@@ -1,6 +1,7 @@
 /**
- * Full static HTML for /b2b-gmail-quoting — crawler-grade, matches B2B landing copy.
- * Run: npm run generate:b2b-chrome-static
+ * Optional crawler HTML for /b2b-gmail-quoting — NOT used in production deploy.
+ * Live route is React SPA (B2bChromeLandingPage). Do not commit output to public/.
+ * Run manually only if needed: npm run generate:b2b-chrome-static
  */
 import fs from 'node:fs';
 import path from 'node:path';

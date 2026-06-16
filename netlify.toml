@@ -104,7 +104,18 @@
   to = "/pricing/index.html"
   status = 200
 
-# /b2b-gmail-quoting — React SPA (B2bChromeLandingPage + RFQ mockup). No static rewrite.
+# /b2b-gmail-quoting — force SPA so dist/b2b-gmail-quoting/index.html never shadows React
+[[redirects]]
+  from = "/b2b-gmail-quoting"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/b2b-gmail-quoting/"
+  to = "/index.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/nz"
