@@ -19,7 +19,7 @@ const publicDir = path.join(root, 'public');
 
 const routes: { key: keyof typeof mainPages; dir: string }[] = [
   { key: 'chromeExtension', dir: 'chrome-extension' },
-  { key: 'b2bGmailQuoting', dir: 'b2b-gmail-quoting' },
+  // /b2b-gmail-quoting — full landing via generate:b2b-chrome-static (not this stub)
   { key: 'pricing', dir: 'pricing' },
 ];
 
