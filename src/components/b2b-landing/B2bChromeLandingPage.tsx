@@ -21,7 +21,7 @@ import {
   FileCheck,
   Globe,
 } from 'lucide-react';
-import { B2bRfqMockup } from './B2bRfqMockup';
+import { HeroVideo } from '../gmail-sidebar-mockups';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -178,9 +178,9 @@ export function B2bChromeLandingPage() {
             </AnimateIn>
 
             <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
-              <div className="md:pb-24 w-full flex justify-center">
-                <div className="w-full max-w-[560px]">
-                  <B2bRfqMockup />
+              <div className="md:pb-24">
+                <div className="rounded-[16px] overflow-hidden shadow-[0_0_80px_rgba(200,255,0,0.15)] border border-white/10 relative">
+                  <HeroVideo />
                 </div>
               </div>
             </AnimateIn>
