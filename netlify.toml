@@ -104,15 +104,7 @@
   to = "/pricing/index.html"
   status = 200
 
-[[redirects]]
-  from = "/b2b-gmail-quoting"
-  to = "/b2b-gmail-quoting/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/b2b-gmail-quoting/"
-  to = "/b2b-gmail-quoting/index.html"
-  status = 200
+# /b2b-gmail-quoting — React SPA (B2bChromeLandingPage + RFQ mockup). No static rewrite.
 
 [[redirects]]
   from = "/nz"
