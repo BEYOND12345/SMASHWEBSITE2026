@@ -6,9 +6,7 @@ import {
   Mic,
   Send,
   ChevronDown,
-  Star,
   Lock,
-  Quote,
   Zap,
   RotateCcw,
   FileText,
@@ -33,7 +31,12 @@ import { gmailLandingCanonical } from '../../data/gmail-landing-pages';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../gmail-sidebar-mockups';
 import { BrandLogos } from '../brand-logos';
 import { MockupFrame } from '../phone-showcase';
-
+import {
+  ChromePrimaryCta,
+  FeaturedTestimonialSection,
+  TestimonialGridSection,
+  chromeLanding,
+} from '../chrome-landing/chrome-landing-ui';
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../../data/download-urls';
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 
@@ -178,19 +181,8 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                 </h1>
                 <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">{config.hero.subcopy}</p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={CHROME_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
-                  >
-                    <Chrome size={17} strokeWidth={2.5} />
-                    {CHROME_CTA_LABEL}
-                  </a>
-                  <Link
-                    to="/how-it-works"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
-                  >
+                  <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} />
+                  <Link to="/how-it-works" className={chromeLanding.secondaryCtaOnDark}>
                     See how it works
                   </Link>
                 </div>
@@ -234,29 +226,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-[#0D1117] py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Trusted by tradies</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {config.testimonials.map(({ quote, name, trade, city }) => (
-                <div key={name} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} className="text-accent fill-accent" />
-                    ))}
-                  </div>
-                  <p className="font-body text-sm text-white/75 font-medium leading-[1.55] italic flex-1">&ldquo;{quote}&rdquo;</p>
-                  <p className="font-display text-xs uppercase tracking-wider text-white/40">
-                    {name} · {trade} · {city}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <TestimonialGridSection eyebrow="Trusted by tradies" items={config.testimonials} />
 
       {/* VIDEO */}
       <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
@@ -469,24 +439,10 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
         </div>
       </section>
 
-      {/* FEATURED TESTIMONIAL */}
-      <section className="bg-surface py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,_#C8FF00_1px,_transparent_1px)] bg-[length:24px_24px]" />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <div className="flex items-center justify-center gap-1 mb-5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={16} className="text-accent fill-accent" />
-            ))}
-          </div>
-          <Quote size={28} className="text-brand/30 mx-auto mb-4" />
-          <blockquote>
-            <p className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-[0.95] text-brand mb-6">
-              &ldquo;{config.featuredTestimonial.quote}&rdquo;
-            </p>
-            <p className="font-body text-brand/50 text-sm">{config.featuredTestimonial.attribution}</p>
-          </blockquote>
-        </div>
-      </section>
+      <FeaturedTestimonialSection
+        quote={config.featuredTestimonial.quote}
+        attribution={config.featuredTestimonial.attribution}
+      />
 
       {/* FAQ */}
       <section className="bg-white py-16 md:py-24">
@@ -515,19 +471,8 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
             </h2>
             <p className="font-body text-lg text-white/65 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">{config.finalCta.subcopy}</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-              <a
-                href={CHROME_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
-              >
-                <Chrome size={18} strokeWidth={2.5} />
-                {CHROME_CTA_LABEL}
-              </a>
-              <Link
-                to="/voice-invoicing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-base uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
-              >
+              <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} size="lg" />
+              <Link to="/voice-invoicing" className={`${chromeLanding.secondaryCtaOnDark} text-base`}>
                 See how voice works
               </Link>
             </div>

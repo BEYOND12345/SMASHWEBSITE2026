@@ -6,9 +6,7 @@ import {
   Mic,
   Send,
   ChevronDown,
-  Star,
   Lock,
-  Quote,
   Zap,
   RotateCcw,
   FileText,
@@ -25,6 +23,12 @@ import { hreflangAlternates } from '../data/country-data';
 import { mainPages } from '../data/main-pages-seo';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
 import { BrandLogos } from '../components/brand-logos';
+import {
+  ChromePrimaryCta,
+  FeaturedTestimonialSection,
+  TestimonialGridSection,
+  chromeLanding,
+} from '../components/chrome-landing/chrome-landing-ui';
 import { MockupFrame } from '../components/phone-showcase';
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../data/download-urls';
 
@@ -185,18 +189,10 @@ export function ChromeExtension() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={CHROME_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
-                  >
-                    <Chrome size={17} strokeWidth={2.5} />
-                    {CHROME_CTA_LABEL}
-                  </a>
+                  <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} />
                   <Link
                     to="/how-it-works"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
+                    className={chromeLanding.secondaryCtaOnDark}
                   >
                     See how it works
                   </Link>
@@ -235,52 +231,35 @@ export function ChromeExtension() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIAL STRIP ────────────────────────────────────── */}
-      <section className="bg-[#0D1117] py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">Works inside Gmail</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                {
-                  quote: "I used to put off quoting until the end of the week. Now I reply before I've left the driveway.",
-                  name: 'Jake T.',
-                  trade: 'Plumber',
-                  city: 'Brisbane',
-                },
-                {
-                  quote: "Holds my prices for every job type. I described a deck sanding and it knew exactly what to charge.",
-                  name: 'Mel R.',
-                  trade: 'Handywoman',
-                  city: 'Melbourne',
-                },
-                {
-                  quote: "The from-email button is unreal. Customer writes in, I tap it, quote's done. Didn't type a word.",
-                  name: 'Chris P.',
-                  trade: 'Electrician',
-                  city: 'Sydney',
-                },
-                {
-                  quote: "Sent 12 invoices in one afternoon. That would have taken me all day before.",
-                  name: 'Sam O.',
-                  trade: 'Cleaner',
-                  city: 'Auckland',
-                },
-              ].map(({ quote, name, trade, city }) => (
-                <div key={name} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} className="text-accent fill-accent" />
-                    ))}
-                  </div>
-                  <p className="font-body text-sm text-white/75 font-medium leading-[1.55] italic flex-1">"{quote}"</p>
-                  <p className="font-display text-xs uppercase tracking-wider text-white/40">{name} · {trade} · {city}</p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <TestimonialGridSection
+        eyebrow="Works inside Gmail"
+        items={[
+          {
+            quote: "I used to put off quoting until the end of the week. Now I reply before I've left the driveway.",
+            name: 'Jake T.',
+            trade: 'Plumber',
+            city: 'Brisbane',
+          },
+          {
+            quote: 'Holds my prices for every job type. I described a deck sanding and it knew exactly what to charge.',
+            name: 'Mel R.',
+            trade: 'Handywoman',
+            city: 'Melbourne',
+          },
+          {
+            quote: "The from-email button is unreal. Customer writes in, I tap it, quote's done. Didn't type a word.",
+            name: 'Chris P.',
+            trade: 'Electrician',
+            city: 'Sydney',
+          },
+          {
+            quote: 'Sent 12 invoices in one afternoon. That would have taken me all day before.',
+            name: 'Sam O.',
+            trade: 'Cleaner',
+            city: 'Auckland',
+          },
+        ]}
+      />
 
       {/* ─── VIDEO DEMO ───────────────────────────────────────────── */}
       <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
@@ -529,22 +508,10 @@ export function ChromeExtension() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIAL ──────────────────────────────────────────── */}
-      <section className="bg-surface py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,_#C8FF00_1px,_transparent_1px)] bg-[length:24px_24px]" />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <div className="flex items-center justify-center gap-1 mb-5">
-            {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-accent fill-accent" />)}
-          </div>
-          <Quote size={28} className="text-brand/30 mx-auto mb-4" />
-          <blockquote>
-            <p className="font-display text-2xl md:text-3xl uppercase tracking-tighter leading-[0.95] text-brand mb-6">
-              "Customer emails a job request. I hold the button, describe it in 20 seconds, drop it into the reply. They've approved it before I've left the driveway."
-            </p>
-            <p className="font-body text-brand/50 text-sm">Marcus W. — plumber, Byron Bay</p>
-          </blockquote>
-        </div>
-      </section>
+      <FeaturedTestimonialSection
+        quote="Customer emails a job request. I hold the button, describe it in 20 seconds, drop it into the reply. They've approved it before I've left the driveway."
+        attribution="Marcus W. — plumber, Byron Bay"
+      />
 
       {/* ─── YOUTUBE CLUSTER DEMOS ───────────────────────────────── */}
       <section className="bg-white py-16 md:py-24 border-y border-border">
@@ -648,13 +615,11 @@ export function ChromeExtension() {
               SMASH turns them into invoices while you're still on the road.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-              <a href={CHROME_STORE_URL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap">
-                <Chrome size={18} strokeWidth={2.5} />
-                {CHROME_CTA_LABEL}
-              </a>
-              <Link to="/voice-invoicing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-base uppercase tracking-wide hover:bg-white hover:text-brand transition-all">
+              <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} size="lg" />
+              <Link
+                to="/voice-invoicing"
+                className={`${chromeLanding.secondaryCtaOnDark} text-base`}
+              >
                 See how voice works
               </Link>
             </div>

@@ -1,12 +1,19 @@
 import { useState, type ReactNode } from 'react';
-import { Chrome, ChevronDown, Mail, ShieldCheck, FileText, Star } from 'lucide-react';
+import { ChevronDown, Mail, ShieldCheck, FileText } from 'lucide-react';
 import { BrandLogos } from '../brand-logos';
 import { HeroGif, HeroVideo } from '../gmail-sidebar-mockups';
+import {
+  ChromeLandingEyebrow,
+  ChromePrimaryCta,
+  FeaturedTestimonialSection,
+  TestimonialGridSection,
+  ChromeStoreRatingLink,
+  chromeLanding,
+} from '../chrome-landing/chrome-landing-ui';
 import {
   HERO_GIF_B2B,
   HERO_VIDEO_B2B_EMAIL_QUOTE,
   HERO_VIDEO_B2B_PDF_SKU,
-  CHROME_STORE_RATING,
 } from '../../data/download-urls';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
@@ -30,26 +37,6 @@ const WORKFLOW_VIDEOS: Record<string, string> = {
   'email-to-sku-quote': HERO_VIDEO_B2B_EMAIL_QUOTE,
   'pdf-to-sku-quote': HERO_VIDEO_B2B_PDF_SKU,
 };
-
-function SectionEyebrow({
-  children,
-  light = false,
-  className = '',
-}: {
-  children: ReactNode;
-  light?: boolean;
-  className?: string;
-}) {
-  return (
-    <p
-      className={`font-display font-black text-[11px] uppercase tracking-[0.2em] mb-4 ${
-        light ? 'text-accent' : 'text-brand/40'
-      } ${className}`}
-    >
-      {children}
-    </p>
-  );
-}
 
 function ProductShowcaseRow({
   reverse = false,
@@ -98,20 +85,6 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
         </p>
       )}
     </div>
-  );
-}
-
-function InstallFreeButton({ className = '' }: { className?: string }) {
-  return (
-    <a
-      href={c.chromeStoreUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap ${className}`}
-    >
-      <Chrome size={17} strokeWidth={2.5} />
-      Install Free
-    </a>
   );
 }
 
@@ -274,10 +247,10 @@ export function B2bChromeLandingPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <InstallFreeButton />
+                  <ChromePrimaryCta href={c.chromeStoreUrl} label="Install Free" />
                   <a
                     href="#how-it-works"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all"
+                    className={chromeLanding.secondaryCtaOnDark}
                   >
                     {c.hero.secondaryCta}
                   </a>
@@ -318,7 +291,7 @@ export function B2bChromeLandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <div className="text-center mb-14 md:mb-16 max-w-3xl mx-auto">
-              <SectionEyebrow className="text-center mb-3">{c.howItWorks.eyebrow}</SectionEyebrow>
+              <ChromeLandingEyebrow variant="muted" className="text-center mb-3">{c.howItWorks.eyebrow}</ChromeLandingEyebrow>
               <h2 className="font-sans font-black uppercase tracking-tighter text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand leading-[0.88]">
                 {c.howItWorks.closing}
               </h2>
@@ -345,63 +318,23 @@ export function B2bChromeLandingPage() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─────────────────────────────────────────── */}
-      <section className="bg-[#0D1117] py-16 md:py-20 border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-white/30 mb-8 text-center">
-              {c.testimonials.eyebrow}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {c.testimonials.items.map(({ quote, name, role, city }) => (
-                <figure
-                  key={name}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 h-full"
-                >
-                  <div className="flex gap-0.5" aria-hidden>
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} className="text-accent fill-accent" />
-                    ))}
-                  </div>
-                  <blockquote className="font-body text-sm text-white/75 font-medium leading-[1.55] italic flex-1">
-                    &ldquo;{quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="font-display text-xs uppercase tracking-wider text-white/40">
-                    {name} · {role} · {city}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+      <TestimonialGridSection
+        eyebrow={c.testimonials.eyebrow}
+        items={c.testimonials.items}
+        chromeStoreUrl={c.chromeStoreUrl}
+        showStoreRating
+      />
 
-            <p className="mt-10 text-center">
-              <a
-                href={c.chromeStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 font-body text-sm font-semibold text-white/50 hover:text-white/70 transition-colors"
-              >
-                <span className="inline-flex items-center gap-2">
-                  <span className="flex gap-0.5" aria-hidden>
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} className="text-accent fill-accent" />
-                    ))}
-                  </span>
-                  <span>
-                    {CHROME_STORE_RATING.ratingValue} average · {CHROME_STORE_RATING.reviewCount} Chrome Web Store
-                    reviews
-                  </span>
-                </span>
-              </a>
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+      <FeaturedTestimonialSection
+        quote={c.testimonials.featuredTestimonial.quote}
+        attribution={c.testimonials.featuredTestimonial.attribution}
+      />
 
       {/* ─── WORKFLOW DEMOS ───────────────────────────────────────── */}
       <section id="workflows" className="bg-brand border-t border-white/10 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28">
           <AnimateIn direction="up">
-            <SectionEyebrow light className="text-center">{c.workflowIntro.eyebrow}</SectionEyebrow>
+            <ChromeLandingEyebrow variant="accent" className="text-center">{c.workflowIntro.eyebrow}</ChromeLandingEyebrow>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4 text-center max-w-3xl mx-auto">
               {c.workflowIntro.title}
             </h2>
@@ -427,7 +360,7 @@ export function B2bChromeLandingPage() {
                     reverse={reverse}
                     text={
                       <>
-                        <SectionEyebrow light>{workflow.eyebrow}</SectionEyebrow>
+                        <ChromeLandingEyebrow variant="accent">{workflow.eyebrow}</ChromeLandingEyebrow>
                         <h3 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
                           {workflow.title}
                         </h3>
@@ -457,7 +390,7 @@ export function B2bChromeLandingPage() {
       <section id="real-cost" className="bg-surface py-20 md:py-28 scroll-mt-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <SectionEyebrow className="text-center">{c.realCost.eyebrow}</SectionEyebrow>
+            <ChromeLandingEyebrow variant="muted" className="text-center">{c.realCost.eyebrow}</ChromeLandingEyebrow>
 
             <div className="mx-auto mb-12 max-w-xl text-center">
               {c.realCost.lead
@@ -509,7 +442,7 @@ export function B2bChromeLandingPage() {
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[760px] h-[420px] bg-accent/[0.06] rounded-full blur-[150px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <AnimateIn direction="up">
-            <SectionEyebrow light className="text-center">{c.whatItReads.eyebrow}</SectionEyebrow>
+            <ChromeLandingEyebrow variant="accent" className="text-center">{c.whatItReads.eyebrow}</ChromeLandingEyebrow>
 
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {formatTags.map((tag) => (
@@ -563,7 +496,7 @@ export function B2bChromeLandingPage() {
       <section id="workflow-demo" className="bg-[#0D1117] py-20 md:py-28 scroll-mt-20 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
-            <SectionEyebrow light className="text-center">Full walkthrough</SectionEyebrow>
+            <ChromeLandingEyebrow variant="accent" className="text-center">Full walkthrough</ChromeLandingEyebrow>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-4 text-center">
               {c.demoVideo.headline}
             </h2>
@@ -621,7 +554,7 @@ export function B2bChromeLandingPage() {
               </p>
               <a
                 href={`mailto:${c.contactSupport.email}?subject=${encodeURIComponent('B2B Gmail quoting — setup help')}`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+                className={`${chromeLanding.primaryCta} px-8 py-4 text-sm`}
               >
                 <Mail size={16} strokeWidth={2.5} />
                 {c.contactSupport.email}
@@ -642,11 +575,9 @@ export function B2bChromeLandingPage() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-8">
               Ready from the first quote
             </h2>
-            <InstallFreeButton className="text-base px-10 py-4" />
+            <ChromePrimaryCta href={c.chromeStoreUrl} label="Install Free" size="lg" />
             <p className="font-body text-base text-white/45 font-medium mt-6">{c.installCta.subtext}</p>
-            <p className="font-body text-xs font-semibold text-white/35 mt-4">
-              {CHROME_STORE_RATING.ratingValue}★ average · {CHROME_STORE_RATING.reviewCount} Chrome Web Store reviews
-            </p>
+            <ChromeStoreRatingLink href={c.chromeStoreUrl} className="mt-4" />
           </AnimateIn>
         </div>
       </section>

@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { CHROME_STORE_RATING } from '../src/data/download-urls.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const distBlog = path.join(root, 'dist', 'blog');
@@ -91,8 +92,8 @@ for (const { slug } of videoPosts) {
   if (!html.includes('VideoObject')) {
     fail(`${slug}/index.html has no VideoObject schema — GSC video/rich-result errors`);
   }
-  if (!html.includes('"reviewCount":"15"')) {
-    fail(`${slug}/index.html missing Chrome Web Store reviewCount 15 in JSON-LD`);
+  if (!html.includes(`"reviewCount":"${CHROME_STORE_RATING.reviewCount}"`)) {
+    fail(`${slug}/index.html missing Chrome Web Store reviewCount ${CHROME_STORE_RATING.reviewCount} in JSON-LD`);
   }
   if (!html.includes('Chrome Web Store reviews')) {
     fail(`${slug}/index.html missing visible Chrome Web Store rating text`);

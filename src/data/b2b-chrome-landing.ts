@@ -64,6 +64,11 @@ export const B2B_CHROME_LANDING = {
         city: 'Perth',
       },
     ],
+    featuredTestimonial: {
+      quote:
+        'Uploaded our CSV once. Forty RFQs yesterday — every line matched our catalog. I am not retyping prices anymore.',
+      attribution: 'Priya N. — wholesale sales, Sydney',
+    },
   },
   realCost: {
     eyebrow: 'The real cost',
