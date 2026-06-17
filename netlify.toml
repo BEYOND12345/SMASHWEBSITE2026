@@ -84,15 +84,18 @@
   to = "/xero/index.html"
   status = 200
 
+# /chrome-extension — force SPA so dist/chrome-extension/index.html stub never shadows React
 [[redirects]]
   from = "/chrome-extension"
-  to = "/chrome-extension/index.html"
+  to = "/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/chrome-extension/"
-  to = "/chrome-extension/index.html"
+  to = "/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pricing"

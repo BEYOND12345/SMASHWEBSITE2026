@@ -18,8 +18,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 
 const routes: { key: keyof typeof mainPages; dir: string }[] = [
-  { key: 'chromeExtension', dir: 'chrome-extension' },
-  // /b2b-gmail-quoting — full landing via generate:b2b-chrome-static (not this stub)
+  // /chrome-extension — full React landing (netlify force → index.html; not this stub)
+  // /b2b-gmail-quoting — full React landing (netlify force → index.html; not this stub)
   { key: 'pricing', dir: 'pricing' },
 ];
 
