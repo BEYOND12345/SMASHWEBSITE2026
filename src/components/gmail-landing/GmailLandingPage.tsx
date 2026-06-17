@@ -31,6 +31,7 @@ import { hreflangAlternates } from '../../data/country-data';
 import type { GmailLandingConfig, GmailLandingStory } from '../../data/gmail-landing-pages';
 import { gmailLandingCanonical } from '../../data/gmail-landing-pages';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../gmail-sidebar-mockups';
+import { BrandLogos } from '../brand-logos';
 import { MockupFrame } from '../phone-showcase';
 
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../../data/download-urls';
@@ -194,9 +195,9 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                   </Link>
                 </div>
                 <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow&apos;s fart.</p>
-                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+                <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
                   <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30">Works with</span>
-                  <img src="/brand-logos.png" alt="Works with Xero, QuickBooks and Gmail" className="h-14 sm:h-16 w-auto" />
+                  <BrandLogos />
                 </div>
               </div>
             </AnimateIn>

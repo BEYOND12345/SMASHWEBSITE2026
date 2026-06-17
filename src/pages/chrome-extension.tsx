@@ -24,6 +24,7 @@ import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '..
 import { hreflangAlternates } from '../data/country-data';
 import { mainPages } from '../data/main-pages-seo';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../components/gmail-sidebar-mockups';
+import { BrandLogos } from '../components/brand-logos';
 import { MockupFrame } from '../components/phone-showcase';
 import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../data/download-urls';
 
@@ -204,13 +205,9 @@ export function ChromeExtension() {
                 <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow's fart.</p>
 
                 {/* Works with logos */}
-                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+                <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
                   <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30">Works with</span>
-                  <img
-                    src="/brand-logos.png"
-                    alt="Works with Xero, QuickBooks and Gmail"
-                    className="h-14 sm:h-16 w-auto opacity-100"
-                  />
+                  <BrandLogos className="opacity-100" />
                 </div>
               </div>
             </AnimateIn>

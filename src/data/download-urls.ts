@@ -1,6 +1,10 @@
 /** Hero demo loops — muted autoplay in page heroes. */
 export const HERO_VIDEO_DEFAULT = '/videos/hero-demo.mp4';
-export const HERO_VIDEO_B2B_QUOTE_SKU = '/videos/quote-request-pdf-sku-match.mp4';
+/** Original B2B hero animated GIF — Gmail sidebar product loop. */
+export const HERO_GIF_B2B = '/gifs/b2b-hero-demo.gif';
+/** B2B workflow demo clips — used in staggered sections on /b2b-gmail-quoting. */
+export const HERO_VIDEO_B2B_EMAIL_QUOTE = '/videos/email-quote-request-to-sku-quote.mp4';
+export const HERO_VIDEO_B2B_PDF_SKU = '/videos/quote-request-pdf-sku-match.mp4';
 
 /** Official download destinations — single source of truth for CTAs site-wide. */
 export const APP_STORE_URL =
@@ -23,13 +27,13 @@ export const CHROME_CTA_LABEL = 'Add to Chrome — Free';
 
 /** Live Chrome Web Store rating — update when store stats change. */
 export const CHROME_STORE_RATING = {
-  ratingValue: '5',
-  reviewCount: '15',
+  ratingValue: '4.9',
+  reviewCount: '10',
   bestRating: '5',
   worstRating: '1',
 } as const;
 
-export const CHROME_STORE_RATING_LABEL = `${CHROME_STORE_RATING.ratingValue}.0 · ${CHROME_STORE_RATING.reviewCount} Chrome Web Store reviews`;
+export const CHROME_STORE_RATING_LABEL = `${CHROME_STORE_RATING.ratingValue} average · ${CHROME_STORE_RATING.reviewCount} Chrome Web Store reviews`;
 
 /** JSON-LD AggregateRating for Chrome extension SoftwareApplication schema. */
 export function chromeStoreAggregateRatingSchema() {

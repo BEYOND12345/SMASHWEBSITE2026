@@ -1,17 +1,62 @@
 import { Mail, Mic } from 'lucide-react';
-import { HERO_VIDEO_DEFAULT } from '../../data/download-urls';
+import { HERO_VIDEO_DEFAULT } from '../data/download-urls';
+
+type HeroGifProps = {
+  src: string;
+  title: string;
+  className?: string;
+  /** Fill the grid column — use in B2B hero beside copy. */
+  fill?: boolean;
+};
+
+/** Looping hero GIF — preserves aspect ratio inside the SMASH hero frame. */
+export function HeroGif({ src, title, className = '', fill = false }: HeroGifProps) {
+  return (
+    <div
+      className={`relative group ${fill ? 'w-full max-w-none' : 'w-full max-w-[560px] mx-auto'} ${className}`.trim()}
+    >
+      <div
+        aria-hidden
+        className="absolute -inset-2 rounded-[20px] bg-gradient-to-br from-accent/35 via-accent/8 to-transparent blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+      />
+      <div className="relative rounded-[16px] overflow-hidden border border-white/15 shadow-[0_0_80px_rgba(200,255,0,0.18)] bg-[#0D1117]">
+        <img
+          src={src}
+          alt={title}
+          width={1920}
+          height={1080}
+          className="w-full h-auto block object-contain"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      </div>
+    </div>
+  );
+}
 
 type HeroVideoProps = {
   src?: string;
   title?: string;
+  /** workflow = full column width, no max-width cap (B2B product demos). */
+  variant?: 'default' | 'workflow';
 };
 
 export function HeroVideo({
   src = HERO_VIDEO_DEFAULT,
   title = 'SMASH Gmail invoice demo',
+  variant = 'default',
 }: HeroVideoProps) {
+  const isWorkflow = variant === 'workflow';
+
   return (
-    <div className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0D1117]">
+    <div
+      className={
+        isWorkflow
+          ? 'relative w-full rounded-xl overflow-hidden border border-brand/15 shadow-[0_24px_64px_rgba(15,38,58,0.14)] bg-[#0D1117]'
+          : 'relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0D1117]'
+      }
+    >
       <video
         src={src}
         title={title}
@@ -21,7 +66,7 @@ export function HeroVideo({
         playsInline
         preload="auto"
         className="w-full h-auto block"
-        style={{ aspectRatio: '16/10' }}
+        style={{ aspectRatio: isWorkflow ? '16/9' : '16/10' }}
       />
       {/* Fallback shown while video loads or if file missing */}
       <noscript>
