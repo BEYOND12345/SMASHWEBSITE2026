@@ -28,6 +28,11 @@
       "status": 200
     },
     {
+      "src": "^/chrome-extension/?$",
+      "dest": "/index.html",
+      "status": 200
+    },
+    {
       "src": "^/b2b-gmail-quoting/?$",
       "dest": "/index.html",
       "status": 200
