@@ -154,7 +154,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     relatedLinks: [
       { href: '/blog/beyond-chatgpt-dedicated-voice-invoicing', label: 'Why a dedicated invoicing tool beats ChatGPT' },
       { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
-      { href: '/blog/ai-voice-invoicing-2026-standard', label: 'AI voice invoicing in 2026' },
+      { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'The 60-second invoice workflow' },
     ],
     faqs: [
       {

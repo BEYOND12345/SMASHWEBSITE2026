@@ -402,7 +402,7 @@ export function AiInvoicing() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { slug: "ai-voice-invoicing-2026-standard", title: "AI Invoicing Is the 2026 Standard", desc: "Why forward-thinking service businesses have already switched — and what you're missing if you haven't." },
+              { slug: "the-60-second-invoice-voice-to-invoice", title: "The 60-Second Invoice Workflow", desc: "Describe the job out loud — priced invoice from your catalog in under a minute. Nothing guessed." },
               { slug: "beyond-chatgpt-dedicated-voice-invoicing", title: "Beyond ChatGPT for Invoicing", desc: "ChatGPT can draft text. It can't build a tax-compliant invoice from your voice in under 60 seconds. Here's why dedicated AI wins." },
               { slug: "can-chatgpt-generate-invoices-tradie-guide", title: "Can ChatGPT Generate Invoices?", desc: "The honest answer, what it can and can't do, and what purpose-built AI invoicing looks like instead." },
             ].map((post) => (
