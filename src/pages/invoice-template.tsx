@@ -61,6 +61,17 @@ const templateFeatures = [
   { icon: Check, label: 'Free to start' },
 ];
 
+const tradeInvoicingGuides = [
+  { label: 'Electrician invoicing guide', slug: 'how-to-invoice-as-an-electrician-australia' },
+  { label: 'Sole trader complete guide', slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide' },
+  { label: 'Emergency locksmith call-outs', slug: 'how-to-invoice-emergency-locksmith-call-outs' },
+  { label: 'Appliance repair callouts', slug: 'how-to-invoice-appliance-repair-callouts' },
+  { label: 'Pool maintenance invoicing', slug: 'how-to-invoice-pool-maintenance-australia' },
+  { label: 'Quarterly pest treatments', slug: 'how-to-invoice-quarterly-pest-treatments' },
+  { label: 'Tiling labour and materials', slug: 'how-to-invoice-tiling-labour-and-materials' },
+  { label: 'Switchboard upgrades', slug: 'how-to-invoice-switchboard-upgrades' },
+];
+
 const faqs = [
   {
     q: 'What must a tax invoice include in Australia?',
@@ -589,6 +600,33 @@ export function InvoiceTemplate() {
               <span className="font-body text-xs font-medium text-white/35">Free to start — no card</span>
               <span className="text-white/20 text-sm">·</span>
               <span className="font-body text-xs font-medium text-white/35">Cancel anytime</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── TRADE-SPECIFIC GUIDES ─────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20 border-t border-brand/5">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-4">Trade guides</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-4">
+              Need more than a blank template?
+            </h2>
+            <p className="font-body text-brand/60 font-medium text-base leading-relaxed mb-8 max-w-2xl">
+              These guides show what to put on an invoice for your trade — line items, fees, GST, and payment terms. Or skip the template and let SMASH build it from voice.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {tradeInvoicingGuides.map((guide) => (
+                <Link
+                  key={guide.slug}
+                  to={`/blog/${guide.slug}`}
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-brand/10 bg-white px-5 py-4 hover:border-accent/40 hover:bg-accent/5 transition-all"
+                >
+                  <span className="font-body text-sm font-semibold text-brand group-hover:text-brand">{guide.label}</span>
+                  <ArrowRight size={14} className="text-brand/30 group-hover:text-accent shrink-0" />
+                </Link>
+              ))}
             </div>
           </AnimateIn>
         </div>

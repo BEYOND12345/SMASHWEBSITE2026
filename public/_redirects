@@ -9,6 +9,12 @@
 /support/             /support/index.html      200
 
 
+
+
+# Sitemap typo fix — wrong slug was listed as fastest-way-to-send-an-invoice-2026
+/blog/fastest-way-to-send-an-invoice-2026     /blog/fastest-way-to-send-invoice-2026     301!
+/blog/fastest-way-to-send-an-invoice-2026/    /blog/fastest-way-to-send-invoice-2026     301!
+
 # Week 2 — Gmail consolidation 301s (auto-generated)
 /blog/bulk-goods-wholesaler-quoting-gmail     /gmail-invoice     301!
 /blog/bulk-goods-wholesaler-quoting-gmail/    /gmail-invoice     301!
@@ -61,9 +67,31 @@
 /blog/voice-to-crm-ai-learns-customers/    /voice-invoicing     301!
 # End Voice consolidation 301s
 
-# Sitemap typo fix — wrong slug was listed as fastest-way-to-send-an-invoice-2026
-/blog/fastest-way-to-send-an-invoice-2026     /blog/fastest-way-to-send-invoice-2026     301!
-/blog/fastest-way-to-send-an-invoice-2026/    /blog/fastest-way-to-send-invoice-2026     301!
+# Week 3 — Template hub consolidation 301s (auto-generated)
+/blog/how-to-invoice-cctv-and-alarm-installations     /invoice-template     301!
+/blog/how-to-invoice-cctv-and-alarm-installations/    /invoice-template     301!
+/blog/how-to-invoice-computer-repair-parts-and-labour     /invoice-template     301!
+/blog/how-to-invoice-computer-repair-parts-and-labour/    /invoice-template     301!
+/blog/how-to-invoice-fencing-by-the-metre     /invoice-template     301!
+/blog/how-to-invoice-fencing-by-the-metre/    /invoice-template     301!
+/blog/how-to-invoice-mobile-car-detailing-packages     /invoice-template     301!
+/blog/how-to-invoice-mobile-car-detailing-packages/    /invoice-template     301!
+/blog/how-to-invoice-mobile-dog-grooming-appointments     /invoice-template     301!
+/blog/how-to-invoice-mobile-dog-grooming-appointments/    /invoice-template     301!
+/blog/how-to-invoice-pool-chemical-treatments     /invoice-template     301!
+/blog/how-to-invoice-pool-chemical-treatments/    /invoice-template     301!
+/blog/how-to-invoice-rubbish-removal-tip-fees     /invoice-template     301!
+/blog/how-to-invoice-rubbish-removal-tip-fees/    /invoice-template     301!
+/blog/how-to-invoice-solar-with-stc-rebates     /invoice-template     301!
+/blog/how-to-invoice-solar-with-stc-rebates/    /invoice-template     301!
+/blog/how-to-invoice-tree-removal-and-stump-grinding     /invoice-template     301!
+/blog/how-to-invoice-tree-removal-and-stump-grinding/    /invoice-template     301!
+# End Template hub consolidation 301s
+
+# Legacy orphan slug 301s (auto-generated)
+/blog/the-driveway-workflow-why-tradies-invoice-onsite     /blog/friday-pub-test-batch-invoicing-tradies     301!
+/blog/the-driveway-workflow-why-tradies-invoice-onsite/    /blog/friday-pub-test-batch-invoicing-tradies     301!
+# End Legacy orphan slug 301s
 
 # Blog posts (with and without trailing slash)
 /blog/:slug           /blog/:slug/index.html   200

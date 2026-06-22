@@ -130,6 +130,25 @@ for (const checkSlug of ['word-vs-excel-vs-app-for-invoices', 'gmail-quickbooks-
 }
 console.log('✓ survivor posts — no links to 301-consolidated slugs');
 
+const distSlugs = new Set(
+  fs
+    .readdirSync(distBlog)
+    .filter((d) => fs.existsSync(path.join(distBlog, d, 'index.html'))),
+);
+const hrefRe = /href="\/blog\/([^"/]+)\/?"/g;
+for (const slug of distSlugs) {
+  const file = path.join(distBlog, slug, 'index.html');
+  const html = fs.readFileSync(file, 'utf-8');
+  let m: RegExpExecArray | null;
+  while ((m = hrefRe.exec(html))) {
+    const target = m[1];
+    if (!distSlugs.has(target) && !ALL_CONSOLIDATION_REDIRECTED_SLUGS.has(target)) {
+      fail(`${slug} links to missing blog slug /blog/${target} — add redirect or fix href`);
+    }
+  }
+}
+console.log('✓ all internal blog links resolve to live or redirected slugs');
+
 const redirects = path.join(root, 'dist', '_redirects');
 if (!fs.existsSync(redirects)) {
   fail('dist/_redirects missing — blog rewrite rules will not apply on Netlify/Bolt');

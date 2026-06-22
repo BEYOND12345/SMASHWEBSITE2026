@@ -7,6 +7,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gmailRedirectLines, GMAIL_CONSOLIDATION_REDIRECTS } from './gmail-consolidation-redirects.ts';
 import { voiceRedirectLines, VOICE_CONSOLIDATION_REDIRECTS } from './voice-consolidation-redirects.ts';
+import { templateRedirectLines, TEMPLATE_CONSOLIDATION_REDIRECTS } from './template-consolidation-redirects.ts';
+import { legacyOrphanRedirectLines, LEGACY_ORPHAN_REDIRECTS } from './legacy-orphan-link-fixes.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const redirectsPath = path.join(root, 'public', '_redirects');
@@ -25,6 +27,20 @@ const BLOCKS = [
     lines: voiceRedirectLines(),
     count: VOICE_CONSOLIDATION_REDIRECTS.length,
     label: 'Voice',
+  },
+  {
+    start: '# Week 3 — Template hub consolidation 301s (auto-generated)',
+    end: '# End Template hub consolidation 301s',
+    lines: templateRedirectLines(),
+    count: TEMPLATE_CONSOLIDATION_REDIRECTS.length,
+    label: 'Template hub',
+  },
+  {
+    start: '# Legacy orphan slug 301s (auto-generated)',
+    end: '# End Legacy orphan slug 301s',
+    lines: legacyOrphanRedirectLines(),
+    count: LEGACY_ORPHAN_REDIRECTS.length,
+    label: 'Legacy orphan',
   },
 ] as const;
 

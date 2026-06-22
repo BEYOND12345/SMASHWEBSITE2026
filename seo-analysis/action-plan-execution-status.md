@@ -1,6 +1,6 @@
 # SMASH Website SEO — execution status
 
-**Last updated:** 15 Jun 2026  
+**Last updated:** 12 Jun 2026  
 **Repo:** `SMASHWEBSITE2026` · **Live:** smashinvoices.com (Netlify `scintillating-mermaid-f083a6`)
 
 ---
@@ -12,12 +12,15 @@
 | **North Star copy** | Problem-first, dual register (iPhone voice / Gmail), quote-first across homepage + pillars |
 | **Blog Action Plan v1** | 6 retrofits (A1–A3, B1–B3) — answer blocks, FAQ schema, related links |
 | **Week 2 consolidation** | 23 blog posts → 301 (9 Gmail ghosts, 14 voice ghosts) |
+| **Week 3 phase 1** | 9 zero-impression GRP-007 niche posts → `/invoice-template`; legacy orphan 301 |
 | **Main Pages Spec v1** | `main-pages-seo.ts`, static HTML for voice/gmail/pricing/country pages |
 | **Homepage SEO** | Single FAQPage in `index.html`; social proof V5 copy |
-| **Build pipeline** | `retrofit:blog-action-plan-v1`, `sync:blog-dist`, prerender protection, `verify:blog-deploy` |
-| **Blog 404 guards** | Voice/Gmail survivors protected from prerender overwrite (`63d298e`) |
-| **Sitemap** | Typo slug fixed; ghosts excluded from sitemap |
-| **B2B + Chrome landings** | Full React SPA pages with hero video (`9a2150d`+) — design refresh shipped |
+| **Build pipeline** | `retrofit:blog-action-plan-v1`, `fix:consolidated-internal-links`, `sync:blog-dist`, `verify:blog-deploy` |
+| **Blog 404 guards** | Voice/Gmail survivors protected from prerender overwrite |
+| **Internal link guards** | Build fails on dead `/blog/` hrefs or links to 301 slugs |
+| **Invoice template hub** | Trade guide links on `/invoice-template` → GRP-007 survivors |
+| **B2B + Chrome landings** | Full React SPA pages with hero video |
+| **CWS listing title** | `SMASH: Gmail Invoice & Quote Generator` — extension `_locales` (pending store submit) |
 
 ---
 
@@ -30,20 +33,26 @@ These pages are **SPA-only** (React + `react-helmet-async`), not static HTML:
 
 Still static/crawler-grade:
 
-- `/voice-invoicing`, `/gmail-invoice`, `/pricing`, `/nz`, `/uk`, `/us`, `/ca`
+- `/voice-invoicing`, `/gmail-invoice`, `/pricing`, `/invoice-template`, `/nz`, `/uk`, `/us`, `/ca`
 
 Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` components.
 
 ---
 
-## 🔄 In progress (autonomous — 15 Jun)
+## 🔄 GRP-007 remaining (Week 3 phase 2)
 
-| Task | Status |
-|------|--------|
-| Orphan link fix — ghost slug hrefs → 301 targets | `npm run fix:consolidation-orphans` |
-| Retrofit spec — remove link to redirected `ai-voice-invoicing-2026-standard` | ✅ script updated |
-| `/ai-invoicing` blog cards — survivor slugs only | ✅ |
-| Refresh this status doc | ✅ |
+11 how-to-invoice posts **with GSC impressions** are kept as survivors until content merges into `/invoice-template`:
+
+- `how-to-invoice-as-an-electrician-australia` (32 imp)
+- `how-to-invoice-emergency-locksmith-call-outs` (22 imp)
+- `how-to-invoice-pool-maintenance-australia` (18 imp)
+- `how-to-invoice-as-a-sole-trader-australia-complete-guide` (12 imp)
+- `how-to-invoice-tiling-labour-and-materials` (10 imp)
+- `how-to-invoice-quarterly-pest-treatments` (7 imp)
+- `how-to-invoice-appliance-repair-callouts` (29 imp)
+- Plus 4 low-impression survivors (1–3 imp)
+
+**Do not 301 these** until hub content absorbs their keywords.
 
 ---
 
@@ -55,17 +64,16 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 | **Netlify custom domain** | `smashinvoices.com` on another team — attach or DNS-verify when ready |
 | **Keyword Planner volumes** | API 403 — MCC permissions |
 | **Google Ads** | Deferred until SEO onboarding complete |
+| **CWS title publish** | Requires new Chrome Web Store extension submission |
 
 ---
 
-## ❌ Not started (Week 3+)
+## ❌ Not started
 
 | Task | Notes |
 |------|--------|
-| **GRP-007** template hub (20 → 1) | Week 3 |
-| **Orphan links** — non-redirect ghosts (~80 legacy internal links) | After template hub |
+| **GRP-003** template posts (21 trade `*-invoice-template-australia`) | Separate from GRP-007; noindex or merge later |
 | **Phase 2 pages** | `/get-started`, `/quote-to-invoice` |
-| **Chrome Web Store title** | `SMASH: Gmail Invoice & Quote Generator` — extension repo |
 
 ---
 
@@ -73,9 +81,9 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 
 All batches still ☐ in `gsc-indexing-master-queue.md`.
 
-**Start here when site is stable:** Batch 2 (homepage + voice survivors) → Batch 5 (Level 1 pages).
+**Start here when site is stable:** Batch 2 (homepage + voice survivors) → Batch 5 (Level 1 pages incl. `/invoice-template`).
 
-**Never submit:** 23 redirected ghost URLs listed in master queue.
+**Never submit:** 301'd ghost URLs (now 33 total: 23 Week 2 + 9 template + 1 legacy orphan).
 
 ---
 

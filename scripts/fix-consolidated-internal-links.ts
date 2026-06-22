@@ -9,6 +9,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GMAIL_CONSOLIDATION_REDIRECTS } from './gmail-consolidation-redirects.ts';
 import { VOICE_CONSOLIDATION_REDIRECTS } from './voice-consolidation-redirects.ts';
+import { TEMPLATE_CONSOLIDATION_REDIRECTS } from './template-consolidation-redirects.ts';
+import { LEGACY_ORPHAN_LINK_FIXES } from './legacy-orphan-link-fixes.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const blogRoot = path.join(root, 'public', 'blog');
@@ -21,10 +23,17 @@ const skipFiles = new Set([
   'fix-consolidated-internal-links.ts',
   'gmail-consolidation-redirects.ts',
   'voice-consolidation-redirects.ts',
+  'template-consolidation-redirects.ts',
+  'legacy-orphan-link-fixes.ts',
 ]);
 
 const slugToTarget = new Map<string, string>();
-for (const { slug, target } of [...GMAIL_CONSOLIDATION_REDIRECTS, ...VOICE_CONSOLIDATION_REDIRECTS]) {
+for (const { slug, target } of [
+  ...GMAIL_CONSOLIDATION_REDIRECTS,
+  ...VOICE_CONSOLIDATION_REDIRECTS,
+  ...TEMPLATE_CONSOLIDATION_REDIRECTS,
+  ...LEGACY_ORPHAN_LINK_FIXES,
+]) {
   slugToTarget.set(slug, target);
 }
 
