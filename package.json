@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:gmail-static && npm run generate:voice-static && npm run generate:main-pages-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run generate:video-blog-static && npm run patch:voice-blog-meta && npm run retrofit:blog-action-plan-v1 && npm run sync:blog-dist && npm run clean:spa-route-stubs && npm run sitemap && npm run verify:blog-deploy",
+    "build": "npm run generate:gmail-static && npm run generate:voice-static && npm run generate:main-pages-static && npm run generate:smash-leads-static && npm run generate:pseo-static && npm run generate:legal-static && npm run generate:video-blog-static && vite build && npm run prerender && npm run generate:video-blog-static && npm run patch:voice-blog-meta && npm run retrofit:blog-action-plan-v1 && npm run fix:consolidated-internal-links && npm run sync:blog-dist && npm run clean:spa-route-stubs && npm run sitemap && npm run verify:blog-deploy",
     "clean:spa-route-stubs": "node --experimental-strip-types scripts/clean-spa-route-stubs.ts",
     "generate:main-pages-static": "node --experimental-strip-types scripts/generate-main-pages-static.ts",
     "generate:b2b-chrome-static": "node --experimental-strip-types scripts/generate-b2b-chrome-landing-static.ts",
@@ -15,6 +15,7 @@
     "generate:voice-static": "node --experimental-strip-types scripts/generate-voice-invoicing-static.ts",
     "patch:voice-blog-meta": "node --experimental-strip-types scripts/patch-voice-cluster-blog-meta.ts",
     "retrofit:blog-action-plan-v1": "node --experimental-strip-types scripts/blog-retrofit-action-plan-v1.ts",
+    "fix:consolidated-internal-links": "node --experimental-strip-types scripts/fix-consolidated-internal-links.ts",
     "apply:gmail-consolidation-redirects": "node --experimental-strip-types scripts/apply-consolidation-redirects.ts",
     "apply:consolidation-redirects": "node --experimental-strip-types scripts/apply-consolidation-redirects.ts",
     "generate:legal-static": "node --experimental-strip-types scripts/generate-legal-static.ts",

@@ -7,6 +7,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CHROME_STORE_RATING } from '../src/data/download-urls.ts';
 
+import { ALL_CONSOLIDATION_REDIRECTED_SLUGS } from './consolidation-redirects.ts';
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const distBlog = path.join(root, 'dist', 'blog');
 
@@ -115,6 +117,18 @@ for (const { slug, label } of gscVoiceSurvivors) {
   }
   console.log(`✓ ${slug} — GSC voice survivor OK`);
 }
+
+for (const checkSlug of ['word-vs-excel-vs-app-for-invoices', 'gmail-quickbooks-xero-bridge', 'beyond-chatgpt-dedicated-voice-invoicing']) {
+  const file = path.join(distBlog, checkSlug, 'index.html');
+  if (!fs.existsSync(file)) continue;
+  const html = fs.readFileSync(file, 'utf-8');
+  for (const deadSlug of ALL_CONSOLIDATION_REDIRECTED_SLUGS) {
+    if (html.includes(`href="/blog/${deadSlug}"`)) {
+      fail(`${checkSlug} still links to 301 slug /blog/${deadSlug} — run fix:consolidated-internal-links`);
+    }
+  }
+}
+console.log('✓ survivor posts — no links to 301-consolidated slugs');
 
 const redirects = path.join(root, 'dist', '_redirects');
 if (!fs.existsSync(redirects)) {
