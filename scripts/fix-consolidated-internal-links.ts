@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { GMAIL_CONSOLIDATION_REDIRECTS } from './gmail-consolidation-redirects.ts';
 import { VOICE_CONSOLIDATION_REDIRECTS } from './voice-consolidation-redirects.ts';
 import { TEMPLATE_CONSOLIDATION_REDIRECTS } from './template-consolidation-redirects.ts';
+import { TRADE_TEMPLATE_CONSOLIDATION_REDIRECTS } from './trade-template-consolidation-redirects.ts';
 import { LEGACY_ORPHAN_LINK_FIXES } from './legacy-orphan-link-fixes.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -24,6 +25,7 @@ const skipFiles = new Set([
   'gmail-consolidation-redirects.ts',
   'voice-consolidation-redirects.ts',
   'template-consolidation-redirects.ts',
+  'trade-template-consolidation-redirects.ts',
   'legacy-orphan-link-fixes.ts',
 ]);
 
@@ -32,6 +34,7 @@ for (const { slug, target } of [
   ...GMAIL_CONSOLIDATION_REDIRECTS,
   ...VOICE_CONSOLIDATION_REDIRECTS,
   ...TEMPLATE_CONSOLIDATION_REDIRECTS,
+  ...TRADE_TEMPLATE_CONSOLIDATION_REDIRECTS,
   ...LEGACY_ORPHAN_LINK_FIXES,
 ]) {
   slugToTarget.set(slug, target);

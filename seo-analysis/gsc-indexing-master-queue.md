@@ -41,6 +41,28 @@ These now **301 redirect**. Submitting wastes quota.
 22. https://smashinvoices.com/blog/voice-to-quote-feature
 23. https://smashinvoices.com/blog/voice-to-crm-ai-learns-customers
 
+### Week 3 — GRP-007 niche how-tos → `/invoice-template` (9)
+
+24. https://smashinvoices.com/blog/how-to-invoice-cctv-and-alarm-installations
+25. https://smashinvoices.com/blog/how-to-invoice-computer-repair-parts-and-labour
+26. https://smashinvoices.com/blog/how-to-invoice-fencing-by-the-metre
+27. https://smashinvoices.com/blog/how-to-invoice-mobile-car-detailing-packages
+28. https://smashinvoices.com/blog/how-to-invoice-mobile-dog-grooming-appointments
+29. https://smashinvoices.com/blog/how-to-invoice-pool-chemical-treatments
+30. https://smashinvoices.com/blog/how-to-invoice-rubbish-removal-tip-fees
+31. https://smashinvoices.com/blog/how-to-invoice-solar-with-stc-rebates
+32. https://smashinvoices.com/blog/how-to-invoice-tree-removal-and-stump-grinding
+
+### Legacy orphan (1)
+
+33. https://smashinvoices.com/blog/the-driveway-workflow-why-tradies-invoice-onsite
+
+### Week 3 — GRP-003 trade `*-invoice-template-australia` (21)
+
+34–54. All `/blog/*-invoice-template-australia` URLs (301 to `/invoice-template` or matching how-to survivor). Do not submit — request indexing on **targets** instead (e.g. `/invoice-template`, `/blog/how-to-invoice-as-an-electrician-australia`).
+
+**Total do-not-submit: 54 URLs**
+
 ---
 
 ## Batch 1 — 13 Jun (if not done yet)
@@ -150,10 +172,12 @@ Re-index refreshed Level 1 pages (static HTML + new titles):
 4. https://smashinvoices.com/chrome-extension
 5. https://smashinvoices.com/b2b-gmail-quoting
 6. https://smashinvoices.com/pricing
-7. https://smashinvoices.com/us
-8. https://smashinvoices.com/uk
-9. https://smashinvoices.com/nz
-10. https://smashinvoices.com/ca
+7. https://smashinvoices.com/invoice-template
+8. https://smashinvoices.com/us
+9. https://smashinvoices.com/uk
+10. https://smashinvoices.com/nz
+
+**Batch 5 overflow (11 Jun):** https://smashinvoices.com/ca
 
 **Verify:** Test live URL shows spec title/H1 and self-referencing canonical (not homepage shell).
 
