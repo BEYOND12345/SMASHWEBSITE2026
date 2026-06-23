@@ -193,4 +193,10 @@ export const B2B_CHROME_LANDING = {
     { name: 'Home', url: 'https://smashinvoices.com/' },
     { name: 'Quotes & Invoices for Gmail', url: 'https://smashinvoices.com/b2b-gmail-quoting' },
   ],
+  relatedPages: [
+    { label: 'Gmail invoice extension', href: '/gmail-invoice' },
+    { label: 'SMASH for Gmail (Chrome extension)', href: '/chrome-extension' },
+    { label: 'Voice invoicing on iPhone', href: '/voice-invoicing' },
+    { label: 'Gmail + Xero quotes', href: '/integrations/gmail-xero-quote-builder' },
+  ],
 } as const;

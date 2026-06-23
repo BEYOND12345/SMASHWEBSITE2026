@@ -120,6 +120,7 @@ ${hreflangTags()}
   <h1>${esc(page.h1)}</h1>
   ${page.brandLine ? `<p class="brand">${esc(page.brandLine)}</p>` : ''}
   <div class="answer"><strong>Short answer:</strong> ${esc(page.answerBlock)}</div>
+  ${page.bridgeParagraph ? `<p>${esc(page.bridgeParagraph)}</p>` : ''}
   ${bodyExtras}
   <p>${ctaHtml(page.cta)}</p>
   ${faqHtml ? `<section><h2>FAQ</h2>${faqHtml}</section>` : ''}

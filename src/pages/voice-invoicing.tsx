@@ -109,6 +109,9 @@ export function VoiceInvoicing() {
             <p className="font-body text-xl lg:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-4">
               Talk for 30 seconds. SMASH builds a priced invoice from your catalog — nothing guessed. Verify. Send.
             </p>
+            <p className="font-body text-base text-slate-400 max-w-2xl leading-relaxed mb-4">
+              {mainPages.voiceInvoicing.bridgeParagraph}
+            </p>
             <p className="font-body text-sm text-slate-500 max-w-2xl leading-relaxed mb-10">
               Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
             </p>

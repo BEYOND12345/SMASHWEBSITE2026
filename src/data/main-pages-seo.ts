@@ -3,7 +3,7 @@
  * Used by React pages and static HTML generators.
  */
 export const SITE = 'https://smashinvoices.com';
-export const DATE_MODIFIED = '2026-06-13';
+export const DATE_MODIFIED = '2026-06-14';
 
 export const HREFLANG_LINKS = [
   { hreflang: 'x-default', href: `${SITE}/` },
@@ -25,6 +25,8 @@ export type MainPageSeo = {
   h1: string;
   brandLine?: string;
   answerBlock: string;
+  /** Optional bridge copy for adjacent search intent (e.g. "invoice app" on voice pillar). */
+  bridgeParagraph?: string;
   faqs?: MainPageFaq[];
   cta?: 'both' | 'ios' | 'chrome';
   steps?: { title: string; body: string }[];
@@ -74,6 +76,8 @@ export const mainPages: Record<string, MainPageSeo> = {
     brandLine: BRAND_LINE,
     answerBlock:
       'Voice to invoice means describing the completed job out loud and getting a priced, tax-ready invoice on your iPhone in under 60 seconds. SMASH matches your speech to your catalog — unmatched items are flagged, not guessed. Send before you leave the site. Works with Xero and QuickBooks.',
+    bridgeParagraph:
+      'SMASH is an invoice app built for speed. Upload your pricing once, then send quotes and invoices by voice in 30 seconds — on-site with the iOS app or from Gmail with the Chrome extension.',
     cta: 'ios',
     faqs: [
       {

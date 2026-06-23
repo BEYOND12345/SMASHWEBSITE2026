@@ -179,6 +179,8 @@
 /gmail-invoice                                       /gmail-invoice/index.html                                       200
 /voice-invoicing                                     /voice-invoicing/index.html                                     200
 /voice-invoicing/                                    /voice-invoicing/index.html                                     200
+/voice-to-invoice                                    /voice-invoicing                                                301!
+/voice-to-invoice/                                   /voice-invoicing                                                301!
 /invoice-on-mobile                                   /voice-invoicing                                                301!
 /invoice-on-mobile/                                  /voice-invoicing                                                301!
 /xero                                                /xero/index.html                                                  200

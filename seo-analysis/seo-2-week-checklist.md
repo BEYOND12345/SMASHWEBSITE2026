@@ -53,14 +53,21 @@ For each URL below:
 
 ---
 
-### Day 2 — Batch 5 (Level 1 pages not done on Day 1)
+### Day 2 — Launch priority + Batch 5 ⭐
 
-Skip `/`, `/voice-invoicing`, `/gmail-invoice` if already submitted Day 1.
+**Submit these three first** (launch traffic), then fill remaining quota from the list below.
+
+| ☐ | URL | Priority |
+|---|-----|----------|
+| ☐ | https://smashinvoices.com/voice-invoicing | **P0 — launch** |
+| ☐ | https://smashinvoices.com/b2b-gmail-quoting | **P0 — launch** |
+| ☐ | https://smashinvoices.com/for-cleaners | **P0 — launch** |
+
+Skip `/`, `/gmail-invoice` if already submitted Day 1.
 
 | ☐ | URL |
 |---|-----|
 | ☐ | https://smashinvoices.com/chrome-extension |
-| ☐ | https://smashinvoices.com/b2b-gmail-quoting |
 | ☐ | https://smashinvoices.com/pricing |
 | ☐ | https://smashinvoices.com/invoice-template |
 | ☐ | https://smashinvoices.com/get-started |
@@ -69,6 +76,8 @@ Skip `/`, `/voice-invoicing`, `/gmail-invoice` if already submitted Day 1.
 | ☐ | https://smashinvoices.com/uk |
 | ☐ | https://smashinvoices.com/nz |
 | ☐ | https://smashinvoices.com/ca |
+
+*Fill remaining slots (7 URLs) after the 3 P0 launch pages — 10/day max.*
 
 ---
 
@@ -253,7 +262,7 @@ If GSC shows them: validate redirect → request indexing on the **destination**
 | Day | Date | URLs submitted | Notes |
 |-----|------|----------------|-------|
 | 1 | 12 Jun | 10/10 ✅ | Batch 2 — voice + homepage |
-| 2 | | 0/10 | **Resume tomorrow** — Batch 5 (chrome, pricing, get-started, etc.) |
+| 2 | | 0/10 | **P0 first:** voice-invoicing, b2b-gmail-quoting, for-cleaners — then Batch 5 |
 | 3 | | /10 | |
 | 4 | | /10 | |
 | 5 | | /10 | |

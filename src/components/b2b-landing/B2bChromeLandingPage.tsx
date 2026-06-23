@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Mail, ShieldCheck, FileText } from 'lucide-react';
 import { BrandLogos } from '../brand-logos';
 import { HeroGif, HeroVideo } from '../gmail-sidebar-mockups';
@@ -578,6 +579,28 @@ export function B2bChromeLandingPage() {
             <ChromePrimaryCta href={c.chromeStoreUrl} label="Install Free" size="lg" />
             <p className="font-body text-base text-white/45 font-medium mt-6">{c.installCta.subtext}</p>
             <ChromeStoreRatingLink href={c.chromeStoreUrl} className="mt-4" />
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ─── RELATED GMAIL PAGES ──────────────────────────────────── */}
+      <section className="bg-surface py-16 md:py-20 border-y border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <h2 className="text-2xl sm:text-3xl font-black text-brand uppercase tracking-tighter mb-8 text-center">
+              More Gmail workflows
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {c.relatedPages.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="block rounded-2xl border-2 border-border bg-white p-6 hover:border-accent transition-colors"
+                >
+                  <p className="font-black text-brand uppercase tracking-tight mb-2">{item.label}</p>
+                </Link>
+              ))}
+            </div>
           </AnimateIn>
         </div>
       </section>

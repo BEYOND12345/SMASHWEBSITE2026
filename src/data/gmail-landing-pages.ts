@@ -573,6 +573,7 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
     },
     relatedPages: [
       { label: 'SMASH for Gmail (full feature page)', href: '/chrome-extension' },
+      { label: 'B2B Gmail quoting — RFQ to quote', href: '/b2b-gmail-quoting' },
       { label: 'Xero Gmail extension', href: '/xero' },
       { label: 'Gmail + QuickBooks estimates', href: '/integrations/gmail-quickbooks-estimate-generator' },
       { label: 'Gmail + Xero quotes', href: '/integrations/gmail-xero-quote-builder' },
