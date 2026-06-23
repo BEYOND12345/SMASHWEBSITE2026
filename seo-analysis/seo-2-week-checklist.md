@@ -2,7 +2,9 @@
 
 **Goal:** Turn shipped code into indexed pages + measurable GSC movement.  
 **Time:** ~10 minutes/day in Google Search Console (URL Inspection).  
-**Rule:** Never request indexing on [54 redirect URLs](gsc-indexing-master-queue.md#do-not-submit-23-urls) — submit the **target** URL instead.
+**Rule:** Never request indexing on [65 redirect URLs](gsc-indexing-master-queue.md#do-not-submit-65-urls) — submit the **target** URL instead.
+
+**GSC quota — 12 Jun 2026:** Day 1 batch submitted. **No more submissions today.** Resume Day 2 batch tomorrow.
 
 **Related docs:** [GSC master queue](gsc-indexing-master-queue.md) · [Execution status](action-plan-execution-status.md)
 
@@ -203,15 +205,15 @@ Skip `/`, `/voice-invoicing`, `/gmail-invoice` if already submitted Day 1.
 
 ---
 
-### Day 13 — GRP-007 phase 2 planning
+### Day 13 — GRP-007 phase 2 ✅ shipped (code only — no GSC today)
 
-| ☐ | Task |
+| ☑ | Task |
 |---|------|
-| ☐ | Review 11 impression-bearing how-to posts — decide merge vs keep |
-| ☐ | If merging: absorb keywords into `/invoice-template` then 301 (agent can script) |
-| ☐ | Re-request indexing on `/invoice-template` after content merge |
+| ☑ | 11 impression-bearing how-tos merged into `/invoice-template` trade guides |
+| ☑ | 301 redirects live for all 11 blog URLs → hub |
+| ☐ | **Tomorrow:** re-request indexing on `/invoice-template` (counts toward daily quota) |
 
-Survivor list: [action-plan-execution-status.md](action-plan-execution-status.md#-grp-007-remaining-phase-2)
+**Never submit** the 11 old blog URLs — they redirect. See [master queue](gsc-indexing-master-queue.md#grp-007-phase-2--invoice-template-11).
 
 ---
 
@@ -250,8 +252,8 @@ If GSC shows them: validate redirect → request indexing on the **destination**
 
 | Day | Date | URLs submitted | Notes |
 |-----|------|----------------|-------|
-| 1 | | /10 | |
-| 2 | | /10 | |
+| 1 | 12 Jun | 10/10 ✅ | Batch 2 — voice + homepage |
+| 2 | | 0/10 | **Resume tomorrow** — Batch 5 (chrome, pricing, get-started, etc.) |
 | 3 | | /10 | |
 | 4 | | /10 | |
 | 5 | | /10 | |

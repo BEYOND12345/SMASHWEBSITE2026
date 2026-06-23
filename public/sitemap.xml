@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smashinvoices.com/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -116,13 +116,13 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/get-started</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smashinvoices.com/quote-to-invoice</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -439,12 +439,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-appliance-repair-callouts</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smashinvoices.com/blog/gmail-quickbooks-xero-bridge</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -452,12 +446,6 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-as-an-electrician-australia</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -541,37 +529,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-tiling-labour-and-materials</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-concrete-progress-claims</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-emergency-locksmith-call-outs</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smashinvoices.com/blog/air-conditioning-emergency-call-out-invoice</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-multi-day-painting-jobs</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-quarterly-pest-treatments</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -607,12 +565,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-switchboard-upgrades</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smashinvoices.com/blog/plumber-call-out-fee-invoice</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -620,12 +572,6 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/blog/how-to-charge-materials-on-a-plumbing-invoice</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-commercial-cleaning-clients</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -667,12 +613,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-sole-trader-australia-complete-guide</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smashinvoices.com/blog/tax-deductions-sole-trader-tradie-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -698,12 +638,6 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/blog/what-must-be-on-a-tax-invoice-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-pool-maintenance-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -80,9 +80,9 @@ export const segments: SegmentData[] = [
       { title: 'Xero + QuickBooks sync', body: 'Invoices flow straight to your accounting software. Your bookkeeper has everything without you touching a spreadsheet.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-commercial-cleaning-clients', title: 'Cleaning Invoice Template Australia', desc: 'What to include on cleaner invoices: ABN, GST, service line items, payment terms and repeat-client details.' },
+      { slug: '/invoice-template#commercial-cleaning', title: 'Cleaning Invoice Template Australia', desc: 'What to include on cleaner invoices: ABN, GST, service line items, payment terms and repeat-client details.' },
       { slug: 'repeat-invoices-for-cleaners', title: 'Repeat Invoices for Cleaners', desc: 'How weekly and fortnightly cleaners repeat the last invoice, change the add-ons, and send it before the next property.' },
-      { slug: 'how-to-invoice-commercial-cleaning-clients', title: 'Commercial Cleaning Invoices', desc: 'How to invoice offices, strata and property managers with site details, service periods, GST and approval-ready line items.' },
+      { slug: '/invoice-template#commercial-cleaning', title: 'Commercial Cleaning Invoices', desc: 'How to invoice offices, strata and property managers with site details, service periods, GST and approval-ready line items.' },
     ],
     faqs: [
       { q: 'What is the best invoice app for cleaners?', a: 'The best invoice app for cleaners is one that handles repeat clients, fixed-rate services, GST, payment links and mobile invoicing. SMASH is built for that workflow: save your cleaning services once, describe the job by voice, and send the invoice in under 60 seconds.' },
@@ -214,9 +214,9 @@ export const segments: SegmentData[] = [
       { title: 'Xero + QuickBooks sync', body: 'Starter and higher plans sync invoices to accounting software, so the van invoice does not become a second admin job later.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-an-electrician-australia', title: 'Electrician Invoice Template Australia', desc: 'What electricians should include on invoices: licence number, call-out fee, labour, materials, GST and payment terms.' },
+      { slug: '/invoice-template#electrician', title: 'Electrician Invoice Template Australia', desc: 'What electricians should include on invoices: licence number, call-out fee, labour, materials, GST and payment terms.' },
       { slug: 'electrician-call-out-fee-invoice', title: 'Electrician Call-out Fee Invoices', desc: 'How to show standard, emergency and after-hours call-out fees without creating payment disputes.' },
-      { slug: 'how-to-invoice-switchboard-upgrades', title: 'Switchboard Upgrade Invoices', desc: 'How to invoice switchboard upgrades with labour, boards, RCDs, breakers, certificates, GST and approvals.' },
+      { slug: '/invoice-template#switchboard', title: 'Switchboard Upgrade Invoices', desc: 'How to invoice switchboard upgrades with labour, boards, RCDs, breakers, certificates, GST and approvals.' },
     ],
     faqs: [
       { q: 'What is the best invoicing app for electricians?', a: 'The best invoicing app for electricians is one that handles call-out fees, labour, materials, GST, quotes and accounting sync from a phone. SMASH is built for that workflow: describe the electrical job by voice, review the line items, and send the invoice in under 60 seconds.' },
@@ -342,8 +342,8 @@ export const segments: SegmentData[] = [
       { title: 'Xero + QuickBooks sync', body: 'Starter and higher plans sync invoices to accounting software, so the site invoice does not become a second admin job later.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-multi-day-painting-jobs', title: 'Painter Invoice Template Australia', desc: 'What painters should include on invoices: ABN, labour, prep, paint materials, colour notes, GST and payment terms.' },
-      { slug: 'how-to-invoice-multi-day-painting-jobs', title: 'Invoicing Multi-Day Painting Jobs', desc: 'How to invoice interior and exterior repaints across multiple days without losing margin on labour and materials.' },
+      { slug: '/invoice-template#painting', title: 'Painter Invoice Template Australia', desc: 'What painters should include on invoices: ABN, labour, prep, paint materials, colour notes, GST and payment terms.' },
+      { slug: '/invoice-template#painting', title: 'Invoicing Multi-Day Painting Jobs', desc: 'How to invoice interior and exterior repaints across multiple days without losing margin on labour and materials.' },
       { slug: 'voice-to-estimate-build-bids-without-pen', title: 'Build Bids Without a Pen', desc: 'How voice-to-estimate changes on-site quoting — describe the scope out loud and get a quote instantly.' },
     ],
     faqs: [
@@ -406,7 +406,7 @@ export const segments: SegmentData[] = [
       { title: 'Payment links and accounting sync', body: 'Invoices include online payment links and can sync to Xero or QuickBooks on Starter and higher plans.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'lawn-mowing-repeat-invoices', title: 'Repeat Invoices for Lawn Mowing', desc: 'How regular mowing and garden maintenance clients can be invoiced from the last job with only add-ons changed.' },
       { slug: 'how-to-invoice-as-a-gardener-australia', title: 'How to Invoice as a Gardener', desc: 'A practical guide to invoicing gardening and landscaping jobs in Australia.' },
     ],
@@ -531,7 +531,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero + QuickBooks sync', body: 'Starter and higher plans sync invoices to accounting software so the van invoice does not become a second admin job later.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'air-conditioning-emergency-call-out-invoice', title: 'Air Con Emergency Call-out Invoices', desc: 'How to invoice after-hours and emergency air conditioning call-outs with correct rates, parts, approval notes and GST.' },
       { slug: 'stop-double-handling-invoicing-on-the-job', title: 'Stop Double-Handling', desc: 'One step from job to invoice. No re-entering data between apps.' },
     ],
@@ -598,7 +598,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero + QuickBooks sync', body: 'Starter and higher plans sync invoices to accounting software so the ute invoice does not become a second admin job later.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-quarterly-pest-treatments', title: 'Invoicing Quarterly Pest Control Treatments', desc: 'How to invoice recurring quarterly and annual pest control contracts for residential and commercial clients without losing consistency.' },
+      { slug: '/invoice-template#pest-control', title: 'Invoicing Quarterly Pest Control Treatments', desc: 'How to invoice recurring quarterly and annual pest control contracts for residential and commercial clients without losing consistency.' },
       { slug: 'how-to-invoice-as-a-pest-control-operator-australia', title: 'How to Invoice as a Pest Control Operator', desc: 'Licence numbers, treatment types, chemical line items, GST and payment terms for Australian pest controllers.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'How voice invoicing cuts end-of-job admin to under a minute.' },
     ],
@@ -665,8 +665,8 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'High-value concreting jobs sync directly to your accounting software. No re-entering figures at month end.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-concrete-progress-claims', title: 'Concreter Invoice Template Australia', desc: 'What concreters should include on invoices: ABN, cubic metres, excavation, progress claims, materials, GST and payment terms.' },
-      { slug: 'how-to-invoice-concrete-progress-claims', title: 'How to Invoice Progress Claims for Concrete Jobs', desc: 'How to structure deposit, progress, and final invoices for large concreting jobs without payment disputes.' },
+      { slug: '/invoice-template#concrete', title: 'Concreter Invoice Template Australia', desc: 'What concreters should include on invoices: ABN, cubic metres, excavation, progress claims, materials, GST and payment terms.' },
+      { slug: '/invoice-template#concrete', title: 'How to Invoice Progress Claims for Concrete Jobs', desc: 'How to structure deposit, progress, and final invoices for large concreting jobs without payment disputes.' },
       { slug: 'voice-to-estimate-build-bids-without-pen', title: 'Build Bids Without a Pen', desc: 'Quote the job on the spot from a voice description. Client gets it before they call the next guy.' },
     ],
     faqs: [
@@ -732,8 +732,8 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Tiling invoices sync to your accounting software automatically. No re-entering line items at the end of the month.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-tiling-labour-and-materials', title: 'Tiler Invoice Template Australia', desc: 'What tilers should include on invoices: ABN, per-m² rates, adhesive, grout, waterproofing, GST and payment terms.' },
-      { slug: 'how-to-invoice-tiling-labour-and-materials', title: 'How to Invoice Tiling Labour and Materials', desc: 'How to structure floor, wall, outdoor and supply-and-install tiling invoices without losing margin on materials.' },
+      { slug: '/invoice-template#tiling', title: 'Tiler Invoice Template Australia', desc: 'What tilers should include on invoices: ABN, per-m² rates, adhesive, grout, waterproofing, GST and payment terms.' },
+      { slug: '/invoice-template#tiling', title: 'How to Invoice Tiling Labour and Materials', desc: 'How to structure floor, wall, outdoor and supply-and-install tiling invoices without losing margin on materials.' },
       { slug: 'voice-to-estimate-build-bids-without-pen', title: 'Build Bids Without a Pen', desc: 'Quote the m² on the spot. Client gets the number before they decide.' },
     ],
     faqs: [
@@ -799,8 +799,8 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Invoices sync to your accounting software automatically. No re-entering lock jobs at month end.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-emergency-locksmith-call-outs', title: 'Locksmith Invoice Template Australia', desc: 'What locksmiths should include on invoices: ABN, call-out fee, labour, lock supply, key cutting, GST and payment terms.' },
-      { slug: 'how-to-invoice-emergency-locksmith-call-outs', title: 'How to Invoice Emergency Locksmith Call-outs', desc: 'How to show after-hours rates, emergency fees, and same-night payments without creating client disputes.' },
+      { slug: '/invoice-template#locksmith', title: 'Locksmith Invoice Template Australia', desc: 'What locksmiths should include on invoices: ABN, call-out fee, labour, lock supply, key cutting, GST and payment terms.' },
+      { slug: '/invoice-template#locksmith', title: 'How to Invoice Emergency Locksmith Call-outs', desc: 'How to show after-hours rates, emergency fees, and same-night payments without creating client disputes.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Fast jobs need fast invoicing. How voice invoicing matches your pace.' },
     ],
     faqs: [
@@ -866,7 +866,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Detailing invoices sync to your accounting software automatically. Fleet and individual jobs all tracked correctly.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-mobile-car-detailing-packages', title: 'How to Invoice Mobile Car Detailing Packages', desc: 'How to structure express, full detail, and paint correction invoices with add-ons and fleet rates.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Invoice between cars, not after your last one of the day.' },
     ],
@@ -933,7 +933,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Every grooming invoice syncs to your accounting software automatically. No re-entering a full day\'s appointments at month end.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-mobile-dog-grooming-appointments', title: 'How to Invoice Mobile Dog Grooming Appointments', desc: 'How to invoice between appointments, handle add-ons, repeat clients, and no-show fees without manual typing.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Invoice between appointments, not at the end of a long day.' },
     ],
@@ -1000,7 +1000,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Tree work invoices sync to your accounting software automatically. High-value jobs tracked without manual entry.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-tree-removal-and-stump-grinding', title: 'How to Invoice Tree Removal and Stump Grinding', desc: 'How to structure tree service invoices with multiple components, crew rates, tip fees, and emergency pricing.' },
       { slug: 'voice-to-estimate-build-bids-without-pen', title: 'Build Bids Without a Pen', desc: 'Quote the job on site. Send it before the client calls the next arborist.' },
     ],
@@ -1067,7 +1067,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Pool service invoices sync to your accounting software automatically. A full day\'s properties tracked without manual entry.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-pool-maintenance-australia', title: 'Pool Service Invoice Template Australia', desc: 'What pool maintenance technicians should include on invoices: ABN, chemical quantities, service rates, equipment, GST and payment terms.' },
+      { slug: '/invoice-template#pool-maintenance', title: 'Pool Service Invoice Template Australia', desc: 'What pool maintenance technicians should include on invoices: ABN, chemical quantities, service rates, equipment, GST and payment terms.' },
       { slug: 'how-to-invoice-pool-chemical-treatments', title: 'How to Invoice Pool Chemical Treatments', desc: 'How to price chlorine, pH adjusters, algaecide and green pool treatments correctly on pool service invoices.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Invoice between properties. Not at the end of a long day.' },
     ],
@@ -1134,7 +1134,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'High-value installs sync to your accounting software automatically with all line items and GST intact.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-solar-with-stc-rebates', title: 'How to Invoice Solar Installations with STC Rebates', desc: 'How to show STC rebate deductions correctly on solar installation invoices for homeowners and solar companies.' },
       { slug: 'voice-to-estimate-build-bids-without-pen', title: 'Build Bids Without a Pen', desc: 'Quote the system on site. Client gets the number while you\'re still at the property.' },
     ],
@@ -1201,7 +1201,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Rubbish removal invoices sync to your accounting software. A full day of jobs tracked without manual re-entry.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-rubbish-removal-tip-fees', title: 'How to Invoice Rubbish Removal Tip Fees', desc: 'How to price and show different waste type tip fees on rubbish removal invoices without client disputes.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Invoice between pickups, not at the end of a full day.' },
     ],
@@ -1268,7 +1268,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'IT repair invoices sync to your accounting software automatically. Business clients on NET 30 tracked correctly.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-computer-repair-parts-and-labour', title: 'How to Invoice Computer Repair Parts and Labour', desc: 'How to show callout fees, remote vs on-site rates, parts with markup, and business client terms on IT invoices.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Callout, labour, parts — one voice note, one clean invoice.' },
     ],
@@ -1335,8 +1335,8 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Appliance repair invoices sync to your accounting software. Parts, labour, and callout fees all tracked without manual re-entry.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-appliance-repair-callouts', title: 'Appliance Repair Invoice Template Australia', desc: 'What appliance repair technicians should include on invoices: ABN, callout fee, labour, parts markup, GST and payment terms.' },
-      { slug: 'how-to-invoice-appliance-repair-callouts', title: 'How to Invoice Appliance Repair Callouts', desc: 'How to structure callout, diagnostic-only, parts, and after-hours invoices for whitegoods and appliance repair.' },
+      { slug: '/invoice-template#appliance-repair', title: 'Appliance Repair Invoice Template Australia', desc: 'What appliance repair technicians should include on invoices: ABN, callout fee, labour, parts markup, GST and payment terms.' },
+      { slug: '/invoice-template#appliance-repair', title: 'How to Invoice Appliance Repair Callouts', desc: 'How to structure callout, diagnostic-only, parts, and after-hours invoices for whitegoods and appliance repair.' },
       { slug: 'the-60-second-invoice-voice-to-invoice', title: 'The 60-Second Invoice', desc: 'Callout + labour + parts in under a minute.' },
     ],
     faqs: [
@@ -1402,7 +1402,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Security install invoices sync to your accounting software automatically. Equipment, labour, and monitoring all tracked correctly.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-cctv-and-alarm-installations', title: 'How to Invoice CCTV and Alarm Installations', desc: 'How to structure security installation invoices with equipment lists, cable pricing, monitoring add-ons, and quote-to-invoice conversion.' },
       { slug: 'voice-to-quote-feature', title: 'Voice to Quote', desc: 'Turn a walk-through conversation into a priced quote, then convert the accepted quote to an invoice with one tap.' },
     ],
@@ -1469,7 +1469,7 @@ export const segments: SegmentData[] = [
       { title: 'Xero and QuickBooks sync', body: 'Fencing invoices sync to your accounting software. High-value jobs tracked with all line items without manual re-entry.' },
     ],
     blogPosts: [
-      { slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
+      { slug: '/invoice-template#sole-trader', title: 'Free Invoice Template for Tradies', desc: 'ATO-compliant invoice format — or generate one by voice in 60 seconds with SMASH.' },
       { slug: 'how-to-invoice-fencing-by-the-metre', title: 'How to Invoice Fencing Jobs by the Metre', desc: 'How to price Colorbond, timber, pool, and post-and-rail fencing with gates, hardware, and removal on one professional invoice.' },
       { slug: 'voice-to-quote-feature', title: 'Voice to Quote', desc: 'Walk the line, talk the job, print the quote.' },
     ],

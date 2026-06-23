@@ -4,11 +4,11 @@
 **Rule:** Never submit URLs that now 301 — see [do-not-submit](#do-not-submit-23-urls) below.  
 **Checklist per URL:** URL Inspection → **Test live URL** → confirm content → **Request indexing**
 
-Last updated: 13 Jun 2026 (after Week 2 Gmail + Voice consolidation deploy)
+Last updated: 12 Jun 2026 (after GRP-007 phase 2 merge)
 
 ---
 
-## Do NOT submit (23 URLs)
+## Do NOT submit (65 URLs)
 
 These now **301 redirect**. Submitting wastes quota.
 
@@ -59,9 +59,25 @@ These now **301 redirect**. Submitting wastes quota.
 
 ### Week 3 — GRP-003 trade `*-invoice-template-australia` (21)
 
-34–54. All `/blog/*-invoice-template-australia` URLs (301 to `/invoice-template` or matching how-to survivor). Do not submit — request indexing on **targets** instead (e.g. `/invoice-template`, `/blog/how-to-invoice-as-an-electrician-australia`).
+34–54. All `/blog/*-invoice-template-australia` URLs (301 to `/invoice-template`). Do not submit — request indexing on **targets** instead.
 
-**Total do-not-submit: 54 URLs**
+### GRP-007 phase 2 — how-to survivors → `/invoice-template` (11)
+
+55. https://smashinvoices.com/blog/how-to-invoice-as-an-electrician-australia  
+56. https://smashinvoices.com/blog/how-to-invoice-as-a-sole-trader-australia-complete-guide  
+57. https://smashinvoices.com/blog/how-to-invoice-appliance-repair-callouts  
+58. https://smashinvoices.com/blog/how-to-invoice-emergency-locksmith-call-outs  
+59. https://smashinvoices.com/blog/how-to-invoice-pool-maintenance-australia  
+60. https://smashinvoices.com/blog/how-to-invoice-quarterly-pest-treatments  
+61. https://smashinvoices.com/blog/how-to-invoice-tiling-labour-and-materials  
+62. https://smashinvoices.com/blog/how-to-invoice-commercial-cleaning-clients  
+63. https://smashinvoices.com/blog/how-to-invoice-concrete-progress-claims  
+64. https://smashinvoices.com/blog/how-to-invoice-multi-day-painting-jobs  
+65. https://smashinvoices.com/blog/how-to-invoice-switchboard-upgrades  
+
+**Submit instead:** https://smashinvoices.com/invoice-template (trade guides section with anchor content).
+
+**Total do-not-submit: 65 URLs**
 
 ---
 
@@ -71,14 +87,14 @@ Use if you have not submitted these since deploy `9bbc9be`+.
 
 1. https://smashinvoices.com/blog/word-vs-excel-vs-app-for-invoices
 2. https://smashinvoices.com/blog/how-long-to-send-invoice-after-job-australia
-3. https://smashinvoices.com/blog/how-to-invoice-as-an-electrician-australia
-4. https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide
-5. https://smashinvoices.com/blog/gmail-quickbooks-xero-bridge
-6. https://smashinvoices.com/blog/how-to-invoice-appliance-repair-callouts
-7. https://smashinvoices.com/gmail-invoice
-8. https://smashinvoices.com/voice-invoicing
-9. https://smashinvoices.com/chrome-extension
-10. https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds
+3. https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide
+4. https://smashinvoices.com/blog/gmail-quickbooks-xero-bridge
+5. https://smashinvoices.com/gmail-invoice
+6. https://smashinvoices.com/voice-invoicing
+7. https://smashinvoices.com/chrome-extension
+8. https://smashinvoices.com/blog/gmail-email-to-invoice-20-seconds
+9. https://smashinvoices.com/invoice-template
+10. https://smashinvoices.com/get-started
 
 **Verify before submit:** Batch 1 blog posts should show North Star title/H1 (not “Honest Truth” / old copy). If stale, wait for Netlify build or hard-refresh Test live URL.
 
@@ -103,18 +119,18 @@ Pillars + voice survivors + homepage FAQ fix.
 
 ## Batch 3 — 15 Jun
 
-Trade how-tos kept (have GSC impressions/clicks) + remaining retrofits.
+Trade how-tos still live + remaining retrofits. **Do not submit** electrician/appliance how-tos (301 → `/invoice-template`).
 
-1. https://smashinvoices.com/blog/how-to-invoice-as-an-electrician-australia
-2. https://smashinvoices.com/blog/how-to-invoice-as-a-handyman-australia
-3. https://smashinvoices.com/blog/how-to-invoice-as-a-plumber-australia
-4. https://smashinvoices.com/blog/how-to-invoice-as-a-pest-control-operator-australia
-5. https://smashinvoices.com/blog/how-to-invoice-as-a-cleaner-australia
-6. https://smashinvoices.com/blog/how-to-invoice-appliance-repair-callouts
-7. https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide
-8. https://smashinvoices.com/blog/word-vs-excel-vs-app-for-invoices
-9. https://smashinvoices.com/blog/how-long-to-send-invoice-after-job-australia
-10. https://smashinvoices.com/blog/gmail-quickbooks-xero-bridge
+1. https://smashinvoices.com/blog/how-to-invoice-as-a-handyman-australia
+2. https://smashinvoices.com/blog/how-to-invoice-as-a-plumber-australia
+3. https://smashinvoices.com/blog/how-to-invoice-as-a-pest-control-operator-australia
+4. https://smashinvoices.com/blog/how-to-invoice-as-a-cleaner-australia
+5. https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide
+6. https://smashinvoices.com/blog/word-vs-excel-vs-app-for-invoices
+7. https://smashinvoices.com/blog/how-long-to-send-invoice-after-job-australia
+8. https://smashinvoices.com/blog/gmail-quickbooks-xero-bridge
+9. https://smashinvoices.com/invoice-template
+10. https://smashinvoices.com/quote-to-invoice
 
 ---
 

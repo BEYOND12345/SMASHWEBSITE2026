@@ -1,37 +1,42 @@
 /**
- * Week 3 — GRP-007 template hub consolidation (phase 1).
- * Zero-impression niche how-to posts → /invoice-template pillar.
- * Posts with GSC impressions are kept until content is merged into the hub.
+ * Week 3 — GRP-007 template hub consolidation.
+ * Phase 1: zero-impression niche how-tos → /invoice-template
+ * Phase 2: impression-bearing survivors → /invoice-template (content merged into hub)
  */
 import type { ConsolidationRedirect } from './gmail-consolidation-redirects.ts';
+import { TEMPLATE_HUB_MERGED_SLUGS } from '../src/data/invoice-template-trade-guides.ts';
 
-/** Survivors — never redirect these (have impressions or are trade pillars) */
-export const TEMPLATE_HUB_SURVIVOR_SLUGS = [
-  'how-to-invoice-as-an-electrician-australia',
-  'how-to-invoice-as-a-sole-trader-australia-complete-guide',
-  'how-to-invoice-appliance-repair-callouts',
-  'how-to-invoice-emergency-locksmith-call-outs',
-  'how-to-invoice-pool-maintenance-australia',
-  'how-to-invoice-quarterly-pest-treatments',
-  'how-to-invoice-tiling-labour-and-materials',
-  'how-to-invoice-commercial-cleaning-clients',
-  'how-to-invoice-concrete-progress-claims',
-  'how-to-invoice-multi-day-painting-jobs',
-  'how-to-invoice-switchboard-upgrades',
-] as const;
+const HUB = '/invoice-template';
 
-/** 0 GSC impressions — safe to 301 without losing ranking signals */
-export const TEMPLATE_CONSOLIDATION_REDIRECTS: ConsolidationRedirect[] = [
-  { slug: 'how-to-invoice-cctv-and-alarm-installations', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-computer-repair-parts-and-labour', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-fencing-by-the-metre', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-mobile-car-detailing-packages', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-mobile-dog-grooming-appointments', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-pool-chemical-treatments', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-rubbish-removal-tip-fees', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-solar-with-stc-rebates', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
-  { slug: 'how-to-invoice-tree-removal-and-stump-grinding', target: '/invoice-template', reason: 'GRP-007 ghost (0 imp)' },
+/** Phase 1 — 0 GSC impressions */
+const PHASE1_REDIRECTS: ConsolidationRedirect[] = [
+  { slug: 'how-to-invoice-cctv-and-alarm-installations', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-computer-repair-parts-and-labour', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-fencing-by-the-metre', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-mobile-car-detailing-packages', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-mobile-dog-grooming-appointments', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-pool-chemical-treatments', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-rubbish-removal-tip-fees', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-solar-with-stc-rebates', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
+  { slug: 'how-to-invoice-tree-removal-and-stump-grinding', target: HUB, reason: 'GRP-007 ghost (0 imp)' },
 ];
+
+/** Phase 2 — survivors with GSC impressions; content merged into hub before 301 */
+const PHASE2_REDIRECTS: ConsolidationRedirect[] = Object.keys(TEMPLATE_HUB_MERGED_SLUGS).map(
+  (slug) => ({
+    slug,
+    target: HUB,
+    reason: 'GRP-007 phase 2 — merged into /invoice-template',
+  }),
+);
+
+export const TEMPLATE_CONSOLIDATION_REDIRECTS: ConsolidationRedirect[] = [
+  ...PHASE1_REDIRECTS,
+  ...PHASE2_REDIRECTS,
+];
+
+/** @deprecated All survivors merged — kept for import compatibility */
+export const TEMPLATE_HUB_SURVIVOR_SLUGS = [] as const;
 
 export const TEMPLATE_REDIRECTED_SLUGS = new Set(
   TEMPLATE_CONSOLIDATION_REDIRECTS.map((r) => r.slug),

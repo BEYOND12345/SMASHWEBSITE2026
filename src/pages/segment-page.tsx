@@ -375,7 +375,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             {data.blogPosts.map((post) => (
               <Link
                 key={post.slug}
-                to={`/blog/${post.slug}`}
+                to={post.slug.startsWith('/') ? post.slug : `/blog/${post.slug}`}
                 className="bg-surface rounded-[24px] border-2 border-border p-7 hover:border-accent transition-colors group"
               >
                 <h3 className="text-base font-black text-brand uppercase tracking-tighter leading-[0.95] mb-3 group-hover:text-accent transition-colors">{post.title}</h3>

@@ -12,8 +12,7 @@ export const VOICE_SURVIVOR_SLUGS = [
   'is-voice-invoicing-accurate',
   'beyond-chatgpt-dedicated-voice-invoicing',
   'invoice-without-typing',
-  // Bucket A retrofit + trade posts earning impressions
-  'how-to-invoice-as-an-electrician-australia',
+  // Bucket A retrofit + trade posts earning impressions (not merged into template hub)
   'how-to-invoice-as-a-cleaner-australia',
   'how-to-invoice-as-a-handyman-australia',
   'how-to-invoice-as-a-pest-control-operator-australia',

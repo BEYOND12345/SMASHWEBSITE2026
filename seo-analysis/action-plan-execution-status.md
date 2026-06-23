@@ -1,9 +1,11 @@
 # SMASH Website SEO — execution status
 
-**Last updated:** 12 Jun 2026 (session 3)  
+**Last updated:** 12 Jun 2026 (session 4)  
 **Repo:** `SMASHWEBSITE2026` · **Live:** smashinvoices.com (Netlify `scintillating-mermaid-f083a6`)
 
 **→ Start here:** [seo-2-week-checklist.md](seo-2-week-checklist.md) — daily GSC plan to finish indexing + Week 2 deliverables.
+
+**GSC quota today (12 Jun):** exhausted — no more URL Inspection submissions until tomorrow.
 
 ---
 
@@ -26,6 +28,7 @@
 | **B2B + Chrome landings** | Full React SPA pages with hero video |
 | **CWS listing title** | `SMASH: Gmail Invoice & Quote Generator` — extension `_locales` (pending store submit) |
 | **Phase 2 pages** | `/get-started`, `/quote-to-invoice` — static HTML + React + sitemap + footer links |
+| **GRP-007 phase 2** | 11 impression-bearing how-tos merged into `/invoice-template` + 301 (20 template hub redirects total) |
 
 ---
 
@@ -44,20 +47,25 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 
 ---
 
-## 🔄 GRP-007 remaining (phase 2)
+---
 
-11 how-to-invoice posts **with GSC impressions** kept as survivors until content merges into `/invoice-template`:
+## ✅ GRP-007 complete (phase 2 shipped)
 
-- `how-to-invoice-as-an-electrician-australia` (32 imp)
-- `how-to-invoice-emergency-locksmith-call-outs` (22 imp)
-- `how-to-invoice-pool-maintenance-australia` (18 imp)
-- `how-to-invoice-as-a-sole-trader-australia-complete-guide` (12 imp)
-- `how-to-invoice-tiling-labour-and-materials` (10 imp)
-- `how-to-invoice-quarterly-pest-treatments` (7 imp)
-- `how-to-invoice-appliance-repair-callouts` (29 imp)
-- Plus 4 low-impression survivors (1–3 imp)
+All 11 impression-bearing how-to survivors merged into `/invoice-template` trade guide section (inline content + anchor nav). Blog URLs now 301 to hub:
 
-**Do not 301 these** until hub content absorbs their keywords.
+- `how-to-invoice-as-an-electrician-australia` → `/invoice-template#electrician`
+- `how-to-invoice-as-a-sole-trader-australia-complete-guide` → `#sole-trader`
+- `how-to-invoice-appliance-repair-callouts` → `#appliance-repair`
+- `how-to-invoice-emergency-locksmith-call-outs` → `#locksmith`
+- `how-to-invoice-pool-maintenance-australia` → `#pool-maintenance`
+- `how-to-invoice-quarterly-pest-treatments` → `#pest-control`
+- `how-to-invoice-tiling-labour-and-materials` → `#tiling`
+- `how-to-invoice-commercial-cleaning-clients` → `#commercial-cleaning`
+- `how-to-invoice-concrete-progress-claims` → `#concrete`
+- `how-to-invoice-multi-day-painting-jobs` → `#painting`
+- `how-to-invoice-switchboard-upgrades` → `#switchboard`
+
+**After deploy:** request indexing on `https://smashinvoices.com/invoice-template` only — never submit the 11 blog URLs (they 301).
 
 ---
 
@@ -78,7 +86,7 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 
 | Task | Notes |
 |------|--------|
-| *(none — Phase 2 pages shipped 12 Jun 2026)* | Next: GRP-007 phase 2 content merge |
+| *(none)* | GRP-007 phase 2 shipped 12 Jun 2026 |
 
 ---
 
@@ -88,7 +96,7 @@ All batches still ☐ in `gsc-indexing-master-queue.md`.
 
 **Daily plan:** [seo-2-week-checklist.md](seo-2-week-checklist.md) — Day 1 = Batch 2, Day 2 = Batch 5, etc.
 
-**Never submit:** 54 URLs that now 301 (see master queue).
+**Never submit:** 65 URLs that now 301 (see master queue — includes 11 GRP-007 phase 2 how-tos).
 
 ---
 

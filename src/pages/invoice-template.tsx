@@ -11,6 +11,10 @@ import { RelatedPosts } from '../components/related-posts';
 import { RelatedTools } from '../components/related-tools';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
+import {
+  invoiceTemplateTradeGuides,
+  hubAnchorHref,
+} from '../data/invoice-template-trade-guides';
 
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
@@ -61,18 +65,15 @@ const templateFeatures = [
   { icon: Check, label: 'Free to start' },
 ];
 
-const tradeInvoicingGuides = [
-  { label: 'Electrician invoicing guide', slug: 'how-to-invoice-as-an-electrician-australia' },
-  { label: 'Sole trader complete guide', slug: 'how-to-invoice-as-a-sole-trader-australia-complete-guide' },
-  { label: 'Emergency locksmith call-outs', slug: 'how-to-invoice-emergency-locksmith-call-outs' },
-  { label: 'Appliance repair callouts', slug: 'how-to-invoice-appliance-repair-callouts' },
-  { label: 'Pool maintenance invoicing', slug: 'how-to-invoice-pool-maintenance-australia' },
-  { label: 'Quarterly pest treatments', slug: 'how-to-invoice-quarterly-pest-treatments' },
-  { label: 'Tiling labour and materials', slug: 'how-to-invoice-tiling-labour-and-materials' },
-  { label: 'Switchboard upgrades', slug: 'how-to-invoice-switchboard-upgrades' },
-];
+const tradeGuideKeywords = invoiceTemplateTradeGuides.map((g) => g.keyword).join(', ');
+
+const tradeGuideFaqs = invoiceTemplateTradeGuides.slice(0, 4).map((g) => ({
+  q: `What should a ${g.label.toLowerCase()} invoice include?`,
+  a: `${g.summary} Include: ${g.mustInclude.slice(0, 3).join('; ')}.`,
+}));
 
 const faqs = [
+  ...tradeGuideFaqs,
   {
     q: 'What must a tax invoice include in Australia?',
     a: "An ATO-compliant tax invoice must include: your business name and ABN, the word 'Tax Invoice', the date, a unique invoice number, a description of goods or services supplied, the price of each item, and the GST amount (or a statement that GST is included). These requirements apply to invoices over $82.50 — below that, a simpler invoice is acceptable.",
@@ -361,13 +362,59 @@ function FAQ({ q, a }: { q: string; a: string }) {
   );
 }
 
+function TradeGuideCard({ guide }: { guide: (typeof invoiceTemplateTradeGuides)[number] }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <article id={guide.id} className="scroll-mt-24 rounded-2xl border border-brand/10 bg-white overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left hover:bg-accent/5 transition-colors"
+      >
+        <span className="font-body text-sm font-semibold text-brand">{guide.label}</span>
+        <ChevronDown
+          size={16}
+          className={`text-brand/40 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+      {open && (
+        <div className="px-5 pb-5 border-t border-brand/5">
+          <p className="font-body text-sm text-brand/65 font-medium leading-relaxed mt-4 mb-4">{guide.summary}</p>
+          <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-2">Must include</p>
+          <ul className="space-y-1.5 mb-4">
+            {guide.mustInclude.map((item) => (
+              <li key={item} className="flex items-start gap-2 font-body text-sm text-brand/70">
+                <Check size={14} className="text-accent shrink-0 mt-0.5" strokeWidth={2.5} />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs font-black uppercase tracking-widest text-brand/40 mb-2">Example line items</p>
+          <ul className="space-y-1 mb-4">
+            {guide.lineItems.map((item) => (
+              <li key={item} className="font-body text-sm text-brand/60 pl-3 border-l-2 border-accent/40">
+                {item}
+              </li>
+            ))}
+          </ul>
+          {guide.tip && (
+            <p className="font-body text-xs text-brand/55 bg-surface rounded-xl p-3 leading-relaxed">
+              <strong className="text-brand">Tip:</strong> {guide.tip}
+            </p>
+          )}
+        </div>
+      )}
+    </article>
+  );
+}
+
 export function InvoiceTemplate() {
   return (
     <>
       <SEO
         title="Free Invoice Template Australia (ATO-Compliant, GST Ready) | SMASH"
-        description="Free Australian invoice template. ATO-compliant tax invoice format with ABN, GST breakdown, and payment terms. Download free or generate by voice with SMASH."
-        keywords="free invoice template australia, invoice template word australia, tax invoice template australia, gst invoice template"
+        description="Free Australian invoice template. ATO-compliant tax invoice format with ABN, GST breakdown, and payment terms. Trade guides for electricians, sole traders, locksmiths, pool techs, tilers, and more."
+        keywords={`free invoice template australia, invoice template word australia, tax invoice template australia, gst invoice template, ${tradeGuideKeywords}`}
         canonical="https://smashinvoices.com/invoice-template"
         hreflangs={hreflangAlternates}
       />
@@ -613,19 +660,23 @@ export function InvoiceTemplate() {
             <h2 className="text-3xl sm:text-4xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-4">
               Need more than a blank template?
             </h2>
-            <p className="font-body text-brand/60 font-medium text-base leading-relaxed mb-8 max-w-2xl">
+            <p className="font-body text-brand/60 font-medium text-base leading-relaxed mb-6 max-w-2xl">
               These guides show what to put on an invoice for your trade — line items, fees, GST, and payment terms. Or skip the template and let SMASH build it from voice.
             </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {tradeInvoicingGuides.map((guide) => (
-                <Link
-                  key={guide.slug}
-                  to={`/blog/${guide.slug}`}
-                  className="group flex items-center justify-between gap-3 rounded-2xl border border-brand/10 bg-white px-5 py-4 hover:border-accent/40 hover:bg-accent/5 transition-all"
+            <div className="flex flex-wrap gap-2 mb-8">
+              {invoiceTemplateTradeGuides.map((guide) => (
+                <a
+                  key={guide.id}
+                  href={hubAnchorHref(guide.id)}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full border border-brand/15 bg-white text-xs font-bold text-brand/70 hover:border-accent hover:text-brand transition-colors"
                 >
-                  <span className="font-body text-sm font-semibold text-brand group-hover:text-brand">{guide.label}</span>
-                  <ArrowRight size={14} className="text-brand/30 group-hover:text-accent shrink-0" />
-                </Link>
+                  {guide.label}
+                </a>
+              ))}
+            </div>
+            <div className="space-y-3">
+              {invoiceTemplateTradeGuides.map((guide) => (
+                <TradeGuideCard key={guide.id} guide={guide} />
               ))}
             </div>
           </AnimateIn>

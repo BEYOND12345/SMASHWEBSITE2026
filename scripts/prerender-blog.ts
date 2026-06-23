@@ -79,7 +79,6 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'word-vs-excel-vs-app-for-invoices',
   'how-long-to-send-invoice-after-job-australia',
   'can-chatgpt-generate-invoices-tradie-guide',
-  'how-to-invoice-appliance-repair-callouts',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =
