@@ -61,12 +61,12 @@ Skip `/`, `/voice-invoicing`, `/gmail-invoice` if already submitted Day 1.
 | ☐ | https://smashinvoices.com/b2b-gmail-quoting |
 | ☐ | https://smashinvoices.com/pricing |
 | ☐ | https://smashinvoices.com/invoice-template |
+| ☐ | https://smashinvoices.com/get-started |
+| ☐ | https://smashinvoices.com/quote-to-invoice |
 | ☐ | https://smashinvoices.com/us |
 | ☐ | https://smashinvoices.com/uk |
 | ☐ | https://smashinvoices.com/nz |
 | ☐ | https://smashinvoices.com/ca |
-| ☐ | https://smashinvoices.com/blog/how-to-invoice-emergency-locksmith-call-outs |
-| ☐ | https://smashinvoices.com/blog/how-to-invoice-pool-maintenance-australia |
 
 ---
 
@@ -191,15 +191,15 @@ Skip `/`, `/voice-invoicing`, `/gmail-invoice` if already submitted Day 1.
 
 ---
 
-### Days 11–12 — Phase 2 pages (code — agent or dev)
+### Days 11–12 — Phase 2 pages ✅ shipped
 
-| ☐ | Deliverable |
+| ☑ | Deliverable |
 |---|-------------|
-| ☐ | `/get-started` — onboarding funnel page (static HTML + sitemap) |
-| ☐ | `/quote-to-invoice` — mechanism page linking voice + Gmail pillars |
-| ☐ | Both added to sitemap + internal links from homepage footer or pillars |
+| ☑ | `/get-started` — onboarding funnel page (static HTML + sitemap) |
+| ☑ | `/quote-to-invoice` — mechanism page linking voice + Gmail pillars |
+| ☑ | Both added to sitemap + footer internal links |
 
-*Not started in repo yet — highest-value remaining **code** work.*
+*After deploy: request indexing on both URLs (Day 2 batch above).*
 
 ---
 

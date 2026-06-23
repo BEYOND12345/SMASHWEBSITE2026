@@ -68,6 +68,22 @@ export function buildStaticPage(page: MainPageSeo, extraBody = ''): string {
     )
     .join('');
 
+  const stepsHtml = (page.steps ?? [])
+    .map(
+      (s, i) => `<li style="margin-bottom:16px;"><strong>Step ${i + 1}: ${esc(s.title)}</strong><br><span style="color:#475569;">${esc(s.body)}</span></li>`
+    )
+    .join('');
+
+  const linksHtml = (page.relatedLinks ?? [])
+    .map((l) => `<a href="${SITE}${l.href}" style="margin-right:12px;">${esc(l.label)}</a>`)
+    .join('');
+
+  const bodyExtras = [
+    stepsHtml ? `<section><h2>How it works</h2><ol style="padding-left:20px;">${stepsHtml}</ol></section>` : '',
+    linksHtml ? `<section><h2>Related</h2><p>${linksHtml}</p></section>` : '',
+    extraBody,
+  ].join('');
+
   return `<!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -104,7 +120,7 @@ ${hreflangTags()}
   <h1>${esc(page.h1)}</h1>
   ${page.brandLine ? `<p class="brand">${esc(page.brandLine)}</p>` : ''}
   <div class="answer"><strong>Short answer:</strong> ${esc(page.answerBlock)}</div>
-  ${extraBody}
+  ${bodyExtras}
   <p>${ctaHtml(page.cta)}</p>
   ${faqHtml ? `<section><h2>FAQ</h2>${faqHtml}</section>` : ''}
   <p><small>Updated ${DATE_MODIFIED}</small></p>

@@ -120,6 +120,8 @@ async function generateSitemap() {
     { loc: '/invoice-generator',        srcFiles: ['src/pages/invoice-generator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-calculator',           srcFiles: ['src/pages/gst-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
     { loc: '/invoice-template',         srcFiles: ['src/pages/invoice-template.tsx'], changefreq: 'monthly', priority: '0.9' },
+    { loc: '/get-started',              srcFiles: ['src/data/main-pages-seo.ts', 'src/pages/get-started.tsx', 'public/get-started/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/quote-to-invoice',         srcFiles: ['src/data/main-pages-seo.ts', 'src/pages/quote-to-invoice.tsx', 'public/quote-to-invoice/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/hourly-rate-calculator',   srcFiles: ['src/pages/hourly-rate-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.8' },
     { loc: '/late-payment-calculator',  srcFiles: ['src/pages/late-payment-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.8' },
     { loc: '/profit-calculator',        srcFiles: ['src/pages/profit-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },

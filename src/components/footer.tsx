@@ -276,6 +276,8 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/features" className={linkClass}>Features</Link></li>
                 <li><Link to="/pricing" className={linkClass}>Pricing</Link></li>
                 <li><Link to="/how-it-works" className={linkClass}>How It Works</Link></li>
+                <li><Link to="/get-started" className={linkClass}>Get started</Link></li>
+                <li><Link to="/quote-to-invoice" className={linkClass}>Quote to invoice</Link></li>
                 <li><Link to="/voice-invoicing" className={linkClass}>Send invoice fast</Link></li>
                 <li><Link to="/ai-invoicing" className={linkClass}>AI Invoicing</Link></li>
                 <li><Link to="/gst-compliant-invoicing" className={linkClass}>GST Invoicing</Link></li>

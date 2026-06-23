@@ -26,6 +26,8 @@ const QuoteGenerator = lazy(() => import('./pages/quote-generator').then(m => ({
 const InvoiceGenerator = lazy(() => import('./pages/invoice-generator').then(m => ({ default: m.InvoiceGenerator })));
 const GstCalculator = lazy(() => import('./pages/gst-calculator').then(m => ({ default: m.GstCalculator })));
 const InvoiceTemplate = lazy(() => import('./pages/invoice-template').then(m => ({ default: m.InvoiceTemplate })));
+const GetStarted = lazy(() => import('./pages/get-started').then(m => ({ default: m.GetStarted })));
+const QuoteToInvoice = lazy(() => import('./pages/quote-to-invoice').then(m => ({ default: m.QuoteToInvoice })));
 const HourlyRateCalculator = lazy(() => import('./pages/hourly-rate-calculator').then(m => ({ default: m.HourlyRateCalculator })));
 const LatePaymentCalculator = lazy(() => import('./pages/late-payment-calculator').then(m => ({ default: m.LatePaymentCalculator })));
 const ProfitCalculator = lazy(() => import('./pages/profit-calculator').then(m => ({ default: m.ProfitCalculator })));
@@ -151,6 +153,8 @@ function App() {
         <Route path="/invoice-generator" element={<InvoiceGenerator />} />
         <Route path="/gst-calculator" element={<GstCalculator />} />
         <Route path="/invoice-template" element={<InvoiceTemplate />} />
+        <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/quote-to-invoice" element={<QuoteToInvoice />} />
         <Route path="/hourly-rate-calculator" element={<HourlyRateCalculator />} />
         <Route path="/late-payment-calculator" element={<LatePaymentCalculator />} />
         <Route path="/profit-calculator" element={<ProfitCalculator />} />

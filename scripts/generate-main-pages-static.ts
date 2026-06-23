@@ -21,6 +21,8 @@ const routes: { key: keyof typeof mainPages; dir: string }[] = [
   // /chrome-extension — full React landing (netlify force → index.html; not this stub)
   // /b2b-gmail-quoting — full React landing (netlify force → index.html; not this stub)
   { key: 'pricing', dir: 'pricing' },
+  { key: 'getStarted', dir: 'get-started' },
+  { key: 'quoteToInvoice', dir: 'quote-to-invoice' },
 ];
 
 for (const { key, dir } of routes) {

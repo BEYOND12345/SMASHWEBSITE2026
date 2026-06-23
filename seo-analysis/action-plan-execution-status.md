@@ -25,6 +25,7 @@
 | **Segment pages** | `/for-*` blog cards no longer link to 301'd template posts |
 | **B2B + Chrome landings** | Full React SPA pages with hero video |
 | **CWS listing title** | `SMASH: Gmail Invoice & Quote Generator` — extension `_locales` (pending store submit) |
+| **Phase 2 pages** | `/get-started`, `/quote-to-invoice` — static HTML + React + sitemap + footer links |
 
 ---
 
@@ -37,7 +38,7 @@ These pages are **SPA-only** (React + `react-helmet-async`), not static HTML:
 
 Still static/crawler-grade:
 
-- `/voice-invoicing`, `/gmail-invoice`, `/pricing`, `/invoice-template`, `/nz`, `/uk`, `/us`, `/ca`
+- `/voice-invoicing`, `/gmail-invoice`, `/pricing`, `/invoice-template`, `/get-started`, `/quote-to-invoice`, `/nz`, `/uk`, `/us`, `/ca`
 
 Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` components.
 
@@ -77,7 +78,7 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 
 | Task | Notes |
 |------|--------|
-| **Phase 2 pages** | `/get-started`, `/quote-to-invoice` |
+| *(none — Phase 2 pages shipped 12 Jun 2026)* | Next: GRP-007 phase 2 content merge |
 
 ---
 

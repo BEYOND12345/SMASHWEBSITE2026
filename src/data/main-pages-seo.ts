@@ -27,6 +27,8 @@ export type MainPageSeo = {
   answerBlock: string;
   faqs?: MainPageFaq[];
   cta?: 'both' | 'ios' | 'chrome';
+  steps?: { title: string; body: string }[];
+  relatedLinks?: { href: string; label: string }[];
 };
 
 export const mainPages: Record<string, MainPageSeo> = {
@@ -195,6 +197,94 @@ export const mainPages: Record<string, MainPageSeo> = {
       {
         question: 'What unlocks on paid plans?',
         answer: 'Unlimited quotes and invoices plus Xero, QuickBooks, and CSV export on Starter and above.',
+      },
+    ],
+  },
+  getStarted: {
+    path: '/get-started',
+    title: 'Get Started with SMASH — Free Quote & Invoice in 60 Seconds',
+    description:
+      'Download SMASH on iPhone or add the Gmail Chrome extension. Set your rates once, send your first priced quote or invoice in under 60 seconds. Free — 5 documents per month.',
+    h1: 'Start free. First quote in under a minute.',
+    brandLine: BRAND_LINE,
+    answerBlock:
+      'Getting started with SMASH takes three steps: pick iPhone voice or Gmail on Chrome, load your rates from a past invoice or CSV, then describe the job or open the customer email. You verify line items against your catalog before every send — nothing is guessed. Free plan includes 5 quotes or invoices per month.',
+    cta: 'both',
+    steps: [
+      {
+        title: 'Choose your register',
+        body: 'On the job site: SMASH iOS app — talk for 20 seconds, verify, send. At your desk: Chrome extension in Gmail — scan the thread, verify, reply with the PDF.',
+      },
+      {
+        title: 'Load your Price Hub',
+        body: 'Upload a past PDF invoice or CSV of services on first sign-in. Your hourly rate, fees, and common materials become the catalog SMASH matches against.',
+      },
+      {
+        title: 'Send your first document',
+        body: 'Describe the job or open the customer email, review matched line items, send. Tax-ready PDF with approval and payment links — under 60 seconds.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
+      { href: '/gmail-invoice', label: 'Email to invoice in Gmail' },
+      { href: '/pricing', label: 'Pricing — free to start' },
+    ],
+    faqs: [
+      {
+        question: 'Do I need a credit card to start?',
+        answer: 'No. Create an account and send up to 5 quotes or invoices per month on the free plan.',
+      },
+      {
+        question: 'iPhone or Chrome — which should I use first?',
+        answer: 'Use iPhone if you quote from the van. Use Chrome if RFQs and job emails land in Gmail. Many businesses use both on the same account.',
+      },
+      {
+        question: 'How long until my first quote is ready?',
+        answer: 'Most users send a first document within 5 minutes of loading rates — the verify step is usually 30 seconds.',
+      },
+    ],
+  },
+  quoteToInvoice: {
+    path: '/quote-to-invoice',
+    title: 'Quote to Invoice — Same Job, No Retyping | SMASH',
+    description:
+      'Customer approved your quote? Convert it to a tax-ready invoice in one tap — same line items, same prices, no retyping. Voice on iPhone or Gmail in Chrome.',
+    h1: 'Quote approved? Invoice in one tap.',
+    brandLine: BRAND_LINE,
+    answerBlock:
+      'Quote to invoice means turning an approved estimate into a bill without re-entering line items. In SMASH, the quote you already verified becomes the invoice — labour, materials, fees, and tax carry over. Send from iPhone after the job or from Gmail when the customer replies “go ahead”. Works with Xero and QuickBooks on paid plans.',
+    cta: 'both',
+    steps: [
+      {
+        title: 'Send the quote first',
+        body: 'Build from voice or Gmail, verify against your catalog, send with approval link. Customer sees professional PDF with your rates — not generic guesses.',
+      },
+      {
+        title: 'Customer approves',
+        body: 'They tap approve in the PDF or reply in Gmail. SMASH keeps the approved scope linked to the job.',
+      },
+      {
+        title: 'Convert to invoice',
+        body: 'One action creates the invoice from the quote — same lines, updated invoice number and due date. Push to Xero or QuickBooks when ready.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/voice-invoicing', label: 'Voice quotes on iPhone' },
+      { href: '/gmail-invoice', label: 'Quotes from Gmail' },
+      { href: '/get-started', label: 'Get started free' },
+    ],
+    faqs: [
+      {
+        question: 'Do I have to retype line items for the invoice?',
+        answer: 'No. The invoice is generated from the approved quote — you only adjust if the scope changed on site.',
+      },
+      {
+        question: 'Can I quote on Gmail and invoice from my phone?',
+        answer: 'Yes. Quotes and invoices sync to your SMASH account across iPhone and Chrome.',
+      },
+      {
+        question: 'Does quote-to-invoice work with Xero or QuickBooks?',
+        answer: 'Yes on Starter and above — push the approved quote, then the invoice, without double entry.',
       },
     ],
   },
