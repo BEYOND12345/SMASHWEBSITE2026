@@ -1,7 +1,9 @@
 # SMASH Website SEO — execution status
 
-**Last updated:** 12 Jun 2026 (session 2)  
+**Last updated:** 12 Jun 2026 (session 3)  
 **Repo:** `SMASHWEBSITE2026` · **Live:** smashinvoices.com (Netlify `scintillating-mermaid-f083a6`)
+
+**→ Start here:** [seo-2-week-checklist.md](seo-2-week-checklist.md) — daily GSC plan to finish indexing + Week 2 deliverables.
 
 ---
 
@@ -83,7 +85,7 @@ Google must execute JS for Chrome/B2B pages. Meta comes from React `SEO` compone
 
 All batches still ☐ in `gsc-indexing-master-queue.md`.
 
-**Start here when site is stable:** Batch 2 (homepage + voice survivors) → Batch 5 (Level 1 pages incl. `/invoice-template`).
+**Daily plan:** [seo-2-week-checklist.md](seo-2-week-checklist.md) — Day 1 = Batch 2, Day 2 = Batch 5, etc.
 
 **Never submit:** 54 URLs that now 301 (see master queue).
 
