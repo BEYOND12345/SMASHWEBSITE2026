@@ -107,6 +107,38 @@
   to = "/pricing/index.html"
   status = 200
 
+[[redirects]]
+  from = "/get-started"
+  to = "/get-started/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/get-started/"
+  to = "/get-started/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/quote-to-invoice"
+  to = "/quote-to-invoice/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/quote-to-invoice/"
+  to = "/quote-to-invoice/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/voice-to-invoice"
+  to = "/voice-invoicing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/voice-to-invoice/"
+  to = "/voice-invoicing"
+  status = 301
+  force = true
+
 # /b2b-gmail-quoting — force SPA so dist/b2b-gmail-quoting/index.html never shadows React
 [[redirects]]
   from = "/b2b-gmail-quoting"
