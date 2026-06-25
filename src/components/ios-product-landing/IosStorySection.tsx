@@ -4,6 +4,7 @@ import { MockupFrame } from '../phone-showcase';
 import { IosSpecHeadline } from './IosCalloutCard';
 import { IosPhoneShowcase } from './IosPhoneShowcase';
 import { IosPhotoBackdrop } from './IosPhotoBackdrop';
+import { IosStoryPhotoCover } from './IosStoryPhotoCover';
 import {
   IOS_STORY_PHOTOS,
   IOS_STORY_PHOTO_BG,
@@ -58,19 +59,7 @@ export function IosStorySection({ segment, imageFirst = false, dark = false }: P
     <section className={`relative ${sectionBg} py-16 md:py-28 overflow-hidden`}>
       {photoBg && (
         <>
-          <picture>
-            {photoBg.srcMobile && (
-              <source media="(max-width: 640px)" srcSet={photoBg.srcMobile} />
-            )}
-            <img
-              src={photoBg.src}
-              alt={photoBg.alt ?? ''}
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 h-full w-full object-cover"
-              style={{ objectPosition: photoBg.focus ?? 'center' }}
-            />
-          </picture>
+          <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
           {/* Dark brand tint — stronger on the copy (left) side for legibility. */}
           <div
             aria-hidden

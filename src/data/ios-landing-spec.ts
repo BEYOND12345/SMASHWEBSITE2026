@@ -36,6 +36,8 @@ export type StoryPhoto = {
   alt?: string;
   /** object-position so the subject stays framed when cropped. e.g. 'center', '50% 30%'. */
   focus?: string;
+  /** Override default cover zoom — see IOS_STORY_PHOTO_COVER_SCALE. */
+  coverScale?: number;
 };
 
 /**
@@ -87,7 +89,7 @@ export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>>
     src: '/product/ios/photos/readreceipts.jpg',
     srcMobile: '/product/ios/photos/readreceipts-mobile.jpg',
     alt: 'Cleaner checking whether the customer opened the quote on her phone',
-    focus: 'calc(72% + 150px) 40%',
+    focus: '72% 40%',
     tint: 52,
   },
   automessage: {
@@ -101,7 +103,7 @@ export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>>
     src: '/product/ios/photos/customers.jpg',
     srcMobile: '/product/ios/photos/customers-mobile.jpg',
     alt: 'Landscaper reviewing customer job history on site',
-    focus: 'calc(70% + 200px) 35%',
+    focus: '70% 35%',
     tint: 52,
   },
 };

@@ -90,3 +90,10 @@ export function iosShowcaseTailSpace(
 
 export type IosPhoneShowcaseSize = keyof typeof IOS_PHONE_DISPLAY;
 export type IosPhoneSurface = 'light' | 'dark';
+
+/** Extra zoom beyond object-cover minimum — prevents brand bg showing at edges when focus shifts. */
+export const IOS_STORY_PHOTO_COVER_SCALE = {
+  desktop: 1.22,
+  tablet: 1.18,
+  mobile: 1.14,
+} as const;
