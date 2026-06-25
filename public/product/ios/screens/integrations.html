@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  .phone { width: 900px; height: 1240px; background: #FFFFFF; border-radius: 72px; overflow: hidden; position: relative; transform-origin: top left; box-shadow: none; }
+  .phone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index: 20; pointer-events: none; }
+
+
+
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+
+
+.eyebrow { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:50px; letter-spacing:6px; color:#DFFF00; text-transform:uppercase; margin-bottom:24px; line-height:1; }
+.headline { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:170px; line-height:0.82; letter-spacing:-3px; text-transform:uppercase; color:#FFFFFF; }
+.headline .lime { color:#DFFF00; }
+
+.phone { width:900px; height:1240px; background:#FFFFFF; border-radius:72px; box-shadow:0 60px 150px rgba(0,0,0,0.55); overflow:hidden; position:relative; }
+.phone::after { content:''; position:absolute; left:0; right:0; bottom:0; height:560px; background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index:20; }
+.statusbar { height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 62px 0 70px; background:#F4F6F9; }
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+
+
+html.no-fade .phone::after { display: none !important; }
+</style></head><body><div class="phone">
+    <div class="statusbar"><span class="time">9:41</span><span class="icons">
+<svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
+<span class="batt"><span class="fill"></span></span></span></div>
+    <div style="background:#F4F6F9; padding:26px 56px 16px; display:flex; align-items:center; justify-content:center; position:relative;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:50px; letter-spacing:1px; color:#0F172A;">SMASH</span>
+      <div style="position:absolute; right:56px; top:18px; width:72px; height:72px; border-radius:50%; border:3px solid #E2E8F0; display:flex; align-items:center; justify-content:center;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </div>
+    </div>
+    <div style="background:#F4F6F9; padding:8px 56px 14px;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:32px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Integrations</span>
+      <div style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:6px;">Accounting & payments</div>
+    </div>
+    <div style="background:#F4F6F9; padding:14px 56px 30px;">
+      <div style="background:#FFFFFF; border-radius:34px; padding:36px 42px; margin-bottom:28px; box-shadow:0 2px 12px rgba(15,23,42,0.06); display:flex; align-items:center; gap:32px;">
+      <div style="width:104px; height:104px; border-radius:26px; background:#E6F6FF; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:42px; color:#1AB4D7;">xo</span></div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-family:'Jakarta'; font-weight:800; font-size:44px; color:#0F172A;">Xero</div>
+        <div style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Accounting sync</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3DD68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#3DD68C; text-transform:uppercase;">Synced</span>
+      </div>
+    </div>
+      <div style="background:#FFFFFF; border-radius:34px; padding:36px 42px; margin-bottom:28px; box-shadow:0 2px 12px rgba(15,23,42,0.06); display:flex; align-items:center; gap:32px;">
+      <div style="width:104px; height:104px; border-radius:26px; background:#E7F5EC; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:42px; color:#2CA01C;">qb</span></div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-family:'Jakarta'; font-weight:800; font-size:44px; color:#0F172A;">QuickBooks</div>
+        <div style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Accounting sync</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3DD68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#3DD68C; text-transform:uppercase;">Synced</span>
+      </div>
+    </div>
+      <div style="background:#FFFFFF; border-radius:34px; padding:36px 42px; margin-bottom:28px; box-shadow:0 2px 12px rgba(15,23,42,0.06); display:flex; align-items:center; gap:32px;">
+      <div style="width:104px; height:104px; border-radius:26px; background:#EEECFF; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:42px; color:#635BFF;">st</span></div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-family:'Jakarta'; font-weight:800; font-size:44px; color:#0F172A;">Stripe</div>
+        <div style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Card payments</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3DD68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#3DD68C; text-transform:uppercase;">Synced</span>
+      </div>
+    </div>
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

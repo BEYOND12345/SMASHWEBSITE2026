@@ -14,7 +14,7 @@ const Privacy = lazy(() => import('./pages/privacy').then(m => ({ default: m.Pri
 const Terms = lazy(() => import('./pages/terms').then(m => ({ default: m.Terms })));
 const Contact = lazy(() => import('./pages/contact').then(m => ({ default: m.Contact })));
 const Features = lazy(() => import('./pages/features').then(m => ({ default: m.Features })));
-const VoiceInvoicing = lazy(() => import('./pages/voice-invoicing').then(m => ({ default: m.VoiceInvoicing })));
+const IosAppLandingPage = lazy(() => import('./components/ios-product-landing/IosAppLandingPage').then(m => ({ default: m.IosAppLandingPage })));
 const AiInvoicing = lazy(() => import('./pages/ai-invoicing').then(m => ({ default: m.AiInvoicing })));
 const GstCompliantInvoicing = lazy(() => import('./pages/gst-compliant-invoicing').then(m => ({ default: m.GstCompliantInvoicing })));
 const ChromeExtension = lazy(() => import('./pages/chrome-extension').then(m => ({ default: m.ChromeExtension })));
@@ -139,7 +139,7 @@ function App() {
 
         {/* Product / feature pages */}
         <Route path="/features" element={<Features />} />
-        <Route path="/voice-invoicing" element={<VoiceInvoicing />} />
+        <Route path="/voice-invoicing" element={<IosAppLandingPage />} />
         <Route path="/ai-invoicing" element={<AiInvoicing />} />
         <Route path="/gst-compliant-invoicing" element={<GstCompliantInvoicing />} />
         <Route path="/invoice-on-mobile" element={<Navigate to="/voice-invoicing" replace />} />

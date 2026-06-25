@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  .phone { width: 900px; height: 1240px; background: #FFFFFF; border-radius: 72px; overflow: hidden; position: relative; transform-origin: top left; box-shadow: none; }
+  .phone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index: 20; pointer-events: none; }
+
+
+
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+
+
+.eyebrow { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:50px; letter-spacing:6px; color:#DFFF00; text-transform:uppercase; margin-bottom:24px; line-height:1; }
+.headline { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:170px; line-height:0.82; letter-spacing:-3px; text-transform:uppercase; color:#FFFFFF; }
+.headline .lime { color:#DFFF00; }
+
+.phone { width:900px; height:1240px; background:#FFFFFF; border-radius:72px; box-shadow:0 60px 150px rgba(0,0,0,0.55); overflow:hidden; position:relative; }
+.phone::after { content:''; position:absolute; left:0; right:0; bottom:0; height:560px; background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index:20; }
+.statusbar { height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 62px 0 70px; background:#F4F6F9; }
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+
+
+html.no-fade .phone::after { display: none !important; }
+</style></head><body><div class="phone">
+    <!-- iMessage-style header -->
+    <div style="height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 56px; background:#F4F6F9;">
+      <span style="font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A;">9:41</span>
+      <span style="display:flex; align-items:center; gap:14px;">
+        <svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
+        <span style="width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; display:inline-block;"><span style="position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px;"></span></span>
+      </span>
+    </div>
+    <div style="background:#FFFFFF; padding:30px 56px 26px; border-bottom:2px solid #F1F5F9; display:flex; align-items:center; justify-content:center; position:relative;">
+      <div style="position:absolute; left:56px; font-family:'Jakarta'; font-weight:700; font-size:32px; color:#3A86FF;">‹ Messages</div>
+      <div style="font-family:'Jakarta'; font-weight:800; font-size:34px; color:#0F172A;">Karen Clark</div>
+    </div>
+    <!-- message thread -->
+    <div style="background:#FFFFFF; padding:40px 44px 48px 36px; min-height:900px;">
+      <div style="text-align:center; font-family:'Jakarta'; font-weight:700; font-size:24px; color:#94A3B8; margin-bottom:38px;">Text Message · Today 9:41</div>
+      <!-- outgoing bubble — right-aligned with safe inset so scaled iframes never clip the link -->
+      <div style="display:flex; justify-content:flex-end; padding-left:56px;">
+        <div style="display:inline-block; max-width:100%; background:#3A86FF; border-radius:38px 38px 38px 10px; padding:34px 48px 36px 42px; overflow:visible;">
+          <div style="font-family:'Jakarta'; font-weight:500; font-size:37px; color:#FFFFFF; line-height:1.36; white-space:normal; overflow-wrap:break-word; word-break:break-word;">Hi Karen, it's Good Hands<br>Handyman.<br><br>Please review and approve<br>your estimate:<br>smashinvoices.dev/s/q/2CDX</div>
+        </div>
+      </div>
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

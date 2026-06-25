@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  .phone { width: 900px; height: 1240px; background: #FFFFFF; border-radius: 72px; overflow: hidden; position: relative; transform-origin: top left; box-shadow: none; }
+  .phone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index: 20; pointer-events: none; }
+
+
+
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+
+
+.eyebrow { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:50px; letter-spacing:6px; color:#DFFF00; text-transform:uppercase; margin-bottom:24px; line-height:1; }
+.headline { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:170px; line-height:0.82; letter-spacing:-3px; text-transform:uppercase; color:#FFFFFF; }
+.headline .lime { color:#DFFF00; }
+
+.phone { width:900px; height:1240px; background:#FFFFFF; border-radius:72px; box-shadow:0 60px 150px rgba(0,0,0,0.55); overflow:hidden; position:relative; }
+.phone::after { content:''; position:absolute; left:0; right:0; bottom:0; height:560px; background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index:20; }
+.statusbar { height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 62px 0 70px; background:#F4F6F9; }
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+
+
+html.no-fade .phone::after { display: none !important; }
+</style></head><body><div class="phone">
+    <div style="height:84px; background:#EEF2F7; display:flex; align-items:center; justify-content:space-between; padding:0 56px;">
+      <span style="font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A;">9:41</span>
+      <span style="display:flex; gap:14px; align-items:center;"><svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg><span style="width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; display:inline-block;"><span style="position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px;"></span></span></span>
+    </div>
+    <div style="background:#EEF2F7; padding:18px 56px; text-align:center;"><span style="font-family:'Jakarta'; font-weight:700; font-size:30px; color:#0F172A;">smashinvoices.dev</span></div>
+    <div style="background:#F4F6F9; padding:44px 56px 30px;">
+      <div style="width:128px; height:128px; border-radius:32px; background:#0F172A; display:flex; align-items:center; justify-content:center; margin-bottom:32px;"><span style="font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:60px; color:#DFFF00;">GH</span></div>
+      <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:3px; color:#94A3B8; text-transform:uppercase;">From</div>
+      <div style="font-family:'Jakarta'; font-weight:800; font-size:46px; color:#0F172A; margin:6px 0 26px;">Good Hands Handyman</div>
+      <div style="display:inline-block; background:#0F172A; border-radius:999px; padding:18px 40px; margin-bottom:42px;"><span style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:3px; color:#DFFF00; text-transform:uppercase;">Pending approval</span></div>
+      <div style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:4px; color:#94A3B8; text-transform:uppercase;">Estimate #Q-2CDXY</div>
+      <div style="font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:140px; letter-spacing:-3px; color:#0F172A; line-height:1; margin:8px 0 40px;">$1,678</div>
+      <div style="background:#DFFF00; border-radius:30px; padding:46px 40px; display:flex; align-items:center; justify-content:center; gap:26px;">
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:46px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Approve estimate</span>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

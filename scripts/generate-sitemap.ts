@@ -127,7 +127,7 @@ async function generateSitemap() {
     { loc: '/profit-calculator',        srcFiles: ['src/pages/profit-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
 
     // Feature / product pages
-    { loc: '/voice-invoicing',         srcFiles: ['src/pages/voice-invoicing.tsx', 'public/voice-invoicing/index.html'], changefreq: 'weekly', priority: '1.0' },
+    { loc: '/voice-invoicing',         srcFiles: ['src/components/ios-product-landing/IosAppLandingPage.tsx', 'src/data/ios-landing-spec.ts'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/gmail-invoice',           srcFiles: ['public/gmail-invoice/index.html', 'scripts/generate-gmail-landing-static.ts'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/ai-invoicing',            srcFiles: ['src/pages/ai-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', srcFiles: ['src/pages/gst-compliant-invoicing.tsx'], changefreq: 'monthly', priority: '0.8' },

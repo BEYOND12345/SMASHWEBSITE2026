@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  .phone { width: 900px; height: 1240px; background: #FFFFFF; border-radius: 72px; overflow: hidden; position: relative; transform-origin: top left; box-shadow: none; }
+  .phone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index: 20; pointer-events: none; }
+
+
+
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+
+
+.eyebrow { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:50px; letter-spacing:6px; color:#DFFF00; text-transform:uppercase; margin-bottom:24px; line-height:1; }
+.headline { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:170px; line-height:0.82; letter-spacing:-3px; text-transform:uppercase; color:#FFFFFF; }
+.headline .lime { color:#DFFF00; }
+
+.phone { width:900px; height:1240px; background:#FFFFFF; border-radius:72px; box-shadow:0 60px 150px rgba(0,0,0,0.55); overflow:hidden; position:relative; }
+.phone::after { content:''; position:absolute; left:0; right:0; bottom:0; height:560px; background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index:20; }
+.statusbar { height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 62px 0 70px; background:#F4F6F9; }
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+
+
+html.no-fade .phone::after { display: none !important; }
+</style></head><body><div class="phone">
+    <div class="statusbar"><span class="time">9:41</span><span class="icons">
+<svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
+<span class="batt"><span class="fill"></span></span></span></div>
+    <div style="background:#F4F6F9; padding:30px 56px 22px; display:flex; align-items:center; justify-content:center; position:relative;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:56px; letter-spacing:1px; color:#0F172A;">SMASH</span>
+      <div style="position:absolute; right:56px; top:24px; width:78px; height:78px; border-radius:50%; border:3px solid #E2E8F0; display:flex; align-items:center; justify-content:center;">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+    </div>
+    <div style="background:#F4F6F9; padding:8px 56px 26px; display:flex; gap:24px; align-items:center;">
+      <div style="flex:1; background:#FFFFFF; border:2px solid #E2E8F0; border-radius:28px; padding:30px 36px; display:flex; align-items:center; gap:24px;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:30px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Search jobs...</span>
+      </div>
+      <div style="width:92px; height:92px; border-radius:24px; background:#FFFFFF; border:2px solid #E2E8F0; display:flex; align-items:center; justify-content:center;">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      </div>
+    </div>
+    <div style="background:#F4F6F9; padding:0 56px 30px;">
+      
+    <div style="background:#FFFFFF; border-radius:34px; padding:40px 44px; margin-bottom:30px; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <div style="display:flex; align-items:flex-start; gap:30px;">
+        <div style="width:96px; height:96px; border-radius:26px; background:#F1F5F9; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:38px; color:#0F172A;">KT</span></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:42px; color:#0F172A; text-transform:uppercase; line-height:1.02;">Kitchen tap replacement</div>
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Sarah Jones</div>
+        </div>
+        <div style="background:#DFFF00; border-radius:999px; padding:16px 30px; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#0F172A; text-transform:uppercase;">Sent</span></div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:32px; padding-top:30px; border-top:2px solid #F1F5F9;">
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">17 Jun</span>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3DD68C" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#3DD68C; text-transform:uppercase;">Seen</span>
+        </div>
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:50px; color:#0F172A;">$933.35</span>
+      </div>
+    </div>
+      
+    <div style="background:#FFFFFF; border-radius:34px; padding:40px 44px; margin-bottom:30px; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <div style="display:flex; align-items:flex-start; gap:30px;">
+        <div style="width:96px; height:96px; border-radius:26px; background:#F1F5F9; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:38px; color:#0F172A;">DR</span></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:42px; color:#0F172A; text-transform:uppercase; line-height:1.02;">Deck repair</div>
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Voice quote custom...</div>
+        </div>
+        <div style="background:#DFFF00; border-radius:999px; padding:16px 30px; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#0F172A; text-transform:uppercase;">Ready</span></div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:32px; padding-top:30px; border-top:2px solid #F1F5F9;">
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">17 Jun</span>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Not opened</span>
+        </div>
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:50px; color:#0F172A;">$365.00</span>
+      </div>
+    </div>
+      
+    <div style="background:#FFFFFF; border-radius:34px; padding:40px 44px; margin-bottom:30px; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+      <div style="display:flex; align-items:flex-start; gap:30px;">
+        <div style="width:96px; height:96px; border-radius:26px; background:#F1F5F9; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:38px; color:#0F172A;">KC</span></div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:42px; color:#0F172A; text-transform:uppercase; line-height:1.02;">Kitchen cleaning</div>
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">David Dickson</div>
+        </div>
+        <div style="background:#DFFF00; border-radius:999px; padding:16px 30px; flex-shrink:0;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#0F172A; text-transform:uppercase;">Ready</span></div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:32px; padding-top:30px; border-top:2px solid #F1F5F9;">
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">17 Jun</span>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:25px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Not opened</span>
+        </div>
+        <span style="font-family:'Jakarta'; font-weight:800; font-size:50px; color:#0F172A;">$868.75</span>
+      </div>
+    </div>
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

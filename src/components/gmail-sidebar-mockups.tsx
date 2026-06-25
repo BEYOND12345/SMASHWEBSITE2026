@@ -168,6 +168,56 @@ export function HeroMockup() {
   );
 }
 
+/** Compact Chrome/Gmail extension window — desktop teaser beside the iPhone. */
+export function CompactChromeMockup() {
+  return (
+    <div className="w-[200px] sm:w-[240px] rounded-[14px] overflow-hidden border border-white/10 bg-white shadow-2xl shrink-0">
+      {/* Browser chrome */}
+      <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-100 border-b border-slate-200">
+        <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+        <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+        <div className="flex-1 ml-2 px-2 py-0.5 rounded bg-white text-[7px] text-slate-400 font-mono truncate">
+          mail.google.com
+        </div>
+      </div>
+
+      <div className="grid grid-cols-5">
+        {/* Email — left */}
+        <div className="col-span-3 p-2 bg-white space-y-1.5">
+          <p className="text-[8px] font-bold text-slate-700 leading-tight">Johnathan Smith</p>
+          <p className="text-[7px] text-slate-400 leading-tight">to me · 8:47 AM</p>
+          <div className="space-y-1 text-[7px] text-slate-500 leading-[1.4]">
+            <p>Need a quote for the kitchen mixer tap and copper piping.</p>
+          </div>
+          <div className="px-1.5 py-0.5 rounded bg-accent text-brand text-[6px] font-black uppercase tracking-wider inline-block">
+            Generate Invoice
+          </div>
+        </div>
+
+        {/* SMASH sidebar — right */}
+        <div className="col-span-2 bg-[#0D1117] p-2 space-y-1.5 border-l border-slate-200">
+          <span className="text-white font-black text-[9px] tracking-tight">SMASH<span className="text-accent">.</span></span>
+          <div className="rounded bg-white/[0.06] border border-white/10 p-1.5 space-y-1">
+            <div className="flex justify-between text-[7px]">
+              <span className="text-white/55 font-medium truncate pr-1">Mixer tap</span>
+              <span className="text-white font-bold tabular-nums">$237</span>
+            </div>
+            <div className="border-t border-white/10 pt-1 flex justify-between text-[7px]">
+              <span className="text-white/70 font-bold uppercase tracking-wider">Total</span>
+              <span className="text-accent font-black tabular-nums">$1,497</span>
+            </div>
+          </div>
+          <button className="w-full rounded-full bg-accent text-brand font-black text-[6px] uppercase tracking-wider py-1.5 flex items-center justify-center gap-1">
+            <Mic size={7} strokeWidth={3} />
+            Record
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function PricingDNAMockup() {
   return (
     <div className="w-full max-w-[480px] mx-auto rounded-[28px] border-2 border-border bg-white overflow-hidden shadow-sm">

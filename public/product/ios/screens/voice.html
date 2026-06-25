@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  .phone { width: 900px; height: 1240px; background: #FFFFFF; border-radius: 72px; overflow: hidden; position: relative; transform-origin: top left; box-shadow: none; }
+  .phone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 560px; background: linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index: 20; pointer-events: none; }
+
+
+
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+
+
+.eyebrow { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:50px; letter-spacing:6px; color:#DFFF00; text-transform:uppercase; margin-bottom:24px; line-height:1; }
+.headline { font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:170px; line-height:0.82; letter-spacing:-3px; text-transform:uppercase; color:#FFFFFF; }
+.headline .lime { color:#DFFF00; }
+
+
+.phone { width:900px; height:1240px; background:#FFFFFF; border-radius:72px; box-shadow:0 60px 150px rgba(0,0,0,0.55); overflow:hidden; position:relative; }
+/* fade phone bottom into navy */
+.phone::after { content:''; position:absolute; left:0; right:0; bottom:0; height:560px; background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%); z-index:20; }
+.statusbar { height:90px; display:flex; align-items:center; justify-content:space-between; padding:0 62px 0 70px; background:#F4F6F9; }
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+.appbar { padding:34px 56px 26px; background:#F4F6F9; display:flex; align-items:center; gap:28px; }
+.appbar .cancel { font-family:'Jakarta'; font-weight:700; font-size:30px; color:#94A3B8; }
+.appbar .title { font-family:'BarlowBlk'; font-weight:900; font-size:42px; letter-spacing:2px; color:#0F172A; text-transform:uppercase; }
+.screen { background:#F4F6F9; padding:8px 56px 30px; }
+.row { background:#FFFFFF; border-radius:34px; padding:36px 46px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(15,23,42,0.05); }
+.row .left { display:flex; align-items:center; gap:28px; min-width:0; }
+.row .dot { width:26px; height:26px; border-radius:50%; background:#DFFF00; flex-shrink:0; box-shadow:0 0 0 6px rgba(223,255,0,0.18); }
+.row .label { font-family:'BarlowBlk'; font-weight:900; font-size:34px; letter-spacing:2px; color:#1E293B; text-transform:uppercase; white-space:nowrap; }
+.row .val { font-family:'Jakarta'; font-weight:700; font-size:30px; color:#0F172A; text-align:right; white-space:nowrap; padding-left:24px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html.no-fade .phone::after { display: none !important; }
+</style></head><body><div class="phone">
+    <div class="statusbar"><span class="time">9:41</span><span class="icons">
+      <svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
+      <span class="batt"><span class="fill"></span></span></span></div>
+    <div class="appbar"><span class="cancel">Cancel</span><span class="title">Voice Assistant</span></div>
+    <div class="screen">
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Job Address</span></div><span class="val">42 Marine Pde</span></div>
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Customer</span></div><span class="val">Sarah Jones</span></div>
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Scope</span></div><span class="val">Kitchen tap</span></div>
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Materials</span></div><span class="val">Compression fittings</span></div>
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Time</span></div><span class="val">2 hrs</span></div>
+      <div class="row"><div class="left"><span class="dot"></span><span class="label">Fees</span></div><span class="val">Call-out + travel</span></div>
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

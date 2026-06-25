@@ -58,8 +58,15 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
           <div className="flex items-center gap-1 sm:gap-2">
             <Link to="/features" className={desktopLinkClass}>Features</Link>
             <Link
-              to="/chrome-extension"
+              to="/voice-invoicing"
               className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-black text-accent hover:text-white transition-colors uppercase tracking-wide"
+            >
+              <Apple size={15} strokeWidth={2.5} />
+              iOS
+            </Link>
+            <Link
+              to="/chrome-extension"
+              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"
             >
               <Chrome size={15} strokeWidth={2.5} />
               Gmail
@@ -106,9 +113,11 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
             <Link to="/features" className={mobileLinkClass}>Features</Link>
             <Link to="/pricing" className={mobileLinkClass}>Pricing</Link>
             <Link to="/how-it-works" className={mobileLinkClass}>How It Works</Link>
-            <Link to="/voice-invoicing" className={mobileLinkClass}>Send invoice fast</Link>
+            <Link to="/voice-invoicing" className={`${mobileLinkClass} !text-accent font-black`}>
+              SMASH for iOS — Voice Invoicing
+            </Link>
             <Link to="/ai-invoicing" className={mobileLinkClass}>AI Invoicing</Link>
-            <Link to="/chrome-extension" className={`${mobileLinkClass} !text-accent font-black`}>
+            <Link to="/chrome-extension" className={mobileLinkClass}>
               SMASH for Gmail — Chrome Extension
             </Link>
 

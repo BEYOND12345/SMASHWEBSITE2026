@@ -1,0 +1,345 @@
+/** iOS landing page — locked copy & structure from build spec. */
+
+export const IOS_LANDING_SEO = {
+  title: 'SMASH — Voice Invoicing. Just Talk, No Typing.',
+  description:
+    'Speak the job, SMASH builds the quote, your customer approves and pays from a link. Professional, GST-ready invoices in under 60 seconds. iPhone.',
+  ogTitle: 'Just talk. SMASH does the rest.',
+  ogDescription:
+    'The fastest way to send a quote. Speak for 20 seconds — invoice sent before you leave the driveway.',
+} as const;
+
+/** Feature-flag: Apple Pay + split payments tiles — enable at soft launch. */
+export const IOS_LAUNCH_FEATURES_ENABLED = false;
+
+export type IosStoryScreenId =
+  | 'voice'
+  | 'quote'
+  | 'pricehub'
+  | 'send'
+  | 'readreceipts'
+  | 'pay'
+  | 'automessage'
+  | 'integrations'
+  | 'customers'
+  | 'cardpayment';
+
+export type IosCalloutAccent = 'lime' | 'green';
+
+/** Photography backdrop behind the phone on a WHITE story section. */
+export type StoryPhoto = {
+  /** Desktop source (~1200px wide, WebP/AVIF, < ~150KB). */
+  src: string;
+  /** Optional art-directed mobile crop (~720px wide) served under 640px. */
+  srcMobile?: string;
+  /** Decorative by default — leave empty unless the photo carries meaning. */
+  alt?: string;
+  /** object-position so the subject stays framed when cropped. e.g. 'center', '50% 30%'. */
+  focus?: string;
+};
+
+/**
+ * Optional photography backdrops, keyed by screen, shown ONLY on white story
+ * sections (behind the phone). Drop exports into /public/product/ios/photos/
+ * and reference them here. Omit a screen to keep the clean white look.
+ *
+ * Example:
+ *   voice: {
+ *     src: '/product/ios/photos/voice.webp',
+ *     srcMobile: '/product/ios/photos/voice-mobile.webp',
+ *     alt: '',
+ *     focus: 'center',
+ *   },
+ */
+export const IOS_STORY_PHOTOS: Partial<Record<IosStoryScreenId, StoryPhoto>> = {};
+
+/** Full-bleed photography background for a story section (photo fills the whole
+ *  section, content sits over a dark tint, text flips to white). */
+export type StoryPhotoBg = StoryPhoto & {
+  /** 0–100 dark-tint strength. ~50 = "slightly dark". Default 55. */
+  tint?: number;
+};
+
+/** Sections rendered as full-bleed photo backgrounds (keyed by screen). */
+export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>> = {
+  voice: {
+    src: '/product/ios/photos/voice.jpg',
+    srcMobile: '/product/ios/photos/voice-mobile.jpg',
+    alt: 'Pool technician speaking a job into SMASH by voice beside the pool',
+    focus: '62% 42%',
+    tint: 52,
+  },
+  send: {
+    src: '/product/ios/photos/send.jpg',
+    srcMobile: '/product/ios/photos/send-mobile.jpg',
+    alt: 'Tradie sending a quote by voice from the driver’s seat',
+    focus: '68% 38%',
+    tint: 52,
+  },
+  cardpayment: {
+    src: '/product/ios/photos/cardpayment.jpg',
+    srcMobile: '/product/ios/photos/cardpayment-mobile.jpg',
+    alt: 'Removalist taking a card payment on site from the back of the truck',
+    focus: '58% 45%',
+    tint: 52,
+  },
+  readreceipts: {
+    src: '/product/ios/photos/readreceipts.jpg',
+    srcMobile: '/product/ios/photos/readreceipts-mobile.jpg',
+    alt: 'Cleaner checking whether the customer opened the quote on her phone',
+    focus: 'calc(72% + 150px) 40%',
+    tint: 52,
+  },
+  automessage: {
+    src: '/product/ios/photos/automessage.jpg',
+    srcMobile: '/product/ios/photos/automessage-mobile.jpg',
+    alt: 'Painter reviewing an auto-generated customer message on site',
+    focus: '55% 50%',
+    tint: 52,
+  },
+  customers: {
+    src: '/product/ios/photos/customers.jpg',
+    srcMobile: '/product/ios/photos/customers-mobile.jpg',
+    alt: 'Landscaper reviewing customer job history on site',
+    focus: 'calc(70% + 200px) 35%',
+    tint: 52,
+  },
+};
+
+export type IosStorySegment = {
+  id: string;
+  screen: IosStoryScreenId;
+  eyebrow: string;
+  headlineWhite: string;
+  headlineLime: string;
+  subline: string;
+  dark?: boolean;
+  imageFirst?: boolean;
+  callout: {
+    side: 'left' | 'right';
+    label: string;
+    value: string;
+    accent: IosCalloutAccent;
+    icon?: 'mic' | 'total' | 'check' | 'send' | 'eye' | 'paid';
+  };
+};
+
+/** §4 — six story segments in scroll order. */
+export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
+  {
+    id: 'voice',
+    screen: 'voice',
+    eyebrow: "THE JOB'S DONE",
+    headlineWhite: 'JUST TALK.',
+    headlineLime: "THAT'S THE WHOLE JOB.",
+    subline: 'Twenty seconds of talking. No typing, ever.',
+    callout: { side: 'left', label: 'CAPTURED', value: 'In your words', accent: 'green', icon: 'mic' },
+    dark: false,
+    imageFirst: false,
+  },
+  {
+    id: 'quote',
+    screen: 'quote',
+    eyebrow: 'PRICED IN SECONDS',
+    headlineWhite: 'IT ALREADY KNOWS',
+    headlineLime: 'YOUR BUSINESS.',
+    subline: 'Your rates, your materials, your GST — filled in for you.',
+    callout: { side: 'right', label: 'TOTAL', value: '$941.60', accent: 'lime', icon: 'total' },
+    dark: true,
+    imageFirst: true,
+  },
+  {
+    id: 'send',
+    screen: 'send',
+    eyebrow: 'SEND IT',
+    headlineWhite: 'OUT THE DOOR',
+    headlineLime: 'BEFORE YOU ARE.',
+    subline: 'One tap. Text, email or a link — message written for you.',
+    callout: { side: 'left', label: 'SENT', value: 'Tracking link', accent: 'green', icon: 'send' },
+    dark: false,
+    imageFirst: false,
+  },
+  {
+    id: 'pay',
+    screen: 'pay',
+    eyebrow: 'GET PAID',
+    headlineWhite: 'THEY APPROVE IT.',
+    headlineLime: 'THEY PAY.',
+    subline: 'One tap from their phone. Paid before the next job starts.',
+    callout: { side: 'right', label: 'NO CHASING', value: 'Paid $1,678', accent: 'green', icon: 'paid' },
+    dark: true,
+    imageFirst: true,
+  },
+  {
+    id: 'cardpayment',
+    screen: 'cardpayment',
+    eyebrow: 'FRICTIONLESS',
+    headlineWhite: 'TAKES CARDS',
+    headlineLime: 'ON THE SPOT.',
+    subline: 'Let customers tap or enter their card on the link. Secure Stripe checkout.',
+    callout: { side: 'left', label: 'SECURE', value: 'Powered by Stripe', accent: 'lime', icon: 'check' },
+    dark: false,
+    imageFirst: false,
+  },
+  {
+    id: 'readreceipts',
+    screen: 'readreceipts',
+    eyebrow: 'READ RECEIPTS',
+    headlineWhite: "YOU'LL KNOW THE SECOND",
+    headlineLime: "IT'S OPENED.",
+    subline: 'No more "I never got it." You see exactly where it\'s at.',
+    callout: { side: 'left', label: 'SEEN', value: '2 min ago', accent: 'green', icon: 'eye' },
+    dark: false,
+    imageFirst: false,
+  },
+  {
+    id: 'pricehub',
+    screen: 'pricehub',
+    eyebrow: 'YOUR KNOWLEDGE BASE',
+    headlineWhite: 'YOUR PRICES.',
+    headlineLime: 'BUILT IN.',
+    subline: 'Save your jobs and rates once. Every quote after is right.',
+    callout: { side: 'right', label: 'SET ONCE', value: 'Always accurate', accent: 'green', icon: 'check' },
+    dark: true,
+    imageFirst: true,
+  },
+  {
+    id: 'automessage',
+    screen: 'automessage',
+    eyebrow: 'WRITTEN FOR YOU',
+    headlineWhite: 'THE MESSAGE',
+    headlineLime: 'WRITES ITSELF.',
+    subline: 'Professional texts and emails, written for you. Tracking link included.',
+    callout: { side: 'left', label: 'NAME, MESSAGE, LINK', value: 'Done for you', accent: 'lime', icon: 'send' },
+    dark: false,
+    imageFirst: false,
+  },
+  {
+    id: 'integrations',
+    screen: 'integrations',
+    eyebrow: 'CONNECTED',
+    headlineWhite: 'SYNCS WITH',
+    headlineLime: 'YOUR TOOLS.',
+    subline: 'Invoices flow straight into Xero and QuickBooks. Payments via Stripe.',
+    callout: { side: 'right', label: 'NO DOUBLE ENTRY', value: 'It just flows through', accent: 'green', icon: 'check' },
+    dark: true,
+    imageFirst: true,
+  },
+  {
+    id: 'customers',
+    screen: 'customers',
+    eyebrow: 'CUSTOMER HISTORY',
+    headlineWhite: 'EVERY JOB.',
+    headlineLime: 'EVERY DOLLAR.',
+    subline: 'A complete history of every customer, what you did, and what they spent.',
+    callout: { side: 'left', label: 'HISTORY', value: '4 jobs / $6k', accent: 'lime', icon: 'total' },
+    dark: false,
+    imageFirst: false,
+  },
+];
+
+export const IOS_HERO = {
+  eyebrow: 'VOICE INVOICING FOR PEOPLE WHO DO THE WORK',
+  headlineWhite: 'JUST TALK.',
+  headlineLime: 'SMASH DOES THE REST.',
+  subline: 'Speak the job. Quote sent before you leave the driveway.',
+  microcopy: 'Free to start · No card needed',
+};
+
+export const IOS_PROBLEM = {
+  eyebrow: 'THE REAL REASON JOBS SLIP',
+  headlineWhite: 'THE FIRST ANSWER BACK',
+  headlineLime: 'WINS THE JOB.',
+  subline:
+    "Most jobs aren't lost on price. They're lost to whoever replied first. By the time you're home at the laptop, someone else already sent theirs.",
+};
+
+export const IOS_PROOF = {
+  eyebrow: 'FROM PEOPLE ON THE TOOLS',
+  headlineWhite: 'THEY STOPPED DOING ADMIN.',
+  headlineLime: "THEY DIDN'T LOOK BACK.",
+  testimonials: [
+    {
+      quote: "I sent it before I'd even left the job.",
+      name: 'Dave R.',
+      trade: 'Plumber',
+      city: 'Byron Bay',
+    },
+    {
+      quote: 'Did the whole quote sitting in the van. Paid by the time I got home.',
+      name: '[Name]',
+      trade: '[trade]',
+      city: '[town]',
+      placeholder: true,
+    },
+    {
+      quote: "I just talk and it's done. Haven't typed a quote in weeks.",
+      name: '[Name]',
+      trade: '[trade]',
+      city: '[town]',
+      placeholder: true,
+    },
+  ],
+};
+
+export const IOS_DESKTOP_BAND = {
+  eyebrow: 'ON THE TOOLS, OR AT THE DESK',
+  headlineWhite: 'TAKE IT',
+  headlineLime: 'TO THE DESK.',
+  body: 'On site, quote by voice on your phone. Back at the laptop, connect SMASH in Chrome or Edge — the same quotes, the same invoices, all synced. Wherever the work happens, SMASH is already there.',
+  linkLabel: 'See how SMASH works on desktop →',
+  linkHref: '/chrome-extension',
+};
+
+export type IosFeatureTile = {
+  title: string;
+  outcome: string;
+  launchOnly?: boolean;
+};
+
+export const IOS_FEATURE_TILES: IosFeatureTile[] = [
+  {
+    title: 'Sent straight to your books',
+    outcome: 'Syncs with Xero and QuickBooks. No double entry.',
+  },
+  {
+    title: 'Card payments built in',
+    outcome: "They pay on the link. The money's on its way before you've packed up.",
+  },
+  {
+    title: 'The follow-up writes itself',
+    outcome: 'Name, message and payment link — done for you.',
+  },
+  {
+    title: 'Apple Pay',
+    outcome: 'Tap to pay, right on the iPhone.',
+    launchOnly: true,
+  },
+  {
+    title: 'Split payments',
+    outcome: 'Deposits and part-payments, sorted.',
+    launchOnly: true,
+  },
+];
+
+export const IOS_FEATURES_SECTION = {
+  eyebrow: "AND WHEN THE JOB'S DONE",
+  headlineWhite: 'THE BORING STUFF,',
+  headlineLime: 'HANDLED.',
+};
+
+export const IOS_FINAL_CTA = {
+  headlineWhite: 'YOU DO THE WORK.',
+  headlineLime: 'SMASH DOES THE REST.',
+  subline: "Invoice sent before you leave the driveway. Start today — it's free.",
+  cta: 'Start Free',
+  microcopy: 'Free to start. No card needed. iPhone only.',
+  integrations: ['Xero', 'QuickBooks', 'Stripe'],
+};
+
+/** Placeholder slots for media added later. */
+export const IOS_MEDIA_SLOTS = {
+  heroVideo: null as string | null,
+  heroGif: null as string | null,
+  storyDemoVideo: null as string | null,
+};

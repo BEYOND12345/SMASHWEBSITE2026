@@ -1,0 +1,92 @@
+/** Typography + layout — aligned with chrome-landing-ui / max-w-6xl site grid. */
+export const iosLanding = {
+  page: 'bg-brand text-white min-h-screen',
+  container: 'max-w-6xl mx-auto px-4 sm:px-6 lg:px-12',
+
+  kicker:
+    'font-body font-bold uppercase tracking-[0.14em] text-brand-muted text-xs sm:text-sm',
+  eyebrow:
+    'font-display-italic font-black uppercase tracking-[0.2em] text-accent text-[11px] sm:text-xs',
+  heroHeadline:
+    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.84] text-[clamp(2.5rem,6.5vw,5rem)]',
+  sectionHeadline:
+    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.84] text-[clamp(2rem,5vw,3.75rem)]',
+  subline: 'font-body text-base sm:text-lg text-brand-subtle font-medium leading-[1.55] max-w-lg',
+  body: 'font-body text-base sm:text-lg text-brand-subtle font-medium leading-[1.55] max-w-lg',
+  caption: 'font-body text-sm text-brand-muted font-medium',
+
+  lime: 'text-accent',
+  white: 'text-white',
+
+  primaryCta:
+    'inline-flex items-center justify-center min-h-[48px] rounded-full bg-accent text-brand font-black uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow px-8 py-4 text-sm whitespace-nowrap',
+  /** Ghost pill — pairs with primary; never a competing download. */
+  secondaryCta:
+    'inline-flex items-center justify-center min-h-[44px] sm:min-h-[48px] rounded-full border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all whitespace-nowrap px-6 sm:px-8',
+  calloutCard:
+    'bg-brand-deep rounded-[28px] shadow-[0_30px_70px_rgba(0,0,0,0.55)] p-6 sm:p-8 border border-white/[0.06]',
+} as const;
+
+export const IOS_PHONE_LOGICAL = { width: 900, height: 1240, radius: 72 } as const;
+
+/** Display widths — story phones scaled ~25% down on two-column breakpoints so
+ *  the composition never overlaps the copy. Mobile stacks single-column, so it
+ *  keeps a comfortable size. Whole composition derives from these widths, so this
+ *  is a pure uniform scale — no per-element design changes. */
+export const IOS_PHONE_DISPLAY = {
+  hero: { desktop: 360, tablet: 315, mobile: 270 },
+  story: { desktop: 251, tablet: 225, mobile: 264 },
+} as const;
+
+export type IosShowcaseVariantId =
+  | 'hero'
+  | 'voice'
+  | 'quote'
+  | 'pricehub'
+  | 'send'
+  | 'readreceipts'
+  | 'pay'
+  | 'automessage'
+  | 'integrations'
+  | 'customers'
+  | 'cardpayment';
+
+export type IosShowcaseVariantConfig = {
+  /** Top position of the callout as a ratio of phoneHeight (e.g. 940/1240 = 0.758). */
+  calloutTopRatio: number;
+  contentScale: number;
+  groundRatio: number;
+  tailLogical: number;
+};
+
+/** Per-composition tuning — aligned perfectly to App Store HTML files. */
+export const IOS_SHOWCASE_VARIANTS: Record<IosShowcaseVariantId, IosShowcaseVariantConfig> = {
+  hero: { calloutTopRatio: 940 / 1240, contentScale: 0.88, groundRatio: 1.07, tailLogical: 420 },
+  voice: { calloutTopRatio: 940 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 280 },
+  quote: { calloutTopRatio: 980 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 340 },
+  pricehub: { calloutTopRatio: 950 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+  send: { calloutTopRatio: 470 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 440 },
+  readreceipts: { calloutTopRatio: 870 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 280 },
+  pay: { calloutTopRatio: 1010 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+  automessage: { calloutTopRatio: 987 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+  integrations: { calloutTopRatio: 997 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+  customers: { calloutTopRatio: 800 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+  cardpayment: { calloutTopRatio: 1010 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
+};
+
+export function iosShowcaseVariant(id: IosShowcaseVariantId): IosShowcaseVariantConfig {
+  return IOS_SHOWCASE_VARIANTS[id];
+}
+
+export function iosShowcaseTailSpace(
+  phoneScale: number,
+  variant: IosShowcaseVariantId,
+): number {
+  const cfg = IOS_SHOWCASE_VARIANTS[variant];
+  const effectiveScale = phoneScale * cfg.contentScale;
+  const min = variant === 'send' ? 20 : 48;
+  return Math.max(Math.round(cfg.tailLogical * effectiveScale * 0.42), min);
+}
+
+export type IosPhoneShowcaseSize = keyof typeof IOS_PHONE_DISPLAY;
+export type IosPhoneSurface = 'light' | 'dark';

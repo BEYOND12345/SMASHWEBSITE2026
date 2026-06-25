@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=900"><style>
+@font-face { font-family:'BarlowBlkIt'; src:url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype'); font-weight:900; font-style:italic; font-display:swap; }
+@font-face { font-family:'BarlowBlk'; src:url('/fonts/BarlowCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+html, body { background:transparent; overflow:hidden; }
+
+.phone {
+  width:900px;
+  height:1240px;
+  background:#FFFFFF;
+  border-radius:72px;
+  overflow:hidden;
+  position:relative;
+  transform-origin:top left;
+}
+.phone::after {
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:560px;
+  background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%);
+  z-index:20;
+}
+
+html.no-fade .phone::after { display: none !important; }
+
+.statusbar {
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 62px 0 70px;
+  background:#F4F6F9;
+}
+.statusbar .time { font-family:'Jakarta'; font-weight:700; font-size:34px; color:#0F172A; }
+.statusbar .icons { display:flex; align-items:center; gap:14px; }
+.batt { width:54px; height:28px; border:3px solid #0F172A; border-radius:7px; position:relative; }
+.batt::after { content:''; position:absolute; right:-7px; top:8px; width:5px; height:12px; background:#0F172A; border-radius:0 2px 2px 0; }
+.batt .fill { position:absolute; left:3px; top:3px; bottom:3px; width:72%; background:#0F172A; border-radius:3px; }
+</style></head><body class="send-screen"><div class="phone">
+    <div class="statusbar"><span class="time">9:41</span><span class="icons">
+<svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
+<span class="batt"><span class="fill"></span></span></span></div>
+    
+    <div style="background:#F4F6F9; padding:26px 56px 18px; display:flex; align-items:center; gap:30px;">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </div>
+    
+    <div style="background:#F4F6F9; padding:6px 56px 36px;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:3px; color:#94A3B8; text-transform:uppercase;">Invoice #INV-9204</span>
+      <div style="background:#FFFFFF; border-radius:34px; padding:40px 46px; margin-top:16px; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+        <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-bottom:14px;">Amount Due</div>
+        <div style="font-family:'BarlowBlkIt'; font-style:italic; font-weight:900; font-size:96px; color:#0F172A; line-height:1.05;">$1,678.46</div>
+        <div style="font-family:'Jakarta'; font-weight:800; font-size:36px; color:#0F172A; margin-top:18px;">Good Hands Handyman</div>
+      </div>
+    </div>
+    
+    <div style="background:#FFFFFF; padding:40px 56px 60px; height:100%;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Pay with Card</span>
+      
+      <div style="margin-top: 30px;">
+        <div style="font-family:'Jakarta'; font-weight:700; font-size:24px; color:#64748B; margin-bottom:12px;">Card Information</div>
+        <div style="border: 3px solid #E2E8F0; border-radius: 20px; padding: 26px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family:'Jakarta'; font-weight:600; font-size:32px; color:#0F172A; letter-spacing:2px;">4242 4242 4242 4242</span>
+            <svg width="48" height="32" viewBox="0 0 32 24" fill="none"><rect width="32" height="24" rx="4" fill="#0F172A"/><circle cx="11" cy="12" r="6" fill="#EA001B"/><circle cx="21" cy="12" r="6" fill="#F59E0B" fill-opacity="0.8"/></svg>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="border: 3px solid #E2E8F0; border-radius: 20px; padding: 26px 32px;">
+                <span style="font-family:'Jakarta'; font-weight:600; font-size:32px; color:#94A3B8;">MM / YY</span>
+            </div>
+            <div style="border: 3px solid #E2E8F0; border-radius: 20px; padding: 26px 32px;">
+                <span style="font-family:'Jakarta'; font-weight:600; font-size:32px; color:#94A3B8;">CVC</span>
+            </div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 40px;">
+        <div style="font-family:'Jakarta'; font-weight:700; font-size:24px; color:#64748B; margin-bottom:12px;">Name on Card</div>
+        <div style="border: 3px solid #E2E8F0; border-radius: 20px; padding: 26px 32px;">
+            <span style="font-family:'Jakarta'; font-weight:600; font-size:32px; color:#0F172A;">Karen Clark</span>
+        </div>
+      </div>
+      
+      <div style="background:#DFFF00; border-radius:30px; padding:40px 40px; margin-top: 48px; display:flex; align-items:center; justify-content:center; gap:24px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span style="font-family:'BarlowBlk'; font-weight:900; font-size:42px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Pay $1,678.46</span>
+      </div>
+      
+    </div>
+  </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

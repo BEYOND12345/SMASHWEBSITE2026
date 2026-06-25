@@ -54,13 +54,15 @@
 
 [[redirects]]
   from = "/voice-invoicing"
-  to = "/voice-invoicing/index.html"
+  to = "/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/voice-invoicing/"
-  to = "/voice-invoicing/index.html"
+  to = "/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/invoice-on-mobile"

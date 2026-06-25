@@ -150,14 +150,21 @@ export function Footer({ showCTA = false }: FooterProps) {
               <p className="font-body text-base text-brand/65 font-medium leading-[1.5] mb-8 flex-1">
                 Talk the job on your phone. Professional invoice before you leave the driveway.
               </p>
+              <Link
+                to="/voice-invoicing"
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto mb-4"
+              >
+                <Apple size={18} strokeWidth={2.5} />
+                See SMASH for iOS
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </Link>
               <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 text-brand/70 font-bold text-sm uppercase tracking-wide hover:text-brand transition-colors"
               >
-                <Apple size={18} strokeWidth={2.5} />
-                {IOS_DOWNLOAD_LABEL}
+                {IOS_DOWNLOAD_LABEL} on the App Store
               </a>
             </div>
           </div>
@@ -206,6 +213,13 @@ export function Footer({ showCTA = false }: FooterProps) {
             <h3 className={`${headingClass} mb-3`}>Quick download</h3>
             <div className="flex flex-col gap-3 mb-6">
               <Link
+                to="/voice-invoicing"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
+              >
+                <Apple size={18} strokeWidth={2.5} />
+                <span>SMASH for iOS</span>
+              </Link>
+              <Link
                 to="/chrome-extension"
                 className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-accent text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
@@ -217,10 +231,10 @@ export function Footer({ showCTA = false }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download SMASH on the App Store"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />
-                <span>Download the iOS app</span>
+                <span>Download on App Store</span>
               </a>
             </div>
 
@@ -278,7 +292,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li><Link to="/how-it-works" className={linkClass}>How It Works</Link></li>
                 <li><Link to="/get-started" className={linkClass}>Get started</Link></li>
                 <li><Link to="/quote-to-invoice" className={linkClass}>Quote to invoice</Link></li>
-                <li><Link to="/voice-invoicing" className={linkClass}>Send invoice fast</Link></li>
+                <li>
+                  <Link to="/voice-invoicing" className="text-base text-accent hover:text-white transition-colors font-black">
+                    SMASH for iOS
+                  </Link>
+                </li>
                 <li><Link to="/ai-invoicing" className={linkClass}>AI Invoicing</Link></li>
                 <li><Link to="/gst-compliant-invoicing" className={linkClass}>GST Invoicing</Link></li>
                 <li>

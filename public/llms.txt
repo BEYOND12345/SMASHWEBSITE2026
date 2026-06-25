@@ -26,7 +26,7 @@ Key facts:
 - [Changelog](https://smashinvoices.com/changelog): Recent shipped updates.
 
 ## Product / category pages
-- [Send invoice fast (voice)](https://smashinvoices.com/voice-invoicing): Problem-solution pillar — send the invoice before you leave the job. Voice on iPhone, catalog pricing, verify before send.
+- [SMASH for iOS — voice invoicing](https://smashinvoices.com/voice-invoicing): Full product landing — voice quotes on iPhone, App Store screens, pricing, and download.
 - [Gmail invoice extension](https://smashinvoices.com/gmail-invoice): Desk register — turn the open email thread into a priced, sent invoice without leaving Gmail. Syncs to Xero and QuickBooks.
 - [AI Invoicing](https://smashinvoices.com/ai-invoicing): AI invoicing that prices from your catalog — talk on iPhone or scan Gmail, verify, send.
 - [Integrations](https://smashinvoices.com/integrations): Xero and QuickBooks sync from Starter — send in the field or Gmail, push when ready.

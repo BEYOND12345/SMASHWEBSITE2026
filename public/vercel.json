@@ -28,6 +28,11 @@
       "status": 200
     },
     {
+      "src": "^/voice-invoicing/?$",
+      "dest": "/index.html",
+      "status": 200
+    },
+    {
       "src": "^/chrome-extension/?$",
       "dest": "/index.html",
       "status": 200
