@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
 import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube, Mail, ArrowRight } from 'lucide-react';
+import { EdgeLogoMark } from './icons/EdgeLogoMark';
 import {
   APP_STORE_URL,
   CHROME_STORE_URL,
+  EDGE_STORE_URL,
   IOS_DOWNLOAD_LABEL,
 } from '../data/download-urls';
 
@@ -227,6 +229,15 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <span>SMASH for Gmail</span>
               </Link>
               <a
+                href={EDGE_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all"
+              >
+                <EdgeLogoMark size={18} className="shrink-0" />
+                <span>SMASH for Edge</span>
+              </a>
+              <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -302,6 +313,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li>
                   <Link to="/chrome-extension" className="text-base text-accent hover:text-white transition-colors font-black">
                     SMASH for Gmail (Chrome)
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/chrome-extension" className="text-base text-accent hover:text-white transition-colors font-black">
+                    SMASH for Edge (Microsoft)
                   </Link>
                 </li>
                 <li>

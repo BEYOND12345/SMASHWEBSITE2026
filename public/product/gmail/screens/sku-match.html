@@ -1,0 +1,60 @@
+<html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,-apple-system,sans-serif; background:#F4F6F9; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:40px; }
+.container { background:#fff; border-radius:12px; padding:40px; max-width:600px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+.header { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:#0F172A; letter-spacing:-1px; margin-bottom:12px; }
+.subheader { color:#5f6368; font-size:14px; margin-bottom:32px; }
+.matched-item { display:flex; align-items:flex-start; gap:20px; padding:20px; background:#f8fafb; border-radius:8px; margin-bottom:16px; border-left:4px solid #dfff00; }
+.item-left { flex:1; }
+.item-requested { color:#5f6368; font-size:12px; }
+.item-name { color:#0F172A; font-weight:600; font-size:14px; margin-top:4px; }
+.match-badge { display:inline-flex; align-items:center; gap:6px; background:#e8f5e9; color:#2e7d32; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:600; margin-top:8px; }
+.item-sku { color:#5f6368; font-size:12px; margin-top:4px; }
+.item-right { text-align:right; }
+.price { font-weight:900; color:#dfff00; font-size:20px; }
+.price-label { color:#5f6368; font-size:11px; margin-top:4px; }
+</style></head><body>
+<div class="container">
+  <div class="header">MATCHED TO YOUR CATALOGUE</div>
+  <div class="subheader">Every line item priced from your own system</div>
+  
+  <div class="matched-item">
+    <div class="item-left">
+      <div class="item-requested">Requested</div>
+      <div class="item-name">15mm copper pipe (10m)</div>
+      <match style="display:block;" class="match-badge">✓ Matched SKU-CP-15-10M</match>
+      <div class="item-sku" style="margin-top:8px;">Your price: $145.00</div>
+    </div>
+    <div class="item-right">
+      <div class="price">$145</div>
+      <div class="price-label">from your catalogue</div>
+    </div>
+  </div>
+  
+  <div class="matched-item">
+    <div class="item-left">
+      <div class="item-requested">Requested</div>
+      <div class="item-name">22mm end feed fittings (10-pack)</div>
+      <div class="match-badge">✓ Matched SKU-FIT-22-10</div>
+      <div class="item-sku" style="margin-top:8px;">Your price: $56.00</div>
+    </div>
+    <div class="item-right">
+      <div class="price">$56</div>
+      <div class="price-label">from your catalogue</div>
+    </div>
+  </div>
+  
+  <div class="matched-item">
+    <div class="item-left">
+      <div class="item-requested">Requested</div>
+      <div class="item-name">Labour (3 hours)</div>
+      <div class="match-badge">✓ Matched LABOUR-3H</div>
+      <div class="item-sku" style="margin-top:8px;">Your rate: $85/hour</div>
+    </div>
+    <div class="item-right">
+      <div class="price">$255</div>
+      <div class="price-label">from your catalogue</div>
+    </div>
+  </div>
+</div>
+</body></html>
