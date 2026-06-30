@@ -207,6 +207,7 @@ export function IosAppLandingPage() {
               segment={segment}
               dark={segment.dark}
               imageFirst={segment.imageFirst}
+              photoBgEnabled={index % 2 === 0}
             />
           </div>
         ))}

@@ -66,7 +66,10 @@ export type StoryPhotoBg = StoryPhoto & {
   tint?: number;
 };
 
-/** Sections rendered as full-bleed photo backgrounds (keyed by screen). */
+/**
+ * Full-bleed photo backgrounds (keyed by screen).
+ * Only even-index story rows render these — odd rows stay solid white or navy.
+ */
 export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>> = {
   voice: {
     src: '/product/ios/photos/voice.jpg',
@@ -89,25 +92,18 @@ export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>>
     focus: '58% 45%',
     tint: 52,
   },
-  readreceipts: {
-    src: '/product/ios/photos/readreceipts.jpg',
-    srcMobile: '/product/ios/photos/readreceipts-mobile.jpg',
-    alt: 'Cleaner checking whether the customer opened the quote on her phone',
-    focus: 'calc(72% + 150px) 40%',
-    tint: 52,
-  },
-  automessage: {
-    src: '/product/ios/photos/automessage.jpg',
-    srcMobile: '/product/ios/photos/automessage-mobile.jpg',
-    alt: 'Painter reviewing an auto-generated customer message on site',
-    focus: '55% 50%',
-    tint: 52,
-  },
-  customers: {
+  pricehub: {
     src: '/product/ios/photos/customers.jpg',
     srcMobile: '/product/ios/photos/customers-mobile.jpg',
-    alt: 'Landscaper reviewing customer job history on site',
+    alt: 'Tradie reviewing saved rates and job history on site',
     focus: 'calc(70% + 200px) 35%',
+    tint: 52,
+  },
+  integrations: {
+    src: '/product/ios/photos/automessage.jpg',
+    srcMobile: '/product/ios/photos/automessage-mobile.jpg',
+    alt: 'Tradie on site with phone ready to sync invoices to accounting software',
+    focus: '55% 50%',
     tint: 52,
   },
 };
@@ -289,12 +285,14 @@ export const IOS_PROOF = {
 };
 
 export const IOS_DESKTOP_BAND = {
-  eyebrow: 'ON THE TOOLS, OR AT THE DESK',
-  headlineWhite: 'TAKE IT',
-  headlineLime: 'TO THE DESK.',
-  body: 'On site, quote by voice on your phone. Back at the laptop, connect SMASH in Chrome or Edge — the same quotes, the same invoices, all synced. Wherever the work happens, SMASH is already there.',
-  linkLabel: 'See how SMASH works on desktop →',
+  eyebrow: 'IPHONE ON SITE. GMAIL AT YOUR DESK.',
+  headlineWhite: 'BACK AT THE LAPTOP,',
+  headlineLime: "THE QUOTE'S DONE.",
+  body:
+    'Talk on the job with your iPhone. When a quote request lands in Gmail, SMASH reads the thread, prices your rates, and the reply is ready — synced straight into Xero or QuickBooks. Same account. No retyping.',
+  linkLabel: 'See SMASH for Gmail & Edge →',
   linkHref: '/chrome-extension',
+  mediaCaption: 'Priced from your rates — check it and hit reply.',
 };
 
 export type IosFeatureTile = {

@@ -15,8 +15,14 @@ const desktopLinkClass =
 const mobileLinkClass =
   'block px-4 py-3 text-base font-bold text-white/80 hover:text-accent hover:bg-white/5 rounded-lg transition-colors uppercase tracking-wide';
 
-const mobileSectionHeading =
-  'px-4 pt-4 pb-1 text-xs font-black uppercase tracking-widest text-white/40';
+/** Primary nav — homepage is the logo; these are the product paths. */
+const NAV_LINKS = [
+  { to: '/voice-invoicing', label: 'iOS', icon: Apple, accent: true },
+  { to: '/chrome-extension', label: 'Gmail Extension', icon: Chrome },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/integrations', label: 'Integrations' },
+  { to: '/blog', label: 'Blog' },
+] as const;
 
 export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string } = {}) {
   const [open, setOpen] = useState(false);
@@ -48,26 +54,20 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
           <SmashLogoLink onClick={() => setOpen(false)} />
 
           <div className="flex items-center gap-1 sm:gap-2">
-            <Link to="/features" className={desktopLinkClass}>Features</Link>
-            <Link
-              to="/voice-invoicing"
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-black text-accent hover:text-white transition-colors uppercase tracking-wide"
-            >
-              <Apple size={15} strokeWidth={2.5} />
-              iOS
-            </Link>
-            <Link
-              to="/chrome-extension"
-              className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors uppercase tracking-wide"
-            >
-              <Chrome size={15} strokeWidth={2.5} />
-              Gmail
-            </Link>
-            <Link to="/pricing" className={desktopLinkClass}>Pricing</Link>
-            <Link to="/tools" className={`${desktopLinkClass} hidden lg:block`}>Tools</Link>
-            <Link to="/integrations" className={`${desktopLinkClass} hidden lg:block`}>Integrations</Link>
-            <Link to="/smash-vs-xero" className={`${desktopLinkClass} hidden xl:block`}>Compare</Link>
-            <Link to="/blog" className={`${desktopLinkClass} hidden lg:block`}>Blog</Link>
+            {NAV_LINKS.map(({ to, label, icon: Icon, accent }) => (
+              <Link
+                key={to}
+                to={to}
+                className={
+                  accent
+                    ? 'hidden md:flex items-center gap-1.5 px-3 py-2 text-sm font-black text-accent hover:text-white transition-colors uppercase tracking-wide'
+                    : `hidden md:flex items-center gap-1.5 ${desktopLinkClass.replace('hidden md:block ', '')}`
+                }
+              >
+                {Icon && <Icon size={15} strokeWidth={2.5} />}
+                {label}
+              </Link>
+            ))}
 
             <a
               href={resolvedCtaUrl}
@@ -101,38 +101,16 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
       {open && (
         <div className="md:hidden fixed inset-x-0 top-[60px] bottom-0 bg-brand border-t border-white/10 overflow-y-auto z-40">
           <div className="max-w-7xl mx-auto px-3 py-4 pb-24">
-            <div className={mobileSectionHeading}>Product</div>
-            <Link to="/features" className={mobileLinkClass}>Features</Link>
-            <Link to="/pricing" className={mobileLinkClass}>Pricing</Link>
-            <Link to="/how-it-works" className={mobileLinkClass}>How It Works</Link>
-            <Link to="/voice-invoicing" className={`${mobileLinkClass} !text-accent font-black`}>
-              SMASH for iOS — Voice Invoicing
-            </Link>
-            <Link to="/ai-invoicing" className={mobileLinkClass}>AI Invoicing</Link>
-            <Link to="/chrome-extension" className={mobileLinkClass}>
-              SMASH for Gmail — Chrome Extension
-            </Link>
-
-            <div className={mobileSectionHeading}>Tools</div>
-            <Link to="/tools" className={mobileLinkClass}>All Free Tools</Link>
-            <Link to="/quote-generator" className={mobileLinkClass}>Quote Generator</Link>
-            <Link to="/invoice-generator" className={mobileLinkClass}>Invoice Generator</Link>
-            <Link to="/gst-calculator" className={mobileLinkClass}>GST Calculator</Link>
-            <Link to="/hourly-rate-calculator" className={mobileLinkClass}>Hourly Rate Calculator</Link>
-
-            <div className={mobileSectionHeading}>Guides</div>
-            <Link to="/tradie-hourly-rates" className={mobileLinkClass}>Tradie Hourly Rates</Link>
-            <Link to="/materials-pricing" className={mobileLinkClass}>Materials Pricing</Link>
-            <Link to="/customer-approval" className={mobileLinkClass}>Customer Approval</Link>
-            <Link to="/for-ndis-support-workers" className={mobileLinkClass}>NDIS Invoicing</Link>
-
-            <div className={mobileSectionHeading}>Company</div>
-            <Link to="/integrations" className={mobileLinkClass}>Integrations</Link>
-            <Link to="/smash-vs-xero" className={mobileLinkClass}>Compare</Link>
-            <Link to="/blog" className={mobileLinkClass}>Blog</Link>
-            <Link to="/founder" className={mobileLinkClass}>Meet the Founder</Link>
-            <Link to="/faq" className={mobileLinkClass}>FAQ</Link>
-            <Link to="/contact" className={mobileLinkClass}>Contact</Link>
+            {NAV_LINKS.map(({ to, label, icon: Icon, accent }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`${mobileLinkClass}${accent ? ' !text-accent font-black' : ''}${Icon ? ' flex items-center gap-2' : ''}`}
+              >
+                {Icon && <Icon size={18} strokeWidth={2.5} />}
+                {label}
+              </Link>
+            ))}
 
             {/* Download buttons */}
             <div className="px-3 pt-6 pb-4 flex gap-3 flex-wrap">
