@@ -3,7 +3,7 @@
  * Used by React pages and static HTML generators.
  */
 export const SITE = 'https://smashinvoices.com';
-export const DATE_MODIFIED = '2026-06-14';
+export const DATE_MODIFIED = '2026-07-01';
 
 export const HREFLANG_LINKS = [
   { hreflang: 'x-default', href: `${SITE}/` },
@@ -36,13 +36,13 @@ export type MainPageSeo = {
 export const mainPages: Record<string, MainPageSeo> = {
   home: {
     path: '/',
-    title: 'SMASH Invoices — Quote Sent Before They Call Someone Else',
+    title: 'SMASH Invoices — Never Type an Invoice Again',
     description:
-      'SMASH turns a customer email or 20 seconds of talking into a priced, tax-ready quote. Verify in 30 seconds, send, get back to work. Free to start on iPhone and Chrome.',
-    h1: 'Send the quote before they call someone else.',
-    brandLine: BRAND_LINE,
+      'Voice invoicing on iPhone and quotes from Gmail in Chrome or Edge. Priced, tax-ready invoices in under 60 seconds — built from your rates, not guessed. Free to start.',
+    h1: 'Never type an invoice again.',
+    brandLine: 'Invoicing for people who hate typing.',
     answerBlock:
-      'SMASH Invoices helps service businesses send a priced quote or invoice in under 60 seconds — by voice on iPhone or from a Gmail sidebar in Chrome. It builds from your own pricing, applies GST/VAT/sales tax, and works with Xero and QuickBooks. Free to start. Live in Australia, New Zealand, the UK, the US and Canada.',
+      'SMASH Invoices helps self-employed service workers send a priced quote or invoice in under 60 seconds — by voice on iPhone or from Gmail in Chrome or Edge. It builds from your own pricing, applies GST/VAT/sales tax, and syncs with Xero and QuickBooks. Free to start. Live in Australia, New Zealand, the UK, the US and Canada.',
     cta: 'both',
     faqs: [
       {
