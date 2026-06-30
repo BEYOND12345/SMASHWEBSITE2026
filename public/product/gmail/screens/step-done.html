@@ -1,0 +1,64 @@
+<html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,-apple-system,sans-serif; background:#F4F6F9; }
+.sidebar { padding:24px; background:#F4F6F9; height:100vh; overflow:auto; }
+.header { color:#5f6368; font-size:12px; letter-spacing:1px; margin-bottom:8px; }
+.title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:#0F172A; letter-spacing:-1px; margin-bottom:20px; }
+.quote-card { background:#fff; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.customer { color:#5f6368; font-size:12px; margin-bottom:4px; }
+.job-title { font-weight:600; color:#0F172A; font-size:16px; margin-bottom:16px; padding-bottom:16px; border-bottom:2px solid #f0f0f0; }
+.line { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #f0f0f0; font-size:14px; }
+.line-name { color:#0F172A; font-weight:500; }
+.line-price { color:#0F172A; font-weight:700; }
+.total-line { display:flex; justify-content:space-between; padding:16px 0; border-top:2px solid #0F172A; margin-top:8px; }
+.total-label { font-weight:900; color:#0F172A; }
+.total-amount { font-weight:900; font-size:24px; color:#0F172A; }
+.action-buttons { display:flex; gap:12px; margin-top:20px; }
+.btn { flex:1; padding:12px; border-radius:8px; border:none; font-weight:600; cursor:pointer; font-size:13px; }
+.btn-send { background:#dfff00; color:#0F172A; }
+.btn-edit { background:#f0f0f0; color:#0F172A; }
+.status { background:#e8f5e9; color:#2e7d32; padding:12px; border-radius:8px; margin-top:16px; text-align:center; font-size:12px; font-weight:600; }
+</style></head><body>
+<div class="sidebar">
+  <div class="header">QUOTE READY</div>
+  <div class="title">PLUMBING SUPPLIES</div>
+  
+  <div class="quote-card">
+    <div class="customer">From: Your Plumbing Co</div>
+    <div class="job-title">Plumbing supplies for residential job</div>
+    
+    <div class="line">
+      <span class="line-name">15mm copper pipe (10m)</span>
+      <span class="line-price">$145</span>
+    </div>
+    <div class="line">
+      <span class="line-name">22mm copper pipe (5m)</span>
+      <span class="line-price">$98</span>
+    </div>
+    <div class="line">
+      <span class="line-name">15mm fittings (10-pack)</span>
+      <span class="line-price">$42</span>
+    </div>
+    <div class="line">
+      <span class="line-name">22mm fittings (10-pack)</span>
+      <span class="line-price">$56</span>
+    </div>
+    <div class="line">
+      <span class="line-name">Labour (3 hours @ $85)</span>
+      <span class="line-price">$255</span>
+    </div>
+    
+    <div class="total-line">
+      <span class="total-label">TOTAL</span>
+      <span class="total-amount">$596</span>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="btn btn-send">SEND QUOTE →</button>
+      <button class="btn btn-edit">EDIT</button>
+    </div>
+    
+    <div class="status">✓ Ready to send — or edit and reply in Gmail</div>
+  </div>
+</div>
+</body></html>

@@ -617,7 +617,7 @@ export function LandingPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Download the iOS app
+              Start Free on iPhone
             </a>
             <p className="font-body text-xs text-white/35 font-medium mt-3">No card needed · Cancel anytime</p>
           </AnimateIn>

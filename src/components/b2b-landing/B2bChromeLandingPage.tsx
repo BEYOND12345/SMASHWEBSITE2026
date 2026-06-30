@@ -15,7 +15,14 @@ import {
   HERO_GIF_B2B,
   HERO_VIDEO_B2B_EMAIL_QUOTE,
   HERO_VIDEO_B2B_PDF_SKU,
+  GMAIL_LANDING_CTA,
 } from '../../data/download-urls';
+import { GMAIL_SECTION_PHOTO_BG } from '../../data/gmail-landing-spec';
+import { GmailSectionPhotoBg } from '../gmail-product-landing/GmailPhotoSection';
+import { GmailFinalInstallCtas } from '../gmail-product-landing/GmailInstallCtas';
+import { GmailWorksWithStrap } from '../gmail-product-landing/GmailWorksWithStrap';
+import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
+import { IosSubline } from '../ios-product-landing/IosSubline';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -218,13 +225,15 @@ export function B2bChromeLandingPage() {
       />
       <SchemaMarkup schemas={[aiOrgSchema, chromeAppSchema]} />
 
-      <Nav ctaUrl={c.chromeStoreUrl} ctaLabel="Install Free" />
+      <Nav ctaUrl={c.chromeStoreUrl} ctaLabel={GMAIL_LANDING_CTA} />
 
+      <div className={iosLanding.page}>
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
+        {GMAIL_SECTION_PHOTO_BG.hero && <GmailSectionPhotoBg photo={GMAIL_SECTION_PHOTO_BG.hero} />}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block z-[1]" />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className={`${iosLanding.container} relative z-10`}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="pb-16 md:pb-24">
@@ -233,21 +242,17 @@ export function B2bChromeLandingPage() {
                   <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">RFQ to quote in Gmail</span>
                 </div>
 
-                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
+                <h1 className={`${iosLanding.heroHeadline} mb-5`}>
                   <span className="block text-white">{c.hero.h1Lead}</span>
                   <span className="block text-accent">{c.hero.h1Accent}</span>
                 </h1>
 
-                <div className="space-y-5 mb-10 max-w-lg">
-                  <p className="font-body text-base sm:text-lg text-white/75 font-semibold leading-[1.55]">
-                    {c.hero.solution}
-                  </p>
-                  <p className="font-sans font-black uppercase tracking-tight text-accent text-xl sm:text-2xl leading-[1.1]">
-                    {c.hero.payoff}
-                  </p>
-                </div>
+                <IosSubline className={`${iosLanding.subline} mb-0 max-w-lg`}>{c.hero.solution}</IosSubline>
+                <p className="font-sans font-black uppercase tracking-tight text-accent text-xl sm:text-2xl leading-[1.1] mt-5">
+                  {c.hero.payoff}
+                </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 mt-8">
                   <ChromePrimaryCta href={c.chromeStoreUrl} label="Install Free" />
                   <a
                     href="#how-it-works"
@@ -256,13 +261,14 @@ export function B2bChromeLandingPage() {
                     {c.hero.secondaryCta}
                   </a>
                 </div>
-
-                <div className="pt-6 mt-8 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
-                  <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30 shrink-0">
-                    Works with
-                  </span>
-                  <BrandLogos className="opacity-100" />
-                </div>
+                <p className="mt-4">
+                  <Link
+                    to="/voice-invoicing"
+                    className="font-body font-semibold text-white/55 hover:text-accent transition-colors text-sm"
+                  >
+                    On site? SMASH for iPhone →
+                  </Link>
+                </p>
               </div>
             </AnimateIn>
 
@@ -276,6 +282,8 @@ export function B2bChromeLandingPage() {
           </div>
         </div>
       </section>
+
+      <GmailWorksWithStrap />
 
       {/* ─── STRAPLINE ────────────────────────────────────────────── */}
       <section className="bg-brand border-t border-white/10 py-6 md:py-8">
@@ -573,11 +581,20 @@ export function B2bChromeLandingPage() {
               <ShieldCheck size={13} className="text-accent" strokeWidth={2.5} />
               <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{c.installCta.eyebrow}</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-8">
-              Ready from the first quote
+            <h2 className={`${iosLanding.heroHeadline} mb-8`}>
+              <span className="block text-white">Ready from the</span>
+              <span className="block text-accent">first quote</span>
             </h2>
-            <ChromePrimaryCta href={c.chromeStoreUrl} label="Install Free" size="lg" />
-            <p className="font-body text-base text-white/45 font-medium mt-6">{c.installCta.subtext}</p>
+            <GmailFinalInstallCtas />
+            <p className={`${iosLanding.caption} mt-6`}>{c.installCta.subtext}</p>
+            <p className="mt-4">
+              <Link
+                to="/voice-invoicing"
+                className="font-body font-semibold text-white/55 hover:text-accent transition-colors text-sm"
+              >
+                On site? SMASH for iPhone →
+              </Link>
+            </p>
             <ChromeStoreRatingLink href={c.chromeStoreUrl} className="mt-4" />
           </AnimateIn>
         </div>
@@ -606,6 +623,7 @@ export function B2bChromeLandingPage() {
       </section>
 
       <Footer />
+      </div>
     </>
   );
 }

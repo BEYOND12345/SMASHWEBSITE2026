@@ -40,12 +40,12 @@ function hreflangTags(): string {
 
 function ctaHtml(mode: MainPageSeo['cta']): string {
   if (mode === 'ios') {
-    return `<a class="cta" href="${APP_STORE}">Start Free</a>`;
+    return `<a class="cta" href="${APP_STORE}">Start Free on iPhone</a>`;
   }
   if (mode === 'chrome') {
-    return `<a class="cta" href="${CHROME_STORE}">Add to Chrome — Free</a>`;
+    return `<a class="cta" href="${CHROME_STORE}">Add to your browser</a>`;
   }
-  return `<a class="cta" href="${APP_STORE}">Start Free</a><a class="cta" href="${CHROME_STORE}">Add to Chrome — Free</a>`;
+  return `<a class="cta" href="${APP_STORE}">Start Free on iPhone</a><a class="cta cta-ghost" href="/chrome-extension">Add to your browser</a>`;
 }
 
 export function buildStaticPage(page: MainPageSeo, extraBody = ''): string {
@@ -107,12 +107,15 @@ ${hreflangTags()}
   <script type="application/ld+json">${ld(webPageLd)}</script>
   ${faqLd ? `<script type="application/ld+json">${ld(faqLd)}</script>` : ''}
   <style>
-    body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#0f172a}
-    h1{font-size:2rem;line-height:1.15;margin:0 0 8px}
-    .brand{color:#64748b;font-weight:600;margin:0 0 20px}
-    .answer{background:#f8fafc;border-left:4px solid #DFFF00;padding:16px;margin:24px 0}
-    nav a{margin-right:12px}
+    body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#f5f5f5;background:#0f172a}
+    h1{font-size:2rem;line-height:1.15;margin:0 0 8px;color:#fff}
+    .brand{color:rgba(255,255,255,0.55);font-weight:600;margin:0 0 20px}
+    .answer{background:rgba(255,255,255,0.04);border-left:4px solid #DFFF00;padding:16px;margin:24px 0;color:rgba(255,255,255,0.85)}
+    nav a{margin-right:12px;color:#DFFF00}
     .cta{display:inline-block;background:#DFFF00;color:#0f172a;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:8px 8px 0 0}
+    .cta-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.25)}
+    section h2{color:#fff}
+    details summary{color:#fff}
   </style>
 </head>
 <body>

@@ -6,8 +6,9 @@ import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { CheckCircle2, Zap, Clock, Lightbulb, Rocket } from 'lucide-react';
 import { Nav } from '../components/nav';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
+import { DualProductCtas } from '../components/marketing/DualProductCtas';
+import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 type Status = 'live' | 'building' | 'soon' | 'planned' | 'considering';
 
@@ -104,40 +105,38 @@ export function Roadmap() {
         { name: 'Roadmap', url: 'https://smashinvoices.com/roadmap' },
       ])} />
 
+      <div className={iosLanding.page}>
       <Nav />
 
       {/* HERO */}
-      <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
-        {/* Ambient accent glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Product roadmap</p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              What we're<br />building next.
-            </h1>
-            <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-10">
-              SMASH is built by one person, for tradies. Every item here came from real feedback from real users.
-              If you want something on this list, use the app — your voice shapes what gets built.
-            </p>
-          </AnimateIn>
+      <MarketingPhotoHero contentClassName="pt-20 pb-16 md:pt-28 md:pb-24">
+        <AnimateIn direction="up">
+          <p className={`${iosLanding.eyebrow} mb-5`}>Product roadmap</p>
+          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-3xl`}>
+            <span className="block text-white">What we're</span>
+            <span className="block text-accent">building next.</span>
+          </h1>
+          <p className={`${iosLanding.subline} max-w-2xl mb-10`}>
+            SMASH is built by one person, for tradies. Every item here came from real feedback from real users.
+            If you want something on this list, use the app — your voice shapes what gets built.
+          </p>
+        </AnimateIn>
 
-          {/* Status legend */}
-          <AnimateIn direction="up" delay={100}>
-            <div className="flex flex-wrap gap-3">
-              {(Object.entries(statusBadge) as [Status, typeof statusBadge[Status]][]).map(([, { label, classes }]) => (
-                <span key={label} className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-widest ${classes}`}>
-                  {label}
-                </span>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+        {/* Status legend */}
+        <AnimateIn direction="up" delay={100}>
+          <div className="flex flex-wrap gap-3">
+            {(Object.entries(statusBadge) as [Status, typeof statusBadge[Status]][]).map(([, { label, classes }]) => (
+              <span key={label} className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-black uppercase tracking-widest ${classes}`}>
+                {label}
+              </span>
+            ))}
+          </div>
+        </AnimateIn>
+      </MarketingPhotoHero>
 
       {/* ROADMAP SECTIONS */}
       <section className="bg-brand pb-24 md:pb-32">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 space-y-16 md:space-y-24">
+        <div className={`${iosLanding.container} max-w-5xl space-y-16 md:space-y-24`}>
           {roadmap.map((group, gi) => {
             const Icon = group.icon;
             return (
@@ -243,29 +242,17 @@ export function Roadmap() {
             {/* Try it */}
             <AnimateIn direction="right">
               <div className="bg-white/5 border-2 border-white/10 rounded-[32px] p-8 md:p-10 h-full flex flex-col">
-                <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-3">
-                  Ready to use<br />what's live?
+                <h2 className={`${iosLanding.sectionHeadline} mb-3`}>
+                  <span className="block text-white">Ready to use</span>
+                  <span className="block text-accent">what's live?</span>
                 </h2>
                 <p className="font-body text-white/60 font-medium text-base leading-[1.5] mb-8 flex-1">
                   Voice-to-invoice, read receipts, Stripe payments, customer history — all available right now. Free to start.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={APP_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
-                  >
-                    Download the iOS app
-                  </a>
-                  <Link
-                    to="/how-it-works"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm uppercase tracking-wide hover:bg-white/10 transition-all"
-                  >
-                    See How It Works
-                  </Link>
-                </div>
-                <p className="font-body text-xs text-white/30 font-medium mt-4">No credit card · Cancel anytime</p>
+                <DualProductCtas
+                  secondary={{ kind: 'link', to: '/how-it-works', label: 'See how it works' }}
+                  showMicrocopy
+                />
               </div>
             </AnimateIn>
           </div>
@@ -273,6 +260,7 @@ export function Roadmap() {
       </section>
 
       <Footer />
+      </div>
     </>
   );
 }

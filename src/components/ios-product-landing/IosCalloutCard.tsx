@@ -87,8 +87,8 @@ export function IosSpecHeadline({
     <div className={`${align} ${className}`.trim()}>
       <p className={`${iosLanding.eyebrow} ${centered ? 'text-center' : ''}`}>{eyebrow}</p>
       <h2 className={headlineClass}>
-        <span className={primary}>{headlineWhite} </span>
-        <span className={iosLanding.lime}>{headlineLime}</span>
+        <span className={`block ${primary}`}>{headlineWhite}</span>
+        <span className={`block ${iosLanding.lime}`}>{headlineLime}</span>
       </h2>
       {subline && (
         <IosSubline

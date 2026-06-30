@@ -10,6 +10,7 @@ import { pseoPageRegistry, type PseoPageEntry } from '../src/data/pseo/registry.
 import { nicheBySlug } from '../src/data/pseo/niches.ts';
 import { softwareBySlug } from '../src/data/pseo/software-alternatives.ts';
 import { regionalMapping, type PseoCountryCode } from '../src/data/pseo/regional-mapping.ts';
+import { SMASH_LOGO_NAV_LINK_INLINE } from './brand-logo.ts';
 import {
   buildAlternativePageContent,
   buildPersonaPageContent,
@@ -137,21 +138,25 @@ function buildStaticHtml(page: PseoPageEntry): string {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <script type="application/ld+json">${renderJsonLd(appLd)}</script>
   <style>
-    body{margin:0;background:#0a0a0a;color:#f5f5f5;font-family:system-ui,sans-serif;line-height:1.6;padding:0 24px 48px;}
-    a{color:#D9F99D;} main{max-width:720px;margin:0 auto;padding-top:32px;}
-    h1{font-size:2rem;line-height:1.15;} .cta{display:inline-block;background:#D9F99D;color:#0a0a0a;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;margin:16px 0;}
+    body{margin:0;background:#0f172a;color:#f5f5f5;font-family:system-ui,sans-serif;line-height:1.6;padding:0 24px 48px;}
+    a{color:#DFFF00;} main{max-width:720px;margin:0 auto;padding-top:32px;}
+    h1{font-size:2rem;line-height:1.15;color:#fff;} .cta{display:inline-block;background:#DFFF00;color:#0f172a;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;margin:16px 8px 0 0;}
+    .cta-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.25);}
+    header{border-bottom:1px solid rgba(255,255,255,0.1);}
   </style>
 </head>
 <body>
   <header style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
-    <a href="/" style="color:#fff;font-weight:800;text-transform:uppercase;text-decoration:none;">SMASH</a>
-    <a href="${chromeUrl}" rel="nofollow" class="cta">Add to Chrome — Free</a>
+    ${SMASH_LOGO_NAV_LINK_INLINE}
+    <a href="${chromeUrl}" rel="nofollow" class="cta">Add to your browser</a>
   </header>
   <main>
     <h1>${escapeHtml(headline)}</h1>
     <p>${escapeHtml(subheadline)}</p>
     ${bodySections}
-    <p><a href="${chromeUrl}" rel="nofollow" class="cta">Add to Chrome — Free</a></p>
+    <a href="${chromeUrl}" rel="nofollow" class="cta">Add to your browser</a>
+    <a href="/voice-invoicing" class="cta cta-ghost">SMASH for iPhone</a>
+    <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-top:16px;"><a href="/chrome-extension">See the full Gmail extension →</a></p>
     <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-top:32px;">
       <a href="/sitemap-directory">pSEO directory</a>
     </p>

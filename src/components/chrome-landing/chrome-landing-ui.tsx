@@ -2,6 +2,7 @@ import { Chrome, Quote, Star } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { AnimateIn } from '../animate-in';
 import { CHROME_STORE_RATING } from '../../data/download-urls';
+import { EdgeLogoMark } from '../icons/EdgeLogoMark';
 
 /** Shared tokens for Gmail / Chrome extension landing pages. */
 export const chromeLanding = {
@@ -50,25 +51,84 @@ const primaryCtaSize = {
   lg: 'px-10 py-4 text-base',
 } as const;
 
+const browserInstallBtnSize = {
+  sm: 'h-12 px-6 text-sm',
+  md: 'h-[52px] px-8 text-sm',
+  lg: 'h-14 px-10 text-base',
+} as const;
+
+/** Shared pill geometry — Chrome + Edge install buttons must match. */
+export const browserInstallBtnBase =
+  'inline-flex items-center justify-center gap-2 rounded-full font-black uppercase tracking-widest whitespace-nowrap transition-all shrink-0';
+
 export function ChromePrimaryCta({
   href,
   label,
   size = 'md',
   className = '',
+  matched = false,
 }: {
   href: string;
   label: string;
-  size?: keyof typeof primaryCtaSize;
+  size?: keyof typeof browserInstallBtnSize;
   className?: string;
+  /** When true, uses shared sizing with EdgeInstallCta (Gmail landing pair). */
+  matched?: boolean;
 }) {
+  const sizing = matched ? browserInstallBtnBase : chromeLanding.primaryCta;
+  const sizeClass = matched ? browserInstallBtnSize[size] : primaryCtaSize[size];
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${chromeLanding.primaryCta} ${primaryCtaSize[size]} ${className}`.trim()}
+      className={`${sizing} ${sizeClass} ${matched ? 'bg-accent text-brand hover:brightness-95 animate-pulse-glow' : ''} ${className}`.trim()}
     >
-      <Chrome size={size === 'lg' ? 18 : 17} strokeWidth={2.5} />
+      <Chrome size={size === 'lg' ? 18 : 17} strokeWidth={2.5} className="shrink-0" />
+      {label}
+    </a>
+  );
+}
+
+/** Edge Add-ons install — matched pill sizing with ChromePrimaryCta. */
+export function EdgeInstallCta({
+  href,
+  label,
+  size = 'md',
+  className = '',
+  matched = false,
+}: {
+  href: string;
+  label: string;
+  size?: keyof typeof browserInstallBtnSize;
+  className?: string;
+  matched?: boolean;
+}) {
+  const iconSize = size === 'lg' ? 18 : 17;
+
+  if (matched) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${browserInstallBtnBase} ${browserInstallBtnSize[size]} bg-white/10 border border-white/20 text-white backdrop-blur-sm hover:bg-white/20 ${className}`.trim()}
+      >
+        <EdgeLogoMark size={iconSize + 2} className="shrink-0" />
+        {label}
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${chromeLanding.secondaryCtaOnDark} ${primaryCtaSize[size]} whitespace-nowrap ${className}`.trim()}
+    >
+      <EdgeLogoMark size={iconSize + 2} className="shrink-0" />
       {label}
     </a>
   );

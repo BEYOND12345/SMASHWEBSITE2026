@@ -19,6 +19,11 @@ import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { BlogWorkspaceRouter } from '../components/blog/blog-workspace-router';
 import { BlogConversionClose } from '../components/blog/blog-conversion-close';
+import {
+  absoluteBlogImageUrl,
+  resolveBlogFeaturedImageAlt,
+  resolveBlogFeaturedImagePath,
+} from '../data/blog-seo-assets';
 
 function stripLeadingH1(markdown: string): string {
   return markdown.replace(/^\s*#\s+.+?\n+/, '');
@@ -98,6 +103,13 @@ export function BlogPost() {
   }
 
   const articleUrl = `https://smashinvoices.com/blog/${post.slug}`;
+  const featuredImageUrl = absoluteBlogImageUrl(
+    resolveBlogFeaturedImagePath(post.featured_image),
+  );
+  const featuredImageAlt = resolveBlogFeaturedImageAlt(post.featured_image_alt, {
+    title: post.title,
+    primaryKeyword: post.primary_keyword,
+  });
 
   return (
     <>
@@ -107,12 +119,12 @@ export function BlogPost() {
         keywords={[post.primary_keyword, ...post.secondary_keywords].join(', ')}
         ogTitle={post.meta_title || post.title}
         ogDescription={post.meta_description || post.excerpt}
-        ogImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
+        ogImage={featuredImageUrl}
         ogUrl={articleUrl}
         ogType="article"
         twitterTitle={post.meta_title || post.title}
         twitterDescription={post.meta_description || post.excerpt}
-        twitterImage={post.featured_image || "https://smashinvoices.com/hero_image.png"}
+        twitterImage={featuredImageUrl}
         canonical={articleUrl}
         hreflangs={hreflangAlternates.map(h => ({ hreflang: h.hreflang, href: articleUrl }))}
       />
@@ -124,7 +136,7 @@ export function BlogPost() {
           datePublished: post.published_at,
           dateModified: post.updated_at || post.last_reviewed || post.published_at,
           author: post.author,
-          image: post.featured_image,
+          image: featuredImageUrl,
           url: articleUrl,
           wordCount: post.content ? post.content.split(/\s+/).length : undefined,
           keywords: [post.primary_keyword, ...post.secondary_keywords].join(', ')
@@ -199,15 +211,13 @@ export function BlogPost() {
               <div>By {post.author}</div>
             </div>
 
-            {post.featured_image && (
-              <div className="rounded-2xl overflow-hidden bg-white/5">
-                <img
-                  src={post.featured_image}
-                  alt={post.featured_image_alt || post.title}
-                  className="w-full h-auto"
-                />
-              </div>
-            )}
+            <div className="rounded-2xl overflow-hidden bg-white/5">
+              <img
+                src={featuredImageUrl}
+                alt={featuredImageAlt}
+                className="w-full h-auto"
+              />
+            </div>
           </header>
           </AnimateIn>
 

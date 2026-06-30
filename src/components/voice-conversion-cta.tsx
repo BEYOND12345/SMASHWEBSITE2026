@@ -1,31 +1,24 @@
 import { Link } from 'react-router-dom';
-import { Mic, ArrowRight } from 'lucide-react';
-import { APP_STORE_URL, IOS_CTA_LABEL } from '../data/download-urls';
+import { Mic } from 'lucide-react';
+import { IphoneInstallCta, BrowserProductCta } from './marketing/DualProductCtas';
 
 interface VoiceConversionCTAProps {
   outputLabel: string;
   headline?: string;
   sub?: string;
-  appStoreUrl?: string;
   variant?: 'light' | 'dark';
 }
 
-/**
- * Conversion block dropped at the bottom of every free tool page. This is the
- * Invoice Simple play — a free tool that quietly converts into the full app.
- * Single line: want this to happen automatically from voice?
- */
+/** Conversion block at the bottom of free tool pages — voice on iPhone + Gmail extension. */
 export function VoiceConversionCTA({
   outputLabel,
   headline,
   sub,
-  appStoreUrl = APP_STORE_URL,
   variant = 'dark',
 }: VoiceConversionCTAProps) {
   const isDark = variant === 'dark';
 
-  const headlineText =
-    headline ?? `Want ${outputLabel} to happen from voice?`;
+  const headlineText = headline ?? `Want ${outputLabel} to happen from voice?`;
   const subText =
     sub ??
     `SMASH turns a 30-second voice note into a professional, tax-compliant ${outputLabel.replace(/^this\s+/, '')} — sent, tracked, and paid. No typing, no templates.`;
@@ -36,9 +29,7 @@ export function VoiceConversionCTA({
         <div
           className={[
             'rounded-[32px] overflow-hidden border-2 p-8 md:p-12',
-            isDark
-              ? 'bg-white/[0.03] border-white/10'
-              : 'bg-white border-border',
+            isDark ? 'bg-white/[0.03] border-white/10' : 'bg-white border-border',
           ].join(' ')}
         >
           <div className="flex flex-col md:flex-row md:items-center gap-8">
@@ -73,26 +64,17 @@ export function VoiceConversionCTA({
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:shrink-0">
-              <a
-                href={appStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-brand font-display text-xs uppercase tracking-widest hover:brightness-95 transition-all whitespace-nowrap"
-              >
-                {IOS_CTA_LABEL}
-                <ArrowRight size={14} strokeWidth={2.5} />
-              </a>
+            <div className="flex flex-col gap-3 md:shrink-0">
+              <IphoneInstallCta className="!px-6 !py-3 !text-xs" />
+              <BrowserProductCta className="!px-6 !py-3 !text-xs" />
               <Link
                 to="/voice-invoicing"
                 className={[
-                  'inline-flex items-center justify-center px-6 py-3 rounded-full border-2 font-display text-xs uppercase tracking-widest transition-all whitespace-nowrap',
-                  isDark
-                    ? 'border-white/20 text-white hover:bg-white/10'
-                    : 'border-brand/20 text-brand hover:bg-brand/5',
+                  'text-center text-xs font-semibold transition-colors',
+                  isDark ? 'text-white/45 hover:text-accent' : 'text-brand/45 hover:text-brand',
                 ].join(' ')}
               >
-                See how voice works
+                See how voice invoicing works →
               </Link>
             </div>
           </div>

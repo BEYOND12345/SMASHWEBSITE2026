@@ -9,7 +9,7 @@ const blogRoot = path.join(__dirname, '..', 'public', 'blog');
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
-const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
+const IOS_DOWNLOAD_LABEL = 'Start Free on iPhone';
 const CHROME_CTA_LABEL = 'Add to Chrome — Free';
 
 const extraCss = `
