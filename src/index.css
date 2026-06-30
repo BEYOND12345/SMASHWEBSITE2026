@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Barlow Condensed Black';
-  src: url('/fonts/BarlowCondensed-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Barlow Condensed Black Italic';
-  src: url('/fonts/BarlowCondensed-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
 @layer base {
   body {
     @apply bg-surface text-brand antialiased;
@@ -30,18 +14,6 @@
   /* Body text override — applied explicitly to prose/description content */
   .font-body {
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  }
-
-  /* App Store headline typography — matches product HTML screens */
-  .font-display {
-    font-family: 'Barlow Condensed Black', 'Barlow Condensed', system-ui, sans-serif;
-    font-weight: 900;
-  }
-
-  .font-display-italic {
-    font-family: 'Barlow Condensed Black Italic', 'Barlow Condensed', system-ui, sans-serif;
-    font-weight: 900;
-    font-style: italic;
   }
 
   /* Hide scrollbars for the clean 'app' look */

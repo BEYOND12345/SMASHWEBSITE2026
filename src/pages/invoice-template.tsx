@@ -3,7 +3,6 @@ import { SEO } from '../components/seo';
 import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
-import { ToolPageHero } from '../components/marketing/ToolPageHero';
 import { Footer } from '../components/footer';
 import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
@@ -257,7 +256,7 @@ function InvoiceTemplatePreview() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Start Free on iPhone
+              Download the iOS app
               <ArrowRight size={11} strokeWidth={3} />
             </a>
           </div>
@@ -325,7 +324,7 @@ function InvoiceTemplatePreview() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
           >
-            Start Free on iPhone
+            Download the iOS app
             <ArrowRight size={14} strokeWidth={2.5} />
           </a>
           <p className="font-body text-xs font-medium text-brand/45 mt-3">No credit card · Free to start</p>
@@ -447,18 +446,32 @@ export function InvoiceTemplate() {
 
       <Nav />
 
-      <ToolPageHero
-        eyebrow="Free Invoice Template"
-        subline="Download Australia's most-used free invoice template — ATO-compliant with ABN, GST breakdown, sequential invoice numbering, and payment terms built in. Or generate it automatically with SMASH in 60 seconds by voice."
-        meta="Free download · No account needed · ATO-compliant"
-        headline={
-          <>
-            <span className="block text-white">Download Free Invoice</span>
-            <span className="block text-white">Template Australia —</span>
-            <span className="block text-accent">ATO-Compliant. GST Ready.</span>
-          </>
-        }
-      />
+      {/* ── HERO ─────────────────────────────────────────────── */}
+      <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/4 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free Invoice Template</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
+              Download Free Invoice<br />
+              Template Australia —<br />
+              <span className="text-accent">ATO-Compliant. GST Ready.</span>
+            </h1>
+            <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
+              Download Australia's most-used free invoice template — ATO-compliant with ABN, GST breakdown, sequential invoice numbering, and payment terms built in. Or generate it automatically with SMASH in 60 seconds by voice.
+            </p>
+            <div className="flex items-center gap-3 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">Free download · No account needed · ATO-compliant</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* ── TEMPLATE PREVIEW ─────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20">
@@ -545,7 +558,7 @@ export function InvoiceTemplate() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
                 >
-                  Start Free on iPhone
+                  Download the iOS app
                   <ArrowRight size={14} strokeWidth={2.5} />
                 </a>
                 <p className="font-body text-brand/35 text-xs font-medium mt-3">No credit card · Cancel anytime</p>
@@ -717,7 +730,7 @@ export function InvoiceTemplate() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
                 <ArrowRight size={15} strokeWidth={2.5} />
               </a>
               <Link

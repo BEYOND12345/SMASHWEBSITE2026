@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Mic } from 'lucide-react';
-import { DualProductCtas } from '../marketing/DualProductCtas';
 import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
 import { CompactChromeMockup } from '../gmail-sidebar-mockups';
 import { IosSubline } from './IosSubline';
@@ -68,25 +67,24 @@ export function IosFinalCta({
       <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
         <IosOfficialAppStoreBadge />
         <Link to="/chrome-extension" className={iosLanding.secondaryCta}>
-          Add to your browser
+          Also works in Gmail
         </Link>
       </div>
 
       <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>
-      <p className="text-xs text-white/45 font-medium mt-1.5">
-        iPhone on site · Gmail in Chrome or Edge at your desk
-      </p>
     </>
   );
 }
 
-/** Hero — download + scroll to story on the iOS product page. */
+/** Hero — download (Start Free) + scroll to story (no App Store badge). */
 export function IosHeroCta({ className = '' }: { className?: string }) {
   return (
-    <DualProductCtas
-      className={className}
-      secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-    />
+    <div className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center ${className}`.trim()}>
+      <IosStartFreeCta />
+      <a href="#how-it-works" className={iosLanding.secondaryCta}>
+        See how it works
+      </a>
+    </div>
   );
 }
 

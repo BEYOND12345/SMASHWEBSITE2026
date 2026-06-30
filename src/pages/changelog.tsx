@@ -265,7 +265,7 @@ export function Changelog() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
                 >
-                  Start Free on iPhone
+                  Download the iOS app
                 </a>
               </div>
             </div>

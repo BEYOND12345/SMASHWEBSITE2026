@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Menu, X, Apple, Chrome } from 'lucide-react';
-import { SmashLogoLink } from './SmashLogo';
 import {
   APP_STORE_URL,
   CHROME_STORE_URL,
@@ -45,7 +44,16 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
     <>
       <nav className="bg-brand/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 md:py-5 flex items-center justify-between">
-          <SmashLogoLink onClick={() => setOpen(false)} />
+          <Link
+            to="/"
+            className="text-2xl font-black tracking-tighter text-white"
+            onClick={() => setOpen(false)}
+          >
+            SMASH
+            <span className="text-accent text-4xl leading-none align-baseline">
+              .
+            </span>
+          </Link>
 
           <div className="flex items-center gap-1 sm:gap-2">
             <Link to="/features" className={desktopLinkClass}>Features</Link>

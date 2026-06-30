@@ -26,8 +26,6 @@
     "generate:pseo-static": "node --experimental-strip-types scripts/generate-pseo-static.ts",
     "verify:pseo": "node --experimental-strip-types scripts/verify-pseo.ts",
     "prerender": "node --experimental-strip-types scripts/prerender-blog.ts",
-    "audit:blog-images": "node --experimental-strip-types scripts/audit-blog-images.ts",
-    "generate:blog-og-default": "node --experimental-strip-types scripts/generate-blog-og-default.ts",
     "render:pilot-blog": "node --experimental-strip-types scripts/render-pilot-blog-post.ts",
     "sitemap": "node --experimental-strip-types scripts/generate-sitemap.ts",
     "indexnow": "node --experimental-strip-types scripts/indexnow.ts",

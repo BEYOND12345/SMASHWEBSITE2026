@@ -134,32 +134,29 @@ export const mainPages: Record<string, MainPageSeo> = {
   },
   chromeExtension: {
     path: '/chrome-extension',
-    title: 'SMASH for Gmail — Stop Re-Typing Quote Requests | Chrome Extension',
+    title: 'Gmail Invoice Extension — Quotes From Your Inbox | SMASH',
     description:
-      'Quote requests land in your inbox with all the detail already written. SMASH reads them, matches your prices, and the quote is done — without copying a line or leaving Gmail. Works with Xero and QuickBooks. Install free.',
-    h1: 'Stop re-typing what\'s already in your inbox',
+      'Install the SMASH Chrome extension: scan a job email, match it to your pricing catalog, send the quote without leaving Gmail. Works with Xero and QuickBooks. Free to install.',
+    h1: 'The Gmail sidebar that turns requests into quotes',
     brandLine: BRAND_LINE,
     answerBlock:
-      'SMASH for Gmail reads quote requests in your inbox, matches every line to your own catalogue and SKUs, and builds the quote without re-typing. Check it, reply from the thread, then push to Xero or QuickBooks in one click — automation that lives in Gmail, not another platform to log into.',
+      'The SMASH Chrome extension adds a Gmail sidebar for email scan, PDF upload, voice input, catalog onboarding, in-thread reply, and optional push to Xero or QuickBooks. Built for people comparing Gmail invoice extensions — free to install, 5 documents per month on the free plan.',
     cta: 'chrome',
     faqs: [
       {
-        question: 'Who is SMASH for Gmail for?',
+        question: 'What does the SMASH Gmail extension do?',
         answer:
-          'Anyone who quotes from Gmail and is tired of copying line items into another system. If the detail is already in the email, SMASH does the data entry.',
+          'It reads job emails, matches your pricing catalog, builds quotes and invoices in the sidebar, and lets you send from the thread with approval and payment links.',
       },
       {
-        question: 'How does it know my prices?',
+        question: 'How does catalog onboarding work?',
         answer:
-          'Upload a past invoice or CSV on first sign-in. SMASH learns your rates and SKUs. Every line is matched to your catalogue — nothing invented.',
+          'Upload a past PDF invoice or CSV of services on first sign-in. SMASH learns your rates and builds your pricing profile.',
       },
       {
-        question: 'Does it work with Xero and QuickBooks?',
-        answer: 'Yes. Push approved quotes and invoices to your ledger when you are ready.',
-      },
-      {
-        question: 'Is there a free plan?',
-        answer: 'Yes. Five quotes or invoices per month free. Upgrade for unlimited volume and accounting export.',
+        question: 'Is it different from the Gmail invoice pillar page?',
+        answer:
+          'The pillar explains email-to-invoice for search. This page is product detail for people comparing extensions and features.',
       },
     ],
   },

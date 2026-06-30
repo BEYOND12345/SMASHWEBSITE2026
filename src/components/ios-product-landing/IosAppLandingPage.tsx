@@ -165,7 +165,8 @@ export function IosAppLandingPage() {
 
                   <IosSubline className={`${iosLanding.subline} mb-8 max-w-md`}>{IOS_HERO.subline}</IosSubline>
 
-                  <IosHeroCta className="mb-8" />
+                  <IosHeroCta />
+                  <p className={`${iosLanding.caption} mt-3 mb-8`}>{IOS_HERO.microcopy}</p>
 
                   <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
                     <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with</span>

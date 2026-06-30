@@ -8,7 +8,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SMASH_LOGO_NAV_LINK } from './brand-logo.ts';
 import {
   gmailLandingPages,
   type GmailLandingConfig,
@@ -17,7 +16,6 @@ import {
 const SITE = 'https://smashinvoices.com';
 const CHROME_STORE =
   'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
-const APP_STORE = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 
 function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (m) =>
@@ -31,13 +29,13 @@ function renderJsonLd(obj: unknown): string {
 
 function styles(): string {
   return `
-    :root{--bg:#0f172a;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--muted:rgba(255,255,255,0.65);--accent:#DFFF00;--accent-ink:#0f172a;}
+    :root{--bg:#0A0A0A;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.1);--text:#F5F5F5;--muted:rgba(255,255,255,0.65);--accent:#D9F99D;--accent-ink:#0A0A0A;}
     *,*::before,*::after{box-sizing:border-box;}
     body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
     a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
-    .nav{position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.92);border-bottom:1px solid var(--border);}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.9);border-bottom:1px solid var(--border);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
-    .nav-brand{display:inline-block;line-height:0}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;color:#fff;font-size:22px;text-transform:uppercase;}
     .nav-cta{background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;}
   `;
 }
@@ -174,7 +172,7 @@ function buildPage(c: GmailLandingConfig): string {
 <body>
   <header class="nav">
     <div class="nav-inner">
-      ${SMASH_LOGO_NAV_LINK}
+      <a href="/" class="nav-brand">SMASH</a>
       <a href="${CHROME_STORE}" class="nav-cta" rel="nofollow">Add to Chrome — Free</a>
     </div>
   </header>
@@ -190,8 +188,7 @@ function buildPage(c: GmailLandingConfig): string {
     <p style="font-size:14px;color:rgba(255,255,255,0.45);margin-top:12px;">${escapeHtml(c.hero.strapline)}</p>
     <p style="margin:28px 0;">
       <a href="${CHROME_STORE}" style="display:inline-block;background:var(--accent);color:var(--accent-ink);padding:14px 28px;border-radius:999px;font-weight:700;" rel="nofollow">Install SMASH for Gmail — Free</a>
-      <a href="${APP_STORE}" style="display:inline-block;margin-left:12px;border:2px solid rgba(255,255,255,0.25);color:#fff;padding:12px 24px;border-radius:999px;font-weight:700;" rel="nofollow">Start Free on iPhone</a>
-      <a href="/chrome-extension" style="display:block;margin-top:12px;color:var(--muted);">Full feature tour →</a>
+      <a href="/chrome-extension" style="margin-left:16px;color:var(--muted);">Full feature tour →</a>
     </p>
     <section style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:32px 0;">
       <p style="margin:0 0 8px;font-weight:700;color:#fff;">${escapeHtml(c.answerStrip.question)}</p>
@@ -220,11 +217,10 @@ function buildPage(c: GmailLandingConfig): string {
     <h2 style="font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;margin:48px 0 16px;">${escapeHtml(c.capabilityTitle)}</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;">${capabilityCards}</div>
     <section style="margin:56px 0 0;"><h2 style="font-family:'Barlow Condensed',system-ui,sans-serif;font-size:28px;">Frequently asked questions</h2>${faqHtml}</section>
-    <section style="margin:56px 0 0;text-align:center;padding:40px 28px;border-radius:20px;border:1px solid rgba(223,255,0,0.25);background:linear-gradient(135deg,rgba(223,255,0,0.1),transparent);">
+    <section style="margin:56px 0 0;text-align:center;padding:40px 28px;border-radius:20px;border:1px solid rgba(217,249,157,0.25);background:linear-gradient(135deg,rgba(217,249,157,0.1),transparent);">
       <h2 style="font-family:'Barlow Condensed',system-ui,sans-serif;font-size:32px;margin:0 0 12px;">${escapeHtml(c.finalCta.headline)}</h2>
       <p style="color:var(--muted);margin:0 0 24px;">${escapeHtml(c.finalCta.subcopy)}</p>
       <a href="${CHROME_STORE}" style="display:inline-block;background:var(--accent);color:var(--accent-ink);padding:14px 28px;border-radius:999px;font-weight:700;" rel="nofollow">Add SMASH to Chrome — Free</a>
-      <a href="${APP_STORE}" style="display:inline-block;margin-left:12px;border:2px solid rgba(255,255,255,0.25);color:#fff;padding:12px 24px;border-radius:999px;font-weight:700;" rel="nofollow">Start Free on iPhone</a>
     </section>
     <section style="margin:48px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
       <div><h3 style="font-size:16px;">Related product pages</h3><ul>${relatedPages}</ul></div>

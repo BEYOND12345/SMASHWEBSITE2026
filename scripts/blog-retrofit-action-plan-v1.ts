@@ -309,7 +309,7 @@ function workspaceRouter(cta: CtaMode): string {
         <p>Finished the job? Talk for 30 seconds before you leave.</p>
         <h3>SMASH for iPhone</h3>
         <p>Priced invoice from your catalog — sent before you start the van.</p>
-        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="${iosClass}" style="${iosStyle}" rel="nofollow">Start Free on iPhone</a>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="${iosClass}" style="${iosStyle}" rel="nofollow">Download the iOS app</a>
         <p style="margin-top:14px;font-size:13px;"><a href="/voice-invoicing">Voice invoicing →</a></p>
       </div>
     </div>
@@ -332,7 +332,7 @@ function conversionClose(cta: CtaMode): string {
     <h2>Send before you leave.<span class="accent-line">Talk. Verify. Send.</span></h2>
     <p style="color:rgba(255,255,255,0.75);margin:0 0 16px;">Describe the job out loud — priced from your catalog in under 60 seconds.</p>
     <div class="conversion-btns">
-      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Start Free on iPhone</a>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
       <a href="/voice-invoicing" class="conversion-btn-outline">Voice invoicing</a>
     </div>
   </aside>`;
@@ -341,7 +341,7 @@ function conversionClose(cta: CtaMode): string {
     <h2>Stop losing admin hours.<span class="accent-line">Start getting paid faster.</span></h2>
     <p style="color:rgba(255,255,255,0.75);margin:0 0 16px;">Voice on-site or Gmail at your desk — same professional invoices, zero keyboard tax.</p>
     <div class="conversion-btns">
-      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Start Free on iPhone</a>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
       <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="conversion-btn-outline" rel="nofollow">Add to Chrome — Free</a>
     </div>
   </aside>`;

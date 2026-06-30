@@ -29,18 +29,15 @@ import { hreflangAlternates } from '../../data/country-data';
 import type { GmailLandingConfig, GmailLandingStory } from '../../data/gmail-landing-pages';
 import { gmailLandingCanonical } from '../../data/gmail-landing-pages';
 import { HeroVideo, HeroMockup, PricingDNAMockup, QuoteMockup } from '../gmail-sidebar-mockups';
+import { BrandLogos } from '../brand-logos';
 import { MockupFrame } from '../phone-showcase';
 import {
+  ChromePrimaryCta,
   FeaturedTestimonialSection,
   TestimonialGridSection,
+  chromeLanding,
 } from '../chrome-landing/chrome-landing-ui';
-import { CHROME_STORE_URL, CHROME_CTA_LABEL, GMAIL_LANDING_CTA } from '../../data/download-urls';
-import { GMAIL_SECTION_PHOTO_BG } from '../../data/gmail-landing-spec';
-import { GmailSectionPhotoBg } from '../gmail-product-landing/GmailPhotoSection';
-import { GmailFinalInstallCtas, GmailHeroInstallCtas } from '../gmail-product-landing/GmailInstallCtas';
-import { GmailWorksWithStrap } from '../gmail-product-landing/GmailWorksWithStrap';
-import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
-import { IosSubline } from '../ios-product-landing/IosSubline';
+import { CHROME_STORE_URL, CHROME_CTA_LABEL } from '../../data/download-urls';
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 
 const tiers = [
@@ -162,14 +159,12 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
       />
       <SchemaMarkup schemas={[aiOrgSchema, chromeAppSchema]} />
 
-      <div className={iosLanding.page}>
-      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel={GMAIL_LANDING_CTA} />
+      <Nav ctaUrl={CHROME_STORE_URL} ctaLabel={CHROME_CTA_LABEL} />
 
       {/* HERO */}
       <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
-        {GMAIL_SECTION_PHOTO_BG.hero && <GmailSectionPhotoBg photo={GMAIL_SECTION_PHOTO_BG.hero} />}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block z-[1]" />
-        <div className={`${iosLanding.container} relative z-10`}>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="pb-16 md:pb-24">
@@ -180,12 +175,22 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
                 <p className="font-body font-black text-xl sm:text-2xl uppercase tracking-[0.12em] text-white/60 mb-3 leading-tight">
                   {config.hero.preHeadline}
                 </p>
-                <h1 className={`${iosLanding.heroHeadline} mb-5`}>
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[52px] sm:text-[64px] md:text-[80px] mb-8">
                   <span className="block text-white">{config.hero.h1White}</span>
                   <span className="block text-accent">{config.hero.h1Accent}</span>
                 </h1>
-                <IosSubline className={`${iosLanding.subline} mb-0 max-w-lg`}>{config.hero.subcopy}</IosSubline>
-                <GmailHeroInstallCtas demoAnchorId="gmail-demo" className="mt-8" />
+                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">{config.hero.subcopy}</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} />
+                  <Link to="/how-it-works" className={chromeLanding.secondaryCtaOnDark}>
+                    See how it works
+                  </Link>
+                </div>
+                <p className="font-body text-sm text-white/40 italic mt-3 mb-8">Quicker than a sparrow&apos;s fart.</p>
+                <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
+                  <span className="font-body font-black text-xs sm:text-sm uppercase tracking-[0.2em] text-white/30">Works with</span>
+                  <BrandLogos />
+                </div>
               </div>
             </AnimateIn>
             <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
@@ -196,8 +201,6 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
           </div>
         </div>
       </section>
-
-      <GmailWorksWithStrap />
 
       {/* INTEGRATION STRAP */}
       <section className="bg-brand border-t border-white/10 py-6 md:py-8">
@@ -226,7 +229,7 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
       <TestimonialGridSection eyebrow="Trusted by tradies" items={config.testimonials} />
 
       {/* VIDEO */}
-      <section id="gmail-demo" className="bg-[#0D1117] py-20 md:py-28 overflow-hidden scroll-mt-24">
+      <section className="bg-[#0D1117] py-20 md:py-28 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <AnimateIn direction="up">
             <p className="font-display font-black text-[11px] uppercase tracking-[0.2em] text-accent text-center mb-3">60 second demo</p>
@@ -460,29 +463,25 @@ export function GmailLandingPage({ config }: { config: GmailLandingConfig }) {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-brand py-16 md:py-24 border-t border-white/10">
-        <div className={`${iosLanding.container} max-w-3xl text-center`}>
+      <section className="bg-brand py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <AnimateIn direction="up">
-            <h2 className={`${iosLanding.heroHeadline} mb-5 whitespace-pre-line`}>
-              <span className="block text-white">{config.finalCta.headline}</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 uppercase tracking-tighter leading-[0.88] whitespace-pre-line">
+              {config.finalCta.headline}
             </h2>
-            <IosSubline className={`${iosLanding.subline} mx-auto mb-8 max-w-xl`}>{config.finalCta.subcopy}</IosSubline>
-            <GmailFinalInstallCtas />
-            <p className={`${iosLanding.caption} mt-6`}>No credit card needed. Cancel anytime.</p>
-            <p className="mt-4">
-              <Link
-                to="/voice-invoicing"
-                className="font-body font-semibold text-white/55 hover:text-accent transition-colors text-sm"
-              >
-                On site? SMASH for iPhone →
+            <p className="font-body text-lg text-white/65 font-medium leading-[1.5] mb-8 max-w-xl mx-auto">{config.finalCta.subcopy}</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+              <ChromePrimaryCta href={CHROME_STORE_URL} label={CHROME_CTA_LABEL} size="lg" />
+              <Link to="/voice-invoicing" className={`${chromeLanding.secondaryCtaOnDark} text-base`}>
+                See how voice works
               </Link>
-            </p>
+            </div>
+            <p className="text-sm text-white/35 font-medium">No credit card needed. Cancel anytime.</p>
           </AnimateIn>
         </div>
       </section>
 
       <Footer />
-      </div>
     </>
   );
 }

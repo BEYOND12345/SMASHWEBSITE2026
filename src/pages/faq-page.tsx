@@ -7,10 +7,8 @@ import { ChevronDown, ArrowRight, Star } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
-import { APP_STORE_URL } from '../data/download-urls';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const faqs = [
   {
@@ -203,22 +201,38 @@ export function FAQPage() {
       <div className="min-h-screen bg-brand">
         <Nav />
 
-        <MarketingPhotoHero contentClassName="py-20 md:py-28 lg:py-36">
-          <AnimateIn direction="up">
-            <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
-              <span className="block text-white">Questions about</span>
-              <span className="block text-white">sending invoices</span>
-              <span className="block text-accent">faster.</span>
-            </h1>
-            <p className={`${iosLanding.subline} mb-4 !text-white/80 !max-w-2xl`}>
-              Talk on iPhone or scan Gmail — SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds. Free to start.
-            </p>
-            <p className="font-body text-base text-white/55 font-medium leading-[1.5] max-w-2xl mb-8">
-              Common questions about voice accuracy, NDIS invoicing, repeat invoices, pricing, GST/VAT compliance, and Android support — answered below.
-            </p>
-            <DualProductCtas />
-          </AnimateIn>
-        </MarketingPhotoHero>
+        {/* HERO WITH BACKGROUND IMAGE */}
+        <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="/hero_image.png"
+              alt="Voice to invoice software for service businesses"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+            <AnimateIn direction="up">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
+                Questions about<br />sending invoices<br />faster.
+              </h1>
+              <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
+                Talk on iPhone or scan Gmail — SMASH prices from your catalog and sends a tax-compliant invoice in under 60 seconds. Free to start.
+              </p>
+              <p className="font-body text-base text-white/55 font-medium leading-[1.5] max-w-2xl mb-6">
+                Common questions about voice accuracy, NDIS invoicing, repeat invoices, pricing, GST/VAT compliance, and Android support — answered below.
+              </p>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="text-accent fill-accent" />
+                  ))}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store · Field app + Gmail extension</span>
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
 
         <section className="py-16 md:py-20 lg:py-28">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -290,7 +304,7 @@ export function FAQPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
                 >
-                  Start Free on iPhone
+                  Download the iOS app
                 </a>
                 <Link
                   to="/how-it-works"

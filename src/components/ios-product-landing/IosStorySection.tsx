@@ -113,7 +113,7 @@ export function IosAccentStrip({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-accent py-10 md:py-14">
+    <section className="bg-accent py-10 md:py-14 border-t border-brand/10">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
         <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">{eyebrow}</p>
         <div className="text-lg md:text-xl font-bold text-brand leading-[1.35]">{children}</div>
