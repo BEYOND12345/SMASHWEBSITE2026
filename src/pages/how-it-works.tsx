@@ -15,8 +15,10 @@ import { InlineCTA } from '../components/inline-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { DualProductCtas } from '../components/marketing/DualProductCtas';
+import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
+import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
+import { APP_STORE_URL } from '../data/download-urls';
 
 const faqs = [
   {
@@ -170,33 +172,21 @@ export function HowItWorks() {
       <div className="min-h-screen bg-white">
         <Nav />
 
-        {/* HERO */}
-        <section className="bg-brand text-white py-16 md:py-20 lg:py-32">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-            <AnimateIn direction="up">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.88] mb-6 md:mb-8 uppercase tracking-tighter">
-                Send the invoice before you leave.
-              </h1>
-              <p className="font-body text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto leading-[1.5] mb-4 md:mb-6">
-                Talk for 30 seconds. Verify. Send. Under 60 seconds end to end.
-              </p>
-              <p className="font-body text-base text-white/60 font-medium max-w-2xl mx-auto leading-[1.5] mb-6 md:mb-8">
-                SMASH is the only invoicing app that turns a voice description into a tax-compliant invoice — with GST (Australia &amp; NZ), VAT (UK), or sales tax (US/Canada) — and a Stripe Pay Now button, in under 60 seconds. Supports NDIS participant numbers and repeat invoices.
-              </p>
-              <div className="flex items-center justify-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                  <div className="flex items-center gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={10} className="text-accent fill-accent" />
-                    ))}
-                  </div>
-                  <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
-                </div>
-                <span className="font-body text-sm text-white/40 font-medium">Field app + Gmail extension</span>
-              </div>
-            </AnimateIn>
-          </div>
-        </section>
+        <MarketingPhotoHero tintDirection="center" contentClassName="py-16 md:py-20 lg:py-32 text-center">
+          <AnimateIn direction="up">
+            <h1 className={`${iosLanding.heroHeadline} mb-6 md:mb-8 max-w-4xl mx-auto`}>
+              <span className="block text-white">Send the invoice</span>
+              <span className="block text-accent">before you leave.</span>
+            </h1>
+            <p className={`${iosLanding.subline} mx-auto mb-4 md:mb-6 !max-w-3xl`}>
+              Talk for 30 seconds. Verify. Send. Under 60 seconds end to end.
+            </p>
+            <p className="font-body text-base text-white/60 font-medium max-w-2xl mx-auto leading-[1.5] mb-8">
+              SMASH turns a voice description into a tax-compliant invoice — with GST (Australia &amp; NZ), VAT (UK), or sales tax (US/Canada) — and a Stripe Pay Now button, in under 60 seconds. Supports NDIS participant numbers and repeat invoices.
+            </p>
+            <DualProductCtas className="flex flex-col items-center [&_p]:text-center" />
+          </AnimateIn>
+        </MarketingPhotoHero>
 
         {/* VIDEO DEMO */}
         <section className="py-10 md:py-14 lg:py-20 bg-white">
@@ -413,7 +403,7 @@ export function HowItWorks() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-[32px] bg-accent text-brand font-black text-base sm:text-lg uppercase tracking-wide hover:brightness-95 transition-all shadow-glow"
               >
-                Download the iOS app
+                Start Free on iPhone
                 <ArrowRight size={24} strokeWidth={3} />
               </a>
               {/* Trust strip */}

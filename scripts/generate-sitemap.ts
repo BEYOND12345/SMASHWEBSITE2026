@@ -98,7 +98,7 @@ async function generateSitemap() {
 
   const staticPages: PageEntry[] = [
     // Core
-    { loc: '/',             srcFiles: ['src/pages/landing-page.tsx', ...sharedNav], changefreq: 'weekly',  priority: '1.0' },
+    { loc: '/',             srcFiles: ['src/pages/homepage.tsx', ...sharedNav], changefreq: 'weekly',  priority: '1.0' },
     // Blog
     { loc: '/blog',         srcFiles: ['src/pages/blog-list.tsx'], lastmodOverride: latestBlogDate, changefreq: 'daily', priority: '0.9' },
     { loc: '/blog/fastest-way-to-send-invoice-2026', srcFiles: ['public/blog/fastest-way-to-send-invoice-2026/index.html'], changefreq: 'monthly', priority: '0.85' },

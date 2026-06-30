@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   ChromePrimaryCta,
   EdgeInstallCta,
@@ -59,9 +60,9 @@ export function GmailHeroInstallCtas({
   return (
     <div className={`flex flex-col gap-4 ${className}`.trim()}>
       <GmailInstallCtas />
-      <div className="flex items-center gap-2.5 text-sm">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-x-2.5 gap-y-1 text-sm">
         <span className="font-body font-medium text-white/45">Free to install</span>
-        <span aria-hidden className="text-white/20">·</span>
+        <span aria-hidden className="hidden sm:inline text-white/20">·</span>
         <a
           href={`#${demoAnchorId}`}
           className="group inline-flex items-center gap-1 font-body font-semibold text-accent hover:text-white transition-colors"
@@ -73,6 +74,13 @@ export function GmailHeroInstallCtas({
             className="transition-transform group-hover:translate-x-0.5"
           />
         </a>
+        <span aria-hidden className="hidden sm:inline text-white/20">·</span>
+        <Link
+          to="/voice-invoicing"
+          className="font-body font-semibold text-white/55 hover:text-accent transition-colors"
+        >
+          On site? SMASH for iPhone →
+        </Link>
       </div>
     </div>
   );

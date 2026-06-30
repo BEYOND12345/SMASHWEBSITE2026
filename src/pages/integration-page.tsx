@@ -14,6 +14,8 @@ import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
 import type { IntegrationData } from '../data/integrations-data';
+import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
+import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 interface IntegrationPageProps {
   data: IntegrationData;
@@ -70,27 +72,18 @@ export function IntegrationPage({ data }: IntegrationPageProps) {
 
       <Nav />
 
-      {/* HERO */}
-      <section className="relative bg-brand overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/hero_image.png" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/92 to-gray-900/60" />
-        </div>
+      <MarketingPhotoHero contentClassName="py-20 md:py-28">
+        <AnimateIn direction="up">
+          <p className={`${iosLanding.eyebrow} mb-5 flex items-center gap-2`}>
+            <LinkIcon size={12} strokeWidth={3} />
+            SMASH × {data.name} · {statusLabel}
+          </p>
+          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
+            <span className="block text-white">{data.heroH1}</span>
+          </h1>
+          <p className={`${iosLanding.subline} mb-10 !text-white/70 !max-w-2xl`}>{data.heroSub}</p>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28">
-          <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-5 flex items-center gap-2">
-              <LinkIcon size={12} strokeWidth={3} />
-              SMASH × {data.name} · {statusLabel}
-            </p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
-              {data.heroH1}
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mb-10">
-              {data.heroSub}
-            </p>
-
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
               <input
                 type="email"
                 required
@@ -115,8 +108,7 @@ export function IntegrationPage({ data }: IntegrationPageProps) {
 
             <p className="mt-4 text-white/50 text-xs font-body">{data.waitlistCopy}</p>
           </AnimateIn>
-        </div>
-      </section>
+      </MarketingPhotoHero>
 
       {/* ANSWER BLOCK */}
       <section className="bg-accent py-10">

@@ -20,13 +20,13 @@ export const EDGE_ADDONS_URL =
 export const EDGE_STORE_URL = EDGE_ADDONS_URL;
 
 /** Primary iOS CTA — hero, inline bands, App Store buttons. */
-export const IOS_CTA_LABEL = 'Download the iOS app';
+export const IOS_CTA_LABEL = 'Start Free on iPhone';
 
 /** Shorter iOS CTA for nav and sticky bar. */
 export const NAV_CTA_LABEL = 'Get the app';
 
 /** Same label wherever iOS is shown beside Chrome. */
-export const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
+export const IOS_DOWNLOAD_LABEL = 'Start Free on iPhone';
 
 /** Chrome extension CTA. */
 export const CHROME_CTA_LABEL = 'Add to Chrome — Free';

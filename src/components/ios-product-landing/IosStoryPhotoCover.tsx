@@ -26,7 +26,8 @@ function useBreakpoint(): Breakpoint {
 
 function resolveCoverScale(photo: StoryPhoto, breakpoint: Breakpoint): number {
   if (photo.coverScale != null) return photo.coverScale;
-  return IOS_STORY_PHOTO_COVER_SCALE[breakpoint];
+  const base = IOS_STORY_PHOTO_COVER_SCALE[breakpoint];
+  return base * (photo.coverScaleFactor ?? 1);
 }
 
 type Props = {
@@ -42,8 +43,8 @@ export function IosStoryPhotoCover({ photo, variant, className = '' }: Props) {
   const focus = photo.focus ?? 'center';
   const scale = resolveCoverScale(photo, breakpoint);
 
-  const img = (
-    <picture className="block h-full w-full">
+  const picture = (
+    <picture className={`block h-full w-full ${photo.flipX ? '-scale-x-100' : ''}`}>
       {photo.srcMobile && (
         <source media="(max-width: 640px)" srcSet={photo.srcMobile} />
       )}
@@ -65,14 +66,14 @@ export function IosStoryPhotoCover({ photo, variant, className = '' }: Props) {
   if (variant === 'fullBleed') {
     return (
       <div className={`absolute inset-0 overflow-hidden ${className}`.trim()}>
-        {img}
+        {picture}
       </div>
     );
   }
 
   return (
     <div className={`relative h-full w-full overflow-hidden ${className}`.trim()}>
-      {img}
+      {picture}
     </div>
   );
 }

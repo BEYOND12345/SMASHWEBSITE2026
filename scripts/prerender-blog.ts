@@ -7,6 +7,12 @@ import { marked } from 'marked';
 import { googleAdsClickTrackingHtml, googleAdsHeadHtml } from './google-ads-snippet.ts';
 import { GMAIL_SURVIVOR_SLUGS } from './gmail-consolidation-redirects.ts';
 import { VOICE_SURVIVOR_SLUGS } from './voice-consolidation-redirects.ts';
+import { SMASH_LOGO_NAV_LINK } from './brand-logo.ts';
+import {
+  absoluteBlogImageUrl,
+  resolveBlogFeaturedImageAlt,
+  resolveBlogFeaturedImagePath,
+} from '../src/data/blog-seo-assets.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -83,9 +89,9 @@ const PROTECTED_BLOG_SLUGS = new Set([
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
-const IOS_CTA_LABEL = 'Download the iOS app';
-const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
-const CHROME_CTA_LABEL = 'Add to Chrome — Free';
+const IOS_CTA_LABEL = 'Start Free on iPhone';
+const IOS_DOWNLOAD_LABEL = 'Start Free on iPhone';
+const CHROME_CTA_LABEL = 'Add to your browser';
 
 interface FAQItem { question: string; answer: string }
 
@@ -124,10 +130,15 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, m => map[m]);
 }
 
-function absoluteImage(src: string | null | undefined): string {
-  if (!src) return `${SITE_URL}/hero_image.png`;
-  if (src.startsWith('http')) return src;
-  return `${SITE_URL}${src.startsWith('/') ? '' : '/'}${src}`;
+function postFeaturedImageUrl(post: BlogPost): string {
+  return absoluteBlogImageUrl(resolveBlogFeaturedImagePath(post.featured_image));
+}
+
+function postFeaturedImageAlt(post: BlogPost): string {
+  return resolveBlogFeaturedImageAlt(post.featured_image_alt, {
+    title: post.title,
+    primaryKeyword: post.primary_keyword,
+  });
 }
 
 function formatDate(iso: string): string {
@@ -155,7 +166,7 @@ function buildArticleSchema(post: BlogPost, url: string): object {
     '@type': 'Article',
     headline: post.title,
     description: post.meta_description || post.excerpt,
-    image: absoluteImage(post.featured_image),
+    image: postFeaturedImageUrl(post),
     datePublished: new Date(post.published_at).toISOString(),
     dateModified: new Date(
       post.updated_at || post.last_reviewed || post.published_at,
@@ -221,8 +232,8 @@ function inlineStyles(): string {
       --text: #F5F5F5;
       --text-muted: rgba(255,255,255,0.65);
       --text-dim: rgba(255,255,255,0.45);
-      --accent: #D9F99D;
-      --accent-ink: #0A0A0A;
+      --accent: #DFFF00;
+      --accent-ink: #0f172a;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; }
@@ -253,9 +264,8 @@ function inlineStyles(): string {
       padding: 14px 24px;
     }
     .nav-brand {
-      font-family: 'Barlow Condensed', system-ui, sans-serif;
-      font-weight: 800; letter-spacing: 0.02em;
-      color: #fff; font-size: 22px; text-transform: uppercase;
+      display: inline-block;
+      line-height: 0;
     }
     .nav-links { display: none; gap: 28px; }
     .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
@@ -349,7 +359,7 @@ function inlineStyles(): string {
       padding: 16px; border-radius: 12px;
       overflow-x: auto;
     }
-    .prose a { border-bottom: 1px solid rgba(217,249,157,0.4); }
+    .prose a { border-bottom: 1px solid rgba(223,255,0,0.4); }
     .prose a:hover { text-decoration: none; border-bottom-color: var(--accent); }
     .faq { margin: 56px 0 0; }
     .faq h2 {
@@ -375,8 +385,8 @@ function inlineStyles(): string {
     .faq p { color: var(--text-muted); margin: 8px 0 0; }
     .cta-card {
       margin: 56px 0 0;
-      background: linear-gradient(135deg, rgba(217,249,157,0.12), rgba(217,249,157,0.04));
-      border: 1px solid rgba(217,249,157,0.25);
+      background: linear-gradient(135deg, rgba(223,255,0,0.12), rgba(223,255,0,0.04));
+      border: 1px solid rgba(223,255,0,0.25);
       border-radius: 20px;
       padding: 32px;
       text-align: center;
@@ -413,10 +423,10 @@ function inlineStyles(): string {
     footer a:hover { color: #fff; text-decoration: none; }
     .workspace-router {
       margin: 0 0 40px;
-      border: 1px solid rgba(217,249,157,0.25);
+      border: 1px solid rgba(223,255,0,0.25);
       border-radius: 16px;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(217,249,157,0.1), rgba(217,249,157,0.03));
+      background: linear-gradient(135deg, rgba(223,255,0,0.1), rgba(223,255,0,0.03));
     }
     .workspace-router-head {
       padding: 18px 24px;
@@ -486,8 +496,8 @@ function inlineStyles(): string {
       margin: 56px 0 0;
       padding: 28px;
       border-radius: 20px;
-      border: 1px solid rgba(217,249,157,0.25);
-      background: linear-gradient(135deg, rgba(217,249,157,0.14), rgba(217,249,157,0.04));
+      border: 1px solid rgba(223,255,0,0.25);
+      background: linear-gradient(135deg, rgba(223,255,0,0.14), rgba(223,255,0,0.04));
     }
     .conversion-close h2 {
       font-family: 'Barlow Condensed', system-ui, sans-serif;
@@ -586,7 +596,7 @@ export function renderPost(post: BlogPost): string {
   const url = `${SITE_URL}/blog/${post.slug}`;
   const title = post.meta_title || `${post.title} | SMASH Invoices Blog`;
   const description = post.meta_description || post.excerpt;
-  const ogImage = absoluteImage(post.featured_image);
+  const ogImage = postFeaturedImageUrl(post);
   const keywords = [post.primary_keyword, ...(post.secondary_keywords || [])]
     .filter(Boolean)
     .join(', ');
@@ -688,7 +698,7 @@ ${schemas
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-brand">SMASH</a>
+      ${SMASH_LOGO_NAV_LINK}
       <div class="nav-links">
         <a href="/features">Features</a>
         <a href="/pricing">Pricing</a>
@@ -711,9 +721,7 @@ ${schemas
             ? `<span>Updated ${formatDate(post.last_reviewed)}</span>` : ''}
           <span>${post.reading_time} min read</span>
         </div>
-        ${post.featured_image
-          ? `<figure class="featured-img"><img src="${absoluteImage(post.featured_image)}" alt="${escapeHtml(post.featured_image_alt || post.title)}" loading="eager" fetchpriority="high"></figure>`
-          : ''}
+        <figure class="featured-img"><img src="${postFeaturedImageUrl(post)}" alt="${escapeHtml(postFeaturedImageAlt(post))}" loading="eager" fetchpriority="high"></figure>
       </header>
 
       ${takeaways}

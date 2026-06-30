@@ -3,6 +3,7 @@ import { SEO } from '../components/seo';
 import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
+import { ToolPageHero } from '../components/marketing/ToolPageHero';
 import { Footer } from '../components/footer';
 import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
@@ -239,7 +240,7 @@ function HourlyRateCalc() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Download the iOS app
+              Start Free on iPhone
               <ArrowRight size={11} strokeWidth={3} />
             </a>
           </div>
@@ -348,7 +349,7 @@ function HourlyRateCalc() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Download the iOS app
+                Start Free on iPhone
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <p className="font-body text-xs font-medium text-brand/45 mt-3">No credit card · Free to start</p>
@@ -426,32 +427,18 @@ export function HourlyRateCalculator() {
 
       <Nav />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/4 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free Rate Calculator</p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Tradie Hourly Rate<br />
-              Calculator Australia —<br />
-              <span className="text-accent">What Should I Charge?</span>
-            </h1>
-            <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
-              Enter your income goal, weeks worked, and overhead — get your minimum rate, recommended rate, and day rate. Built for Australian tradies.
-            </p>
-            <div className="flex items-center gap-3 flex-wrap">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
-                </div>
-                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
-              </div>
-              <span className="font-body text-xs text-white/40 font-medium">Includes overhead · Includes profit margin · Free forever</span>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <ToolPageHero
+        eyebrow="Free Rate Calculator"
+        subline="Enter your income goal, weeks worked, and overhead — get your minimum rate, recommended rate, and day rate. Built for Australian tradies."
+        meta="Includes overhead · Includes profit margin · Free forever"
+        headline={
+          <>
+            <span className="block text-white">Tradie Hourly Rate</span>
+            <span className="block text-white">Calculator Australia —</span>
+            <span className="block text-accent">What Should I Charge?</span>
+          </>
+        }
+      />
 
       {/* ── CALCULATOR ───────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-20">
@@ -680,7 +667,7 @@ export function HourlyRateCalculator() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Download the iOS app
+                Start Free on iPhone
                 <ArrowRight size={15} strokeWidth={2.5} />
               </a>
               <Link

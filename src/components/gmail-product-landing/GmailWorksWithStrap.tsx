@@ -1,5 +1,8 @@
 import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
 
+/** Uniform height for every mark in the strap (wordmarks + icons). */
+const STRAP_LOGO_H = 'h-8';
+
 function GoogleMark({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden>
@@ -34,27 +37,47 @@ function MicrosoftMark({ className = '' }: { className?: string }) {
   );
 }
 
-type Brand = { name: string; mark: React.ReactNode };
+type Brand = { name: string; mark: React.ReactNode; showLabel?: boolean };
 
 const BRANDS: Brand[] = [
   {
     name: 'Xero',
+    showLabel: false,
     mark: (
-      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#13B5EA] text-white font-body font-bold text-[16px] leading-none">
-        x
-      </span>
+      <img
+        src="/brand/xero-white.png"
+        alt="Xero"
+        width={125}
+        height={32}
+        className={`${STRAP_LOGO_H} w-auto object-contain`}
+        loading="lazy"
+        decoding="async"
+      />
     ),
   },
   {
     name: 'QuickBooks',
+    showLabel: false,
     mark: (
-      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2CA01C] text-white font-body font-bold text-[15px] leading-none lowercase">
-        qb
-      </span>
+      <img
+        src="/brand/quickbooks-white.png"
+        alt="Intuit QuickBooks"
+        width={125}
+        height={32}
+        className={`${STRAP_LOGO_H} w-auto object-contain`}
+        loading="lazy"
+        decoding="async"
+      />
     ),
   },
-  { name: 'Microsoft', mark: <MicrosoftMark className="h-[30px] w-[30px]" /> },
-  { name: 'Google', mark: <GoogleMark className="h-[30px] w-[30px]" /> },
+  {
+    name: 'Microsoft',
+    mark: <MicrosoftMark className={`${STRAP_LOGO_H} w-8 shrink-0`} />,
+  },
+  {
+    name: 'Google',
+    mark: <GoogleMark className={`${STRAP_LOGO_H} w-8 shrink-0`} />,
+  },
 ];
 
 /**
@@ -62,21 +85,36 @@ const BRANDS: Brand[] = [
  * voice/integration line. Big, even-spaced brand marks so the platforms read at a glance.
  */
 export function GmailWorksWithStrap() {
+  const logoRow = (
+    <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 sm:gap-x-11 md:gap-x-14">
+      {BRANDS.map((b) => (
+        <div key={b.name} className="flex items-center gap-3">
+          {b.mark}
+          {b.showLabel !== false && (
+            <span className="font-body font-semibold text-[17px] text-white/85">{b.name}</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <section className="bg-brand border-t border-white/10 py-8 md:py-10">
       <div className={iosLanding.container}>
-        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10 md:gap-14">
+        {/* Mobile — stacked */}
+        <div className="flex flex-col items-center gap-6 sm:hidden">
           <span className="shrink-0 font-display-italic font-black uppercase tracking-[0.22em] text-[11px] text-white/35">
             Works with
           </span>
-          <div className="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-5 sm:w-auto sm:gap-x-11 md:gap-x-14">
-            {BRANDS.map((b) => (
-              <div key={b.name} className="flex items-center gap-3">
-                {b.mark}
-                <span className="font-body font-semibold text-[17px] text-white/85">{b.name}</span>
-              </div>
-            ))}
-          </div>
+          {logoRow}
+        </div>
+
+        {/* sm+ — logos centered in the strap; label pinned to content left */}
+        <div className="relative hidden min-h-8 items-center sm:flex">
+          <span className="absolute left-0 top-1/2 shrink-0 -translate-y-1/2 font-display-italic font-black uppercase tracking-[0.22em] text-[11px] text-white/35">
+            Works with
+          </span>
+          <div className="flex w-full justify-center">{logoRow}</div>
         </div>
       </div>
     </section>
