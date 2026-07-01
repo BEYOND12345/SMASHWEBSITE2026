@@ -77,7 +77,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     answerBlock:
       'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk for 30 seconds on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link before you start the van.',
     cta: 'ios',
-    pillarLinks: [{ href: '/voice-invoicing', label: 'Send an invoice from your phone' }],
+    pillarLinks: [{ href: '/voice-invoicing', label: 'voice to invoice' }],
     relatedLinks: [
       { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice in 2026' },
       { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
