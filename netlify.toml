@@ -54,13 +54,23 @@
 
 [[redirects]]
   from = "/voice-invoicing"
-  to = "/voice-invoicing/index.html"
+  to = "/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/voice-invoicing/"
-  to = "/voice-invoicing/index.html"
+  to = "/index.html"
   status = 200
+  force = true
+
+[[edge_functions]]
+  function = "voice-invoicing-route"
+  path = "/voice-invoicing"
+
+[[edge_functions]]
+  function = "voice-invoicing-route"
+  path = "/voice-invoicing/*"
 
 [[redirects]]
   from = "/invoice-on-mobile"
