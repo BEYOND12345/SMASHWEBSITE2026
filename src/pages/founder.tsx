@@ -1,4 +1,5 @@
-import { Mail, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, ArrowRight, Star } from 'lucide-react';
 import { SEO } from '../components/seo';
 import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
@@ -8,13 +9,12 @@ import { ScaledPhone } from '../components/phone-showcase';
 import { ListeningScreen } from '../components/listening-screen';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 export function Founder() {
   return (
-    <div className={`min-h-screen ${iosLanding.page}`}>
+    <div className="min-h-screen bg-white font-sans">
       <SEO
         title="Meet the Founder | SMASH Invoices Australia"
         description="Meet Dan, founder of SMASH Invoices. A working handyman who built voice to invoice software because typing quotes was slowing him down. Real problems, real solutions."
@@ -52,21 +52,30 @@ export function Founder() {
       }} />
 
       {/* HERO WITH BACKGROUND IMAGE */}
-      <MarketingPhotoHero contentClassName="min-h-[50vh] md:min-h-[60vh] flex items-end pt-16 md:pt-20 pb-12 md:pb-16" tintDirection="center">
+      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/hero_image.png"
+            alt="SMASH Invoices founder — built for people who work with their hands"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/80 to-brand/40"></div>
+        </div>
+
         <Nav />
-        <div className="relative z-10 w-full">
+
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 md:pb-16">
           <AnimateIn direction="up">
-            <p className={`${iosLanding.eyebrow} mb-4`}>Meet the Founder</p>
-            <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-3xl`}>
-              <span className="block text-white">Built by Someone</span>
-              <span className="block text-accent">Who Gets It.</span>
+            <p className="text-sm font-black text-accent uppercase tracking-widest mb-4">Meet the Founder</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.88] uppercase tracking-tighter mb-6">
+              Built by Someone<br />Who Gets It.
             </h1>
-            <p className={`${iosLanding.subline} max-w-2xl`}>
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl">
               A working handyman who couldn't type fast enough to keep up with the jobs.
             </p>
           </AnimateIn>
         </div>
-      </MarketingPhotoHero>
+      </section>
 
       {/* FOUNDER CARD */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 -mt-6 relative z-20">
@@ -160,10 +169,23 @@ export function Founder() {
               <p className="font-body text-lg text-slate-700 font-medium leading-[1.5] mb-8">
                 Tap the mic. Describe the job. SMASH builds the quote, sends it to the customer, and gets you paid — before you've left the driveway.
               </p>
-              <DualProductCtas
-                secondary={{ kind: 'link', to: '/how-it-works', label: 'See how it works' }}
-                className="mb-4"
-              />
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <Link
+                  to="/how-it-works"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-brand text-white font-black text-sm sm:text-base uppercase tracking-widest hover:bg-brand/90 transition-all"
+                >
+                  See How It Works
+                  <ArrowRight size={20} strokeWidth={2.5} />
+                </Link>
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
+                >
+                  Download the iOS app
+                </a>
+              </div>
               <div className="flex items-center gap-1.5">
                 <div className="flex items-center gap-0.5">
                   {[...Array(5)].map((_, i) => (

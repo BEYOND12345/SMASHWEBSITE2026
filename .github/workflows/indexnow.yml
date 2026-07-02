@@ -33,9 +33,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Submit URLs to IndexNow
-        # Best-effort Bing/Yandex signal — no npm deps required for this script.
+        # Never fail the workflow on a transient Bing error — this is a
+        # best-effort signal, not a blocking step.
         continue-on-error: true
-        run: node --experimental-strip-types scripts/indexnow.ts
+        run: npm run indexnow

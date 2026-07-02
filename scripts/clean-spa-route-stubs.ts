@@ -10,6 +10,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
 const shadowStubs = [
+  'voice-invoicing/index.html',
   'chrome-extension/index.html',
   'b2b-gmail-quoting/index.html',
 ];

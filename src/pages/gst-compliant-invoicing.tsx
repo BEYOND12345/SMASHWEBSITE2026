@@ -12,10 +12,8 @@ import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
-import { APP_STORE_URL } from '../data/download-urls';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const faqs = [
   {
@@ -84,30 +82,50 @@ export function GstCompliantInvoicing() {
 
       <Nav />
 
-      <MarketingPhotoHero contentClassName="py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <AnimateIn direction="left">
-            <div>
-              <p className={`${iosLanding.eyebrow} mb-4`}>GST Invoicing</p>
-              <h1 className={`${iosLanding.heroHeadline} mb-6`}>
-                <span className="block text-white">Tax invoices.</span>
-                <span className="block text-accent">Zero effort.</span>
+      {/* HERO */}
+      <section className="bg-brand pt-16 pb-12 md:pt-24 md:pb-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <AnimateIn direction="left">
+            <div className="pb-16 md:pb-24">
+              <p className="text-accent font-black text-xs uppercase tracking-widest mb-4">GST Invoicing</p>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
+                Tax invoices.<br />Zero effort.
               </h1>
-              <p className={`${iosLanding.subline} mb-8 !text-white/80`}>
+              <p className="font-body text-lg text-white/80 font-medium leading-[1.5] mb-8 max-w-md">
                 Every invoice SMASH generates is ATO-compliant. ABN included, GST calculated, line items itemised. You speak. We handle the rest.
               </p>
-              <DualProductCtas />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
+                  Download the iOS app
+                </a>
+                <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
+                  See How It Works
+                </Link>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={10} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
+                </div>
+                <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
+              </div>
             </div>
-          </AnimateIn>
-          <AnimateIn direction="right">
+            </AnimateIn>
+            <AnimateIn direction="right">
             <ScaledPhone>
               <PhoneMockup>
                 <AppScreen type="invoice" />
               </PhoneMockup>
             </ScaledPhone>
-          </AnimateIn>
+            </AnimateIn>
+          </div>
         </div>
-      </MarketingPhotoHero>
+      </section>
 
       {/* AI ANSWER BLOCK */}
       <section className="bg-accent py-10 md:py-14">
@@ -415,7 +433,7 @@ export function GstCompliantInvoicing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-              Start Free on iPhone
+              Download the iOS app
             </a>
             <Link to="/pricing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
               See Pricing

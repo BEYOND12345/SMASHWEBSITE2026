@@ -9,15 +9,13 @@ import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../comp
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { type CountryData, hreflangAlternates } from '../data/country-data';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { APP_STORE_URL, CHROME_STORE_URL } from '../data/download-urls';
-import { MARKETING_HERO_PHOTO } from '../data/marketing-photos';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 interface CountryLandingProps {
   data: CountryData;
 }
+
+const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
 export function CountryLanding({ data }: CountryLandingProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -44,18 +42,53 @@ export function CountryLanding({ data }: CountryLandingProps) {
 
       <Nav />
 
-      <MarketingPhotoHero photo={MARKETING_HERO_PHOTO} tintDirection="center" contentClassName="py-20 md:py-28">
-        <AnimateIn direction="up">
-          <p className={`${iosLanding.eyebrow} mb-5`}>
-            {data.flagEmoji} Live in {data.name}
-          </p>
-          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
-            <span className="block text-white">{data.heroHook}</span>
-          </h1>
-          <p className={`${iosLanding.subline} mb-10 !text-white/70 !max-w-2xl`}>{data.heroSub}</p>
-          <DualProductCtas />
-        </AnimateIn>
-      </MarketingPhotoHero>
+      {/* HERO */}
+      <section className="relative bg-brand overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/hero_image.png" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/92 to-gray-900/60" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28">
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-[0.2em] mb-5">
+              {data.flagEmoji} Live in {data.name}
+            </p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
+              {data.heroHook}
+            </h1>
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mb-10">
+              {data.heroSub}
+            </p>
+
+            {/* Download CTAs — iOS App Store + Chrome Web Store */}
+            <div className="flex flex-col sm:flex-row gap-3 max-w-lg">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+              >
+                <Apple size={18} strokeWidth={2.5} />
+                Download the iOS app
+              </a>
+              <a
+                href={CHROME_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 text-white font-display text-sm uppercase tracking-widest hover:bg-white/20 transition-all border border-white/15"
+              >
+                <Chrome size={18} strokeWidth={2.5} />
+                Get the Chrome extension
+              </a>
+            </div>
+
+            <p className="mt-4 text-white/50 text-xs font-body">
+              Free to start. No credit card required. Same plan worldwide.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* ANSWER BLOCK — dense, for AI citation */}
       <section className="bg-accent py-10">
@@ -208,7 +241,7 @@ export function CountryLanding({ data }: CountryLandingProps) {
               className="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
               <Apple size={18} strokeWidth={2.5} />
-              Start Free on iPhone
+              Download the iOS app
             </a>
             <a
               href={CHROME_STORE_URL}

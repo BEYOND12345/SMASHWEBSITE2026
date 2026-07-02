@@ -5,13 +5,9 @@ type Props = {
   as?: 'p' | 'div' | 'span';
 };
 
-/**
- * Split copy after sentence-ending full stops so each clause sits on its own line.
- * A non-breaking space after a full stop is treated as "keep together" — it won't
- * split (e.g. "…a quote.\u00A0Done." stays on one clause).
- */
+/** Split copy after sentence-ending full stops so each clause sits on its own line. */
 export function IosSubline({ children, className = '', as: Tag = 'p' }: Props) {
-  const sentences = children.split(/(?<=\.)[^\S\u00A0]+/).filter(Boolean);
+  const sentences = children.split(/(?<=\.)\s+/).filter(Boolean);
 
   if (sentences.length <= 1) {
     return <Tag className={className}>{children}</Tag>;

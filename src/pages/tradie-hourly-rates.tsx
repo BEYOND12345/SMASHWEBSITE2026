@@ -9,8 +9,7 @@ import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { AnimateIn } from '../components/animate-in';
 import { VoiceConversionCTA } from '../components/voice-conversion-cta';
-import { ToolPageHero } from '../components/marketing/ToolPageHero';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, Calculator, ArrowRight } from 'lucide-react';
 
 const url = 'https://smashinvoices.com/tradie-hourly-rates';
 
@@ -97,28 +96,45 @@ export function TradieHourlyRates() {
 
       <Nav />
 
-      <ToolPageHero
-        eyebrow="Pricing guide · 2026"
-        headline={
-          <>
-            <span className="block text-white">How much should</span>
-            <span className="block text-white">
-              a tradie <span className="text-accent">charge</span>?
-            </span>
-          </>
-        }
-        subline="Current hourly rates across Australia, New Zealand, the UK, the US and Canada — plus the one calculation almost every sole trader gets wrong."
-        meta={
-          <>
-            Rates reviewed quarterly. SMASH runs AU today; NZ, UK, US and Canada are next —{' '}
-            <Link to="/nz" className="underline decoration-accent/60 hover:text-white">NZ</Link>{' · '}
-            <Link to="/uk" className="underline decoration-accent/60 hover:text-white">UK</Link>{' · '}
-            <Link to="/us" className="underline decoration-accent/60 hover:text-white">US</Link>{' · '}
-            <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
-          </>
-        }
-        secondary={{ kind: 'link', to: '/hourly-rate-calculator', label: 'Calculate your rate' }}
-      />
+      {/* ── HERO ───────────────────────────────────────────── */}
+      <section className="bg-brand py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="font-display text-[11px] uppercase tracking-[0.2em] text-accent mb-6">
+              Pricing guide · 2026
+            </p>
+            <h1 className="font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] text-white mb-8">
+              How much should<br />a tradie <span className="text-accent">charge</span>?
+            </h1>
+            <p className="font-body text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-4">
+              Current hourly rates across Australia, New Zealand, the UK, the US and Canada — plus the one calculation almost every sole trader gets wrong.
+            </p>
+            <p className="font-body text-sm text-white/40 max-w-2xl leading-relaxed mb-10">
+              Rates reviewed quarterly. SMASH runs AU today; NZ, UK, US and Canada are next —{' '}
+              <Link to="/nz" className="underline decoration-accent/60 hover:text-white">NZ</Link>{' · '}
+              <Link to="/uk" className="underline decoration-accent/60 hover:text-white">UK</Link>{' · '}
+              <Link to="/us" className="underline decoration-accent/60 hover:text-white">US</Link>{' · '}
+              <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/hourly-rate-calculator"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-display text-sm uppercase tracking-widest hover:brightness-95 transition-all"
+              >
+                <Calculator size={16} strokeWidth={2.5} />
+                Calculate your rate
+              </Link>
+              <Link
+                to="/voice-invoicing"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/20 text-white font-display text-sm uppercase tracking-widest hover:bg-white/10 transition-all"
+              >
+                See voice invoicing
+              </Link>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* ── ANSWER BLOCK (AI citation bait) ───────────────── */}
       <section className="bg-white py-16 md:py-20">

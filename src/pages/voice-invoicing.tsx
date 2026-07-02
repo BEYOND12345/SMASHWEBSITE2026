@@ -534,7 +534,7 @@ export function VoiceInvoicing() {
               className="inline-flex items-center justify-center gap-3 font-display text-sm uppercase tracking-widest text-brand px-10 py-5 rounded-2xl hover:brightness-95 transition-all"
               style={{ backgroundColor: '#DFFF00' }}
             >
-              Start Free on iPhone
+              Download the iOS app
               <ArrowRight size={16} strokeWidth={2.5} />
             </a>
             <p className="font-body text-xs text-white/30 text-center">Start free · No card needed</p>

@@ -20,11 +20,9 @@ import { AnalyzerScreen } from '../components/analyzer-screen';
 import type { SegmentData } from '../data/segment-data';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
-import { MARKETING_HERO_PHOTO } from '../data/marketing-photos';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { APP_STORE_URL, CHROME_STORE_URL } from '../data/download-urls';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+const CHROME_STORE_URL = "https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel";
 
 // ── FAQ accordion ─────────────────────────────────────────────────────────────
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
@@ -70,48 +68,83 @@ export function SegmentPage({ data }: { data: SegmentData }) {
       <Nav />
 
       {/* ── HERO — text left, dual phones right ────────────────────────────── */}
-      <MarketingPhotoHero photo={MARKETING_HERO_PHOTO} contentClassName="py-20 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16 items-center min-h-[80vh]">
-          <div className="py-4 lg:py-24">
-            <p className={`${iosLanding.eyebrow} mb-5`}>{data.tradeLabel}</p>
-            <h1 className={`${iosLanding.heroHeadline} mb-6`}>
-              {data.heroH1.map((line, i) => (
-                <span key={i} className="block text-white">
-                  {line}
-                </span>
-              ))}
-            </h1>
-            <p className={`${iosLanding.subline} mb-10 !text-white/75`}>{data.heroSub}</p>
-            <DualProductCtas />
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={10} className="text-accent fill-accent" />
-                  ))}
-                </div>
-                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
-              </div>
-              <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
-            </div>
-          </div>
+      <section className="relative bg-brand overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/hero_image.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/98 via-gray-900/90 to-gray-900/50" />
+        </div>
 
-          <div className="flex w-full items-center justify-center overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
-            <DualPhoneStack
-              backPhone={
-                <PhoneMockup>
-                  <GeneratingScreen />
-                </PhoneMockup>
-              }
-              frontPhone={
-                <PhoneMockup>
-                  <ListeningScreen />
-                </PhoneMockup>
-              }
-            />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16 items-center min-h-[80vh] py-20 lg:py-0">
+
+            {/* Left — copy */}
+            <div className="py-4 lg:py-24">
+              <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">{data.tradeLabel}</p>
+              <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
+                {data.heroH1.map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+              </h1>
+              <p className="font-body text-lg text-white/75 font-medium leading-[1.5] mb-10 max-w-md">
+                {data.heroSub}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-glow"
+                >
+                  Download the iOS app
+                </a>
+                <a
+                  href={CHROME_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-base uppercase tracking-wide hover:bg-white/10 transition-all"
+                >
+                  Add to Chrome
+                </a>
+              </div>
+              {/* Trust row */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={10} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
+                </div>
+                <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
+              </div>
+            </div>
+
+            {/* Right — phones */}
+            <div className="flex w-full items-center justify-center overflow-visible pb-0 lg:pb-0 pt-0 lg:pt-16">
+              <DualPhoneStack
+                backPhone={
+                  <PhoneMockup>
+                    <GeneratingScreen />
+                  </PhoneMockup>
+                }
+                frontPhone={
+                  <PhoneMockup>
+                    <ListeningScreen />
+                  </PhoneMockup>
+                }
+              />
+            </div>
+
           </div>
         </div>
-      </MarketingPhotoHero>
+      </section>
 
       {/* ── SPEED BAR ──────────────────────────────────────────────────────── */}
       <section className="bg-accent py-10 md:py-12">
@@ -425,7 +458,7 @@ export function SegmentPage({ data }: { data: SegmentData }) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-glow"
             >
-              Start Free on iPhone
+              Download the iOS app
             </a>
             <a
               href={CHROME_STORE_URL}

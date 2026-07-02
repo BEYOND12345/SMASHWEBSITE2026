@@ -191,10 +191,9 @@
 /get-started/                                        /get-started/index.html                                           200
 /quote-to-invoice                                      /quote-to-invoice/index.html                                      200
 /quote-to-invoice/                                     /quote-to-invoice/index.html                                      200
+# Chrome + B2B + iOS landings — force SPA (full React pages); overrides any stale static file in dist
 /voice-invoicing                                     /index.html                                                       200!
 /voice-invoicing/                                    /index.html                                                       200!
-# Edge function voice-invoicing-route rewrites bots to /voice-invoicing/index.html before this rule.
-# Chrome + B2B landings — force SPA (full React pages); overrides any stale static file in dist
 /chrome-extension                                    /index.html                                                       200!
 /chrome-extension/                                   /index.html                                                       200!
 /b2b-gmail-quoting                                   /index.html                                                       200!

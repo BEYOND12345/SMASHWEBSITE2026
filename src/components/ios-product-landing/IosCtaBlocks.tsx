@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mic } from 'lucide-react';
-import { DualProductCtas } from '../marketing/DualProductCtas';
 import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
-import { GmailStoryFrame } from '../gmail-product-landing/GmailStoryFrame';
-import { IOS_DESKTOP_BAND } from '../../data/ios-landing-spec';
+import { CompactChromeMockup } from '../gmail-sidebar-mockups';
 import { IosSubline } from './IosSubline';
 import { iosLanding } from './ios-landing-tokens';
 
@@ -69,25 +67,24 @@ export function IosFinalCta({
       <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
         <IosOfficialAppStoreBadge />
         <Link to="/chrome-extension" className={iosLanding.secondaryCta}>
-          Add to your browser
+          Also works in Gmail
         </Link>
       </div>
 
       <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>
-      <p className="text-xs text-white/45 font-medium mt-1.5">
-        iPhone on site · Gmail in Chrome or Edge at your desk
-      </p>
     </>
   );
 }
 
-/** Hero — download + scroll to story on the iOS product page. */
+/** Hero — download (Start Free) + scroll to story (no App Store badge). */
 export function IosHeroCta({ className = '' }: { className?: string }) {
   return (
-    <DualProductCtas
-      className={className}
-      secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-    />
+    <div className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center ${className}`.trim()}>
+      <IosStartFreeCta />
+      <a href="#how-it-works" className={iosLanding.secondaryCta}>
+        See how it works
+      </a>
+    </div>
   );
 }
 
@@ -110,27 +107,24 @@ export function IosMediaSlot({
   );
 }
 
-/** Desktop band — Gmail quote frame from /chrome-extension, sized for the iOS reader. */
+/** Desktop band — Chrome extension UI + iPhone teaser. */
 export function IosDesktopTeaser() {
   return (
-    <div className="w-full max-w-[560px] mx-auto lg:mx-0 lg:ml-auto">
-      <div className="rounded-[16px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
-        <GmailStoryFrame frame="a3-quote-done" fill priority />
+    <div className="flex items-end justify-center gap-4 sm:gap-6 mt-10">
+      <CompactChromeMockup />
+      <div className="w-[72px] sm:w-[88px] rounded-[18px] border-[3px] border-white/20 bg-white h-[120px] sm:h-[148px] shadow-lg shrink-0 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-brand" />
+        <div className="absolute top-2 inset-x-2 h-1 rounded-full bg-white/20" />
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-white/30" />
       </div>
-      <p className={`${iosLanding.caption} mt-4 text-center lg:text-left text-white/55`}>
-        {IOS_DESKTOP_BAND.mediaCaption}
-      </p>
     </div>
   );
 }
 
 export function IosDesktopLink() {
   return (
-    <Link
-      to={IOS_DESKTOP_BAND.linkHref}
-      className="font-body font-semibold text-accent hover:underline text-[clamp(1rem,1.5vw,1.25rem)] mt-6 inline-block"
-    >
-      {IOS_DESKTOP_BAND.linkLabel}
+    <Link to="/chrome-extension" className="font-body font-semibold text-accent hover:underline text-[clamp(1rem,1.5vw,1.25rem)] mt-6 inline-block">
+      See how SMASH works on desktop →
     </Link>
   );
 }

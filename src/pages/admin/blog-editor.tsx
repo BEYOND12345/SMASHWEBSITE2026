@@ -3,7 +3,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { ArrowLeft, Save, Eye } from 'lucide-react';
 import { SEO } from '../../components/seo';
-import { SmashLogoLink } from '../../components/SmashLogo';
 
 interface BlogFormData {
   title: string;
@@ -148,7 +147,9 @@ export function BlogEditor() {
       <SEO title="Blog Editor | SMASH" robots="noindex, nofollow" />
       <nav className="bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-          <SmashLogoLink height={12} />
+          <Link to="/" className="text-xl font-black tracking-tight text-white">
+            SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
+          </Link>
           <Link
             to="/admin/blog"
             className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors"

@@ -245,14 +245,8 @@ export function IosPhoneShowcase({
 }
 
 /** Hero — phone HTML + listening callout (App Store frame 1). */
-export function IosHeroPhoneShowcase({
-  className = '',
-  size = 'hero',
-}: {
-  className?: string;
-  size?: IosPhoneShowcaseSize | number;
-}) {
-  const phoneWidth = usePhoneDisplayWidth(size);
+export function IosHeroPhoneShowcase({ className = '' }: { className?: string }) {
+  const phoneWidth = usePhoneDisplayWidth('hero');
   const cfg = iosShowcaseVariant('hero');
   const phoneScale = phoneWidth / IOS_PHONE_LOGICAL.width;
   const calloutScale = phoneScale * cfg.contentScale;

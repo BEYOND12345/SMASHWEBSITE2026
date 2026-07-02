@@ -12,9 +12,6 @@ import { Mic, Tag, Package, UserCheck, Eye, Zap, CreditCard, BarChart2, ChevronR
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 const testimonials = [
   {
@@ -68,23 +65,58 @@ export function Features() {
 
       <Nav />
 
-      <MarketingPhotoHero contentClassName="py-20 md:py-28 lg:py-36">
-        <AnimateIn direction="up">
-          <p className={`${iosLanding.eyebrow} mb-4`}>Features</p>
-          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
-            <span className="block text-white">Send fast.</span>
-            <span className="block text-white">Price from your catalog.</span>
-            <span className="block text-accent">Get paid.</span>
-          </h1>
-          <p className={`${iosLanding.subline} mb-4 !text-white/80 !max-w-2xl`}>
-            Talk on iPhone or scan Gmail — SMASH builds a tax-compliant invoice from your rates and materials in under 60 seconds. Free to start.
-          </p>
-          <p className="font-body text-base text-white/60 font-medium leading-[1.5] max-w-2xl mb-8">
-            Works in Australia (GST), New Zealand (GST), UK (VAT), US (sales tax), and Canada (GST/HST/PST). Supports NDIS participant numbers, repeat invoices, and Xero/QuickBooks sync.
-          </p>
-          <DualProductCtas />
-        </AnimateIn>
-      </MarketingPhotoHero>
+      {/* HERO */}
+      <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/hero_image.png"
+            alt="SMASH Invoices features"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">Features</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
+              Send fast.<br />Price from your catalog.<br />Get paid.
+            </h1>
+            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
+              Talk on iPhone or scan Gmail — SMASH builds a tax-compliant invoice from your rates and materials in under 60 seconds. Free to start.
+            </p>
+            <p className="font-body text-base text-white/60 font-medium leading-[1.5] max-w-2xl mb-8">
+              Works in Australia (GST), New Zealand (GST), UK (VAT), US (sales tax), and Canada (GST/HST/PST). Supports NDIS participant numbers, repeat invoices, and Xero/QuickBooks sync.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://apps.apple.com/au/app/smash-invoices/id6759475079"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
+              >
+                Download the iOS app
+                <ArrowRight size={14} strokeWidth={2.5} />
+              </a>
+              <Link
+                to="/how-it-works"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all"
+              >
+                See How It Works
+              </Link>
+            </div>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">No card needed · 2 free quotes/month</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* SPEED PROOF BAR */}
       <section className="bg-accent py-5">
@@ -506,7 +538,7 @@ export function Features() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all"
             >
-              Start Free on iPhone
+              Download the iOS app
               <ArrowRight size={14} strokeWidth={2.5} />
             </a>
             <Link
