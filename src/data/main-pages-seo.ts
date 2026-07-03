@@ -96,6 +96,11 @@ export const mainPages: Record<string, MainPageSeo> = {
           'Yes on iPhone. Review every line before send. Desk work uses the Gmail extension in Chrome.',
       },
       {
+        question: 'Can I send a hands-free invoice after a job?',
+        answer:
+          'Yes. Hold Start Recording on iPhone, describe labour and materials out loud, verify priced lines from your catalog, and send — no typing on site.',
+      },
+      {
         question: 'Does SMASH use my own prices?',
         answer:
           'Yes. Your Price Hub drives labour, fees, and materials. Unmatched items are flagged for you to price.',

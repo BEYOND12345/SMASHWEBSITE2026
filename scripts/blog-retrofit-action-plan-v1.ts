@@ -150,6 +150,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     pillarLinks: [
       { href: '/voice-invoicing', label: 'Voice invoicing on iPhone' },
       { href: '/gmail-invoice', label: 'Invoice from Gmail' },
+      { href: '/ai-invoicing', label: 'AI invoicing for tradies' },
     ],
     relatedLinks: [
       { href: '/blog/beyond-chatgpt-dedicated-voice-invoicing', label: 'Why a dedicated invoicing tool beats ChatGPT' },
@@ -170,7 +171,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       {
         question: 'What should tradies use instead of ChatGPT for invoicing?',
         answer:
-          'A dedicated invoicing app that prices from your catalog — by voice on site or from Gmail at your desk — and sends a GST-ready PDF in under 60 seconds.',
+          'Dedicated AI invoicing that prices from your catalog — by voice on site or from Gmail at your desk — and sends a GST-ready PDF in under 60 seconds. See our AI invoicing guide for the full workflow.',
       },
     ],
     keywords:

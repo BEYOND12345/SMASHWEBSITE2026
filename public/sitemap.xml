@@ -116,13 +116,13 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/get-started</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://smashinvoices.com/quote-to-invoice</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://smashinvoices.com/voice-invoicing</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -535,6 +535,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smashinvoices.com/blog/lawn-mowing-repeat-invoices</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -553,19 +559,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/mobile-mechanic-parts-markup-invoice</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smashinvoices.com/blog/electrician-call-out-fee-invoice</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-charge-materials-on-a-plumbing-invoice</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -577,49 +571,79 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smashinvoices.com/blog/how-to-charge-materials-on-a-plumbing-invoice</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smashinvoices.com/blog/repeat-invoices-for-cleaners</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/scope-creep-tradie-invoice</loc>
+    <loc>https://smashinvoices.com/blog/repeat-customer-inconsistent-pricing</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/miscellaneous-costing-you</loc>
+    <loc>https://smashinvoices.com/blog/the-verbal-quote-trap</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/sunday-night-invoicing-real-cost</loc>
+    <loc>https://smashinvoices.com/blog/tax-deductions-sole-trader-tradie-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/why-every-invoicing-app-fails</loc>
+    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-handyman-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/forgotten-invoices-annual-cost</loc>
+    <loc>https://smashinvoices.com/blog/do-i-need-gst-as-a-sole-trader-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/built-for-people-who-dont-type</loc>
+    <loc>https://smashinvoices.com/blog/eofy-invoicing-checklist-sole-traders-australia</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/smash-vs-typing-invoices</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/fly-screen-job</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-plumber-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smashinvoices.com/blog/never-send-bank-details-text</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/customer-approval-portal</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -643,139 +667,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/customer-approval-portal</loc>
+    <loc>https://smashinvoices.com/blog/built-for-people-who-dont-type</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-plumber-australia</loc>
+    <loc>https://smashinvoices.com/blog/forgotten-invoices-annual-cost</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/fly-screen-job</loc>
+    <loc>https://smashinvoices.com/blog/why-every-invoicing-app-fails</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/smash-vs-typing-invoices</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/eofy-invoicing-checklist-sole-traders-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-handyman-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/do-i-need-gst-as-a-sole-trader-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/tax-deductions-sole-trader-tradie-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/the-verbal-quote-trap</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/can-i-invoice-without-gst-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/customer-put-fifty-back-in-purse</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-much-losing-uncharged-materials</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-cleaner-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/what-happens-no-abn-on-invoice-australia</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/i-never-got-it-invoice-dispute</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/invoicing-app-no-typing</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/smash-vs-invoice2go</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/smash-vs-tradify-sole-trader</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/xero-too-complicated-sole-trader</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/too-nice-costing-you-money</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/why-trades-businesses-fail-year-3</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/ill-pay-you-next-week-chasing-invoices</loc>
-    <lastmod>2026-04-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smashinvoices.com/blog/what-does-a-good-tradie-business-look-like</loc>
+    <loc>https://smashinvoices.com/blog/miscellaneous-costing-you</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -793,13 +703,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/price-materials-automatically</loc>
+    <loc>https://smashinvoices.com/blog/invoicing-app-no-typing</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/repeat-customer-inconsistent-pricing</loc>
+    <loc>https://smashinvoices.com/blog/sunday-night-invoicing-real-cost</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -823,13 +733,103 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smashinvoices.com/blog/who-is-smash-invoices-for</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smashinvoices.com/blog/what-must-be-on-a-tax-invoice-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smashinvoices.com/blog/who-is-smash-invoices-for</loc>
+    <loc>https://smashinvoices.com/blog/what-does-a-good-tradie-business-look-like</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/ill-pay-you-next-week-chasing-invoices</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/price-materials-automatically</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/why-trades-businesses-fail-year-3</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/too-nice-costing-you-money</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/i-never-got-it-invoice-dispute</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/xero-too-complicated-sole-trader</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/smash-vs-tradify-sole-trader</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/smash-vs-invoice2go</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/scope-creep-tradie-invoice</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/what-happens-no-abn-on-invoice-australia</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/how-to-invoice-as-a-cleaner-australia</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/how-much-losing-uncharged-materials</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/customer-put-fifty-back-in-purse</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smashinvoices.com/blog/can-i-invoice-without-gst-australia</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

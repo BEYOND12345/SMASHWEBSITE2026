@@ -455,8 +455,8 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       'Watch a customer email become a sent, priced invoice inside Gmail in under 20 seconds with SMASH.',
     youtubeUploadDate: '2026-01-01',
     comparison: {
-      title: 'Gmail invoice workflow comparison',
-      subtitle: 'Why a dedicated sidebar beats templates and copy-paste.',
+      title: 'Email to invoice workflow comparison',
+      subtitle: 'Why a Gmail sidebar beats templates and copy-paste for email to invoice.',
       headers: ['Method', 'Typical time', 'Typing required'],
       rows: [
         ['Word/Excel template', '10–15 min', 'All line items'],
@@ -471,7 +471,7 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
       attribution: 'Chris P. — electrician, Sydney',
     },
     capabilityEyebrow: 'Everything in one sidebar',
-    capabilityTitle: 'No manual entry. No brain fog. No missed details.',
+    capabilityTitle: 'Email to invoice — no manual entry, no brain fog, no missed details.',
     testimonials: [
       {
         quote: 'Customer emails a job, I tap From Email, invoice is in the reply. Didn’t open another tab.',
@@ -500,7 +500,7 @@ export const gmailLandingPages: Record<GmailLandingSlug, GmailLandingConfig> = {
     ],
     stories: [
       {
-        eyebrow: 'From email to invoice',
+        eyebrow: 'Email to invoice on desktop',
         title: 'Scan it.\nPrice it.\nSend it.',
         body: 'The customer already wrote the scope in Gmail. SMASH extracts names, line items, and delivery details, matches your catalog, and builds the invoice while you read the thread.',
         bullets: [
