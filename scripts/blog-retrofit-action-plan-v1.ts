@@ -77,7 +77,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     answerBlock:
       'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk for 30 seconds on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link before you start the van.',
     cta: 'ios',
-    pillarLinks: [{ href: '/voice-invoicing', label: 'voice to invoice' }],
+    pillarLinks: [{ href: '/voice-invoicing', label: 'Send an invoice from your phone' }],
     relatedLinks: [
       { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice in 2026' },
       { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
@@ -310,7 +310,7 @@ function workspaceRouter(cta: CtaMode): string {
         <p>Finished the job? Talk for 30 seconds before you leave.</p>
         <h3>SMASH for iPhone</h3>
         <p>Priced invoice from your catalog — sent before you start the van.</p>
-        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="${iosClass}" style="${iosStyle}" rel="nofollow">Start Free on iPhone</a>
+        <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="${iosClass}" style="${iosStyle}" rel="nofollow">Download the iOS app</a>
         <p style="margin-top:14px;font-size:13px;"><a href="/voice-invoicing">Voice invoicing →</a></p>
       </div>
     </div>
@@ -333,7 +333,7 @@ function conversionClose(cta: CtaMode): string {
     <h2>Send before you leave.<span class="accent-line">Talk. Verify. Send.</span></h2>
     <p style="color:rgba(255,255,255,0.75);margin:0 0 16px;">Describe the job out loud — priced from your catalog in under 60 seconds.</p>
     <div class="conversion-btns">
-      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Start Free on iPhone</a>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
       <a href="/voice-invoicing" class="conversion-btn-outline">Voice invoicing</a>
     </div>
   </aside>`;
@@ -342,7 +342,7 @@ function conversionClose(cta: CtaMode): string {
     <h2>Stop losing admin hours.<span class="accent-line">Start getting paid faster.</span></h2>
     <p style="color:rgba(255,255,255,0.75);margin:0 0 16px;">Voice on-site or Gmail at your desk — same professional invoices, zero keyboard tax.</p>
     <div class="conversion-btns">
-      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Start Free on iPhone</a>
+      <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
       <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel" class="conversion-btn-outline" rel="nofollow">Add to Chrome — Free</a>
     </div>
   </aside>`;

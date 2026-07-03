@@ -4,7 +4,6 @@ import { MockupFrame } from '../phone-showcase';
 import { IosSpecHeadline } from './IosCalloutCard';
 import { IosPhoneShowcase } from './IosPhoneShowcase';
 import { IosPhotoBackdrop } from './IosPhotoBackdrop';
-import { IosStoryPhotoCover } from './IosStoryPhotoCover';
 import {
   IOS_STORY_PHOTOS,
   IOS_STORY_PHOTO_BG,
@@ -16,18 +15,11 @@ type Props = {
   segment: IosStorySegment;
   imageFirst?: boolean;
   dark?: boolean;
-  /** Even-index story rows only — keeps photo / solid-color alternation down the page. */
-  photoBgEnabled?: boolean;
 };
 
 /** Chrome/Gmail-style alternating story row — unified phone showcase on every section. */
-export function IosStorySection({
-  segment,
-  imageFirst = false,
-  dark = false,
-  photoBgEnabled = true,
-}: Props) {
-  const photoBg = photoBgEnabled ? IOS_STORY_PHOTO_BG[segment.screen] : undefined;
+export function IosStorySection({ segment, imageFirst = false, dark = false }: Props) {
+  const photoBg = IOS_STORY_PHOTO_BG[segment.screen];
   // Over a dark-tinted photo, copy must read as white.
   const copyDark = dark || Boolean(photoBg);
 
@@ -66,11 +58,23 @@ export function IosStorySection({
     <section className={`relative ${sectionBg} py-16 md:py-28 overflow-hidden`}>
       {photoBg && (
         <>
-          <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
+          <picture>
+            {photoBg.srcMobile && (
+              <source media="(max-width: 640px)" srcSet={photoBg.srcMobile} />
+            )}
+            <img
+              src={photoBg.src}
+              alt={photoBg.alt ?? ''}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: photoBg.focus ?? 'center' }}
+            />
+          </picture>
           {/* Dark brand tint — stronger on the copy (left) side for legibility. */}
           <div
             aria-hidden
-            className="absolute inset-0 z-[1]"
+            className="absolute inset-0"
             style={{
               background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 28, 92) / 100}) 0%, rgba(15,23,42,${tint / 100}) 45%, rgba(15,23,42,${Math.max(tint - 28, 12) / 100}) 100%)`,
             }}
@@ -109,7 +113,7 @@ export function IosAccentStrip({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-accent py-10 md:py-14">
+    <section className="bg-accent py-10 md:py-14 border-t border-brand/10">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
         <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">{eyebrow}</p>
         <div className="text-lg md:text-xl font-bold text-brand leading-[1.35]">{children}</div>

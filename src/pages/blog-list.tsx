@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 import { supabase } from '../lib/supabase';
 import { SEO } from '../components/seo';
 import { StructuredData, createBreadcrumbSchema } from '../components/structured-data';
@@ -8,17 +10,6 @@ import { Calendar, Clock, ArrowRight, Star } from 'lucide-react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
 import { hreflangAlternates } from '../data/country-data';
-import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
-import { DualProductCtas } from '../components/marketing/DualProductCtas';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
-import {
-  absoluteBlogImageUrl,
-  BLOG_DEFAULT_OG_URL,
-  resolveBlogFeaturedImageAlt,
-  resolveBlogFeaturedImagePath,
-} from '../data/blog-seo-assets';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const VOICE_CLUSTER = [
   { slug: 'the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice in 60 seconds' },
@@ -71,7 +62,7 @@ export function BlogList() {
         keywords="send invoice after job, voice to invoice, fastest way to invoice, invoice without typing, email to invoice, gmail invoice"
         ogTitle="Send Invoices Faster — SMASH Blog"
         ogDescription="How to send an invoice before you leave the job. Voice, Gmail, speed — problem-first guides."
-        ogImage={BLOG_DEFAULT_OG_URL}
+        ogImage="https://smashinvoices.com/hero_image.png"
         ogUrl="https://smashinvoices.com/blog"
         twitterTitle="Send Invoices Faster — SMASH Blog"
         twitterDescription="Send the invoice before you leave the job — guides for voice and Gmail."
@@ -97,31 +88,16 @@ export function BlogList() {
         }
       }} />
 
-      <div className="min-h-screen bg-brand">
+      <div className="min-h-screen bg-[#0A0A0A]">
         <Nav />
 
-        <MarketingPhotoHero tintDirection="center" contentClassName="py-14 md:py-20">
-          <AnimateIn direction="up">
-            <p className={`${iosLanding.eyebrow} mb-4`}>SMASH Blog</p>
-            <h1 className={`${iosLanding.heroHeadline} mb-5 max-w-3xl`}>
-              <span className="block text-white">Send invoices</span>
-              <span className="block text-accent">faster.</span>
-            </h1>
-            <p className={`${iosLanding.subline} mb-8 !max-w-2xl`}>
-              Problem → solution guides: send the invoice before you leave the job. Voice on iPhone, email in Gmail.
-            </p>
-            <DualProductCtas />
-          </AnimateIn>
-        </MarketingPhotoHero>
-
-        <section className="border-b border-white/10 bg-white/[0.03]">
+        <section className="border-b border-white/10 bg-white/5">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
             <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-3">Start here</p>
             <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-white mb-4">Send the invoice before you leave the job</h2>
             <p className="text-slate-400 max-w-2xl mb-6">Voice on iPhone, email in Gmail — same verify-and-send flow.</p>
             <div className="flex flex-wrap gap-3 mb-4">
-              <Link to="/voice-invoicing" className="inline-flex items-center gap-2 rounded-full bg-accent text-brand px-5 py-2.5 text-sm font-bold">Voice invoicing →</Link>
-              <Link to="/chrome-extension" className="inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-5 py-2.5 text-sm font-semibold hover:border-accent">Gmail extension →</Link>
+              <Link to="/voice-invoicing" className="inline-flex items-center gap-2 rounded-full bg-accent text-brand px-5 py-2.5 text-sm font-bold">Voice invoicing pillar →</Link>
               <a href="https://www.youtube.com/@smashinvoices" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-5 py-2.5 text-sm font-semibold hover:border-accent">YouTube demos</a>
             </div>
             <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
@@ -134,12 +110,15 @@ export function BlogList() {
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
           <AnimateIn direction="up">
-            <header className="mb-12">
-              <h2 className={`${iosLanding.sectionHeadline} mb-4`} style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>
-                <span className="block text-white">Latest posts</span>
-              </h2>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-[0.88]">
+                Blog
+              </h1>
+              <p className="font-body text-xl text-white/70 max-w-3xl leading-[1.5]">
+                Problem → solution guides: send the invoice before you leave the job. Voice on iPhone, email in Gmail.
+              </p>
             </header>
           </AnimateIn>
 
@@ -160,16 +139,15 @@ export function BlogList() {
                   to={`/blog/${post.slug}`}
                   className="group bg-white/5 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-accent/50 block h-full"
                 >
-                  <div className="aspect-[16/9] overflow-hidden bg-white/5">
-                    <img
-                      src={absoluteBlogImageUrl(resolveBlogFeaturedImagePath(post.featured_image))}
-                      alt={resolveBlogFeaturedImageAlt(post.featured_image_alt, {
-                        title: post.title,
-                        primaryKeyword: null,
-                      })}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                  {post.featured_image && (
+                    <div className="aspect-[16/9] overflow-hidden bg-white/5">
+                      <img
+                        src={post.featured_image}
+                        alt={post.featured_image_alt || post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
 
                   <div className="p-6">
                     <div className="flex items-center gap-4 text-white/50 text-sm mb-3">
@@ -228,7 +206,7 @@ export function BlogList() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
               </a>
               <div className="flex items-center gap-1.5">
                 <div className="flex items-center gap-0.5">

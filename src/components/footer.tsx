@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
 import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube, Mail, ArrowRight } from 'lucide-react';
-import { EdgeLogoMark } from './icons/EdgeLogoMark';
-import { SmashLogoLink } from './SmashLogo';
 import {
   APP_STORE_URL,
   CHROME_STORE_URL,
-  EDGE_STORE_URL,
   IOS_DOWNLOAD_LABEL,
 } from '../data/download-urls';
 
@@ -200,7 +197,15 @@ export function Footer({ showCTA = false }: FooterProps) {
         <div className="lg:grid lg:grid-cols-12 lg:gap-10 mb-2 lg:mb-12">
           {/* Brand + Download + Social */}
           <div className="lg:col-span-4 mb-10 lg:mb-0">
-            <SmashLogoLink height={17} className="mb-5" />
+            <Link
+              to="/"
+              className="inline-block text-3xl font-black tracking-tight mb-5"
+            >
+              SMASH
+              <span className="text-accent text-5xl leading-none align-baseline">
+                .
+              </span>
+            </Link>
             <p className="text-base text-white/60 font-medium leading-[1.15] mb-6 max-w-xs">
               Describe the job. Get paid. That's it.
             </p>
@@ -221,15 +226,6 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <Chrome size={18} strokeWidth={2.5} />
                 <span>SMASH for Gmail</span>
               </Link>
-              <a
-                href={EDGE_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all"
-              >
-                <EdgeLogoMark size={18} className="shrink-0" />
-                <span>SMASH for Edge</span>
-              </a>
               <a
                 href={APP_STORE_URL}
                 target="_blank"
@@ -306,11 +302,6 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <li>
                   <Link to="/chrome-extension" className="text-base text-accent hover:text-white transition-colors font-black">
                     SMASH for Gmail (Chrome)
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/chrome-extension" className="text-base text-accent hover:text-white transition-colors font-black">
-                    SMASH for Edge (Microsoft)
                   </Link>
                 </li>
                 <li>

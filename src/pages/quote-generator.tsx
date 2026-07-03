@@ -3,7 +3,6 @@ import { SEO } from '../components/seo';
 import { hreflangAlternates } from '../data/country-data';
 import { StructuredData, createFAQSchema, createBreadcrumbSchema, createHowToSchema, createCalculatorSchema } from '../components/structured-data';
 import { Nav } from '../components/nav';
-import { ToolPageHero } from '../components/marketing/ToolPageHero';
 import { Footer } from '../components/footer';
 import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
@@ -299,7 +298,7 @@ function QuoteBuilder() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[32px] bg-accent text-brand font-black text-xs uppercase tracking-widest hover:brightness-95 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
                 <ArrowRight size={11} strokeWidth={3} />
               </a>
             </div>
@@ -412,7 +411,7 @@ function QuoteBuilder() {
                 Send Quote
               </button>
               <p className="text-center font-body text-xs text-brand/35 font-medium">
-                Want real quotes from voice in 60 seconds? <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">Start Free on iPhone</a>
+                Want real quotes from voice in 60 seconds? <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">Download the iOS app</a>
               </p>
             </>
           )}
@@ -467,7 +466,7 @@ function QuoteBuilder() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <p className="font-body text-xs font-medium text-brand/45 mt-3">No credit card · Free to start</p>
@@ -547,18 +546,51 @@ export function QuoteGenerator() {
 
       <Nav />
 
-      <ToolPageHero
-        eyebrow="Free quote generator"
-        subline="SMASH is the only quote generator built for Australian tradies. Describe the job out loud — get a professional, GST-compliant quote in under 60 seconds."
-        meta="2 free quotes/month · No credit card · iPhone or Gmail"
-        headline={
-          <>
-            <span className="block text-white">Free Quote Generator</span>
-            <span className="block text-white">Australia — Professional</span>
-            <span className="block text-accent">Quotes in 60 Seconds.</span>
-          </>
-        }
-      />
+      {/* ── HERO ─────────────────────────────────────────────── */}
+      <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/4 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free quote generator</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
+              Free Quote Generator<br />
+              Australia — Professional<br />
+              <span className="text-accent">Quotes in 60 Seconds.</span>
+            </h1>
+            <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
+              SMASH is the only quote generator built for Australian tradies. Describe the job out loud
+              — get a professional, GST-compliant quote in under 60 seconds.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all shadow-lg shadow-accent/20"
+              >
+                Download the iOS app
+                <ArrowRight size={15} strokeWidth={2.5} />
+              </a>
+              <Link
+                to="/how-it-works"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-[32px] border border-white/20 text-white font-black text-sm uppercase tracking-widest hover:bg-white/5 transition-all"
+              >
+                See how it works
+              </Link>
+            </div>
+            {/* Trust signals */}
+            <div className="flex items-center gap-3 mt-5 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
+                </div>
+                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
+              </div>
+              <span className="font-body text-xs text-white/40 font-medium">2 free quotes/month · No credit card · iPhone</span>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
 
       {/* ── INTERACTIVE QUOTE BUILDER ────────────────────────── */}
       <section className="bg-white py-16 md:py-20">
@@ -651,7 +683,7 @@ export function QuoteGenerator() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
                 <ArrowRight size={14} strokeWidth={2.5} />
               </a>
               <p className="font-body text-white/35 text-xs font-medium mt-3">No credit card · Cancel anytime</p>
@@ -795,7 +827,7 @@ export function QuoteGenerator() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all"
               >
-                Start Free on iPhone
+                Download the iOS app
                 <ArrowRight size={15} strokeWidth={2.5} />
               </a>
               <Link

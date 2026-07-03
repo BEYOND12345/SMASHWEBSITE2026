@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { APP_STORE_URL, NAV_CTA_LABEL } from '../data/download-urls';
-import { SmashLogoLink } from './SmashLogo';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +23,9 @@ export function StickyCTA() {
       <div className="bg-brand/95 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <SmashLogoLink height={12} />
+            <div className="text-xl font-black tracking-tight text-white">
+              SMASH<span className="text-accent text-3xl leading-none align-baseline">.</span>
+            </div>
             <div className="hidden md:block text-sm text-white/80 font-bold">
               Describe the job. Get paid. That's it.
             </div>

@@ -6,10 +6,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { renderPost, type BlogPost } from './prerender-blog.ts';
-import {
-  BLOG_DEFAULT_OG_PATH,
-  resolveBlogFeaturedImageAlt,
-} from '../src/data/blog-seo-assets.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const slug = process.argv[2];
@@ -32,11 +28,8 @@ const post: BlogPost = {
   title: raw.title,
   content: raw.content,
   excerpt: raw.excerpt,
-  featured_image: raw.featured_image ?? BLOG_DEFAULT_OG_PATH,
-  featured_image_alt: resolveBlogFeaturedImageAlt(raw.featured_image_alt, {
-    title: raw.title,
-    primaryKeyword: raw.primary_keyword,
-  }),
+  featured_image: raw.featured_image ?? '/hero_image.png',
+  featured_image_alt: raw.featured_image_alt ?? raw.title,
   primary_keyword: raw.primary_keyword,
   secondary_keywords: raw.secondary_keywords ?? [],
   meta_title: raw.meta_title ?? null,

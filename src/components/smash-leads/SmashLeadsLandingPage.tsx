@@ -22,10 +22,6 @@ import { smashLeadsCanonical } from '../../data/smash-leads-pages';
 import { smashLeadsChromeUrl, SMASH_LEADS_HUB_PATH } from '../../data/smash-leads-constants';
 import { smashLeadsHubGallery, smashLeadsMedia } from '../../data/smash-leads-media';
 import type { SmashLeadsPageId } from '../../data/smash-leads-pages';
-import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
-import { IosSubline } from '../ios-product-landing/IosSubline';
-import { MarketingPhotoHero } from '../marketing/MarketingPhotoHero';
-import { MARKETING_DESK_PHOTO } from '../../data/marketing-photos';
 
 const OG_IMAGE = 'https://smashinvoices.com/smash-leads/placeholders/gmail-crm-pipeline-board.svg';
 
@@ -138,53 +134,47 @@ export function SmashLeadsLandingPage({ config }: { config: SmashLeadsPageConfig
         ctaLabel={config.hero.ctaLabel.includes('Free') ? 'Add to Gmail' : 'Get Smash Leads'}
       />
 
-      <div className={iosLanding.page}>
       {/* HERO */}
-      <MarketingPhotoHero photo={MARKETING_DESK_PHOTO} contentClassName="pt-16 pb-0 md:pt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <AnimateIn direction="left" className="lg:col-span-5">
-            <div className="pb-16 md:pb-24">
-              {config.hero.eyebrow && (
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-4">
-                  <Zap size={13} className="text-accent" strokeWidth={2.5} />
-                  <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{config.hero.eyebrow}</span>
-                </div>
-              )}
-              <h1 className={`${iosLanding.heroHeadline} mb-5`}>
-                <span className="block text-white">{config.hero.h1Line1}</span>
-                {config.hero.h1Accent && <span className="block text-accent">{config.hero.h1Accent}</span>}
-              </h1>
-              <IosSubline className={`${iosLanding.subline} mb-0 max-w-lg`}>{config.hero.subcopy}</IosSubline>
-              <div className="mt-8 flex flex-col gap-4">
+      <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <AnimateIn direction="left" className="lg:col-span-5">
+              <div className="pb-16 md:pb-24">
+                {config.hero.eyebrow && (
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-4">
+                    <Zap size={13} className="text-accent" strokeWidth={2.5} />
+                    <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">{config.hero.eyebrow}</span>
+                  </div>
+                )}
+                <h1 className="font-sans font-black uppercase tracking-tighter leading-[0.88] text-[44px] sm:text-[56px] md:text-[72px] mb-8">
+                  <span className="block text-white">{config.hero.h1Line1}</span>
+                  {config.hero.h1Accent && <span className="block text-accent">{config.hero.h1Accent}</span>}
+                </h1>
+                <p className="font-body text-base sm:text-lg text-white/70 font-medium leading-[1.55] mb-8 max-w-lg">{config.hero.subcopy}</p>
                 <a
                   href={heroCta}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow whitespace-nowrap"
                 >
                   <Chrome size={17} strokeWidth={2.5} />
                   {config.hero.ctaLabel}
                 </a>
-                <p className={`${iosLanding.caption} max-w-md`}>{config.hero.ctaMicrocopy}</p>
-                <Link
-                  to="/chrome-extension"
-                  className="font-body font-semibold text-white/55 hover:text-accent transition-colors text-sm"
-                >
-                  Quote & invoice from Gmail? SMASH Invoices →
-                </Link>
+                <p className="font-body text-xs sm:text-sm text-white/45 mt-4 max-w-md">{config.hero.ctaMicrocopy}</p>
               </div>
-            </div>
-          </AnimateIn>
-          <AnimateIn direction="right" className="lg:col-span-7">
-            <div className="md:pb-24">
-              <ProductScreenshot
-                src={HERO_IMAGE_BY_PAGE[config.id]?.src ?? smashLeadsMedia.pipelineBoard.src}
-                alt={HERO_IMAGE_BY_PAGE[config.id]?.alt ?? 'Smash Leads AI CRM inside Gmail'}
-              />
-            </div>
-          </AnimateIn>
+            </AnimateIn>
+            <AnimateIn direction="right" className="lg:col-span-7">
+              <div className="md:pb-24">
+                <ProductScreenshot
+                  src={HERO_IMAGE_BY_PAGE[config.id]?.src ?? smashLeadsMedia.pipelineBoard.src}
+                  alt={HERO_IMAGE_BY_PAGE[config.id]?.alt ?? 'Smash Leads AI CRM inside Gmail'}
+                />
+              </div>
+            </AnimateIn>
+          </div>
         </div>
-      </MarketingPhotoHero>
+      </section>
 
       {/* PRODUCT GALLERY (hub) — replace placeholders in public/smash-leads/placeholders/ */}
       {config.id === 'hub' && (
@@ -408,24 +398,19 @@ export function SmashLeadsLandingPage({ config }: { config: SmashLeadsPageConfig
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-brand py-20 md:py-28 border-t border-white/10">
-        <div className={`${iosLanding.container} max-w-2xl text-center`}>
-          <AnimateIn direction="up">
-            <h2 className={`${iosLanding.heroHeadline} mb-5`}>
-              <span className="block text-white">{config.finalCta.headline}</span>
-            </h2>
-            <IosSubline className={`${iosLanding.subline} mx-auto mb-8 max-w-lg`}>{config.finalCta.subcopy}</IosSubline>
-            <a
-              href={smashLeadsChromeUrl(config.finalCta.ctaMedium)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-95 transition-all"
-            >
-              <Chrome size={17} />
-              {config.finalCta.ctaLabel}
-            </a>
-            <p className={`${iosLanding.caption} mt-6`}>Free CRM install · AI automation from $10/mo</p>
-          </AnimateIn>
+      <section className="bg-brand py-20 md:py-28">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter mb-4">{config.finalCta.headline}</h2>
+          <p className="font-body text-white/65 mb-8">{config.finalCta.subcopy}</p>
+          <a
+            href={smashLeadsChromeUrl(config.finalCta.ctaMedium)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest"
+          >
+            <Chrome size={17} />
+            {config.finalCta.ctaLabel}
+          </a>
         </div>
       </section>
 
@@ -446,7 +431,6 @@ export function SmashLeadsLandingPage({ config }: { config: SmashLeadsPageConfig
       </section>
 
       <Footer showCTA={false} />
-      </div>
     </>
   );
 }

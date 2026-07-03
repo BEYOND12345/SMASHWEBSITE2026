@@ -8,7 +8,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { B2B_CHROME_LANDING } from '../src/data/b2b-chrome-landing.ts';
 import { mainPages, HREFLANG_LINKS, DATE_MODIFIED } from '../src/data/main-pages-seo.ts';
-import { SMASH_LOGO_NAV_IMG } from './brand-logo.ts';
 
 const c = B2B_CHROME_LANDING;
 const CHROME = c.chromeStoreUrl;
@@ -159,7 +158,7 @@ ${schemas.map((s) => `  <script type="application/ld+json">${ld(s)}</script>`).j
     h1,h2,h3{font-family:'Barlow Condensed',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:.92;font-weight:900}
     a{color:var(--accent)}.wrap{max-width:960px;margin:0 auto;padding:0 24px 64px}
     .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.1)}
-    .nav-logo{display:inline-block;line-height:0;font-weight:900;color:#fff;text-decoration:none;letter-spacing:.08em}
+    .nav-logo{font-weight:900;color:#fff;text-decoration:none;letter-spacing:.08em}
     .cta{display:inline-block;background:var(--accent);color:var(--brand);padding:14px 26px;border-radius:999px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;text-decoration:none}
     .cta-outline{display:inline-block;border:2px solid #fff;color:#fff;padding:12px 24px;border-radius:999px;font-weight:700;text-transform:uppercase;text-decoration:none;margin-left:10px}
     .hero{padding:48px 0 32px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:800;margin:0 0 12px}
@@ -188,7 +187,7 @@ ${schemas.map((s) => `  <script type="application/ld+json">${ld(s)}</script>`).j
 </head>
 <body>
   <header class="nav">
-    <a class="nav-logo" href="${SITE}/">${SMASH_LOGO_NAV_IMG}</a>
+    <a class="nav-logo" href="${SITE}/">SMASH</a>
     <a class="cta" href="${CHROME}" rel="noopener noreferrer">Add to Chrome — Free</a>
   </header>
   <main class="wrap">

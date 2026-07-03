@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Chrome, Monitor } from 'lucide-react';
+import { Chrome } from 'lucide-react';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -8,11 +8,6 @@ import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../stru
 import { SchemaMarkup } from '../SchemaMarkup';
 import { organizationSchema as aiOrgSchema } from '../../data/schema-data';
 import type { PseoHreflangAlternate } from '../../lib/pseo/hreflang';
-import { MarketingPhotoHero } from '../marketing/MarketingPhotoHero';
-import { MARKETING_DESK_PHOTO } from '../../data/marketing-photos';
-import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
-import { IosSubline } from '../ios-product-landing/IosSubline';
-import { ProductLearnMoreCta } from '../marketing/DualProductCtas';
 
 const OG_IMAGE = 'https://smashinvoices.com/hero_image.png';
 
@@ -81,60 +76,44 @@ export function PseoLayout({
 
       <Nav ctaUrl={chromeUrl} ctaLabel="Add to Chrome" />
 
-      <MarketingPhotoHero
-        photo={MARKETING_DESK_PHOTO}
-        tintDirection="center"
-        contentClassName="py-16 md:py-24 text-center"
-      >
-        <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl mx-auto`}>
-          <span className="block text-white">{headline}</span>
-        </h1>
-        <IosSubline className={`${iosLanding.subline} mx-auto mb-8 !max-w-2xl`}>{subheadline}</IosSubline>
-        <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-center">
+      <section className="bg-brand pt-16 pb-12 md:pt-24 md:pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
+            {headline}
+          </h1>
+          <p className="font-body text-lg text-white/70 max-w-2xl mx-auto mb-8">{subheadline}</p>
           <a
             href={chromeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 transition-all whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest"
           >
-            <Chrome size={18} strokeWidth={2.5} />
+            <Chrome size={17} />
             {chromeLabel}
           </a>
-          <ProductLearnMoreCta to="/voice-invoicing" label="On site? SMASH for iPhone" />
         </div>
-        <p className={`${iosLanding.caption} mt-3`}>Free to install · Chrome or Edge</p>
-        <p className="text-xs text-white/45 font-medium mt-1.5">
-          <Link to="/chrome-extension" className="hover:text-accent transition-colors inline-flex items-center gap-1">
-            <Monitor size={12} strokeWidth={2.5} />
-            See the full Gmail extension →
-          </Link>
-        </p>
-      </MarketingPhotoHero>
+      </section>
 
       <main className="bg-white">{children}</main>
 
-      <section className="bg-brand py-16 md:py-20 border-t border-white/10 relative overflow-hidden">
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
-        <div className={`${iosLanding.container} relative z-10 text-center`}>
-          <p className="text-sm text-white/50 mb-6 max-w-xl mx-auto">
+      <section className="bg-brand py-12 border-t border-white/10">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-sm text-white/50 mb-4">
             Browse all programmatic pages in the{' '}
             <Link to="/sitemap-directory" className="text-accent font-semibold hover:underline">
               pSEO sitemap directory
             </Link>
             .
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-center">
-            <a
-              href={chromeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 transition-all whitespace-nowrap"
-            >
-              <Chrome size={18} strokeWidth={2.5} />
-              {chromeLabel}
-            </a>
-            <ProductLearnMoreCta to="/voice-invoicing" label="SMASH for iPhone" />
-          </div>
+          <a
+            href={chromeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest"
+          >
+            <Chrome size={17} />
+            {chromeLabel}
+          </a>
         </div>
       </section>
 
@@ -146,11 +125,8 @@ export function PseoLayout({
 export function PasBlock({ title, body, dark }: { title: string; body: string; dark?: boolean }) {
   return (
     <section className={`py-14 md:py-20 ${dark ? 'bg-brand text-white' : 'bg-white'}`}>
-      <div className={`${iosLanding.container} max-w-3xl`}>
-        <h2
-          className={`${iosLanding.sectionHeadline} mb-4 ${dark ? 'text-white' : 'text-brand'}`}
-          style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
-        >
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <h2 className={`text-2xl sm:text-3xl font-black uppercase tracking-tighter mb-4 ${dark ? 'text-white' : 'text-brand'}`}>
           {title}
         </h2>
         <p className={`font-body text-base leading-relaxed ${dark ? 'text-white/70' : 'text-brand/65'}`}>{body}</p>

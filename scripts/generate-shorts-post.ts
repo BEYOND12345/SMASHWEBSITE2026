@@ -6,7 +6,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { SMASH_LOGO_NAV_LINK } from './brand-logo.ts';
 import { dirname } from 'path';
 import { marked } from 'marked';
 
@@ -42,7 +41,7 @@ function inlineStyles(): string {
     .container{max-width:760px;margin:0 auto;padding:0 24px;}
     .nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,0.85);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);}
     .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
-    .nav-brand{display:inline-block;line-height:0;}
+    .nav-brand{font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:800;letter-spacing:0.02em;color:#fff;font-size:22px;text-transform:uppercase;}
     .nav-links{display:none;gap:28px;}
     .nav-links a{color:var(--text-muted);font-size:14px;font-weight:500;}
     .nav-links a:hover{color:#fff;text-decoration:none;}
@@ -279,7 +278,7 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    ${SMASH_LOGO_NAV_LINK}
+    <a href="/" class="nav-brand">SMASH<span style="color:#D9F99D">.</span></a>
     <div class="nav-links">
       <a href="/features">Features</a><a href="/pricing">Pricing</a>
       <a href="/chrome-extension">Add to Chrome</a><a href="/blog">Blog</a>
@@ -322,7 +321,7 @@ ${schemas.map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</scr
       <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
     </div>
     <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">Start Free on iPhone</a>
+      <a href="${APP_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:#ffffff;color:#0a0a0a;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;">Download the iOS app</a>
       <a href="${CHROME_STORE_URL}" rel="nofollow" style="display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);color:#ffffff;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">Add to Chrome</a>
     </div>
     <div style="margin-top:14px;">Live in <a href="/">Australia</a>, <a href="/nz">New Zealand</a>, <a href="/uk">UK</a>, <a href="/us">US</a> and <a href="/ca">Canada</a></div>

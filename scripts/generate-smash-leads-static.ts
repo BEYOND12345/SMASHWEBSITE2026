@@ -8,7 +8,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { smashLeadsPages, type SmashLeadsPageConfig } from '../src/data/smash-leads-pages.ts';
 import { smashLeadsChromeUrl } from '../src/data/smash-leads-constants.ts';
-import { SMASH_LOGO_NAV_LINK_INLINE } from './brand-logo.ts';
 
 const SITE = 'https://smashinvoices.com';
 
@@ -90,7 +89,7 @@ function buildPage(c: SmashLeadsPageConfig): string {
 
   const h1 =
     escapeHtml(c.hero.h1Line1) +
-    (c.hero.h1Accent ? ` <span style="color:#DFFF00">${escapeHtml(c.hero.h1Accent)}</span>` : '');
+    (c.hero.h1Accent ? ` <span style="color:#D9F99D">${escapeHtml(c.hero.h1Accent)}</span>` : '');
 
   return `<!DOCTYPE html>
 <html lang="en-AU">
@@ -102,17 +101,16 @@ function buildPage(c: SmashLeadsPageConfig): string {
   <meta name="keywords" content="${escapeHtml(c.seo.keywords)}" />
   <link rel="canonical" href="${canonical}" />
   <style>
-    body{margin:0;background:#0f172a;color:#f5f5f5;font-family:system-ui,sans-serif;line-height:1.6;padding:0 24px 48px;}
-    a{color:#DFFF00;} h1{font-size:2.2rem;line-height:1.1;} table{width:100%;border-collapse:collapse;margin:1rem 0;}
+    body{margin:0;background:#0A0A0A;color:#f5f5f5;font-family:system-ui,sans-serif;line-height:1.6;padding:0 24px 48px;}
+    a{color:#D9F99D;} h1{font-size:2.2rem;line-height:1.1;} table{width:100%;border-collapse:collapse;margin:1rem 0;}
     td,th{border:1px solid rgba(255,255,255,0.15);padding:8px;text-align:left;}
-    .cta{display:inline-block;background:#DFFF00;color:#0f172a;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:8px 8px 0 0}
   </style>
   <script type="application/ld+json">${renderJsonLd(faqLd)}</script>
 </head>
 <body>
   <header style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
-    ${SMASH_LOGO_NAV_LINK_INLINE}
-    <a href="${cta}" rel="nofollow" style="background:#DFFF00;color:#0f172a;padding:10px 18px;border-radius:999px;font-weight:700;">${escapeHtml(c.hero.ctaLabel)}</a>
+    <a href="/" style="color:#fff;font-weight:800;text-transform:uppercase;">SMASH</a>
+    <a href="${cta}" rel="nofollow" style="background:#D9F99D;color:#0A0A0A;padding:10px 18px;border-radius:999px;font-weight:700;">${escapeHtml(c.hero.ctaLabel)}</a>
   </header>
   <main style="max-width:800px;margin:0 auto;padding-top:32px;">
     <h1>${h1}</h1>
