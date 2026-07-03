@@ -12,8 +12,10 @@ import { Check, ChevronDown, Star, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { AnimateIn } from '../components/animate-in';
 import { Nav } from '../components/nav';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { DualProductCtas } from '../components/marketing/DualProductCtas';
+import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
+import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
+import { APP_STORE_URL } from '../data/download-urls';
 
 const faqs = [
   {
@@ -86,46 +88,23 @@ export function AiInvoicing() {
 
       <Nav />
 
-      {/* HERO */}
-      <section className="relative py-20 md:py-28 lg:py-36 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/hero_image.png" alt="AI invoicing for service businesses" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/90 to-brand/80"></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="text-accent font-black text-sm uppercase tracking-widest mb-4">AI Invoicing</p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.88] uppercase tracking-tighter">
-              Your invoice.<br />Built from<br />your words.
-            </h1>
-            <p className="font-body text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-[1.5] max-w-2xl mb-4">
-              Describe the job out loud. SMASH generates a professional, priced, tax-compliant invoice in under 60 seconds. No typing. No templates. No admin.
-            </p>
-            <p className="font-body text-sm text-white/45 max-w-2xl mb-8">
-              Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-                Download the iOS app
-              </a>
-              <Link to="/voice-invoicing" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
-                Send invoice fast
-              </Link>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12 w-fit">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={10} className="text-accent fill-accent" />
-                  ))}
-                </div>
-                <span className="font-body text-xs font-semibold text-white/60">4.9 App Store</span>
-              </div>
-              <p className="font-body text-sm text-white/35 font-medium">No card needed · Cancel anytime</p>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <MarketingPhotoHero contentClassName="py-20 md:py-28 lg:py-36">
+        <AnimateIn direction="up">
+          <p className={`${iosLanding.eyebrow} mb-4`}>AI Invoicing</p>
+          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
+            <span className="block text-white">Your invoice.</span>
+            <span className="block text-white">Built from</span>
+            <span className="block text-accent">your words.</span>
+          </h1>
+          <p className={`${iosLanding.subline} mb-4 !text-white/80 !max-w-2xl`}>
+            Describe the job out loud. SMASH generates a professional, priced, tax-compliant invoice in under 60 seconds. No typing. No templates. No admin.
+          </p>
+          <p className="font-body text-sm text-white/45 max-w-2xl mb-8">
+            Live worldwide on iOS &amp; Chrome — <Link to="/" className="underline decoration-accent/60 hover:text-white">Australia</Link>, <Link to="/nz" className="underline decoration-accent/60 hover:text-white">New Zealand</Link>, <Link to="/uk" className="underline decoration-accent/60 hover:text-white">the UK</Link>, <Link to="/us" className="underline decoration-accent/60 hover:text-white">the US</Link> and <Link to="/ca" className="underline decoration-accent/60 hover:text-white">Canada</Link>.
+          </p>
+          <DualProductCtas />
+        </AnimateIn>
+      </MarketingPhotoHero>
 
       {/* ANSWER BLOCK — AI SEARCH OPTIMISED */}
       <section className="bg-accent py-10 md:py-14">
@@ -437,7 +416,7 @@ export function AiInvoicing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] bg-accent text-brand font-black text-sm sm:text-base uppercase tracking-widest hover:brightness-95 transition-all">
-              Download the iOS app
+              Start Free on iPhone
             </a>
             <Link to="/how-it-works" className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] border-2 border-white/20 text-white font-bold text-sm sm:text-base uppercase tracking-wide hover:bg-white/10 transition-all">
               See How It Works

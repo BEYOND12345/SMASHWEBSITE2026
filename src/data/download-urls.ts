@@ -13,17 +13,35 @@ export const APP_STORE_URL =
 export const CHROME_STORE_URL =
   'https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
 
+export const EDGE_ADDONS_URL =
+  'https://microsoftedge.microsoft.com/addons/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel';
+
+/** Alias — same Edge Add-ons listing as EDGE_ADDONS_URL. */
+export const EDGE_STORE_URL = EDGE_ADDONS_URL;
+
 /** Primary iOS CTA — hero, inline bands, App Store buttons. */
-export const IOS_CTA_LABEL = 'Download the iOS app';
+export const IOS_CTA_LABEL = 'Start Free on iPhone';
 
 /** Shorter iOS CTA for nav and sticky bar. */
 export const NAV_CTA_LABEL = 'Get the app';
 
 /** Same label wherever iOS is shown beside Chrome. */
-export const IOS_DOWNLOAD_LABEL = 'Download the iOS app';
+export const IOS_DOWNLOAD_LABEL = 'Start Free on iPhone';
 
 /** Chrome extension CTA. */
 export const CHROME_CTA_LABEL = 'Add to Chrome — Free';
+
+/** Edge Add-ons CTA — same extension, Edge store listing. */
+export const EDGE_CTA_LABEL = 'Add to Edge — Free';
+
+/** Gmail product landing primary CTA — v2 automation page. */
+export const GMAIL_LANDING_CTA = 'Install Free';
+
+/** Gmail landing — Chrome Web Store install (Gmail on Chrome). */
+export const GMAIL_CHROME_CTA_LABEL = 'Add to Chrome';
+
+/** Gmail landing — Edge Add-ons install (Gmail on Edge). */
+export const GMAIL_EDGE_CTA_LABEL = 'Add to Edge';
 
 /** Live Chrome Web Store rating — update when store stats change. */
 export const CHROME_STORE_RATING = {

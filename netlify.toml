@@ -64,6 +64,14 @@
   status = 200
   force = true
 
+[[edge_functions]]
+  function = "voice-invoicing-route"
+  path = "/voice-invoicing"
+
+[[edge_functions]]
+  function = "voice-invoicing-route"
+  path = "/voice-invoicing/*"
+
 [[redirects]]
   from = "/invoice-on-mobile"
   to = "/voice-invoicing"

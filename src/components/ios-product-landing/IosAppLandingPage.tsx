@@ -19,11 +19,11 @@ import {
   IOS_FEATURES_SECTION,
   IOS_FINAL_CTA,
   IOS_HERO,
-  IOS_LANDING_SEO,
   IOS_LAUNCH_FEATURES_ENABLED,
   IOS_PROBLEM,
   IOS_STORY_SEGMENTS,
 } from '../../data/ios-landing-spec';
+import { mainPages } from '../../data/main-pages-seo';
 import { IosSpecHeadline } from './IosCalloutCard';
 import { IosSubline } from './IosSubline';
 import { IosHeroPhoneShowcase } from './IosPhoneShowcase';
@@ -41,28 +41,7 @@ import {
 } from '../chrome-landing/chrome-landing-ui';
 import { BrandLogos } from '../brand-logos';
 
-const SCHEMA_FAQS = [
-  {
-    q: 'How fast can I send a quote after a job?',
-    a: 'Under 60 seconds for a brand-new job. With your prices saved, many quotes go out in under 30 seconds — talk for twenty seconds, verify, send.',
-  },
-  {
-    q: 'What is voice invoicing?',
-    a: 'Describe the completed job out loud and SMASH builds a structured, priced quote from your speech — matched to your own rates, never guessed.',
-  },
-  {
-    q: 'Does SMASH use my own prices?',
-    a: 'Yes. Save your rates once in the Price Hub. Every quote pulls from your catalog — nothing guessed, nothing made up.',
-  },
-  {
-    q: 'Does this work in Australia?',
-    a: 'Yes. GST, ABN fields, and ATO-compliant tax invoice layout are built in. SMASH also runs in NZ, the UK, the US, and Canada.',
-  },
-  {
-    q: 'iPhone only?',
-    a: 'The voice-first field app is iPhone. For desk work, connect SMASH in Chrome or Edge — same account, everything synced.',
-  },
-];
+const voicePage = mainPages.voiceInvoicing;
 
 const FIELD_TESTIMONIALS = [
   {
@@ -110,10 +89,10 @@ export function IosAppLandingPage() {
   return (
     <>
       <SEO
-        title={IOS_LANDING_SEO.title}
-        description={IOS_LANDING_SEO.description}
-        ogTitle={IOS_LANDING_SEO.ogTitle}
-        ogDescription={IOS_LANDING_SEO.ogDescription}
+        title={voicePage.title}
+        description={voicePage.description}
+        ogTitle={voicePage.title}
+        ogDescription={voicePage.description}
         ogUrl="https://smashinvoices.com/voice-invoicing"
         canonical="https://smashinvoices.com/voice-invoicing"
         hreflangs={hreflangAlternates}
@@ -125,7 +104,7 @@ export function IosAppLandingPage() {
           { name: 'SMASH for iPhone', url: 'https://smashinvoices.com/voice-invoicing' },
         ])}
       />
-      <StructuredData data={createFAQSchema(SCHEMA_FAQS.map((f) => ({ question: f.q, answer: f.a })))} />
+      <StructuredData data={createFAQSchema(voicePage.faqs)} />
       <StructuredData
         data={createHowToSchema({
           name: 'How to send a quote by voice on iPhone',
@@ -165,8 +144,7 @@ export function IosAppLandingPage() {
 
                   <IosSubline className={`${iosLanding.subline} mb-8 max-w-md`}>{IOS_HERO.subline}</IosSubline>
 
-                  <IosHeroCta />
-                  <p className={`${iosLanding.caption} mt-3 mb-8`}>{IOS_HERO.microcopy}</p>
+                  <IosHeroCta className="mb-8" />
 
                   <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
                     <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with</span>
@@ -208,6 +186,7 @@ export function IosAppLandingPage() {
               segment={segment}
               dark={segment.dark}
               imageFirst={segment.imageFirst}
+              photoBgEnabled={index % 2 === 0}
             />
           </div>
         ))}
@@ -277,11 +256,11 @@ export function IosAppLandingPage() {
                 className="mb-10"
               />
               <div className="rounded-3xl border border-border bg-white px-4 sm:px-8 py-2">
-                {SCHEMA_FAQS.map((faq, i) => (
+                {voicePage.faqs.map((faq, i) => (
                   <FAQItem
-                    key={faq.q}
-                    q={faq.q}
-                    a={faq.a}
+                    key={faq.question}
+                    q={faq.question}
+                    a={faq.answer}
                     isOpen={openFaq === i}
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   />

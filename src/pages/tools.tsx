@@ -10,8 +10,10 @@ import { VoiceConversionCTA } from '../components/voice-conversion-cta';
 import { AnimateIn } from '../components/animate-in';
 import { Star, ArrowRight, Calculator, FileText, ClipboardList, TrendingUp, Download, DollarSign, AlertCircle, BarChart3 } from 'lucide-react';
 import { RelatedPosts } from '../components/related-posts';
-
-const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
+import { DualProductCtas } from '../components/marketing/DualProductCtas';
+import { MarketingPhotoHero } from '../components/marketing/MarketingPhotoHero';
+import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
+import { APP_STORE_URL } from '../data/download-urls';
 
 const tools = [
   {
@@ -83,31 +85,19 @@ export function Tools() {
 
       <Nav />
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="bg-brand pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/4 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <AnimateIn direction="up">
-            <p className="text-accent font-black text-xs uppercase tracking-widest mb-5">Free tools</p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.88] mb-6">
-              Every calculator<br />
-              <span className="text-accent">a tradie needs.</span>
-            </h1>
-            <p className="font-body text-lg sm:text-xl text-white/65 font-medium leading-[1.5] max-w-2xl mb-8">
-              No signup. No app download. Free to use right here. Built for Australian tradies, contractors, and small businesses.
-            </p>
-            <div className="flex items-center gap-3 flex-wrap">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/12">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-accent fill-accent" />)}
-                </div>
-                <span className="font-body text-xs font-semibold text-white/70">4.9 App Store</span>
-              </div>
-              <span className="font-body text-xs text-white/40 font-medium">8 tools · Free to use · No account required</span>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
+      <MarketingPhotoHero contentClassName="pt-20 pb-16 md:pt-28 md:pb-24">
+        <AnimateIn direction="up">
+          <p className={`${iosLanding.eyebrow} mb-5`}>Free tools</p>
+          <h1 className={`${iosLanding.heroHeadline} mb-6 max-w-4xl`}>
+            <span className="block text-white">Every calculator</span>
+            <span className="block text-accent">a tradie needs.</span>
+          </h1>
+          <p className={`${iosLanding.subline} mb-8 !text-white/65 !max-w-2xl`}>
+            No signup. No app download. Free to use right here. Built for Australian tradies, contractors, and small businesses.
+          </p>
+          <DualProductCtas />
+        </AnimateIn>
+      </MarketingPhotoHero>
 
       {/* ── TOOLS GRID ───────────────────────────────────────── */}
       <section className="bg-surface py-16 md:py-20">
@@ -158,7 +148,7 @@ export function Tools() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[32px] bg-accent text-brand font-black text-sm uppercase tracking-widest hover:brightness-105 transition-all"
                 >
-                  Download the iOS app
+                  Start Free on iPhone
                   <ArrowRight size={15} strokeWidth={2.5} />
                 </a>
                 <Link

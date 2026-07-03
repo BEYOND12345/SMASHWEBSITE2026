@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-// LandingPage is kept as a static import — it is the "/" route and must render
-// on first paint without any async chunk delay.
-import { LandingPage } from './pages/landing-page';
+import { Homepage } from './pages/homepage';
+
+// Legacy landing page — kept for reference; no longer routed at /.
+const LandingPage = lazy(() => import('./pages/landing-page').then(m => ({ default: m.LandingPage })));
 
 // All other pages are lazily loaded so Vite splits them into separate chunks.
 const Founder = lazy(() => import('./pages/founder').then(m => ({ default: m.Founder })));
@@ -127,7 +128,9 @@ function App() {
       <Suspense fallback={<PageLoader />}>
       <Routes>
         {/* Core pages */}
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/homepage" element={<Navigate to="/" replace />} />
+        <Route path="/landing-page-legacy" element={<LandingPage />} />
         <Route path="/founder" element={<Founder />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/faq" element={<FAQPage />} />
