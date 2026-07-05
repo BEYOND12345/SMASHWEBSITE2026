@@ -61,6 +61,11 @@ export const mainPages: Record<string, MainPageSeo> = {
           'Under 60 seconds. Describe the job or open the customer email, verify line items against your catalog, send. Your client gets a professional PDF with approval and payment options.',
       },
       {
+        question: 'Can I send a hands-free invoice after a job?',
+        answer:
+          'Yes on iPhone. Hold Start Recording, describe labour and materials out loud, verify priced lines from your catalog, and send — no typing on site. Many users send the invoice before they start the van.',
+      },
+      {
         question: 'Does SMASH work for GST and VAT invoices?',
         answer:
           'Yes. Every document is tax-ready with your business number, tax breakdown, and sequential numbers. GST, VAT, and sales tax are calculated per line item for your region.',

@@ -83,6 +83,11 @@ const HOME_PAGE_FAQS = [
       'Under 60 seconds. Talk for twenty seconds on iPhone, or open the customer email in Gmail — verify line items against your catalog and send. Your client gets a professional PDF with approval and payment options.',
   },
   {
+    question: 'Can I send a hands-free invoice after a job?',
+    answer:
+      'Yes on iPhone. Describe the job out loud, verify priced lines from your catalog, and send before you leave — no typing on site. See our voice to invoice guide for the full workflow.',
+  },
+  {
     question: 'Does SMASH work for GST and VAT invoices?',
     answer:
       'Yes. Every document is tax-ready with your business number, tax breakdown, and sequential numbers. GST, VAT, and sales tax are calculated per line item for your region.',

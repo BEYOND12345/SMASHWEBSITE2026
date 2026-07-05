@@ -40,7 +40,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       'Word and Excel invoices each take 15–20 minutes of typing, reformatting and manual GST maths — and neither sends a Pay Now link. A dedicated invoice app prices from your catalog and delivers a payable PDF in under 60 seconds by voice on site or from Gmail at your desk. For tradies doing more than one job a week, speed to send usually beats template familiarity.',
     cta: 'both',
     pillarLinks: [
-      { href: '/voice-invoicing', label: 'Voice invoicing on iPhone' },
+      { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
       { href: '/gmail-invoice', label: 'Gmail invoice extension' },
     ],
     relatedLinks: [
@@ -77,7 +77,10 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     answerBlock:
       'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk for 30 seconds on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link before you start the van.',
     cta: 'ios',
-    pillarLinks: [{ href: '/voice-invoicing', label: 'Send an invoice from your phone' }],
+    pillarLinks: [
+      { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
+      { href: '/voice-invoicing', label: 'On the job invoice — send before you leave' },
+    ],
     relatedLinks: [
       { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice in 2026' },
       { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
@@ -311,7 +314,7 @@ function workspaceRouter(cta: CtaMode): string {
         <h3>SMASH for iPhone</h3>
         <p>Priced invoice from your catalog — sent before you start the van.</p>
         <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="${iosClass}" style="${iosStyle}" rel="nofollow">Download the iOS app</a>
-        <p style="margin-top:14px;font-size:13px;"><a href="/voice-invoicing">Voice invoicing →</a></p>
+        <p style="margin-top:14px;font-size:13px;"><a href="/voice-invoicing">Voice to invoice →</a></p>
       </div>
     </div>
   </section>`;
@@ -334,7 +337,7 @@ function conversionClose(cta: CtaMode): string {
     <p style="color:rgba(255,255,255,0.75);margin:0 0 16px;">Describe the job out loud — priced from your catalog in under 60 seconds.</p>
     <div class="conversion-btns">
       <a href="https://apps.apple.com/au/app/smash-invoices/id6759475079" class="cta-btn" rel="nofollow">Download the iOS app</a>
-      <a href="/voice-invoicing" class="conversion-btn-outline">Voice invoicing</a>
+      <a href="/voice-invoicing" class="conversion-btn-outline">Voice to invoice</a>
     </div>
   </aside>`;
   }
@@ -411,7 +414,7 @@ function patchHtml(html: string, spec: RetrofitSpec): string {
       out = out.replace(/<section class="faq">/, `${related}<section class="faq">`);
     }
   } else {
-    out = out.replace(/<nav class="related-posts"[\s\S]*?<\/nav>/, relatedNav(spec));
+    out = out.replace(/<nav class="related-posts[^"]*"[\s\S]*?<\/nav>/, relatedNav(spec));
   }
 
   // Conversion close (when present)

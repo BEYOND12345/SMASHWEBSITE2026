@@ -16,32 +16,7 @@ const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079
 
 const YOUTUBE_DEMO_ID = 'uNL733tYTf0';
 
-const faqs = [
-  {
-    q: 'How fast can I send an invoice after a job?',
-    a: 'Under 60 seconds for a typical job: talk for 20–30 seconds, verify line items SMASH matched to your catalog, then send. Once your Price Hub is set up, many invoices are out in under 30 seconds.',
-  },
-  {
-    q: 'What is voice to invoice?',
-    a: 'Voice to invoice means describing the completed job out loud and having software build a structured, priced invoice from your speech. SMASH matches what you said to your own rates and materials — unmatched items are flagged for you, not guessed.',
-  },
-  {
-    q: 'Can I invoice without typing?',
-    a: 'Yes. On iPhone you speak the job. In Gmail you can scan the open email thread, upload a PDF, or use voice in the sidebar. You always review before anything is sent.',
-  },
-  {
-    q: 'Does SMASH use my own prices?',
-    a: 'Yes. Invoices are built from your Price Hub — your labour rates, fees, and catalog. SMASH does not invent prices. If it cannot match an item confidently, it flags it for you to price manually.',
-  },
-  {
-    q: 'Does this work in Australia?',
-    a: 'Yes. GST, ABN fields, and ATO-compliant tax invoice layout are built in, with a 2,250+ item materials catalog. SMASH also runs in NZ, the UK, the US, and Canada with local tax and currency.',
-  },
-  {
-    q: 'iPhone only?',
-    a: 'The voice-first field app is iOS (iPhone). For desk work, the Chrome extension runs inside Gmail on any laptop — email scan, PDF upload, or voice in the sidebar. Android app is not available yet.',
-  },
-];
+const faqs = (mainPages.voiceInvoicing.faqs ?? []).map((f) => ({ q: f.question, a: f.answer }));
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
@@ -260,8 +235,14 @@ export function VoiceInvoicing() {
             <Link to="/blog/the-60-second-invoice-voice-to-invoice" className="text-brand underline hover:no-underline">
               Voice to invoice in 60 seconds →
             </Link>
+            <Link to="/blog/fastest-way-to-send-invoice-2026" className="text-brand underline hover:no-underline">
+              Fastest way to send an invoice →
+            </Link>
             <Link to="/blog/how-long-to-send-invoice-after-job-australia" className="text-brand underline hover:no-underline">
-              How long to wait after a job →
+              Send before you leave the job →
+            </Link>
+            <Link to="/blog/invoice-without-typing" className="text-brand underline hover:no-underline">
+              Invoice without typing →
             </Link>
             <Link to="/gmail-invoice" className="text-brand underline hover:no-underline">
               Gmail invoicing →
