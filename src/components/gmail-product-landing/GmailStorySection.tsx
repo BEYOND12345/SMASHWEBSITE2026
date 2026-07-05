@@ -1,6 +1,6 @@
 import { AnimateIn } from '../animate-in';
 import { IosSpecHeadline } from '../ios-product-landing/IosCalloutCard';
-import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
+import { iosLanding, iosStoryCopyCellClass, iosStoryMediaCellClass } from '../ios-product-landing/ios-landing-tokens';
 import { GmailStoryFrame } from './GmailStoryFrame';
 import { GmailStoryStepCallout } from './GmailStoryTriptych';
 import type { GmailStoryFrameId } from './gmail-landing-tokens';
@@ -76,16 +76,16 @@ function GmailStoryRow({
   const media = <GmailStoryMedia step={step} priority={priority} />;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center py-12 md:py-16 lg:py-20 border-t border-border/60 first:border-t-0">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 py-12 md:py-16 lg:py-20 border-t border-border/60 first:border-t-0">
       <AnimateIn
         direction="left"
-        className={imageFirst ? 'order-2 lg:order-1 lg:col-span-7' : 'order-1 lg:col-span-5'}
+        className={`${imageFirst ? iosStoryMediaCellClass : iosStoryCopyCellClass} ${imageFirst ? 'order-2 lg:order-1 lg:col-span-7' : 'order-1 lg:col-span-5'}`}
       >
         {imageFirst ? media : copy}
       </AnimateIn>
       <AnimateIn
         direction="right"
-        className={imageFirst ? 'order-1 lg:order-2 lg:col-span-5' : 'order-2 lg:col-span-7'}
+        className={`${imageFirst ? iosStoryCopyCellClass : iosStoryMediaCellClass} ${imageFirst ? 'order-1 lg:order-2 lg:col-span-5' : 'order-2 lg:col-span-7'}`}
       >
         {imageFirst ? copy : media}
       </AnimateIn>

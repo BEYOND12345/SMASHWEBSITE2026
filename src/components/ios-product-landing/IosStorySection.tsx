@@ -10,7 +10,12 @@ import {
   IOS_STORY_PHOTO_BG,
   type IosStorySegment,
 } from '../../data/ios-landing-spec';
-import { iosLanding } from './ios-landing-tokens';
+import {
+  iosLanding,
+  iosStoryCopyCellClass,
+  iosStoryGridClass,
+  iosStoryMediaCellClass,
+} from './ios-landing-tokens';
 
 type Props = {
   segment: IosStorySegment;
@@ -78,20 +83,16 @@ export function IosStorySection({
         </>
       )}
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className={iosStoryGridClass}>
           <AnimateIn
             direction="left"
-            className={imageFirst ? 'order-2 lg:order-1' : 'order-1'}
+            className={`${imageFirst ? iosStoryMediaCellClass : iosStoryCopyCellClass} ${imageFirst ? 'order-2 lg:order-1' : 'order-1'}`}
           >
-            {imageFirst ? (
-              <MockupFrame>{media}</MockupFrame>
-            ) : (
-              copy
-            )}
+            {imageFirst ? <MockupFrame>{media}</MockupFrame> : copy}
           </AnimateIn>
           <AnimateIn
             direction="right"
-            className={imageFirst ? 'order-1 lg:order-2' : 'order-2'}
+            className={`${imageFirst ? iosStoryCopyCellClass : iosStoryMediaCellClass} ${imageFirst ? 'order-1 lg:order-2' : 'order-2'}`}
           >
             {imageFirst ? copy : <MockupFrame>{media}</MockupFrame>}
           </AnimateIn>

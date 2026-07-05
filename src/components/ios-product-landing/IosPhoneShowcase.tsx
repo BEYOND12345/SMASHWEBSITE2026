@@ -120,7 +120,13 @@ function IosPhoneComposition({
 
   const calloutWidth = Math.round(phoneWidth * cfg.groundRatio);
   const containerWidth = callout ? calloutWidth : phoneWidth;
-  const tailSpace = iosShowcaseTailSpace(phoneScale, variantId);
+  /** Callout is absolute — reserve space below the phone clip so the chip is not clipped. */
+  const calloutHeightEst = callout
+    ? Math.round(cfg.tailLogical * phoneScale * cfg.contentScale)
+    : 0;
+  const tailSpace = callout
+    ? Math.max(iosShowcaseTailSpace(phoneScale, variantId), calloutTop + calloutHeightEst - clipHeight + 20)
+    : iosShowcaseTailSpace(phoneScale, variantId);
 
   const breakpoint = useBreakpoint();
   const isMobile = breakpoint === 'mobile';

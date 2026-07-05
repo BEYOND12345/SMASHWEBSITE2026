@@ -110,10 +110,10 @@ export function DualPhoneStack({
   );
 }
 
-/** Centers Gmail sidebar / quote mockups inside story sections. */
+/** Anchors product mockups to the bottom of story columns (callout chips sit on the baseline). */
 export function MockupFrame({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`flex w-full items-center justify-center ${className}`}>
+    <div className={`flex w-full items-end justify-center ${className}`}>
       {children}
     </div>
   );

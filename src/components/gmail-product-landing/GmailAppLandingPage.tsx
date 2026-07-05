@@ -22,7 +22,7 @@ import {
   GMAIL_TESTIMONIALS,
   GMAIL_WHO,
 } from '../../data/gmail-landing-spec';
-import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
+import { iosLanding, iosStoryCopyCellClass, iosStoryMediaCellClass } from '../ios-product-landing/ios-landing-tokens';
 import { IosSpecHeadline } from '../ios-product-landing/IosCalloutCard';
 import { IosSubline } from '../ios-product-landing/IosSubline';
 import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
@@ -82,8 +82,8 @@ export function GmailAppLandingPage() {
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block z-[1]" />
 
           <div className={`${iosLanding.container} relative z-10`}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <AnimateIn direction="left" className="lg:col-span-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+              <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
                 <div className="pb-16 md:pb-24">
                   <h1 className={`${iosLanding.heroHeadline} mb-5`}>
                     <span className="block text-white">{GMAIL_HERO.headlineWhite}</span>
@@ -96,7 +96,7 @@ export function GmailAppLandingPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
+              <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7 flex justify-center lg:justify-end`}>
                 <div className="pb-16 md:pb-24 w-full">
                   <HeroGif fill src={HERO_GIF_B2B} title="SMASH for Gmail — quote from your inbox" />
                 </div>

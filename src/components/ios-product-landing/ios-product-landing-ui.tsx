@@ -2,6 +2,11 @@ import type { ReactNode } from 'react';
 import { Apple } from 'lucide-react';
 import { AnimateIn } from '../animate-in';
 import { MockupFrame, ScaledPhone } from '../phone-showcase';
+import {
+  iosStoryCopyCellClass,
+  iosStoryGridClass,
+  iosStoryMediaCellClass,
+} from './ios-landing-tokens';
 import type { IosAppStory } from '../../data/ios-app-landing';
 
 /** Shared tokens from smash-templates — product-shot typography + surfaces. */
@@ -105,10 +110,10 @@ export function IosStorySection({
       aria-labelledby={`ios-story-${story.id}`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className={iosStoryGridClass}>
           <AnimateIn
             direction="left"
-            className={`flex w-full items-center justify-center ${imageFirst ? 'order-2 lg:order-1' : ''}`}
+            className={`${imageFirst ? iosStoryMediaCellClass : iosStoryCopyCellClass} ${imageFirst ? 'order-2 lg:order-1' : ''}`}
           >
             {imageFirst ? (
               <IosPhoneShowcase>{mockup}</IosPhoneShowcase>
@@ -123,7 +128,7 @@ export function IosStorySection({
           </AnimateIn>
           <AnimateIn
             direction="right"
-            className={`flex w-full items-center justify-center ${imageFirst ? 'order-1 lg:order-2' : ''}`}
+            className={`${imageFirst ? iosStoryCopyCellClass : iosStoryMediaCellClass} ${imageFirst ? 'order-1 lg:order-2' : ''}`}
           >
             {imageFirst ? (
               <div>

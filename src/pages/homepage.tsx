@@ -32,7 +32,7 @@ import {
   softwareApplicationSchema,
 } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
-import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
+import { iosLanding, iosStoryCopyCellClass, iosStoryGridClass, iosStoryMediaCellClass } from '../components/ios-product-landing/ios-landing-tokens';
 import {
   IOS_STORY_SEGMENTS,
   IOS_FEATURE_TILES,
@@ -268,8 +268,8 @@ function HomeHeroSection() {
       <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <AnimateIn direction="left" className="lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
             <div className="pb-16 md:pb-24">
               <h1 className={`${iosLanding.heroHeadline} mb-5`}>
                 <span className="block text-white">Never type</span>
@@ -284,7 +284,7 @@ function HomeHeroSection() {
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center lg:justify-end">
+          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7 flex justify-center lg:justify-end`}>
             <div className="pb-16 md:pb-24 w-full flex justify-center lg:justify-end">
               <IosHeroPhoneShowcase size="story" />
             </div>
@@ -336,11 +336,11 @@ function HomeVoiceStoryRow() {
         }}
       />
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <AnimateIn direction="left" className="order-1">
+        <div className={iosStoryGridClass}>
+          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} order-1`}>
             {copy}
           </AnimateIn>
-          <AnimateIn direction="right" className="order-2">
+          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} order-2`}>
             {media}
           </AnimateIn>
         </div>
@@ -409,8 +409,8 @@ function ChromeInboxRow() {
     <section className="relative bg-brand py-16 md:py-28 overflow-hidden">
       <GmailSectionPhotoBg photo={photo} tintDirection="left" />
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
-          <AnimateIn direction="left" className="lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16">
+          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
             <IosSpecHeadline
               eyebrow={step.eyebrow}
               headlineWhite={step.headlineWhite}
@@ -433,7 +433,7 @@ function ChromeInboxRow() {
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" className="lg:col-span-7">
+          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7`}>
             <div className="relative mx-auto w-full">
               <div className="relative rounded-[22px] overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_40px_110px_-30px_rgba(15,23,42,0.45)]">
                 <GmailStoryFrame frame={step.frame} crop fill />

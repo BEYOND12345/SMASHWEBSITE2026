@@ -85,8 +85,13 @@ export function iosShowcaseTailSpace(
   const cfg = IOS_SHOWCASE_VARIANTS[variant];
   const effectiveScale = phoneScale * cfg.contentScale;
   const min = variant === 'send' ? 20 : 48;
-  return Math.max(Math.round(cfg.tailLogical * effectiveScale * 0.42), min);
+  return Math.max(Math.round(cfg.tailLogical * effectiveScale), min);
 }
+
+/** Story / hero grids — copy stays top-aligned; phone + callout anchor to the row bottom. */
+export const iosStoryGridClass = 'grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20';
+export const iosStoryCopyCellClass = 'self-start';
+export const iosStoryMediaCellClass = 'self-end w-full';
 
 export type IosPhoneShowcaseSize = keyof typeof IOS_PHONE_DISPLAY;
 export type IosPhoneSurface = 'light' | 'dark';

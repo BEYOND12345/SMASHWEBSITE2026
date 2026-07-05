@@ -33,7 +33,7 @@ import {
   IosStorySection,
 } from './IosStorySection';
 import { IosFinalCta, IosDesktopLink, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
-import { iosLanding } from './ios-landing-tokens';
+import { iosLanding, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
 import { APP_STORE_URL } from '../../data/download-urls';
 import {
   TestimonialGridSection,
@@ -127,8 +127,8 @@ export function IosAppLandingPage() {
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <AnimateIn direction="left" className="lg:col-span-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+              <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
                 <div className="pb-16 md:pb-24">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                     <Mic size={13} className="text-accent" strokeWidth={2.5} />
@@ -153,7 +153,7 @@ export function IosAppLandingPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="right" className="lg:col-span-7 flex items-center justify-center">
+              <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7 flex justify-center lg:justify-end`}>
                 <div className="pb-16 md:pb-24 w-full max-w-[min(100%,385px)] lg:max-w-none mx-auto">
                   <IosMediaSlot type="hero-video" />
                   <IosMediaSlot type="hero-gif" />
@@ -196,8 +196,8 @@ export function IosAppLandingPage() {
         {/* Desktop band — 2-col like a story section */}
         <section className="bg-brand py-16 md:py-28 overflow-hidden border-t border-white/10">
           <div className={iosLanding.container}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <AnimateIn direction="left">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+              <AnimateIn direction="left" className={iosStoryCopyCellClass}>
                 <IosSpecHeadline
                   eyebrow={IOS_DESKTOP_BAND.eyebrow}
                   headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
@@ -206,7 +206,7 @@ export function IosAppLandingPage() {
                 <IosSubline className={`${iosLanding.body} mt-6 mb-4`}>{IOS_DESKTOP_BAND.body}</IosSubline>
                 <IosDesktopLink />
               </AnimateIn>
-              <AnimateIn direction="right">
+              <AnimateIn direction="right" className={iosStoryMediaCellClass}>
                 <IosDesktopTeaser />
               </AnimateIn>
             </div>
