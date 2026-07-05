@@ -15,8 +15,9 @@ const desktopLinkClass =
 const mobileLinkClass =
   'block px-4 py-3 text-base font-bold text-white/80 hover:text-accent hover:bg-white/5 rounded-lg transition-colors uppercase tracking-wide';
 
-/** Primary nav — homepage is the logo; these are the product paths. */
+/** Primary nav — logo still links home; explicit Home link for clarity. */
 const NAV_LINKS = [
+  { to: '/', label: 'Home' },
   { to: '/voice-invoicing', label: 'iOS', icon: Apple, accent: true },
   { to: '/chrome-extension', label: 'Gmail Extension', icon: Chrome },
   { to: '/pricing', label: 'Pricing' },
