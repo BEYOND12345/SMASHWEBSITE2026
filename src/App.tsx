@@ -35,7 +35,8 @@ const ProfitCalculator = lazy(() => import('./pages/profit-calculator').then(m =
 const Tools = lazy(() => import('./pages/tools').then(m => ({ default: m.Tools })));
 
 // Comparison pages
-const VsArticleRoute = lazy(() => import('./pages/vs-article-route').then(m => ({ default: m.VsArticleRoute })));
+import { VS_ARTICLE_SLUGS, vsPageBySlug } from './data/vs-page-data';
+import { VsArticlePage } from './components/vs-article-page';
 const SmashVsQuickBooks = lazy(() => import('./pages/smash-vs-quickbooks').then(m => ({ default: m.SmashVsQuickBooks })));
 const SmashVsFergus = lazy(() => import('./pages/smash-vs-fergus').then(m => ({ default: m.SmashVsFergus })));
 const SmashVsJoist = lazy(() => import('./pages/smash-vs-joist').then(m => ({ default: m.SmashVsJoist })));
@@ -160,7 +161,13 @@ function App() {
 
         {/* Comparison pages — article-style /vs-* + legacy /smash-vs-* (redirected) */}
         <Route path="/alternatives" element={<AlternativesPage />} />
-        <Route path="/vs-:competitor" element={<VsArticleRoute />} />
+        {[...VS_ARTICLE_SLUGS].map((key) => (
+          <Route
+            key={key}
+            path={`/vs-${key}`}
+            element={<VsArticlePage data={vsPageBySlug[`vs-${key}`]} />}
+          />
+        ))}
         <Route path="/smash-vs-quickbooks" element={<SmashVsQuickBooks />} />
         <Route path="/smash-vs-fergus" element={<SmashVsFergus />} />
         <Route path="/smash-vs-joist" element={<SmashVsJoist />} />

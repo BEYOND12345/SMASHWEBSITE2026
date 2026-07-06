@@ -136,12 +136,12 @@ async function generateSitemap() {
 
     // Comparison hub + pages
     { loc: '/alternatives',           srcFiles: ['src/pages/alternatives.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-servicem8',          srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-invoice2go',         srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-myob',               srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-rounded',            srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-tradify',            srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
-    { loc: '/vs-xero',               srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-servicem8',          srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-invoice2go',         srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-myob',               srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-rounded',            srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-tradify',            srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-xero',               srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
     { loc: '/smash-vs-quickbooks',  srcFiles: ['src/pages/smash-vs-quickbooks.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-fergus',      srcFiles: ['src/pages/smash-vs-fergus.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-joist',       srcFiles: ['src/pages/smash-vs-joist.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
