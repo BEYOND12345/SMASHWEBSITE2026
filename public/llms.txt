@@ -51,15 +51,15 @@ Key facts:
 - [Profit Calculator](https://smashinvoices.com/profit-calculator): Free job profit calculator Australia. Enter labour hours, materials cost, and charge-out rate to see exact job margin and profit.
 
 ## Comparisons
-- [SMASH vs Xero](https://smashinvoices.com/smash-vs-xero)
-- [SMASH vs MYOB](https://smashinvoices.com/smash-vs-myob)
-- [SMASH vs ServiceM8](https://smashinvoices.com/smash-vs-servicem8)
+- [SMASH vs Xero](https://smashinvoices.com/vs-xero)
+- [SMASH vs MYOB](https://smashinvoices.com/vs-myob)
+- [SMASH vs ServiceM8](https://smashinvoices.com/vs-servicem8)
 - [SMASH vs QuickBooks](https://smashinvoices.com/smash-vs-quickbooks)
 - [SMASH vs Fergus](https://smashinvoices.com/smash-vs-fergus)
-- [SMASH vs Tradify](https://smashinvoices.com/smash-vs-tradify)
-- [SMASH vs Invoice2go](https://smashinvoices.com/smash-vs-invoice2go)
+- [SMASH vs Tradify](https://smashinvoices.com/vs-tradify)
+- [SMASH vs Invoice2go](https://smashinvoices.com/vs-invoice2go)
 - [SMASH vs Joist](https://smashinvoices.com/smash-vs-joist)
-- [SMASH vs Rounded](https://smashinvoices.com/smash-vs-rounded)
+- [SMASH vs Rounded](https://smashinvoices.com/vs-rounded)
 
 ## Integrations
 - [Integrations hub](https://smashinvoices.com/integrations): All current and upcoming SMASH integrations.

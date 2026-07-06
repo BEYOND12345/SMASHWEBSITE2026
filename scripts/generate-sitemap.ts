@@ -134,16 +134,17 @@ async function generateSitemap() {
     { loc: '/chrome-extension',        srcFiles: ['src/pages/chrome-extension.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/b2b-gmail-quoting',       srcFiles: ['src/data/b2b-chrome-landing.ts', 'src/components/b2b-landing/B2bChromeLandingPage.tsx'], changefreq: 'monthly', priority: '0.85' },
 
-    // Comparison pages — share comparison-data so any price update bumps them all
-    { loc: '/smash-vs-xero',        srcFiles: ['src/pages/smash-vs-xero.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-myob',        srcFiles: ['src/pages/smash-vs-myob.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-servicem8',   srcFiles: ['src/pages/smash-vs-servicem8.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
+    // Comparison hub + pages
+    { loc: '/alternatives',           srcFiles: ['src/pages/alternatives.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-servicem8',          srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-invoice2go',         srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-myob',               srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-rounded',            srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-tradify',            srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-xero',               srcFiles: ['src/pages/vs-article-route.tsx', 'src/data/vs-page-data.ts', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
     { loc: '/smash-vs-quickbooks',  srcFiles: ['src/pages/smash-vs-quickbooks.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-fergus',      srcFiles: ['src/pages/smash-vs-fergus.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-tradify',     srcFiles: ['src/pages/smash-vs-tradify.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-invoice2go',  srcFiles: ['src/pages/smash-vs-invoice2go.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-joist',       srcFiles: ['src/pages/smash-vs-joist.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-rounded',     srcFiles: ['src/pages/smash-vs-rounded.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
 
     // Segment / trade pages — all driven by segment-data
     { loc: '/for-cleaners',            srcFiles: ['src/pages/for-cleaners.tsx', ...segmentData], changefreq: 'monthly', priority: '0.8' },

@@ -392,18 +392,19 @@ export function Footer({ showCTA = false }: FooterProps) {
         {/* ── DISCLOSURES (hidden by default, multi-column when open) ── */}
         <FooterDisclosure
           title="Compare SMASH vs alternatives"
-          count={9}
+          count={10}
           cols="sm:grid-cols-2 md:grid-cols-3"
         >
-          <li><Link to="/smash-vs-xero" className={linkClass}>SMASH vs Xero</Link></li>
-          <li><Link to="/smash-vs-myob" className={linkClass}>SMASH vs MYOB</Link></li>
-          <li><Link to="/smash-vs-servicem8" className={linkClass}>SMASH vs ServiceM8</Link></li>
+          <li><Link to="/alternatives" className={linkClass + ' font-semibold text-accent'}>All alternatives (speed compare)</Link></li>
+          <li><Link to="/vs-xero" className={linkClass}>SMASH vs Xero</Link></li>
+          <li><Link to="/vs-myob" className={linkClass}>SMASH vs MYOB</Link></li>
+          <li><Link to="/vs-servicem8" className={linkClass}>SMASH vs ServiceM8</Link></li>
           <li><Link to="/smash-vs-quickbooks" className={linkClass}>SMASH vs QuickBooks</Link></li>
           <li><Link to="/smash-vs-fergus" className={linkClass}>SMASH vs Fergus</Link></li>
-          <li><Link to="/smash-vs-tradify" className={linkClass}>SMASH vs Tradify</Link></li>
-          <li><Link to="/smash-vs-invoice2go" className={linkClass}>SMASH vs Invoice2go</Link></li>
+          <li><Link to="/vs-tradify" className={linkClass}>SMASH vs Tradify</Link></li>
+          <li><Link to="/vs-invoice2go" className={linkClass}>SMASH vs Invoice2go</Link></li>
           <li><Link to="/smash-vs-joist" className={linkClass}>SMASH vs Joist</Link></li>
-          <li><Link to="/smash-vs-rounded" className={linkClass}>SMASH vs Rounded</Link></li>
+          <li><Link to="/vs-rounded" className={linkClass}>SMASH vs Rounded</Link></li>
         </FooterDisclosure>
 
         <FooterDisclosure

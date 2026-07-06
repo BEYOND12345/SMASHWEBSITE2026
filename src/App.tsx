@@ -35,15 +35,10 @@ const ProfitCalculator = lazy(() => import('./pages/profit-calculator').then(m =
 const Tools = lazy(() => import('./pages/tools').then(m => ({ default: m.Tools })));
 
 // Comparison pages
-const SmashVsXero = lazy(() => import('./pages/smash-vs-xero').then(m => ({ default: m.SmashVsXero })));
-const SmashVsMyob = lazy(() => import('./pages/smash-vs-myob').then(m => ({ default: m.SmashVsMyob })));
-const SmashVsServiceM8 = lazy(() => import('./pages/smash-vs-servicem8').then(m => ({ default: m.SmashVsServiceM8 })));
+const VsArticleRoute = lazy(() => import('./pages/vs-article-route').then(m => ({ default: m.VsArticleRoute })));
 const SmashVsQuickBooks = lazy(() => import('./pages/smash-vs-quickbooks').then(m => ({ default: m.SmashVsQuickBooks })));
 const SmashVsFergus = lazy(() => import('./pages/smash-vs-fergus').then(m => ({ default: m.SmashVsFergus })));
-const SmashVsTradify = lazy(() => import('./pages/smash-vs-tradify').then(m => ({ default: m.SmashVsTradify })));
-const SmashVsInvoice2go = lazy(() => import('./pages/smash-vs-invoice2go').then(m => ({ default: m.SmashVsInvoice2go })));
 const SmashVsJoist = lazy(() => import('./pages/smash-vs-joist').then(m => ({ default: m.SmashVsJoist })));
-const SmashVsRounded = lazy(() => import('./pages/smash-vs-rounded').then(m => ({ default: m.SmashVsRounded })));
 const BlogList = lazy(() => import('./pages/blog-list').then(m => ({ default: m.BlogList })));
 const BlogPost = lazy(() => import('./pages/blog-post').then(m => ({ default: m.BlogPost })));
 const FastestWayToInvoice2026 = lazy(() => import('./pages/blog/FastestWayToInvoice2026'));
@@ -108,6 +103,7 @@ const PseoSitemapDirectoryRoot = lazy(() => import('./pages/pseo/sitemap-directo
 const PseoSitemapDirectoryCountry = lazy(() => import('./pages/pseo/sitemap-directory').then(m => ({ default: m.PseoSitemapDirectoryCountry })));
 const PseoSitemapDirectoryCategory = lazy(() => import('./pages/pseo/sitemap-directory').then(m => ({ default: m.PseoSitemapDirectoryCategory })));
 const SitemapPage = lazy(() => import('./pages/sitemap-page').then(m => ({ default: m.SitemapPage })));
+const AlternativesPage = lazy(() => import('./pages/alternatives').then(m => ({ default: m.AlternativesPage })));
 const NotFound = lazy(() => import('./pages/not-found').then(m => ({ default: m.NotFound })));
 const TradieHourlyRates = lazy(() => import('./pages/tradie-hourly-rates').then(m => ({ default: m.TradieHourlyRates })));
 const MaterialsPricing = lazy(() => import('./pages/materials-pricing').then(m => ({ default: m.MaterialsPricing })));
@@ -162,16 +158,12 @@ function App() {
         <Route path="/late-payment-calculator" element={<LatePaymentCalculator />} />
         <Route path="/profit-calculator" element={<ProfitCalculator />} />
 
-        {/* Comparison pages */}
-        <Route path="/smash-vs-xero" element={<SmashVsXero />} />
-        <Route path="/smash-vs-myob" element={<SmashVsMyob />} />
-        <Route path="/smash-vs-servicem8" element={<SmashVsServiceM8 />} />
+        {/* Comparison pages — article-style /vs-* + legacy /smash-vs-* (redirected) */}
+        <Route path="/alternatives" element={<AlternativesPage />} />
+        <Route path="/vs-:competitor" element={<VsArticleRoute />} />
         <Route path="/smash-vs-quickbooks" element={<SmashVsQuickBooks />} />
         <Route path="/smash-vs-fergus" element={<SmashVsFergus />} />
-        <Route path="/smash-vs-tradify" element={<SmashVsTradify />} />
-        <Route path="/smash-vs-invoice2go" element={<SmashVsInvoice2go />} />
         <Route path="/smash-vs-joist" element={<SmashVsJoist />} />
-        <Route path="/smash-vs-rounded" element={<SmashVsRounded />} />
 
         {/* Segment pages */}
         <Route path="/for-cleaners" element={<ForCleaners />} />

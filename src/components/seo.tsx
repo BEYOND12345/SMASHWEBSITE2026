@@ -22,7 +22,9 @@ interface SEOProps {
   /** Override the `<meta name="robots">` directive (e.g. "noindex, nofollow"). */
   robots?: string;
   /** Optional hreflang alternates for internationalised pages. */
-  hreflangs?: HrefLang[];
+  /** ISO 8601 — article freshness for comparison pages */
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
 }
 
 export function SEO({
@@ -41,6 +43,8 @@ export function SEO({
   canonical,
   robots,
   hreflangs,
+  articlePublishedTime,
+  articleModifiedTime,
 }: SEOProps) {
   useEffect(() => {
     if (title) {
@@ -106,6 +110,14 @@ export function SEO({
       updateMetaTag('meta[property="og:url"]', ogUrl);
     }
 
+    if (articlePublishedTime) {
+      updateMetaTag('meta[property="article:published_time"]', articlePublishedTime);
+    }
+
+    if (articleModifiedTime) {
+      updateMetaTag('meta[property="article:modified_time"]', articleModifiedTime);
+    }
+
     if (canonical) {
       let linkElement = document.querySelector('link[rel="canonical"]');
       if (linkElement) {
@@ -137,7 +149,7 @@ export function SEO({
         document.head.appendChild(link);
       });
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, ogUrl, twitterCard, twitterTitle, twitterDescription, twitterImage, canonical, robots, hreflangs]);
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, ogUrl, twitterCard, twitterTitle, twitterDescription, twitterImage, canonical, robots, hreflangs, articlePublishedTime, articleModifiedTime]);
 
   return null;
 }
