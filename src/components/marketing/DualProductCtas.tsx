@@ -19,6 +19,8 @@ type Props = {
   secondary?: SecondaryCta;
   showMicrocopy?: boolean;
   iphoneLabel?: string;
+  /** Below sm — ghost button becomes a text link to save vertical space in heroes. */
+  mobileSecondaryAsLink?: boolean;
 };
 
 /** Sitewide dual front doors — iPhone App Store + secondary path (product page or extension). */
@@ -27,6 +29,7 @@ export function DualProductCtas({
   secondary = { kind: 'link', to: '/chrome-extension', label: 'Add to your browser' },
   showMicrocopy = true,
   iphoneLabel = 'Start Free on iPhone',
+  mobileSecondaryAsLink = false,
 }: Props) {
   return (
     <div className={className}>
@@ -35,17 +38,54 @@ export function DualProductCtas({
           <Apple size={18} strokeWidth={2.5} />
           {iphoneLabel}
         </a>
-        <SecondaryButton secondary={secondary} />
+        {!mobileSecondaryAsLink ? (
+          <SecondaryButton secondary={secondary} />
+        ) : (
+          <div className="hidden sm:block">
+            <SecondaryButton secondary={secondary} />
+          </div>
+        )}
       </div>
+      {mobileSecondaryAsLink && (
+        <div className="mt-2 sm:hidden">
+          <SecondaryLink secondary={secondary} />
+        </div>
+      )}
       {showMicrocopy && (
         <>
           <p className={`${iosLanding.caption} mt-3`}>Free to start · No card needed</p>
-          <p className="text-xs text-white/45 font-medium mt-1.5">
+          <p className="text-xs text-white/45 font-medium mt-1.5 hidden sm:block">
             iPhone on site · Gmail in Chrome or Edge at your desk
           </p>
         </>
       )}
     </div>
+  );
+}
+
+function SecondaryLink({ secondary }: { secondary: SecondaryCta }) {
+  const className = 'text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2';
+
+  if (secondary.kind === 'anchor') {
+    return (
+      <a href={secondary.href} className={className}>
+        {secondary.label}
+      </a>
+    );
+  }
+
+  if (secondary.kind === 'chrome-product') {
+    return (
+      <Link to="/chrome-extension" className={className}>
+        {secondary.label ?? 'Add to your browser'}
+      </Link>
+    );
+  }
+
+  return (
+    <Link to={secondary.to} className={className}>
+      {secondary.label}
+    </Link>
   );
 }
 

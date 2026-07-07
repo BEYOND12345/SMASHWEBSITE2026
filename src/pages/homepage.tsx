@@ -32,7 +32,7 @@ import {
   softwareApplicationSchema,
 } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
-import { iosLanding, iosStoryCopyCellClass, iosStoryGridClass, iosStoryMediaCellClass } from '../components/ios-product-landing/ios-landing-tokens';
+import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryGridClass, iosStoryMediaCellClass } from '../components/ios-product-landing/ios-landing-tokens';
 import {
   IOS_STORY_SEGMENTS,
   IOS_FEATURE_TILES,
@@ -48,6 +48,7 @@ import {
   IphoneInstallCta,
   ProductLearnMoreCta,
 } from '../components/marketing/DualProductCtas';
+import { HeroPhotoBackdrop } from '../components/marketing/HeroPhotoBackdrop';
 
 /**
  * Homepage — unified entry for iPhone + Gmail/Chrome/Edge.
@@ -109,6 +110,7 @@ const HOME_HERO_PHOTO = {
   src: '/product/home/hero-pool-maintenance.png',
   alt: 'Pool service worker invoicing by voice on his phone beside the pool',
   focus: '58% 42%',
+  focusMobile: '50% 18%',
   tint: 58,
   coverScaleFactor: 1.1,
 };
@@ -255,43 +257,47 @@ export function Homepage() {
   );
 }
 
-/** Hero — copy + master phone showcase over placeholder field photo. */
+/** Hero — centered mobile stack: promise → product UI → CTA. */
 function HomeHeroSection() {
   const photoBg = HOME_HERO_PHOTO;
-  const tint = photoBg.tint ?? 58;
 
   return (
-    <section className="relative bg-brand pt-16 pb-0 md:pt-24 overflow-hidden">
-      <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 28, 92) / 100}) 0%, rgba(15,23,42,${tint / 100}) 45%, rgba(15,23,42,${Math.max(tint - 28, 12) / 100}) 100%)`,
-        }}
-      />
+    <section className="relative bg-brand pt-12 pb-0 md:pt-24 overflow-hidden">
+      <HeroPhotoBackdrop photo={photoBg} tint={photoBg.tint} />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
-            <div className="pb-16 md:pb-24">
-              <h1 className={`${iosLanding.heroHeadline} mb-5`}>
+        <div className={`${iosHeroGridClass} lg:grid-cols-12`}>
+          <AnimateIn direction="left" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
+            <div className="pb-2 lg:pb-24">
+              <p className={`${iosLanding.eyebrow} mb-3 lg:hidden`}>
+                Quote sent in under 60 seconds
+              </p>
+
+              <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                 <span className="block text-white">Never type</span>
                 <span className="block text-accent">an invoice again.</span>
               </h1>
 
-              <IosSubline className={`${iosLanding.subline} mb-8`}>
+              <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-8 ${iosHeroMobileSublineClass}`}>
                 Invoicing for people who hate typing.
               </IosSubline>
 
-              <DualProductCtas />
+              <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8`}>
+                <DualProductCtas mobileSecondaryAsLink />
+              </div>
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7 flex justify-center lg:justify-end`}>
-            <div className="pb-16 md:pb-24 w-full flex justify-center lg:justify-end">
-              <IosHeroPhoneShowcase size="story" />
+          <AnimateIn direction="right" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
+            <div className="pb-2 sm:pb-16 md:pb-24 w-full">
+              <IosHeroPhoneShowcase size="hero" />
+            </div>
+          </AnimateIn>
+
+          <AnimateIn direction="up" className={iosHeroMobileCtaCellClass}>
+            <div className={iosHeroMobileCtaWrapClass}>
+              <DualProductCtas mobileSecondaryAsLink />
             </div>
           </AnimateIn>
         </div>

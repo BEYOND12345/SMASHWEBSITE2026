@@ -112,27 +112,31 @@ function IosPhoneComposition({
   const phoneScale = phoneWidth / IOS_PHONE_LOGICAL.width;
   const phoneHeight = Math.round((IOS_PHONE_LOGICAL.height / IOS_PHONE_LOGICAL.width) * phoneWidth);
   const radius = (IOS_PHONE_LOGICAL.radius / IOS_PHONE_LOGICAL.width) * phoneWidth;
-  
-  const calloutTop = Math.round(phoneHeight * cfg.calloutTopRatio);
-  // Clip the phone just enough below the callout top so the background doesn't peek through rounded corners.
-  // We use calloutTop + 50 logical pixels scaled.
-  const clipHeight = callout ? calloutTop + Math.round((50 / 900) * phoneWidth) : phoneHeight;
-
-  const calloutWidth = Math.round(phoneWidth * cfg.groundRatio);
-  const containerWidth = callout ? calloutWidth : phoneWidth;
-  /** Callout is absolute — reserve space below the phone clip so the chip is not clipped. */
-  const calloutHeightEst = callout
-    ? Math.round(cfg.tailLogical * phoneScale * cfg.contentScale)
-    : 0;
-  const tailSpace = callout
-    ? Math.max(iosShowcaseTailSpace(phoneScale, variantId), calloutTop + calloutHeightEst - clipHeight + 20)
-    : iosShowcaseTailSpace(phoneScale, variantId);
 
   const breakpoint = useBreakpoint();
   const isMobile = breakpoint === 'mobile';
+  const hideCalloutOnMobile = isMobile && variantId === 'hero';
+  const effectiveCallout = hideCalloutOnMobile ? undefined : callout;
 
-  /** Dual-phone staging — fanned background phone shows a second, distinct screen.
-   *  On mobile the side-fan is tucked in so the rear phone stays fully on screen. */
+  const calloutTop = Math.round(phoneHeight * cfg.calloutTopRatio);
+  const clipHeight = effectiveCallout
+    ? calloutTop + Math.round((50 / 900) * phoneWidth)
+    : hideCalloutOnMobile && cfg.mobileClipRatio
+      ? Math.round(phoneHeight * cfg.mobileClipRatio)
+      : phoneHeight;
+
+  const calloutWidth = Math.round(phoneWidth * cfg.groundRatio);
+  const containerWidth = effectiveCallout ? calloutWidth : phoneWidth;
+  /** Callout is absolute — reserve space below the phone clip so the chip is not clipped. */
+  const calloutHeightEst = effectiveCallout
+    ? Math.round(cfg.tailLogical * phoneScale * cfg.contentScale)
+    : 0;
+  const tailSpace = effectiveCallout
+    ? Math.max(iosShowcaseTailSpace(phoneScale, variantId), calloutTop + calloutHeightEst - clipHeight + 20)
+    : hideCalloutOnMobile
+      ? 12
+      : iosShowcaseTailSpace(phoneScale, variantId);
+
   const dualBgRaw = DUAL_BG[variantId];
   const dualBg = dualBgRaw
     ? {
@@ -146,14 +150,14 @@ function IosPhoneComposition({
   const bgPhoneHeight = Math.round(clipHeight + (260 / 900) * phoneWidth);
 
   /** Shadow on phone only when no callout covers the bottom edge. */
-  const phoneShadow = callout
+  const phoneShadow = effectiveCallout
     ? ''
     : surface === 'dark'
       ? 'shadow-[0_32px_64px_rgba(0,0,0,0.45)]'
       : 'shadow-[0_24px_56px_rgba(15,23,42,0.18)]';
 
   /** Square bottom on clipped phone — avoids white iframe corners at the clip edge. */
-  const clipRadius = callout
+  const clipRadius = effectiveCallout
     ? `${radius}px ${radius}px 0 0`
     : `${radius}px ${radius}px 0 0`;
 
@@ -204,12 +208,12 @@ function IosPhoneComposition({
           </div>
         </div>
 
-        {callout && (
+        {effectiveCallout && (
           <div
             className="absolute left-1/2 z-20 -translate-x-1/2"
             style={{ top: calloutTop, width: calloutWidth }}
           >
-            {callout}
+            {effectiveCallout}
           </div>
         )}
       </div>

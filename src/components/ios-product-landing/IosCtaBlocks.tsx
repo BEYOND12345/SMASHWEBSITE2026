@@ -87,6 +87,7 @@ export function IosHeroCta({ className = '' }: { className?: string }) {
     <DualProductCtas
       className={className}
       secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
+      mobileSecondaryAsLink
     />
   );
 }

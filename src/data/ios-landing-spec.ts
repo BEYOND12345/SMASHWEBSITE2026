@@ -36,6 +36,8 @@ export type StoryPhoto = {
   alt?: string;
   /** object-position so the subject stays framed when cropped. e.g. 'center', '50% 30%'. */
   focus?: string;
+  /** Mobile hero / narrow stacks — often top-weighted so the subject sits above the phone. */
+  focusMobile?: string;
   /** Override default cover zoom — see IOS_STORY_PHOTO_COVER_SCALE. */
   coverScale?: number;
   /** Multiplier on breakpoint default zoom — e.g. 0.75 pulls back 25%. */

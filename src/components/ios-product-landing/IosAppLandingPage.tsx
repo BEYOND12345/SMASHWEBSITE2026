@@ -33,7 +33,7 @@ import {
   IosStorySection,
 } from './IosStorySection';
 import { IosFinalCta, IosDesktopLink, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
-import { iosLanding, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
+import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
 import { APP_STORE_URL } from '../../data/download-urls';
 import {
   TestimonialGridSection,
@@ -122,42 +122,52 @@ export function IosAppLandingPage() {
       <div className={iosLanding.page}>
         <Nav ctaUrl={APP_STORE_URL} ctaLabel="Start Free" />
 
-        {/* HERO — same 12-col grid as /chrome-extension */}
-        <section className="bg-brand pt-16 pb-0 md:pt-24 overflow-hidden relative">
+        {/* HERO — mobile: centered promise → product UI → CTA */}
+        <section className="bg-brand pt-12 pb-0 md:pt-24 overflow-hidden relative">
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
-                <div className="pb-16 md:pb-24">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
+            <div className={iosHeroGridClass}>
+              <AnimateIn direction="left" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
+                <div className="pb-2 lg:pb-24">
+                  <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                     <Mic size={13} className="text-accent" strokeWidth={2.5} />
                     <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
                   </div>
 
-                  <p className={`${iosLanding.eyebrow} mb-4`}>{IOS_HERO.eyebrow}</p>
+                  <p className={`${iosLanding.eyebrow} mb-3 sm:mb-4`}>{IOS_HERO.eyebrow}</p>
 
-                  <h1 className={`${iosLanding.heroHeadline} mb-5`}>
+                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                     <span className="block text-white">{IOS_HERO.headlineWhite}</span>
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
-                  <IosSubline className={`${iosLanding.subline} mb-8 max-w-md`}>{IOS_HERO.subline}</IosSubline>
+                  <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-8 max-w-md ${iosHeroMobileSublineClass}`}>
+                    {IOS_HERO.subline}
+                  </IosSubline>
 
-                  <IosHeroCta className="mb-8" />
+                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8 mb-0 sm:mb-8`}>
+                    <IosHeroCta />
+                  </div>
 
-                  <div className="pt-6 border-t border-white/10 flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
+                  <div className="hidden sm:flex pt-6 border-t border-white/10 flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
                     <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with</span>
                     <BrandLogos className="opacity-100" />
                   </div>
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7 flex justify-center lg:justify-end`}>
-                <div className="pb-16 md:pb-24 w-full max-w-[min(100%,385px)] lg:max-w-none mx-auto">
+              <AnimateIn direction="right" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
+                <div className="pb-2 sm:pb-16 md:pb-24 w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
                   <IosMediaSlot type="hero-video" />
                   <IosMediaSlot type="hero-gif" />
                   <IosHeroPhoneShowcase />
+                </div>
+              </AnimateIn>
+
+              <AnimateIn direction="up" className={iosHeroMobileCtaCellClass}>
+                <div className={iosHeroMobileCtaWrapClass}>
+                  <IosHeroCta />
                 </div>
               </AnimateIn>
             </div>

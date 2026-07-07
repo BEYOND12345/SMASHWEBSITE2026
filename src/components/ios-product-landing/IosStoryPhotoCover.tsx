@@ -35,12 +35,17 @@ type Props = {
   /** Full-bleed section fill vs rounded frame behind the phone. */
   variant: 'fullBleed' | 'frame';
   className?: string;
+  /** Use photo.focusMobile (or a sensible default) under 640px. */
+  preferMobileFocus?: boolean;
 };
 
 /** object-cover photo with extra zoom so focus shifts never expose section bg. */
-export function IosStoryPhotoCover({ photo, variant, className = '' }: Props) {
+export function IosStoryPhotoCover({ photo, variant, className = '', preferMobileFocus = false }: Props) {
   const breakpoint = useBreakpoint();
-  const focus = photo.focus ?? 'center';
+  const focus =
+    preferMobileFocus && breakpoint === 'mobile'
+      ? photo.focusMobile ?? photo.focus ?? '50% 22%'
+      : photo.focus ?? 'center';
   const scale = resolveCoverScale(photo, breakpoint);
 
   const picture = (

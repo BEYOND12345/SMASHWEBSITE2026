@@ -34,8 +34,8 @@ export const IOS_PHONE_LOGICAL = { width: 900, height: 1240, radius: 72 } as con
  *  keeps a comfortable size. Whole composition derives from these widths, so this
  *  is a pure uniform scale — no per-element design changes. */
 export const IOS_PHONE_DISPLAY = {
-  hero: { desktop: 360, tablet: 315, mobile: 270 },
-  story: { desktop: 251, tablet: 225, mobile: 264 },
+  hero: { desktop: 360, tablet: 315, mobile: 228 },
+  story: { desktop: 251, tablet: 225, mobile: 228 },
 } as const;
 
 export type IosShowcaseVariantId =
@@ -54,6 +54,8 @@ export type IosShowcaseVariantId =
 export type IosShowcaseVariantConfig = {
   /** Top position of the callout as a ratio of phoneHeight (e.g. 940/1240 = 0.758). */
   calloutTopRatio: number;
+  /** On mobile hero — clip height when callout is hidden (shows voice UI above fold). */
+  mobileClipRatio?: number;
   contentScale: number;
   groundRatio: number;
   tailLogical: number;
@@ -61,7 +63,13 @@ export type IosShowcaseVariantConfig = {
 
 /** Per-composition tuning — aligned perfectly to App Store HTML files. */
 export const IOS_SHOWCASE_VARIANTS: Record<IosShowcaseVariantId, IosShowcaseVariantConfig> = {
-  hero: { calloutTopRatio: 940 / 1240, contentScale: 0.88, groundRatio: 1.07, tailLogical: 420 },
+  hero: {
+    calloutTopRatio: 940 / 1240,
+    mobileClipRatio: 0.72,
+    contentScale: 0.88,
+    groundRatio: 1.07,
+    tailLogical: 420,
+  },
   voice: { calloutTopRatio: 940 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 280 },
   quote: { calloutTopRatio: 980 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 340 },
   pricehub: { calloutTopRatio: 950 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
@@ -92,6 +100,16 @@ export function iosShowcaseTailSpace(
 export const iosStoryGridClass = 'grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20';
 export const iosStoryCopyCellClass = 'self-start';
 export const iosStoryMediaCellClass = 'self-end w-full';
+
+/** Mobile ad landing — headline, product proof, then CTA (centered on narrow viewports). */
+export const iosHeroGridClass = 'grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-12';
+export const iosHeroCopyCellClass = 'self-start order-1 text-center lg:text-left';
+export const iosHeroMediaCellClass = 'self-end w-full order-2 flex justify-center lg:justify-end';
+export const iosHeroMobileCtaCellClass = 'order-3 col-span-1 lg:hidden text-center pb-8 -mt-1';
+export const iosHeroDesktopCtaClass = 'hidden lg:block';
+export const iosHeroMobileSublineClass = 'mx-auto lg:mx-0';
+export const iosHeroMobileCtaWrapClass =
+  'flex flex-col items-center lg:items-start [&_.flex]:justify-center lg:[&_.flex]:justify-start';
 
 export type IosPhoneShowcaseSize = keyof typeof IOS_PHONE_DISPLAY;
 export type IosPhoneSurface = 'light' | 'dark';
