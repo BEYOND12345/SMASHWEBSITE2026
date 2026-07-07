@@ -170,32 +170,9 @@ export const IOS_APP_CAPABILITIES: IosAppCapability[] = [
   },
 ];
 
-export const IOS_FIELD_TESTIMONIALS = [
-  {
-    quote: 'Finished a bathroom reno, talked the invoice in the car park. Sent before I hit the highway.',
-    name: 'Tom H.',
-    trade: 'Plumber',
-    city: 'Perth',
-  },
-  {
-    quote: 'My Price Hub knows my rates for every clean type. I just describe the job and verify.',
-    name: 'Priya K.',
-    trade: 'Cleaner',
-    city: 'Melbourne',
-  },
-  {
-    quote: 'Read receipts changed everything. I know when to follow up instead of guessing.',
-    name: 'Marcus W.',
-    trade: 'Electrician',
-    city: 'Brisbane',
-  },
-  {
-    quote: 'Customer approved and paid from the link while I was still on site. No chasing.',
-    name: 'Jake T.',
-    trade: 'Handyman',
-    city: 'Sydney',
-  },
-] as const;
+import { VALUE_TESTIMONIALS } from './product-testimonials';
+
+export const IOS_FIELD_TESTIMONIALS = VALUE_TESTIMONIALS;
 
 /** Legacy frame PNGs — kept for reference / interim fallback. */
 export const IOS_APP_FRAMES: IosAppFrame[] = [

@@ -1,5 +1,7 @@
 /** Gmail / Chrome + Edge extension product landing — v2 automation positioning. */
 
+import { VALUE_TESTIMONIALS } from './product-testimonials';
+
 /** Flip to true once HTML files exist in public/product/gmail/screens/ */
 export const GMAIL_HTML_SCREENS_READY = true;
 
@@ -241,29 +243,4 @@ export const GMAIL_FAQS = [
   },
 ] as const;
 
-export const GMAIL_TESTIMONIALS = [
-  {
-    quote: 'Twenty line items used to take half an hour. Now I check the quote and hit reply.',
-    name: 'Rachel M.',
-    trade: 'Parts supplier',
-    city: 'Melbourne',
-  },
-  {
-    quote: "The from-email button is unreal. Customer writes in, I tap it, quote's done. Didn't type a word.",
-    name: 'Chris P.',
-    trade: 'Electrician',
-    city: 'Sydney',
-  },
-  {
-    quote: 'I used to put off quoting until Friday. Now the quick ones are gone before lunch.',
-    name: 'Jake T.',
-    trade: 'Plumber',
-    city: 'Brisbane',
-  },
-  {
-    quote: 'Sent 12 quotes in one afternoon. That would have taken me all day before.',
-    name: 'Sam O.',
-    trade: 'Consultant',
-    city: 'Auckland',
-  },
-] as const;
+export const GMAIL_TESTIMONIALS = VALUE_TESTIMONIALS;

@@ -173,7 +173,7 @@ export function TestimonialGridSection({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <AnimateIn direction="up">
           <p className={`${chromeLanding.eyebrow} text-white/30 mb-8 text-center`}>{eyebrow}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {items.map(({ quote, name, role, trade, city }) => (
               <figure key={name} className={chromeLanding.testimonialCard}>
                 <StarRating size={12} />

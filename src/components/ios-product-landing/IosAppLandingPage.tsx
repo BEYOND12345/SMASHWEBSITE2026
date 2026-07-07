@@ -36,6 +36,7 @@ import { IosFinalCta, IosDesktopLink, IosDesktopTeaser, IosHeroCta, IosMediaSlot
 import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
 import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
+import { VALUE_TESTIMONIALS, FEATURED_VALUE_TESTIMONIAL } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
 import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
 import { BrandLogos } from '../brand-logos';
@@ -67,33 +68,6 @@ const IOS_FEATURED_PHOTO = {
 const IOS_FINAL_PHOTO = IOS_HERO_PHOTO;
 
 const voicePage = mainPages.voiceInvoicing;
-
-const FIELD_TESTIMONIALS = [
-  {
-    quote: "I sent it before I'd even left the job.",
-    name: 'Dave R.',
-    trade: 'Plumber',
-    city: 'Byron Bay',
-  },
-  {
-    quote: 'Did the whole quote sitting in the van. Paid by the time I got home.',
-    name: 'Tom H.',
-    trade: 'Plumber',
-    city: 'Perth',
-  },
-  {
-    quote: "I just talk and it's done. Haven't typed a quote in weeks.",
-    name: 'Marcus W.',
-    trade: 'Electrician',
-    city: 'Brisbane',
-  },
-  {
-    quote: 'Customer approved and paid from the link while I was still on site.',
-    name: 'Jake T.',
-    trade: 'Handyman',
-    city: 'Sydney',
-  },
-];
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
@@ -205,7 +179,7 @@ export function IosAppLandingPage() {
         <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
           <TestimonialGridSection
             eyebrow="From people on the tools"
-            items={FIELD_TESTIMONIALS}
+            items={VALUE_TESTIMONIALS}
             className="!border-0 py-0 md:py-0 bg-transparent"
           />
         </BrandPhotoBand>
@@ -274,10 +248,11 @@ export function IosAppLandingPage() {
             <AnimateIn direction="up">
               <blockquote>
                 <p className="font-display-italic font-black italic text-white text-[clamp(1.35rem,4vw,2.5rem)] leading-[1.15] tracking-tight mb-5">
-                  &ldquo;I sent it before I&apos;d even left the job.&rdquo;
+                  &ldquo;{FEATURED_VALUE_TESTIMONIAL.quote}&rdquo;
                 </p>
                 <footer className="font-body text-white/70 text-sm font-semibold">
-                  Dave R. · Plumber · Byron Bay
+                  {FEATURED_VALUE_TESTIMONIAL.name} · {FEATURED_VALUE_TESTIMONIAL.trade} ·{' '}
+                  {FEATURED_VALUE_TESTIMONIAL.city}
                 </footer>
               </blockquote>
             </AnimateIn>

@@ -42,7 +42,8 @@ import {
 } from '../data/ios-landing-spec';
 import { CHROME_STORE_URL } from '../data/download-urls';
 import { mainPages } from '../data/main-pages-seo';
-import { GMAIL_DEMO, GMAIL_TESTIMONIALS } from '../data/gmail-landing-spec';
+import { GMAIL_DEMO } from '../data/gmail-landing-spec';
+import { VALUE_TESTIMONIALS } from '../data/product-testimonials';
 import {
   DualProductCtas,
   IphoneInstallCta,
@@ -192,7 +193,7 @@ export function Homepage() {
       <BrandPhotoBand photo={HOME_TESTIMONIAL_PHOTO} scrim="vertical" className="py-14 md:py-20">
         <TestimonialGridSection
           eyebrow="From people who'd rather be doing the work"
-          items={[...GMAIL_TESTIMONIALS]}
+          items={VALUE_TESTIMONIALS}
           className="!border-0 py-0 md:py-0 bg-transparent"
         />
       </BrandPhotoBand>

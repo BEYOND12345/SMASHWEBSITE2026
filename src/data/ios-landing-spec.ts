@@ -1,5 +1,7 @@
 /** iOS landing page — locked copy & structure from build spec. */
 
+import { VALUE_TESTIMONIALS } from './product-testimonials';
+
 export const IOS_LANDING_SEO = {
   title: 'SMASH — Voice Invoicing. Just Talk, No Typing.',
   description:
@@ -276,28 +278,7 @@ export const IOS_PROOF = {
   eyebrow: 'FROM PEOPLE ON THE TOOLS',
   headlineWhite: 'THEY STOPPED DOING ADMIN.',
   headlineLime: "THEY DIDN'T LOOK BACK.",
-  testimonials: [
-    {
-      quote: "I sent it before I'd even left the job.",
-      name: 'Dave R.',
-      trade: 'Plumber',
-      city: 'Byron Bay',
-    },
-    {
-      quote: 'Did the whole quote sitting in the van. Paid by the time I got home.',
-      name: '[Name]',
-      trade: '[trade]',
-      city: '[town]',
-      placeholder: true,
-    },
-    {
-      quote: "I just talk and it's done. Haven't typed a quote in weeks.",
-      name: '[Name]',
-      trade: '[trade]',
-      city: '[town]',
-      placeholder: true,
-    },
-  ],
+  testimonials: VALUE_TESTIMONIALS.slice(0, 3),
 };
 
 export const IOS_DESKTOP_BAND = {
