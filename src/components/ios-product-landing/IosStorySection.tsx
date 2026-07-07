@@ -3,10 +3,8 @@ import { AnimateIn } from '../animate-in';
 import { MockupFrame } from '../phone-showcase';
 import { IosSpecHeadline } from './IosCalloutCard';
 import { IosPhoneShowcase } from './IosPhoneShowcase';
-import { IosPhotoBackdrop } from './IosPhotoBackdrop';
 import { IosStoryPhotoCover } from './IosStoryPhotoCover';
 import {
-  IOS_STORY_PHOTOS,
   IOS_STORY_PHOTO_BG,
   type IosStorySegment,
 } from '../../data/ios-landing-spec';
@@ -20,8 +18,7 @@ import {
 type Props = {
   segment: IosStorySegment;
   imageFirst?: boolean;
-  dark?: boolean;
-  /** Even-index story rows only — keeps photo / solid-color alternation down the page. */
+  /** When true, full-bleed photo; when false, solid navy (photo / blue alternation). */
   photoBgEnabled?: boolean;
 };
 
@@ -29,12 +26,10 @@ type Props = {
 export function IosStorySection({
   segment,
   imageFirst = false,
-  dark = false,
   photoBgEnabled = true,
 }: Props) {
   const photoBg = photoBgEnabled ? IOS_STORY_PHOTO_BG[segment.screen] : undefined;
-  // Over a dark-tinted photo, copy must read as white.
-  const copyDark = dark || Boolean(photoBg);
+  const copyDark = true;
 
   const copy = (
     <IosSpecHeadline
@@ -47,32 +42,26 @@ export function IosStorySection({
     />
   );
 
-  // Framed backdrop behind the phone — white sections only, and never alongside a full-bleed bg.
-  const photo = dark || photoBg ? undefined : IOS_STORY_PHOTOS[segment.screen];
-
   const media = (
     <div className="relative w-full">
-      {photo && <IosPhotoBackdrop photo={photo} />}
       <div className="relative z-10">
         <IosPhoneShowcase
           screen={segment.screen}
           calloutId={segment.id}
           size="story"
-          surface={copyDark ? 'dark' : 'light'}
+          surface="dark"
         />
       </div>
     </div>
   );
 
-  const sectionBg = photoBg ? 'bg-brand' : dark ? 'bg-brand' : 'bg-white';
   const tint = photoBg?.tint ?? 55;
 
   return (
-    <section className={`relative ${sectionBg} py-16 md:py-28 overflow-hidden`}>
+    <section className="relative bg-brand py-16 md:py-28 overflow-hidden">
       {photoBg && (
         <>
           <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
-          {/* Dark brand tint — stronger on the copy (left) side for legibility. */}
           <div
             aria-hidden
             className="absolute inset-0 z-[1]"
@@ -110,10 +99,10 @@ export function IosAccentStrip({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-accent py-10 md:py-14">
+    <section className="bg-brand border-y border-white/10 py-10 md:py-14">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-        <p className="text-xs font-black uppercase tracking-widest text-brand/50 mb-3">{eyebrow}</p>
-        <div className="text-lg md:text-xl font-bold text-brand leading-[1.35]">{children}</div>
+        <p className="text-xs font-black uppercase tracking-widest text-white/40 mb-3">{eyebrow}</p>
+        <div className="text-lg md:text-xl font-bold text-white leading-[1.35]">{children}</div>
       </div>
     </section>
   );

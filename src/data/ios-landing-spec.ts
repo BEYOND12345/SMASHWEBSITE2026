@@ -108,6 +108,20 @@ export const IOS_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>>
     focus: '55% 50%',
     tint: 52,
   },
+  readreceipts: {
+    src: '/product/ios/photos/readreceipts.jpg',
+    srcMobile: '/product/ios/photos/readreceipts-mobile.jpg',
+    alt: 'Tradie checking when a customer opened their invoice',
+    focus: '55% 45%',
+    tint: 52,
+  },
+  customers: {
+    src: '/product/ios/photos/customers.jpg',
+    srcMobile: '/product/ios/photos/customers-mobile.jpg',
+    alt: 'Tradie reviewing customer job history on site',
+    focus: '58% 42%',
+    tint: 52,
+  },
 };
 
 export type IosStorySegment = {

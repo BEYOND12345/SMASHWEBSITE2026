@@ -34,12 +34,37 @@ import {
 } from './IosStorySection';
 import { IosFinalCta, IosDesktopLink, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
 import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
+import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
+import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
 import { APP_STORE_URL } from '../../data/download-urls';
-import {
-  TestimonialGridSection,
-  FeaturedTestimonialSection,
-} from '../chrome-landing/chrome-landing-ui';
+import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
 import { BrandLogos } from '../brand-logos';
+
+const IOS_HERO_PHOTO = {
+  src: '/product/ios/photos/voice.jpg',
+  srcMobile: '/product/ios/photos/voice-mobile.jpg',
+  alt: 'Pool technician speaking a job into SMASH by voice beside the pool',
+  focus: '62% 42%',
+  focusMobile: '50% 18%',
+  tint: 52,
+};
+
+const IOS_TESTIMONIALS_PHOTO = {
+  src: '/product/home/cleaner-testimonial.jpg',
+  alt: 'Cleaner sending an invoice on her phone between jobs',
+  focus: '58% 42%',
+  tint: 40,
+};
+
+const IOS_FEATURED_PHOTO = {
+  src: '/product/ios/photos/send.jpg',
+  srcMobile: '/product/ios/photos/send-mobile.jpg',
+  alt: 'Tradie sending a quote by voice from the driver’s seat',
+  focus: '68% 38%',
+  tint: 52,
+};
+
+const IOS_FINAL_PHOTO = IOS_HERO_PHOTO;
 
 const voicePage = mainPages.voiceInvoicing;
 
@@ -72,12 +97,12 @@ const FIELD_TESTIMONIALS = [
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
-    <div className="border-b border-border last:border-0">
+    <div className="border-b border-white/10 last:border-0">
       <button type="button" onClick={onClick} className="w-full flex items-center justify-between py-5 text-left gap-4">
-        <span className="font-display-italic font-black text-brand uppercase tracking-tighter leading-[0.88] text-base">{q}</span>
-        <ChevronDown size={18} className={`shrink-0 text-brand/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="font-display-italic font-black text-white uppercase tracking-tighter leading-[0.88] text-base">{q}</span>
+        <ChevronDown size={18} className={`shrink-0 text-white/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      {isOpen && <p className="font-body text-sm text-brand/70 font-medium leading-[1.5] pb-5">{a}</p>}
+      {isOpen && <p className="font-body text-sm text-white/70 font-medium leading-[1.5] pb-5">{a}</p>}
     </div>
   );
 }
@@ -122,8 +147,9 @@ export function IosAppLandingPage() {
       <div className={iosLanding.page}>
         <Nav ctaUrl={APP_STORE_URL} ctaLabel="Start Free" />
 
-        {/* HERO — mobile: centered promise → product UI → CTA */}
-        <section className="bg-brand pt-12 pb-0 md:pt-24 overflow-hidden relative">
+        {/* HERO — photo band (matches homepage rhythm) */}
+        <section className="relative bg-brand pt-12 pb-0 md:pt-24 overflow-hidden">
+          <HeroPhotoBackdrop photo={IOS_HERO_PHOTO} tint={IOS_HERO_PHOTO.tint} />
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
@@ -176,25 +202,28 @@ export function IosAppLandingPage() {
 
         <IosIntegrationStrap />
 
-        <TestimonialGridSection eyebrow="From people on the tools" items={FIELD_TESTIMONIALS} />
+        <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
+          <TestimonialGridSection
+            eyebrow="From people on the tools"
+            items={FIELD_TESTIMONIALS}
+            className="!border-0 py-0 md:py-0 bg-transparent"
+          />
+        </BrandPhotoBand>
 
-        {/* Problem — accent answer strip (Chrome pattern) */}
         <IosAccentStrip eyebrow={IOS_PROBLEM.eyebrow}>
           <span className="font-display-italic font-black uppercase tracking-tighter block mb-2 text-[clamp(1.5rem,4vw,2.25rem)] leading-[0.9]">
             {IOS_PROBLEM.headlineWhite}{' '}
-            <span className="text-brand">{IOS_PROBLEM.headlineLime}</span>
+            <span className="text-accent">{IOS_PROBLEM.headlineLime}</span>
           </span>
-          <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55]">
+          <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55] text-white/75">
             {IOS_PROBLEM.subline}
           </IosSubline>
         </IosAccentStrip>
 
-        {/* Story sections — alternating white / navy like Chrome */}
         {IOS_STORY_SEGMENTS.map((segment, index) => (
           <div key={segment.id} id={index === 0 ? 'how-it-works' : undefined}>
             <IosStorySection
               segment={segment}
-              dark={segment.dark}
               imageFirst={segment.imageFirst}
               photoBgEnabled={index % 2 === 0}
             />
@@ -203,69 +232,69 @@ export function IosAppLandingPage() {
 
         <IosMediaSlot type="story-demo" />
 
-        {/* Desktop band — 2-col like a story section */}
-        <section className="bg-brand py-16 md:py-28 overflow-hidden border-t border-white/10">
-          <div className={iosLanding.container}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-              <AnimateIn direction="left" className={iosStoryCopyCellClass}>
-                <IosSpecHeadline
-                  eyebrow={IOS_DESKTOP_BAND.eyebrow}
-                  headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
-                  headlineLime={IOS_DESKTOP_BAND.headlineLime}
-                />
-                <IosSubline className={`${iosLanding.body} mt-6 mb-4`}>{IOS_DESKTOP_BAND.body}</IosSubline>
-                <IosDesktopLink />
-              </AnimateIn>
-              <AnimateIn direction="right" className={iosStoryMediaCellClass}>
-                <IosDesktopTeaser />
-              </AnimateIn>
-            </div>
-          </div>
-        </section>
-
-        {/* Capability grid — Chrome pattern */}
-        <section className="bg-brand py-16 md:py-24 border-t border-white/10">
-          <div className={iosLanding.container}>
-            <AnimateIn direction="up">
+        <BrandSolidBand>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-20">
+            <AnimateIn direction="left" className={iosStoryCopyCellClass}>
               <IosSpecHeadline
-                centered
-                className="mb-12"
-                eyebrow={IOS_FEATURES_SECTION.eyebrow}
-                headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
-                headlineLime={IOS_FEATURES_SECTION.headlineLime}
-                dark
+                eyebrow={IOS_DESKTOP_BAND.eyebrow}
+                headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
+                headlineLime={IOS_DESKTOP_BAND.headlineLime}
               />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {visibleTiles.map((tile) => (
-                  <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
-                    <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
-                      {tile.title}
-                    </h3>
-                    <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
-                  </div>
-                ))}
-              </div>
+              <IosSubline className={`${iosLanding.body} mt-6 mb-4`}>{IOS_DESKTOP_BAND.body}</IosSubline>
+              <IosDesktopLink />
+            </AnimateIn>
+            <AnimateIn direction="right" className={iosStoryMediaCellClass}>
+              <IosDesktopTeaser />
             </AnimateIn>
           </div>
-        </section>
+          <AnimateIn direction="up">
+            <IosSpecHeadline
+              centered
+              className="mb-12"
+              eyebrow={IOS_FEATURES_SECTION.eyebrow}
+              headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
+              headlineLime={IOS_FEATURES_SECTION.headlineLime}
+              dark
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {visibleTiles.map((tile) => (
+                <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
+                  <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
+                    {tile.title}
+                  </h3>
+                  <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
+        </BrandSolidBand>
 
-        <FeaturedTestimonialSection
-          quote="I sent it before I'd even left the job."
-          attribution="Dave R. · Plumber · Byron Bay"
-        />
+        <BrandPhotoBand photo={IOS_FEATURED_PHOTO} scrim="vertical">
+          <div className="max-w-3xl mx-auto text-center">
+            <AnimateIn direction="up">
+              <blockquote>
+                <p className="font-display-italic font-black italic text-white text-[clamp(1.35rem,4vw,2.5rem)] leading-[1.15] tracking-tight mb-5">
+                  &ldquo;I sent it before I&apos;d even left the job.&rdquo;
+                </p>
+                <footer className="font-body text-white/70 text-sm font-semibold">
+                  Dave R. · Plumber · Byron Bay
+                </footer>
+              </blockquote>
+            </AnimateIn>
+          </div>
+        </BrandPhotoBand>
 
-        {/* FAQ — white section like Chrome */}
-        <section className="bg-white py-16 md:py-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+        <BrandSolidBand>
+          <div className="max-w-3xl mx-auto">
             <AnimateIn direction="up">
               <IosSpecHeadline
                 eyebrow="Questions"
                 headlineWhite="COMMON "
                 headlineLime="QUESTIONS."
-                dark={false}
-                className="mb-10"
+                dark
+                className="mb-10 text-center lg:text-left"
               />
-              <div className="rounded-3xl border border-border bg-white px-4 sm:px-8 py-2">
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-4 sm:px-8 py-2">
                 {voicePage.faqs.map((faq, i) => (
                   <FAQItem
                     key={faq.question}
@@ -278,12 +307,10 @@ export function IosAppLandingPage() {
               </div>
             </AnimateIn>
           </div>
-        </section>
+        </BrandSolidBand>
 
-        {/* Final CTA — mirrors hero hierarchy */}
-        <section className="bg-brand py-16 md:py-24 relative overflow-hidden border-t border-white/10">
-          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
-          <div className={`${iosLanding.container} relative z-10 text-center`}>
+        <BrandPhotoBand photo={IOS_FINAL_PHOTO} scrim="vertical" className="py-16 md:py-24">
+          <div className={`${iosLanding.container} text-center`}>
             <AnimateIn direction="up">
               <IosFinalCta
                 headlineWhite={IOS_FINAL_CTA.headlineWhite}
@@ -293,7 +320,7 @@ export function IosAppLandingPage() {
               />
             </AnimateIn>
           </div>
-        </section>
+        </BrandPhotoBand>
 
         <Footer />
       </div>

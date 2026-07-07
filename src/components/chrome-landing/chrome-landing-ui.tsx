@@ -169,7 +169,7 @@ export function TestimonialGridSection({
   className?: string;
 }) {
   return (
-    <section className={`bg-[#0D1117] py-16 md:py-20 border-t border-white/10 ${className}`.trim()}>
+    <section className={`py-16 md:py-20 border-t border-white/10 ${className.includes('bg-transparent') ? '' : 'bg-brand'} ${className}`.trim()}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <AnimateIn direction="up">
           <p className={`${chromeLanding.eyebrow} text-white/30 mb-8 text-center`}>{eyebrow}</p>

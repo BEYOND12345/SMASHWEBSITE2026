@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Monitor, Quote } from 'lucide-react';
+import { Monitor } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
@@ -49,6 +49,7 @@ import {
   ProductLearnMoreCta,
 } from '../components/marketing/DualProductCtas';
 import { HeroPhotoBackdrop } from '../components/marketing/HeroPhotoBackdrop';
+import { BrandPhotoBand } from '../components/marketing/BrandPhotoBand';
 
 /**
  * Homepage — unified entry for iPhone + Gmail/Chrome/Edge.
@@ -143,6 +144,17 @@ const HOME_GMAIL_INBOX_PHOTO = {
   tint: 52,
 };
 
+/** Features band — field photo behind capability grid. */
+const HOME_FEATURES_PHOTO = {
+  src: '/product/home/hero-tradie-car.jpg',
+  alt: 'Tradie in work gear beside a van on site',
+  focus: '55% 40%',
+  tint: 54,
+};
+
+/** Final CTA — reuse hero pool scene for bookend. */
+const HOME_FINAL_PHOTO = HOME_HERO_PHOTO;
+
 const ctaLime =
   'inline-flex items-center justify-center gap-2 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 transition-all whitespace-nowrap';
 
@@ -177,68 +189,67 @@ export function Homepage() {
 
       <GmailWorksWithStrap />
 
-      <TestimonialGridSection eyebrow="From people who'd rather be doing the work" items={[...GMAIL_TESTIMONIALS]} />
+      <BrandPhotoBand photo={HOME_TESTIMONIAL_PHOTO} scrim="vertical" className="py-14 md:py-20">
+        <TestimonialGridSection
+          eyebrow="From people who'd rather be doing the work"
+          items={[...GMAIL_TESTIMONIALS]}
+          className="!border-0 py-0 md:py-0 bg-transparent"
+        />
+      </BrandPhotoBand>
 
-      {/* Problem — short answer strip, AI-citation friendly */}
+      {/* Problem — navy answer strip (matches photo / blue rhythm) */}
       <IosAccentStrip eyebrow="The real reason jobs slip">
         <span className="font-display-italic font-black uppercase tracking-tighter block mb-2 text-[clamp(1.5rem,4vw,2.25rem)] leading-[0.9]">
           The first answer back{' '}
-          <span className="text-brand">wins the job.</span>
+          <span className="text-accent">wins the job.</span>
         </span>
-        <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55]">
+        <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55] text-white/75">
           Most jobs aren't lost on price — they're lost to whoever replied first. SMASH gets your
           number back before you've packed up.
         </IosSubline>
       </IosAccentStrip>
 
-      {/* ── Story rows — one idea each, alternating, same as the iOS page ──── */}
+      {/* ── Story rows — photo / navy alternation ─────────────────────────── */}
       <div id="how-it-works">
         <HomeVoiceStoryRow />
       </div>
-      <IosStorySection segment={seg('quote')} dark imageFirst />
+      <IosStorySection segment={seg('quote')} imageFirst photoBgEnabled={false} />
 
-      {/* Chrome extension — quoting from the inbox (mirrors story-row layout) */}
       <ChromeInboxRow />
 
-      <IosStorySection segment={seg('pay')} dark imageFirst />
+      <IosStorySection segment={seg('pay')} imageFirst photoBgEnabled={false} />
 
-      {/* Capability grid — the rest, handled (same pattern as iOS page) */}
-      <section className="bg-brand py-16 md:py-24 border-t border-white/10">
-        <div className={iosLanding.container}>
-          <AnimateIn direction="up">
-            <IosSpecHeadline
-              centered
-              className="mb-12"
-              eyebrow={IOS_FEATURES_SECTION.eyebrow}
-              headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
-              headlineLime={IOS_FEATURES_SECTION.headlineLime}
-              dark
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {visibleTiles.map((tile) => (
-                <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
-                  <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
-                    {tile.title}
-                  </h3>
-                  <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      <HomePlumberTestimonial />
+      <BrandPhotoBand photo={HOME_FEATURES_PHOTO}>
+        <AnimateIn direction="up">
+          <IosSpecHeadline
+            centered
+            className="mb-12"
+            eyebrow={IOS_FEATURES_SECTION.eyebrow}
+            headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
+            headlineLime={IOS_FEATURES_SECTION.headlineLime}
+            dark
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {visibleTiles.map((tile) => (
+              <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
+                <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
+                  {tile.title}
+                </h3>
+                <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
+              </div>
+            ))}
+          </div>
+        </AnimateIn>
+      </BrandPhotoBand>
 
       <FAQ
         items={HOME_PAGE_FAQS}
+        variant="brand"
         subheading="Two tools for how you work — voice on iPhone on site, Gmail in Chrome or Edge at your desk."
       />
 
-      {/* Final CTA — both front doors */}
-      <section className="bg-brand py-16 md:py-24 relative overflow-hidden border-t border-white/10">
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
-        <div className={`${iosLanding.container} relative z-10 text-center`}>
+      <BrandPhotoBand photo={HOME_FINAL_PHOTO} scrim="vertical" className="py-16 md:py-24">
+        <div className="text-center">
           <AnimateIn direction="up">
             <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto mb-5`}>
               <span className="block text-white">You do the work.</span>
@@ -250,7 +261,7 @@ export function Homepage() {
             <DualProductCtas className="flex flex-col items-center [&_p]:text-center" />
           </AnimateIn>
         </div>
-      </section>
+      </BrandPhotoBand>
 
       <Footer />
     </div>
@@ -452,37 +463,6 @@ function ChromeInboxRow() {
             </div>
           </AnimateIn>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/** Field photo + featured testimonial — cleaner on site. */
-function HomePlumberTestimonial() {
-  const tint = HOME_TESTIMONIAL_PHOTO.tint ?? 40;
-
-  return (
-    <section className="relative bg-brand py-16 md:py-24 overflow-hidden border-t border-white/10">
-      <IosStoryPhotoCover photo={HOME_TESTIMONIAL_PHOTO} variant="fullBleed" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 22, 72) / 100}) 0%, rgba(15,23,42,${tint / 100}) 50%, rgba(15,23,42,${Math.max(tint - 24, 8) / 100}) 100%)`,
-        }}
-      />
-      <div className={`${iosLanding.container} relative z-10 max-w-3xl mx-auto text-center`}>
-        <AnimateIn direction="up">
-          <Quote size={28} className="text-white/30 mx-auto mb-4" strokeWidth={2} aria-hidden />
-          <blockquote>
-            <p className="font-display-italic font-black italic text-white text-[clamp(1.35rem,4vw,2.5rem)] leading-[1.15] tracking-tight mb-5">
-              &ldquo;Too easy to use. I just talk, and it&apos;s done.&rdquo;
-            </p>
-            <footer className="font-body text-white/70 text-sm font-semibold">
-              Priya K. · Cleaner · Melbourne
-            </footer>
-          </blockquote>
-        </AnimateIn>
       </div>
     </section>
   );
