@@ -6,6 +6,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mainPages } from '../src/data/main-pages-seo.ts';
 import { buildStaticPage, writeStaticPage } from './lib/static-page-template.ts';
+import { loadViteEnv } from './lib/load-vite-env.ts';
+
+loadViteEnv();
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'public', 'voice-invoicing', 'index.html');

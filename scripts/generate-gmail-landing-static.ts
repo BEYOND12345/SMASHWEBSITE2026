@@ -12,6 +12,10 @@ import {
   gmailLandingPages,
   type GmailLandingConfig,
 } from '../src/data/gmail-landing-pages.ts';
+import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from './meta-pixel-snippet.ts';
+import { loadViteEnv } from './lib/load-vite-env.ts';
+
+loadViteEnv();
 
 const SITE = 'https://smashinvoices.com';
 const CHROME_STORE =
@@ -168,6 +172,7 @@ function buildPage(c: GmailLandingConfig): string {
   <script type="application/ld+json">${renderJsonLd(faqLd)}</script>
   <script type="application/ld+json">${renderJsonLd(videoLd)}</script>
   <script type="application/ld+json">${renderJsonLd(appLd)}</script>
+${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
 </head>
 <body>
   <header class="nav">
@@ -232,6 +237,7 @@ function buildPage(c: GmailLandingConfig): string {
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="${CHROME_STORE}">Chrome Web Store</a>.</p></noscript>
+${metaPixelClickTrackingHtml(process.env.VITE_META_PIXEL_ID)}
 </body>
 </html>`;
 }

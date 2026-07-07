@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { marked } from 'marked';
 import { googleAdsClickTrackingHtml, googleAdsHeadHtml } from './google-ads-snippet.ts';
+import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from './meta-pixel-snippet.ts';
 import { GMAIL_SURVIVOR_SLUGS } from './gmail-consolidation-redirects.ts';
 import { VOICE_SURVIVOR_SLUGS } from './voice-consolidation-redirects.ts';
 
@@ -33,6 +34,18 @@ function loadEnv() {
     envContent.split('\n').forEach(line => {
       const match = line.match(/^([^=]+)=(.*)$/);
       if (match) {
+        const key = match[1].trim();
+        const value = match[2].trim().replace(/^["']|["']$/g, '');
+        process.env[key] = value;
+      }
+    });
+  }
+  const prodPath = path.join(__dirname, '..', '.env.production');
+  if (fs.existsSync(prodPath)) {
+    const envContent = fs.readFileSync(prodPath, 'utf-8');
+    envContent.split('\n').forEach(line => {
+      const match = line.match(/^([^#=][^=]*)=(.*)$/);
+      if (match && process.env[match[1].trim()] === undefined) {
         const key = match[1].trim();
         const value = match[2].trim().replace(/^["']|["']$/g, '');
         process.env[key] = value;
@@ -680,6 +693,7 @@ export function renderPost(post: BlogPost): string {
 
   <style>${inlineStyles()}</style>
 ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
+${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
 
 ${schemas
   .map(s => `  <script type="application/ld+json">${renderJsonLd(s)}</script>`)
@@ -763,6 +777,7 @@ ${schemas
     <div style="margin-top:14px;">© ${new Date().getFullYear()} SMASH Invoices · smashinvoices.com</div>
   </footer>
 ${googleAdsClickTrackingHtml(process.env.VITE_GOOGLE_ADS_ID)}
+${metaPixelClickTrackingHtml(process.env.VITE_META_PIXEL_ID)}
 </body>
 </html>`);
 }

@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+import { MetaPixelPageView } from './components/MetaPixelPageView';
 import { Homepage } from './pages/homepage';
 
 // Legacy landing page — kept for reference; no longer routed at /.
@@ -122,6 +123,7 @@ function PageLoader() {
 function App() {
   return (
     <BrowserRouter>
+      <MetaPixelPageView />
       <Suspense fallback={<PageLoader />}>
       <Routes>
         {/* Core pages */}

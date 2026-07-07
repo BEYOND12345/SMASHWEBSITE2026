@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { HREFLANG_LINKS, DATE_MODIFIED, type MainPageSeo } from '../../src/data/main-pages-seo.ts';
+import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from '../meta-pixel-snippet.ts';
 
 const SITE = 'https://smashinvoices.com';
 const CHROME_STORE =
@@ -106,6 +107,7 @@ ${hreflangTags()}
   <meta property="article:modified_time" content="${DATE_MODIFIED}T00:00:00.000Z">
   <script type="application/ld+json">${ld(webPageLd)}</script>
   ${faqLd ? `<script type="application/ld+json">${ld(faqLd)}</script>` : ''}
+${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
   <style>
     body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#0f172a}
     h1{font-size:2rem;line-height:1.15;margin:0 0 8px}
@@ -125,6 +127,7 @@ ${hreflangTags()}
   <p>${ctaHtml(page.cta)}</p>
   ${faqHtml ? `<section><h2>FAQ</h2>${faqHtml}</section>` : ''}
   <p><small>Updated ${DATE_MODIFIED}</small></p>
+${metaPixelClickTrackingHtml(process.env.VITE_META_PIXEL_ID)}
 </body>
 </html>`;
 }

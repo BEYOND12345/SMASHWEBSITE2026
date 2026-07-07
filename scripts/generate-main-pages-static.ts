@@ -13,6 +13,9 @@ import {
 } from '../src/data/main-pages-seo.ts';
 import { countries } from '../src/data/country-data.ts';
 import { buildFaqSchema, buildStaticPage, writeStaticPage } from './lib/static-page-template.ts';
+import { loadViteEnv } from './lib/load-vite-env.ts';
+
+loadViteEnv();
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
