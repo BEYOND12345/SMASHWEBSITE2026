@@ -259,10 +259,9 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
 ];
 
 export const IOS_HERO = {
-  eyebrow: 'VOICE INVOICING FOR PEOPLE WHO DO THE WORK',
   headlineWhite: 'JUST TALK.',
   headlineLime: 'SMASH DOES THE REST.',
-  subline: 'Speak the job. Quote sent before you leave the driveway.',
+  byline: 'Voice invoicing for people who do the work.',
   microcopy: 'Free to start · No card needed',
 };
 

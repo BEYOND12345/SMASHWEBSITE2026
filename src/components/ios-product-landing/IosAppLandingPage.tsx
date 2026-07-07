@@ -135,15 +135,13 @@ export function IosAppLandingPage() {
                     <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
                   </div>
 
-                  <p className={`${iosLanding.eyebrow} mb-3 sm:mb-4`}>{IOS_HERO.eyebrow}</p>
-
                   <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                     <span className="block text-white">{IOS_HERO.headlineWhite}</span>
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
                   <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-8 max-w-md ${iosHeroMobileSublineClass}`}>
-                    {IOS_HERO.subline}
+                    {IOS_HERO.byline}
                   </IosSubline>
 
                   <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8 mb-0 sm:mb-8`}>
