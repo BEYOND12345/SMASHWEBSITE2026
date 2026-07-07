@@ -8,7 +8,7 @@ export type ProductTestimonial = {
 
 export const VALUE_TESTIMONIALS: ProductTestimonial[] = [
   {
-    quote: 'Surprised how this actually works.',
+    quote: "Not AI estimates — a full invoicing system, built for speed.",
     name: 'Marcus W.',
     trade: 'Electrician',
     city: 'Brisbane',
