@@ -22,3 +22,12 @@ for (const rel of shadowStubs) {
     console.log(`✓ Removed shadow stub dist/${rel}`);
   }
 }
+
+// Empty route dirs shadow SPA fallback on some static hosts (filesystem wins over catch-all).
+for (const dirName of ['voice-invoicing', 'chrome-extension', 'b2b-gmail-quoting']) {
+  const dir = path.join(dist, dirName);
+  if (fs.existsSync(dir) && fs.statSync(dir).isDirectory() && fs.readdirSync(dir).length === 0) {
+    fs.rmdirSync(dir);
+    console.log(`✓ Removed empty shadow dir dist/${dirName}/`);
+  }
+}
