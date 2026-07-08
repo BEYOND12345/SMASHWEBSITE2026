@@ -4,9 +4,9 @@ import { APP_STORE_URL } from '../../data/download-urls';
 import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
 
 const ctaLime =
-  'inline-flex items-center justify-center gap-2 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 transition-all whitespace-nowrap';
+  'inline-flex items-center justify-center gap-2 min-h-[48px] rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 active:scale-[0.98] transition-all whitespace-nowrap touch-manipulation shadow-glow hover:shadow-glow-lg';
 const ctaGhost =
-  'inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wide px-7 py-4 hover:bg-white hover:text-brand transition-all whitespace-nowrap';
+  'inline-flex items-center justify-center gap-2 min-h-[48px] rounded-full border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wide px-7 py-4 hover:bg-white hover:text-brand active:scale-[0.98] transition-all whitespace-nowrap touch-manipulation';
 
 type SecondaryCta =
   | { kind: 'link'; to: string; label: string }
@@ -64,7 +64,8 @@ export function DualProductCtas({
 }
 
 function SecondaryLink({ secondary }: { secondary: SecondaryCta }) {
-  const className = 'text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2';
+  const className =
+    'inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent active:text-accent transition-colors underline underline-offset-2 touch-manipulation';
 
   if (secondary.kind === 'anchor') {
     return (

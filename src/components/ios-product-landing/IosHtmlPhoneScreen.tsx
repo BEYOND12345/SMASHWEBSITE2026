@@ -23,6 +23,7 @@ type Props = {
   fadeBottom?: boolean;
   /** Shift content up (logical px) inside the clip window. */
   focusYOffset?: number;
+  loading?: 'eager' | 'lazy';
 };
 
 /** Live HTML screen from approved App Store extracts — integer scale iframe. */
@@ -33,6 +34,7 @@ export function IosHtmlPhoneScreen({
   active = true,
   fadeBottom = false,
   focusYOffset = 0,
+  loading = 'lazy',
 }: Props) {
   const scale = width / IOS_PHONE_LOGICAL.width;
   const height = Math.round(IOS_PHONE_LOGICAL.height * scale);
@@ -56,7 +58,7 @@ export function IosHtmlPhoneScreen({
             : `scale(${scale})`,
           transformOrigin: 'top left',
         }}
-        loading={screen === 'voice' ? 'eager' : 'lazy'}
+        loading={loading}
         tabIndex={-1}
       />
     </div>

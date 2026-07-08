@@ -25,7 +25,7 @@ export function IosOfficialAppStoreBadge({ className = '' }: { className?: strin
       href={IOS_APP_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-block shrink-0 hover:opacity-90 transition-opacity ${className}`.trim()}
+      className={`inline-block shrink-0 min-h-[48px] hover:opacity-90 active:scale-[0.98] transition-all touch-manipulation ${className}`.trim()}
       aria-label="Download on the App Store"
     >
       <img
@@ -123,7 +123,7 @@ export function IosDesktopTeaser() {
         </div>
         <Link
           to={IOS_DESKTOP_BAND.linkHref}
-          className="relative z-10 flex flex-col gap-2 border-t border-border/70 bg-white px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5 hover:bg-[#F8FAFC] transition-colors group"
+          className="relative z-10 flex flex-col gap-2 border-t border-border/70 bg-white px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5 min-h-[52px] hover:bg-[#F8FAFC] active:bg-[#F1F5F9] transition-colors group touch-manipulation"
         >
           <span className="font-body text-xs sm:text-sm font-medium text-brand/55 leading-snug">
             Priced from your rates — check and reply.

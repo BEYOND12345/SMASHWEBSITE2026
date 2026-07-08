@@ -19,10 +19,10 @@ export const iosLanding = {
   white: 'text-white',
 
   primaryCta:
-    'inline-flex items-center justify-center min-h-[48px] rounded-full bg-accent text-brand font-black uppercase tracking-widest hover:brightness-95 transition-all animate-pulse-glow px-8 py-4 text-sm whitespace-nowrap',
+    'inline-flex items-center justify-center min-h-[48px] rounded-full bg-accent text-brand font-black uppercase tracking-widest hover:brightness-95 active:scale-[0.98] transition-all shadow-glow hover:shadow-glow-lg px-8 py-4 text-sm whitespace-nowrap touch-manipulation',
   /** Ghost pill — pairs with primary; never a competing download. */
   secondaryCta:
-    'inline-flex items-center justify-center min-h-[44px] sm:min-h-[48px] rounded-full border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all whitespace-nowrap px-6 sm:px-8',
+    'inline-flex items-center justify-center min-h-[48px] rounded-full border-2 border-white/25 text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand active:scale-[0.98] transition-all whitespace-nowrap px-6 sm:px-8 touch-manipulation',
   calloutCard:
     'bg-brand-deep rounded-[28px] shadow-[0_30px_70px_rgba(0,0,0,0.55)] p-6 sm:p-8 border border-white/[0.06]',
 } as const;

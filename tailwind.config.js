@@ -45,6 +45,10 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'float-hero': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
         'float-slow': {
           '0%, 100%': { transform: 'translateY(0px) rotate(-6deg)' },
           '50%': { transform: 'translateY(-8px) rotate(-6deg)' },
@@ -62,6 +66,7 @@ export default {
         'slide-up': 'slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         'hero-reveal': 'hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both',
         'float': 'float 5s ease-in-out infinite',
+        'float-hero': 'float-hero 8s ease-in-out infinite',
         'float-slow': 'float-slow 6s ease-in-out infinite',
         'float-delayed': 'float 5s ease-in-out 0.8s infinite',
         'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',

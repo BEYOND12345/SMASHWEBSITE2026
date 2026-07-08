@@ -49,9 +49,10 @@
     display: none;
   }
 
-  /* Smooth scroll */
+  /* Smooth scroll — anchor links only; route changes force instant scroll in ScrollToTop */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
   }
 }
 
@@ -84,9 +85,25 @@
       transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  @media (max-width: 639px) {
+    .reveal {
+      transform: translateY(14px);
+    }
+  }
+
   .reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .reveal-fade {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-fade.revealed {
+    opacity: 1;
   }
 
   .reveal-left {
@@ -97,9 +114,19 @@
       transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  @media (max-width: 639px) {
+    .reveal-left {
+      transform: translateY(14px);
+    }
+
+    .reveal-right {
+      transform: translateY(14px);
+    }
+  }
+
   .reveal-left.revealed {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .reveal-right {
@@ -112,7 +139,17 @@
 
   .reveal-right.revealed {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+
+  @media (min-width: 640px) {
+    .reveal-left.revealed {
+      transform: translateX(0);
+    }
+
+    .reveal-right.revealed {
+      transform: translateX(0);
+    }
   }
 
   /* Delay utilities */

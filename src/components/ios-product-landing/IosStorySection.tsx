@@ -20,6 +20,7 @@ type Props = {
   imageFirst?: boolean;
   /** When true, full-bleed photo; when false, solid navy (photo / blue alternation). */
   photoBgEnabled?: boolean;
+  priorityLoad?: boolean;
 };
 
 /** Chrome/Gmail-style alternating story row — unified phone showcase on every section. */
@@ -27,6 +28,7 @@ export function IosStorySection({
   segment,
   imageFirst = false,
   photoBgEnabled = true,
+  priorityLoad = false,
 }: Props) {
   const photoBg = photoBgEnabled ? IOS_STORY_PHOTO_BG[segment.screen] : undefined;
   const copyDark = true;
@@ -50,6 +52,7 @@ export function IosStorySection({
           calloutId={segment.id}
           size="story"
           surface="dark"
+          priorityLoad={priorityLoad}
         />
       </div>
     </div>
@@ -58,7 +61,7 @@ export function IosStorySection({
   const tint = photoBg?.tint ?? 55;
 
   return (
-    <section className="relative bg-brand py-16 md:py-28 overflow-hidden">
+    <section className="relative bg-brand py-16 md:py-28 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_720px]">
       {photoBg && (
         <>
           <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
@@ -75,12 +78,15 @@ export function IosStorySection({
         <div className={iosStoryGridClass}>
           <AnimateIn
             direction="left"
+            directionMobile="up"
             className={`${imageFirst ? iosStoryMediaCellClass : iosStoryCopyCellClass} ${imageFirst ? 'order-2 lg:order-1' : 'order-1'}`}
           >
             {imageFirst ? <MockupFrame>{media}</MockupFrame> : copy}
           </AnimateIn>
           <AnimateIn
             direction="right"
+            directionMobile="up"
+            delay={80}
             className={`${imageFirst ? iosStoryCopyCellClass : iosStoryMediaCellClass} ${imageFirst ? 'order-1 lg:order-2' : 'order-2'}`}
           >
             {imageFirst ? copy : <MockupFrame>{media}</MockupFrame>}
@@ -108,9 +114,11 @@ export function IosAccentStrip({
   );
 }
 
-export function IosIntegrationStrap() {
+export function IosIntegrationStrap({ compact = false }: { compact?: boolean }) {
   return (
-    <section className="bg-brand border-t border-white/10 py-6 md:py-8">
+    <section
+      className={`bg-brand border-t border-white/[0.06] ${compact ? 'py-5 md:py-6' : 'py-6 md:py-8'}`}
+    >
       <div className={iosLanding.container + ' text-center'}>
         <p className="font-display font-black text-lg sm:text-xl md:text-2xl uppercase tracking-wide text-white mb-2">
           On site by voice. At your desk in Chrome or Edge. Same quotes. Same account.

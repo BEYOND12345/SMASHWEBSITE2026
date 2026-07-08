@@ -73,11 +73,27 @@ const voicePage = mainPages.voiceInvoicing;
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
     <div className="border-b border-white/10 last:border-0">
-      <button type="button" onClick={onClick} className="w-full flex items-center justify-between py-5 text-left gap-4">
-        <span className="font-display-italic font-black text-white uppercase tracking-tighter leading-[0.88] text-base">{q}</span>
-        <ChevronDown size={18} className={`shrink-0 text-white/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      <button
+        type="button"
+        onClick={onClick}
+        aria-expanded={isOpen}
+        className="w-full flex items-center justify-between py-5 min-h-[56px] text-left gap-4 touch-manipulation"
+      >
+        <span className="font-display-italic font-black text-white uppercase tracking-tighter leading-[0.88] text-base pr-2">
+          {q}
+        </span>
+        <ChevronDown
+          size={18}
+          className={`shrink-0 text-white/40 transition-transform duration-300 ease-out ${isOpen ? 'rotate-180' : ''}`}
+        />
       </button>
-      {isOpen && <p className="font-body text-sm text-white/70 font-medium leading-[1.5] pb-5">{a}</p>}
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+      >
+        <div className="overflow-hidden">
+          <p className="font-body text-sm text-white/70 font-medium leading-[1.5] pb-5">{a}</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -133,7 +149,7 @@ export function IosAppLandingPage() {
 
           <div className={`${iosLanding.container} relative z-10`}>
             <div className={iosHeroGridClass}>
-              <AnimateIn direction="left" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
+              <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
                 <div className="pb-2 lg:pb-24">
                   <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                     <Mic size={13} className="text-accent" strokeWidth={2.5} />
@@ -155,7 +171,7 @@ export function IosAppLandingPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="right" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
+              <AnimateIn direction="right" directionMobile="up" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
                 <div className="pb-2 sm:pb-16 md:pb-24 w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
                   <IosMediaSlot type="hero-video" />
                   <IosMediaSlot type="hero-gif" />
@@ -163,18 +179,18 @@ export function IosAppLandingPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="up" className={iosHeroMobileCtaCellClass}>
+              <div className={iosHeroMobileCtaCellClass}>
                 <div className={iosHeroMobileCtaWrapClass}>
                   <IosHeroCta />
                 </div>
-              </AnimateIn>
+              </div>
             </div>
           </div>
         </section>
 
         <IosWorksWithStrap />
 
-        <IosIntegrationStrap />
+        <IosIntegrationStrap compact />
 
         <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
           <TestimonialGridSection
@@ -198,11 +214,12 @@ export function IosAppLandingPage() {
         </IosAccentStrip>
 
         {IOS_STORY_SEGMENTS.map((segment, index) => (
-          <div key={segment.id} id={index === 0 ? 'how-it-works' : undefined}>
+          <div key={segment.id} id={index === 0 ? 'how-it-works' : undefined} className={index === 0 ? 'scroll-mt-24' : undefined}>
             <IosStorySection
               segment={segment}
               imageFirst={segment.imageFirst}
               photoBgEnabled={index % 2 === 0}
+              priorityLoad={index < 2}
             />
           </div>
         ))}
@@ -211,7 +228,7 @@ export function IosAppLandingPage() {
 
         <BrandSolidBand>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-20">
-            <AnimateIn direction="left" className={iosStoryCopyCellClass}>
+            <AnimateIn direction="left" directionMobile="up" className={iosStoryCopyCellClass}>
               <IosSpecHeadline
                 eyebrow={IOS_DESKTOP_BAND.eyebrow}
                 headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
@@ -219,7 +236,7 @@ export function IosAppLandingPage() {
               />
               <IosSubline className={`${iosLanding.body} mt-6`}>{IOS_DESKTOP_BAND.body}</IosSubline>
             </AnimateIn>
-            <AnimateIn direction="right" className={iosStoryMediaCellClass}>
+            <AnimateIn direction="right" directionMobile="up" delay={80} className={iosStoryMediaCellClass}>
               <IosDesktopTeaser />
             </AnimateIn>
           </div>
@@ -234,7 +251,10 @@ export function IosAppLandingPage() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {visibleTiles.map((tile) => (
-                <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
+                <div
+                  key={tile.title}
+                  className="bg-white/[0.05] border border-white/10 rounded-2xl p-5 min-h-[88px] touch-manipulation"
+                >
                   <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
                     {tile.title}
                   </h3>

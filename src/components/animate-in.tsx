@@ -1,12 +1,33 @@
 import { useEffect, useRef, ReactNode } from 'react';
 
+type RevealDirection = 'up' | 'left' | 'right' | 'fade';
+
 interface AnimateInProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: 'up' | 'left' | 'right' | 'fade';
+  direction?: RevealDirection;
+  /** On viewports below 640px — defaults to `up` for calmer stacked layouts. */
+  directionMobile?: RevealDirection;
   threshold?: number;
   as?: keyof JSX.IntrinsicElements;
+}
+
+function resolveDirectionClass(direction: RevealDirection): string {
+  if (direction === 'fade') return 'reveal-fade';
+  if (direction === 'left') return 'reveal-left';
+  if (direction === 'right') return 'reveal-right';
+  return 'reveal';
+}
+
+function pickDirection(
+  direction: RevealDirection,
+  directionMobile: RevealDirection | undefined,
+): RevealDirection {
+  if (typeof window === 'undefined') return direction;
+  const isMobile = window.matchMedia('(max-width: 639px)').matches;
+  if (isMobile) return directionMobile ?? 'up';
+  return direction;
 }
 
 export function AnimateIn({
@@ -14,7 +35,8 @@ export function AnimateIn({
   className = '',
   delay = 0,
   direction = 'up',
-  threshold = 0,
+  directionMobile,
+  threshold = 0.06,
   as: Tag = 'div',
 }: AnimateInProps) {
   const ref = useRef<HTMLElement>(null);
@@ -23,13 +45,8 @@ export function AnimateIn({
     const el = ref.current;
     if (!el) return;
 
-    const dirClass =
-      direction === 'up' ? 'reveal'
-      : direction === 'left' ? 'reveal-left'
-      : direction === 'right' ? 'reveal-right'
-      : 'reveal';
-
-    el.classList.add(dirClass);
+    const activeDirection = pickDirection(direction, directionMobile);
+    el.classList.add(resolveDirectionClass(activeDirection));
     if (delay) el.style.transitionDelay = `${delay}ms`;
 
     const reveal = () => {
@@ -48,13 +65,11 @@ export function AnimateIn({
           observer.disconnect();
         }
       },
-      { threshold, rootMargin: '0px 0px -40px 0px' }
+      { threshold, rootMargin: '0px 0px 8% 0px' },
     );
 
     observer.observe(el);
 
-    // Tall async blocks (e.g. blog grids) can fail a high intersection ratio on
-    // first paint — reveal immediately if any part is already on screen.
     const revealIfVisible = () => {
       const rect = el.getBoundingClientRect();
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -69,7 +84,7 @@ export function AnimateIn({
     });
 
     return () => observer.disconnect();
-  }, [delay, direction, threshold]);
+  }, [delay, direction, directionMobile, threshold]);
 
   return (
     // @ts-expect-error — polymorphic wrapper: Tag is keyof JSX.IntrinsicElements, ref typing varies by element

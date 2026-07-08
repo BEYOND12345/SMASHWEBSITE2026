@@ -19,6 +19,8 @@ type Props = {
   size?: IosPhoneShowcaseSize | number;
   surface?: IosPhoneSurface;
   className?: string;
+  /** Eager-load iframe for above-the-fold story rows. */
+  priorityLoad?: boolean;
 };
 
 function resolveDisplayWidth(size: IosPhoneShowcaseSize | number): number {
@@ -39,10 +41,17 @@ function usePhoneDisplayWidth(size: IosPhoneShowcaseSize | number): number {
       return;
     }
 
-    const update = () => setWidth(resolveDisplayWidth(size));
+    let raf = 0;
+    const update = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setWidth(resolveDisplayWidth(size)));
+    };
     update();
     window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', update);
+    };
   }, [size]);
 
   return width;
@@ -61,10 +70,17 @@ function useBreakpoint(): Breakpoint {
   const [bp, setBp] = useState<Breakpoint>(() => resolveBreakpoint());
 
   useEffect(() => {
-    const update = () => setBp(resolveBreakpoint());
+    let raf = 0;
+    const update = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setBp(resolveBreakpoint()));
+    };
     update();
     window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', update);
+    };
   }, []);
 
   return bp;
@@ -97,6 +113,9 @@ type CompositionProps = {
   surface: IosPhoneSurface;
   callout?: ReactNode;
   className?: string;
+  /** Hero only — story rows stay static for scroll performance. */
+  enableFloat?: boolean;
+  iframeLoading?: 'eager' | 'lazy';
 };
 
 /** Shared phone + clip + callout overlay — single art-direction path. */
@@ -107,6 +126,8 @@ function IosPhoneComposition({
   surface,
   callout,
   className = '',
+  enableFloat = false,
+  iframeLoading = 'lazy',
 }: CompositionProps) {
   const cfg = iosShowcaseVariant(variantId);
   const phoneScale = phoneWidth / IOS_PHONE_LOGICAL.width;
@@ -167,7 +188,7 @@ function IosPhoneComposition({
   return (
     <div className={`relative w-full flex justify-center ${className}`.trim()}>
       <div
-        className="relative mx-auto motion-safe:animate-float [will-change:transform]"
+        className={`relative mx-auto ${enableFloat ? 'motion-safe:animate-float-hero' : ''}`.trim()}
         style={{ width: containerWidth, paddingBottom: tailSpace }}
       >
         {surface === 'dark' && (
@@ -197,6 +218,7 @@ function IosPhoneComposition({
               width={phoneWidth}
               fadeBottom={false}
               focusYOffset={focusYOffset}
+              loading="lazy"
             />
             {surface === 'dark' && <div className="absolute inset-0 bg-brand/10 pointer-events-none" />}
           </div>
@@ -215,6 +237,7 @@ function IosPhoneComposition({
               width={phoneWidth}
               fadeBottom={false}
               focusYOffset={focusYOffset}
+              loading={iframeLoading}
             />
           </div>
         </div>
@@ -239,6 +262,7 @@ export function IosPhoneShowcase({
   size = 'story',
   surface = 'dark',
   className = '',
+  priorityLoad = false,
 }: Props) {
   const basePhoneWidth = usePhoneDisplayWidth(size);
   const variantId = (calloutId ?? screen) as IosShowcaseVariantId;
@@ -262,6 +286,8 @@ export function IosPhoneShowcase({
       surface={surface}
       callout={callout}
       className={className}
+      enableFloat={false}
+      iframeLoading={priorityLoad ? 'eager' : 'lazy'}
     />
   );
 }
@@ -287,6 +313,8 @@ export function IosHeroPhoneShowcase({
       phoneWidth={phoneWidth}
       surface="dark"
       className={className}
+      enableFloat
+      iframeLoading="eager"
       callout={<IosListeningCallout scale={calloutScale} width={calloutWidth} />}
     />
   );
