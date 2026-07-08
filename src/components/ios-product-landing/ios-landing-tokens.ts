@@ -59,6 +59,10 @@ export type IosShowcaseVariantConfig = {
   contentScale: number;
   groundRatio: number;
   tailLogical: number;
+  /** Shift iframe up (logical px) so the clip shows line items instead of empty chrome. */
+  focusYOffset?: number;
+  /** Scale story/hero display width for this variant (e.g. 1.2 = 20% larger phone). */
+  phoneWidthScale?: number;
 };
 
 /** Per-composition tuning — aligned perfectly to App Store HTML files. */
@@ -73,7 +77,13 @@ export const IOS_SHOWCASE_VARIANTS: Record<IosShowcaseVariantId, IosShowcaseVari
   voice: { calloutTopRatio: 940 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 280 },
   quote: { calloutTopRatio: 980 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 340 },
   pricehub: { calloutTopRatio: 950 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
-  send: { calloutTopRatio: 470 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 440 },
+  send: {
+    calloutTopRatio: 1060 / 1240,
+    contentScale: 0.9,
+    groundRatio: 1.07,
+    tailLogical: 340,
+    phoneWidthScale: 1.28,
+  },
   readreceipts: { calloutTopRatio: 870 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 280 },
   pay: { calloutTopRatio: 1010 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },
   automessage: { calloutTopRatio: 987 / 1240, contentScale: 0.9, groundRatio: 1.07, tailLogical: 260 },

@@ -6,6 +6,10 @@ export const CONVERSION_LABELS = {
   PRICING_DNA_UPLOAD: 'PRICING_DNA_UPLOAD',
 } as const;
 
+export const REMARKETING_LABELS = {
+  IOS_PAGE: '3buiCISIwswcEJbTy6MD',
+} as const;
+
 const APP_STORE_APP_ID = 'id6759475079';
 const CHROME_EXTENSION_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
 
@@ -54,5 +58,21 @@ export function googleAdsClickTrackingHtml(adsId: string | undefined): string {
         }
       }, true);
     })();
+  </script>`;
+}
+
+/** iOS remarketing event — install on /voice-invoicing after the Google tag. */
+export function googleAdsIosRemarketingEventHtml(adsId: string | undefined): string {
+  if (!adsId) return '';
+  const id = sanitizeAdsId(adsId);
+  return `
+  <!-- Event snippet for Smash iOS remarketing page -->
+  <script>
+    gtag('event', 'conversion', {
+      send_to: '${id}/${REMARKETING_LABELS.IOS_PAGE}',
+      value: 1.0,
+      currency: 'AUD',
+      aw_remarketing_only: true
+    });
   </script>`;
 }

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Mic } from 'lucide-react';
+import { ArrowRight, Mic } from 'lucide-react';
 import { DualProductCtas } from '../marketing/DualProductCtas';
 import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
 import { GmailStoryFrame } from '../gmail-product-landing/GmailStoryFrame';
+import { GmailStoryStepCallout } from '../gmail-product-landing/GmailStoryTriptych';
 import { IOS_DESKTOP_BAND } from '../../data/ios-landing-spec';
 import { IosSubline } from './IosSubline';
 import { iosLanding } from './ios-landing-tokens';
@@ -111,27 +112,28 @@ export function IosMediaSlot({
   );
 }
 
-/** Desktop band — Gmail quote frame from /chrome-extension, sized for the iOS reader. */
+/** Desktop band — cropped Gmail UI, reply callout, and product CTA in one card. */
 export function IosDesktopTeaser() {
   return (
     <div className="w-full max-w-[560px] mx-auto lg:mx-0 lg:ml-auto">
-      <div className="rounded-[16px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
-        <GmailStoryFrame frame="a3-quote-done" fill priority />
+      <div className="relative rounded-[22px] overflow-hidden bg-white ring-1 ring-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.45)]">
+        <GmailStoryFrame frame="a3-quote-done" crop fill priority />
+        <div className="absolute bottom-4 left-4 z-10">
+          <GmailStoryStepCallout step={3} verb={IOS_DESKTOP_BAND.replyVerb} direction="right" />
+        </div>
+        <Link
+          to={IOS_DESKTOP_BAND.linkHref}
+          className="relative z-10 flex flex-col gap-2 border-t border-border/70 bg-white px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5 hover:bg-[#F8FAFC] transition-colors group"
+        >
+          <span className="font-body text-xs sm:text-sm font-medium text-brand/55 leading-snug">
+            Priced from your rates — check and reply.
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-1 font-display-italic font-black uppercase tracking-tight text-brand text-[11px] sm:text-xs group-hover:text-accent transition-colors">
+            {IOS_DESKTOP_BAND.linkLabel}
+            <ArrowRight size={14} strokeWidth={2.5} className="group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </Link>
       </div>
-      <p className={`${iosLanding.caption} mt-4 text-center lg:text-left text-white/55`}>
-        {IOS_DESKTOP_BAND.mediaCaption}
-      </p>
     </div>
-  );
-}
-
-export function IosDesktopLink() {
-  return (
-    <Link
-      to={IOS_DESKTOP_BAND.linkHref}
-      className="font-body font-semibold text-accent hover:underline text-[clamp(1rem,1.5vw,1.25rem)] mt-6 inline-block"
-    >
-      {IOS_DESKTOP_BAND.linkLabel}
-    </Link>
   );
 }

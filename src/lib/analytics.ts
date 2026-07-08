@@ -14,6 +14,12 @@ export const CONVERSION_LABELS = {
   PRICING_DNA_UPLOAD: 'PRICING_DNA_UPLOAD',
 } as const;
 
+/** Google Ads remarketing / conversion action labels (send_to suffix). */
+export const REMARKETING_LABELS = {
+  /** Smash iOS remarketing page — /voice-invoicing */
+  IOS_PAGE: '3buiCISIwswcEJbTy6MD',
+} as const;
+
 export type ConversionLabel = (typeof CONVERSION_LABELS)[keyof typeof CONVERSION_LABELS];
 
 declare global {
@@ -65,6 +71,18 @@ export function trackIosAppDownload(): void {
 
 export function trackChromeExtensionInstall(): void {
   trackConversion(CONVERSION_LABELS.CHROME_EXTENSION_INSTALL);
+}
+
+/** Fire on /voice-invoicing — Google Ads iOS remarketing audience. */
+export function trackIosRemarketingPageView(): void {
+  if (!ADS_ID || typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'conversion', {
+    send_to: `${ADS_ID}/${REMARKETING_LABELS.IOS_PAGE}`,
+    value: 1.0,
+    currency: 'AUD',
+    aw_remarketing_only: true,
+  });
 }
 
 /** Call from iOS app or Chrome extension when user uploads onboarding invoice PDF. */

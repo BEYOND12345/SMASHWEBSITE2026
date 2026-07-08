@@ -33,6 +33,23 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does SMASH work inside Gmail on mobile?","acceptedAnswer":{"@type":"Answer","text":"The Gmail invoice extension runs in Chrome on desktop and laptop. For mobile, use the SMASH iOS app for voice invoicing on site."}},{"@type":"Question","name":"Can I send invoices without Xero or QuickBooks?","acceptedAnswer":{"@type":"Answer","text":"Yes. SMASH generates and sends standalone PDF invoices and quotes. Accounting sync is optional on paid plans."}},{"@type":"Question","name":"How is this different from Gmail add-ons like templates?","acceptedAnswer":{"@type":"Answer","text":"Templates still need you to type prices and line items. SMASH reads the email or your voice and builds the full document with tax and totals."}},{"@type":"Question","name":"Is it free to try?","acceptedAnswer":{"@type":"Answer","text":"Yes — five invoices or quotes per month at no cost. No credit card required to install."}},{"@type":"Question","name":"What countries are supported?","acceptedAnswer":{"@type":"Answer","text":"Australia, New Zealand, United Kingdom, United States, and Canada — with local tax handling."}},{"@type":"Question","name":"How do I install it?","acceptedAnswer":{"@type":"Answer","text":"Add SMASH from the Chrome Web Store, sign in, connect Gmail permissions, and open any customer email to see the sidebar."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"SMASH — Gmail email to invoice in 20 seconds","description":"Watch a customer email become a sent, priced invoice inside Gmail in under 20 seconds with SMASH.","thumbnailUrl":"https://i.ytimg.com/vi/uNL733tYTf0/maxresdefault.jpg","uploadDate":"2026-01-01","embedUrl":"https://www.youtube.com/embed/uNL733tYTf0","contentUrl":"https://www.youtube.com/watch?v=uNL733tYTf0"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 </head>
 <body>
   <header class="nav">
@@ -102,5 +119,23 @@ Sync.</h2><p style="color:var(--muted);margin:0 0 16px;">Clients open a clean po
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel">Chrome Web Store</a>.</p></noscript>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

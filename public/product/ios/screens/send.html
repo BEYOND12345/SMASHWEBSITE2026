@@ -4,7 +4,6 @@
 @font-face { font-family:'Jakarta'; src:url('/fonts/PlusJakartaSans.ttf') format('truetype'); font-weight:400 700; font-style:normal; font-display:swap; }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
-
 html, body { background:transparent; overflow:hidden; }
 
 .phone {
@@ -26,7 +25,6 @@ html, body { background:transparent; overflow:hidden; }
   background:linear-gradient(to bottom, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 40%, #0F172A 80%);
   z-index:20;
 }
-
 html.no-fade .phone::after { display: none !important; }
 
 .statusbar {
@@ -46,16 +44,69 @@ html.no-fade .phone::after { display: none !important; }
     <div class="statusbar"><span class="time">9:41</span><span class="icons">
 <svg width="42" height="30" viewBox="0 0 42 30"><rect x="0" y="20" width="7" height="10" rx="1.5" fill="#0F172A"/><rect x="11" y="14" width="7" height="16" rx="1.5" fill="#0F172A"/><rect x="22" y="8" width="7" height="22" rx="1.5" fill="#0F172A"/><rect x="33" y="2" width="7" height="28" rx="1.5" fill="#0F172A"/></svg>
 <span class="batt"><span class="fill"></span></span></span></div>
-    <div style="background:#F4F6F9; padding:26px 56px 18px; display:flex; align-items:center; gap:30px;">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <div style="background:#F4F6F9; padding:18px 56px 4px;">
+      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:3px; color:#94A3B8; text-transform:uppercase;">Ready to send</span>
     </div>
-    <div style="background:#F4F6F9; padding:6px 56px 36px;">
-      <span style="font-family:'BarlowBlk'; font-weight:900; font-size:28px; letter-spacing:3px; color:#94A3B8; text-transform:uppercase;">Summary</span>
-      <div style="background:#FFFFFF; border-radius:34px; padding:40px 46px; margin-top:16px; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
-        <div style="font-family:'Jakarta'; font-weight:800; font-size:56px; color:#0F172A; line-height:1.05;">Clean up the back garden</div>
-        <div style="font-family:'BarlowBlk'; font-weight:900; font-size:26px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:14px;">Estimate #35A034</div>
-        <div style="font-family:'Jakarta'; font-weight:800; font-size:40px; color:#0F172A; margin-top:18px;">Karen Clark</div>
+    <div style="background:#F4F6F9; padding:8px 56px 16px;">
+      <div style="font-family:'Jakarta'; font-weight:800; font-size:34px; color:#0F172A; line-height:1.1;">Clean up the back garden</div>
+      <div style="font-family:'BarlowBlk'; font-weight:900; font-size:22px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase; margin-top:8px;">Estimate #35A034 · Karen Clark</div>
+    </div>
+    <div style="background:#F4F6F9; padding:0 56px 30px;">
+      <div style="background:#FFFFFF; border-radius:34px; overflow:hidden; box-shadow:0 2px 12px rgba(15,23,42,0.06);">
+        <div style="background:#F4F6F9; padding:20px 46px; display:flex; justify-content:space-between;">
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Item</span>
+          <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Amount</span>
+        </div>
+        <div style="background:#F4F6F9; padding:20px 46px 14px;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:27px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Labour</div>
+        </div>
+        <div style="background:#FFFFFF; padding:26px 46px; border-bottom:2px solid #F4F6F9;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-family:'Jakarta'; font-weight:800; font-size:36px; color:#0F172A;">Garden cleanup</div>
+              <div style="font-family:'BarlowBlk'; font-weight:900; font-size:23px; letter-spacing:1px; color:#94A3B8; text-transform:uppercase; margin-top:6px;">4 hrs × $95.00/hr</div>
+            </div>
+            <span style="font-family:'Jakarta'; font-weight:800; font-size:40px; color:#0F172A; white-space:nowrap; padding-left:20px;">$380.00</span>
+          </div>
+        </div>
+        <div style="background:#F4F6F9; padding:20px 46px 14px;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:27px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Materials</div>
+        </div>
+        <div style="background:#FFFFFF; padding:26px 46px; border-bottom:2px solid #F4F6F9;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-family:'Jakarta'; font-weight:800; font-size:36px; color:#0F172A;">Green waste bags</div>
+              <div style="font-family:'BarlowBlk'; font-weight:900; font-size:23px; letter-spacing:1px; color:#94A3B8; text-transform:uppercase; margin-top:6px;">6 × $12.50</div>
+            </div>
+            <span style="font-family:'Jakarta'; font-weight:800; font-size:40px; color:#0F172A; white-space:nowrap; padding-left:20px;">$75.00</span>
+          </div>
+        </div>
+        <div style="background:#FFFFFF; padding:26px 46px; border-bottom:2px solid #F4F6F9;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-family:'Jakarta'; font-weight:800; font-size:36px; color:#0F172A;">Mulch top-up</div>
+              <div style="font-family:'BarlowBlk'; font-weight:900; font-size:23px; letter-spacing:1px; color:#94A3B8; text-transform:uppercase; margin-top:6px;">1 cubic metre</div>
+            </div>
+            <span style="font-family:'Jakarta'; font-weight:800; font-size:40px; color:#0F172A; white-space:nowrap; padding-left:20px;">$120.00</span>
+          </div>
+        </div>
+        <div style="background:#F4F6F9; padding:20px 46px 14px;">
+          <div style="font-family:'BarlowBlk'; font-weight:900; font-size:27px; letter-spacing:3px; color:#0F172A; text-transform:uppercase;">Fees</div>
+        </div>
+        <div style="background:#FFFFFF; padding:26px 46px; border-bottom:2px solid #F4F6F9;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-family:'Jakarta'; font-weight:800; font-size:36px; color:#0F172A;">Travel fee</div>
+            </div>
+            <span style="font-family:'Jakarta'; font-weight:800; font-size:40px; color:#0F172A; white-space:nowrap; padding-left:20px;">$80.00</span>
+          </div>
+        </div>
+        <div style="background:#F4F6F9; padding:22px 46px 26px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px;">
+            <span style="font-family:'BarlowBlk'; font-weight:900; font-size:24px; letter-spacing:2px; color:#94A3B8; text-transform:uppercase;">Total incl. GST</span>
+            <span style="font-family:'Jakarta'; font-weight:800; font-size:44px; color:#0F172A; white-space:nowrap;">$720.50</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="position:absolute;inset:0;background:rgba(15,23,42,0.32);z-index:15;pointer-events:none;"></div>
   </div><script>if(new URLSearchParams(location.search).get('fade')==='0')document.documentElement.classList.add('no-fade');</script></body></html>

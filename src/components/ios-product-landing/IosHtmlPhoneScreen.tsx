@@ -5,7 +5,7 @@ const SCREEN_ALTS: Record<string, string> = {
   voice: 'SMASH voice assistant listening to a job description',
   quote: 'Itemised quote with materials, labour and GST total',
   pricehub: 'Price Hub catalogue with saved service rates',
-  send: 'Send estimate sheet with SMS, email and share options',
+  send: 'Itemised estimate ready to send — job summary, line items and customer',
   readreceipts: 'Job list showing seen status and read receipts',
   pay: 'Paid invoices and customer payment confirmation',
   automessage: 'Auto-generated text message to customer',
@@ -21,6 +21,8 @@ type Props = {
   width?: number;
   active?: boolean;
   fadeBottom?: boolean;
+  /** Shift content up (logical px) inside the clip window. */
+  focusYOffset?: number;
 };
 
 /** Live HTML screen from approved App Store extracts — integer scale iframe. */
@@ -30,9 +32,11 @@ export function IosHtmlPhoneScreen({
   width = 360,
   active = true,
   fadeBottom = false,
+  focusYOffset = 0,
 }: Props) {
   const scale = width / IOS_PHONE_LOGICAL.width;
   const height = Math.round(IOS_PHONE_LOGICAL.height * scale);
+  const yShift = Math.round(focusYOffset * scale);
 
   return (
     <div
@@ -47,7 +51,9 @@ export function IosHtmlPhoneScreen({
         style={{
           width: IOS_PHONE_LOGICAL.width,
           height: IOS_PHONE_LOGICAL.height,
-          transform: `scale(${scale})`,
+          transform: yShift
+            ? `translateY(-${yShift}px) scale(${scale})`
+            : `scale(${scale})`,
           transformOrigin: 'top left',
         }}
         loading={screen === 'voice' ? 'eager' : 'lazy'}

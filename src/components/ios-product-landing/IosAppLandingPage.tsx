@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Mic, ChevronDown } from 'lucide-react';
+import { trackIosRemarketingPageView } from '../../lib/analytics';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
 import { Footer } from '../footer';
@@ -32,14 +33,14 @@ import {
   IosIntegrationStrap,
   IosStorySection,
 } from './IosStorySection';
-import { IosFinalCta, IosDesktopLink, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
+import { IosFinalCta, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
 import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
 import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
 import { VALUE_TESTIMONIALS, FEATURED_VALUE_TESTIMONIAL } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
 import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
-import { BrandLogos } from '../brand-logos';
+import { IosWorksWithStrap } from './IosWorksWithStrap';
 
 const IOS_HERO_PHOTO = {
   src: '/product/ios/photos/voice.jpg',
@@ -84,6 +85,10 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
 export function IosAppLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED);
+
+  useEffect(() => {
+    trackIosRemarketingPageView();
+  }, []);
 
   return (
     <>
@@ -147,11 +152,6 @@ export function IosAppLandingPage() {
                   <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8 mb-0 sm:mb-8`}>
                     <IosHeroCta />
                   </div>
-
-                  <div className="hidden sm:flex pt-6 border-t border-white/10 flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-8">
-                    <span className="font-body font-black text-xs uppercase tracking-[0.2em] text-white/30">Works with</span>
-                    <BrandLogos className="opacity-100" />
-                  </div>
                 </div>
               </AnimateIn>
 
@@ -172,6 +172,8 @@ export function IosAppLandingPage() {
           </div>
         </section>
 
+        <IosWorksWithStrap />
+
         <IosIntegrationStrap />
 
         <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
@@ -183,11 +185,14 @@ export function IosAppLandingPage() {
         </BrandPhotoBand>
 
         <IosAccentStrip eyebrow={IOS_PROBLEM.eyebrow}>
-          <span className="font-display-italic font-black uppercase tracking-tighter block mb-2 text-[clamp(1.5rem,4vw,2.25rem)] leading-[0.9]">
-            {IOS_PROBLEM.headlineWhite}{' '}
-            <span className="text-accent">{IOS_PROBLEM.headlineLime}</span>
+          <span className="font-display-italic font-black uppercase tracking-tighter block mb-3 text-[clamp(1.35rem,5vw,2.25rem)] leading-[0.95]">
+            <span className="block">{IOS_PROBLEM.headlineWhite}</span>
+            <span className="block text-accent">{IOS_PROBLEM.headlineLime}</span>
           </span>
-          <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55] text-white/75">
+          <IosSubline
+            as="span"
+            className="block font-body text-sm sm:text-base font-medium leading-[1.5] text-white/75 max-w-[22rem] sm:max-w-md mx-auto"
+          >
             {IOS_PROBLEM.subline}
           </IosSubline>
         </IosAccentStrip>
@@ -212,8 +217,7 @@ export function IosAppLandingPage() {
                 headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
                 headlineLime={IOS_DESKTOP_BAND.headlineLime}
               />
-              <IosSubline className={`${iosLanding.body} mt-6 mb-4`}>{IOS_DESKTOP_BAND.body}</IosSubline>
-              <IosDesktopLink />
+              <IosSubline className={`${iosLanding.body} mt-6`}>{IOS_DESKTOP_BAND.body}</IosSubline>
             </AnimateIn>
             <AnimateIn direction="right" className={iosStoryMediaCellClass}>
               <IosDesktopTeaser />

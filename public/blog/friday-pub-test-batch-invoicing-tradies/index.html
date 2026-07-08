@@ -368,6 +368,31 @@
   }
   </style>
 
+  <!-- Google Ads (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-879946134"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-879946134');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Friday Pub Test: How I Send 20 Invoices Before My First Sip","description":"Stop doing admin on Sundays. Learn the 'Driveway Workflow' to send 20+ invoices in seconds so you can enjoy your Friday without the paperwork stress.","image":"https://smashinvoices.com/screenshot_2026-01-16_at_8.36.03_am.png","datePublished":"2026-01-15T21:22:32.492Z","dateModified":"2026-01-15T21:22:32.492Z","author":{"@type":"Person","name":"SMASH Team"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/friday-pub-test-batch-invoicing-tradies"},"keywords":"Batch invoicing for tradies, batch invoicing tradie, invoicing efficiency, Friday invoicing, weekly invoicing, tradie admin workflow, invoicing process, business administration tradie, time management tradie, invoicing speed, tradie productivity, batch processing, invoicing methodology","wordCount":685,"articleSection":"Blog","inLanguage":"en-AU"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"The Friday Pub Test: How I Send 20 Invoices Before My First Sip","item":"https://smashinvoices.com/blog/friday-pub-test-batch-invoicing-tradies"}]}</script>
@@ -513,5 +538,45 @@
     <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
   </footer>
 
+  <script>
+    (function () {
+      var ADS_ID = 'AW-879946134';
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      function track(label) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { send_to: ADS_ID + '/' + label, currency: 'AUD', value: 0 });
+        }
+      }
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          track('IOS_APP_DOWNLOAD');
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          track('CHROME_EXTENSION_INSTALL');
+        }
+      }, true);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

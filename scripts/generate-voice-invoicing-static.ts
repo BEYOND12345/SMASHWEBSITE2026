@@ -20,5 +20,5 @@ const extra = `<p>Talk for 20–30 seconds on site → verify priced line items 
 <a href="https://smashinvoices.com/blog/invoice-without-typing">Invoice without typing</a> ·
 <a href="https://smashinvoices.com/gmail-invoice">Email to invoice in Gmail</a></p>`;
 
-writeStaticPage(out, buildStaticPage(mainPages.voiceInvoicing, extra));
+writeStaticPage(out, buildStaticPage(mainPages.voiceInvoicing, extra, { iosRemarketing: true }));
 console.log('✓ /voice-invoicing');

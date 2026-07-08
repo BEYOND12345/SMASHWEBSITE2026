@@ -105,15 +105,15 @@ export function Footer({ showCTA = false }: FooterProps) {
       {/* ── MEGA DOWNLOAD STRIP (always visible) ───────────────── */}
       <div className="bg-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 md:py-20 lg:py-24">
-          <p className="text-center text-brand/50 font-black text-xs uppercase tracking-[0.25em] mb-4">
-            Download SMASH
+          <p className="text-center text-brand/50 font-black text-xs uppercase tracking-[0.25em] mb-4 max-w-md mx-auto">
+            Download SMASH for where you work
           </p>
           <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand uppercase tracking-tighter leading-[0.9] mb-4 md:mb-6">
-            Get paid faster.
-            <span className="block">Pick your workflow.</span>
+            Hands-free where you work.
+            <span className="block">Get back on the tools.</span>
           </h2>
-          <p className="text-center font-body text-base md:text-lg text-brand/70 font-medium max-w-2xl mx-auto mb-10 md:mb-14">
-            Voice invoicing on iOS, or quote straight from Gmail with our Chrome extension. Free to start.
+          <p className="text-center font-body text-base md:text-lg text-brand/70 font-medium max-w-xl mx-auto mb-10 md:mb-14">
+            iPhone on site. Gmail at your desk. Less admin — free to start.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 max-w-5xl mx-auto">

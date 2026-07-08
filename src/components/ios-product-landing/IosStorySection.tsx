@@ -100,7 +100,7 @@ export function IosAccentStrip({
 }) {
   return (
     <section className="bg-brand border-y border-white/10 py-10 md:py-14">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         <p className="text-xs font-black uppercase tracking-widest text-white/40 mb-3">{eyebrow}</p>
         <div className="text-lg md:text-xl font-bold text-white leading-[1.35]">{children}</div>
       </div>

@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { HREFLANG_LINKS, DATE_MODIFIED, type MainPageSeo } from '../../src/data/main-pages-seo.ts';
 import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from '../meta-pixel-snippet.ts';
+import { googleAdsHeadHtml, googleAdsIosRemarketingEventHtml } from '../google-ads-snippet.ts';
 
 const SITE = 'https://smashinvoices.com';
 const CHROME_STORE =
@@ -49,7 +50,11 @@ function ctaHtml(mode: MainPageSeo['cta']): string {
   return `<a class="cta" href="${APP_STORE}">Start Free</a><a class="cta" href="${CHROME_STORE}">Add to Chrome — Free</a>`;
 }
 
-export function buildStaticPage(page: MainPageSeo, extraBody = ''): string {
+export function buildStaticPage(
+  page: MainPageSeo,
+  extraBody = '',
+  options?: { iosRemarketing?: boolean },
+): string {
   const canonical = `${SITE}${page.path}`;
   const faqLd = page.faqs?.length ? buildFaqSchema(page.faqs) : null;
   const webPageLd = {
@@ -108,6 +113,8 @@ ${hreflangTags()}
   <script type="application/ld+json">${ld(webPageLd)}</script>
   ${faqLd ? `<script type="application/ld+json">${ld(faqLd)}</script>` : ''}
 ${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
+${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
+${options?.iosRemarketing ? googleAdsIosRemarketingEventHtml(process.env.VITE_GOOGLE_ADS_ID) : ''}
   <style>
     body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#0f172a}
     h1{font-size:2rem;line-height:1.15;margin:0 0 8px}

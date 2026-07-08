@@ -368,6 +368,31 @@
   }
   </style>
 
+  <!-- Google Ads (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-879946134"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-879946134');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Car Detailing Invoice Template Australia: Packages, Add-ons, Fleet and GST","description":"What to include on a car detailing invoice in Australia: ABN, packages, vehicle size rates, add-ons, ceramic coating, fleet rates, GST and payment terms.","image":"https://smashinvoices.com/images/blog/car-detailing-invoice-template.jpg","datePublished":"2026-05-11T01:21:15.796Z","dateModified":"2026-05-11T01:21:15.796Z","author":{"@type":"Person","name":"SMASH Invoices Team"},"publisher":{"@type":"Organization","name":"SMASH Invoices","logo":{"@type":"ImageObject","url":"https://smashinvoices.com/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smashinvoices.com/blog/car-detailing-invoice-template-australia"},"keywords":"car detailing invoice template Australia, car detailing invoice template, mobile detailer invoice, ceramic coating invoice, fleet detailing invoice, auto detailing invoice Australia","wordCount":580,"articleSection":"Blog","inLanguage":"en-AU"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smashinvoices.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://smashinvoices.com/blog"},{"@type":"ListItem","position":3,"name":"Car Detailing Invoice Template Australia: Packages, Add-ons, Fleet and GST","item":"https://smashinvoices.com/blog/car-detailing-invoice-template-australia"}]}</script>
@@ -554,5 +579,45 @@
     <div style="margin-top:14px;">© 2026 SMASH Invoices · smashinvoices.com</div>
   </footer>
 
+  <script>
+    (function () {
+      var ADS_ID = 'AW-879946134';
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      function track(label) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { send_to: ADS_ID + '/' + label, currency: 'AUD', value: 0 });
+        }
+      }
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          track('IOS_APP_DOWNLOAD');
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          track('CHROME_EXTENSION_INSTALL');
+        }
+      }, true);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

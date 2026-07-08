@@ -199,14 +199,18 @@ export function Homepage() {
       </BrandPhotoBand>
 
       {/* Problem — navy answer strip (matches photo / blue rhythm) */}
-      <IosAccentStrip eyebrow="The real reason jobs slip">
-        <span className="font-display-italic font-black uppercase tracking-tighter block mb-2 text-[clamp(1.5rem,4vw,2.25rem)] leading-[0.9]">
-          The first answer back{' '}
-          <span className="text-accent">wins the job.</span>
+      <IosAccentStrip eyebrow="From voice to send">
+        <span className="font-display-italic font-black uppercase tracking-tighter block mb-3 text-[clamp(1.35rem,5vw,2.25rem)] leading-[0.95]">
+          <span className="block">The first answer back</span>
+          <span className="block text-accent">wins the job.</span>
         </span>
-        <IosSubline as="span" className="block font-body text-base sm:text-lg font-medium leading-[1.55] text-white/75">
-          Most jobs aren't lost on price — they're lost to whoever replied first. SMASH gets your
-          number back before you've packed up.
+        <IosSubline
+          as="span"
+          className="block font-body text-sm sm:text-base font-medium leading-[1.5] text-white/75 max-w-[22rem] sm:max-w-md mx-auto"
+        >
+          Talk the job on site. SMASH prices every line from your catalogue — your rates, flagged if
+          unmatched, never guessed — and the estimate goes out before you leave. Quote to invoice in
+          under a minute.
         </IosSubline>
       </IosAccentStrip>
 

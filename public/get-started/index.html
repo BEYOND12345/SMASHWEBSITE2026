@@ -25,6 +25,33 @@
   <meta property="article:modified_time" content="2026-07-01T00:00:00.000Z">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Get Started with SMASH — Free Quote & Invoice in 60 Seconds","description":"Download SMASH on iPhone or add the Gmail Chrome extension. Set your rates once, send your first priced quote or invoice in under 60 seconds. Free — 5 documents per month.","url":"https://smashinvoices.com/get-started","dateModified":"2026-07-01"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a credit card to start?","acceptedAnswer":{"@type":"Answer","text":"No. Create an account and send up to 5 quotes or invoices per month on the free plan."}},{"@type":"Question","name":"iPhone or Chrome — which should I use first?","acceptedAnswer":{"@type":"Answer","text":"Use iPhone if you quote from the van. Use Chrome if RFQs and job emails land in Gmail. Many businesses use both on the same account."}},{"@type":"Question","name":"How long until my first quote is ready?","acceptedAnswer":{"@type":"Answer","text":"Most users send a first document within 5 minutes of loading rates — the verify step is usually 30 seconds."}}]}</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
+
+  <!-- Google Ads (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-879946134"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-879946134');
+  </script>
+
   <style>
     body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px;line-height:1.6;color:#0f172a}
     h1{font-size:2rem;line-height:1.15;margin:0 0 8px}
@@ -50,5 +77,23 @@
 <summary style="cursor:pointer;font-weight:700;">How long until my first quote is ready?</summary>
 <p style="color:#475569;margin:10px 0 0;">Most users send a first document within 5 minutes of loading rates — the verify step is usually 30 seconds.</p></details></section>
   <p><small>Updated 2026-07-01</small></p>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

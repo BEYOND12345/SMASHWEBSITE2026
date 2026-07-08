@@ -33,6 +33,23 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is SMASH different from Hubdoc?","acceptedAnswer":{"@type":"Answer","text":"Hubdoc is accounts payable — scanning supplier bills. SMASH creates outgoing quotes and invoices from Gmail and syncs them to Xero."}},{"@type":"Question","name":"Does SMASH follow up on unaccepted quotes?","acceptedAnswer":{"@type":"Answer","text":"Yes. SMASH includes quote chasing — polite reminders before expiry — which Xero does not do natively."}},{"@type":"Question","name":"Do I need to leave Gmail?","acceptedAnswer":{"@type":"Answer","text":"No. The extension runs in Chrome beside your inbox. Build, send, and sync without opening xero.com."}},{"@type":"Question","name":"Which Xero plans are supported?","acceptedAnswer":{"@type":"Answer","text":"Any Xero organisation with quoting and invoicing enabled. Connect via OAuth in under a minute."}},{"@type":"Question","name":"Can I still use the SMASH mobile app?","acceptedAnswer":{"@type":"Answer","text":"Yes. Voice quoting on site syncs to the same Xero organisation as your Gmail desk workflow."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Five documents per month free. Unlimited quotes and Xero sync from $15/month on Starter."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"SMASH — Xero quotes from Gmail without typing","description":"Watch SMASH turn a customer email into a priced Xero quote inside Gmail — no Hubdoc, no manual rekeying.","thumbnailUrl":"https://i.ytimg.com/vi/Aw_9oXMEVME/maxresdefault.jpg","uploadDate":"2026-01-15","embedUrl":"https://www.youtube.com/embed/Aw_9oXMEVME","contentUrl":"https://www.youtube.com/watch?v=Aw_9oXMEVME"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 </head>
 <body>
   <header class="nav">
@@ -99,5 +116,23 @@ before they forget.</h2><p style="color:var(--muted);margin:0 0 16px;">Xero remi
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel">Chrome Web Store</a>.</p></noscript>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

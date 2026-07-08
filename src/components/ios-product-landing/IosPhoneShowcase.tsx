@@ -112,6 +112,7 @@ function IosPhoneComposition({
   const phoneScale = phoneWidth / IOS_PHONE_LOGICAL.width;
   const phoneHeight = Math.round((IOS_PHONE_LOGICAL.height / IOS_PHONE_LOGICAL.width) * phoneWidth);
   const radius = (IOS_PHONE_LOGICAL.radius / IOS_PHONE_LOGICAL.width) * phoneWidth;
+  const focusYOffset = cfg.focusYOffset ?? 0;
 
   const breakpoint = useBreakpoint();
   const isMobile = breakpoint === 'mobile';
@@ -191,7 +192,12 @@ function IosPhoneComposition({
               opacity: 0.95,
             }}
           >
-            <IosHtmlPhoneScreen screen={dualBg.screen as IosStoryScreenId} width={phoneWidth} fadeBottom={false} />
+            <IosHtmlPhoneScreen
+              screen={dualBg.screen as IosStoryScreenId}
+              width={phoneWidth}
+              fadeBottom={false}
+              focusYOffset={focusYOffset}
+            />
             {surface === 'dark' && <div className="absolute inset-0 bg-brand/10 pointer-events-none" />}
           </div>
         )}
@@ -204,7 +210,12 @@ function IosPhoneComposition({
             className="relative overflow-hidden [transform:translateZ(0)]"
             style={{ width: phoneWidth, height: clipHeight, borderRadius: clipRadius, background: clipBg }}
           >
-            <IosHtmlPhoneScreen screen={screen} width={phoneWidth} fadeBottom={false} />
+            <IosHtmlPhoneScreen
+              screen={screen}
+              width={phoneWidth}
+              fadeBottom={false}
+              focusYOffset={focusYOffset}
+            />
           </div>
         </div>
 
@@ -229,9 +240,10 @@ export function IosPhoneShowcase({
   surface = 'dark',
   className = '',
 }: Props) {
-  const phoneWidth = usePhoneDisplayWidth(size);
+  const basePhoneWidth = usePhoneDisplayWidth(size);
   const variantId = (calloutId ?? screen) as IosShowcaseVariantId;
   const cfg = iosShowcaseVariant(variantId);
+  const phoneWidth = Math.round(basePhoneWidth * (cfg.phoneWidthScale ?? 1));
   const phoneScale = phoneWidth / IOS_PHONE_LOGICAL.width;
   const calloutScale = phoneScale * cfg.contentScale;
   const calloutWidth = Math.round(phoneWidth * cfg.groundRatio);

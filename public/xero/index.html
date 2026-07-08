@@ -33,6 +33,23 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does SMASH replace Xero?","acceptedAnswer":{"@type":"Answer","text":"No. Xero stays your ledger, BAS, and accountant handoff. SMASH is the Gmail sidebar that builds and sends quotes and invoices faster, then syncs the finished record into Xero."}},{"@type":"Question","name":"How is SMASH different from Hubdoc or Xero email-to-inbox?","acceptedAnswer":{"@type":"Answer","text":"Hubdoc and Xero inbox tools focus on supplier bills (accounts payable). SMASH creates outgoing client quotes and invoices from Gmail and syncs them to Xero receivables."}},{"@type":"Question","name":"Do I need to leave Gmail to sync to Xero?","acceptedAnswer":{"@type":"Answer","text":"No. Build, send, and sync from the Chrome sidebar beside your inbox. Open xero.com only when your accountant needs you to — not for every customer email."}},{"@type":"Question","name":"Which Xero plans work with the Gmail extension?","acceptedAnswer":{"@type":"Answer","text":"Any Xero organisation with quoting and invoicing enabled. Connect with OAuth in under a minute."}},{"@type":"Question","name":"Can I email the quote from Gmail, not Xero’s blue box?","acceptedAnswer":{"@type":"Answer","text":"Yes. Insert Reply puts a professional cover letter and PDF in your Gmail compose window — sent from your address, not a generic accounting notification."}},{"@type":"Question","name":"What does the Xero Gmail extension cost?","acceptedAnswer":{"@type":"Answer","text":"Five quotes or invoices per month free. Unlimited documents and Xero sync from $15/month on Starter."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Turn Job Requests Into Xero Invoices Without Typing — SMASH Gmail Demo","description":"Watch SMASH scan a customer email in Gmail, price line items from your Xero catalog, and sync a completed invoice to Xero without manual rekeying.","thumbnailUrl":"https://i.ytimg.com/vi/Aw_9oXMEVME/maxresdefault.jpg","uploadDate":"2026-01-15","embedUrl":"https://www.youtube.com/embed/Aw_9oXMEVME","contentUrl":"https://www.youtube.com/watch?v=Aw_9oXMEVME"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 </head>
 <body>
   <header class="nav">
@@ -102,5 +119,23 @@ Reconcile.</h2><p style="color:var(--muted);margin:0 0 16px;">Clients approve qu
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel">Chrome Web Store</a>.</p></noscript>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>

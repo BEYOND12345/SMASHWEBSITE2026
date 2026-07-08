@@ -266,11 +266,11 @@ export const IOS_HERO = {
 };
 
 export const IOS_PROBLEM = {
-  eyebrow: 'THE REAL REASON JOBS SLIP',
-  headlineWhite: 'THE FIRST ANSWER BACK',
-  headlineLime: 'WINS THE JOB.',
+  eyebrow: 'HOW SMASH WORKS',
+  headlineWhite: 'YOU TALK THE JOB.',
+  headlineLime: 'SMASH GETS YOU PAID.',
   subline:
-    "Most jobs aren't lost on price. They're lost to whoever replied first. By the time you're home at the laptop, someone else already sent theirs.",
+    'On site from your catalogue. Estimates to payment and tracking. Xero and QuickBooks — one app. Just talk.',
 };
 
 export const IOS_PROOF = {
@@ -284,11 +284,10 @@ export const IOS_DESKTOP_BAND = {
   eyebrow: 'IPHONE ON SITE. GMAIL AT YOUR DESK.',
   headlineWhite: 'BACK AT THE LAPTOP,',
   headlineLime: "THE QUOTE'S DONE.",
-  body:
-    'Talk on the job with your iPhone. When a quote request lands in Gmail, SMASH reads the thread, prices your rates, and the reply is ready — synced straight into Xero or QuickBooks. Same account. No retyping.',
-  linkLabel: 'See SMASH for Gmail & Edge →',
+  body: 'Enquiry in Gmail. Priced from your rates. Synced to Xero or QuickBooks.',
+  replyVerb: 'Hit reply',
+  linkLabel: 'SMASH for Gmail & Edge →',
   linkHref: '/chrome-extension',
-  mediaCaption: 'Priced from your rates — check it and hit reply.',
 };
 
 export type IosFeatureTile = {

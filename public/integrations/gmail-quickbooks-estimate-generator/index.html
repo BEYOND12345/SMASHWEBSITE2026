@@ -33,6 +33,23 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I import estimates into QuickBooks Online from Excel or CSV?","acceptedAnswer":{"@type":"Answer","text":"No — QuickBooks Online blocks native estimate imports across all plans. SMASH bypasses that by reading the customer email or your voice input, matching your catalog, and creating the estimate via API."}},{"@type":"Question","name":"Does SMASH replace QuickBooks Online?","acceptedAnswer":{"@type":"Answer","text":"No. QuickBooks stays your ledger. SMASH is the Gmail sidebar that builds and sends estimates faster, then syncs the finished record into QBO."}},{"@type":"Question","name":"Will my custom line descriptions get overwritten?","acceptedAnswer":{"@type":"Answer","text":"Not with Line Lock enabled. You can change the underlying SKU while keeping customer-specific notes frozen in the sidebar."}},{"@type":"Question","name":"Which QuickBooks plans work?","acceptedAnswer":{"@type":"Answer","text":"Any QuickBooks Online plan that includes estimates. Connect once with OAuth and pick your company file."}},{"@type":"Question","name":"Is customer data stored on your servers?","acceptedAnswer":{"@type":"Answer","text":"SMASH uses OAuth and only processes the email thread you have open. We do not sell financial records or customer lists."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Five invoices or estimates per month free. Starter from $15/month unlocks unlimited documents and accounting sync."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"SMASH — QuickBooks estimates from Gmail","description":"See how SMASH builds QuickBooks Online estimates inside Gmail without CSV import or manual rekeying.","thumbnailUrl":"https://i.ytimg.com/vi/S3O2qjwfDiw/maxresdefault.jpg","uploadDate":"2026-01-15","embedUrl":"https://www.youtube.com/embed/S3O2qjwfDiw","contentUrl":"https://www.youtube.com/watch?v=S3O2qjwfDiw"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SMASH Invoices — Gmail Chrome Extension","applicationCategory":"BusinessApplication","operatingSystem":"Chrome","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD","description":"Free up to 5 invoices/month. Paid plans from $15/month."},"url":"https://smashinvoices.com/chrome-extension","downloadUrl":"https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel"}</script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '947924878263035');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=947924878263035&ev=PageView&noscript=1"
+    alt="" /></noscript>
 </head>
 <body>
   <header class="nav">
@@ -101,5 +118,23 @@ Get paid.</h2><p style="color:var(--muted);margin:0 0 16px;">Skip Intuit’s rig
     <div style="margin-top:14px;">© 2026 SMASH Invoices</div>
   </footer>
   <noscript><p style="text-align:center;padding:12px;">Enable JavaScript for the interactive demo, or install from the <a href="https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel">Chrome Web Store</a>.</p></noscript>
+
+  <script>
+    (function () {
+      if (typeof fbq !== 'function') return;
+      var APP_ID = 'id6759475079';
+      var EXT_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var h = a.getAttribute('href') || '';
+        if (h.indexOf('apps.apple.com') !== -1 && h.indexOf(APP_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'iOS App Download' });
+        } else if (h.indexOf('chromewebstore.google.com') !== -1 && h.indexOf(EXT_ID) !== -1) {
+          fbq('track', 'Lead', { content_name: 'Chrome Extension Install' });
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>
