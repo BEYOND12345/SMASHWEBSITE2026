@@ -174,7 +174,7 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
     eyebrow: 'SEND IT',
     headlineWhite: 'OUT THE DOOR',
     headlineLime: 'BEFORE YOU ARE.',
-    subline: 'One tap. Text, email or a link — message written for you.',
+    subline: 'One tap — text, email or a link, message written for you.',
     callout: { side: 'left', label: 'SENT', value: 'Tracking link', accent: 'green', icon: 'send' },
     dark: false,
     imageFirst: false,

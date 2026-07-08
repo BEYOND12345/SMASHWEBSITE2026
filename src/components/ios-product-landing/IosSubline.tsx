@@ -3,14 +3,24 @@ type Props = {
   className?: string;
   /** HTML element — `p` for sublines, `div` for accent strips. */
   as?: 'p' | 'div' | 'span';
+  /** Stack each sentence on its own line — off by default for natural wrapping. */
+  stackSentences?: boolean;
 };
 
 /**
- * Split copy after sentence-ending full stops so each clause sits on its own line.
- * A non-breaking space after a full stop is treated as "keep together" — it won't
- * split (e.g. "…a quote.\u00A0Done." stays on one clause).
+ * Body copy under headlines. By default flows as one condensed paragraph;
+ * opt into `stackSentences` only where deliberate line breaks help rhythm.
  */
-export function IosSubline({ children, className = '', as: Tag = 'p' }: Props) {
+export function IosSubline({
+  children,
+  className = '',
+  as: Tag = 'p',
+  stackSentences = false,
+}: Props) {
+  if (!stackSentences) {
+    return <Tag className={className}>{children}</Tag>;
+  }
+
   const sentences = children.split(/(?<=\.)[^\S\u00A0]+/).filter(Boolean);
 
   if (sentences.length <= 1) {

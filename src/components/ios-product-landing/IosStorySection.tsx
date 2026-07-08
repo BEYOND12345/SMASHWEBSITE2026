@@ -42,12 +42,12 @@ export function IosStorySection({
 
   const copy = (
     <IosSpecHeadline
+      variant="story"
       eyebrow={segment.eyebrow}
       headlineWhite={segment.headlineWhite}
       headlineLime={segment.headlineLime}
       subline={segment.subline}
       dark={copyDark}
-      sublineClassName={photoBg ? '!max-w-sm' : ''}
     />
   );
 

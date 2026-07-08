@@ -62,6 +62,8 @@ type HeadlineProps = {
   subline?: string;
   centered?: boolean;
   size?: 'hero' | 'section';
+  /** Story rows — tighter spacing and narrower measure. */
+  variant?: 'section' | 'story';
   dark?: boolean;
   className?: string;
   /** Extra classes on the subline — e.g. tighter max-width over photo backgrounds. */
@@ -75,24 +77,30 @@ export function IosSpecHeadline({
   subline,
   centered = false,
   size = 'section',
+  variant = 'section',
   dark = true,
   className = '',
   sublineClassName = '',
 }: HeadlineProps) {
   const align = centered ? 'text-center mx-auto' : 'text-left';
-  const headlineClass = size === 'hero' ? iosLanding.heroHeadline : iosLanding.sectionHeadline;
+  const isStory = variant === 'story';
+  const headlineClass = size === 'hero' ? iosLanding.heroHeadline : isStory ? iosLanding.storyHeadline : iosLanding.sectionHeadline;
+  const eyebrowClass = isStory ? iosLanding.storyEyebrow : iosLanding.eyebrow;
+  const sublineBase = isStory ? iosLanding.storySubline : iosLanding.subline;
   const primary = dark ? iosLanding.white : 'text-brand';
+  const eyebrowMb = isStory ? 'mb-2' : 'mb-2.5';
+  const sublineMt = isStory ? 'mt-2.5 sm:mt-3' : 'mt-3 sm:mt-3.5';
 
   return (
     <div className={`${align} ${className}`.trim()}>
-      <p className={`${iosLanding.eyebrow} ${centered ? 'text-center' : ''}`}>{eyebrow}</p>
+      <p className={`${eyebrowClass} ${eyebrowMb} ${centered ? 'mx-auto' : ''}`.trim()}>{eyebrow}</p>
       <h2 className={headlineClass}>
         <span className={`block ${primary}`}>{headlineWhite}</span>
         <span className={`block ${iosLanding.lime}`}>{headlineLime}</span>
       </h2>
       {subline && (
         <IosSubline
-          className={`${iosLanding.subline} mt-5 sm:mt-6 ${centered ? 'mx-auto' : ''} ${dark ? '' : '!text-brand/65'} ${sublineClassName}`.trim()}
+          className={`${sublineBase} ${sublineMt} ${centered ? 'mx-auto' : ''} ${dark ? '' : '!text-brand/65'} ${sublineClassName}`.trim()}
         >
           {subline}
         </IosSubline>

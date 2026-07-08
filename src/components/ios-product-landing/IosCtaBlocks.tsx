@@ -68,12 +68,12 @@ export function IosFinalCta({
         </div>
       )}
 
-      <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto ${compact ? 'mb-4' : 'mb-5'}`}>
+      <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto mb-3 sm:mb-4`}>
         <span className="block text-white">{headlineWhite}</span>
         <span className="block text-accent">{headlineLime}</span>
       </h2>
 
-      <IosSubline className={`${iosLanding.subline} mx-auto ${compact ? 'mb-6' : 'mb-8'} max-w-md`}>{subline}</IosSubline>
+      <IosSubline className={`${iosLanding.subline} mx-auto ${compact ? 'mb-5' : 'mb-8'} max-w-md mt-2.5 sm:mt-3`}>{subline}</IosSubline>
 
       <div className="flex flex-col items-center justify-center gap-4">
         <IosOfficialAppStoreBadge />

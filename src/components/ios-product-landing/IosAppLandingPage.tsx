@@ -126,20 +126,20 @@ export function IosAppLandingPage() {
             <div className={iosHeroGridClass}>
               <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
                 <div className="pb-2 lg:pb-8">
-                  <h1 className={`${iosLanding.heroHeadline} mb-4 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
+                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                     <span className="block text-white">{IOS_HERO.headlineWhite}</span>
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
                   <p
-                    className={`font-body text-base sm:text-lg font-semibold text-white/90 mb-0 max-w-md leading-snug ${iosHeroMobileSublineClass}`}
+                    className={`font-body text-base sm:text-lg font-semibold text-white/90 max-w-md leading-snug text-pretty ${iosHeroMobileSublineClass}`}
                   >
                     {IOS_HERO.pricingOffer.prefix}
                     <span className="text-accent">{IOS_HERO.pricingOffer.highlight}</span>
                     {IOS_HERO.pricingOffer.suffix}
                   </p>
 
-                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8`}>
+                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
                     <IosHeroCta />
                   </div>
                 </div>
@@ -200,7 +200,7 @@ export function IosAppLandingPage() {
                 headlineWhite="COMMON "
                 headlineLime="QUESTIONS."
                 dark
-                className="mb-10 text-center lg:text-left"
+                className="mb-8 text-center lg:text-left"
               />
               <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-4 sm:px-8 py-2">
                 {voicePage.faqs.map((faq, i) => (

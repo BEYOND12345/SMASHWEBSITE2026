@@ -6,12 +6,19 @@ export const iosLanding = {
   kicker:
     'font-body font-bold uppercase tracking-[0.14em] text-brand-muted text-xs sm:text-sm',
   eyebrow:
-    'font-display-italic font-black uppercase tracking-[0.2em] text-accent text-[11px] sm:text-xs',
+    'font-display-italic font-black uppercase tracking-[0.16em] text-accent text-[11px] sm:text-xs leading-[1.35]',
   heroHeadline:
-    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.84] text-[clamp(2.5rem,6.5vw,5rem)]',
+    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.86] text-[clamp(2.5rem,6.5vw,5rem)] text-balance',
   sectionHeadline:
-    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.84] text-[clamp(2rem,5vw,3.75rem)]',
-  subline: 'font-body text-base sm:text-lg text-brand-subtle font-medium leading-[1.55] max-w-lg',
+    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.86] text-[clamp(2rem,5vw,3.75rem)] text-balance',
+  /** Story rows — narrower measure so eyebrows and headlines wrap cleanly. */
+  storyHeadline:
+    'font-display-italic font-black uppercase tracking-[-0.03em] leading-[0.88] text-[clamp(1.75rem,4.5vw,2.75rem)] text-balance',
+  storyEyebrow:
+    'font-display-italic font-black uppercase tracking-[0.14em] text-accent text-[11px] sm:text-xs leading-[1.35] text-pretty max-w-[11.5rem] sm:max-w-[12.5rem]',
+  subline: 'font-body text-base sm:text-lg text-brand-subtle font-medium leading-[1.45] max-w-md text-pretty',
+  storySubline:
+    'font-body text-[0.9375rem] sm:text-base text-brand-subtle font-medium leading-[1.45] text-pretty max-w-[19rem]',
   body: 'font-body text-base sm:text-lg text-brand-subtle font-medium leading-[1.55] max-w-lg',
   caption: 'font-body text-sm text-brand-muted font-medium',
 
@@ -108,7 +115,7 @@ export function iosShowcaseTailSpace(
 
 /** Story / hero grids — copy stays top-aligned; phone + callout anchor to the row bottom. */
 export const iosStoryGridClass = 'grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20';
-export const iosStoryCopyCellClass = 'self-start';
+export const iosStoryCopyCellClass = 'self-start w-full max-w-[21rem] sm:max-w-[22rem] lg:max-w-[23rem]';
 export const iosStoryMediaCellClass = 'self-end w-full';
 
 /** Mobile ad landing — headline, product proof, then CTA (centered on narrow viewports). */
