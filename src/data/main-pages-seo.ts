@@ -86,6 +86,11 @@ export const mainPages: Record<string, MainPageSeo> = {
     cta: 'ios',
     faqs: [
       {
+        question: 'Is SMASH free to start on iPhone?',
+        answer:
+          'Yes. Your first five quotes or invoices each month are free — no credit card. When you need unlimited volume and Xero or QuickBooks sync, paid plans start from $15/month AUD.',
+      },
+      {
         question: 'How fast can I send an invoice after a job?',
         answer:
           'Under 60 seconds: talk for 20–30 seconds, verify line items from your catalog, send. Many invoices are out before you start the van.',

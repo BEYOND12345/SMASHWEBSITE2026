@@ -261,9 +261,22 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
 export const IOS_HERO = {
   headlineWhite: 'JUST TALK.',
   headlineLime: 'SMASH DOES THE REST.',
-  byline: 'Voice invoicing for people who do the work.',
-  microcopy: 'Free to start · No card needed',
+  pricingOffer: {
+    prefix: 'Start for free with ',
+    highlight: 'five free quotes',
+    suffix: ' a month.',
+  },
+  microcopy: 'Five free quotes · No card needed',
 };
+
+/** Core product story on the ad landing — talk → quote → send → paid. */
+export const IOS_AD_LANDING_STORY_IDS = ['voice', 'quote', 'send', 'pay'] as const;
+
+export function iosAdLandingStories(): IosStorySegment[] {
+  return IOS_AD_LANDING_STORY_IDS.map(
+    (id) => IOS_STORY_SEGMENTS.find((s) => s.id === id)!,
+  );
+}
 
 export const IOS_PROBLEM = {
   eyebrow: 'HOW SMASH WORKS',
@@ -330,11 +343,14 @@ export const IOS_FEATURES_SECTION = {
 export const IOS_FINAL_CTA = {
   headlineWhite: 'YOU DO THE WORK.',
   headlineLime: 'SMASH DOES THE REST.',
-  subline: "Invoice sent before you leave the driveway. Start today — it's free.",
+  subline: 'Talk the job. Send before you leave the driveway.',
   cta: 'Start Free',
-  microcopy: 'Free to start. No card needed. iPhone only.',
+  microcopy: 'Five free quotes a month. No card needed.',
   integrations: ['Xero', 'QuickBooks', 'Stripe'],
 };
+
+export const IOS_PRICING_FOOTNOTE =
+  'Five free quotes every month. Paid plans unlock unlimited volume and Xero & QuickBooks sync.';
 
 /** Placeholder slots for media added later. */
 export const IOS_MEDIA_SLOTS = {

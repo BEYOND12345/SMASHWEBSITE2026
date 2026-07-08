@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Mic, ChevronDown } from 'lucide-react';
 import { trackIosRemarketingPageView } from '../../lib/analytics';
 import { SEO } from '../seo';
@@ -15,32 +16,32 @@ import { SchemaMarkup } from '../SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../../data/schema-data';
 import { hreflangAlternates } from '../../data/country-data';
 import {
-  IOS_DESKTOP_BAND,
-  IOS_FEATURE_TILES,
-  IOS_FEATURES_SECTION,
   IOS_FINAL_CTA,
   IOS_HERO,
-  IOS_LAUNCH_FEATURES_ENABLED,
-  IOS_PROBLEM,
-  IOS_STORY_SEGMENTS,
+  IOS_PRICING_FOOTNOTE,
+  iosAdLandingStories,
 } from '../../data/ios-landing-spec';
 import { mainPages } from '../../data/main-pages-seo';
-import { IosSpecHeadline } from './IosCalloutCard';
-import { IosSubline } from './IosSubline';
 import { IosHeroPhoneShowcase } from './IosPhoneShowcase';
+import { IosStorySection } from './IosStorySection';
+import { IosFinalCta, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
+import { IosPricingFootnote } from './IosPricingFootnote';
 import {
-  IosAccentStrip,
-  IosIntegrationStrap,
-  IosStorySection,
-} from './IosStorySection';
-import { IosFinalCta, IosDesktopTeaser, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
-import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryMediaCellClass } from './ios-landing-tokens';
+  iosLanding,
+  iosHeroCopyCellClass,
+  iosHeroDesktopCtaClass,
+  iosHeroGridClass,
+  iosHeroMediaCellClass,
+  iosHeroMobileCtaCellClass,
+  iosHeroMobileCtaWrapClass,
+  iosHeroMobileSublineClass,
+} from './ios-landing-tokens';
 import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
-import { VALUE_TESTIMONIALS, FEATURED_VALUE_TESTIMONIAL } from '../../data/product-testimonials';
+import { VALUE_TESTIMONIALS } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
 import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
-import { IosWorksWithStrap } from './IosWorksWithStrap';
+import { IosSpecHeadline } from './IosCalloutCard';
 
 const IOS_HERO_PHOTO = {
   src: '/product/ios/photos/voice.jpg',
@@ -58,17 +59,10 @@ const IOS_TESTIMONIALS_PHOTO = {
   tint: 40,
 };
 
-const IOS_FEATURED_PHOTO = {
-  src: '/product/ios/photos/send.jpg',
-  srcMobile: '/product/ios/photos/send-mobile.jpg',
-  alt: 'Tradie sending a quote by voice from the driver’s seat',
-  focus: '68% 38%',
-  tint: 52,
-};
-
 const IOS_FINAL_PHOTO = IOS_HERO_PHOTO;
 
 const voicePage = mainPages.voiceInvoicing;
+const adStories = iosAdLandingStories();
 
 function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: boolean; onClick: () => void }) {
   return (
@@ -99,8 +93,7 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
 }
 
 export function IosAppLandingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     trackIosRemarketingPageView();
@@ -129,12 +122,10 @@ export function IosAppLandingPage() {
         data={createHowToSchema({
           name: 'How to send a quote by voice on iPhone',
           description: 'Talk the job, verify the draft, send before you leave the site.',
-          steps: [
-            { name: 'Describe the job', text: 'Open SMASH and tap Start Recording. Say materials, hours, and fees naturally.' },
-            { name: 'Review line items', text: 'SMASH matches speech to your saved prices. Edit anything flagged before send.' },
-            { name: 'Send the link', text: 'Customer gets a professional quote link by SMS or email.' },
-            { name: 'They approve and pay', text: 'Read receipts show when they open it. Approve and pay from their phone.' },
-          ],
+          steps: adStories.map((segment) => ({
+            name: segment.eyebrow,
+            text: segment.subline,
+          })),
         })}
       />
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
@@ -142,37 +133,41 @@ export function IosAppLandingPage() {
       <div className={iosLanding.page}>
         <Nav ctaUrl={APP_STORE_URL} ctaLabel="Start Free" />
 
-        {/* HERO — photo band (matches homepage rhythm) */}
-        <section className="relative bg-brand pt-12 pb-0 md:pt-24 overflow-hidden">
+        {/* 1. HERO — one promise, one CTA, trust inline */}
+        <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
           <HeroPhotoBackdrop photo={IOS_HERO_PHOTO} tint={IOS_HERO_PHOTO.tint} />
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
             <div className={iosHeroGridClass}>
               <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
-                <div className="pb-2 lg:pb-24">
+                <div className="pb-2 lg:pb-8">
                   <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
                     <Mic size={13} className="text-accent" strokeWidth={2.5} />
                     <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
                   </div>
 
-                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
+                  <h1 className={`${iosLanding.heroHeadline} mb-4 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                     <span className="block text-white">{IOS_HERO.headlineWhite}</span>
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
-                  <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-8 max-w-md ${iosHeroMobileSublineClass}`}>
-                    {IOS_HERO.byline}
-                  </IosSubline>
+                  <p
+                    className={`font-body text-base sm:text-lg font-semibold text-white/90 mb-0 max-w-md leading-snug ${iosHeroMobileSublineClass}`}
+                  >
+                    {IOS_HERO.pricingOffer.prefix}
+                    <span className="text-accent">{IOS_HERO.pricingOffer.highlight}</span>
+                    {IOS_HERO.pricingOffer.suffix}
+                  </p>
 
-                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8 mb-0 sm:mb-8`}>
+                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8`}>
                     <IosHeroCta />
                   </div>
                 </div>
               </AnimateIn>
 
               <AnimateIn direction="right" directionMobile="up" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
-                <div className="pb-2 sm:pb-16 md:pb-24 w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
+                <div className="w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
                   <IosMediaSlot type="hero-video" />
                   <IosMediaSlot type="hero-gif" />
                   <IosHeroPhoneShowcase />
@@ -188,10 +183,7 @@ export function IosAppLandingPage() {
           </div>
         </section>
 
-        <IosWorksWithStrap />
-
-        <IosIntegrationStrap compact />
-
+        {/* 2. SOCIAL PROOF — before the product tour */}
         <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
           <TestimonialGridSection
             eyebrow="From people on the tools"
@@ -200,21 +192,13 @@ export function IosAppLandingPage() {
           />
         </BrandPhotoBand>
 
-        <IosAccentStrip eyebrow={IOS_PROBLEM.eyebrow}>
-          <span className="font-display-italic font-black uppercase tracking-tighter block mb-3 text-[clamp(1.35rem,5vw,2.25rem)] leading-[0.95]">
-            <span className="block">{IOS_PROBLEM.headlineWhite}</span>
-            <span className="block text-accent">{IOS_PROBLEM.headlineLime}</span>
-          </span>
-          <IosSubline
-            as="span"
-            className="block font-body text-sm sm:text-base font-medium leading-[1.5] text-white/75 max-w-[22rem] sm:max-w-md mx-auto"
+        {/* 3. HOW IT WORKS — four steps only */}
+        {adStories.map((segment, index) => (
+          <div
+            key={segment.id}
+            id={index === 0 ? 'how-it-works' : undefined}
+            className={index === 0 ? 'scroll-mt-24' : undefined}
           >
-            {IOS_PROBLEM.subline}
-          </IosSubline>
-        </IosAccentStrip>
-
-        {IOS_STORY_SEGMENTS.map((segment, index) => (
-          <div key={segment.id} id={index === 0 ? 'how-it-works' : undefined} className={index === 0 ? 'scroll-mt-24' : undefined}>
             <IosStorySection
               segment={segment}
               imageFirst={segment.imageFirst}
@@ -224,63 +208,10 @@ export function IosAppLandingPage() {
           </div>
         ))}
 
-        <IosMediaSlot type="story-demo" />
+        {/* 4. PRICING BRIDGE — free tier + link, no tier strap */}
+        <IosPricingFootnote copy={IOS_PRICING_FOOTNOTE} />
 
-        <BrandSolidBand>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-20">
-            <AnimateIn direction="left" directionMobile="up" className={iosStoryCopyCellClass}>
-              <IosSpecHeadline
-                eyebrow={IOS_DESKTOP_BAND.eyebrow}
-                headlineWhite={IOS_DESKTOP_BAND.headlineWhite}
-                headlineLime={IOS_DESKTOP_BAND.headlineLime}
-              />
-              <IosSubline className={`${iosLanding.body} mt-6`}>{IOS_DESKTOP_BAND.body}</IosSubline>
-            </AnimateIn>
-            <AnimateIn direction="right" directionMobile="up" delay={80} className={iosStoryMediaCellClass}>
-              <IosDesktopTeaser />
-            </AnimateIn>
-          </div>
-          <AnimateIn direction="up">
-            <IosSpecHeadline
-              centered
-              className="mb-12"
-              eyebrow={IOS_FEATURES_SECTION.eyebrow}
-              headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
-              headlineLime={IOS_FEATURES_SECTION.headlineLime}
-              dark
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {visibleTiles.map((tile) => (
-                <div
-                  key={tile.title}
-                  className="bg-white/[0.05] border border-white/10 rounded-2xl p-5 min-h-[88px] touch-manipulation"
-                >
-                  <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
-                    {tile.title}
-                  </h3>
-                  <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </BrandSolidBand>
-
-        <BrandPhotoBand photo={IOS_FEATURED_PHOTO} scrim="vertical">
-          <div className="max-w-3xl mx-auto text-center">
-            <AnimateIn direction="up">
-              <blockquote>
-                <p className="font-display-italic font-black italic text-white text-[clamp(1.35rem,4vw,2.5rem)] leading-[1.15] tracking-tight mb-5">
-                  &ldquo;{FEATURED_VALUE_TESTIMONIAL.quote}&rdquo;
-                </p>
-                <footer className="font-body text-white/70 text-sm font-semibold">
-                  {FEATURED_VALUE_TESTIMONIAL.name} · {FEATURED_VALUE_TESTIMONIAL.trade} ·{' '}
-                  {FEATURED_VALUE_TESTIMONIAL.city}
-                </footer>
-              </blockquote>
-            </AnimateIn>
-          </div>
-        </BrandPhotoBand>
-
+        {/* 5. FAQ */}
         <BrandSolidBand>
           <div className="max-w-3xl mx-auto">
             <AnimateIn direction="up">
@@ -302,10 +233,17 @@ export function IosAppLandingPage() {
                   />
                 ))}
               </div>
+              <p className="font-body text-sm text-white/45 text-center mt-6">
+                Paid plans from $15/month AUD.{' '}
+                <Link to="/pricing" className="text-accent font-semibold underline underline-offset-2 hover:text-white transition-colors">
+                  Compare Starter, Pro &amp; Unlimited
+                </Link>
+              </p>
             </AnimateIn>
           </div>
         </BrandSolidBand>
 
+        {/* 6. FINAL CTA */}
         <BrandPhotoBand photo={IOS_FINAL_PHOTO} scrim="vertical" className="py-16 md:py-24">
           <div className={`${iosLanding.container} text-center`}>
             <AnimateIn direction="up">
@@ -314,6 +252,7 @@ export function IosAppLandingPage() {
                 headlineLime={IOS_FINAL_CTA.headlineLime}
                 subline={IOS_FINAL_CTA.subline}
                 microcopy={IOS_FINAL_CTA.microcopy}
+                showBrowserCta={false}
               />
             </AnimateIn>
           </div>

@@ -4,7 +4,8 @@ import { DualProductCtas } from '../marketing/DualProductCtas';
 import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
 import { GmailStoryFrame } from '../gmail-product-landing/GmailStoryFrame';
 import { GmailStoryStepCallout } from '../gmail-product-landing/GmailStoryTriptych';
-import { IOS_DESKTOP_BAND } from '../../data/ios-landing-spec';
+import { IOS_DESKTOP_BAND, IOS_HERO } from '../../data/ios-landing-spec';
+import { IosHeroTrustLogos } from './IosHeroTrustLogos';
 import { IosSubline } from './IosSubline';
 import { iosLanding } from './ios-landing-tokens';
 
@@ -47,11 +48,13 @@ export function IosFinalCta({
   headlineLime,
   subline,
   microcopy,
+  showBrowserCta = true,
 }: {
   headlineWhite: string;
   headlineLime: string;
   subline: string;
   microcopy: string;
+  showBrowserCta?: boolean;
 }) {
   return (
     <>
@@ -67,17 +70,22 @@ export function IosFinalCta({
 
       <IosSubline className={`${iosLanding.subline} mx-auto mb-8 max-w-md`}>{subline}</IosSubline>
 
-      <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-4">
         <IosOfficialAppStoreBadge />
-        <Link to="/chrome-extension" className={iosLanding.secondaryCta}>
-          Add to your browser
-        </Link>
+        {showBrowserCta && (
+          <Link to="/chrome-extension" className={iosLanding.secondaryCta}>
+            Add to your browser
+          </Link>
+        )}
       </div>
 
       <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>
-      <p className="text-xs text-white/45 font-medium mt-1.5">
-        iPhone on site · Gmail in Chrome or Edge at your desk
-      </p>
+      {showBrowserCta && (
+        <p className="text-xs text-white/45 font-medium mt-1.5">
+          iPhone on site · Gmail in Chrome or Edge at your desk
+        </p>
+      )}
+      {!showBrowserCta && <IosHeroTrustLogos className="mt-5 items-center" />}
     </>
   );
 }
@@ -85,11 +93,14 @@ export function IosFinalCta({
 /** Hero — download + scroll to story on the iOS product page. */
 export function IosHeroCta({ className = '' }: { className?: string }) {
   return (
-    <DualProductCtas
-      className={className}
-      secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-      mobileSecondaryAsLink
-    />
+    <div className={className}>
+      <DualProductCtas
+        secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
+        mobileSecondaryAsLink
+        microcopy={IOS_HERO.microcopy}
+      />
+      <IosHeroTrustLogos className="mt-5" />
+    </div>
   );
 }
 

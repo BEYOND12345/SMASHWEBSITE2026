@@ -18,6 +18,7 @@ type Props = {
   /** Default: links to /chrome-extension */
   secondary?: SecondaryCta;
   showMicrocopy?: boolean;
+  microcopy?: string;
   iphoneLabel?: string;
   /** Below sm — ghost button becomes a text link to save vertical space in heroes. */
   mobileSecondaryAsLink?: boolean;
@@ -28,6 +29,7 @@ export function DualProductCtas({
   className = '',
   secondary = { kind: 'link', to: '/chrome-extension', label: 'Add to your browser' },
   showMicrocopy = true,
+  microcopy,
   iphoneLabel = 'Start Free on iPhone',
   mobileSecondaryAsLink = false,
 }: Props) {
@@ -53,7 +55,7 @@ export function DualProductCtas({
       )}
       {showMicrocopy && (
         <>
-          <p className={`${iosLanding.caption} mt-3`}>Free to start · No card needed</p>
+          <p className={`${iosLanding.caption} mt-3`}>{microcopy ?? 'Free to start · No card needed'}</p>
           <p className="text-xs text-white/45 font-medium mt-1.5 hidden sm:block">
             iPhone on site · Gmail in Chrome or Edge at your desk
           </p>
