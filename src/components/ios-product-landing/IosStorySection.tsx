@@ -15,6 +15,7 @@ import {
   iosStoryGridClass,
   iosStoryMediaCellClass,
 } from './ios-landing-tokens';
+import { brandPhotoScrim } from './photo-scrim';
 
 type Props = {
   segment: IosStorySegment;
@@ -74,9 +75,7 @@ export function IosStorySection({
           <div
             aria-hidden
             className="absolute inset-0 z-[1]"
-            style={{
-              background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 28, 92) / 100}) 0%, rgba(15,23,42,${tint / 100}) 45%, rgba(15,23,42,${Math.max(tint - 28, 12) / 100}) 100%)`,
-            }}
+            style={brandPhotoScrim(tint, 'horizontal', imageFirst)}
           />
         </>
       )}

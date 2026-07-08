@@ -37,10 +37,12 @@ type Props = {
   className?: string;
   /** Use photo.focusMobile (or a sensible default) under 640px. */
   preferMobileFocus?: boolean;
+  /** Hero LCP image — eager load + high fetch priority. */
+  priority?: boolean;
 };
 
 /** object-cover photo with extra zoom so focus shifts never expose section bg. */
-export function IosStoryPhotoCover({ photo, variant, className = '', preferMobileFocus = false }: Props) {
+export function IosStoryPhotoCover({ photo, variant, className = '', preferMobileFocus = false, priority = false }: Props) {
   const breakpoint = useBreakpoint();
   const focus =
     preferMobileFocus && breakpoint === 'mobile'
@@ -56,7 +58,8 @@ export function IosStoryPhotoCover({ photo, variant, className = '', preferMobil
       <img
         src={photo.src}
         alt={photo.alt ?? ''}
-        loading="lazy"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
         decoding="async"
         className="h-full w-full object-cover"
         style={{

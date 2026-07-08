@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { StoryPhoto } from '../../data/ios-landing-spec';
 import { IosStoryPhotoCover } from '../ios-product-landing/IosStoryPhotoCover';
+import { brandPhotoScrim } from '../ios-product-landing/photo-scrim';
 import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
 
 type Props = {
@@ -14,15 +15,7 @@ type Props = {
 };
 
 function scrimStyle(tint: number, mode: 'horizontal' | 'vertical'): React.CSSProperties {
-  const t = tint / 100;
-  if (mode === 'vertical') {
-    return {
-      background: `linear-gradient(180deg, rgba(15,23,42,${Math.min(t + 0.22, 0.94)}) 0%, rgba(15,23,42,${t}) 55%, rgba(15,23,42,${Math.max(t - 0.08, 0.72)}) 100%)`,
-    };
-  }
-  return {
-    background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 28, 92) / 100}) 0%, rgba(15,23,42,${t}) 45%, rgba(15,23,42,${Math.max(tint - 28, 12) / 100}) 100%)`,
-  };
+  return brandPhotoScrim(tint, mode);
 }
 
 /** Full-bleed field photo + brand scrim — alternating “photo” band in page rhythm. */
