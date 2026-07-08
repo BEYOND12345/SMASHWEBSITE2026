@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState, ReactNode } from 'react';
 import { Facebook, Instagram, Apple, Chrome, ChevronDown, Youtube, Mail, ArrowRight } from 'lucide-react';
 import { EdgeLogoMark } from './icons/EdgeLogoMark';
@@ -6,7 +6,6 @@ import { SmashLogoLink } from './SmashLogo';
 import {
   APP_STORE_URL,
   CHROME_STORE_URL,
-  EDGE_STORE_URL,
   IOS_DOWNLOAD_LABEL,
 } from '../data/download-urls';
 
@@ -100,6 +99,16 @@ function FooterDisclosure({
 }
 
 export function Footer({ showCTA = false }: FooterProps) {
+  const { pathname } = useLocation();
+  const onIosLanding = pathname === '/voice-invoicing';
+  const onGmailLanding =
+    pathname === '/chrome-extension' || pathname === '/gmail-invoice';
+
+  const quickBtnPrimary =
+    'flex items-center justify-center gap-2 px-5 py-3.5 min-h-[48px] rounded-xl font-black text-sm uppercase tracking-wider transition-all touch-manipulation';
+  const quickBtnGhost =
+    'flex items-center justify-center gap-2 px-5 py-3.5 min-h-[48px] rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all touch-manipulation';
+
   return (
     <footer className="bg-brand text-white border-t-4 border-accent/40">
       {/* ── MEGA DOWNLOAD STRIP (always visible) ───────────────── */}
@@ -153,22 +162,36 @@ export function Footer({ showCTA = false }: FooterProps) {
               <p className="font-body text-base text-brand/65 font-medium leading-[1.5] mb-8 flex-1">
                 Talk the job on your phone. Professional invoice before you leave the driveway.
               </p>
-              <Link
-                to="/voice-invoicing"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto mb-4"
-              >
-                <Apple size={18} strokeWidth={2.5} />
-                See SMASH for iOS
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </Link>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-brand/70 font-bold text-sm uppercase tracking-wide hover:text-brand transition-colors"
-              >
-                {IOS_DOWNLOAD_LABEL} on the App Store
-              </a>
+              {onIosLanding ? (
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 min-h-[48px] rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto touch-manipulation"
+                >
+                  <Apple size={18} strokeWidth={2.5} />
+                  Download on the App Store
+                </a>
+              ) : (
+                <>
+                  <Link
+                    to="/voice-invoicing"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-4 min-h-[48px] rounded-full bg-brand text-white font-black text-sm uppercase tracking-widest hover:brightness-110 transition-all w-full sm:w-auto mb-4 touch-manipulation"
+                  >
+                    <Apple size={18} strokeWidth={2.5} />
+                    See SMASH for iOS
+                    <ArrowRight size={16} strokeWidth={2.5} />
+                  </Link>
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 text-brand/70 font-bold text-sm uppercase tracking-wide hover:text-brand transition-colors touch-manipulation"
+                  >
+                    {IOS_DOWNLOAD_LABEL} on the App Store
+                  </a>
+                </>
+              )}
             </div>
           </div>
 
@@ -207,39 +230,31 @@ export function Footer({ showCTA = false }: FooterProps) {
 
             <h3 className={`${headingClass} mb-3`}>Quick download</h3>
             <div className="flex flex-col gap-3 mb-6">
-              <Link
-                to="/voice-invoicing"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
-              >
-                <Apple size={18} strokeWidth={2.5} />
-                <span>SMASH for iOS</span>
-              </Link>
-              <Link
-                to="/chrome-extension"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-accent text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
-              >
-                <Chrome size={18} strokeWidth={2.5} />
-                <span>SMASH for Gmail</span>
-              </Link>
-              <a
-                href={EDGE_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all"
-              >
-                <EdgeLogoMark size={18} className="shrink-0" />
-                <span>SMASH for Edge</span>
-              </a>
               <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Download SMASH on the App Store"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-sm uppercase tracking-wider hover:bg-white/15 transition-all"
+                className={`${quickBtnPrimary} bg-white text-brand hover:brightness-95`}
               >
                 <Apple size={18} strokeWidth={2.5} />
-                <span>Download on App Store</span>
+                <span>Download on the App Store</span>
               </a>
+              {!onGmailLanding && (
+                <Link
+                  to="/chrome-extension"
+                  className={`${quickBtnPrimary} bg-accent text-brand hover:brightness-95`}
+                >
+                  <Chrome size={18} strokeWidth={2.5} />
+                  <span>SMASH for Gmail</span>
+                </Link>
+              )}
+              {/* Edge is the same extension — product page until Add-ons listing is verified live. */}
+              {!onGmailLanding && (
+                <Link to="/chrome-extension" className={quickBtnGhost}>
+                  <EdgeLogoMark size={18} className="shrink-0" />
+                  <span>SMASH for Edge</span>
+                </Link>
+              )}
             </div>
 
             <h3 className={`${headingClass} mb-3`}>Follow us</h3>
