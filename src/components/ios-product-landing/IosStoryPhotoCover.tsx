@@ -27,7 +27,11 @@ function useBreakpoint(): Breakpoint {
 function resolveCoverScale(photo: StoryPhoto, breakpoint: Breakpoint): number {
   if (photo.coverScale != null) return photo.coverScale;
   const base = IOS_STORY_PHOTO_COVER_SCALE[breakpoint];
-  return base * (photo.coverScaleFactor ?? 1);
+  const factor =
+    breakpoint === 'mobile'
+      ? (photo.coverScaleFactorMobile ?? photo.coverScaleFactor ?? 1)
+      : (photo.coverScaleFactor ?? 1);
+  return base * factor;
 }
 
 type Props = {
@@ -37,17 +41,29 @@ type Props = {
   className?: string;
   /** Use photo.focusMobile (or a sensible default) under 640px. */
   preferMobileFocus?: boolean;
+  /** Use photo.focusMobile on mobile + tablet — for stacked layouts below lg. */
+  preferStackedFocus?: boolean;
   /** Hero LCP image — eager load + high fetch priority. */
   priority?: boolean;
 };
 
 /** object-cover photo with extra zoom so focus shifts never expose section bg. */
-export function IosStoryPhotoCover({ photo, variant, className = '', preferMobileFocus = false, priority = false }: Props) {
+export function IosStoryPhotoCover({
+  photo,
+  variant,
+  className = '',
+  preferMobileFocus = false,
+  preferStackedFocus = false,
+  priority = false,
+}: Props) {
   const breakpoint = useBreakpoint();
-  const focus =
-    preferMobileFocus && breakpoint === 'mobile'
-      ? photo.focusMobile ?? photo.focus ?? '50% 22%'
-      : photo.focus ?? 'center';
+  const useMobileFocus =
+    preferStackedFocus && breakpoint !== 'desktop'
+      ? true
+      : preferMobileFocus && breakpoint === 'mobile';
+  const focus = useMobileFocus
+    ? photo.focusMobile ?? photo.focus ?? '50% 22%'
+    : photo.focus ?? 'center';
   const scale = resolveCoverScale(photo, breakpoint);
 
   const picture = (

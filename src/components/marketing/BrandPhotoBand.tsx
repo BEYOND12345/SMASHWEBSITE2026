@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { StoryPhoto } from '../../data/ios-landing-spec';
 import { IosStoryPhotoCover } from '../ios-product-landing/IosStoryPhotoCover';
-import { brandPhotoScrim } from '../ios-product-landing/photo-scrim';
+import { brandPhotoScrim, brandStackedVerticalScrim } from '../ios-product-landing/photo-scrim';
 import { iosLanding } from '../ios-product-landing/ios-landing-tokens';
 
 type Props = {
@@ -29,8 +29,20 @@ export function BrandPhotoBand({
 }: Props) {
   return (
     <section className={`relative bg-brand py-16 md:py-28 overflow-hidden ${className}`.trim()}>
-      <IosStoryPhotoCover photo={photo} variant="fullBleed" />
-      <div aria-hidden className="absolute inset-0 z-[1]" style={scrimStyle(tint, scrim)} />
+      <div className="absolute inset-0 hidden lg:block overflow-hidden">
+        <IosStoryPhotoCover photo={photo} variant="fullBleed" />
+        <div aria-hidden className="absolute inset-0 z-[1]" style={scrimStyle(tint, scrim)} />
+      </div>
+
+      <div className="absolute inset-0 lg:hidden overflow-hidden">
+        <IosStoryPhotoCover photo={photo} variant="fullBleed" preferStackedFocus />
+        <div
+          aria-hidden
+          className="absolute inset-0 z-[1]"
+          style={scrim === 'vertical' ? brandStackedVerticalScrim(tint) : scrimStyle(tint, scrim)}
+        />
+      </div>
+
       <div className={`${iosLanding.container} relative z-10 ${containerClassName}`.trim()}>{children}</div>
     </section>
   );

@@ -134,6 +134,6 @@ export type IosPhoneSurface = 'light' | 'dark';
 /** Extra zoom beyond object-cover minimum — prevents brand bg showing at edges when focus shifts. */
 export const IOS_STORY_PHOTO_COVER_SCALE = {
   desktop: 1.22,
-  tablet: 1.18,
-  mobile: 1.14,
+  tablet: 1.14,
+  mobile: 1.06,
 } as const;

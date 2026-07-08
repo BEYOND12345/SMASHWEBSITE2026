@@ -15,7 +15,7 @@ import {
   iosStoryGridClass,
   iosStoryMediaCellClass,
 } from './ios-landing-tokens';
-import { brandPhotoScrim } from './photo-scrim';
+import { brandPhotoScrim, storyStackedScrimCopyBottom, storyStackedScrimCopyTop } from './photo-scrim';
 
 type Props = {
   segment: IosStorySegment;
@@ -66,17 +66,43 @@ export function IosStorySection({
   );
 
   const tint = photoBg?.tint ?? 55;
+  const copyOnTop = !imageFirst;
 
   return (
     <section className="relative bg-brand py-16 md:py-28 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_720px]">
       {photoBg && (
         <>
-          <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
-          <div
-            aria-hidden
-            className="absolute inset-0 z-[1]"
-            style={brandPhotoScrim(tint, 'horizontal', imageFirst)}
-          />
+          {/* Desktop — side-by-side: photo fills the row, horizontal scrim protects copy column. */}
+          <div className="absolute inset-0 hidden lg:block overflow-hidden">
+            <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
+            <div
+              aria-hidden
+              className="absolute inset-0 z-[1]"
+              style={brandPhotoScrim(tint, 'horizontal', imageFirst)}
+            />
+          </div>
+
+          {/* Below lg — stacked: photo lives in the phone band; copy sits on solid navy. */}
+          <div className="absolute inset-0 lg:hidden overflow-hidden">
+            {copyOnTop ? (
+              <div className="absolute inset-x-0 bottom-0 h-[min(54vh,440px)]">
+                <IosStoryPhotoCover photo={photoBg} variant="fullBleed" preferStackedFocus />
+              </div>
+            ) : (
+              <div className="absolute inset-x-0 top-0 h-[min(50vh,400px)]">
+                <IosStoryPhotoCover photo={photoBg} variant="fullBleed" preferStackedFocus />
+              </div>
+            )}
+            <div
+              aria-hidden
+              className="absolute inset-0 z-[1]"
+              style={
+                copyOnTop
+                  ? storyStackedScrimCopyTop(tint)
+                  : storyStackedScrimCopyBottom(tint)
+              }
+            />
+          </div>
         </>
       )}
       <div className={`${iosLanding.container} relative z-10`}>

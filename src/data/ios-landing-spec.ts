@@ -44,6 +44,8 @@ export type StoryPhoto = {
   coverScale?: number;
   /** Multiplier on breakpoint default zoom — e.g. 0.75 pulls back 25%. */
   coverScaleFactor?: number;
+  /** Mobile-only zoom multiplier — pulls back crop on narrow stacked layouts. */
+  coverScaleFactorMobile?: number;
   /** Mirror horizontally — useful when art direction needs the subject on the other side. */
   flipX?: boolean;
 };
@@ -283,6 +285,8 @@ export const IOS_AD_LANDING_PHOTOS = {
     src: '/product/home/cleaner-testimonial.jpg',
     alt: 'Cleaner sending an invoice on her phone between jobs',
     focus: '58% 42%',
+    focusMobile: '52% 28%',
+    coverScaleFactorMobile: 0.92,
     tint: 42,
   },
   final: {
@@ -291,6 +295,7 @@ export const IOS_AD_LANDING_PHOTOS = {
     alt: 'Service worker quoting by voice on a suburban street',
     focus: '74% 46%',
     focusMobile: '68% 30%',
+    coverScaleFactorMobile: 0.92,
     tint: 50,
   },
 } as const;
@@ -303,6 +308,7 @@ export const IOS_AD_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoB
     alt: 'Electrician capturing a job by voice in the roof space',
     focus: '72% 44%',
     focusMobile: '66% 28%',
+    coverScaleFactorMobile: 0.94,
     tint: 56,
   },
   quote: {
@@ -311,6 +317,7 @@ export const IOS_AD_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoB
     alt: 'Maintenance worker reviewing a priced quote on his phone in the park',
     focus: '74% 52%',
     focusMobile: '68% 30%',
+    coverScaleFactorMobile: 0.94,
     tint: 54,
   },
   send: {
@@ -319,6 +326,7 @@ export const IOS_AD_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoB
     alt: 'Photographer sending a quote by voice between jobs at an event',
     focus: '52% 42%',
     focusMobile: '50% 28%',
+    coverScaleFactorMobile: 0.94,
     tint: 58,
   },
   pay: {
@@ -327,6 +335,7 @@ export const IOS_AD_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoB
     alt: 'Dog groomer taking payment on site after the job',
     focus: '56% 46%',
     focusMobile: '52% 30%',
+    coverScaleFactorMobile: 0.94,
     tint: 52,
   },
 };
