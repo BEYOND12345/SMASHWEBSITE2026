@@ -269,6 +269,62 @@ export const IOS_HERO = {
   microcopy: 'Five free quotes · No card needed',
 };
 
+/** Photography for the ad landing — each band uses a distinct asset (no repeats). */
+export const IOS_AD_LANDING_PHOTOS = {
+  hero: {
+    src: '/product/ios/photos/voice.jpg',
+    srcMobile: '/product/ios/photos/voice-mobile.jpg',
+    alt: 'Pool technician speaking a job into SMASH by voice beside the pool',
+    focus: '62% 42%',
+    focusMobile: '50% 18%',
+    tint: 52,
+  },
+  testimonials: {
+    src: '/product/home/cleaner-testimonial.jpg',
+    alt: 'Cleaner sending an invoice on her phone between jobs',
+    focus: '58% 42%',
+    tint: 40,
+  },
+  final: {
+    src: '/product/ios/photos/automessage.jpg',
+    srcMobile: '/product/ios/photos/automessage-mobile.jpg',
+    alt: 'Tradie on site with phone ready to message the customer',
+    focus: '55% 50%',
+    tint: 48,
+  },
+} as const;
+
+/** Story backdrops on the slim ad landing — one unique photo per step. */
+export const IOS_AD_STORY_PHOTO_BG: Partial<Record<IosStoryScreenId, StoryPhotoBg>> = {
+  voice: {
+    src: '/product/home/voice-story-painter.jpg',
+    alt: 'Painter invoicing by voice on his phone between coats',
+    focus: '42% 48%',
+    tint: 52,
+  },
+  quote: {
+    src: '/product/ios/photos/customers.jpg',
+    srcMobile: '/product/ios/photos/customers-mobile.jpg',
+    alt: 'Tradie reviewing saved rates and line items on site',
+    focus: '58% 42%',
+    tint: 52,
+  },
+  send: {
+    src: '/product/ios/photos/send.jpg',
+    srcMobile: '/product/ios/photos/send-mobile.jpg',
+    alt: 'Tradie sending a quote by voice from the driver’s seat',
+    focus: '68% 38%',
+    tint: 52,
+  },
+  pay: {
+    src: '/product/ios/photos/cardpayment.jpg',
+    srcMobile: '/product/ios/photos/cardpayment-mobile.jpg',
+    alt: 'Removalist taking a card payment on site',
+    focus: '58% 45%',
+    tint: 52,
+  },
+};
+
 /** Core product story on the ad landing — talk → quote → send → paid. */
 export const IOS_AD_LANDING_STORY_IDS = ['voice', 'quote', 'send', 'pay'] as const;
 
@@ -343,9 +399,9 @@ export const IOS_FEATURES_SECTION = {
 export const IOS_FINAL_CTA = {
   headlineWhite: 'YOU DO THE WORK.',
   headlineLime: 'SMASH DOES THE REST.',
-  subline: 'Talk the job. Send before you leave the driveway.',
+  subline: 'Accurate quotes from your catalogue.',
   cta: 'Start Free',
-  microcopy: 'Five free quotes a month. No card needed.',
+  microcopy: '',
   integrations: ['Xero', 'QuickBooks', 'Stripe'],
 };
 

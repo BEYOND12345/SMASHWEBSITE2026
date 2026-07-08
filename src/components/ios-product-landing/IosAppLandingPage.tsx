@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mic, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { trackIosRemarketingPageView } from '../../lib/analytics';
 import { SEO } from '../seo';
 import { Nav } from '../nav';
@@ -19,6 +19,8 @@ import {
   IOS_FINAL_CTA,
   IOS_HERO,
   IOS_PRICING_FOOTNOTE,
+  IOS_AD_LANDING_PHOTOS,
+  IOS_AD_STORY_PHOTO_BG,
   iosAdLandingStories,
 } from '../../data/ios-landing-spec';
 import { mainPages } from '../../data/main-pages-seo';
@@ -42,24 +44,6 @@ import { VALUE_TESTIMONIALS } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
 import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
 import { IosSpecHeadline } from './IosCalloutCard';
-
-const IOS_HERO_PHOTO = {
-  src: '/product/ios/photos/voice.jpg',
-  srcMobile: '/product/ios/photos/voice-mobile.jpg',
-  alt: 'Pool technician speaking a job into SMASH by voice beside the pool',
-  focus: '62% 42%',
-  focusMobile: '50% 18%',
-  tint: 52,
-};
-
-const IOS_TESTIMONIALS_PHOTO = {
-  src: '/product/home/cleaner-testimonial.jpg',
-  alt: 'Cleaner sending an invoice on her phone between jobs',
-  focus: '58% 42%',
-  tint: 40,
-};
-
-const IOS_FINAL_PHOTO = IOS_HERO_PHOTO;
 
 const voicePage = mainPages.voiceInvoicing;
 const adStories = iosAdLandingStories();
@@ -135,18 +119,13 @@ export function IosAppLandingPage() {
 
         {/* 1. HERO — one promise, one CTA, trust inline */}
         <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
-          <HeroPhotoBackdrop photo={IOS_HERO_PHOTO} tint={IOS_HERO_PHOTO.tint} />
+          <HeroPhotoBackdrop photo={IOS_AD_LANDING_PHOTOS.hero} tint={IOS_AD_LANDING_PHOTOS.hero.tint} />
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
             <div className={iosHeroGridClass}>
               <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
                 <div className="pb-2 lg:pb-8">
-                  <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
-                    <Mic size={13} className="text-accent" strokeWidth={2.5} />
-                    <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
-                  </div>
-
                   <h1 className={`${iosLanding.heroHeadline} mb-4 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                     <span className="block text-white">{IOS_HERO.headlineWhite}</span>
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
@@ -184,7 +163,7 @@ export function IosAppLandingPage() {
         </section>
 
         {/* 2. SOCIAL PROOF — before the product tour */}
-        <BrandPhotoBand photo={IOS_TESTIMONIALS_PHOTO} scrim="vertical" className="py-14 md:py-20">
+        <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.testimonials} scrim="vertical" className="py-14 md:py-20">
           <TestimonialGridSection
             eyebrow="From people on the tools"
             items={VALUE_TESTIMONIALS}
@@ -202,7 +181,8 @@ export function IosAppLandingPage() {
             <IosStorySection
               segment={segment}
               imageFirst={segment.imageFirst}
-              photoBgEnabled={index % 2 === 0}
+              photoBgEnabled
+              photoOverride={IOS_AD_STORY_PHOTO_BG[segment.screen]}
               priorityLoad={index < 2}
             />
           </div>
@@ -244,7 +224,7 @@ export function IosAppLandingPage() {
         </BrandSolidBand>
 
         {/* 6. FINAL CTA */}
-        <BrandPhotoBand photo={IOS_FINAL_PHOTO} scrim="vertical" className="py-16 md:py-24">
+        <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.final} scrim="vertical" className="py-16 md:py-24">
           <div className={`${iosLanding.container} text-center`}>
             <AnimateIn direction="up">
               <IosFinalCta
@@ -253,6 +233,7 @@ export function IosAppLandingPage() {
                 subline={IOS_FINAL_CTA.subline}
                 microcopy={IOS_FINAL_CTA.microcopy}
                 showBrowserCta={false}
+                compact
               />
             </AnimateIn>
           </div>

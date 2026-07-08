@@ -8,6 +8,7 @@ import {
   IOS_STORY_PHOTO_BG,
   type IosStorySegment,
 } from '../../data/ios-landing-spec';
+import type { StoryPhotoBg } from '../../data/ios-landing-spec';
 import {
   iosLanding,
   iosStoryCopyCellClass,
@@ -21,6 +22,8 @@ type Props = {
   /** When true, full-bleed photo; when false, solid navy (photo / blue alternation). */
   photoBgEnabled?: boolean;
   priorityLoad?: boolean;
+  /** Override default IOS_STORY_PHOTO_BG lookup — used on the ad landing for unique photos. */
+  photoOverride?: StoryPhotoBg;
 };
 
 /** Chrome/Gmail-style alternating story row — unified phone showcase on every section. */
@@ -29,8 +32,11 @@ export function IosStorySection({
   imageFirst = false,
   photoBgEnabled = true,
   priorityLoad = false,
+  photoOverride,
 }: Props) {
-  const photoBg = photoBgEnabled ? IOS_STORY_PHOTO_BG[segment.screen] : undefined;
+  const photoBg = photoBgEnabled
+    ? photoOverride ?? IOS_STORY_PHOTO_BG[segment.screen]
+    : undefined;
   const copyDark = true;
 
   const copy = (

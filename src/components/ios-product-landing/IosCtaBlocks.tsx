@@ -42,33 +42,38 @@ export function IosOfficialAppStoreBadge({ className = '' }: { className?: strin
   );
 }
 
-/** Closing band — mirrors hero hierarchy; one download path (badge) + desktop alt. */
+/** Closing band — headline, one line, download. */
 export function IosFinalCta({
   headlineWhite,
   headlineLime,
   subline,
   microcopy,
   showBrowserCta = true,
+  compact = false,
 }: {
   headlineWhite: string;
   headlineLime: string;
   subline: string;
   microcopy: string;
   showBrowserCta?: boolean;
+  /** Ad landing — no pill, no repeated microcopy or trust row. */
+  compact?: boolean;
 }) {
   return (
     <>
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
-        <Mic size={13} className="text-accent" strokeWidth={2.5} />
-        <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
-      </div>
+      {!compact && (
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] mb-5">
+          <Mic size={13} className="text-accent" strokeWidth={2.5} />
+          <span className="text-accent font-black text-[11px] uppercase tracking-[0.2em]">SMASH for iPhone</span>
+        </div>
+      )}
 
-      <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto mb-5`}>
+      <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto ${compact ? 'mb-4' : 'mb-5'}`}>
         <span className="block text-white">{headlineWhite}</span>
         <span className="block text-accent">{headlineLime}</span>
       </h2>
 
-      <IosSubline className={`${iosLanding.subline} mx-auto mb-8 max-w-md`}>{subline}</IosSubline>
+      <IosSubline className={`${iosLanding.subline} mx-auto ${compact ? 'mb-6' : 'mb-8'} max-w-md`}>{subline}</IosSubline>
 
       <div className="flex flex-col items-center justify-center gap-4">
         <IosOfficialAppStoreBadge />
@@ -79,13 +84,13 @@ export function IosFinalCta({
         )}
       </div>
 
-      <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>
+      {!compact && microcopy && <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>}
       {showBrowserCta && (
         <p className="text-xs text-white/45 font-medium mt-1.5">
           iPhone on site · Gmail in Chrome or Edge at your desk
         </p>
       )}
-      {!showBrowserCta && <IosHeroTrustLogos className="mt-5 items-center" />}
+      {!showBrowserCta && !compact && <IosHeroTrustLogos className="mt-5 items-center" />}
     </>
   );
 }
