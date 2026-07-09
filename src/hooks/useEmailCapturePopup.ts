@@ -2,24 +2,36 @@ import { useCallback, useEffect, useState } from 'react';
 
 const SESSION_KEY = 'smash_offer_popup_dismissed';
 const DEFAULT_SCROLL_TARGET = 'how-it-works';
-const DEFAULT_FALLBACK_MS = 8000;
+
+/** Minimum time on page before auto-trigger can fire. */
+const MIN_DWELL_MS = 12_000;
+/** User must scroll past the hero band before we consider them engaged. */
+const MIN_SCROLL_PX = 360;
+/** If they never reach the story section, offer after this long (still requires dwell + scroll). */
+const FALLBACK_MS = 50_000;
 
 type Options = {
-  /** Element id to observe — popup opens when user scrolls it into view. */
+  /** Element id — popup opens when user scrolls this into view after dwell + engagement. */
   scrollTargetId?: string;
-  /** Fallback delay if user never scrolls past hero. */
-  fallbackDelayMs?: number;
   /** Disable auto-trigger (manual open only). */
   autoTrigger?: boolean;
 };
 
+function scrollTargetInView(targetId: string): boolean {
+  const target = document.getElementById(targetId);
+  if (!target) return false;
+  const rect = target.getBoundingClientRect();
+  const vh = window.innerHeight;
+  // Section has entered the viewport meaningfully (not just a sliver at the bottom on load).
+  return rect.top < vh * 0.72 && rect.bottom > vh * 0.12;
+}
+
 /**
- * Scroll-past-hero + 8s fallback trigger for the offer popup.
- * Whichever fires first. Once per session via sessionStorage.
+ * Offer popup — requires ~12s on page, real scroll past hero, then story section in view.
+ * Long fallback (50s) only if they scroll but never reach the target. Once per session.
  */
 export function useEmailCapturePopup({
   scrollTargetId = DEFAULT_SCROLL_TARGET,
-  fallbackDelayMs = DEFAULT_FALLBACK_MS,
   autoTrigger = true,
 }: Options = {}) {
   const [open, setOpen] = useState(false);
@@ -48,37 +60,43 @@ export function useEmailCapturePopup({
   useEffect(() => {
     if (!autoTrigger || hasSeenPopup()) return;
 
+    const pageLoadAt = Date.now();
     let triggered = false;
+    let maxScrollY = 0;
 
-    const trigger = () => {
-      if (triggered || hasSeenPopup()) return;
+    const isEngaged = () => {
+      if (Date.now() - pageLoadAt < MIN_DWELL_MS) return false;
+      if (maxScrollY < MIN_SCROLL_PX) return false;
+      return true;
+    };
+
+    const tryTrigger = (reason: 'scroll' | 'fallback') => {
+      if (triggered || hasSeenPopup() || !isEngaged()) return;
+
+      if (reason === 'scroll' && !scrollTargetInView(scrollTargetId)) return;
+
       triggered = true;
       markSeen();
       setOpen(true);
     };
 
-    const timer = window.setTimeout(trigger, fallbackDelayMs);
+    const onScroll = () => {
+      maxScrollY = Math.max(maxScrollY, window.scrollY);
+      tryTrigger('scroll');
+    };
 
-    const target = document.getElementById(scrollTargetId);
-    let observer: IntersectionObserver | undefined;
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    if (target) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            trigger();
-          }
-        },
-        { threshold: 0.15 },
-      );
-      observer.observe(target);
-    }
+    const fallbackTimer = window.setTimeout(() => {
+      maxScrollY = Math.max(maxScrollY, window.scrollY);
+      if (isEngaged()) tryTrigger('fallback');
+    }, FALLBACK_MS);
 
     return () => {
-      window.clearTimeout(timer);
-      observer?.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.clearTimeout(fallbackTimer);
     };
-  }, [autoTrigger, fallbackDelayMs, hasSeenPopup, markSeen, scrollTargetId]);
+  }, [autoTrigger, hasSeenPopup, markSeen, scrollTargetId]);
 
   return { open, openPopup, closePopup };
 }
