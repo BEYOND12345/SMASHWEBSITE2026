@@ -44,6 +44,8 @@ import { VALUE_TESTIMONIALS } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
 import { TestimonialSliderSection } from './TestimonialSliderSection';
 import { IosSpecHeadline } from './IosCalloutCard';
+import { EmailCapturePopup } from '../EmailCapturePopup';
+import { useEmailCapturePopup } from '../../hooks/useEmailCapturePopup';
 
 const voicePage = mainPages.voiceInvoicing;
 const adStories = iosAdLandingStories();
@@ -78,6 +80,8 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
 
 export function IosAppLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const { open: offerOpen, openPopup: openOfferPopup, closePopup: closeOfferPopup } =
+    useEmailCapturePopup();
 
   useEffect(() => {
     trackIosRemarketingPageView();
@@ -140,7 +144,7 @@ export function IosAppLandingPage() {
                   </p>
 
                   <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
-                    <IosHeroCta />
+                    <IosHeroCta onOpenOffer={openOfferPopup} />
                   </div>
                 </div>
               </AnimateIn>
@@ -155,7 +159,7 @@ export function IosAppLandingPage() {
 
               <div className={iosHeroMobileCtaCellClass}>
                 <div className={iosHeroMobileCtaWrapClass}>
-                  <IosHeroCta />
+                  <IosHeroCta onOpenOffer={openOfferPopup} />
                 </div>
               </div>
             </div>
@@ -237,6 +241,12 @@ export function IosAppLandingPage() {
 
         <Footer />
       </div>
+
+      <EmailCapturePopup
+        open={offerOpen}
+        onClose={closeOfferPopup}
+        source="voice_invoicing_popup"
+      />
     </>
   );
 }

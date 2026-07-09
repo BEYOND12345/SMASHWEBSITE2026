@@ -91,7 +91,13 @@ export function IosFinalCta({
 }
 
 /** Hero — download + scroll to story on the iOS product page. */
-export function IosHeroCta({ className = '' }: { className?: string }) {
+export function IosHeroCta({
+  className = '',
+  onOpenOffer,
+}: {
+  className?: string;
+  onOpenOffer?: () => void;
+}) {
   return (
     <div className={className}>
       <DualProductCtas
@@ -99,6 +105,15 @@ export function IosHeroCta({ className = '' }: { className?: string }) {
         mobileSecondaryAsLink
         microcopy={IOS_HERO.microcopy}
       />
+      {onOpenOffer && (
+        <button
+          type="button"
+          onClick={onOpenOffer}
+          className="mt-3 inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent active:text-accent transition-colors underline underline-offset-2 touch-manipulation"
+        >
+          Not ready? Get a free month instead
+        </button>
+      )}
       <IosHeroTrustLogos className="mt-5" />
     </div>
   );
