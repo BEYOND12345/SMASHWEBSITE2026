@@ -42,7 +42,7 @@ import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
 import { VALUE_TESTIMONIALS } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
-import { TestimonialGridSection } from '../chrome-landing/chrome-landing-ui';
+import { TestimonialSliderSection } from './TestimonialSliderSection';
 import { IosSpecHeadline } from './IosCalloutCard';
 
 const voicePage = mainPages.voiceInvoicing;
@@ -162,15 +162,10 @@ export function IosAppLandingPage() {
           </div>
         </section>
 
-        {/* 2. SOCIAL PROOF — before the product tour */}
-        <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.testimonials} scrim="vertical" compact>
-          <TestimonialGridSection
-            eyebrow="From people on the tools"
-            items={VALUE_TESTIMONIALS}
-            variant="letterbox"
-            className="bg-transparent"
-          />
-        </BrandPhotoBand>
+        {/* 2. SOCIAL PROOF — animated strip, no photo */}
+        <BrandSolidBand compact className="!py-6 md:!py-8 border-t border-white/[0.06]">
+          <TestimonialSliderSection eyebrow="From people on the tools" items={VALUE_TESTIMONIALS} />
+        </BrandSolidBand>
 
         {/* 3. HOW IT WORKS — four steps only */}
         {adStories.map((segment, index) => (
