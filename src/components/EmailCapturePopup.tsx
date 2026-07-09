@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Check } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PROMO_CODE = 'SMASHFREE1';
 
 type Props = {
   source?: string;
@@ -67,32 +69,24 @@ export function EmailCapturePopup({ source = 'landing_popup', open, onClose }: P
     setSubmitState('submitting');
     setErrorMessage('');
 
-    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-    const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    const normalizedEmail = email.trim().toLowerCase();
 
     try {
-      const response = await fetch(`${supabaseUrl}/functions/v1/issue-waitlist-promo`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${supabaseKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email.trim(), source }),
+      const { error } = await supabase.from('waitlist_leads').insert({
+        email: normalizedEmail,
+        source,
+        promo_code: PROMO_CODE,
+        code_issued: true,
       });
 
-      const result = await response.json();
-
-      if (!response.ok || !result.success) {
-        const message =
-          result.error === 'Invalid email address'
-            ? 'Please enter a valid email address.'
-            : result.error || 'Something went wrong. Please try again.';
-        setErrorMessage(message);
+      if (error && error.code !== '23505') {
+        console.error('Waitlist insert error:', error);
+        setErrorMessage('Something went wrong. Please try again.');
         setSubmitState('error');
         return;
       }
 
-      setPromoCode(result.promo_code);
+      setPromoCode(PROMO_CODE);
       setSubmitState('success');
     } catch {
       setErrorMessage('Network error. Check your connection and try again.');

@@ -4,13 +4,13 @@ const SESSION_KEY = 'smash_offer_popup_dismissed';
 const DEFAULT_SCROLL_TARGET = 'how-it-works';
 
 /** Minimum time on page before auto-trigger can fire. */
-const MIN_DWELL_MS = 10_000;
+const MIN_DWELL_MS = 6_000;
 /** User must scroll past the hero band before we consider them engaged. */
-const MIN_SCROLL_PX = 280;
+const MIN_SCROLL_PX = 180;
 /** Re-check scroll position after dwell (handles scroll-then-wait). */
-const POLL_MS = 1_500;
+const POLL_MS = 1_000;
 /** If they scroll but never hit the story section, offer after this long. */
-const FALLBACK_MS = 40_000;
+const FALLBACK_MS = 18_000;
 
 type Options = {
   /** Element id — popup opens when user scrolls this into view after dwell + engagement. */

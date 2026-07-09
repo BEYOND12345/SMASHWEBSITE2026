@@ -8,8 +8,6 @@ const corsHeaders = {
 };
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-/** Single App Store offer code — same for every lead. */
 const PROMO_CODE = "SMASHFREE1";
 
 function jsonResponse(body: Record<string, unknown>, status = 200): Response {
@@ -39,66 +37,27 @@ Deno.serve(async (req: Request) => {
     }
 
     const normalizedEmail = email.trim().toLowerCase();
+    const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
+    const supabaseKey =
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ??
+      Deno.env.get("SUPABASE_ANON_KEY") ??
+      "";
 
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-    );
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { data: existing, error: selectError } = await supabase
-      .from("waitlist_leads")
-      .select("id, promo_code")
-      .eq("email", normalizedEmail)
-      .maybeSingle();
+    const { error: insertError } = await supabase.from("waitlist_leads").insert({
+      email: normalizedEmail,
+      source,
+      promo_code: PROMO_CODE,
+      code_issued: true,
+    });
 
-    if (selectError) {
-      console.error("Select error:", selectError);
-      return jsonResponse({ success: false, error: "Database error" }, 500);
+    if (insertError && insertError.code !== "23505") {
+      console.error("Insert error:", insertError);
+      return jsonResponse({ success: false, error: "Failed to register email" }, 500);
     }
 
-    if (existing?.promo_code) {
-      return jsonResponse({ success: true, promo_code: PROMO_CODE });
-    }
-
-    const promoCode = PROMO_CODE;
-
-    if (existing) {
-      const { error: updateError } = await supabase
-        .from("waitlist_leads")
-        .update({ promo_code: promoCode, code_issued: true })
-        .eq("id", existing.id);
-
-      if (updateError) {
-        console.error("Update error:", updateError);
-        return jsonResponse({ success: false, error: "Failed to issue code" }, 500);
-      }
-    } else {
-      const { error: insertError } = await supabase.from("waitlist_leads").insert({
-        email: normalizedEmail,
-        source,
-        promo_code: promoCode,
-        code_issued: true,
-      });
-
-      if (insertError) {
-        if (insertError.code === "23505") {
-          const { data: retry } = await supabase
-            .from("waitlist_leads")
-            .select("promo_code")
-            .eq("email", normalizedEmail)
-            .maybeSingle();
-
-          if (retry?.promo_code) {
-            return jsonResponse({ success: true, promo_code: PROMO_CODE });
-          }
-        }
-
-        console.error("Insert error:", insertError);
-        return jsonResponse({ success: false, error: "Failed to register email" }, 500);
-      }
-    }
-
-    return jsonResponse({ success: true, promo_code: promoCode });
+    return jsonResponse({ success: true, promo_code: PROMO_CODE });
   } catch (error) {
     console.error("Error issuing waitlist promo:", error);
     return jsonResponse(
