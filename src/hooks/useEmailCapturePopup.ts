@@ -4,11 +4,13 @@ const SESSION_KEY = 'smash_offer_popup_dismissed';
 const DEFAULT_SCROLL_TARGET = 'how-it-works';
 
 /** Minimum time on page before auto-trigger can fire. */
-const MIN_DWELL_MS = 12_000;
+const MIN_DWELL_MS = 10_000;
 /** User must scroll past the hero band before we consider them engaged. */
-const MIN_SCROLL_PX = 360;
-/** If they never reach the story section, offer after this long (still requires dwell + scroll). */
-const FALLBACK_MS = 50_000;
+const MIN_SCROLL_PX = 280;
+/** Re-check scroll position after dwell (handles scroll-then-wait). */
+const POLL_MS = 1_500;
+/** If they scroll but never hit the story section, offer after this long. */
+const FALLBACK_MS = 40_000;
 
 type Options = {
   /** Element id — popup opens when user scrolls this into view after dwell + engagement. */
@@ -22,13 +24,12 @@ function scrollTargetInView(targetId: string): boolean {
   if (!target) return false;
   const rect = target.getBoundingClientRect();
   const vh = window.innerHeight;
-  // Section has entered the viewport meaningfully (not just a sliver at the bottom on load).
-  return rect.top < vh * 0.72 && rect.bottom > vh * 0.12;
+  return rect.top < vh * 0.78 && rect.bottom > vh * 0.08;
 }
 
 /**
- * Offer popup — requires ~12s on page, real scroll past hero, then story section in view.
- * Long fallback (50s) only if they scroll but never reach the target. Once per session.
+ * Offer popup — dwell ~10s, scroll past hero, then story section in view.
+ * Polls after dwell so early scroll + later wait still triggers. Once per session.
  */
 export function useEmailCapturePopup({
   scrollTargetId = DEFAULT_SCROLL_TARGET,
@@ -70,10 +71,12 @@ export function useEmailCapturePopup({
       return true;
     };
 
-    const tryTrigger = (reason: 'scroll' | 'fallback') => {
+    const tryTrigger = (reason: 'scroll' | 'poll' | 'fallback') => {
       if (triggered || hasSeenPopup() || !isEngaged()) return;
 
-      if (reason === 'scroll' && !scrollTargetInView(scrollTargetId)) return;
+      if ((reason === 'scroll' || reason === 'poll') && !scrollTargetInView(scrollTargetId)) {
+        return;
+      }
 
       triggered = true;
       markSeen();
@@ -87,6 +90,11 @@ export function useEmailCapturePopup({
 
     window.addEventListener('scroll', onScroll, { passive: true });
 
+    const pollTimer = window.setInterval(() => {
+      maxScrollY = Math.max(maxScrollY, window.scrollY);
+      tryTrigger('poll');
+    }, POLL_MS);
+
     const fallbackTimer = window.setTimeout(() => {
       maxScrollY = Math.max(maxScrollY, window.scrollY);
       if (isEngaged()) tryTrigger('fallback');
@@ -94,6 +102,7 @@ export function useEmailCapturePopup({
 
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.clearInterval(pollTimer);
       window.clearTimeout(fallbackTimer);
     };
   }, [autoTrigger, hasSeenPopup, markSeen, scrollTargetId]);
