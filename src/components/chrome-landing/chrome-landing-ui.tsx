@@ -14,6 +14,9 @@ export const chromeLanding = {
   secondaryCtaOnDark:
     'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-sm uppercase tracking-wide hover:bg-white hover:text-brand transition-all',
   testimonialCard: 'bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 h-full',
+  /** Compact letterbox band — single-row strip over photography. */
+  testimonialLetterboxCard:
+    'bg-white/[0.07] backdrop-blur-[2px] border border-white/12 rounded-xl px-3.5 py-3 flex flex-col gap-2 shrink-0 snap-center min-w-[min(78vw,17.5rem)] sm:min-w-0 sm:shrink sm:h-auto',
   dotPattern:
     'pointer-events-none absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,_#C8FF00_1px,_transparent_1px)] bg-[length:24px_24px]',
 } as const;
@@ -161,26 +164,48 @@ export function TestimonialGridSection({
   chromeStoreUrl,
   showStoreRating = false,
   className = '',
+  variant = 'default',
 }: {
   eyebrow: string;
   items: ChromeTestimonial[];
   chromeStoreUrl?: string;
   showStoreRating?: boolean;
   className?: string;
+  /** `letterbox` — tight cinematic band; horizontal scroll on mobile, one row on desktop. */
+  variant?: 'default' | 'letterbox';
 }) {
+  const isLetterbox = variant === 'letterbox';
+  const cardClass = isLetterbox ? chromeLanding.testimonialLetterboxCard : chromeLanding.testimonialCard;
+
   return (
-    <section className={`py-16 md:py-20 border-t border-white/10 ${className.includes('bg-transparent') ? '' : 'bg-brand'} ${className}`.trim()}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+    <section
+      className={`${isLetterbox ? 'border-0' : 'py-16 md:py-20 border-t border-white/10'} ${className.includes('bg-transparent') ? '' : 'bg-brand'} ${className}`.trim()}
+    >
+      <div className={isLetterbox ? 'w-full' : 'max-w-6xl mx-auto px-4 sm:px-6 lg:px-12'}>
         <AnimateIn direction="up">
-          <p className={`${chromeLanding.eyebrow} text-white/30 mb-8 text-center`}>{eyebrow}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <p
+            className={`${chromeLanding.eyebrow} text-center ${isLetterbox ? 'text-white/40 mb-3 md:mb-4' : 'text-white/30 mb-8'}`}
+          >
+            {eyebrow}
+          </p>
+          <div
+            className={
+              isLetterbox
+                ? 'flex gap-3 overflow-x-auto snap-x snap-mandatory pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:overflow-visible sm:gap-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4'
+            }
+          >
             {items.map(({ quote, name, role, trade, city }) => (
-              <figure key={name} className={chromeLanding.testimonialCard}>
-                <StarRating size={12} />
-                <blockquote className="font-body text-sm text-white/75 font-medium leading-[1.55] italic flex-1">
+              <figure key={name} className={cardClass}>
+                <StarRating size={isLetterbox ? 10 : 12} />
+                <blockquote
+                  className={`font-body font-medium italic ${isLetterbox ? 'text-white/85 text-xs sm:text-[13px] leading-[1.42]' : 'text-white/80 text-sm leading-[1.55] flex-1'}`}
+                >
                   &ldquo;{quote}&rdquo;
                 </blockquote>
-                <figcaption className="font-display text-xs uppercase tracking-wider text-white/40">
+                <figcaption
+                  className={`font-display uppercase tracking-wider text-white/45 ${isLetterbox ? 'text-[10px] sm:text-[11px] leading-tight' : 'text-xs'}`}
+                >
                   {testimonialAttribution({ quote, name, role, trade, city })}
                 </figcaption>
               </figure>
@@ -188,7 +213,7 @@ export function TestimonialGridSection({
           </div>
 
           {showStoreRating && chromeStoreUrl && (
-            <ChromeStoreRatingLink href={chromeStoreUrl} className="mt-10" />
+            <ChromeStoreRatingLink href={chromeStoreUrl} className={isLetterbox ? 'mt-6' : 'mt-10'} />
           )}
         </AnimateIn>
       </div>

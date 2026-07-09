@@ -284,10 +284,11 @@ export const IOS_AD_LANDING_PHOTOS = {
   testimonials: {
     src: '/product/home/cleaner-testimonial.jpg',
     alt: 'Cleaner sending an invoice on her phone between jobs',
-    focus: '58% 42%',
-    focusMobile: '52% 28%',
-    coverScaleFactorMobile: 0.92,
-    tint: 42,
+    focus: '62% 38%',
+    focusMobile: '56% 32%',
+    coverScaleFactor: 0.9,
+    coverScaleFactorMobile: 0.88,
+    tint: 44,
   },
   final: {
     src: '/product/ios/photos/ad-landing/snake-catcher.jpg',

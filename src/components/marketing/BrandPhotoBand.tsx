@@ -12,6 +12,8 @@ type Props = {
   tint?: number;
   /** 'horizontal' — copy left (desktop story rows); 'vertical' — centered bands. */
   scrim?: 'horizontal' | 'vertical';
+  /** Tight letterbox padding — testimonials strip, etc. */
+  compact?: boolean;
 };
 
 function scrimStyle(tint: number, mode: 'horizontal' | 'vertical'): React.CSSProperties {
@@ -26,9 +28,12 @@ export function BrandPhotoBand({
   containerClassName = '',
   tint = photo.tint ?? 52,
   scrim = 'horizontal',
+  compact = false,
 }: Props) {
+  const padding = compact ? 'py-6 md:py-8' : 'py-16 md:py-28';
+
   return (
-    <section className={`relative bg-brand py-16 md:py-28 overflow-hidden ${className}`.trim()}>
+    <section className={`relative bg-brand ${padding} overflow-hidden ${className}`.trim()}>
       <div className="absolute inset-0 hidden lg:block overflow-hidden">
         <IosStoryPhotoCover photo={photo} variant="fullBleed" />
         <div aria-hidden className="absolute inset-0 z-[1]" style={scrimStyle(tint, scrim)} />

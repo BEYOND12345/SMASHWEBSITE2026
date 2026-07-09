@@ -163,11 +163,12 @@ export function IosAppLandingPage() {
         </section>
 
         {/* 2. SOCIAL PROOF — before the product tour */}
-        <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.testimonials} scrim="vertical" className="py-14 md:py-20">
+        <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.testimonials} scrim="vertical" compact>
           <TestimonialGridSection
             eyebrow="From people on the tools"
             items={VALUE_TESTIMONIALS}
-            className="!border-0 py-0 md:py-0 bg-transparent"
+            variant="letterbox"
+            className="bg-transparent"
           />
         </BrandPhotoBand>
 
