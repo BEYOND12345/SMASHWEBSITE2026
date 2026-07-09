@@ -71,27 +71,35 @@ export function EmailCapturePopup({ source = 'landing_popup', open, onClose }: P
 
     const normalizedEmail = email.trim().toLowerCase();
 
+    // Always issue the fixed App Store code after a valid email.
+    // Lead capture is best-effort — never block the code if the DB write fails.
     try {
-      const { error } = await supabase.from('waitlist_leads').insert({
+      const { error: waitlistError } = await supabase.from('waitlist_leads').insert({
         email: normalizedEmail,
         source,
         promo_code: PROMO_CODE,
         code_issued: true,
       });
 
-      if (error && error.code !== '23505') {
-        console.error('Waitlist insert error:', error);
-        setErrorMessage('Something went wrong. Please try again.');
-        setSubmitState('error');
-        return;
-      }
+      if (waitlistError && waitlistError.code !== '23505') {
+        console.error('Waitlist insert error:', waitlistError);
 
-      setPromoCode(PROMO_CODE);
-      setSubmitState('success');
-    } catch {
-      setErrorMessage('Network error. Check your connection and try again.');
-      setSubmitState('error');
+        const { error: signupError } = await supabase.from('beta_signups').insert({
+          email: normalizedEmail,
+          source,
+          message: `Offer code ${PROMO_CODE}`,
+        });
+
+        if (signupError && signupError.code !== '23505') {
+          console.error('Beta signup fallback error:', signupError);
+        }
+      }
+    } catch (err) {
+      console.error('Offer lead capture failed:', err);
     }
+
+    setPromoCode(PROMO_CODE);
+    setSubmitState('success');
   };
 
   const handleCopyCode = async () => {
