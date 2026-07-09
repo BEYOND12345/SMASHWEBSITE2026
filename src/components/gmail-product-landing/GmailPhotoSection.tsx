@@ -1,19 +1,12 @@
 import type { GmailStoryPhotoBg } from '../../data/gmail-landing-spec';
 import { IosStoryPhotoCover } from '../ios-product-landing/IosStoryPhotoCover';
 import { IosPhotoBackdrop } from '../ios-product-landing/IosPhotoBackdrop';
+import {
+  brandPhotoScrim,
+  storyStackedScrimCopyTop,
+} from '../ios-product-landing/photo-scrim';
 
-function photoTintGradient(tint: number, direction: 'left' | 'right' = 'left') {
-  const t = tint / 100;
-  const strong = Math.min(tint + 28, 92) / 100;
-  const mid = t;
-  const soft = Math.max(tint - 28, 12) / 100;
-  if (direction === 'right') {
-    return `linear-gradient(270deg, rgba(15,23,42,${strong}) 0%, rgba(15,23,42,${mid}) 55%, rgba(15,23,42,${soft}) 100%)`;
-  }
-  return `linear-gradient(90deg, rgba(15,23,42,${strong}) 0%, rgba(15,23,42,${mid}) 45%, rgba(15,23,42,${soft}) 100%)`;
-}
-
-/** Full-bleed photography + navy tint — mirrors IosStorySection photo backgrounds. */
+/** Full-bleed photography + navy tint — dual desktop/mobile composition like iOS story rows. */
 export function GmailSectionPhotoBg({
   photo,
   tintDirection = 'left',
@@ -22,15 +15,25 @@ export function GmailSectionPhotoBg({
   tintDirection?: 'left' | 'right';
 }) {
   const tint = photo.tint ?? 52;
+  const flipHorizontal = tintDirection === 'right';
 
   return (
     <>
-      <IosStoryPhotoCover photo={photo} variant="fullBleed" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{ background: photoTintGradient(tint, tintDirection) }}
-      />
+      <div className="absolute inset-0 hidden lg:block overflow-hidden">
+        <IosStoryPhotoCover photo={photo} variant="fullBleed" />
+        <div
+          aria-hidden
+          className="absolute inset-0 z-[1]"
+          style={brandPhotoScrim(tint, 'horizontal', flipHorizontal)}
+        />
+      </div>
+
+      <div className="absolute inset-0 lg:hidden overflow-hidden">
+        <div className="absolute inset-x-0 bottom-0 h-[min(54vh,440px)]">
+          <IosStoryPhotoCover photo={photo} variant="fullBleed" preferStackedFocus />
+        </div>
+        <div aria-hidden className="absolute inset-0 z-[1]" style={storyStackedScrimCopyTop(tint)} />
+      </div>
     </>
   );
 }

@@ -7,18 +7,21 @@ import { SEO } from '../components/seo';
 import { FAQ } from '../components/faq';
 import { AnimateIn } from '../components/animate-in';
 import { GmailStoryFrame } from '../components/gmail-product-landing/GmailStoryFrame';
-import { GmailWorksWithStrap } from '../components/gmail-product-landing/GmailWorksWithStrap';
 import { GmailSectionPhotoBg } from '../components/gmail-product-landing/GmailPhotoSection';
 import { IosStoryPhotoCover } from '../components/ios-product-landing/IosStoryPhotoCover';
 import { MockupFrame } from '../components/phone-showcase';
 import { IosSubline } from '../components/ios-product-landing/IosSubline';
 import { IosSpecHeadline } from '../components/ios-product-landing/IosCalloutCard';
 import { IosHeroPhoneShowcase, IosPhoneShowcase } from '../components/ios-product-landing/IosPhoneShowcase';
+import { IosStorySection } from '../components/ios-product-landing/IosStorySection';
+import { IosHeroTrustLogos } from '../components/ios-product-landing/IosHeroTrustLogos';
+import { TestimonialSliderSection } from '../components/ios-product-landing/TestimonialSliderSection';
+import { EmailCapturePopup } from '../components/EmailCapturePopup';
+import { useEmailCapturePopup } from '../hooks/useEmailCapturePopup';
 import {
-  IosAccentStrip,
-  IosStorySection,
-} from '../components/ios-product-landing/IosStorySection';
-import { TestimonialGridSection } from '../components/chrome-landing/chrome-landing-ui';
+  brandPhotoScrim,
+  storyStackedScrimCopyTop,
+} from '../components/ios-product-landing/photo-scrim';
 import {
   StructuredData,
   organizationSchema,
@@ -32,13 +35,27 @@ import {
   softwareApplicationSchema,
 } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
-import { iosLanding, iosHeroCopyCellClass, iosHeroDesktopCtaClass, iosHeroGridClass, iosHeroMediaCellClass, iosHeroMobileCtaCellClass, iosHeroMobileCtaWrapClass, iosHeroMobileSublineClass, iosStoryCopyCellClass, iosStoryGridClass, iosStoryMediaCellClass } from '../components/ios-product-landing/ios-landing-tokens';
+import {
+  iosLanding,
+  iosHeroCopyCellClass,
+  iosHeroDesktopCtaClass,
+  iosHeroGridClass,
+  iosHeroMediaCellClass,
+  iosHeroMobileCtaCellClass,
+  iosHeroMobileCtaWrapClass,
+  iosHeroMobileSublineClass,
+  iosStoryCopyCellClass,
+  iosStoryGridClass,
+  iosStoryMediaCellClass,
+} from '../components/ios-product-landing/ios-landing-tokens';
 import {
   IOS_STORY_SEGMENTS,
   IOS_FEATURE_TILES,
   IOS_FEATURES_SECTION,
   IOS_LAUNCH_FEATURES_ENABLED,
+  IOS_AD_STORY_PHOTO_BG,
   type IosStorySegment,
+  type StoryPhotoBg,
 } from '../data/ios-landing-spec';
 import { CHROME_STORE_URL } from '../data/download-urls';
 import { mainPages } from '../data/main-pages-seo';
@@ -46,24 +63,22 @@ import { GMAIL_DEMO } from '../data/gmail-landing-spec';
 import { VALUE_TESTIMONIALS } from '../data/product-testimonials';
 import {
   DualProductCtas,
-  IphoneInstallCta,
   ProductLearnMoreCta,
 } from '../components/marketing/DualProductCtas';
 import { HeroPhotoBackdrop } from '../components/marketing/HeroPhotoBackdrop';
-import { BrandPhotoBand } from '../components/marketing/BrandPhotoBand';
+import { BrandPhotoBand, BrandSolidBand } from '../components/marketing/BrandPhotoBand';
 
 /**
- * Homepage — unified entry for iPhone + Gmail/Chrome/Edge.
- * Composes story rows from the iOS and Chrome product pages with shared CTAs.
- * Photo backdrops in /public/product/home/ are placeholders — swap when new assets land.
+ * Homepage — dual-product entry (iPhone + Gmail).
+ * Mobile composition mirrors the iOS ad landing: short scroll, readable type over navy,
+ * photography in phone/media bands, one conversion path per section.
  */
 
-/** Expanded for review homepage — covers both surfaces and Chrome + Edge. */
 const HOME_PAGE_FAQS = [
   {
-    question: 'What is SMASH Invoices?',
+    question: 'Is SMASH free to use?',
     answer:
-      'SMASH is two tools for how you work: talk on iPhone on site, or quote from Gmail in Chrome or Edge at your desk. Either way you get a priced, tax-ready quote in under 60 seconds — built from your own catalog, not guessed.',
+      'Yes. Your first 5 quotes or invoices each month are free on both iPhone and the browser extension — no credit card needed. Paid plans unlock unlimited volume, Xero and QuickBooks, and CSV export.',
   },
   {
     question: 'iPhone app or browser extension — which do I need?',
@@ -71,29 +86,9 @@ const HOME_PAGE_FAQS = [
       'On site, use the iPhone app — voice is the fastest way to capture a job before you leave. At your desk, install the browser extension in Chrome or Edge — it reads the Gmail thread and builds the quote in your sidebar. Same account, everything synced.',
   },
   {
-    question: 'Does it work in Chrome and Edge?',
-    answer:
-      'Yes. Install from the Chrome Web Store or Microsoft Edge Add-ons — same extension, same Gmail sidebar. Works with Xero and QuickBooks either way.',
-  },
-  {
-    question: 'Is SMASH free to use?',
-    answer:
-      'Yes. Your first 5 quotes or invoices each month are free on both iPhone and the browser extension — no credit card needed. Paid plans unlock unlimited volume, Xero and QuickBooks, and CSV export.',
-  },
-  {
     question: 'How fast can I send a quote?',
     answer:
       'Under 60 seconds. Talk for twenty seconds on iPhone, or open the customer email in Gmail — verify line items against your catalog and send. Your client gets a professional PDF with approval and payment options.',
-  },
-  {
-    question: 'Can I send a hands-free invoice after a job?',
-    answer:
-      'Yes on iPhone. Describe the job out loud, verify priced lines from your catalog, and send before you leave — no typing on site. See our voice to invoice guide for the full workflow.',
-  },
-  {
-    question: 'Does SMASH work for GST and VAT invoices?',
-    answer:
-      'Yes. Every document is tax-ready with your business number, tax breakdown, and sequential numbers. GST, VAT, and sales tax are calculated per line item for your region.',
   },
   {
     question: 'Does it work with Xero and QuickBooks?',
@@ -105,62 +100,62 @@ const HOME_PAGE_FAQS = [
     answer:
       'No. They get a professional link in your message or email reply. They view, approve, and pay from their phone browser.',
   },
+  {
+    question: 'Does SMASH work for GST and VAT invoices?',
+    answer:
+      'Yes. Every document is tax-ready with your business number, tax breakdown, and sequential numbers. GST, VAT, and sales tax are calculated per line item for your region.',
+  },
 ];
 
-/** Hero backdrop — pool service worker on site with phone. */
-const HOME_HERO_PHOTO = {
+const HOME_HERO_PHOTO: StoryPhotoBg = {
   src: '/product/home/hero-pool-maintenance.png',
   alt: 'Pool service worker invoicing by voice on his phone beside the pool',
   focus: '58% 42%',
   focusMobile: '50% 18%',
   tint: 58,
   coverScaleFactor: 1.1,
+  coverScaleFactorMobile: 0.94,
 };
 
 const seg = (id: string): IosStorySegment =>
   IOS_STORY_SEGMENTS.find((s) => s.id === id)!;
 
-/** Voice story backdrop — painter on site (placeholder). */
-const HOME_VOICE_STORY_PHOTO = {
+const HOME_VOICE_STORY_PHOTO: StoryPhotoBg = {
   src: '/product/home/voice-story-painter.jpg',
   alt: 'Painter sending an invoice on his phone between coats',
   focus: '42% 48%',
+  focusMobile: '48% 28%',
+  coverScaleFactorMobile: 0.94,
   tint: 52,
 };
 
-/** Featured testimonial backdrop — cleaner between jobs (placeholder). */
-const HOME_TESTIMONIAL_PHOTO = {
-  src: '/product/home/cleaner-testimonial.jpg',
-  alt: 'Cleaner sending an invoice on her phone between jobs',
-  focus: '58% 42%',
-  /** Lighter than story rows — keep the phone visible through the tint. */
-  tint: 40,
-};
-
-/** Chrome inbox row — woman quoting from Gmail at home. */
-const HOME_GMAIL_INBOX_PHOTO = {
+const HOME_GMAIL_INBOX_PHOTO: StoryPhotoBg = {
   src: '/product/home/gmail-inbox-row.png',
   alt: 'Service worker quoting from Gmail on a laptop at home',
   focus: '38% 48%',
+  focusMobile: '42% 30%',
+  coverScaleFactorMobile: 0.94,
   tint: 52,
 };
 
-/** Features band — field photo behind capability grid. */
-const HOME_FEATURES_PHOTO = {
+const HOME_FEATURES_PHOTO: StoryPhotoBg = {
   src: '/product/home/hero-tradie-car.jpg',
   alt: 'Tradie in work gear beside a van on site',
   focus: '55% 40%',
+  focusMobile: '52% 32%',
+  coverScaleFactorMobile: 0.9,
   tint: 54,
 };
 
-/** Final CTA — reuse hero pool scene for bookend. */
 const HOME_FINAL_PHOTO = HOME_HERO_PHOTO;
 
 const ctaLime =
-  'inline-flex items-center justify-center gap-2 rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 transition-all whitespace-nowrap';
+  'inline-flex items-center justify-center gap-2 min-h-[48px] rounded-full bg-accent text-brand font-black text-sm uppercase tracking-widest px-8 py-4 hover:brightness-95 active:scale-[0.98] transition-all whitespace-nowrap touch-manipulation';
 
 export function Homepage() {
-  const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED);
+  const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED).slice(0, 3);
+  const { open: offerOpen, openPopup: openOfferPopup, closePopup: closeOfferPopup } =
+    useEmailCapturePopup();
 
   return (
     <div className={iosLanding.page}>
@@ -185,62 +180,52 @@ export function Homepage() {
 
       <Nav />
 
-      {/* ── HERO — product shot + placeholder field photo ───────────────── */}
-      <HomeHeroSection />
+      <HomeHeroSection onOpenOffer={openOfferPopup} />
 
-      <GmailWorksWithStrap />
-
-      <BrandPhotoBand photo={HOME_TESTIMONIAL_PHOTO} scrim="vertical" className="py-14 md:py-20">
-        <TestimonialGridSection
+      <BrandSolidBand compact className="!py-6 md:!py-8 border-t border-white/[0.06]">
+        <TestimonialSliderSection
           eyebrow="From people who'd rather be doing the work"
           items={VALUE_TESTIMONIALS}
-          className="!border-0 py-0 md:py-0 bg-transparent"
         />
-      </BrandPhotoBand>
+      </BrandSolidBand>
 
-      {/* Problem — navy answer strip (matches photo / blue rhythm) */}
-      <IosAccentStrip eyebrow="From voice to send">
-        <span className="font-display-italic font-black uppercase tracking-tighter block mb-3 text-[clamp(1.35rem,5vw,2.25rem)] leading-[0.95]">
-          <span className="block">The first answer back</span>
-          <span className="block text-accent">wins the job.</span>
-        </span>
-        <IosSubline
-          as="span"
-          className="block font-body text-sm sm:text-base font-medium leading-[1.5] text-white/75 max-w-[22rem] sm:max-w-md mx-auto"
-        >
-          Talk the job on site. SMASH prices every line from your catalogue — your rates, flagged if
-          unmatched, never guessed — and the estimate goes out before you leave. Quote to invoice in
-          under a minute.
-        </IosSubline>
-      </IosAccentStrip>
-
-      {/* ── Story rows — photo / navy alternation ─────────────────────────── */}
-      <div id="how-it-works">
+      <div id="how-it-works" className="scroll-mt-24">
         <HomeVoiceStoryRow />
       </div>
-      <IosStorySection segment={seg('quote')} imageFirst photoBgEnabled={false} />
+
+      <IosStorySection
+        segment={seg('quote')}
+        imageFirst
+        photoBgEnabled
+        photoOverride={IOS_AD_STORY_PHOTO_BG.quote}
+      />
 
       <ChromeInboxRow />
 
-      <IosStorySection segment={seg('pay')} imageFirst photoBgEnabled={false} />
+      <IosStorySection
+        segment={seg('pay')}
+        imageFirst
+        photoBgEnabled
+        photoOverride={IOS_AD_STORY_PHOTO_BG.pay}
+      />
 
-      <BrandPhotoBand photo={HOME_FEATURES_PHOTO}>
+      <BrandPhotoBand photo={HOME_FEATURES_PHOTO} compact className="!py-12 md:!py-16">
         <AnimateIn direction="up">
           <IosSpecHeadline
             centered
-            className="mb-12"
+            className="mb-8"
             eyebrow={IOS_FEATURES_SECTION.eyebrow}
             headlineWhite={IOS_FEATURES_SECTION.headlineWhite}
             headlineLime={IOS_FEATURES_SECTION.headlineLime}
             dark
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {visibleTiles.map((tile) => (
-              <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
-                <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-2">
+              <div key={tile.title} className="bg-white/[0.05] border border-white/10 rounded-2xl px-4 py-4">
+                <h3 className="font-display-italic font-black uppercase text-white text-sm tracking-tight mb-1.5">
                   {tile.title}
                 </h3>
-                <p className="font-body text-sm text-white/60 font-medium leading-[1.5]">{tile.outcome}</p>
+                <p className="font-body text-sm text-white/60 font-medium leading-[1.45]">{tile.outcome}</p>
               </div>
             ))}
           </div>
@@ -250,79 +235,112 @@ export function Homepage() {
       <FAQ
         items={HOME_PAGE_FAQS}
         variant="brand"
-        subheading="Two tools for how you work — voice on iPhone on site, Gmail in Chrome or Edge at your desk."
+        defaultOpenIndex={0}
+        subheading="Voice on iPhone on site. Gmail in Chrome or Edge at your desk."
       />
 
-      <BrandPhotoBand photo={HOME_FINAL_PHOTO} scrim="vertical" className="py-16 md:py-24">
+      <BrandPhotoBand photo={HOME_FINAL_PHOTO} scrim="vertical" className="py-14 md:py-20">
         <div className="text-center">
           <AnimateIn direction="up">
-            <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto mb-5`}>
+            <h2 className={`${iosLanding.heroHeadline} max-w-3xl mx-auto mb-3 sm:mb-4`}>
               <span className="block text-white">You do the work.</span>
               <span className="block text-accent">SMASH does the rest.</span>
             </h2>
-            <IosSubline className={`${iosLanding.subline} mx-auto mb-8 max-w-md`}>
+            <IosSubline className={`${iosLanding.subline} mx-auto mb-6 max-w-md`}>
               Quote sent before you leave the driveway, or before you close the email.
             </IosSubline>
-            <DualProductCtas className="flex flex-col items-center [&_p]:text-center" />
+            <DualProductCtas
+              className="flex flex-col items-center [&_p]:text-center"
+              mobileSecondaryAsLink
+              microcopy="Five free quotes · No card needed"
+            />
           </AnimateIn>
         </div>
       </BrandPhotoBand>
 
       <Footer />
+
+      <EmailCapturePopup
+        open={offerOpen}
+        onClose={closeOfferPopup}
+        source="homepage_popup"
+      />
     </div>
   );
 }
 
-/** Hero — centered mobile stack: promise → product UI → CTA. */
-function HomeHeroSection() {
+function HomeHeroSection({ onOpenOffer }: { onOpenOffer: () => void }) {
   const photoBg = HOME_HERO_PHOTO;
 
   return (
-    <section className="relative bg-brand pt-12 pb-0 md:pt-24 overflow-hidden">
+    <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
       <HeroPhotoBackdrop photo={photoBg} tint={photoBg.tint} />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
       <div className={`${iosLanding.container} relative z-10`}>
         <div className={`${iosHeroGridClass} lg:grid-cols-12`}>
-          <AnimateIn direction="left" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
-            <div className="pb-2 lg:pb-24">
+          <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
+            <div className="pb-2 lg:pb-8">
               <p className={`${iosLanding.eyebrow} mb-3 lg:hidden`}>
                 Quote sent in under 60 seconds
               </p>
 
-              <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-5 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
+              <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
                 <span className="block text-white">Never type</span>
                 <span className="block text-accent">an invoice again.</span>
               </h1>
 
-              <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-8 ${iosHeroMobileSublineClass}`}>
+              <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-6 ${iosHeroMobileSublineClass}`}>
                 Invoicing for people who hate typing.
               </IosSubline>
 
-              <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-8`}>
-                <DualProductCtas mobileSecondaryAsLink />
+              <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
+                <DualProductCtas
+                  mobileSecondaryAsLink
+                  secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
+                  microcopy="Five free quotes · No card needed"
+                />
+                <IosHeroTrustLogos className="mt-5" />
+                <button
+                  type="button"
+                  onClick={onOpenOffer}
+                  className="mt-3 inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation"
+                >
+                  Not ready? Get a free month instead
+                </button>
               </div>
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
-            <div className="pb-2 sm:pb-16 md:pb-24 w-full">
+          <AnimateIn direction="right" directionMobile="up" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
+            <div className="w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
               <IosHeroPhoneShowcase size="hero" />
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="up" className={iosHeroMobileCtaCellClass}>
+          <div className={iosHeroMobileCtaCellClass}>
             <div className={iosHeroMobileCtaWrapClass}>
-              <DualProductCtas mobileSecondaryAsLink />
+              <DualProductCtas
+                mobileSecondaryAsLink
+                secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
+                microcopy="Five free quotes · No card needed"
+              />
+              <IosHeroTrustLogos className="mt-5 items-center" />
+              <button
+                type="button"
+                onClick={onOpenOffer}
+                className="mt-3 inline-flex items-center justify-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation"
+              >
+                Not ready? Get a free month instead
+              </button>
             </div>
-          </AnimateIn>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-/** Voice story — three-line headline + animated talk timer. */
 function HomeVoiceStoryRow() {
   const segment = seg('voice');
   const photoBg = HOME_VOICE_STORY_PHOTO;
@@ -330,16 +348,14 @@ function HomeVoiceStoryRow() {
 
   const copy = (
     <div className="text-left">
-      <p className={iosLanding.eyebrow}>{segment.eyebrow}</p>
-      <h2 className={iosLanding.sectionHeadline}>
+      <p className={iosLanding.storyEyebrow}>{segment.eyebrow}</p>
+      <h2 className={`${iosLanding.storyHeadline} mt-3`}>
         <span className="block text-white">JUST TALK.</span>
-        <span className="block text-white">THAT&apos;S THE</span>
-        <span className={`block ${iosLanding.lime}`}>WHOLE JOB.</span>
+        <span className={`block ${iosLanding.lime}`}>THAT&apos;S THE WHOLE JOB.</span>
       </h2>
       <VoiceTalkTimer />
-      <div className="mt-8 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
-        <IphoneInstallCta />
-        <ProductLearnMoreCta to="/voice-invoicing" label="Find out more" />
+      <div className="mt-6">
+        <ProductLearnMoreCta to="/voice-invoicing" label="See SMASH for iPhone" />
       </div>
     </div>
   );
@@ -353,21 +369,25 @@ function HomeVoiceStoryRow() {
   );
 
   return (
-    <section className="relative bg-brand py-16 md:py-28 overflow-hidden">
-      <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(90deg, rgba(15,23,42,${Math.min(tint + 28, 92) / 100}) 0%, rgba(15,23,42,${tint / 100}) 45%, rgba(15,23,42,${Math.max(tint - 28, 12) / 100}) 100%)`,
-        }}
-      />
+    <section className="relative bg-brand py-16 md:py-28 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_720px]">
+      <div className="absolute inset-0 hidden lg:block overflow-hidden">
+        <IosStoryPhotoCover photo={photoBg} variant="fullBleed" />
+        <div aria-hidden className="absolute inset-0 z-[1]" style={brandPhotoScrim(tint, 'horizontal')} />
+      </div>
+
+      <div className="absolute inset-0 lg:hidden overflow-hidden">
+        <div className="absolute inset-x-0 bottom-0 h-[min(54vh,440px)]">
+          <IosStoryPhotoCover photo={photoBg} variant="fullBleed" preferStackedFocus />
+        </div>
+        <div aria-hidden className="absolute inset-0 z-[1]" style={storyStackedScrimCopyTop(tint)} />
+      </div>
+
       <div className={`${iosLanding.container} relative z-10`}>
         <div className={iosStoryGridClass}>
-          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} order-1`}>
+          <AnimateIn direction="left" directionMobile="up" className={`${iosStoryCopyCellClass} order-1`}>
             {copy}
           </AnimateIn>
-          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} order-2`}>
+          <AnimateIn direction="right" directionMobile="up" className={`${iosStoryMediaCellClass} order-2`}>
             {media}
           </AnimateIn>
         </div>
@@ -398,7 +418,6 @@ function useTalkTimerCountUp(targetSeconds: number, durationMs = 1800) {
   return { seconds, start };
 }
 
-/** Animated 0:00 → 0:20 timer — mirrors the listening callout on the phone mockup. */
 function VoiceTalkTimer() {
   const reduce = useReducedMotion();
   const { seconds, start } = useTalkTimerCountUp(20);
@@ -416,29 +435,29 @@ function VoiceTalkTimer() {
       <div className="flex items-baseline gap-3">
         <span
           className="font-display-italic font-black italic text-white leading-none tracking-tight tabular-nums"
-          style={{ fontSize: 'clamp(2.75rem, 9vw, 4.25rem)' }}
+          style={{ fontSize: 'clamp(2.25rem, 7vw, 3.5rem)' }}
         >
           {display}
         </span>
         <span className="font-display font-black uppercase text-accent text-sm tracking-[0.2em]">REC</span>
       </div>
-      <IosSubline className={`${iosLanding.subline} !max-w-sm mt-3`}>of talking. No typing, ever.</IosSubline>
+      <IosSubline className={`${iosLanding.storySubline} mt-3`}>of talking. No typing, ever.</IosSubline>
     </motion.div>
   );
 }
 
-/** Chrome extension row — extension page step 3 copy + UI over field photo. */
 function ChromeInboxRow() {
   const step = GMAIL_DEMO.steps[2];
   const photo = HOME_GMAIL_INBOX_PHOTO;
 
   return (
-    <section className="relative bg-brand py-16 md:py-28 overflow-hidden">
+    <section className="relative bg-brand py-16 md:py-28 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_720px]">
       <GmailSectionPhotoBg photo={photo} tintDirection="left" />
       <div className={`${iosLanding.container} relative z-10`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16">
-          <AnimateIn direction="left" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
+          <AnimateIn direction="left" directionMobile="up" className={`${iosStoryCopyCellClass} lg:col-span-5`}>
             <IosSpecHeadline
+              variant="story"
               eyebrow={step.eyebrow}
               headlineWhite={step.headlineWhite}
               headlineLime={step.headlineLime}
@@ -446,7 +465,7 @@ function ChromeInboxRow() {
               dark
               sublineClassName="!max-w-md"
             />
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
               <a
                 href={CHROME_STORE_URL}
                 target="_blank"
@@ -456,12 +475,12 @@ function ChromeInboxRow() {
                 <Monitor size={18} strokeWidth={2.5} />
                 Add to your browser
               </a>
-              <ProductLearnMoreCta to="/chrome-extension" label="Find out more" />
+              <ProductLearnMoreCta to="/chrome-extension" label="See SMASH for Gmail" />
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" className={`${iosStoryMediaCellClass} lg:col-span-7`}>
-            <div className="relative mx-auto w-full">
+          <AnimateIn direction="right" directionMobile="up" className={`${iosStoryMediaCellClass} lg:col-span-7`}>
+            <div className="relative mx-auto w-full max-w-[min(100%,560px)] lg:max-w-none">
               <div className="relative rounded-[22px] overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_40px_110px_-30px_rgba(15,23,42,0.45)]">
                 <GmailStoryFrame frame={step.frame} crop fill />
               </div>

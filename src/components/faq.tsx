@@ -12,6 +12,8 @@ type Props = {
   subheading?: string;
   /** `brand` — navy band matching product landing rhythm (no white). */
   variant?: 'light' | 'brand';
+  /** Index of the FAQ item open on first paint — e.g. 0 for pricing. */
+  defaultOpenIndex?: number | null;
 };
 
 export function FAQ({
@@ -19,8 +21,9 @@ export function FAQ({
   heading = 'Common questions',
   subheading = 'Voice on iPhone or Gmail at your desk — answers in under 60 seconds',
   variant = 'light',
+  defaultOpenIndex = null,
 }: Props) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
   const isBrand = variant === 'brand';
 
   const toggleFAQ = (index: number) => {
@@ -68,8 +71,10 @@ export function FAQ({
               }
             >
               <button
+                type="button"
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-5 sm:px-8 py-5 flex items-center justify-between text-left group gap-4"
+                aria-expanded={openIndex === index}
+                className="w-full px-5 sm:px-8 py-5 min-h-[56px] flex items-center justify-between text-left group gap-4 touch-manipulation"
               >
                 <span
                   className={
