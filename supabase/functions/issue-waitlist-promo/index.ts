@@ -9,14 +9,8 @@ const corsHeaders = {
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function generatePromoCode(): string {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  let suffix = "";
-  for (let i = 0; i < 4; i++) {
-    suffix += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return `SMASH-${suffix}`;
-}
+/** Single App Store offer code — same for every lead. */
+const PROMO_CODE = "SMASHFREE1";
 
 function jsonResponse(body: Record<string, unknown>, status = 200): Response {
   return new Response(JSON.stringify(body), {
@@ -63,10 +57,10 @@ Deno.serve(async (req: Request) => {
     }
 
     if (existing?.promo_code) {
-      return jsonResponse({ success: true, promo_code: existing.promo_code });
+      return jsonResponse({ success: true, promo_code: PROMO_CODE });
     }
 
-    const promoCode = generatePromoCode();
+    const promoCode = PROMO_CODE;
 
     if (existing) {
       const { error: updateError } = await supabase
@@ -95,7 +89,7 @@ Deno.serve(async (req: Request) => {
             .maybeSingle();
 
           if (retry?.promo_code) {
-            return jsonResponse({ success: true, promo_code: retry.promo_code });
+            return jsonResponse({ success: true, promo_code: PROMO_CODE });
           }
         }
 

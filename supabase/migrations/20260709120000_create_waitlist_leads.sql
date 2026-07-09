@@ -1,9 +1,9 @@
 /*
   # Waitlist leads for email-capture popup promo codes
 
-  Captures emails from landing page popups and stores issued promo codes.
-  Anon can INSERT only (direct form fallback); code generation uses edge
-  function with service role. Authenticated users can SELECT for dashboard.
+  Captures emails from landing page popups. All leads receive the same App Store
+  offer code (SMASHFREE1) via the issue-waitlist-promo edge function.
+  Anon can INSERT only (direct form fallback); authenticated users can SELECT.
 */
 
 CREATE TABLE IF NOT EXISTS waitlist_leads (
