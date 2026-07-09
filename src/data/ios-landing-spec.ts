@@ -416,7 +416,7 @@ export const IOS_FINAL_CTA = {
   headlineLime: 'SMASH DOES THE REST.',
   subline: 'Accurate quotes from your catalogue.',
   cta: 'Start Free',
-  microcopy: '',
+  microcopy: IOS_HERO.microcopy,
   integrations: ['Xero', 'QuickBooks', 'Stripe'],
 };
 

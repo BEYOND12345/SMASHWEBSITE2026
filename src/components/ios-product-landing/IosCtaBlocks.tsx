@@ -84,12 +84,7 @@ export function IosFinalCta({
         )}
       </div>
 
-      {!compact && microcopy && <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>}
-      {showBrowserCta && (
-        <p className="text-xs text-white/45 font-medium mt-1.5">
-          iPhone on site · Gmail in Chrome or Edge at your desk
-        </p>
-      )}
+      {microcopy && <p className={`${iosLanding.caption} mt-3`}>{microcopy}</p>}
       {!showBrowserCta && !compact && <IosHeroTrustLogos className="mt-5 items-center" />}
     </>
   );
