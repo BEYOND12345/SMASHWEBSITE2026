@@ -1,8 +1,11 @@
 /**
- * Google Ads conversion tracking for smashinvoices.com.
+ * Google Ads + GA4 tracking for smashinvoices.com.
  *
- * Set VITE_GOOGLE_ADS_ID in .env (e.g. AW-1234567890) and create matching
- * conversion actions in Google Ads with these exact labels:
+ * Env:
+ *   VITE_GOOGLE_ADS_ID — e.g. AW-879946134
+ *   VITE_GA4_MEASUREMENT_ID — e.g. G-R4CC42WMM6
+ *
+ * Google Ads conversion labels (create matching actions in Ads):
  *   - IOS_APP_DOWNLOAD
  *   - CHROME_EXTENSION_INSTALL
  *   - PRICING_DNA_UPLOAD (app/extension onboarding — not used on marketing site)
@@ -30,14 +33,19 @@ declare global {
 }
 
 const ADS_ID = import.meta.env.VITE_GOOGLE_ADS_ID as string | undefined;
+const GA4_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID as string | undefined;
 
 export function isGoogleAdsEnabled(): boolean {
   return Boolean(ADS_ID && typeof window !== 'undefined');
 }
 
-/** Load gtag.js once when VITE_GOOGLE_ADS_ID is set. */
+export function isGa4Enabled(): boolean {
+  return Boolean(GA4_ID && typeof window !== 'undefined');
+}
+
+/** Load gtag.js once; configure Google Ads and/or GA4 when IDs are set. */
 export function initGoogleAds(): void {
-  if (!ADS_ID || typeof document === 'undefined') return;
+  if ((!ADS_ID && !GA4_ID) || typeof document === 'undefined') return;
   if (document.querySelector('script[data-smash-gtag]')) return;
 
   window.dataLayer = window.dataLayer ?? [];
@@ -45,13 +53,32 @@ export function initGoogleAds(): void {
     window.dataLayer?.push(args);
   };
   window.gtag('js', new Date());
-  window.gtag('config', ADS_ID);
+
+  if (ADS_ID) {
+    window.gtag('config', ADS_ID);
+  }
+  if (GA4_ID) {
+    window.gtag('config', GA4_ID, { send_page_view: true });
+  }
 
   const script = document.createElement('script');
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ADS_ID)}`;
+  // Prefer Ads ID for the loader URL when both exist — gtag.js serves both configs.
+  const loaderId = ADS_ID ?? GA4_ID!;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(loaderId)}`;
   script.dataset.smashGtag = 'true';
   document.head.appendChild(script);
+}
+
+/** SPA route change — keep GA4 page_path in sync with React Router. */
+export function trackGa4PageView(path?: string): void {
+  if (!GA4_ID || typeof window === 'undefined' || !window.gtag) return;
+
+  const pagePath = path ?? `${window.location.pathname}${window.location.search}`;
+  window.gtag('config', GA4_ID, {
+    page_path: pagePath,
+    page_title: document.title,
+  });
 }
 
 /** Fire a Google Ads conversion event. No-op when gtag or ADS_ID is missing. */

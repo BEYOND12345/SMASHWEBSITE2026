@@ -302,3 +302,4 @@
   VITE_SUPABASE_URL = "https://mwshohajbmfmuphloqzd.supabase.co"
   # Add VITE_SUPABASE_ANON_KEY in the Netlify dashboard → Site settings → Environment variables
   # Do NOT commit the anon key here.
+  # VITE_GOOGLE_ADS_ID / VITE_GA4_MEASUREMENT_ID / VITE_META_PIXEL_ID live in .env.production

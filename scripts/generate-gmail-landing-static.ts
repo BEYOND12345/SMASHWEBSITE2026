@@ -13,6 +13,7 @@ import {
   type GmailLandingConfig,
 } from '../src/data/gmail-landing-pages.ts';
 import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from './meta-pixel-snippet.ts';
+import { googleAdsHeadHtml } from './google-ads-snippet.ts';
 import { loadViteEnv } from './lib/load-vite-env.ts';
 
 loadViteEnv();
@@ -173,6 +174,7 @@ function buildPage(c: GmailLandingConfig): string {
   <script type="application/ld+json">${renderJsonLd(videoLd)}</script>
   <script type="application/ld+json">${renderJsonLd(appLd)}</script>
 ${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
+${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
 </head>
 <body>
   <header class="nav">

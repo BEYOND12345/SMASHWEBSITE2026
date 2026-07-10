@@ -1,4 +1,4 @@
-/** Shared Google Ads gtag snippets for static HTML generators (blog prerender, etc.). */
+/** Shared Google Ads + GA4 gtag snippets for static HTML generators (blog prerender, etc.). */
 
 export const CONVERSION_LABELS = {
   IOS_APP_DOWNLOAD: 'IOS_APP_DOWNLOAD',
@@ -13,29 +13,46 @@ export const REMARKETING_LABELS = {
 const APP_STORE_APP_ID = 'id6759475079';
 const CHROME_EXTENSION_ID = 'ilbhjchpeplgaagjkiobgnpgjneeinel';
 
-function sanitizeAdsId(adsId: string): string {
-  return adsId.replace(/[^A-Za-z0-9-]/g, '');
+function sanitizeTagId(id: string): string {
+  return id.replace(/[^A-Za-z0-9-]/g, '');
 }
 
-/** gtag.js loader for static HTML <head>. Returns empty string when adsId is unset. */
-export function googleAdsHeadHtml(adsId: string | undefined): string {
-  if (!adsId) return '';
-  const id = sanitizeAdsId(adsId);
+/**
+ * gtag.js loader for static HTML <head>.
+ * Configures Google Ads and/or GA4. Returns empty string when both are unset.
+ */
+export function googleAdsHeadHtml(
+  adsId: string | undefined,
+  ga4Id: string | undefined = process.env.VITE_GA4_MEASUREMENT_ID,
+): string {
+  if (!adsId && !ga4Id) return '';
+
+  const ads = adsId ? sanitizeTagId(adsId) : '';
+  const ga4 = ga4Id ? sanitizeTagId(ga4Id) : '';
+  const loaderId = ads || ga4;
+
+  const configs = [
+    ads ? `    gtag('config', '${ads}');` : '',
+    ga4 ? `    gtag('config', '${ga4}');` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+
   return `
-  <!-- Google Ads (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
+  <!-- Google tag (gtag.js) — Ads${ads ? ` ${ads}` : ''}${ga4 ? ` + GA4 ${ga4}` : ''} -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${loaderId}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${id}');
+${configs}
   </script>`;
 }
 
 /** Delegated store-link conversion tracking for static HTML before </body>. */
 export function googleAdsClickTrackingHtml(adsId: string | undefined): string {
   if (!adsId) return '';
-  const id = sanitizeAdsId(adsId);
+  const id = sanitizeTagId(adsId);
   return `
   <script>
     (function () {
@@ -64,7 +81,7 @@ export function googleAdsClickTrackingHtml(adsId: string | undefined): string {
 /** iOS remarketing event — install on /voice-invoicing after the Google tag. */
 export function googleAdsIosRemarketingEventHtml(adsId: string | undefined): string {
   if (!adsId) return '';
-  const id = sanitizeAdsId(adsId);
+  const id = sanitizeTagId(adsId);
   return `
   <!-- Event snippet for Smash iOS remarketing page -->
   <script>
