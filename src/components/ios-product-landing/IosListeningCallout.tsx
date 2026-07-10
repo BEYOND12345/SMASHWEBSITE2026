@@ -1,3 +1,14 @@
+import { useEffect, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
+
+const LOOP_SECONDS = 30;
+
+function formatTalkTime(totalSeconds: number) {
+  const mins = Math.floor(totalSeconds / 60);
+  const secs = totalSeconds % 60;
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
 /** App Store frame 1 listening callout — rendered in code, scaled from 900px logical. */
 export function IosListeningCallout({
   scale = 1,
@@ -7,8 +18,20 @@ export function IosListeningCallout({
   /** Display width — defaults to 900 × scale. */
   width?: number;
 }) {
+  const reduceMotion = useReducedMotion();
+  const [seconds, setSeconds] = useState(0);
   const s = (n: number) => Math.round(n * scale);
   const boxWidth = width ?? s(900);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const id = window.setInterval(() => {
+      setSeconds((prev) => (prev >= LOOP_SECONDS ? 0 : prev + 1));
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [reduceMotion]);
+
+  const display = formatTalkTime(reduceMotion ? 9 : seconds);
 
   return (
     <div
@@ -26,11 +49,34 @@ export function IosListeningCallout({
         >
           <svg viewBox="0 0 40 40" style={{ width: s(72), height: s(72) }} aria-hidden>
             <g fill="#A8B81C">
-              <rect x="3" y="15" width="4" height="10" rx="2" />
-              <rect x="11" y="10" width="4" height="20" rx="2" />
-              <rect x="19" y="5" width="4" height="30" rx="2" />
-              <rect x="27" y="11" width="4" height="18" rx="2" />
-              <rect x="35" y="16" width="4" height="8" rx="2" />
+              {(
+                [
+                  [3, 15, 10, 0],
+                  [11, 10, 20, 1],
+                  [19, 5, 30, 2],
+                  [27, 11, 18, 3],
+                  [35, 16, 8, 4],
+                ] as const
+              ).map(([x, y, h, i]) => (
+                <rect
+                  key={x}
+                  x={x}
+                  y={y}
+                  width="4"
+                  height={h}
+                  rx="2"
+                  className={reduceMotion ? undefined : 'ios-listen-bar'}
+                  style={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          transformOrigin: `${x + 2}px 20px`,
+                          animationDuration: `${0.65 + i * 0.1}s`,
+                          animationDelay: `${i * 0.06}s`,
+                        }
+                  }
+                />
+              ))}
             </g>
           </svg>
         </div>
@@ -43,13 +89,14 @@ export function IosListeningCallout({
           </span>
           <span className="flex items-baseline" style={{ gap: s(24) }}>
             <span
-              className="font-display-italic font-black italic text-white leading-none"
-              style={{ fontSize: s(100), letterSpacing: s(-2) }}
+              className="font-display-italic font-black italic text-white leading-none tabular-nums inline-block text-left"
+              style={{ fontSize: s(100), letterSpacing: s(-2), minWidth: s(210) }}
+              aria-live="off"
             >
-              0:09
+              {display}
             </span>
             <span
-              className="font-display font-black uppercase text-accent"
+              className={`font-display font-black uppercase text-accent${reduceMotion ? '' : ' ios-listen-rec'}`}
               style={{ fontSize: s(38), letterSpacing: s(6) }}
             >
               REC

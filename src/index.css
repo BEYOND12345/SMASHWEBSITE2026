@@ -201,4 +201,30 @@
       animation: none;
     }
   }
+
+  /* ── iOS listening callout (hero phone) ─────────────────────────────── */
+  @keyframes ios-listen-bar {
+    from { transform: scaleY(0.55); opacity: 0.75; }
+    to { transform: scaleY(1); opacity: 1; }
+  }
+
+  @keyframes ios-listen-rec {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+
+  .ios-listen-bar {
+    animation: ios-listen-bar 0.75s ease-in-out infinite alternate;
+  }
+
+  .ios-listen-rec {
+    animation: ios-listen-rec 1.4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ios-listen-bar,
+    .ios-listen-rec {
+      animation: none;
+    }
+  }
 }
