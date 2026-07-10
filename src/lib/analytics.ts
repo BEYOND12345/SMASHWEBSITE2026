@@ -43,28 +43,31 @@ export function isGa4Enabled(): boolean {
   return Boolean(GA4_ID && typeof window !== 'undefined');
 }
 
-/** Load gtag.js once; configure Google Ads and/or GA4 when IDs are set. */
+/** Ensure gtag is ready; skip re-loading if index.html already installed the tag. */
 export function initGoogleAds(): void {
   if ((!ADS_ID && !GA4_ID) || typeof document === 'undefined') return;
-  if (document.querySelector('script[data-smash-gtag]')) return;
 
   window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args);
-  };
-  window.gtag('js', new Date());
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer?.push(args);
+    };
+  }
 
-  if (ADS_ID) {
-    window.gtag('config', ADS_ID);
-  }
-  if (GA4_ID) {
-    window.gtag('config', GA4_ID, { send_page_view: true });
-  }
+  // index.html ships the official snippet — don't inject a second gtag.js.
+  const htmlAlreadyHasTag =
+    Boolean(document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) ||
+    Boolean(document.querySelector('script[data-smash-gtag]'));
+
+  if (htmlAlreadyHasTag) return;
+
+  window.gtag('js', new Date());
+  if (ADS_ID) window.gtag('config', ADS_ID);
+  if (GA4_ID) window.gtag('config', GA4_ID, { send_page_view: true });
 
   const script = document.createElement('script');
   script.async = true;
-  // Prefer Ads ID for the loader URL when both exist — gtag.js serves both configs.
-  const loaderId = ADS_ID ?? GA4_ID!;
+  const loaderId = GA4_ID ?? ADS_ID!;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(loaderId)}`;
   script.dataset.smashGtag = 'true';
   document.head.appendChild(script);
