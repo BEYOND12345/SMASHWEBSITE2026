@@ -18,6 +18,7 @@ import { IosHeroTrustLogos } from '../components/ios-product-landing/IosHeroTrus
 import { TestimonialSliderSection } from '../components/ios-product-landing/TestimonialSliderSection';
 import { EmailCapturePopup } from '../components/EmailCapturePopup';
 import { useEmailCapturePopup } from '../hooks/useEmailCapturePopup';
+import { TryItNowButton, VoiceQuoteDemo } from '../components/voice-quote-demo/VoiceQuoteDemo';
 import {
   brandPhotoScrim,
   storyStackedScrimCopyTop,
@@ -63,6 +64,7 @@ import { GMAIL_DEMO } from '../data/gmail-landing-spec';
 import { VALUE_TESTIMONIALS } from '../data/product-testimonials';
 import {
   DualProductCtas,
+  IphoneInstallCta,
   ProductLearnMoreCta,
 } from '../components/marketing/DualProductCtas';
 import { HeroPhotoBackdrop } from '../components/marketing/HeroPhotoBackdrop';
@@ -156,6 +158,7 @@ export function Homepage() {
   const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED).slice(0, 3);
   const { open: offerOpen, openPopup: openOfferPopup, closePopup: closeOfferPopup } =
     useEmailCapturePopup();
+  const [demoOpen, setDemoOpen] = useState(false);
 
   return (
     <div className={iosLanding.page}>
@@ -180,7 +183,9 @@ export function Homepage() {
 
       <Nav />
 
-      <HomeHeroSection onOpenOffer={openOfferPopup} />
+      <HomeHeroSection onOpenOffer={openOfferPopup} onTryIt={() => setDemoOpen(true)} />
+
+      <VoiceQuoteDemo open={demoOpen} onOpenChange={setDemoOpen} showSection />
 
       <BrandSolidBand compact className="!py-6 md:!py-8 border-t border-white/[0.06]">
         <TestimonialSliderSection
@@ -269,7 +274,43 @@ export function Homepage() {
   );
 }
 
-function HomeHeroSection({ onOpenOffer }: { onOpenOffer: () => void }) {
+function HomeHeroCtas({
+  onTryIt,
+  onOpenOffer,
+  centered = false,
+}: {
+  onTryIt: () => void;
+  onOpenOffer: () => void;
+  centered?: boolean;
+}) {
+  return (
+    <>
+      <div className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center${centered ? ' justify-center' : ''}`}>
+        <IphoneInstallCta />
+        <TryItNowButton onClick={onTryIt} />
+      </div>
+      <p className={`font-body text-sm text-white/55 font-medium mt-3${centered ? ' text-center' : ''}`}>
+        Five free quotes · No card needed
+      </p>
+      <IosHeroTrustLogos className={`mt-5${centered ? ' items-center' : ''}`} />
+      <button
+        type="button"
+        onClick={onOpenOffer}
+        className={`mt-3 inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation${centered ? ' justify-center w-full' : ''}`}
+      >
+        Not ready? Get a free month instead
+      </button>
+    </>
+  );
+}
+
+function HomeHeroSection({
+  onOpenOffer,
+  onTryIt,
+}: {
+  onOpenOffer: () => void;
+  onTryIt: () => void;
+}) {
   const photoBg = HOME_HERO_PHOTO;
 
   return (
@@ -295,19 +336,7 @@ function HomeHeroSection({ onOpenOffer }: { onOpenOffer: () => void }) {
               </IosSubline>
 
               <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
-                <DualProductCtas
-                  mobileSecondaryAsLink
-                  secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-                  microcopy="Five free quotes · No card needed"
-                />
-                <IosHeroTrustLogos className="mt-5" />
-                <button
-                  type="button"
-                  onClick={onOpenOffer}
-                  className="mt-3 inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation"
-                >
-                  Not ready? Get a free month instead
-                </button>
+                <HomeHeroCtas onTryIt={onTryIt} onOpenOffer={onOpenOffer} />
               </div>
             </div>
           </AnimateIn>
@@ -320,19 +349,7 @@ function HomeHeroSection({ onOpenOffer }: { onOpenOffer: () => void }) {
 
           <div className={iosHeroMobileCtaCellClass}>
             <div className={iosHeroMobileCtaWrapClass}>
-              <DualProductCtas
-                mobileSecondaryAsLink
-                secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-                microcopy="Five free quotes · No card needed"
-              />
-              <IosHeroTrustLogos className="mt-5 items-center" />
-              <button
-                type="button"
-                onClick={onOpenOffer}
-                className="mt-3 inline-flex items-center justify-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation"
-              >
-                Not ready? Get a free month instead
-              </button>
+              <HomeHeroCtas onTryIt={onTryIt} onOpenOffer={onOpenOffer} centered />
             </div>
           </div>
         </div>
