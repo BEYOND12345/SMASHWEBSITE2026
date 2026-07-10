@@ -267,12 +267,6 @@ export const IOS_HERO = {
   headlineWhite: 'QUOTE IN 30 SECONDS.',
   subline:
     'Speak the job. SMASH builds a priced, tax-ready, materials-ready quote from your own rates. Not close to your price. Exactly your price.',
-  outcomes: [
-    "They open it. You'll know.",
-    'They approve it.',
-    'You get paid.',
-  ] as const,
-  microcopy: 'Five free quotes · No card needed',
 };
 
 /** Photography for the ad landing — each band uses a distinct asset (no repeats). */

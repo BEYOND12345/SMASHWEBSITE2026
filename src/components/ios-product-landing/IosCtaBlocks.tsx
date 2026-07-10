@@ -4,7 +4,7 @@ import { DualProductCtas } from '../marketing/DualProductCtas';
 import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
 import { GmailStoryFrame } from '../gmail-product-landing/GmailStoryFrame';
 import { GmailStoryStepCallout } from '../gmail-product-landing/GmailStoryTriptych';
-import { IOS_DESKTOP_BAND, IOS_HERO } from '../../data/ios-landing-spec';
+import { IOS_DESKTOP_BAND } from '../../data/ios-landing-spec';
 import { IosHeroTrustLogos } from './IosHeroTrustLogos';
 import { IosSubline } from './IosSubline';
 import { iosLanding } from './ios-landing-tokens';
@@ -91,29 +91,14 @@ export function IosFinalCta({
 }
 
 /** Hero — download + scroll to story on the iOS product page. */
-export function IosHeroCta({
-  className = '',
-  onOpenOffer,
-}: {
-  className?: string;
-  onOpenOffer?: () => void;
-}) {
+export function IosHeroCta({ className = '' }: { className?: string }) {
   return (
     <div className={className}>
       <DualProductCtas
         secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
         mobileSecondaryAsLink
-        microcopy={IOS_HERO.microcopy}
+        showMicrocopy={false}
       />
-      {onOpenOffer && (
-        <button
-          type="button"
-          onClick={onOpenOffer}
-          className="mt-3 inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent active:text-accent transition-colors underline underline-offset-2 touch-manipulation"
-        >
-          Not ready? Get a free month instead
-        </button>
-      )}
       <IosHeroTrustLogos className="mt-5" />
     </div>
   );

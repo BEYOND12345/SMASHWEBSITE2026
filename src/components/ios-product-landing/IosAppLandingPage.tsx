@@ -80,8 +80,7 @@ function FAQItem({ q, a, isOpen, onClick }: { q: string; a: string; isOpen: bool
 
 export function IosAppLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const { open: offerOpen, openPopup: openOfferPopup, closePopup: closeOfferPopup } =
-    useEmailCapturePopup();
+  const { open: offerOpen, closePopup: closeOfferPopup } = useEmailCapturePopup();
 
   useEffect(() => {
     trackIosRemarketingPageView();
@@ -145,24 +144,8 @@ export function IosAppLandingPage() {
                     {IOS_HERO.subline}
                   </p>
 
-                  <ul
-                    className={`mt-4 space-y-1.5 text-left ${iosHeroMobileSublineClass} max-w-md`}
-                  >
-                    {IOS_HERO.outcomes.map((item) => (
-                      <li
-                        key={item}
-                        className="font-body text-sm sm:text-base font-semibold text-white/75 leading-snug flex gap-2"
-                      >
-                        <span className="text-accent shrink-0" aria-hidden>
-                          •
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
                   <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
-                    <IosHeroCta onOpenOffer={openOfferPopup} />
+                    <IosHeroCta />
                   </div>
                 </div>
               </AnimateIn>
@@ -177,7 +160,7 @@ export function IosAppLandingPage() {
 
               <div className={iosHeroMobileCtaCellClass}>
                 <div className={iosHeroMobileCtaWrapClass}>
-                  <IosHeroCta onOpenOffer={openOfferPopup} />
+                  <IosHeroCta />
                 </div>
               </div>
             </div>
