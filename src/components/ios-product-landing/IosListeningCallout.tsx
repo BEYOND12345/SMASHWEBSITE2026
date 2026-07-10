@@ -48,7 +48,7 @@ export function IosListeningCallout({
           style={{ width: s(148), height: s(148) }}
         >
           <svg viewBox="0 0 40 40" style={{ width: s(72), height: s(72) }} aria-hidden>
-            <g fill="#FFFFFF">
+            <g fill="#0A1119">
               {(
                 [
                   [3, 15, 10, 0],

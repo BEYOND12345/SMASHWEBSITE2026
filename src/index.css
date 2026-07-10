@@ -204,8 +204,8 @@
 
   /* ── iOS listening callout (hero phone) ─────────────────────────────── */
   @keyframes ios-listen-bar {
-    from { transform: scaleY(0.55); opacity: 0.75; }
-    to { transform: scaleY(1); opacity: 1; }
+    from { transform: scaleY(0.55); }
+    to { transform: scaleY(1); }
   }
 
   @keyframes ios-listen-rec {
