@@ -44,11 +44,11 @@ export function IosListeningCallout({
     >
       <div className="flex items-center" style={{ gap: s(48), marginBottom: s(44) }}>
         <div
-          className="shrink-0 rounded-full bg-[#3A4416] flex items-center justify-center"
+          className="shrink-0 rounded-full bg-accent flex items-center justify-center"
           style={{ width: s(148), height: s(148) }}
         >
           <svg viewBox="0 0 40 40" style={{ width: s(72), height: s(72) }} aria-hidden>
-            <g fill="#A8B81C">
+            <g fill="#FFFFFF">
               {(
                 [
                   [3, 15, 10, 0],
