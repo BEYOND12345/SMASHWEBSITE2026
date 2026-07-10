@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Check } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { APP_STORE_URL } from '../data/download-urls';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PROMO_CODE = 'SMASHFREE1';
@@ -105,11 +106,15 @@ export function EmailCapturePopup({ source = 'landing_popup', open, onClose }: P
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(promoCode);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      /* clipboard unavailable — code remains visible */
+      /* clipboard unavailable — still open the App Store */
     }
+
+    setCopied(true);
+    // Brief "Copied" feedback, then hand them to the App Store while the code is on the clipboard.
+    window.setTimeout(() => {
+      window.location.assign(APP_STORE_URL);
+    }, 450);
   };
 
   const handleScrimClick = (e: React.MouseEvent) => {
@@ -162,12 +167,18 @@ export function EmailCapturePopup({ source = 'landing_popup', open, onClose }: P
               {copied ? (
                 <>
                   <Check size={18} strokeWidth={2.5} />
-                  Copied
+                  Opening App Store…
                 </>
               ) : (
-                'Copy Code'
+                'Copy Code & Open App Store'
               )}
             </button>
+            <a
+              href={APP_STORE_URL}
+              className="mt-3 inline-flex w-full items-center justify-center min-h-[44px] text-sm font-semibold text-slate-400 hover:text-white transition-colors underline underline-offset-2 touch-manipulation"
+            >
+              Or open the App Store
+            </a>
           </div>
         ) : (
           <>
