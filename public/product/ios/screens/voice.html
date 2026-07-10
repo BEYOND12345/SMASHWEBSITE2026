@@ -33,11 +33,50 @@
 .appbar .cancel { font-family:'Jakarta'; font-weight:700; font-size:30px; color:#94A3B8; }
 .appbar .title { font-family:'BarlowBlk'; font-weight:900; font-size:42px; letter-spacing:2px; color:#0F172A; text-transform:uppercase; }
 .screen { background:#F4F6F9; padding:8px 56px 30px; }
-.row { background:#FFFFFF; border-radius:34px; padding:36px 46px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(15,23,42,0.05); }
+.row { background:#FFFFFF; border-radius:34px; padding:36px 46px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(15,23,42,0.05); transform-origin:center center; will-change:transform; }
 .row .left { display:flex; align-items:center; gap:28px; min-width:0; }
 .row .dot { width:26px; height:26px; border-radius:50%; background:#DFFF00; flex-shrink:0; box-shadow:0 0 0 6px rgba(223,255,0,0.18); }
 .row .label { font-family:'BarlowBlk'; font-weight:900; font-size:34px; letter-spacing:2px; color:#1E293B; text-transform:uppercase; white-space:nowrap; }
 .row .val { font-family:'Jakarta'; font-weight:700; font-size:30px; color:#0F172A; text-align:right; white-space:nowrap; padding-left:24px; }
+
+/* Sequential intake pulse — one row at a time, top → bottom, loop */
+@keyframes voice-row-intake {
+  0%, 2% { transform: scale(1); box-shadow: 0 2px 10px rgba(15,23,42,0.05); }
+  6% { transform: scale(1.022); box-shadow: 0 8px 22px rgba(15,23,42,0.10); }
+  11% { transform: scale(1); box-shadow: 0 2px 10px rgba(15,23,42,0.05); }
+  100% { transform: scale(1); box-shadow: 0 2px 10px rgba(15,23,42,0.05); }
+}
+@keyframes voice-dot-intake {
+  0%, 2% { transform: scale(1); box-shadow: 0 0 0 6px rgba(223,255,0,0.18); }
+  6% { transform: scale(1.18); box-shadow: 0 0 0 10px rgba(223,255,0,0.28); }
+  11% { transform: scale(1); box-shadow: 0 0 0 6px rgba(223,255,0,0.18); }
+  100% { transform: scale(1); box-shadow: 0 0 0 6px rgba(223,255,0,0.18); }
+}
+.screen .row {
+  animation: voice-row-intake 7.2s cubic-bezier(0.33, 0.1, 0.25, 1) infinite;
+}
+.screen .row .dot {
+  animation: voice-dot-intake 7.2s cubic-bezier(0.33, 0.1, 0.25, 1) infinite;
+}
+.screen .row:nth-child(1) { animation-delay: 0s; }
+.screen .row:nth-child(1) .dot { animation-delay: 0s; }
+.screen .row:nth-child(2) { animation-delay: 1.2s; }
+.screen .row:nth-child(2) .dot { animation-delay: 1.2s; }
+.screen .row:nth-child(3) { animation-delay: 2.4s; }
+.screen .row:nth-child(3) .dot { animation-delay: 2.4s; }
+.screen .row:nth-child(4) { animation-delay: 3.6s; }
+.screen .row:nth-child(4) .dot { animation-delay: 3.6s; }
+.screen .row:nth-child(5) { animation-delay: 4.8s; }
+.screen .row:nth-child(5) .dot { animation-delay: 4.8s; }
+.screen .row:nth-child(6) { animation-delay: 6s; }
+.screen .row:nth-child(6) .dot { animation-delay: 6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen .row,
+  .screen .row .dot {
+    animation: none !important;
+  }
+}
 
 
 
