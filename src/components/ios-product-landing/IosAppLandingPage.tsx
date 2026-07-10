@@ -131,11 +131,10 @@ export function IosAppLandingPage() {
                 <div className="pb-2 lg:pb-8">
                   <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.75rem,6.5vw,4.5rem)] sm:text-[clamp(2.25rem,5.5vw,4.5rem)]`}>
                     {IOS_HERO.headlineLines.map((line) => (
-                      <span key={line} className="block text-white">
+                      <span key={line} className="block text-accent">
                         {line}
                       </span>
                     ))}
-                    <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
                   <p

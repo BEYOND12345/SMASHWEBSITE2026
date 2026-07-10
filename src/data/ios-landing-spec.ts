@@ -262,7 +262,6 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
 
 export const IOS_HERO = {
   headlineLines: ['QUOTE IN 30 SECONDS.', 'WIN THE JOB.'] as const,
-  headlineLime: 'SMASH DOES THE REST.',
   /** @deprecated Prefer headlineLines — kept for any legacy two-line consumers. */
   headlineWhite: 'QUOTE IN 30 SECONDS.',
   subline:
@@ -415,7 +414,7 @@ export const IOS_FINAL_CTA = {
   headlineLime: 'SMASH DOES THE REST.',
   subline: 'Accurate quotes from your catalogue.',
   cta: 'Start Free',
-  microcopy: IOS_HERO.microcopy,
+  microcopy: 'Five free quotes · No card needed',
   integrations: ['Xero', 'QuickBooks', 'Stripe'],
 };
 
