@@ -261,13 +261,17 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
 ];
 
 export const IOS_HERO = {
-  headlineWhite: 'JUST TALK.',
+  headlineLines: ['QUOTE IN 30 SECONDS.', 'WIN THE JOB.'] as const,
   headlineLime: 'SMASH DOES THE REST.',
-  pricingOffer: {
-    prefix: 'Start for free with ',
-    highlight: 'five free quotes',
-    suffix: ' a month.',
-  },
+  /** @deprecated Prefer headlineLines — kept for any legacy two-line consumers. */
+  headlineWhite: 'QUOTE IN 30 SECONDS.',
+  subline:
+    'Speak the job. SMASH builds a priced, tax-ready, materials-ready quote from your own rates. Not close to your price. Exactly your price.',
+  outcomes: [
+    "They open it. You'll know.",
+    'They approve it.',
+    'You get paid.',
+  ] as const,
   microcopy: 'Five free quotes · No card needed',
 };
 

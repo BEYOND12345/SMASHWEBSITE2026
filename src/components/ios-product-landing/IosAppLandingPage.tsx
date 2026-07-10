@@ -130,18 +130,36 @@ export function IosAppLandingPage() {
             <div className={iosHeroGridClass}>
               <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
                 <div className="pb-2 lg:pb-8">
-                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
-                    <span className="block text-white">{IOS_HERO.headlineWhite}</span>
+                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.75rem,6.5vw,4.5rem)] sm:text-[clamp(2.25rem,5.5vw,4.5rem)]`}>
+                    {IOS_HERO.headlineLines.map((line) => (
+                      <span key={line} className="block text-white">
+                        {line}
+                      </span>
+                    ))}
                     <span className="block text-accent">{IOS_HERO.headlineLime}</span>
                   </h1>
 
                   <p
-                    className={`font-body text-base sm:text-lg font-semibold text-white/90 max-w-md leading-snug text-pretty ${iosHeroMobileSublineClass}`}
+                    className={`font-body text-base sm:text-lg font-medium text-white/85 max-w-md leading-[1.45] text-pretty ${iosHeroMobileSublineClass}`}
                   >
-                    {IOS_HERO.pricingOffer.prefix}
-                    <span className="text-accent">{IOS_HERO.pricingOffer.highlight}</span>
-                    {IOS_HERO.pricingOffer.suffix}
+                    {IOS_HERO.subline}
                   </p>
+
+                  <ul
+                    className={`mt-4 space-y-1.5 text-left ${iosHeroMobileSublineClass} max-w-md`}
+                  >
+                    {IOS_HERO.outcomes.map((item) => (
+                      <li
+                        key={item}
+                        className="font-body text-sm sm:text-base font-semibold text-white/75 leading-snug flex gap-2"
+                      >
+                        <span className="text-accent shrink-0" aria-hidden>
+                          •
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
                     <IosHeroCta onOpenOffer={openOfferPopup} />
