@@ -23,6 +23,7 @@ const GstCompliantInvoicing = lazy(() => import('./pages/gst-compliant-invoicing
 const ChromeExtension = lazy(() => import('./pages/chrome-extension').then(m => ({ default: m.ChromeExtension })));
 const Roadmap = lazy(() => import('./pages/roadmap').then(m => ({ default: m.Roadmap })));
 const Changelog = lazy(() => import('./pages/changelog').then(m => ({ default: m.Changelog })));
+const InternalTryItPage = lazy(() => import('./pages/internal-try-it').then(m => ({ default: m.InternalTryItPage })));
 
 // Tool pages
 const QuoteGenerator = lazy(() => import('./pages/quote-generator').then(m => ({ default: m.QuoteGenerator })));
@@ -150,6 +151,7 @@ function App() {
         <Route path="/chrome-extension" element={<ChromeExtension />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/changelog" element={<Changelog />} />
+        <Route path="/internal/try-it" element={<InternalTryItPage />} />
 
         {/* Tool pages */}
         <Route path="/tools" element={<Tools />} />

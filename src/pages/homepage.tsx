@@ -19,6 +19,7 @@ import { TestimonialSliderSection } from '../components/ios-product-landing/Test
 import { EmailCapturePopup } from '../components/EmailCapturePopup';
 import { useEmailCapturePopup } from '../hooks/useEmailCapturePopup';
 import { TryItNowButton, VoiceQuoteDemo } from '../components/voice-quote-demo/VoiceQuoteDemo';
+import { isVoiceQuoteDemoPublic } from '../lib/feature-flags';
 import {
   brandPhotoScrim,
   storyStackedScrimCopyTop,
@@ -158,6 +159,7 @@ export function Homepage() {
   const visibleTiles = IOS_FEATURE_TILES.filter((t) => !t.launchOnly || IOS_LAUNCH_FEATURES_ENABLED).slice(0, 3);
   const { open: offerOpen, openPopup: openOfferPopup, closePopup: closeOfferPopup } =
     useEmailCapturePopup();
+  const demoEnabled = isVoiceQuoteDemoPublic();
   const [demoOpen, setDemoOpen] = useState(false);
 
   return (
@@ -183,9 +185,12 @@ export function Homepage() {
 
       <Nav />
 
-      <HomeHeroSection onOpenOffer={openOfferPopup} onTryIt={() => setDemoOpen(true)} />
+      <HomeHeroSection
+        onOpenOffer={openOfferPopup}
+        onTryIt={demoEnabled ? () => setDemoOpen(true) : undefined}
+      />
 
-      <VoiceQuoteDemo open={demoOpen} onOpenChange={setDemoOpen} showSection />
+      {demoEnabled && <VoiceQuoteDemo open={demoOpen} onOpenChange={setDemoOpen} showSection />}
 
       <BrandSolidBand compact className="!py-6 md:!py-8 border-t border-white/[0.06]">
         <TestimonialSliderSection
@@ -279,16 +284,24 @@ function HomeHeroCtas({
   onOpenOffer,
   centered = false,
 }: {
-  onTryIt: () => void;
+  onTryIt?: () => void;
   onOpenOffer: () => void;
   centered?: boolean;
 }) {
   return (
     <>
-      <div className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center${centered ? ' justify-center' : ''}`}>
-        <IphoneInstallCta />
-        <TryItNowButton onClick={onTryIt} />
-      </div>
+      {onTryIt ? (
+        <div className={`flex flex-col sm:flex-row gap-3 items-stretch sm:items-center${centered ? ' justify-center' : ''}`}>
+          <IphoneInstallCta />
+          <TryItNowButton onClick={onTryIt} />
+        </div>
+      ) : (
+        <DualProductCtas
+          mobileSecondaryAsLink
+          secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
+          showMicrocopy={false}
+        />
+      )}
       <p className={`font-body text-sm text-white/55 font-medium mt-3${centered ? ' text-center' : ''}`}>
         Five free quotes · No card needed
       </p>
@@ -309,7 +322,7 @@ function HomeHeroSection({
   onTryIt,
 }: {
   onOpenOffer: () => void;
-  onTryIt: () => void;
+  onTryIt?: () => void;
 }) {
   const photoBg = HOME_HERO_PHOTO;
 
