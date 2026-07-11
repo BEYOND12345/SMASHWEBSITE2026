@@ -4,7 +4,11 @@ import {
   submitDemoVoiceTranscript,
 } from '../../lib/demo-voice-quote';
 import type { DemoQuote } from '../../data/demo-quote-catalogue';
-import { VoiceQuoteDemoScreen, type DemoPhase } from './VoiceQuoteDemoScreen';
+import {
+  VoiceQuoteDemoScreen,
+  type AppDemoPhase,
+  checklistForPhase,
+} from './VoiceQuoteDemoScreen';
 
 type Props = {
   open: boolean;
@@ -20,9 +24,8 @@ function pickMimeType(): string {
 }
 
 export function VoiceQuoteDemoModal({ open, onClose }: Props) {
-  const [phase, setPhase] = useState<DemoPhase>('ready');
+  const [phase, setPhase] = useState<AppDemoPhase>('idle');
   const [error, setError] = useState<string | null>(null);
-  const [transcript, setTranscript] = useState('');
   const [quote, setQuote] = useState<DemoQuote | null>(null);
   const [typedJob, setTypedJob] = useState('');
   const [elapsed, setElapsed] = useState(0);
@@ -33,9 +36,8 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
   const timerRef = useRef<number | null>(null);
 
   const reset = useCallback(() => {
-    setPhase('ready');
+    setPhase('idle');
     setError(null);
-    setTranscript('');
     setQuote(null);
     setTypedJob('');
     setElapsed(0);
@@ -82,12 +84,10 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   const processResult = async (result: Awaited<ReturnType<typeof submitDemoVoiceAudio>>) => {
     if (result.success) {
-      setTranscript(result.transcript);
       setQuote(result.quote);
       setPhase('result');
       return;
     }
-    if (result.transcript) setTranscript(result.transcript);
     setError(result.error);
     setPhase('error');
   };
@@ -95,10 +95,9 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
   const startRecording = async () => {
     setError(null);
     setQuote(null);
-    setTranscript('');
 
     if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
-      setError('Microphone not available in this browser — type the job below instead');
+      setError('Microphone not available — type the job below instead');
       setPhase('error');
       return;
     }
@@ -126,9 +125,7 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
           return;
         }
 
-        setPhase('listening');
-        window.setTimeout(() => setPhase('building'), 600);
-
+        setPhase('processing');
         const result = await submitDemoVoiceAudio(blob, mimeType);
         await processResult(result);
       };
@@ -156,6 +153,11 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
     if (recorder && recorder.state === 'recording') recorder.stop();
   };
 
+  const toggleRecord = () => {
+    if (phase === 'recording') stopRecording();
+    else if (phase === 'idle' || phase === 'error') void startRecording();
+  };
+
   const submitTyped = async () => {
     const text = typedJob.trim();
     if (text.length < 4) {
@@ -164,7 +166,7 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
       return;
     }
     setError(null);
-    setPhase('building');
+    setPhase('processing');
     const result = await submitDemoVoiceTranscript(text);
     await processResult(result);
   };
@@ -173,7 +175,7 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-[#0A1119]/70 backdrop-blur-[2px]"
+      className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-[#0A0E17]/65 backdrop-blur-[2px]"
       role="dialog"
       aria-modal="true"
       aria-label="Try voice to quote"
@@ -185,12 +187,11 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
         phase={phase}
         elapsed={elapsed}
         error={error}
-        transcript={transcript}
         quote={quote}
+        checklist={checklistForPhase(phase)}
         typedJob={typedJob}
         onTypedJobChange={setTypedJob}
-        onStartRecording={startRecording}
-        onStopRecording={stopRecording}
+        onToggleRecord={toggleRecord}
         onSubmitTyped={submitTyped}
         onTryAgain={reset}
         onClose={close}

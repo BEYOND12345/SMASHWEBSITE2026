@@ -1,104 +1,501 @@
-import { X } from 'lucide-react';
-import { RecordButton, WaveformBars } from './RecordButton';
-import { QuoteResult } from './QuoteResult';
+/**
+ * Presentational screens matching SMASHAPP voicerecorder + estimatepreview.
+ * Source: BEYOND12345/SMASHAPP design-handoff (screens 11–14).
+ */
+
+import { Check, Mic, X } from 'lucide-react';
+import { APP_STORE_URL } from '../../data/download-urls';
 import type { DemoQuote } from '../../data/demo-quote-catalogue';
 
-export type DemoPhase = 'ready' | 'recording' | 'listening' | 'building' | 'result' | 'error';
+export type AppDemoPhase = 'idle' | 'recording' | 'processing' | 'result' | 'error';
 
-export type VoiceQuoteDemoScreenProps = {
-  phase: DemoPhase;
-  elapsed?: number;
-  error?: string | null;
-  transcript?: string;
-  quote?: DemoQuote | null;
-  typedJob?: string;
-  onTypedJobChange?: (value: string) => void;
-  onStartRecording?: () => void;
-  onStopRecording?: () => void;
-  onSubmitTyped?: () => void;
-  onTryAgain?: () => void;
-  onClose?: () => void;
-  /** Design review — disable interactions */
-  preview?: boolean;
+export type ChecklistStatus = 'waiting' | 'detecting' | 'complete';
+
+export type ChecklistItem = {
+  id: number;
+  label: string;
+  status: ChecklistStatus;
+  detail?: string | null;
 };
+
+export const APP_CHECKLIST_LABELS = [
+  'Job address',
+  'Customer name',
+  'Scope of work',
+  'Materials needed',
+  'Time to complete',
+  'Fees',
+] as const;
+
+export function checklistForPhase(phase: AppDemoPhase): ChecklistItem[] {
+  const base = APP_CHECKLIST_LABELS.map((label, i) => ({
+    id: i + 1,
+    label,
+    status: 'waiting' as ChecklistStatus,
+    detail: null as string | null,
+  }));
+
+  if (phase === 'idle' || phase === 'error') return base;
+
+  if (phase === 'recording') {
+    return [
+      { id: 1, label: 'Job address', status: 'complete', detail: '42 Marine Pde' },
+      { id: 2, label: 'Customer name', status: 'complete', detail: 'Sarah Jones' },
+      { id: 3, label: 'Scope of work', status: 'detecting', detail: null },
+      { id: 4, label: 'Materials needed', status: 'waiting', detail: null },
+      { id: 5, label: 'Time to complete', status: 'waiting', detail: null },
+      { id: 6, label: 'Fees', status: 'waiting', detail: null },
+    ];
+  }
+
+  if (phase === 'processing') {
+    return [
+      { id: 1, label: 'Job address', status: 'complete', detail: '42 Marine Pde' },
+      { id: 2, label: 'Customer name', status: 'complete', detail: 'Sarah Jones' },
+      { id: 3, label: 'Scope of work', status: 'complete', detail: '1 captured' },
+      { id: 4, label: 'Materials needed', status: 'complete', detail: '1 materials' },
+      { id: 5, label: 'Time to complete', status: 'complete', detail: '2 hrs' },
+      { id: 6, label: 'Fees', status: 'complete', detail: 'Call-out' },
+    ];
+  }
+
+  // result — all complete
+  return [
+    { id: 1, label: 'Job address', status: 'complete', detail: '42 Marine Pde' },
+    { id: 2, label: 'Customer name', status: 'complete', detail: 'Sarah Jones' },
+    { id: 3, label: 'Scope of work', status: 'complete', detail: '1 captured' },
+    { id: 4, label: 'Materials needed', status: 'complete', detail: '1 materials' },
+    { id: 5, label: 'Time to complete', status: 'complete', detail: '2 hrs' },
+    { id: 6, label: 'Fees', status: 'complete', detail: 'Call-out' },
+  ];
+}
+
+function money(n: number) {
+  return n.toLocaleString('en-AU', { style: 'currency', currency: 'AUD' });
+}
+
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
 
 function StatusBar() {
   return (
-    <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[11px] font-semibold text-brand/80">
+    <div className="flex items-center justify-between px-6 pt-3 pb-1 text-[12px] font-semibold text-slate-900">
       <span className="tabular-nums">9:41</span>
       <div className="flex items-center gap-1.5" aria-hidden>
-        <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
-          <rect x="0" y="7" width="3" height="4" rx="0.5" />
-          <rect x="4.5" y="4.5" width="3" height="6.5" rx="0.5" />
-          <rect x="9" y="2" width="3" height="9" rx="0.5" />
-          <rect x="13.5" y="0" width="2.5" height="11" rx="0.5" />
-        </svg>
-        <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor">
-          <path d="M7.5 2.2c2.1 0 4 1 5.3 2.5l-1.2 1.2A5.3 5.3 0 0 0 7.5 4.2c-1.6 0-3 .7-4 1.7L2.2 4.7A7.2 7.2 0 0 1 7.5 2.2Zm0 3.2c1.2 0 2.3.5 3.1 1.4L9.4 8A2.9 2.9 0 0 0 7.5 7.2c-.8 0-1.5.3-2 .8L4.4 6.8A4.5 4.5 0 0 1 7.5 5.4Zm0 3.2c.5 0 .9.2 1.2.5L7.5 10 6.3 9.1c.3-.3.7-.5 1.2-.5Z" />
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor">
+          <rect x="0" y="7.5" width="3" height="4.5" rx="0.5" />
+          <rect x="4.5" y="5" width="3" height="7" rx="0.5" />
+          <rect x="9" y="2.5" width="3" height="9.5" rx="0.5" />
+          <rect x="13.5" y="0" width="3" height="12" rx="0.5" />
         </svg>
         <span className="inline-flex items-center gap-0.5">
-          <span className="w-[22px] h-[10px] rounded-[3px] border border-brand/80 relative">
-            <span className="absolute inset-[1.5px] right-[3px] bg-brand/80 rounded-[1px]" />
+          <span className="w-[22px] h-[11px] rounded-[3px] border-[1.5px] border-slate-900 relative">
+            <span className="absolute inset-[1.5px] right-[3px] bg-slate-900 rounded-[1px]" />
           </span>
-          <span className="w-[1.5px] h-[4px] bg-brand/80 rounded-r-sm" />
+          <span className="w-[1.5px] h-[4px] bg-slate-900 rounded-r-sm" />
         </span>
       </div>
     </div>
   );
 }
 
-function ListeningPanel({ label }: { label: string }) {
+function VoiceStatusCard({
+  phase,
+  elapsed,
+}: {
+  phase: AppDemoPhase;
+  elapsed: number;
+}) {
+  const isRecording = phase === 'recording';
+  const isProcessing = phase === 'processing';
+  const isActive = isRecording || isProcessing;
+
   return (
-    <div className="w-full rounded-[1.25rem] bg-[#0A1119] text-white px-4 py-4 flex items-center gap-3.5 shadow-[0_8px_28px_-8px_rgba(15,23,42,0.35)]">
-      <div className="shrink-0 w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-        <WaveformBars variant="onLime" active />
+    <div
+      className="mb-5 h-[124px] rounded-[24px] p-6 flex items-center gap-5 shadow-2xl shadow-slate-200/50"
+      style={{ backgroundColor: '#0A0E17' }}
+    >
+      <div
+        className={`w-14 h-14 rounded-full bg-white/5 flex items-center justify-center shrink-0 transition-all duration-300 ${
+          isActive ? 'scale-110 bg-white/10' : 'scale-100'
+        }`}
+      >
+        <div className="relative">
+          {isRecording ? (
+            <div className="flex items-end gap-[3px]">
+              {[0, 0.15, 0.3, 0.15, 0].map((delay, i) => (
+                <div
+                  key={i}
+                  className="w-[3px] bg-[#dfff00] rounded-full smash-listen-wave"
+                  style={{ height: `${12 + i * 2}px`, animationDelay: `${delay}s` }}
+                />
+              ))}
+            </div>
+          ) : isProcessing ? (
+            <div className="w-6 h-6 rounded-full border-2 border-[#dfff00]/25 border-t-[#dfff00] animate-spin" />
+          ) : (
+            <>
+              <div
+                className="absolute -inset-3 rounded-full opacity-30 pointer-events-none"
+                style={{ backgroundColor: '#dfff00' }}
+              />
+              <Mic size={24} className="relative z-10" style={{ color: '#dfff00' }} />
+            </>
+          )}
+        </div>
       </div>
-      <div className="min-w-0 text-left">
-        <p className="font-display text-[10px] uppercase tracking-[0.2em] text-white/45 mb-0.5">
-          {label}
-        </p>
-        <p className="font-display-italic font-black italic text-xl leading-none tracking-tight">
-          Building<span className="text-accent">…</span>
+
+      <div className="flex-1 min-w-0 flex flex-col justify-center">
+        <h2 className="text-white/60 font-black text-[13px] leading-none mb-1.5 tracking-[0.1em] uppercase">
+          {phase === 'idle' || phase === 'error'
+            ? 'Voice Assistant'
+            : phase === 'processing'
+              ? 'Processing…'
+              : 'Listening…'}
+        </h2>
+        <div className="h-[32px] flex items-center gap-2">
+          {phase === 'idle' || phase === 'error' ? (
+            <span className="text-[28px] leading-none font-black text-white/0 tracking-tight tabular-nums select-none">
+              0:00
+            </span>
+          ) : phase === 'processing' ? (
+            <span className="text-[18px] leading-none font-black text-[#dfff00] tracking-tight tabular-nums">
+              Building...
+            </span>
+          ) : (
+            <>
+              <span className="text-[28px] leading-none font-black text-white tracking-tight tabular-nums">
+                {formatTime(elapsed)}
+              </span>
+              <span className="text-[9px] font-black text-[#dfff00] uppercase tracking-[0.35em]">REC</span>
+            </>
+          )}
+        </div>
+        <p className="min-h-[28px] text-white/30 text-[11px] font-bold uppercase tracking-[0.05em] leading-tight mt-1">
+          {phase === 'recording' ? (
+            'Tap button to stop'
+          ) : phase === 'processing' ? (
+            'Please wait a moment'
+          ) : (
+            <>
+              Say the job address, scope
+              <br />
+              and materials
+            </>
+          )}
         </p>
       </div>
     </div>
   );
 }
 
+function Checklist({ items }: { items: ChecklistItem[] }) {
+  return (
+    <div className="flex flex-col gap-3">
+      {items.map((item) => {
+        const isDone = item.status === 'complete';
+        const isActive = item.status === 'detecting';
+        return (
+          <div
+            key={item.id}
+            className="flex items-center gap-4 py-4 px-5 rounded-[24px] border border-slate-100 bg-white shadow-sm"
+          >
+            <div className="shrink-0">
+              <div
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  isDone || isActive ? 'bg-[#dfff00]' : 'bg-slate-200'
+                } ${isActive ? 'animate-pulse' : ''}`}
+              />
+            </div>
+            <span
+              className={`flex-1 text-[12px] font-black uppercase tracking-[0.13em] ${
+                isDone ? 'text-slate-900' : isActive ? 'text-slate-700' : 'text-slate-300'
+              }`}
+            >
+              {item.label}
+            </span>
+            {isDone && item.detail ? (
+              <span className="text-[11px] font-semibold text-slate-400 truncate max-w-[110px] text-right">
+                {item.detail}
+              </span>
+            ) : isDone ? (
+              <Check size={14} strokeWidth={3} className="shrink-0" style={{ color: '#dfff00' }} />
+            ) : isActive ? (
+              <span className="text-[11px] font-bold shrink-0 text-slate-600">Detecting…</span>
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function RecordFab({
+  phase,
+  onToggle,
+  disabled,
+  preview,
+}: {
+  phase: AppDemoPhase;
+  onToggle?: () => void;
+  disabled?: boolean;
+  preview?: boolean;
+}) {
+  const isRecording = phase === 'recording';
+  const isBusy = phase === 'processing';
+
+  return (
+    <div className="relative w-16 h-16 flex items-center justify-center">
+      {(phase === 'idle' || phase === 'error') && (
+        <div className="absolute inset-0 rounded-full bg-[#dfff00]/40 smash-breathe pointer-events-none" />
+      )}
+      {isRecording && (
+        <>
+          <div className="absolute inset-0 rounded-full bg-[#dfff00]/50 smash-sonic-wave pointer-events-none" />
+          <div
+            className="absolute inset-0 rounded-full bg-[#dfff00]/30 smash-sonic-wave pointer-events-none"
+            style={{ animationDelay: '-1.1s' }}
+          />
+        </>
+      )}
+      <button
+        type="button"
+        onClick={preview ? undefined : onToggle}
+        disabled={preview || disabled || isBusy}
+        className={`relative w-16 h-16 rounded-full flex items-center justify-center z-10 transition-all duration-300 shadow-2xl active:scale-95 disabled:opacity-50 touch-none select-none ${
+          isRecording ? 'scale-105' : 'scale-100'
+        }`}
+        style={{ backgroundColor: '#0A0E17' }}
+        aria-label={isRecording ? 'Stop recording' : 'Start recording'}
+      >
+        {isRecording ? (
+          <div className="flex items-center gap-[6px]">
+            <div className="w-[9px] h-[24px] bg-[#dfff00] rounded-[3px]" />
+            <div className="w-[9px] h-[24px] bg-[#dfff00] rounded-[3px]" />
+          </div>
+        ) : isBusy ? (
+          <div className="w-6 h-6 rounded-full border-2 border-[#dfff00]/30 border-t-[#dfff00] animate-spin" />
+        ) : (
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="#dfff00"
+            stroke="#dfff00"
+            strokeWidth="4"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            style={{ marginLeft: 4 }}
+          >
+            <polygon points="7,5 19,12 7,19" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
+/** Quote preview — mirrors estimatepreview Breakdown + Totals. */
+export function AppQuotePreview({
+  quote,
+  onTryAgain,
+  preview,
+}: {
+  quote: DemoQuote;
+  onTryAgain?: () => void;
+  preview?: boolean;
+}) {
+  const materials = quote.lineItems.filter((i) =>
+    /fitting|paint|tap|material|hose/i.test(i.name),
+  );
+  const labour = quote.lineItems.filter((i) => /labour|labor|handyman|hr/i.test(i.unit) || /labour|labor/i.test(i.name));
+  const fees = quote.lineItems.filter(
+    (i) => !materials.includes(i) && !labour.includes(i),
+  );
+
+  const sections: { title: string; items: typeof quote.lineItems }[] = [
+    { title: 'Materials', items: materials.length ? materials : [] },
+    { title: 'Labour', items: labour.length ? labour : [] },
+    { title: 'Fees', items: fees.length ? fees : quote.lineItems },
+  ].filter((s) => s.items.length > 0);
+
+  // If nothing classified, show all under Fees-style flat list
+  const rows =
+    sections.length > 0
+      ? sections
+      : [{ title: 'Items', items: quote.lineItems }];
+
+  return (
+    <div className="flex flex-col gap-5 pb-4">
+      <div>
+        <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">
+          Job
+        </p>
+        <div className="bg-white rounded-[24px] border-2 border-slate-50 shadow-sm p-5">
+          <p className="font-black uppercase tracking-tight text-slate-900 text-[15px] leading-tight">
+            {quote.customerName}
+          </p>
+          <p className="text-[12px] font-semibold text-slate-400 mt-1 uppercase tracking-wider">
+            {quote.address} · {quote.business}
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">
+          Breakdown
+        </p>
+        <div className="bg-white rounded-[24px] border border-slate-100 shadow-sm overflow-hidden">
+          <table className="w-full text-left border-collapse table-fixed">
+            <thead>
+              <tr className="bg-slate-50 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-slate-100">
+                <th className="px-5 py-3.5">Item</th>
+                <th className="px-5 py-3.5 text-right w-[100px]">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((section) => (
+                <FragmentSection key={section.title} title={section.title} items={section.items} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">
+          Totals
+        </p>
+        <div className="bg-white rounded-[24px] border border-slate-100 shadow-xl overflow-hidden">
+          <div className="p-5 flex flex-col gap-3">
+            <div className="flex justify-between text-[14px] font-bold text-slate-400 uppercase tracking-widest">
+              <span>Subtotal</span>
+              <span className="text-slate-900 tabular-nums">{money(quote.subtotal)}</span>
+            </div>
+            <div className="flex justify-between text-[14px] font-bold text-slate-400 uppercase tracking-widest">
+              <span>GST (10%)</span>
+              <span className="text-slate-900 tabular-nums">{money(quote.gst)}</span>
+            </div>
+          </div>
+          <div className="bg-slate-50 border-t border-slate-100 p-5 flex justify-between items-center">
+            <span className="text-[13px] font-bold text-slate-500 uppercase tracking-widest">
+              Total Amount
+            </span>
+            <span className="text-[28px] font-bold text-slate-900 tracking-tight leading-none tabular-nums">
+              {money(quote.total)}
+            </span>
+          </div>
+        </div>
+        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-2 ml-1">
+          Built in {quote.builtInSeconds.toFixed(1)}s · Demo rates
+        </p>
+      </div>
+
+      <p className="text-[12px] font-medium text-slate-500 leading-relaxed bg-slate-50 border border-slate-100 rounded-2xl px-4 py-3">
+        This uses our standard pricing. Your actual quotes? Faster and exact when you upload your own
+        rates.
+      </p>
+
+      <a
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center h-14 rounded-2xl bg-[#0F172A] text-white font-bold text-[15px] shadow-xl shadow-slate-900/10 hover:bg-slate-800 transition-colors touch-manipulation"
+      >
+        Start Free on iPhone
+      </a>
+
+      {onTryAgain && !preview && (
+        <button
+          type="button"
+          onClick={onTryAgain}
+          className="inline-flex items-center justify-center h-12 rounded-2xl border-2 border-slate-100 text-slate-600 font-bold text-[13px] uppercase tracking-widest hover:bg-slate-50 touch-manipulation"
+        >
+          Try another
+        </button>
+      )}
+    </div>
+  );
+}
+
+function FragmentSection({
+  title,
+  items,
+}: {
+  title: string;
+  items: DemoQuote['lineItems'];
+}) {
+  return (
+    <>
+      <tr className="bg-slate-50">
+        <td colSpan={2} className="px-5 py-3">
+          <span className="text-[11px] font-bold text-slate-900 uppercase tracking-widest">{title}</span>
+        </td>
+      </tr>
+      {items.map((item) => (
+        <tr key={item.id} className="border-b border-slate-50">
+          <td className="px-5 py-5 min-w-0">
+            <div className="text-[15px] font-bold text-slate-900 break-words leading-snug">{item.name}</div>
+            <div className="mt-1 text-[12px] font-bold text-slate-400 uppercase tracking-wider">
+              {item.qty} {item.unit} × {money(item.unitPrice)}
+            </div>
+          </td>
+          <td className="px-5 py-5 text-right text-[15px] font-bold text-slate-900 tabular-nums whitespace-nowrap">
+            {money(item.total)}
+          </td>
+        </tr>
+      ))}
+    </>
+  );
+}
+
+export type VoiceQuoteDemoScreenProps = {
+  phase: AppDemoPhase;
+  elapsed?: number;
+  error?: string | null;
+  quote?: DemoQuote | null;
+  checklist?: ChecklistItem[];
+  onToggleRecord?: () => void;
+  onTryAgain?: () => void;
+  onClose?: () => void;
+  /** Optional typed fallback (marketing only — not in app) */
+  typedJob?: string;
+  onTypedJobChange?: (v: string) => void;
+  onSubmitTyped?: () => void;
+  preview?: boolean;
+};
+
 /**
- * Presentational phone UI for the try-it demo.
- * Used by the live modal and the internal design-review page.
+ * App-faithful phone chrome for screens 11–14.
  */
 export function VoiceQuoteDemoScreen({
   phase,
   elapsed = 0,
   error = null,
-  transcript = '',
   quote = null,
-  typedJob = '',
-  onTypedJobChange,
-  onStartRecording,
-  onStopRecording,
-  onSubmitTyped,
+  checklist,
+  onToggleRecord,
   onTryAgain,
   onClose,
+  typedJob = '',
+  onTypedJobChange,
+  onSubmitTyped,
   preview = false,
 }: VoiceQuoteDemoScreenProps) {
-  const recordState =
-    phase === 'recording' ? 'recording' : phase === 'listening' || phase === 'building' ? 'loading' : 'idle';
-
-  const showCapture = phase !== 'result';
+  const items = checklist ?? checklistForPhase(phase);
 
   return (
-    <div className="relative w-full max-w-[375px] mx-auto h-[min(640px,90vh)] bg-white rounded-[2rem] border-[3px] border-[#0F172A] shadow-[0_24px_80px_-20px_rgba(15,23,42,0.55)] overflow-hidden flex flex-col">
-      {/* Dynamic island */}
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[96px] h-[26px] bg-brand rounded-full z-20 pointer-events-none" />
+    <div className="relative w-full max-w-[390px] mx-auto h-[min(720px,92vh)] bg-[#FAFAFA] rounded-[2rem] border-[3px] border-[#0F172A] shadow-[0_24px_80px_-20px_rgba(15,23,42,0.55)] overflow-hidden flex flex-col font-sans">
+      <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#0F172A] rounded-full z-20 pointer-events-none" />
 
       {onClose && !preview && (
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 z-30 w-9 h-9 rounded-full bg-slate-100/90 text-slate-600 flex items-center justify-center hover:bg-slate-200 touch-manipulation backdrop-blur-sm"
+          className="absolute top-3 right-3 z-30 w-9 h-9 rounded-full bg-white/90 border border-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-50 touch-manipulation"
           aria-label="Close"
         >
           <X className="w-4 h-4" />
@@ -107,121 +504,124 @@ export function VoiceQuoteDemoScreen({
 
       <StatusBar />
 
-      <div className="px-5 pt-2 pb-1 border-b border-slate-100">
-        <p className="font-display text-[10px] uppercase tracking-[0.22em] text-slate-400">
-          Try It Now · Free
-        </p>
-        <h2 className="font-display text-[1.65rem] uppercase tracking-tight text-brand leading-[0.95] mt-1">
-          Describe the job.
-          <span className="block text-accent">Quote in 30s.</span>
-        </h2>
+      {/* App header — Cancel | Voice Assistant */}
+      <div className="h-[56px] px-5 flex items-center justify-between shrink-0 border-b border-slate-100/70">
+        <button
+          type="button"
+          onClick={preview ? undefined : onClose}
+          className="h-10 px-3 -ml-2 rounded-full flex items-center text-[12px] font-black text-slate-900 uppercase tracking-widest"
+        >
+          Cancel
+        </button>
+        <span className="text-[13px] font-black uppercase tracking-[0.24em] text-slate-300">
+          Voice Assistant
+        </span>
+        <div className="w-10 h-10" aria-hidden />
       </div>
 
-      <div className="flex-1 overflow-y-auto px-5 py-4">
+      <div className="relative flex-1 flex flex-col px-5 pt-5 overflow-y-auto pb-28">
         {phase === 'result' && quote ? (
-          <QuoteResult transcript={transcript} quote={quote} onTryAgain={preview ? undefined : onTryAgain} />
+          <AppQuotePreview quote={quote} onTryAgain={onTryAgain} preview={preview} />
         ) : (
-          <div className="flex flex-col items-center text-center min-h-full">
-            {phase === 'ready' && (
-              <p className="font-body text-[15px] text-slate-600 leading-relaxed mb-6 max-w-[17rem]">
-                Tap record. Say something like{' '}
-                <span className="text-brand font-semibold">
-                  &ldquo;Gutters cleaned, two-storey house.&rdquo;
-                </span>
-              </p>
-            )}
-
-            {phase === 'recording' && (
-              <div className="mb-5 w-full">
-                <div className="rounded-[1.25rem] bg-[#0A1119] px-4 py-4 flex items-center gap-3.5">
-                  <div className="shrink-0 w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-                    <WaveformBars variant="onLime" active />
-                  </div>
-                  <div className="text-left min-w-0">
-                    <p className="font-display text-[10px] uppercase tracking-[0.2em] text-white/45">
-                      Listening…
-                    </p>
-                    <p className="font-display-italic font-black italic text-[1.75rem] text-white leading-none tabular-nums tracking-tight">
-                      0:{elapsed.toString().padStart(2, '0')}
-                      <span className="ml-2 font-display not-italic text-accent text-sm tracking-[0.15em] align-middle">
-                        REC
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <p className="font-body text-xs text-slate-400 mt-3">Tap stop when you&apos;re done</p>
-              </div>
-            )}
-
-            {(phase === 'listening' || phase === 'building') && (
-              <div className="mb-6 w-full space-y-3">
-                <ListeningPanel label={phase === 'listening' ? 'Transcribing' : 'Pricing'} />
-                <p className="font-body text-sm text-slate-500">
-                  {phase === 'listening' ? 'Listening…' : 'Building your quote…'}
-                </p>
-              </div>
-            )}
-
-            {showCapture && phase !== 'listening' && phase !== 'building' && (
-              <div className="mb-2">
-                <RecordButton
-                  state={recordState}
-                  onStart={preview ? undefined : onStartRecording}
-                  onStop={preview ? undefined : onStopRecording}
-                  disabled={preview || phase === 'listening' || phase === 'building'}
-                />
-              </div>
-            )}
-
-            {phase === 'ready' && (
-              <p className="font-body text-xs text-slate-400 mt-3 mb-6">Tap to talk · Max 30 seconds</p>
-            )}
+          <>
+            <VoiceStatusCard phase={phase} elapsed={elapsed} />
+            <Checklist items={items} />
 
             {error && (
-              <p
-                className="font-body text-sm text-[#B91C1C] bg-red-50 border border-red-100 rounded-2xl px-3.5 py-3 mt-4 max-w-[18rem] text-left"
-                role="alert"
-              >
-                {error}
-              </p>
+              <div className="mt-4 rounded-2xl border border-rose-100 bg-rose-50 px-4 py-3" role="alert">
+                <div className="text-[12px] font-black text-rose-900 uppercase tracking-widest">
+                  Couldn&apos;t generate estimate
+                </div>
+                <div className="mt-1 text-[12px] font-semibold text-rose-700">{error}</div>
+              </div>
             )}
 
-            {(phase === 'ready' || phase === 'error') && (
-              <div className="w-full mt-auto pt-6 text-left">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="h-px flex-1 bg-slate-200" />
-                  <span className="font-display text-[10px] uppercase tracking-[0.2em] text-slate-400">
-                    Or type it
-                  </span>
-                  <span className="h-px flex-1 bg-slate-200" />
-                </div>
+            {(phase === 'idle' || phase === 'error') && onSubmitTyped && (
+              <div className="mt-6">
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2 text-center">
+                  Or type the job (web only)
+                </p>
                 <textarea
-                  id="demo-job-text"
                   value={typedJob}
                   onChange={(e) => onTypedJobChange?.(e.target.value)}
                   rows={2}
                   readOnly={preview}
-                  placeholder="e.g. Gutters cleaned, two-storey house"
-                  className="w-full rounded-2xl border border-slate-200 bg-[#F4F6F9] px-3.5 py-3 font-body text-sm text-brand placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/70 focus:border-transparent resize-none"
+                  placeholder="e.g. Kitchen tap, Sarah Jones, call-out"
+                  className="w-full rounded-2xl border-2 border-slate-100 bg-white px-3.5 py-3 text-[13px] font-medium text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-[#dfff00]/40 resize-none"
                 />
                 <button
                   type="button"
                   onClick={onSubmitTyped}
-                  disabled={preview || !onSubmitTyped}
-                  className="mt-2.5 w-full min-h-[48px] rounded-2xl bg-brand text-accent font-display text-sm uppercase tracking-wide hover:brightness-110 touch-manipulation disabled:opacity-60"
+                  disabled={preview}
+                  className="mt-2 w-full h-12 rounded-2xl bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest disabled:opacity-50"
                 >
                   Build quote from text
                 </button>
               </div>
             )}
-          </div>
+          </>
         )}
       </div>
 
-      {/* Home indicator */}
-      <div className="pb-2 pt-1 flex justify-center" aria-hidden>
-        <div className="w-[108px] h-[4px] rounded-full bg-brand/20" />
-      </div>
+      {/* FAB slot — matches app bottom-right record button */}
+      {phase !== 'result' && (
+        <div className="absolute bottom-6 right-6 z-20">
+          <RecordFab
+            phase={phase}
+            onToggle={onToggleRecord}
+            preview={preview}
+            disabled={phase === 'processing'}
+          />
+        </div>
+      )}
+
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[108px] h-[4px] rounded-full bg-slate-900/15" aria-hidden />
     </div>
   );
 }
+
+/** Handoff mock quote — Smith Plumbing / kitchen tap scenario. */
+export const APP_PREVIEW_QUOTE: DemoQuote = {
+  customerName: 'Sarah Jones',
+  business: 'Smith Plumbing',
+  address: '42 Marine Pde, Sydney NSW',
+  lineItems: [
+    {
+      id: 'fittings',
+      name: 'Compression fittings',
+      qty: 1,
+      unit: 'set',
+      unitPrice: 50,
+      total: 50,
+    },
+    {
+      id: 'labour',
+      name: 'Labour Charges',
+      qty: 2,
+      unit: 'hrs',
+      unitPrice: 95,
+      total: 190,
+    },
+    {
+      id: 'call-out',
+      name: 'Call-out fee',
+      qty: 1,
+      unit: 'each',
+      unitPrice: 500,
+      total: 500,
+    },
+    {
+      id: 'travel',
+      name: 'Travel fee',
+      qty: 1,
+      unit: 'each',
+      unitPrice: 80,
+      total: 80,
+    },
+  ],
+  subtotal: 820,
+  gst: 82,
+  total: 902,
+  currency: 'AUD',
+  builtInSeconds: 2.4,
+};
