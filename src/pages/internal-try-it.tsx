@@ -1,26 +1,17 @@
-import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Nav } from '../components/nav';
 import { Footer } from '../components/footer';
 import { SEO } from '../components/seo';
-import { VoiceQuoteDemo } from '../components/voice-quote-demo/VoiceQuoteDemo';
+import { VoiceQuoteDemoDesignReview } from '../components/voice-quote-demo/VoiceQuoteDemo';
 import { isVoiceQuoteDemoInternalAllowed } from '../lib/feature-flags';
 import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 /**
- * Internal-only try-it page. Available with `npm run dev`.
- * Not linked from public nav/sitemap. Production redirects home unless
- * VITE_ENABLE_VOICE_DEMO=true.
+ * Internal design + try-it review. Available with `npm run dev`.
+ * Not linked from public nav/sitemap.
  */
 export function InternalTryItPage() {
-  const enabled = isVoiceQuoteDemoInternalAllowed();
-  const [open, setOpen] = useState(true);
-
-  useEffect(() => {
-    if (enabled) setOpen(true);
-  }, [enabled]);
-
-  if (!enabled) {
+  if (!isVoiceQuoteDemoInternalAllowed()) {
     return <Navigate to="/" replace />;
   }
 
@@ -28,26 +19,22 @@ export function InternalTryItPage() {
     <div className={`${iosLanding.page} bg-brand min-h-screen`}>
       <SEO
         title="Internal — Voice quote demo | SMASH"
-        description="Internal try-it voice-to-quote demo. Not for public indexing."
+        description="Internal try-it voice-to-quote design review. Not for public indexing."
         canonical="https://smashinvoices.com/internal/try-it"
         robots="noindex, nofollow"
       />
       <Nav />
-      <main className="py-12 md:py-16">
-        <div className={`${iosLanding.container} text-center mb-8`}>
-          <p className="font-display text-[11px] uppercase tracking-[0.2em] text-accent mb-2">
-            Internal only
-          </p>
-          <h1 className={`${iosLanding.heroHeadline} text-white mb-3`}>
-            <span className="block">TRY IT</span>
-            <span className="block text-accent">BEFORE LAUNCH</span>
-          </h1>
-          <p className="font-body text-white/70 max-w-lg mx-auto">
-            Not on the public homepage. Set <code className="text-accent">DEEPGRAM_API_KEY</code> on
-            Supabase for voice; typed jobs work without it.
-          </p>
+      <main className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              'radial-gradient(ellipse at 70% 20%, rgba(223,255,0,0.18), transparent 45%), radial-gradient(ellipse at 10% 80%, rgba(255,255,255,0.06), transparent 40%)',
+          }}
+        />
+        <div className={`${iosLanding.container} relative py-12 md:py-16 lg:py-20`}>
+          <VoiceQuoteDemoDesignReview />
         </div>
-        <VoiceQuoteDemo open={open} onOpenChange={setOpen} showSection />
       </main>
       <Footer />
     </div>

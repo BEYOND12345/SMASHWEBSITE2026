@@ -1,14 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { X } from 'lucide-react';
-import { RecordButton } from './RecordButton';
-import { QuoteResult } from './QuoteResult';
 import {
   submitDemoVoiceAudio,
   submitDemoVoiceTranscript,
 } from '../../lib/demo-voice-quote';
 import type { DemoQuote } from '../../data/demo-quote-catalogue';
-
-type Phase = 'ready' | 'recording' | 'listening' | 'building' | 'result' | 'error';
+import { VoiceQuoteDemoScreen, type DemoPhase } from './VoiceQuoteDemoScreen';
 
 type Props = {
   open: boolean;
@@ -24,7 +20,7 @@ function pickMimeType(): string {
 }
 
 export function VoiceQuoteDemoModal({ open, onClose }: Props) {
-  const [phase, setPhase] = useState<Phase>('ready');
+  const [phase, setPhase] = useState<DemoPhase>('ready');
   const [error, setError] = useState<string | null>(null);
   const [transcript, setTranscript] = useState('');
   const [quote, setQuote] = useState<DemoQuote | null>(null);
@@ -65,7 +61,6 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   useEffect(() => {
     if (!open) return;
-
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
     };
@@ -158,9 +153,7 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   const stopRecording = () => {
     const recorder = mediaRecorderRef.current;
-    if (recorder && recorder.state === 'recording') {
-      recorder.stop();
-    }
+    if (recorder && recorder.state === 'recording') recorder.stop();
   };
 
   const submitTyped = async () => {
@@ -178,12 +171,9 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   if (!open) return null;
 
-  const recordState =
-    phase === 'recording' ? 'recording' : phase === 'listening' || phase === 'building' ? 'loading' : 'idle';
-
   return (
     <div
-      className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/40"
+      className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-[#0A1119]/70 backdrop-blur-[2px]"
       role="dialog"
       aria-modal="true"
       aria-label="Try voice to quote"
@@ -191,92 +181,20 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="relative w-full max-w-[375px] h-[min(600px,90vh)] bg-white border-2 border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden flex flex-col">
-        <button
-          type="button"
-          onClick={close}
-          className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-200 touch-manipulation"
-          aria-label="Close"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="flex-1 overflow-y-auto px-5 pt-6 pb-5">
-          <p className="font-display text-[11px] uppercase tracking-[0.2em] text-slate-400 mb-2">
-            Try It Now (Free)
-          </p>
-          <h2 className="font-display text-2xl uppercase tracking-tight text-brand leading-none mb-2">
-            Describe the job.
-            <span className="block text-accent">Get a quote in 30 seconds.</span>
-          </h2>
-
-          {phase === 'result' && quote ? (
-            <div className="mt-4">
-              <QuoteResult transcript={transcript} quote={quote} onTryAgain={reset} />
-            </div>
-          ) : (
-            <div className="mt-6 flex flex-col items-center text-center">
-              {(phase === 'listening' || phase === 'building') && (
-                <p className="font-body text-base text-slate-600 mb-4">
-                  {phase === 'listening' ? 'Listening...' : 'Building your quote...'}
-                </p>
-              )}
-
-              {phase === 'recording' && (
-                <p className="font-body text-sm text-red-500 font-semibold mb-3 tabular-nums">
-                  Recording 0:{elapsed.toString().padStart(2, '0')}
-                </p>
-              )}
-
-              {phase === 'ready' && (
-                <p className="font-body text-base text-slate-600 leading-relaxed mb-6 max-w-[16rem]">
-                  Tap record. Say something like &ldquo;Gutters cleaned, two-storey house.&rdquo;
-                </p>
-              )}
-
-              <RecordButton
-                state={recordState}
-                onStart={startRecording}
-                onStop={stopRecording}
-                disabled={phase === 'listening' || phase === 'building'}
-              />
-
-              {phase === 'ready' && (
-                <p className="font-body text-xs text-slate-400 mt-3">Tap to talk · Max 30 seconds</p>
-              )}
-
-              {error && (
-                <p className="font-body text-sm text-red-600 mt-4 max-w-[18rem]" role="alert">
-                  {error}
-                </p>
-              )}
-
-              {(phase === 'ready' || phase === 'error') && (
-                <div className="w-full mt-8 text-left">
-                  <label htmlFor="demo-job-text" className="font-body text-xs font-semibold text-slate-400 uppercase tracking-wide">
-                    Or type the job
-                  </label>
-                  <textarea
-                    id="demo-job-text"
-                    value={typedJob}
-                    onChange={(e) => setTypedJob(e.target.value)}
-                    rows={2}
-                    placeholder="e.g. Gutters cleaned, two-storey house"
-                    className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2.5 font-body text-sm text-brand placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/60"
-                  />
-                  <button
-                    type="button"
-                    onClick={submitTyped}
-                    className="mt-2 w-full min-h-[44px] rounded-2xl border border-slate-200 text-slate-600 font-body text-sm font-semibold hover:bg-slate-50 touch-manipulation"
-                  >
-                    Build quote from text
-                  </button>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+      <VoiceQuoteDemoScreen
+        phase={phase}
+        elapsed={elapsed}
+        error={error}
+        transcript={transcript}
+        quote={quote}
+        typedJob={typedJob}
+        onTypedJobChange={setTypedJob}
+        onStartRecording={startRecording}
+        onStopRecording={stopRecording}
+        onSubmitTyped={submitTyped}
+        onTryAgain={reset}
+        onClose={close}
+      />
     </div>
   );
 }
