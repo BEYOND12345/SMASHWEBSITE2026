@@ -466,6 +466,11 @@ export type VoiceQuoteDemoScreenProps = {
   onTypedJobChange?: (v: string) => void;
   onSubmitTyped?: () => void;
   preview?: boolean;
+  /**
+   * phone = desktop marketing chrome (bezel).
+   * sheet = mobile web full-bleed (no nested phone).
+   */
+  shell?: 'phone' | 'sheet';
 };
 
 /**
@@ -484,12 +489,22 @@ export function VoiceQuoteDemoScreen({
   onTypedJobChange,
   onSubmitTyped,
   preview = false,
+  shell = 'phone',
 }: VoiceQuoteDemoScreenProps) {
   const items = checklist ?? checklistForPhase(phase);
+  const isSheet = shell === 'sheet';
 
   return (
-    <div className="relative w-full max-w-[390px] mx-auto h-[min(720px,92vh)] bg-[#FAFAFA] rounded-[2rem] border-[3px] border-[#0F172A] shadow-[0_24px_80px_-20px_rgba(15,23,42,0.55)] overflow-hidden flex flex-col font-sans">
-      <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#0F172A] rounded-full z-20 pointer-events-none" />
+    <div
+      className={
+        isSheet
+          ? 'relative w-full h-[min(100dvh,100%)] max-h-[100dvh] bg-[#FAFAFA] overflow-hidden flex flex-col font-sans'
+          : 'relative w-full max-w-[390px] mx-auto h-[min(720px,92vh)] bg-[#FAFAFA] rounded-[2rem] border-[3px] border-[#0F172A] shadow-[0_24px_80px_-20px_rgba(15,23,42,0.55)] overflow-hidden flex flex-col font-sans'
+      }
+    >
+      {!isSheet && (
+        <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-[#0F172A] rounded-full z-20 pointer-events-none" />
+      )}
 
       {onClose && !preview && (
         <button
@@ -502,10 +517,10 @@ export function VoiceQuoteDemoScreen({
         </button>
       )}
 
-      <StatusBar />
+      {!isSheet && <StatusBar />}
 
       {/* App header — Cancel | Voice Assistant */}
-      <div className="h-[56px] px-5 flex items-center justify-between shrink-0 border-b border-slate-100/70">
+      <div className="h-[56px] px-5 flex items-center justify-between shrink-0 border-b border-slate-100/70 pt-[env(safe-area-inset-top)]">
         <button
           type="button"
           onClick={preview ? undefined : onClose}
@@ -563,9 +578,8 @@ export function VoiceQuoteDemoScreen({
         )}
       </div>
 
-      {/* FAB slot — matches app bottom-right record button */}
       {phase !== 'result' && (
-        <div className="absolute bottom-6 right-6 z-20">
+        <div className="absolute bottom-6 right-6 z-20 mb-[env(safe-area-inset-bottom)]">
           <RecordFab
             phase={phase}
             onToggle={onToggleRecord}
@@ -575,7 +589,12 @@ export function VoiceQuoteDemoScreen({
         </div>
       )}
 
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[108px] h-[4px] rounded-full bg-slate-900/15" aria-hidden />
+      {!isSheet && (
+        <div
+          className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[108px] h-[4px] rounded-full bg-slate-900/15"
+          aria-hidden
+        />
+      )}
     </div>
   );
 }

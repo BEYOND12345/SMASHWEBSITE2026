@@ -23,7 +23,20 @@ function pickMimeType(): string {
   return 'audio/webm';
 }
 
+function useIsMobileSheet() {
+  const [sheet, setSheet] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const apply = () => setSheet(mq.matches);
+    apply();
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
+  }, []);
+  return sheet;
+}
+
 export function VoiceQuoteDemoModal({ open, onClose }: Props) {
+  const isSheet = useIsMobileSheet();
   const [phase, setPhase] = useState<AppDemoPhase>('idle');
   const [error, setError] = useState<string | null>(null);
   const [quote, setQuote] = useState<DemoQuote | null>(null);
@@ -175,12 +188,16 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-[#0A0E17]/65 backdrop-blur-[2px]"
+      className={
+        isSheet
+          ? 'fixed inset-0 z-[80] bg-[#FAFAFA]'
+          : 'fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 bg-[#0A0E17]/65 backdrop-blur-[2px]'
+      }
       role="dialog"
       aria-modal="true"
       aria-label="Try voice to quote"
       onClick={(e) => {
-        if (e.target === e.currentTarget) close();
+        if (!isSheet && e.target === e.currentTarget) close();
       }}
     >
       <VoiceQuoteDemoScreen
@@ -195,6 +212,7 @@ export function VoiceQuoteDemoModal({ open, onClose }: Props) {
         onSubmitTyped={submitTyped}
         onTryAgain={reset}
         onClose={close}
+        shell={isSheet ? 'sheet' : 'phone'}
       />
     </div>
   );

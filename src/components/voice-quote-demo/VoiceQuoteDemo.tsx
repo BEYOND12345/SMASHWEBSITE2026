@@ -53,11 +53,19 @@ export function VoiceQuoteDemo({ open: controlledOpen, onOpenChange, showSection
                   <Mic className="w-5 h-5" strokeWidth={2.5} />
                   Try It Now
                 </button>
+                <p className="font-body text-sm text-slate-400 mt-4">
+                  Free · No account · Demo rates until you upload yours
+                </p>
               </AnimateIn>
 
-              <AnimateIn direction="right" directionMobile="up" className="lg:col-span-7 flex justify-center">
-                <div className="w-full max-w-[340px] scale-[0.88] sm:scale-95 origin-top">
-                  <VoiceQuoteDemoScreen phase="idle" preview />
+              {/* Desktop only — phone teaser. Mobile uses CTA → full-bleed sheet. */}
+              <AnimateIn
+                direction="right"
+                directionMobile="up"
+                className="hidden lg:flex lg:col-span-7 justify-center lg:justify-end"
+              >
+                <div className="w-full max-w-[340px] scale-95 origin-top pointer-events-none">
+                  <VoiceQuoteDemoScreen phase="idle" preview shell="phone" />
                 </div>
               </AnimateIn>
             </div>
