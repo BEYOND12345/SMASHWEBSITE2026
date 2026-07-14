@@ -216,7 +216,7 @@ Keep 5y pulls for **US ai invoicing trend narrative only** — not for keyword p
 
 ## Recommended next actions (website chat)
 
-1. **DONE (Jul 2026)** — `/voice-invoicing` serves `voice-invoicing/index.html` (Netlify + `_redirects`); build no longer deletes that static file; edge bot-split removed.
+1. **DONE (Jul 2026)** — `/voice-invoicing` keeps static HTML for crawlers via edge bot-split; humans get the React iOS landing (`IosAppLandingPage`). Static file is kept in `dist/` for bots.
 2. **DONE** — Pillar SEO enriched (~30s, instant quote FAQs); title protected.
 3. **DONE** — Explainer post `/blog/what-is-voice-to-invoice` + how-long/speed cluster links.
 4. **GSC re-inspect** — `/voice-invoicing` after deploy (title/canonical must match static).

@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
-// Keep dist/voice-invoicing/index.html — it is the SEO static page (like gmail-invoice).
+// Keep dist/voice-invoicing/index.html — edge function serves it to crawlers only.
 const shadowStubs = [
   'chrome-extension/index.html',
   'b2b-gmail-quoting/index.html',
