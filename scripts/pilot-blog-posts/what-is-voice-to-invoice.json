@@ -1,0 +1,52 @@
+{
+  "slug": "what-is-voice-to-invoice",
+  "title": "What Is Voice to Invoice? Talk the Job, Send Before You Leave",
+  "meta_title": "What Is Voice to Invoice? Send It Before You Leave | SMASH",
+  "meta_description": "Voice to invoice means describing a finished job out loud and getting a priced, tax-ready invoice in about 30 seconds. How it works, what it is not, and why same-day beats Sunday admin.",
+  "excerpt": "Voice to invoice is not dictating into a notes app. It is talk → verify against your catalog → send a payable PDF before you leave the job.",
+  "primary_keyword": "voice to invoice",
+  "secondary_keywords": [
+    "what is voice to invoice",
+    "on the job invoice",
+    "instant quote",
+    "quick invoice",
+    "invoice without typing"
+  ],
+  "key_takeaways": [
+    "Voice to invoice = speak the completed job, match your own prices, review, then send a tax-ready PDF.",
+    "The whole loop is about 30 seconds on site — not a Sunday-night typing session.",
+    "It is not ChatGPT drafting paragraphs. Unmatched items are flagged; your catalog drives the numbers.",
+    "Same flow covers an instant quote when the customer wants a number before you leave."
+  ],
+  "faq_data": [
+    {
+      "question": "What does voice to invoice mean?",
+      "answer": "You describe labour, materials, and fees out loud. Software builds a structured invoice from your speech and your saved rates, you verify every line, then you send a GST-ready PDF with a payment link."
+    },
+    {
+      "question": "How is voice to invoice different from voice notes or ChatGPT?",
+      "answer": "A voice note is unstructured text. ChatGPT drafts wording but does not know your rates or produce a payable tax invoice. Voice to invoice maps speech to your catalog and flags unknowns instead of guessing prices."
+    },
+    {
+      "question": "How long does voice to invoice take?",
+      "answer": "About 30 seconds end to end once your pricing is set up: a short recording, a quick verify pass, then send. Many operators finish before they start the van."
+    },
+    {
+      "question": "Can I use the same flow for an instant quote?",
+      "answer": "Yes. Talk the scope, verify priced lines, and send a quote on site when the customer wants a number before you leave — then convert to invoice when the job is done."
+    },
+    {
+      "question": "Do I still review the invoice before it sends?",
+      "answer": "Yes. Nothing sends without your check. That review step is what keeps catalog pricing honest and prevents silent AI guesses."
+    }
+  ],
+  "last_reviewed": "2026-07-14T00:00:00.000Z",
+  "reading_time": 7,
+  "author": "Dan Neale",
+  "author_bio": "Dan Neale builds SMASH — voice and Gmail invoicing for self-employed service workers who want to get paid without Sunday admin.",
+  "published_at": "2026-07-14T00:00:00.000Z",
+  "updated_at": "2026-07-14T00:00:00.000Z",
+  "featured_image": "/hero_image.png",
+  "featured_image_alt": "Tradie sending a voice to invoice from iPhone before leaving the job site",
+  "content": "## Short answer\n\n**Voice to invoice** means you describe the finished job out loud on your phone, the app turns that speech into priced line items from **your** catalog, you verify the lines, and you send a tax-ready PDF — usually in about **30 seconds**, before you leave the driveway.\n\nIt is the opposite of Sunday-night Excel. It is also not “AI that invents prices.”\n\nIf you only need the product page, start here: [Voice to invoice on iPhone](/voice-invoicing).\n\n## Why the phrase matters\n\nPeople search “voice to invoice” when they already know typing on a cracked screen after a long job is the bottleneck. They are not looking for another template. They want:\n\n1. Capture the job while details are fresh\n2. Prices that match what they actually charge\n3. A payable document out the door same visit\n\nThat is an **on the job invoice** — and the same loop works as an **instant quote** when someone asks “how much?” before you pack up.\n\n## What voice to invoice is (and is not)\n\n| It is | It is not |\n| --- | --- |\n| Talk → verify → send | Dictating a paragraph into Notes |\n| Your rates and materials catalog | Generic AI guessing dollar amounts |\n| Tax-ready PDF + Pay Now | A draft email you still retype |\n| ~30 seconds on site | A 20-minute kitchen-table session |\n\nSMASH flags unmatched items so you price them. That verify step is the product — not optional theatre.\n\n## The 30-second loop\n\n1. **Talk** — labour, materials, call-out or travel fees in plain language (often under 20 seconds of speech).\n2. **Verify** — check quantities and catalog prices; fix anything flagged.\n3. **Send** — PDF with GST where needed and a card payment link.\n\nDesk requests that arrive by email use the sister workflow: [email to invoice in Gmail](/gmail-invoice).\n\n## Why same visit beats “I’ll invoice later”\n\nDetails fade. Forgotten fittings and fees are the quiet profit leak. Invoices sent within hours of the job consistently get paid faster than a Sunday batch. For the Australian timing question, see [how long after a job you should send the invoice](/blog/how-long-to-send-invoice-after-job-australia).\n\nVoice to invoice exists so “later” never becomes the default.\n\n## Instant quote on the same visit\n\nSometimes the customer wants a number before they say yes. Same voice flow: scope out loud, verify, send a quote. When the job is done, convert and send the invoice without rebuilding the work from memory. That is how **instant quote** and **quick invoice** sit next to voice to invoice in real jobs — one product habit, two document types.\n\n## Who it is for\n\nSelf-employed and small crews who sell labour and materials from a van, ute, or site — cleaners, sparkies, plumbers, handymen, pest, painters, and similar. If you already know your rates and hate retyping them, you are the user.\n\nIf you need the full field walkthrough with video, read [voice to invoice workflow](/blog/the-60-second-invoice-voice-to-invoice) and [fastest way to send an invoice](/blog/fastest-way-to-send-invoice-2026).\n\n## Bottom line\n\nVoice to invoice is the category name for **speak the job, use your prices, send before you leave**. About 30 seconds. No keyboard theatre. No invented rates.\n\n[Get voice to invoice on iPhone](/voice-invoicing) · [Add the Gmail extension](/gmail-invoice)"
+}

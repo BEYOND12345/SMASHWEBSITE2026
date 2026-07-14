@@ -26,11 +26,13 @@ const VOICE_SPEED_SLUGS = [
   ),
   'how-long-to-send-invoice-after-job-australia',
   'word-vs-excel-vs-app-for-invoices',
+  'what-is-voice-to-invoice',
 ];
 
 const RELATED_LINKS = [
   { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
-  { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice in 60 seconds' },
+  { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
+  { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice' },
   { href: '/blog/how-long-to-send-invoice-after-job-australia', label: 'Send the invoice before you leave' },
   { href: '/blog/invoice-without-typing', label: 'Invoice without typing' },
@@ -42,8 +44,8 @@ function escapeHtml(s: string): string {
 
 function intentCallout(): string {
   return `<aside class="intent-pillar" ${MARKER} aria-label="Voice and speed invoicing" style="margin:24px 0;padding:20px;border-left:3px solid var(--accent);background:rgba(223,255,0,0.06);border-radius:8px;">
-  <p style="margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);">On the job · under 60 seconds</p>
-  <p style="margin:0;"><a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the completed job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same-day <a href="/voice-invoicing">on the job invoice</a> beats Sunday-night admin. <a href="/blog/how-long-to-send-invoice-after-job-australia">How long to wait after a job</a>.</p>
+  <p style="margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);">On the job · about 30 seconds</p>
+  <p style="margin:0;"><a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the completed job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same-day <a href="/voice-invoicing">on the job invoice</a> or <a href="/voice-invoicing">instant quote</a> beats Sunday-night admin. <a href="/blog/what-is-voice-to-invoice">What is voice to invoice?</a> · <a href="/blog/how-long-to-send-invoice-after-job-australia">How long to wait after a job</a>.</p>
 </aside>`;
 }
 

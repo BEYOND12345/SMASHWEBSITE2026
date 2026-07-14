@@ -9,8 +9,8 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
+// Keep dist/voice-invoicing/index.html — it is the SEO static page (like gmail-invoice).
 const shadowStubs = [
-  'voice-invoicing/index.html',
   'chrome-extension/index.html',
   'b2b-gmail-quoting/index.html',
 ];
@@ -24,7 +24,7 @@ for (const rel of shadowStubs) {
 }
 
 // Empty route dirs shadow SPA fallback on some static hosts (filesystem wins over catch-all).
-for (const dirName of ['voice-invoicing', 'chrome-extension', 'b2b-gmail-quoting']) {
+for (const dirName of ['chrome-extension', 'b2b-gmail-quoting']) {
   const dir = path.join(dist, dirName);
   if (fs.existsSync(dir) && fs.statSync(dir).isDirectory() && fs.readdirSync(dir).length === 0) {
     fs.rmdirSync(dir);

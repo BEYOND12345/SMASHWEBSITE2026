@@ -35,6 +35,7 @@ const gscVoiceSurvivors: { slug: string; label: string }[] = [
   { slug: 'beyond-chatgpt-dedicated-voice-invoicing', label: 'Beyond ChatGPT voice post' },
   { slug: 'stop-admin-sundays-voice-invoicing', label: 'Stop Admin Sundays' },
   { slug: 'the-60-second-invoice-voice-to-invoice', label: '60-second invoice' },
+  { slug: 'what-is-voice-to-invoice', label: 'What is voice to invoice' },
   { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way 2026' },
   { slug: 'fastest-voice-invoice-generator-gmail', label: 'Fastest voice Gmail' },
   { slug: 'invoice-without-typing', label: 'Invoice without typing' },

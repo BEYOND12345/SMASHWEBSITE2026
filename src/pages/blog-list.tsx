@@ -21,7 +21,8 @@ import {
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const VOICE_CLUSTER = [
-  { slug: 'the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice in 60 seconds' },
+  { slug: 'what-is-voice-to-invoice', label: 'What is voice to invoice?' },
+  { slug: 'the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice (demo)' },
   { slug: 'how-long-to-send-invoice-after-job-australia', label: 'How long to wait after a job' },
   { slug: 'invoice-without-typing', label: 'Invoice without typing' },

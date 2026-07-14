@@ -102,6 +102,7 @@ async function generateSitemap() {
     // Blog
     { loc: '/blog',         srcFiles: ['src/pages/blog-list.tsx'], lastmodOverride: latestBlogDate, changefreq: 'daily', priority: '0.9' },
     { loc: '/blog/fastest-way-to-send-invoice-2026', srcFiles: ['public/blog/fastest-way-to-send-invoice-2026/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blog/what-is-voice-to-invoice', srcFiles: ['public/blog/what-is-voice-to-invoice/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/how-it-works', srcFiles: ['src/pages/how-it-works.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/faq',          srcFiles: ['src/pages/faq-page.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/pricing',      srcFiles: ['src/pages/pricing.tsx'], changefreq: 'monthly', priority: '0.9' },
@@ -127,7 +128,7 @@ async function generateSitemap() {
     { loc: '/profit-calculator',        srcFiles: ['src/pages/profit-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
 
     // Feature / product pages
-    { loc: '/voice-invoicing',         srcFiles: ['src/components/ios-product-landing/IosAppLandingPage.tsx', 'src/data/ios-landing-spec.ts'], changefreq: 'weekly', priority: '1.0' },
+    { loc: '/voice-invoicing',         srcFiles: ['src/data/main-pages-seo.ts', 'public/voice-invoicing/index.html', 'src/components/ios-product-landing/IosAppLandingPage.tsx'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/gmail-invoice',           srcFiles: ['public/gmail-invoice/index.html', 'scripts/generate-gmail-landing-static.ts'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/ai-invoicing',            srcFiles: ['src/pages/ai-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', srcFiles: ['src/pages/gst-compliant-invoicing.tsx'], changefreq: 'monthly', priority: '0.8' },

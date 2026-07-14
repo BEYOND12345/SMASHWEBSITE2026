@@ -72,16 +72,17 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
     slug: 'how-long-to-send-invoice-after-job-australia',
     title: 'How Long After a Job Should You Send the Invoice? (Australia)',
     meta:
-      'Send it before you leave the driveway. Why same-day invoices get paid days faster, what the late-payment data shows, and the 60-second way to invoice on site.',
+      'Send it before you leave the driveway. Why same-day invoices get paid days faster, what the late-payment data shows, and the ~30-second voice way to invoice on site.',
     h1: 'How Long After a Job Should You Send the Invoice?',
     answerBlock:
-      'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk for 30 seconds on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link before you start the van.',
+      'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link in about 30 seconds — before you start the van.',
     cta: 'ios',
     pillarLinks: [
       { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
       { href: '/voice-invoicing', label: 'On the job invoice — send before you leave' },
     ],
     relatedLinks: [
+      { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
       { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice in 2026' },
       { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
       { href: '/blog/stop-admin-sundays-voice-invoicing', label: 'Stop Sunday-night invoicing' },
@@ -100,11 +101,11 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       {
         question: 'Can you invoice from your phone on site?',
         answer:
-          'Yes. Describe the job out loud, verify priced line items, and send a compliant PDF with GST and a card payment link in under 60 seconds.',
+          'Yes. Describe the job out loud, verify priced line items, and send a compliant PDF with GST and a card payment link in about 30 seconds.',
       },
     ],
     keywords:
-      'how long to send invoice after job, send invoice immediately australia, invoice same day, on the job invoice',
+      'how long to send invoice after job, send invoice immediately australia, invoice same day, on the job invoice, voice to invoice',
   },
   {
     slug: 'how-to-invoice-as-an-electrician-australia',

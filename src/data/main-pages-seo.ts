@@ -3,7 +3,7 @@
  * Used by React pages and static HTML generators.
  */
 export const SITE = 'https://smashinvoices.com';
-export const DATE_MODIFIED = '2026-07-01';
+export const DATE_MODIFIED = '2026-07-14';
 
 export const HREFLANG_LINKS = [
   { hreflang: 'x-default', href: `${SITE}/` },
@@ -76,29 +76,34 @@ export const mainPages: Record<string, MainPageSeo> = {
     path: '/voice-invoicing',
     title: 'Voice to Invoice — Send It Before You Leave the Job | SMASH',
     description:
-      'Talk for 20 seconds, get a priced, tax-ready invoice on your iPhone. Voice to invoice for anyone who\'d rather not type at the kitchen table tonight. Free to start.',
+      'Voice to invoice in about 30 seconds on iPhone. Talk the job, get a priced tax-ready PDF from your catalog, and send before you leave — or fire an instant quote on site. Free to start.',
     h1: 'Send the invoice before you leave the job',
     brandLine: BRAND_LINE,
     answerBlock:
-      'Voice to invoice means describing the completed job out loud and getting a priced, tax-ready invoice on your iPhone in under 60 seconds. SMASH matches your speech to your catalog — unmatched items are flagged, not guessed. Send before you leave the site. Works with Xero and QuickBooks.',
+      'Voice to invoice means describing the completed job out loud and getting a priced, tax-ready invoice on your iPhone in about 30 seconds. SMASH matches your speech to your catalog — unmatched items are flagged, not guessed. Same workflow for an instant quote on site. Send before you leave. Works with Xero and QuickBooks.',
     bridgeParagraph:
-      'SMASH is an invoice app built for speed. Upload your pricing once, then send quotes and invoices by voice in 30 seconds — on-site with the iOS app or from Gmail with the Chrome extension.',
+      'SMASH is built for speed. Upload your pricing once, then send an on-the-job invoice or instant quote by voice in about 30 seconds — on site with the iOS app, or from Gmail with the Chrome extension.',
     cta: 'ios',
     faqs: [
       {
-        question: 'Is SMASH free to start on iPhone?',
+        question: 'What is voice to invoice?',
         answer:
-          'Yes. Your first five quotes or invoices each month are free — no credit card. When you need unlimited volume and Xero or QuickBooks sync, paid plans start from $15/month AUD.',
+          'You describe the job out loud; the app builds a structured, priced invoice from your speech and your saved rates — not generic AI guesses. Review lines, then send a tax-ready PDF with a Pay Now link.',
       },
       {
         question: 'How fast can I send an invoice after a job?',
         answer:
-          'Under 60 seconds: talk for 20–30 seconds, verify line items from your catalog, send. Many invoices are out before you start the van.',
+          'About 30 seconds end to end: talk for roughly 8–20 seconds, verify catalog-priced lines, send. Many invoices are out before you start the van.',
       },
       {
-        question: 'What is voice to invoice?',
+        question: 'Can I send an instant quote on site by voice?',
         answer:
-          'Describe the job out loud; software builds a structured, priced invoice from your speech and your saved rates — not generic guesses.',
+          'Yes. Same talk → verify → send flow for quotes and invoices. Use voice when the customer wants a number before you leave, or when you need the invoice out same visit.',
+      },
+      {
+        question: 'Is SMASH free to start on iPhone?',
+        answer:
+          'Yes. Your first quotes or invoices each month are free — no credit card. When you need higher volume and Xero or QuickBooks sync, paid plans start from $15/month AUD.',
       },
       {
         question: 'Can I invoice without typing?',
