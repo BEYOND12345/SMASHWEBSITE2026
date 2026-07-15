@@ -261,11 +261,11 @@ export const IOS_STORY_SEGMENTS: IosStorySegment[] = [
 ];
 
 export const IOS_HERO = {
-  headlineLines: ['QUOTE IN 30 SECONDS.', 'WIN THE JOB.'] as const,
+  headlineLines: ['QUOTE AS FAST', 'AS YOU CAN TALK.'] as const,
   /** @deprecated Prefer headlineLines — kept for any legacy two-line consumers. */
-  headlineWhite: 'QUOTE IN 30 SECONDS.',
-  subline:
-    'Speak the job. SMASH builds a priced, tax-ready, materials-ready quote from your own rates. Not close to your price. Exactly your price.',
+  headlineWhite: 'QUOTE AS FAST AS YOU CAN TALK.',
+  /** Sits under the hero demo video — short, after the proof. */
+  subline: 'Speak the job. Priced from your rates — exact, not approximate. No typing.',
 };
 
 /** Photography for the ad landing — each band uses a distinct asset (no repeats). */

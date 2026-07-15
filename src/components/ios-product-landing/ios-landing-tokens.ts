@@ -122,7 +122,8 @@ export const iosStoryMediaCellClass = 'self-end w-full';
 export const iosHeroGridClass = 'grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-12';
 export const iosHeroCopyCellClass = 'self-start order-1 text-center lg:text-left';
 export const iosHeroMediaCellClass = 'self-end w-full order-2 flex justify-center lg:justify-end';
-export const iosHeroMobileCtaCellClass = 'order-3 col-span-1 lg:hidden text-center pb-8 -mt-1';
+/** Mobile: headline → video + byline → CTA */
+export const iosHeroMobileCtaCellClass = 'order-3 col-span-1 lg:hidden text-center pb-8 mt-1';
 export const iosHeroDesktopCtaClass = 'hidden lg:block';
 export const iosHeroMobileSublineClass = 'mx-auto lg:mx-0';
 export const iosHeroMobileCtaWrapClass =

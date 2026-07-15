@@ -25,9 +25,9 @@ import {
   iosAdLandingStories,
 } from '../../data/ios-landing-spec';
 import { mainPages } from '../../data/main-pages-seo';
-import { IosHeroPhoneShowcase } from './IosPhoneShowcase';
 import { IosStorySection } from './IosStorySection';
-import { IosFinalCta, IosHeroCta, IosMediaSlot } from './IosCtaBlocks';
+import { IosFinalCta, IosHeroCta } from './IosCtaBlocks';
+import { IosHeroVerticalVideo } from './IosHeroVerticalVideo';
 import { IosPricingFootnote } from './IosPricingFootnote';
 import {
   iosLanding,
@@ -37,7 +37,6 @@ import {
   iosHeroMediaCellClass,
   iosHeroMobileCtaCellClass,
   iosHeroMobileCtaWrapClass,
-  iosHeroMobileSublineClass,
 } from './ios-landing-tokens';
 import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
@@ -129,41 +128,37 @@ export function IosAppLandingPage() {
       <div className={iosLanding.page}>
         <Nav ctaUrl={APP_STORE_URL} ctaLabel="Start Free" />
 
-        {/* 1. HERO — one promise, one CTA, trust inline */}
+        {/* 1. HERO — white promise, video proof, byline under video, lime only on CTA */}
         <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
           <HeroPhotoBackdrop photo={IOS_AD_LANDING_PHOTOS.hero} tint={IOS_AD_LANDING_PHOTOS.hero.tint} />
-          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
           <div className={`${iosLanding.container} relative z-10`}>
             <div className={iosHeroGridClass}>
               <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
-                <div className="pb-2 lg:pb-8">
-                  <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.75rem,6.5vw,4.5rem)] sm:text-[clamp(2.25rem,5.5vw,4.5rem)]`}>
+                <div className="pb-1 lg:pb-8">
+                  <h1 className={`${iosLanding.heroHeadline} mb-0 text-[clamp(1.875rem,7vw,4.5rem)] sm:text-[clamp(2.35rem,5.5vw,4.5rem)]`}>
                     {IOS_HERO.headlineLines.map((line) => (
-                      <span key={line} className="block text-accent">
+                      <span key={line} className="block text-white">
                         {line}
                       </span>
                     ))}
                   </h1>
 
-                  <p
-                    className={`font-body text-base sm:text-lg font-medium text-white/85 max-w-md leading-[1.45] text-pretty ${iosHeroMobileSublineClass}`}
-                  >
-                    {IOS_HERO.subline}
-                  </p>
-
-                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
+                  <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-7 sm:mt-8`}>
                     <IosHeroCta />
                   </div>
                 </div>
               </AnimateIn>
 
-              <AnimateIn direction="right" directionMobile="up" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
-                <div className="w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
-                  <IosMediaSlot type="hero-video" />
-                  <IosMediaSlot type="hero-gif" />
-                  <IosHeroPhoneShowcase />
-                </div>
+              <AnimateIn
+                direction="right"
+                directionMobile="up"
+                className={`${iosHeroMediaCellClass} lg:col-span-7 flex-col items-center lg:items-end gap-4 sm:gap-5`}
+              >
+                <IosHeroVerticalVideo />
+                <p className="font-body text-[15px] sm:text-base font-medium text-white/70 max-w-[19rem] sm:max-w-[20rem] leading-[1.45] text-pretty text-center lg:text-right">
+                  {IOS_HERO.subline}
+                </p>
               </AnimateIn>
 
               <div className={iosHeroMobileCtaCellClass}>
