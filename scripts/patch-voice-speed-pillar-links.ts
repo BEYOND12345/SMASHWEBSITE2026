@@ -10,7 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { VOICE_SURVIVOR_SLUGS } from './voice-consolidation-redirects.ts';
 
-const MODIFIED = '2026-07-05T00:00:00.000Z';
+const MODIFIED = '2026-07-16T00:00:00.000Z';
 const MARKER = 'data-voice-speed-pillar="1"';
 
 const VOICE_SPEED_SLUGS = [
@@ -27,10 +27,13 @@ const VOICE_SPEED_SLUGS = [
   'how-long-to-send-invoice-after-job-australia',
   'word-vs-excel-vs-app-for-invoices',
   'what-is-voice-to-invoice',
+  'first-quote-wins-instant-quote-on-site',
+  'best-quote-and-invoice-software-for-tradies',
 ];
 
 const RELATED_LINKS = [
   { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
+  { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
   { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
   { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice' },
@@ -45,7 +48,7 @@ function escapeHtml(s: string): string {
 function intentCallout(): string {
   return `<aside class="intent-pillar" ${MARKER} aria-label="Voice and speed invoicing" style="margin:24px 0;padding:20px;border-left:3px solid var(--accent);background:rgba(223,255,0,0.06);border-radius:8px;">
   <p style="margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);">On the job · about 30 seconds</p>
-  <p style="margin:0;"><a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the completed job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same-day <a href="/voice-invoicing">on the job invoice</a> or <a href="/voice-invoicing">instant quote</a> beats Sunday-night admin. <a href="/blog/what-is-voice-to-invoice">What is voice to invoice?</a> · <a href="/blog/how-long-to-send-invoice-after-job-australia">How long to wait after a job</a>.</p>
+  <p style="margin:0;"><a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a> that wins the job, then the <a href="/voice-invoicing">on the job invoice</a>. <a href="/blog/what-is-voice-to-invoice">What is voice to invoice?</a></p>
 </aside>`;
 }
 
@@ -104,7 +107,7 @@ function patchHtml(html: string, slug: string): string {
     }
   }
 
-  // 60-second post — fix weak pillar link anchor in body
+  // 60-second post — fix weak pillar link anchor in body + quote angle
   if (slug === 'the-60-second-invoice-voice-to-invoice') {
     out = out.replace(
       '<a href="/voice-invoicing">Learn how AI learns your customers</a>',
@@ -113,6 +116,35 @@ function patchHtml(html: string, slug: string): string {
     out = out.replace(
       '<a href="/voice-invoicing">why AI voice invoicing is the 2026 standard</a>',
       '<a href="/voice-invoicing">voice to invoice before you leave the job</a>',
+    );
+    if (!out.includes('Quote first when they ask')) {
+      out = out.replace(
+        '<h2>Why &quot;Speed to Invoice&quot; = &quot;Speed to Bank&quot;</h2>',
+        '<h2>Quote first when they ask “how much?”</h2>\n<p>Same talk → verify → send loop wins the job with an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote on site</a>, then converts to the invoice when the work is done. First priced answer back usually wins.</p>\n<h2>Why &quot;Speed to Invoice&quot; = &quot;Speed to Bank&quot;</h2>',
+      );
+    }
+  }
+
+  if (slug === 'best-quote-and-invoice-software-for-tradies') {
+    out = out.replace(
+      '<a href="/voice-invoicing">Learn the voice-to-estimate workflow</a>.',
+      '<a href="/blog/first-quote-wins-instant-quote-on-site">First quote wins — instant quote on site</a>. Full product flow: <a href="/voice-invoicing">voice to invoice on iPhone</a>.',
+    );
+    if (!out.includes('If you only remember one habit: send the priced number')) {
+      out = out.replace(
+        '<h2>The Verdict: Win the Job, Get Home Early</h2>',
+        '<h2>The Verdict: Win the Job, Get Home Early</h2>\n<p><strong>First quote wins.</strong> If you only remember one habit: send the priced number before you leave. See <a href="/blog/first-quote-wins-instant-quote-on-site">how to send an instant quote in about 30 seconds</a>.</p>',
+      );
+    }
+  }
+
+  if (
+    slug === 'how-long-to-send-invoice-after-job-australia' &&
+    !out.includes('Quoted the job earlier the same visit')
+  ) {
+    out = out.replace(
+      'Pay Now link in about 30 seconds — before you start the van.</p>',
+      'Pay Now link in about 30 seconds — before you start the van. Quoted the job earlier the same visit? Use the same voice loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a>, then invoice when done.</p>',
     );
   }
 

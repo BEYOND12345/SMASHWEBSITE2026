@@ -93,6 +93,7 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'how-long-to-send-invoice-after-job-australia',
   'can-chatgpt-generate-invoices-tradie-guide',
   'what-is-voice-to-invoice',
+  'first-quote-wins-instant-quote-on-site',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =

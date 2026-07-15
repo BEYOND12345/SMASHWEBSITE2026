@@ -103,6 +103,7 @@ async function generateSitemap() {
     { loc: '/blog',         srcFiles: ['src/pages/blog-list.tsx'], lastmodOverride: latestBlogDate, changefreq: 'daily', priority: '0.9' },
     { loc: '/blog/fastest-way-to-send-invoice-2026', srcFiles: ['public/blog/fastest-way-to-send-invoice-2026/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/what-is-voice-to-invoice', srcFiles: ['public/blog/what-is-voice-to-invoice/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blog/first-quote-wins-instant-quote-on-site', srcFiles: ['public/blog/first-quote-wins-instant-quote-on-site/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/how-it-works', srcFiles: ['src/pages/how-it-works.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/faq',          srcFiles: ['src/pages/faq-page.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/pricing',      srcFiles: ['src/pages/pricing.tsx'], changefreq: 'monthly', priority: '0.9' },

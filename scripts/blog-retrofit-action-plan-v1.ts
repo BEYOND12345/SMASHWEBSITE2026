@@ -75,7 +75,7 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       'Send it before you leave the driveway. Why same-day invoices get paid days faster, what the late-payment data shows, and the ~30-second voice way to invoice on site.',
     h1: 'How Long After a Job Should You Send the Invoice?',
     answerBlock:
-      'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link in about 30 seconds — before you start the van.',
+      'In Australia, send the invoice before you leave the job site — same day, while details are fresh. Invoices sent within 24 hours get paid significantly faster than those left until Sunday night. Talk on site, verify line items against your catalog, and send a GST-ready PDF with a Pay Now link in about 30 seconds — before you start the van. Quoted the job earlier the same visit? Use the same voice loop for an instant quote, then invoice when done.',
     cta: 'ios',
     pillarLinks: [
       { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },

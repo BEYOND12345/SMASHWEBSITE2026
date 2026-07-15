@@ -21,6 +21,7 @@ import {
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const VOICE_CLUSTER = [
+  { slug: 'first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
   { slug: 'what-is-voice-to-invoice', label: 'What is voice to invoice?' },
   { slug: 'the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice (demo)' },
