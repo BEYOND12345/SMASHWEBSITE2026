@@ -11,6 +11,7 @@ import {
   createBreadcrumbSchema,
   createFAQSchema,
   createHowToSchema,
+  createVideoSchema,
 } from '../structured-data';
 import { SchemaMarkup } from '../SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../../data/schema-data';
@@ -40,12 +41,11 @@ import {
 } from './ios-landing-tokens';
 import { HeroPhotoBackdrop } from '../marketing/HeroPhotoBackdrop';
 import { BrandPhotoBand, BrandSolidBand } from '../marketing/BrandPhotoBand';
-import { VALUE_TESTIMONIALS } from '../../data/product-testimonials';
 import { APP_STORE_URL } from '../../data/download-urls';
-import { TestimonialSliderSection } from './TestimonialSliderSection';
 import { IosSpecHeadline } from './IosCalloutCard';
 import { EmailCapturePopup } from '../EmailCapturePopup';
 import { useEmailCapturePopup } from '../../hooks/useEmailCapturePopup';
+import { VoiceDemoBand, VOICE_DEMO_VIDEO } from './VoiceDemoBand';
 
 const voicePage = mainPages.voiceInvoicing;
 const adStories = iosAdLandingStories();
@@ -115,6 +115,15 @@ export function IosAppLandingPage() {
           })),
         })}
       />
+      <StructuredData
+        data={createVideoSchema({
+          name: VOICE_DEMO_VIDEO.title,
+          description: VOICE_DEMO_VIDEO.description,
+          thumbnailUrl: `https://i.ytimg.com/vi/${VOICE_DEMO_VIDEO.id}/hqdefault.jpg`,
+          embedUrl: `https://www.youtube.com/embed/${VOICE_DEMO_VIDEO.id}`,
+          uploadDate: VOICE_DEMO_VIDEO.uploadDate,
+        })}
+      />
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <div className={iosLanding.page}>
@@ -166,10 +175,8 @@ export function IosAppLandingPage() {
           </div>
         </section>
 
-        {/* 2. SOCIAL PROOF — animated strip, no photo */}
-        <BrandSolidBand compact className="!py-6 md:!py-8 border-t border-white/[0.06]">
-          <TestimonialSliderSection eyebrow="From people on the tools" items={VALUE_TESTIMONIALS} />
-        </BrandSolidBand>
+        {/* 2. Video, then testimonials (VoiceDemoBand — video is always first) */}
+        <VoiceDemoBand />
 
         {/* 3. HOW IT WORKS — four steps only */}
         {adStories.map((segment, index) => (
@@ -188,10 +195,10 @@ export function IosAppLandingPage() {
           </div>
         ))}
 
-        {/* 4. PRICING BRIDGE — free tier + link, no tier strap */}
+        {/* 5. PRICING BRIDGE — free tier + link, no tier strap */}
         <IosPricingFootnote copy={IOS_PRICING_FOOTNOTE} />
 
-        {/* 5. FAQ */}
+        {/* 6. FAQ */}
         <BrandSolidBand>
           <div className="max-w-3xl mx-auto">
             <AnimateIn direction="up">
@@ -223,7 +230,7 @@ export function IosAppLandingPage() {
           </div>
         </BrandSolidBand>
 
-        {/* 6. FINAL CTA */}
+        {/* 7. FINAL CTA */}
         <BrandPhotoBand photo={IOS_AD_LANDING_PHOTOS.final} scrim="vertical" className="py-16 md:py-24">
           <div className={`${iosLanding.container} text-center`}>
             <AnimateIn direction="up">
