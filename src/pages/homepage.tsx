@@ -12,7 +12,8 @@ import { IosStoryPhotoCover } from '../components/ios-product-landing/IosStoryPh
 import { MockupFrame } from '../components/phone-showcase';
 import { IosSubline } from '../components/ios-product-landing/IosSubline';
 import { IosSpecHeadline } from '../components/ios-product-landing/IosCalloutCard';
-import { IosHeroPhoneShowcase, IosPhoneShowcase } from '../components/ios-product-landing/IosPhoneShowcase';
+import { IosPhoneShowcase } from '../components/ios-product-landing/IosPhoneShowcase';
+import { IosHeroVerticalVideo } from '../components/ios-product-landing/IosHeroVerticalVideo';
 import { IosStorySection } from '../components/ios-product-landing/IosStorySection';
 import { IosHeroTrustLogos } from '../components/ios-product-landing/IosHeroTrustLogos';
 import { TestimonialSliderSection } from '../components/ios-product-landing/TestimonialSliderSection';
@@ -45,7 +46,6 @@ import {
   iosHeroMediaCellClass,
   iosHeroMobileCtaCellClass,
   iosHeroMobileCtaWrapClass,
-  iosHeroMobileSublineClass,
   iosStoryCopyCellClass,
   iosStoryGridClass,
   iosStoryMediaCellClass,
@@ -56,6 +56,7 @@ import {
   IOS_FEATURES_SECTION,
   IOS_LAUNCH_FEATURES_ENABLED,
   IOS_AD_STORY_PHOTO_BG,
+  IOS_HERO,
   type IosStorySegment,
   type StoryPhotoBg,
 } from '../data/ios-landing-spec';
@@ -327,37 +328,29 @@ function HomeHeroSection({
   const photoBg = HOME_HERO_PHOTO;
 
   return (
-    <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
+    <section className="relative bg-brand pt-12 pb-12 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24 overflow-hidden">
       <HeroPhotoBackdrop photo={photoBg} tint={photoBg.tint} />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none hidden lg:block" />
 
       <div className={`${iosLanding.container} relative z-10`}>
-        <div className={`${iosHeroGridClass} lg:grid-cols-12`}>
-          <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
-            <div className="pb-2 lg:pb-8">
-              <p className={`${iosLanding.eyebrow} mb-3 lg:hidden`}>
-                Quote sent in under 60 seconds
-              </p>
-
-              <h1 className={`${iosLanding.heroHeadline} mb-3 sm:mb-4 text-[clamp(1.875rem,7vw,5rem)] sm:text-[clamp(2.5rem,6.5vw,5rem)]`}>
-                <span className="block text-white">Never type</span>
-                <span className="block text-accent">an invoice again.</span>
+        <div className={iosHeroGridClass}>
+          <AnimateIn direction="left" directionMobile="up" className={iosHeroCopyCellClass}>
+            <div className="lg:max-w-[32rem]">
+              <h1 className={`${iosLanding.heroHeadline} mb-0 text-[clamp(1.875rem,7vw,4.25rem)] sm:text-[clamp(2.5rem,5.5vw,4.5rem)]`}>
+                {IOS_HERO.headlineLines.map((line) => (
+                  <span key={line} className="block text-white">
+                    {line}
+                  </span>
+                ))}
               </h1>
 
-              <IosSubline className={`${iosLanding.subline} mb-0 lg:mb-6 ${iosHeroMobileSublineClass}`}>
-                Invoicing for people who hate typing.
-              </IosSubline>
-
-              <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-6 sm:mt-7`}>
+              <div className={`${iosHeroDesktopCtaClass} ${iosHeroMobileCtaWrapClass} mt-7 sm:mt-8`}>
                 <HomeHeroCtas onTryIt={onTryIt} onOpenOffer={onOpenOffer} />
               </div>
             </div>
           </AnimateIn>
 
-          <AnimateIn direction="right" directionMobile="up" className={`${iosHeroMediaCellClass} lg:col-span-7`}>
-            <div className="w-full max-w-[min(100%,320px)] sm:max-w-[min(100%,385px)] lg:max-w-none mx-auto lg:mx-0">
-              <IosHeroPhoneShowcase size="hero" />
-            </div>
+          <AnimateIn direction="right" directionMobile="up" className={iosHeroMediaCellClass}>
+            <IosHeroVerticalVideo caption="Never type an invoice again." />
           </AnimateIn>
 
           <div className={iosHeroMobileCtaCellClass}>

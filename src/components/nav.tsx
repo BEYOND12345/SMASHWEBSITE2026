@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect, useState, type ComponentType } from 'react';
+import { useEffect, useState, type ComponentType, type MouseEvent } from 'react';
 import { Menu, X, Apple, Chrome } from 'lucide-react';
 import { SmashLogoLink } from './SmashLogo';
 import {
@@ -77,7 +77,16 @@ function mobileNavLinkClass(active: boolean, hasIcon: boolean): string {
   ].join(' ');
 }
 
-export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string } = {}) {
+export function Nav({
+  ctaUrl,
+  ctaLabel,
+  onCtaClick,
+}: {
+  ctaUrl?: string;
+  ctaLabel?: string;
+  /** When set, CTA uses this click handler (e.g. Start Free tracking on /voice-invoicing). */
+  onCtaClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+} = {}) {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const resolvedCtaUrl = ctaUrl ?? APP_STORE_URL;
@@ -124,8 +133,15 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
 
             <a
               href={resolvedCtaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(onCtaClick
+                ? {
+                    'data-smash-start-free': '',
+                    onClick: onCtaClick,
+                  }
+                : {
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                  })}
               className="ml-2 px-4 sm:px-5 py-2.5 rounded-[32px] bg-accent text-brand font-black text-xs sm:text-sm uppercase tracking-widest hover:brightness-95 transition-all"
             >
               {resolvedCtaLabel}
@@ -173,8 +189,15 @@ export function Nav({ ctaUrl, ctaLabel }: { ctaUrl?: string; ctaLabel?: string }
             <div className="px-3 pt-6 pb-4 flex gap-3 flex-wrap">
               <a
                 href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(onCtaClick
+                  ? {
+                      'data-smash-start-free': '',
+                      onClick: onCtaClick,
+                    }
+                  : {
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    })}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-brand font-black text-sm uppercase tracking-wider hover:brightness-95 transition-all"
               >
                 <Apple size={18} strokeWidth={2.5} />

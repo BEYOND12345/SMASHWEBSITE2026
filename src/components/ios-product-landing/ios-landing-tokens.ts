@@ -118,10 +118,14 @@ export const iosStoryGridClass = 'grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-
 export const iosStoryCopyCellClass = 'self-start w-full max-w-[21rem] sm:max-w-[22rem] lg:max-w-[23rem]';
 export const iosStoryMediaCellClass = 'self-end w-full';
 
-/** Mobile ad landing — headline, product proof, then CTA (centered on narrow viewports). */
-export const iosHeroGridClass = 'grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-12';
-export const iosHeroCopyCellClass = 'self-start order-1 text-center lg:text-left';
-export const iosHeroMediaCellClass = 'self-end w-full order-2 flex justify-center lg:justify-end';
+/**
+ * Hero grid — mobile stacks (headline → video → byline → CTA).
+ * Desktop: two tight columns, vertically centred — no empty 7-col void.
+ */
+export const iosHeroGridClass =
+  'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 xl:gap-14 lg:items-center';
+export const iosHeroCopyCellClass = 'self-start lg:self-center order-1 text-center lg:text-left';
+export const iosHeroMediaCellClass = 'w-full order-2 flex flex-col items-center';
 /** Mobile: headline → video + byline → CTA */
 export const iosHeroMobileCtaCellClass = 'order-3 col-span-1 lg:hidden text-center pb-8 mt-1';
 export const iosHeroDesktopCtaClass = 'hidden lg:block';

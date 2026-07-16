@@ -45,6 +45,7 @@ import { IosSpecHeadline } from './IosCalloutCard';
 import { EmailCapturePopup } from '../EmailCapturePopup';
 import { useEmailCapturePopup } from '../../hooks/useEmailCapturePopup';
 import { VoiceDemoBand, VOICE_DEMO_VIDEO } from './VoiceDemoBand';
+import { handleStartFree } from '../../lib/start-free';
 
 const voicePage = mainPages.voiceInvoicing;
 const adStories = iosAdLandingStories();
@@ -126,17 +127,21 @@ export function IosAppLandingPage() {
       <SchemaMarkup schemas={[aiOrgSchema, softwareApplicationSchema]} />
 
       <div className={iosLanding.page}>
-        <Nav ctaUrl={APP_STORE_URL} ctaLabel="Start Free" />
+        <Nav
+          ctaUrl={APP_STORE_URL}
+          ctaLabel="Start Free"
+          onCtaClick={(e) => handleStartFree(e, 'voice_invoicing_nav')}
+        />
 
-        {/* 1. HERO — white promise, video proof, byline under video, lime only on CTA */}
-        <section className="relative bg-brand pt-12 pb-10 md:pt-24 md:pb-16 overflow-hidden">
+        {/* 1. HERO — headline + CTA | video with byline locked under the player */}
+        <section className="relative bg-brand pt-12 pb-12 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24 overflow-hidden">
           <HeroPhotoBackdrop photo={IOS_AD_LANDING_PHOTOS.hero} tint={IOS_AD_LANDING_PHOTOS.hero.tint} />
 
           <div className={`${iosLanding.container} relative z-10`}>
             <div className={iosHeroGridClass}>
-              <AnimateIn direction="left" directionMobile="up" className={`${iosHeroCopyCellClass} lg:col-span-5`}>
-                <div className="pb-1 lg:pb-8">
-                  <h1 className={`${iosLanding.heroHeadline} mb-0 text-[clamp(1.875rem,7vw,4.5rem)] sm:text-[clamp(2.35rem,5.5vw,4.5rem)]`}>
+              <AnimateIn direction="left" directionMobile="up" className={iosHeroCopyCellClass}>
+                <div className="lg:max-w-[32rem]">
+                  <h1 className={`${iosLanding.heroHeadline} mb-0 text-[clamp(1.875rem,7vw,4.25rem)] sm:text-[clamp(2.35rem,5vw,4.25rem)]`}>
                     {IOS_HERO.headlineLines.map((line) => (
                       <span key={line} className="block text-white">
                         {line}
@@ -150,15 +155,8 @@ export function IosAppLandingPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn
-                direction="right"
-                directionMobile="up"
-                className={`${iosHeroMediaCellClass} lg:col-span-7 flex-col items-center lg:items-end gap-4 sm:gap-5`}
-              >
-                <IosHeroVerticalVideo />
-                <p className="font-body text-[15px] sm:text-base font-medium text-white/70 max-w-[19rem] sm:max-w-[20rem] leading-[1.45] text-pretty text-center lg:text-right">
-                  {IOS_HERO.subline}
-                </p>
+              <AnimateIn direction="right" directionMobile="up" className={iosHeroMediaCellClass}>
+                <IosHeroVerticalVideo caption={IOS_HERO.subline} />
               </AnimateIn>
 
               <div className={iosHeroMobileCtaCellClass}>

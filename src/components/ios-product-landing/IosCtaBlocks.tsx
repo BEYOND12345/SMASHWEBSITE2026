@@ -1,31 +1,51 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mic } from 'lucide-react';
-import { DualProductCtas } from '../marketing/DualProductCtas';
-import { IOS_APP_STORE_URL } from '../../data/ios-app-landing';
+import { Apple, ArrowRight, Mic } from 'lucide-react';
+import { APP_STORE_URL } from '../../data/download-urls';
 import { GmailStoryFrame } from '../gmail-product-landing/GmailStoryFrame';
 import { GmailStoryStepCallout } from '../gmail-product-landing/GmailStoryTriptych';
 import { IOS_DESKTOP_BAND } from '../../data/ios-landing-spec';
+import { handleStartFree } from '../../lib/start-free';
 import { IosHeroTrustLogos } from './IosHeroTrustLogos';
 import { IosSubline } from './IosSubline';
 import { iosLanding } from './ios-landing-tokens';
 
 const APP_STORE_BADGE_SRC = '/marketing/download-on-the-app-store.svg';
 
-export function IosStartFreeCta({ className = '' }: { className?: string }) {
+export function IosStartFreeCta({
+  className = '',
+  label = 'Start Free on iPhone',
+  eventLabel = 'start_free_click',
+}: {
+  className?: string;
+  label?: string;
+  eventLabel?: string;
+}) {
   return (
-    <a href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer" className={`${iosLanding.primaryCta} ${className}`.trim()}>
-      Start Free
+    <a
+      href={APP_STORE_URL}
+      data-smash-start-free=""
+      onClick={(e) => handleStartFree(e, eventLabel)}
+      className={`${iosLanding.primaryCta} gap-2 ${className}`.trim()}
+    >
+      <Apple size={18} strokeWidth={2.5} />
+      {label}
     </a>
   );
 }
 
 /** Official Apple badge — correct proportions, single download affordance. */
-export function IosOfficialAppStoreBadge({ className = '' }: { className?: string }) {
+export function IosOfficialAppStoreBadge({
+  className = '',
+  eventLabel = 'start_free_click',
+}: {
+  className?: string;
+  eventLabel?: string;
+}) {
   return (
     <a
-      href={IOS_APP_STORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={APP_STORE_URL}
+      data-smash-start-free=""
+      onClick={(e) => handleStartFree(e, eventLabel)}
       className={`inline-block shrink-0 min-h-[48px] hover:opacity-90 active:scale-[0.98] transition-all touch-manipulation ${className}`.trim()}
       aria-label="Download on the App Store"
     >
@@ -76,7 +96,7 @@ export function IosFinalCta({
       <IosSubline className={`${iosLanding.subline} mx-auto ${compact ? 'mb-5' : 'mb-8'} max-w-md mt-2.5 sm:mt-3`}>{subline}</IosSubline>
 
       <div className="flex flex-col items-center justify-center gap-4">
-        <IosOfficialAppStoreBadge />
+        <IosOfficialAppStoreBadge eventLabel="voice_invoicing_final" />
         {showBrowserCta && (
           <Link to="/chrome-extension" className={iosLanding.secondaryCta}>
             Add to your browser
@@ -94,11 +114,23 @@ export function IosFinalCta({
 export function IosHeroCta({ className = '' }: { className?: string }) {
   return (
     <div className={className}>
-      <DualProductCtas
-        secondary={{ kind: 'anchor', href: '#how-it-works', label: 'See how it works' }}
-        mobileSecondaryAsLink
-        showMicrocopy={false}
-      />
+      <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+        <IosStartFreeCta eventLabel="voice_invoicing_hero" />
+        <a
+          href="#how-it-works"
+          className={`${iosLanding.secondaryCta} hidden sm:inline-flex`}
+        >
+          See how it works
+        </a>
+      </div>
+      <div className="mt-2 sm:hidden">
+        <a
+          href="#how-it-works"
+          className="inline-flex items-center min-h-[44px] text-sm font-semibold text-white/55 hover:text-accent transition-colors underline underline-offset-2 touch-manipulation"
+        >
+          See how it works
+        </a>
+      </div>
       <IosHeroTrustLogos className="mt-5" />
     </div>
   );

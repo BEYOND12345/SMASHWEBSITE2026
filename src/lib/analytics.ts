@@ -141,11 +141,21 @@ export function bindStoreLinkConversionTracking(): void {
       const anchor = (event.target as HTMLElement | null)?.closest('a');
       if (!anchor) return;
 
+      // Handled by handleStartFree — avoid double Ads conversion
+      if (anchor.hasAttribute('data-smash-start-free')) return;
+
       const href = anchor.getAttribute('href') ?? '';
       if (!href) return;
 
       if (hrefIsAppStore(href)) {
         trackIosAppDownload();
+        // GA4 — same moment as Meta Lead on store clicks sitewide
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            event_category: 'signup',
+            event_label: 'start_free_click',
+          });
+        }
       } else if (hrefIsChromeStore(href)) {
         trackChromeExtensionInstall();
       }

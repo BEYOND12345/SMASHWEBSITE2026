@@ -68,6 +68,9 @@ export function bindMetaPixelStoreLinkTracking(): void {
       const anchor = (event.target as HTMLElement | null)?.closest('a');
       if (!anchor) return;
 
+      // Handled by handleStartFree — avoid double Lead
+      if (anchor.hasAttribute('data-smash-start-free')) return;
+
       const href = anchor.getAttribute('href') ?? '';
       if (!href) return;
 
