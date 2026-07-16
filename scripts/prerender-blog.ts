@@ -95,6 +95,8 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'what-is-voice-to-invoice',
   'first-quote-wins-instant-quote-on-site',
   'can-chatgpt-write-a-quote-estimate',
+  'send-quote-on-site-30-seconds-handyman',
+  'chatgpt-got-my-handyman-estimates-wrong',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =

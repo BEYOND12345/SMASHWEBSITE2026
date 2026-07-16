@@ -29,11 +29,14 @@ const VOICE_SPEED_SLUGS = [
   'what-is-voice-to-invoice',
   'first-quote-wins-instant-quote-on-site',
   'best-quote-and-invoice-software-for-tradies',
+  'send-quote-on-site-30-seconds-handyman',
 ];
 
 const RELATED_LINKS = [
   { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
+  { href: '/blog/send-quote-on-site-30-seconds-handyman', label: 'Send a quote on site in ~30 seconds' },
   { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
+  { href: '/blog/chatgpt-got-my-handyman-estimates-wrong', label: 'ChatGPT got my estimates wrong' },
   { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
   { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice' },

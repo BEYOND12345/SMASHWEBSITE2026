@@ -13,14 +13,18 @@ const SLUGS = [
   'can-chatgpt-generate-invoices-tradie-guide',
   'beyond-chatgpt-dedicated-voice-invoicing',
   'can-chatgpt-write-a-quote-estimate',
+  'chatgpt-got-my-handyman-estimates-wrong',
 ] as const;
 
 const RELATED = [
   { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
+  { href: '/founder', label: 'Founder story — why SMASH exists' },
   { href: '/ai-invoicing', label: 'AI invoicing (catalog-priced)' },
+  { href: '/blog/chatgpt-got-my-handyman-estimates-wrong', label: 'ChatGPT got my handyman estimates wrong' },
   { href: '/blog/can-chatgpt-generate-invoices-tradie-guide', label: 'Can ChatGPT generate invoices?' },
   { href: '/blog/can-chatgpt-write-a-quote-estimate', label: 'Can ChatGPT write a quote or estimate?' },
   { href: '/blog/beyond-chatgpt-dedicated-voice-invoicing', label: 'Why dedicated voice invoicing beats ChatGPT' },
+  { href: '/blog/send-quote-on-site-30-seconds-handyman', label: 'Send a quote on site in ~30 seconds' },
   { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote' },
   { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
 ];

@@ -21,6 +21,8 @@ import {
 const APP_STORE_URL = "https://apps.apple.com/au/app/smash-invoices/id6759475079";
 
 const VOICE_CLUSTER = [
+  { slug: 'chatgpt-got-my-handyman-estimates-wrong', label: 'ChatGPT got my estimates wrong (founder)' },
+  { slug: 'send-quote-on-site-30-seconds-handyman', label: 'Send a quote on site in ~30 seconds' },
   { slug: 'first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
   { slug: 'what-is-voice-to-invoice', label: 'What is voice to invoice?' },
   { slug: 'can-chatgpt-write-a-quote-estimate', label: 'Can ChatGPT write a quote?' },

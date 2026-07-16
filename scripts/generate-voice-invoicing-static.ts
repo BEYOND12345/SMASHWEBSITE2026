@@ -13,12 +13,12 @@ loadViteEnv();
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'public', 'voice-invoicing', 'index.html');
 
-const extra = `<p>Talk on site → verify priced line items from your catalog → send a tax-ready <strong>on the job invoice</strong> or <strong>instant quote</strong> in about 30 seconds — before you leave. First quote wins the job. ChatGPT drafts text; SMASH holds your prices and sends.</p>
-<p><a href="https://smashinvoices.com/blog/first-quote-wins-instant-quote-on-site">First quote wins — instant quote on site</a> ·
+const extra = `<p>Talk on site → verify priced line items from your catalog → send a tax-ready <strong>on the job invoice</strong> or <strong>instant quote</strong> in about 30 seconds — before you leave. Built by a working handyman after ChatGPT guessed his prices.</p>
+<p><a href="https://smashinvoices.com/blog/chatgpt-got-my-handyman-estimates-wrong">ChatGPT got my estimates wrong</a> ·
+<a href="https://smashinvoices.com/blog/send-quote-on-site-30-seconds-handyman">Send a quote on site in ~30 seconds</a> ·
+<a href="https://smashinvoices.com/blog/first-quote-wins-instant-quote-on-site">First quote wins</a> ·
 <a href="https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate">Can ChatGPT write a quote?</a> ·
-<a href="https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide">Can ChatGPT generate invoices?</a> ·
-<a href="https://smashinvoices.com/blog/what-is-voice-to-invoice">What is voice to invoice?</a> ·
-<a href="https://smashinvoices.com/gmail-invoice">Email to invoice in Gmail</a></p>`;
+<a href="https://smashinvoices.com/founder">Founder story</a></p>`;
 
 writeStaticPage(out, buildStaticPage(mainPages.voiceInvoicing, extra, { iosRemarketing: true }));
 console.log('✓ /voice-invoicing');

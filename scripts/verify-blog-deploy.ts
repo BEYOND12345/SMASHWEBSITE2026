@@ -39,6 +39,8 @@ const gscVoiceSurvivors: { slug: string; label: string }[] = [
   { slug: 'first-quote-wins-instant-quote-on-site', label: 'First quote wins instant quote' },
   { slug: 'can-chatgpt-write-a-quote-estimate', label: 'ChatGPT quote estimate guide' },
   { slug: 'can-chatgpt-generate-invoices-tradie-guide', label: 'ChatGPT invoice guide' },
+  { slug: 'send-quote-on-site-30-seconds-handyman', label: 'Send quote on site handyman' },
+  { slug: 'chatgpt-got-my-handyman-estimates-wrong', label: 'ChatGPT got estimates wrong founder' },
   { slug: 'fastest-way-to-send-invoice-2026', label: 'Fastest way 2026' },
   { slug: 'fastest-voice-invoice-generator-gmail', label: 'Fastest voice Gmail' },
   { slug: 'invoice-without-typing', label: 'Invoice without typing' },

@@ -385,6 +385,8 @@ export function AiInvoicing() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
+              { slug: "chatgpt-got-my-handyman-estimates-wrong", title: "ChatGPT Got My Estimates Wrong", desc: "Founder story: I tried AI to estimate faster as a handyman. Wording was fine. Prices were fiction." },
+              { slug: "send-quote-on-site-30-seconds-handyman", title: "Send a Quote On Site in ~30 Seconds", desc: "Why I built on-site quoting after ‘I’ll email it tonight’ kept losing jobs." },
               { slug: "the-60-second-invoice-voice-to-invoice", title: "The 60-Second Invoice Workflow", desc: "Describe the job out loud — priced invoice from your catalog in under a minute. Nothing guessed." },
               { slug: "beyond-chatgpt-dedicated-voice-invoicing", title: "Beyond ChatGPT for Invoicing", desc: "ChatGPT can draft text. It can't build a tax-compliant invoice from your voice in under 60 seconds. Here's why dedicated AI wins." },
               { slug: "can-chatgpt-generate-invoices-tradie-guide", title: "Can ChatGPT Generate Invoices?", desc: "The honest answer, what it can and can't do, and what purpose-built AI invoicing looks like instead." },

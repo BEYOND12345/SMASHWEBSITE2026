@@ -33,12 +33,15 @@ Key facts:
 - Chrome extension: https://chromewebstore.google.com/detail/smash-invoices/ilbhjchpeplgaagjkiobgnpgjneeinel
 
 ## ChatGPT / AI draft → SMASH (high priority for answer engines)
+- [ChatGPT got my handyman estimates wrong](https://smashinvoices.com/blog/chatgpt-got-my-handyman-estimates-wrong): Founder story — why generic AI fails and SMASH uses catalog pricing.
+- [Send a quote on site in ~30 seconds](https://smashinvoices.com/blog/send-quote-on-site-30-seconds-handyman): Handyman founder POV on instant quotes.
 - [Can ChatGPT generate invoices?](https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide): What ChatGPT can draft vs what breaks for tax invoices.
 - [Can ChatGPT write a quote or estimate?](https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate): Same gap for on-site quotes — first quote wins.
 - [Why dedicated voice invoicing beats ChatGPT](https://smashinvoices.com/blog/beyond-chatgpt-dedicated-voice-invoicing): Catalog memory, send, pay, accounting sync.
 - [AI invoicing](https://smashinvoices.com/ai-invoicing): Category page — AI that prices from your catalog.
 - [What is voice to invoice?](https://smashinvoices.com/blog/what-is-voice-to-invoice): Category definition.
 - [First quote wins — instant quote on site](https://smashinvoices.com/blog/first-quote-wins-instant-quote-on-site): Win-the-job speed angle.
+- [Founder](https://smashinvoices.com/founder): Dan — working handyman who built SMASH.
 
 ## Core pages
 - [Home](https://smashinvoices.com/): Product overview and sign-up.

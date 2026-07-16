@@ -106,6 +106,8 @@ async function generateSitemap() {
     { loc: '/blog/first-quote-wins-instant-quote-on-site', srcFiles: ['public/blog/first-quote-wins-instant-quote-on-site/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/can-chatgpt-write-a-quote-estimate', srcFiles: ['public/blog/can-chatgpt-write-a-quote-estimate/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/can-chatgpt-generate-invoices-tradie-guide', srcFiles: ['public/blog/can-chatgpt-generate-invoices-tradie-guide/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blog/send-quote-on-site-30-seconds-handyman', srcFiles: ['public/blog/send-quote-on-site-30-seconds-handyman/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blog/chatgpt-got-my-handyman-estimates-wrong', srcFiles: ['public/blog/chatgpt-got-my-handyman-estimates-wrong/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/how-it-works', srcFiles: ['src/pages/how-it-works.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/faq',          srcFiles: ['src/pages/faq-page.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/pricing',      srcFiles: ['src/pages/pricing.tsx'], changefreq: 'monthly', priority: '0.9' },

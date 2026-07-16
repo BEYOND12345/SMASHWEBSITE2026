@@ -1,0 +1,48 @@
+{
+  "slug": "send-quote-on-site-30-seconds-handyman",
+  "title": "I Started Quoting Faster as a Handyman — Then I Built the App",
+  "meta_title": "Send a Quote On Site in ~30 Seconds | Handyman Founder Story",
+  "meta_description": "I run Good Hands Handyman. I tried AI to estimate faster and it guessed my prices. Here’s how I send an on-site quote in about 30 seconds with my own rates — and why first quote wins.",
+  "excerpt": "I’m still on the tools. I didn’t build SMASH from a boardroom. I built it because “I’ll email a quote tonight” was losing me jobs — and ChatGPT was guessing my rates.",
+  "primary_keyword": "send quote on site",
+  "secondary_keywords": [
+    "instant quote",
+    "quick quote",
+    "on site estimate",
+    "handyman quote fast",
+    "first quote wins"
+  ],
+  "key_takeaways": [
+    "I didn’t need prettier quote templates — I needed a number in the customer’s hand before I left.",
+    "Generic AI estimated faster, then got my labour and materials wrong.",
+    "The fix is your catalog in the background, then voice on top for speed.",
+    "Same talk → verify → send loop becomes the invoice when the job is done."
+  ],
+  "faq_data": [
+    {
+      "question": "Why do on-site quotes win more jobs?",
+      "answer": "Because the customer is deciding while you’re still there. Whoever puts a clear priced PDF in their hand first usually wins — not the bloke who emails a perfect spreadsheet at 9pm."
+    },
+    {
+      "question": "Can AI write a handyman quote for you?",
+      "answer": "It can draft wording. It does not know your call-out fee, your hourly rate, or what you charged last time unless you retype it every session. That’s why guesses feel fast and still cost you money."
+    },
+    {
+      "question": "How do you send a quote in about 30 seconds?",
+      "answer": "Talk the scope out loud against your saved prices, verify the lines, send the PDF before you start the van. That’s the loop I built into SMASH after doing it the hard way."
+    },
+    {
+      "question": "What happens after they approve the quote?",
+      "answer": "Do the job, convert the quote to an invoice, adjust only what changed, send before you leave. Don’t rebuild the whole thing from memory on Sunday."
+    }
+  ],
+  "last_reviewed": "2026-07-16T00:00:00.000Z",
+  "reading_time": 8,
+  "author": "Dan Neale",
+  "author_bio": "Dan Neale runs Good Hands Handyman and founded SMASH Invoices. He’s dyslexic, still on the tools, and built voice quoting because typing estimates was losing him work.",
+  "published_at": "2026-07-16T04:00:00.000Z",
+  "updated_at": "2026-07-16T04:00:00.000Z",
+  "featured_image": "/hero_image.png",
+  "featured_image_alt": "Handyman founder sending an on-site quote from iPhone",
+  "content": "## Short answer\n\nI’m a working handyman. I didn’t start SMASH because I loved “AI invoicing.” I started it because **I needed estimates faster** — and every shortcut I tried got the money wrong.\n\nNow I send an **on-site quote in about 30 seconds**: talk the job, verify my prices, send the PDF before I leave. First clear number usually wins.\n\nProduct: [Voice quote / invoice on iPhone](/voice-invoicing). My story: [Meet the founder](/founder).\n\n## The real problem wasn’t typing speed\n\nI run [Good Hands Handyman](https://www.goodhandshandyman.com.au). I’m still on jobs. I’m also dyslexic — sitting down to type a neat quote after a long day was slow and painful. So I did what everyone does now: I looked at AI.\n\nPaste the job into ChatGPT. Ask for a professional quote. It sounded great.\n\nThen I checked the numbers.\n\nWrong hourly rate. Soft materials. Call-out fee missing. GST vibes instead of *my* GST. It was writing an essay about the job, not quoting **my** business.\n\nThat’s the trap: **fast wording, wrong money.**\n\n## Why “I’ll email a quote tonight” loses\n\nOn site, someone asks “how much?”\n\nIf I say I’ll send it later, I’m competing with whoever already answered. I learned that the hard way. The first priced document in their hand wins more often than the perfect one that never leaves the drafts folder.\n\nThat’s why I care about [first quote wins — instant quote on site](/blog/first-quote-wins-instant-quote-on-site) more than another template pack.\n\n## What I built instead\n\nI didn’t want a chatbot that invents prices. I wanted:\n\n1. **My rates and materials in the background** — a catalog that remembers what I charge\n2. **A verify step** — unmatched items flagged, not silently guessed\n3. **Voice on top** — because talking is how I already describe jobs to mates and customers\n\nVoice without catalog is just dictation. Catalog without speed is still Sunday night. Together it’s talk → verify → send.\n\nSame loop for invoices when the work is done: [what is voice to invoice?](/blog/what-is-voice-to-invoice).\n\n## The ~30-second on-site quote, the way I actually do it\n\n1. **Talk the scope** — rooms, labour, fittings, call-out if it applies.\n2. **Glance the lines** — quantities and prices from *my* list.\n3. **Send** — branded PDF while I’m still in the driveway.\n\nIf they approve and I finish the job, I convert to invoice. I don’t rebuild it from memory at the kitchen table.\n\nDesk requests in email? Different surface, same idea: [Gmail invoice](/gmail-invoice).\n\n## If you’re already pasting jobs into ChatGPT\n\nYou’re not lazy. You’re trying to move faster. I did the same thing.\n\nJust know what ChatGPT is good at (wording) and what it isn’t (your catalog, sendable tax docs, payment). Longer take: [Can ChatGPT write a quote or estimate?](/blog/can-chatgpt-write-a-quote-estimate) and [Can ChatGPT generate invoices?](/blog/can-chatgpt-generate-invoices-tradie-guide).\n\n## Bottom line\n\nI built SMASH for me — a handyman who needed **estimates quicker without wrong prices**. Voice is the accelerator. The catalog is the truth.\n\n[Send quotes on iPhone](/voice-invoicing) · [Founder story](/founder)"
+}
