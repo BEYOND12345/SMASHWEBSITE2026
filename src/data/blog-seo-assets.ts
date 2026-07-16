@@ -24,11 +24,12 @@ function isBlockedHotlink(src: string): boolean {
 }
 
 /**
- * Trade template paths under /images/blog/ were never shipped to public/.
- * Netlify rewrite covers them, but resolve here so React never waits on a miss.
+ * Legacy unpublished trade paths under /images/blog/.
+ * Prefer /og/blog/<slug>.jpg cards from `npm run generate:blog-og`.
  */
 function isMissingLocalBlogAsset(src: string): boolean {
   const path = src.trim().toLowerCase();
+  if (path.startsWith('/og/blog/') || path.includes('/og/blog/')) return false;
   return path.startsWith('/images/blog/') || path.includes('/images/blog/');
 }
 

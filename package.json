@@ -33,7 +33,9 @@
     "indexnow": "node --experimental-strip-types scripts/indexnow.ts",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "generate:blog-og": "python3 scripts/generate-blog-og-cards.py",
+    "generate:blog-og:apply": "python3 scripts/generate-blog-og-cards.py --apply"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
