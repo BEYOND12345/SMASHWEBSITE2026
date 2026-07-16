@@ -35,7 +35,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "generate:blog-og": "python3 scripts/generate-blog-og-cards.py",
-    "generate:blog-og:apply": "python3 scripts/generate-blog-og-cards.py --apply"
+    "generate:blog-og:apply": "python3 scripts/generate-blog-og-cards.py --apply",
+    "fetch:blog-stock": "python3 scripts/fetch-blog-stock-photos.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

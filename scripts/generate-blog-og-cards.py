@@ -27,6 +27,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "public" / "og" / "blog"
+STOCK_DIR = ROOT / "public" / "og" / "stock"
 MANIFEST_PATH = ROOT / "scripts" / "blog-og-manifest.json"
 W, H = 1200, 630
 ACCENT = (223, 255, 0)  # #DFFF00
@@ -38,7 +39,7 @@ FONT_BOLD = Path("/Library/Fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf")
 FONT_FALLBACK = Path("/System/Library/Fonts/Supplemental/Arial Black.ttf")
 
 # Desktop photography only (no UI screenshots, no *-mobile).
-PHOTO_POOL = [
+SMASH_PHOTO_POOL = [
     "public/product/home/hero-tradie-car.jpg",
     "public/product/home/hero-tradie-car.png",
     "public/product/home/hero-pool-maintenance.png",
@@ -63,8 +64,9 @@ PHOTO_POOL = [
     "public/product/gmail/photos/sku-match.jpg",
 ]
 
-# Keyword → preferred photo pool (first match wins; slug hash picks within pool).
-PHOTO_RULES: list[tuple[re.Pattern[str], list[str]]] = [
+# Keyword → SMASH + stock category folders (stock paths resolved at runtime).
+PHOTO_RULES_SPEC: list[tuple[re.Pattern[str], list[str], list[str]]] = [
+    # (pattern, smash_rels, stock_category_dirs)
     (
         re.compile(r"gmail|inbox|email.to.invoice|chrome.extension|sidebar", re.I),
         [
@@ -73,6 +75,7 @@ PHOTO_RULES: list[tuple[re.Pattern[str], list[str]]] = [
             "public/product/gmail/photos/workflow.jpg",
             "public/product/gmail/photos/contrast.jpg",
         ],
+        ["office", "phone"],
     ),
     (
         re.compile(r"quickbooks|xero|sku|accounting", re.I),
@@ -81,22 +84,33 @@ PHOTO_RULES: list[tuple[re.Pattern[str], list[str]]] = [
             "public/product/gmail/photos/workflow.jpg",
             "public/product/gmail/photos/demo.jpg",
         ],
+        ["office"],
     ),
-    (re.compile(r"electric", re.I), ["public/product/ios/photos/ad-landing/electrician.jpg"]),
-    (re.compile(r"garden|lawn|landscap", re.I), ["public/product/ios/photos/ad-landing/gardener.jpg"]),
-    (re.compile(r"dog|groom", re.I), ["public/product/ios/photos/ad-landing/dog-groomer.jpg"]),
-    (re.compile(r"photo|wedding", re.I), ["public/product/ios/photos/ad-landing/photographer.jpg"]),
-    (re.compile(r"snake|pest", re.I), ["public/product/ios/photos/ad-landing/snake-catcher.jpg"]),
-    (re.compile(r"pool", re.I), ["public/product/home/hero-pool-maintenance.png"]),
-    (re.compile(r"paint", re.I), ["public/product/home/voice-story-painter.jpg"]),
-    (re.compile(r"clean", re.I), ["public/product/home/cleaner-testimonial.jpg"]),
+    (re.compile(r"electric|switchboard", re.I), ["public/product/ios/photos/ad-landing/electrician.jpg"], ["electrician"]),
+    (re.compile(r"garden|lawn|landscap", re.I), ["public/product/ios/photos/ad-landing/gardener.jpg"], ["gardener"]),
+    (re.compile(r"dog|groom", re.I), ["public/product/ios/photos/ad-landing/dog-groomer.jpg"], ["dog_groomer"]),
+    (re.compile(r"photo|wedding", re.I), ["public/product/ios/photos/ad-landing/photographer.jpg"], ["photographer"]),
+    (re.compile(r"snake|pest", re.I), ["public/product/ios/photos/ad-landing/snake-catcher.jpg"], ["pest"]),
+    (re.compile(r"pool", re.I), ["public/product/home/hero-pool-maintenance.png"], ["pool"]),
+    (re.compile(r"paint", re.I), ["public/product/home/voice-story-painter.jpg"], ["painter"]),
+    (re.compile(r"clean", re.I), ["public/product/home/cleaner-testimonial.jpg"], ["cleaner"]),
+    (re.compile(r"plumb", re.I), ["public/product/ios/photos/ad-landing/maintenance.jpg"], ["plumber"]),
+    (re.compile(r"mechanic|grease", re.I), ["public/product/ios/photos/send.jpg"], ["mechanic", "truck"]),
+    (re.compile(r"solar", re.I), ["public/product/home/hero-tradie-car.jpg"], ["solar"]),
+    (re.compile(r"fenc", re.I), ["public/product/ios/photos/ad-landing/maintenance.jpg"], ["fencing"]),
+    (re.compile(r"tree|arbor|stump", re.I), ["public/product/ios/photos/ad-landing/gardener.jpg"], ["tree"]),
+    (re.compile(r"locksmith", re.I), ["public/product/ios/photos/ad-landing/maintenance.jpg"], ["locksmith"]),
+    (re.compile(r"til", re.I), ["public/product/ios/photos/ad-landing/maintenance.jpg"], ["tiler"]),
+    (re.compile(r"concrete|concreter", re.I), ["public/product/ios/photos/send.jpg"], ["concrete", "construction"]),
+    (re.compile(r"hvac|air.con|air.conditioning", re.I), ["public/product/ios/photos/ad-landing/maintenance.jpg"], ["hvac"]),
     (
-        re.compile(r"handyman|maintenance|repair|plumber|tradie", re.I),
+        re.compile(r"handyman|maintenance|repair|tradie", re.I),
         [
             "public/product/ios/photos/ad-landing/maintenance.jpg",
             "public/product/home/hero-tradie-car.jpg",
             "public/product/ios/photos/send.jpg",
         ],
+        ["handyman", "construction", "truck"],
     ),
     (
         re.compile(r"voice|hands.?free|on.site|driveway|30.second|60.second|fastest|chatgpt|quote", re.I),
@@ -106,9 +120,10 @@ PHOTO_RULES: list[tuple[re.Pattern[str], list[str]]] = [
             "public/product/ios/photos/send.jpg",
             "public/product/home/voice-story-painter.jpg",
         ],
+        ["phone", "truck", "handyman", "construction"],
     ),
-    (re.compile(r"pay|payment|get paid|receipt", re.I), ["public/product/ios/photos/cardpayment.jpg"]),
-    (re.compile(r"customer|crm|client", re.I), ["public/product/ios/photos/customers.jpg"]),
+    (re.compile(r"pay|payment|get paid|receipt", re.I), ["public/product/ios/photos/cardpayment.jpg"], ["payment"]),
+    (re.compile(r"customer|crm|client", re.I), ["public/product/ios/photos/customers.jpg"], ["customer"]),
     (
         re.compile(r"send|invoice", re.I),
         [
@@ -116,8 +131,36 @@ PHOTO_RULES: list[tuple[re.Pattern[str], list[str]]] = [
             "public/product/ios/photos/voice.jpg",
             "public/product/home/hero-tradie-car.jpg",
         ],
+        ["phone", "truck", "office"],
     ),
 ]
+
+
+def stock_photos_in(*categories: str) -> list[str]:
+    rels: list[str] = []
+    for cat in categories:
+        folder = STOCK_DIR / cat
+        if not folder.is_dir():
+            continue
+        for p in sorted(folder.iterdir()):
+            if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}:
+                rels.append(str(p.relative_to(ROOT)))
+    return rels
+
+
+def all_stock_photos() -> list[str]:
+    if not STOCK_DIR.is_dir():
+        return []
+    return stock_photos_in(*(p.name for p in STOCK_DIR.iterdir() if p.is_dir()))
+
+
+def build_photo_rules() -> list[tuple[re.Pattern[str], list[str]]]:
+    rules: list[tuple[re.Pattern[str], list[str]]] = []
+    for pattern, smash_rels, stock_cats in PHOTO_RULES_SPEC:
+        # Prefer stock first for variety, then SMASH brand photography
+        merged = stock_photos_in(*stock_cats) + smash_rels
+        rules.append((pattern, merged))
+    return rules
 
 
 def load_env() -> None:
@@ -177,12 +220,12 @@ def update_featured_image(slug: str, path: str, alt: str) -> None:
 
 def existing_photos() -> list[Path]:
     out: list[Path] = []
-    for rel in PHOTO_POOL:
+    for rel in SMASH_PHOTO_POOL + all_stock_photos():
         p = ROOT / rel
         if p.exists():
             out.append(p)
     if not out:
-        raise SystemExit("No photography found in PHOTO_POOL")
+        raise SystemExit("No photography found in SMASH_PHOTO_POOL / public/og/stock")
     return out
 
 
@@ -196,7 +239,7 @@ def pick_from(rels: list[str], slug: str) -> Path | None:
 
 def pick_photo(slug: str, title: str, keyword: str | None, pool: list[Path]) -> Path:
     hay = f"{slug} {title} {keyword or ''}"
-    for pattern, rels in PHOTO_RULES:
+    for pattern, rels in build_photo_rules():
         if pattern.search(hay):
             chosen = pick_from(rels, slug)
             if chosen:
