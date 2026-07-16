@@ -174,6 +174,11 @@ export function BlogList() {
                         primaryKeyword: null,
                       })}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        const img = e.currentTarget;
+                        if (img.src !== BLOG_DEFAULT_OG_URL) img.src = BLOG_DEFAULT_OG_URL;
+                      }}
                     />
                   </div>
 

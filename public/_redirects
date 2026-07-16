@@ -187,6 +187,10 @@
 /blog/:slug           /blog/:slug/index.html   200
 /blog/:slug/          /blog/:slug/index.html   200
 
+# Trade blog featured images were never published under public/images/blog —
+# serve the branded default so list/cards and old DB paths do not 404 as HTML.
+/images/blog/*        /og/blog-default.png     200
+
 # Gmail × accounting SEO landing pages
 /integrations/gmail-quickbooks-estimate-generator    /integrations/gmail-quickbooks-estimate-generator/index.html    200
 /integrations/gmail-xero-quote-builder               /integrations/gmail-xero-quote-builder/index.html               200

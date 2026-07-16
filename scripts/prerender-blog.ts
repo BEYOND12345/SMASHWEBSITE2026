@@ -8,6 +8,10 @@ import { googleAdsClickTrackingHtml, googleAdsHeadHtml } from './google-ads-snip
 import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from './meta-pixel-snippet.ts';
 import { GMAIL_SURVIVOR_SLUGS } from './gmail-consolidation-redirects.ts';
 import { VOICE_SURVIVOR_SLUGS } from './voice-consolidation-redirects.ts';
+import {
+  absoluteBlogImageUrl,
+  resolveBlogFeaturedImagePath,
+} from '../src/data/blog-seo-assets.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -143,9 +147,7 @@ function escapeHtml(text: string): string {
 }
 
 function absoluteImage(src: string | null | undefined): string {
-  if (!src) return `${SITE_URL}/hero_image.png`;
-  if (src.startsWith('http')) return src;
-  return `${SITE_URL}${src.startsWith('/') ? '' : '/'}${src}`;
+  return absoluteBlogImageUrl(resolveBlogFeaturedImagePath(src));
 }
 
 function formatDate(iso: string): string {

@@ -5,6 +5,12 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Missing trade blog thumbnails → branded default (DB still points at /images/blog/*)
+[[redirects]]
+  from = "/images/blog/*"
+  to = "/og/blog-default.png"
+  status = 200
+
 # Legal + support — static HTML for Chrome Web Store URL verification
 [[redirects]]
   from = "/privacy"

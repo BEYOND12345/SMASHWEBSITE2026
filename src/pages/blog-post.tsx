@@ -21,6 +21,7 @@ import { BlogWorkspaceRouter } from '../components/blog/blog-workspace-router';
 import { BlogConversionClose } from '../components/blog/blog-conversion-close';
 import {
   absoluteBlogImageUrl,
+  BLOG_DEFAULT_OG_URL,
   resolveBlogFeaturedImageAlt,
   resolveBlogFeaturedImagePath,
 } from '../data/blog-seo-assets';
@@ -216,6 +217,10 @@ export function BlogPost() {
                 src={featuredImageUrl}
                 alt={featuredImageAlt}
                 className="w-full h-auto"
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  if (img.src !== BLOG_DEFAULT_OG_URL) img.src = BLOG_DEFAULT_OG_URL;
+                }}
               />
             </div>
           </header>

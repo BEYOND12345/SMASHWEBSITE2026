@@ -18,9 +18,24 @@ export function absoluteBlogImageUrl(src: string | null | undefined): string {
   return `${SITE_ORIGIN}${src.startsWith('/') ? '' : '/'}${src}`;
 }
 
+/** Hotlink hosts that block browsers (403) — never use as featured images. */
+function isBlockedHotlink(src: string): boolean {
+  return /images\.pexels\.com/i.test(src);
+}
+
+/**
+ * Trade template paths under /images/blog/ were never shipped to public/.
+ * Netlify rewrite covers them, but resolve here so React never waits on a miss.
+ */
+function isMissingLocalBlogAsset(src: string): boolean {
+  const path = src.trim().toLowerCase();
+  return path.startsWith('/images/blog/') || path.includes('/images/blog/');
+}
+
 export function isLegacyOrEmptyFeaturedImage(src: string | null | undefined): boolean {
   if (!src?.trim()) return true;
   const normalized = src.trim().toLowerCase();
+  if (isBlockedHotlink(normalized) || isMissingLocalBlogAsset(normalized)) return true;
   return LEGACY_BLOG_OG_PATHS.some(
     (p) => normalized === p || normalized.endsWith('/hero_image.png'),
   );

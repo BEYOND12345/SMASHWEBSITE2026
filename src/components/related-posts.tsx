@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { ArrowRight, Clock } from 'lucide-react';
+import {
+  absoluteBlogImageUrl,
+  BLOG_DEFAULT_OG_URL,
+  resolveBlogFeaturedImageAlt,
+  resolveBlogFeaturedImagePath,
+} from '../data/blog-seo-assets';
 
 interface RelatedPost {
   id: string;
@@ -94,15 +100,21 @@ export function RelatedPosts({ currentPostId, primaryKeyword, secondaryKeywords,
             to={`/blog/${post.slug}`}
             className="group bg-white/5 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-accent/50"
           >
-            {post.featured_image && (
-              <div className="aspect-video overflow-hidden bg-white/5">
-                <img
-                  src={post.featured_image}
-                  alt={post.featured_image_alt || post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            )}
+            <div className="aspect-video overflow-hidden bg-white/5">
+              <img
+                src={absoluteBlogImageUrl(resolveBlogFeaturedImagePath(post.featured_image))}
+                alt={resolveBlogFeaturedImageAlt(post.featured_image_alt, {
+                  title: post.title,
+                  primaryKeyword: post.primary_keyword,
+                })}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  if (img.src !== BLOG_DEFAULT_OG_URL) img.src = BLOG_DEFAULT_OG_URL;
+                }}
+              />
+            </div>
 
             <div className="p-5">
               <div className="flex items-center gap-2 text-white/50 text-sm mb-3">

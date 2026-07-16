@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import {
+  absoluteBlogImageUrl,
+  BLOG_DEFAULT_OG_URL,
+  resolveBlogFeaturedImageAlt,
+  resolveBlogFeaturedImagePath,
+} from '../data/blog-seo-assets';
 
 interface BlogPost {
   id: string;
@@ -80,9 +86,16 @@ export function BlogPreview() {
             >
               <div className="aspect-[16/10] overflow-hidden bg-slate-100">
                 <img
-                  src={post.featured_image}
-                  alt={post.featured_image_alt}
+                  src={absoluteBlogImageUrl(resolveBlogFeaturedImagePath(post.featured_image))}
+                  alt={resolveBlogFeaturedImageAlt(post.featured_image_alt, {
+                    title: post.title,
+                  })}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (img.src !== BLOG_DEFAULT_OG_URL) img.src = BLOG_DEFAULT_OG_URL;
+                  }}
                 />
               </div>
               <div className="p-6">
