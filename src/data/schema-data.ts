@@ -45,9 +45,11 @@ export const softwareApplicationSchema = {
   "operatingSystem": "iOS, Chrome (extension)",
   "url": "https://smashinvoices.com",
   "downloadUrl": "https://apps.apple.com/au/app/smash-invoices/id6759475079",
-  "description": "Send the invoice before you leave. Describe the job out loud on iPhone or scan the Gmail thread — SMASH matches your catalog, builds a tax-compliant quote or invoice in under 60 seconds, with approval portal and payment built in. AU, NZ, UK, US, CA.",
+  "description": "Voice and Gmail quoting/invoicing for self-employed service workers. Talk ~30 seconds on iPhone or scan Gmail — SMASH prices from your catalog, you verify, then send a tax-compliant quote or invoice with payment. Unlike ChatGPT, it holds your rates and sends a real PDF. AU, NZ, UK, US, CA.",
   "featureList": [
-    "Voice-to-quote in under 60 seconds",
+    "Voice to quote and voice to invoice in about 30 seconds",
+    "Catalog pricing — not AI-guessed rates",
+    "Instant quote on site, then convert to invoice",
     "Tax-compliant invoicing (GST, VAT, sales tax, HST/PST)",
     "Personal pricing catalog",
     "2,250+ item materials catalog",
@@ -57,8 +59,15 @@ export const softwareApplicationSchema = {
     "Optional NDIS participant numbers per customer",
     "Repeat invoice button for recurring work",
     "Local business-number support (ABN, NZBN, UTR, EIN, BN)",
+    "Xero and QuickBooks sync on paid plans",
     "PDF export",
     "Available on iOS and Chrome"
+  ],
+  "sameAs": [
+    "https://smashinvoices.com/voice-invoicing",
+    "https://smashinvoices.com/ai-invoicing",
+    "https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide",
+    "https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate"
   ],
   "offers": [
     {

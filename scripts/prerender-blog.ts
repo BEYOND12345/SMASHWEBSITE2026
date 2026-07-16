@@ -94,6 +94,7 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'can-chatgpt-generate-invoices-tradie-guide',
   'what-is-voice-to-invoice',
   'first-quote-wins-instant-quote-on-site',
+  'can-chatgpt-write-a-quote-estimate',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =

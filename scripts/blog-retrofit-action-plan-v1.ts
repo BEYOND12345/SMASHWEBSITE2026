@@ -149,17 +149,18 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       'ChatGPT can draft invoice wording but can\'t hold your pricing, apply GST, or send a payable PDF. What it does well, where it fails, and what to use instead.',
     h1: 'Can ChatGPT Generate Invoices? What Works and What Breaks',
     answerBlock:
-      'ChatGPT can draft invoice wording and rough line-item descriptions, but it cannot store your labour rates, apply Australian GST rules, generate sequential invoice numbers, or send a client-ready PDF with card payment. For tradies, the gap is not writing text — it is pricing from your catalog and getting paid. Use ChatGPT for drafts; use a dedicated tool to send compliant invoices in under 60 seconds.',
+      'ChatGPT can draft invoice wording and rough line-item descriptions, but it cannot store your labour rates, apply Australian GST rules, generate sequential invoice numbers, or send a client-ready PDF with card payment. For tradies, the gap is not writing text — it is pricing from your catalog and getting paid. Use ChatGPT for email drafts; use SMASH to talk the job, verify catalog prices, and send a compliant invoice in about 30 seconds.',
     cta: 'both',
     pillarLinks: [
-      { href: '/voice-invoicing', label: 'Voice invoicing on iPhone' },
+      { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
       { href: '/gmail-invoice', label: 'Invoice from Gmail' },
       { href: '/ai-invoicing', label: 'AI invoicing for tradies' },
     ],
     relatedLinks: [
+      { href: '/blog/can-chatgpt-write-a-quote-estimate', label: 'Can ChatGPT write a quote or estimate?' },
       { href: '/blog/beyond-chatgpt-dedicated-voice-invoicing', label: 'Why a dedicated invoicing tool beats ChatGPT' },
-      { href: '/blog/word-vs-excel-vs-app-for-invoices', label: 'Word vs Excel vs invoice app' },
-      { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'The 60-second invoice workflow' },
+      { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
+      { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
     ],
     faqs: [
       {
@@ -175,11 +176,16 @@ export const ACTION_PLAN_SPECS: RetrofitSpec[] = [
       {
         question: 'What should tradies use instead of ChatGPT for invoicing?',
         answer:
-          'Dedicated AI invoicing that prices from your catalog — by voice on site or from Gmail at your desk — and sends a GST-ready PDF in under 60 seconds. See our AI invoicing guide for the full workflow.',
+          'Dedicated AI invoicing that prices from your catalog — by voice on site or from Gmail at your desk — and sends a GST-ready PDF in about 30 seconds. SMASH is built for that workflow.',
+      },
+      {
+        question: 'Can ChatGPT write quotes as well as invoices?',
+        answer:
+          'Same limitation: it drafts wording, it does not hold your rates or send an instant quote on site. See our ChatGPT quote guide for the estimate side.',
       },
     ],
     keywords:
-      'can chatgpt generate invoices, chatgpt invoice tradie, ai invoice generator, chatgpt vs invoicing app',
+      'can chatgpt generate invoices, chatgpt invoice tradie, ai invoice generator, chatgpt vs invoicing app, chatgpt quote',
   },
   {
     slug: 'gmail-quickbooks-xero-bridge',

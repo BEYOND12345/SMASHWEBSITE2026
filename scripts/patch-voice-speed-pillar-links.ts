@@ -140,11 +140,11 @@ function patchHtml(html: string, slug: string): string {
 
   if (
     slug === 'how-long-to-send-invoice-after-job-australia' &&
-    !out.includes('Quoted the job earlier the same visit')
+    !out.includes('href="/blog/first-quote-wins-instant-quote-on-site">instant quote')
   ) {
     out = out.replace(
-      'Pay Now link in about 30 seconds — before you start the van.</p>',
-      'Pay Now link in about 30 seconds — before you start the van. Quoted the job earlier the same visit? Use the same voice loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a>, then invoice when done.</p>',
+      'Use the same voice loop for an instant quote, then invoice when done.</p>',
+      'Use the same voice loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a>, then invoice when done.</p>',
     );
   }
 

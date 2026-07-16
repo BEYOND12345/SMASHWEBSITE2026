@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { HREFLANG_LINKS, DATE_MODIFIED, type MainPageSeo } from '../../src/data/main-pages-seo.ts';
+import { softwareApplicationSchema } from '../../src/data/schema-data.ts';
 import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from '../meta-pixel-snippet.ts';
 import { googleAdsHeadHtml, googleAdsIosRemarketingEventHtml } from '../google-ads-snippet.ts';
 
@@ -112,6 +113,7 @@ ${hreflangTags()}
   <meta property="article:modified_time" content="${DATE_MODIFIED}T00:00:00.000Z">
   <script type="application/ld+json">${ld(webPageLd)}</script>
   ${faqLd ? `<script type="application/ld+json">${ld(faqLd)}</script>` : ''}
+  ${options?.iosRemarketing ? `<script type="application/ld+json">${ld(softwareApplicationSchema)}</script>` : ''}
 ${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
 ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
 ${options?.iosRemarketing ? googleAdsIosRemarketingEventHtml(process.env.VITE_GOOGLE_ADS_ID) : ''}
