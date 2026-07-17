@@ -233,8 +233,11 @@ def pick_from(rels: list[str], slug: str) -> Path | None:
     existing = [ROOT / rel for rel in rels if (ROOT / rel).exists()]
     if not existing:
         return None
-    idx = int(hashlib.sha1(slug.encode()).hexdigest(), 16) % len(existing)
-    return existing[idx]
+    # Prefer Unsplash / Pexels over older Wikimedia fills
+    preferred = [p for p in existing if p.name.startswith(("unsplash-", "pexels-"))]
+    pool = preferred or existing
+    idx = int(hashlib.sha1(slug.encode()).hexdigest(), 16) % len(pool)
+    return pool[idx]
 
 
 def pick_photo(slug: str, title: str, keyword: str | None, pool: list[Path]) -> Path:

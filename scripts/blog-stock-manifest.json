@@ -1,740 +1,926 @@
 [
   {
-    "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0067sanitation-workers-cleaning-town-of-baliuag-glorietta-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0067sanitation-workers-cleaning-town-of-baliuag-glorietta-jpg"
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash--0-kl1BjvFc.jpg",
+    "provider": "existing",
+    "id": "unsplash--0-kl1BjvFc"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-GXLPLG3_Vf4.jpg",
+    "provider": "existing",
+    "id": "unsplash-GXLPLG3_Vf4"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-PkHf7BUWbtk.jpg",
+    "provider": "existing",
+    "id": "unsplash-PkHf7BUWbtk"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-Q3WVbAfdOoY.jpg",
+    "provider": "existing",
+    "id": "unsplash-Q3WVbAfdOoY"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-UovTD1dG-lA.jpg",
+    "provider": "existing",
+    "id": "unsplash-UovTD1dG-lA"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-ZGY5Pp8Xxaw.jpg",
+    "provider": "existing",
+    "id": "unsplash-ZGY5Pp8Xxaw"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-Cx5Lk7Rv-vE.jpg",
+    "provider": "existing",
+    "id": "unsplash-Cx5Lk7Rv-vE"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-Rmu0QRyZFkY.jpg",
+    "provider": "existing",
+    "id": "unsplash-Rmu0QRyZFkY"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-XCL_ROkw5t8.jpg",
+    "provider": "existing",
+    "id": "unsplash-XCL_ROkw5t8"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-c314Gh8dXAo.jpg",
+    "provider": "existing",
+    "id": "unsplash-c314Gh8dXAo"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-kxuz4YrLxSc.jpg",
+    "provider": "existing",
+    "id": "unsplash-kxuz4YrLxSc"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-oOyFmy3gnZo.jpg",
+    "provider": "existing",
+    "id": "unsplash-oOyFmy3gnZo"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-1iho4gvI4-g.jpg",
+    "provider": "existing",
+    "id": "unsplash-1iho4gvI4-g"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-712YAykhAD8.jpg",
+    "provider": "existing",
+    "id": "unsplash-712YAykhAD8"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-Cl-OpYWFFm0.jpg",
+    "provider": "existing",
+    "id": "unsplash-Cl-OpYWFFm0"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-d6YyP28-Ycw.jpg",
+    "provider": "existing",
+    "id": "unsplash-d6YyP28-Ycw"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-eQ-8iUrb07g.jpg",
+    "provider": "existing",
+    "id": "unsplash-eQ-8iUrb07g"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-ioOlenqfMqA.jpg",
+    "provider": "existing",
+    "id": "unsplash-ioOlenqfMqA"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash--o7ASOHDV9E.jpg",
+    "provider": "existing",
+    "id": "unsplash--o7ASOHDV9E"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-5xML_2EClnA.jpg",
+    "provider": "existing",
+    "id": "unsplash-5xML_2EClnA"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-Apips1tJsXo.jpg",
+    "provider": "existing",
+    "id": "unsplash-Apips1tJsXo"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-EkhWxU_pgLo.jpg",
+    "provider": "existing",
+    "id": "unsplash-EkhWxU_pgLo"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-JCZ2pE-Szpw.jpg",
+    "provider": "existing",
+    "id": "unsplash-JCZ2pE-Szpw"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-KcQuXaHCSPE.jpg",
+    "provider": "existing",
+    "id": "unsplash-KcQuXaHCSPE"
   },
   {
     "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0103sanitation-workers-cleaning-clay-brick-fences-baliuag-glorietta-park-07-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0103sanitation-workers-cleaning-clay-brick-fences-baliuag-glorietta-park-07-jpg"
+    "path": "public/og/stock/cleaner/unsplash--dc38HdQR1M.jpg",
+    "provider": "existing",
+    "id": "unsplash--dc38HdQR1M"
   },
   {
     "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-03-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-03-jpg"
+    "path": "public/og/stock/cleaner/unsplash-0FTI9ceTUOc.jpg",
+    "provider": "existing",
+    "id": "unsplash-0FTI9ceTUOc"
   },
   {
     "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-16-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-16-jpg"
+    "path": "public/og/stock/cleaner/unsplash-2NcTLdFHpH8.jpg",
+    "provider": "existing",
+    "id": "unsplash-2NcTLdFHpH8"
   },
   {
     "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-21-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-21-jpg"
+    "path": "public/og/stock/cleaner/unsplash-3hO8igCybds.jpg",
+    "provider": "existing",
+    "id": "unsplash-3hO8igCybds"
   },
   {
     "category": "cleaner",
-    "path": "public/og/stock/cleaner/wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-22-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0180sanitation-workers-cleaning-town-of-baliuag-glorietta-park-22-jpg"
+    "path": "public/og/stock/cleaner/unsplash-HRV4IHTP3O8.jpg",
+    "provider": "existing",
+    "id": "unsplash-HRV4IHTP3O8"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg"
+    "category": "cleaner",
+    "path": "public/og/stock/cleaner/unsplash-MwxsRSG1A2s.jpg",
+    "provider": "existing",
+    "id": "unsplash-MwxsRSG1A2s"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg"
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-8DKsb8Wkgyk.jpg",
+    "provider": "existing",
+    "id": "unsplash-8DKsb8Wkgyk"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg"
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg",
+    "provider": "existing",
+    "id": "unsplash-GZ70X-8ZXMs"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg"
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-u8Vr8qC4BR0.jpg",
+    "provider": "existing",
+    "id": "unsplash-u8Vr8qC4BR0"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-beautiful-day-for-pouring-concrete-14076549404-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-beautiful-day-for-pouring-concrete-14076549404-jpg"
+    "id": "wiki-railway-master-mechanic-microform-1895-14759087795-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Railway_master_mechanic_%28microform%29_%281895%29_%2814759087795%29.jpg/1920px-Railway_master_mechanic_%28microform%29_%281895%29_%2814759087795%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Railway_master_mechanic_(microform)_(1895)_(14759087795).jpg",
+    "query": "Car mechanic engine bay",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/wiki-railway-master-mechanic-microform-1895-14759087795-jpg.jpg"
   },
   {
-    "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-concrete-flattening-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-concrete-flattening-jpg"
+    "id": "wiki-camp-mabry-building-no-15-2200-west-thirty-fifth-street-austin-travis-county-tx",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Camp_Mabry%2C_Building_No._15%2C_2200_West_Thirty-fifth_Street%2C_Austin%2C_Travis_County%2C_TX_HABS_TX-3516-A_%28sheet_11_of_12%29.png/1920px-Camp_Mabry%2C_Building_No._15%2C_2200_West_Thirty-fifth_Street%2C_Austin%2C_Travis_County%2C_TX_HABS_TX-3516-A_%28sheet_11_of_12%29.png",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Camp_Mabry,_Building_No._15,_2200_West_Thirty-fifth_Street,_Austin,_Travis_County,_TX_HABS_TX-3516-A_(sheet_11_of_12).png",
+    "query": "Automotive workshop mechanic",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/wiki-camp-mabry-building-no-15-2200-west-thirty-fifth-street-austin-travis-county-tx.jpg"
+  },
+  {
+    "id": "wiki-dfc-4703-a-mechanic-works-on-a-motorcycle-engine-on-the-workshop-floor-focused-o",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg/1920px-DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg",
+    "query": "Automotive workshop mechanic",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/wiki-dfc-4703-a-mechanic-works-on-a-motorcycle-engine-on-the-workshop-floor-focused-o.jpg"
+  },
+  {
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-mary-andrews-clark-memorial-home-los-angeles-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-mary-andrews-clark-memorial-home-los-angeles-jpg"
+  },
+  {
+    "id": "wiki-autumn-farm-buggy-tool-shed-pubjpg---west-virginia---forestwander-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg/1920px-Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-autumn-farm-buggy-tool-shed-pubjpg---west-virginia---forestwander-jpg.jpg"
+  },
+  {
+    "id": "wiki-building-garages-and-tool-shed---dpla---e2174aba790c99b73d243f69c137d6df-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Building_%28Garages_and_Tool_Shed%29_-_DPLA_-_e2174aba790c99b73d243f69c137d6df.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Building_(Garages_and_Tool_Shed)_-_DPLA_-_e2174aba790c99b73d243f69c137d6df.jpg",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-building-garages-and-tool-shed---dpla---e2174aba790c99b73d243f69c137d6df-jpg.jpg"
+  },
+  {
+    "id": "wiki-graham-s-homes-workshop-in-kalimpong-01-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-01-jpg.jpg"
+  },
+  {
+    "id": "wiki-graham-s-homes-workshop-in-kalimpong-02-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-02-jpg.jpg"
+  },
+  {
+    "id": "wiki-graham-s-homes-workshop-in-kalimpong-03-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-03-jpg.jpg"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-a-worker-wears-a-helmet-and-visor-at-a-hong-kong-construction-site-during-a-heat.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-a-worker-wears-a-helmet-and-visor-at-a-hong-kong-construction-site-during-a-heat"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-armenian-construction-worker-sleeping-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-armenian-construction-worker-sleeping-jpg"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-chinese-construction-workers-in-israel-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-chinese-construction-workers-in-israel-jpg"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-construction-photography-of-workers-on-site-by-construction-photographer-daniel.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-construction-photography-of-workers-on-site-by-construction-photographer-daniel"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-construction-site-and-a-worker-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-construction-site-and-a-worker-jpg"
   },
   {
     "category": "construction",
     "path": "public/og/stock/construction/wiki-construction-worker-on-footpath-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-construction-worker-on-footpath-jpg"
-  },
-  {
-    "category": "customer",
-    "path": "public/og/stock/customer/wiki-handshake-2016-07-18-28351919656-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-handshake-2016-07-18-28351919656-jpg"
-  },
-  {
-    "category": "customer",
-    "path": "public/og/stock/customer/wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-dog-bath-r\u00f8m\u00f8-camping-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-dog-bath-r\u00f8m\u00f8-camping-jpg"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-dog-stylin-3406880422-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-dog-stylin-3406880422-jpg"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg"
   },
   {
     "category": "dog_groomer",
     "path": "public/og/stock/dog_groomer/wiki-grooming-poodle-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-grooming-poodle-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-bound-to-be-an-electrician-p025-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-bound-to-be-an-electrician-p025-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-car-electrician-05-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-car-electrician-05-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-car-electrician-2-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-car-electrician-2-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-car-electrician-4-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-car-electrician-4-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-electrician-working-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-electrician-working-jpg"
-  },
-  {
-    "category": "electrician",
-    "path": "public/og/stock/electrician/wiki-us-navy-030311-n-5862d-071-construction-electrician-1st-class-eric-truemper-from.jpg",
-    "provider": "local",
-    "id": "wiki-us-navy-030311-n-5862d-071-construction-electrician-1st-class-eric-truemper-from"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda.jpg",
-    "provider": "local",
-    "id": "wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-aquafence-in-basel-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-aquafence-in-basel-jpg"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg"
-  },
-  {
-    "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-botanical-garden-moscow-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-botanical-garden-moscow-jpg"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-brooklyn-botanic-garden-new-york-may-2015-panorama-2-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-brooklyn-botanic-garden-new-york-may-2015-panorama-2-jpg"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-field-of-iceland-poppies-in-the-flower-garden-near-cheomseongdae-observatory-in.jpg",
-    "provider": "local",
-    "id": "wiki-field-of-iceland-poppies-in-the-flower-garden-near-cheomseongdae-observatory-in"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-japanese-garden-at-daisen-park-in-sakai-october-2018---662-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-japanese-garden-at-daisen-park-in-sakai-october-2018---662-jpg"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-landscaping-norfolk-gardens-bradford---geograph-org-uk---8004480-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-landscaping-norfolk-gardens-bradford---geograph-org-uk---8004480-jpg"
-  },
-  {
-    "category": "gardener",
-    "path": "public/og/stock/gardener/wiki-landscaping-works-in-balmoral-gardens---geograph-org-uk---2123902-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-landscaping-works-in-balmoral-gardens---geograph-org-uk---2123902-jpg"
-  },
-  {
-    "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-mary-andrews-clark-memorial-home-los-angeles-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-mary-andrews-clark-memorial-home-los-angeles-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg"
-  },
-  {
-    "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-key-change-7395907-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-key-change-7395907-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395839-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-keys-to-the-castle-7395839-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395841-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-keys-to-the-castle-7395841-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395843-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-keys-to-the-castle-7395843-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395844-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-keys-to-the-castle-7395844-jpg"
-  },
-  {
-    "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-aloneness-or-loneliness-3033873597-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-aloneness-or-loneliness-3033873597-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-new-vesd-app-141121-f-he996-005-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-new-vesd-app-141121-f-he996-005-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-partner-staff-52388904223-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-partner-staff-52388904223-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-workspace-nottingham-flat-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-workspace-nottingham-flat-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-0086-wall-painting-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-0086-wall-painting-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-alexander-the-great---wall-painting-in-acre-israel-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-alexander-the-great---wall-painting-in-acre-israel-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-byodoin-wall-painting-detail-palace-behind-the-buddha-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-byodoin-wall-painting-detail-palace-behind-the-buddha-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-byodoin-wall-painting-gebon-jyosyo-south-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-byodoin-wall-painting-gebon-jyosyo-south-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-fort-kochi---wall-painters-on-ropes-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-fort-kochi---wall-painters-on-ropes-jpg"
-  },
-  {
-    "category": "painter",
-    "path": "public/og/stock/painter/wiki-julius-caesar---wall-painting-in-acre-israel-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-julius-caesar---wall-painting-in-acre-israel-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-bank-card-payment-methods-winschoten-2020-01-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-bank-card-payment-methods-winschoten-2020-01-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-cashless-payment-devices-creditcard-and-code-payment-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-cashless-payment-devices-creditcard-and-code-payment-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg"
-  },
-  {
-    "category": "payment",
-    "path": "public/og/stock/payment/wiki-fare-gates-with-contactless-readers-harvard-station-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-fare-gates-with-contactless-readers-harvard-station-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-billy-the-exterminator-2-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-billy-the-exterminator-2-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-sendan-kendatsuba-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-extermination-of-evil-sendan-kendatsuba-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-shinch\u016b-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-extermination-of-evil-shinch\u016b-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-sh\u014dki-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-extermination-of-evil-sh\u014dki-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-new-zealand-biocontrol-technician-chris-winks-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-new-zealand-biocontrol-technician-chris-winks-jpg"
-  },
-  {
-    "category": "pest",
-    "path": "public/og/stock/pest/wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0.jpg",
-    "provider": "local",
-    "id": "wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg.jpg",
-    "provider": "local",
-    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg.jpg",
-    "provider": "local",
-    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg"
-  },
-  {
-    "category": "phone",
-    "path": "public/og/stock/phone/wiki-constructionclock-app-on-table-saw-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-constructionclock-app-on-table-saw-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-ensign-midget---model-22-camera-in-comparison-to-a-type-135-film-roll-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-ensign-midget---model-22-camera-in-comparison-to-a-type-135-film-roll-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-i-prefer-shooting-with-a-camera---geograph-org-uk---7980665-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-i-prefer-shooting-with-a-camera---geograph-org-uk---7980665-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-mt-mankial-swat-pakistan-point-shoot-camera-image-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-mt-mankial-swat-pakistan-point-shoot-camera-image-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-multi-camera-exterior-efp-shoot-at-a-bmx-rally-california-2004-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-multi-camera-exterior-efp-shoot-at-a-bmx-rally-california-2004-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-photographer-and-video-shooter-at-work-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-photographer-and-video-shooter-at-work-jpg"
   },
   {
     "category": "photographer",
     "path": "public/og/stock/photographer/wiki-photographer-taking-a-group-photograph-of-smiling-students-in-front-of-the-tokyo.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-photographer-taking-a-group-photograph-of-smiling-students-in-front-of-the-tokyo"
-  },
-  {
-    "category": "plumber",
-    "path": "public/og/stock/plumber/wiki-plumbers-trade-school-students-working-on-pipes-gn08936-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-plumbers-trade-school-students-working-on-pipes-gn08936-jpg"
-  },
-  {
-    "category": "plumber",
-    "path": "public/og/stock/plumber/wiki-residential-plumbing-services-repairs-50502567962-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-residential-plumbing-services-repairs-50502567962-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-camping-site-pool-maintenance-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-camping-site-pool-maintenance-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-13-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-13-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-14-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-14-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-15-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-15-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-16-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-16-jpg"
   },
   {
     "category": "pool",
     "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-17-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-17-jpg"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-a-solar-panel-installation-in-a-coastal-area-image-by-skysail-innovation-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-a-solar-panel-installation-in-a-coastal-area-image-by-skysail-innovation-jpg"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-installation-of-solar-pv-panels---panels-in-place---geograph-org-uk---2624288-jp.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-installation-of-solar-pv-panels---panels-in-place---geograph-org-uk---2624288-jp"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-installation-of-solar-pv-panels---support-bars---geograph-org-uk---2623932-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-installation-of-solar-pv-panels---support-bars---geograph-org-uk---2623932-jpg"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-messenger---installation-of-solar-panels-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-messenger---installation-of-solar-panels-jpg"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-solar-panel-installation-at-grange-farm-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-solar-panel-installation-at-grange-farm-jpg"
   },
   {
     "category": "solar",
     "path": "public/og/stock/solar/wiki-solar-panel-installation-at-lodge-farm---geograph-org-uk---2521908-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-solar-panel-installation-at-lodge-farm---geograph-org-uk---2521908-jpg"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda.jpg",
+    "provider": "existing",
+    "id": "wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-aquafence-in-basel-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-aquafence-in-basel-jpg"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg.jpg",
-    "provider": "local",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i.jpg",
-    "provider": "local",
-    "id": "wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08.jpg",
-    "provider": "local",
-    "id": "wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg"
   },
   {
-    "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con.jpg",
-    "provider": "local",
-    "id": "wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con"
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-arborist-searching-mistletoe-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-arborist-searching-mistletoe-jpg"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-arborists-3--kallista--vic--09-07-2008-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-arborists-3--kallista--vic--09-07-2008-jpg"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png"
   },
   {
     "category": "tree",
     "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-billy-the-exterminator-2-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-billy-the-exterminator-2-jpg"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-sendan-kendatsuba-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-extermination-of-evil-sendan-kendatsuba-jpg"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-shinch\u016b-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-extermination-of-evil-shinch\u016b-jpg"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-sh\u014dki-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-extermination-of-evil-sh\u014dki-jpg"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-new-zealand-biocontrol-technician-chris-winks-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-new-zealand-biocontrol-technician-chris-winks-jpg"
+  },
+  {
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-key-change-7395907-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-key-change-7395907-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395839-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-keys-to-the-castle-7395839-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395841-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-keys-to-the-castle-7395841-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395843-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-keys-to-the-castle-7395843-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395844-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-keys-to-the-castle-7395844-jpg"
+  },
+  {
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i.jpg",
+    "provider": "existing",
+    "id": "wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08.jpg",
+    "provider": "existing",
+    "id": "wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08"
+  },
+  {
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con.jpg",
+    "provider": "existing",
+    "id": "wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-beautiful-day-for-pouring-concrete-14076549404-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-beautiful-day-for-pouring-concrete-14076549404-jpg"
+  },
+  {
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-concrete-flattening-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-concrete-flattening-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg"
+  },
+  {
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-18-ram-3500-tradesman-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-18-ram-3500-tradesman-jpg"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20"
   },
   {
     "category": "truck",
     "path": "public/og/stock/truck/wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron.jpg",
-    "provider": "local",
+    "provider": "existing",
     "id": "wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron"
+  },
+  {
+    "category": "office",
+    "path": "public/og/stock/office/wiki-aloneness-or-loneliness-3033873597-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-aloneness-or-loneliness-3033873597-jpg"
+  },
+  {
+    "category": "office",
+    "path": "public/og/stock/office/wiki-new-vesd-app-141121-f-he996-005-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-new-vesd-app-141121-f-he996-005-jpg"
+  },
+  {
+    "category": "office",
+    "path": "public/og/stock/office/wiki-partner-staff-52388904223-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-partner-staff-52388904223-jpg"
+  },
+  {
+    "category": "office",
+    "path": "public/og/stock/office/wiki-workspace-nottingham-flat-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-workspace-nottingham-flat-jpg"
+  },
+  {
+    "id": "wiki-businesswoman-has-coffee-and-snacks-while-working-on-laptop-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Businesswoman_has_coffee_and_snacks_while_working_on_laptop.jpg/1920px-Businesswoman_has_coffee_and_snacks_while_working_on_laptop.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Businesswoman_has_coffee_and_snacks_while_working_on_laptop.jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-businesswoman-has-coffee-and-snacks-while-working-on-laptop-jpg.jpg"
+  },
+  {
+    "id": "wiki-coffee-desk-laptop-notebook-24244320481-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Coffee-desk-laptop-notebook_%2824244320481%29.jpg/1920px-Coffee-desk-laptop-notebook_%2824244320481%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Coffee-desk-laptop-notebook_(24244320481).jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-coffee-desk-laptop-notebook-24244320481-jpg.jpg"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0.jpg",
+    "provider": "existing",
+    "id": "wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg.jpg",
+    "provider": "existing",
+    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg.jpg",
+    "provider": "existing",
+    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg"
+  },
+  {
+    "category": "phone",
+    "path": "public/og/stock/phone/wiki-constructionclock-app-on-table-saw-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-constructionclock-app-on-table-saw-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-bank-card-payment-methods-winschoten-2020-01-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-bank-card-payment-methods-winschoten-2020-01-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-cashless-payment-devices-creditcard-and-code-payment-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-cashless-payment-devices-creditcard-and-code-payment-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg"
+  },
+  {
+    "category": "payment",
+    "path": "public/og/stock/payment/wiki-fare-gates-with-contactless-readers-harvard-station-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-fare-gates-with-contactless-readers-harvard-station-jpg"
+  },
+  {
+    "category": "customer",
+    "path": "public/og/stock/customer/wiki-handshake-2016-07-18-28351919656-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-handshake-2016-07-18-28351919656-jpg"
+  },
+  {
+    "category": "customer",
+    "path": "public/og/stock/customer/wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg.jpg",
+    "provider": "existing",
+    "id": "wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg"
+  },
+  {
+    "id": "unsplash-dU3KJqyYlO0",
+    "url": "https://images.unsplash.com/photo-1753351052617-62818ffc9173?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/dU3KJqyYlO0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "provider": "unsplash",
+    "photographer": "Vitaly Gariev",
+    "page": "https://unsplash.com/photos/two-cafe-owners-proudly-stand-together-dU3KJqyYlO0",
+    "query": "Small business owner client",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-dU3KJqyYlO0.jpg"
+  },
+  {
+    "id": "unsplash-9-vdJkH9NdI",
+    "url": "https://images.unsplash.com/photo-1695668543969-ea7dec95047c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/9-vdJkH9NdI/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "provider": "unsplash",
+    "photographer": "Kevin Ache",
+    "page": "https://unsplash.com/photos/two-men-sitting-at-a-table-talking-to-each-other-9-vdJkH9NdI",
+    "query": "Small business owner client",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-9-vdJkH9NdI.jpg"
+  },
+  {
+    "id": "unsplash-QGg-vsPYbu8",
+    "url": "https://images.unsplash.com/photo-1753351052363-53ce102830eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/QGg-vsPYbu8/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "provider": "unsplash",
+    "photographer": "Vitaly Gariev",
+    "page": "https://unsplash.com/photos/a-smiling-woman-stands-in-her-coffee-shop-QGg-vsPYbu8",
+    "query": "Small business owner client",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-QGg-vsPYbu8.jpg"
+  },
+  {
+    "id": "unsplash-uRnRa8XXtrI",
+    "url": "https://images.unsplash.com/photo-1753351054581-783229e920fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/uRnRa8XXtrI/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "provider": "unsplash",
+    "photographer": "Vitaly Gariev",
+    "page": "https://unsplash.com/photos/two-cafe-workers-standing-behind-a-counter-uRnRa8XXtrI",
+    "query": "Small business owner client",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-uRnRa8XXtrI.jpg"
   }
 ]
