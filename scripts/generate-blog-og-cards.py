@@ -23,7 +23,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "public" / "og" / "blog"
@@ -38,30 +38,17 @@ FONT_BLACK = Path("/Library/Fonts/Barlow_Condensed/BarlowCondensed-Black.ttf")
 FONT_BOLD = Path("/Library/Fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf")
 FONT_FALLBACK = Path("/System/Library/Fonts/Supplemental/Arial Black.ttf")
 
-# Desktop photography only (no UI screenshots, no *-mobile).
+# Brand fallbacks only — prefer /og/stock Unsplash. Avoid overusing ute/portrait heroes.
 SMASH_PHOTO_POOL = [
-    "public/product/home/hero-tradie-car.jpg",
-    "public/product/home/hero-tradie-car.png",
     "public/product/home/hero-pool-maintenance.png",
-    "public/product/home/voice-story-painter.jpg",
-    "public/product/home/cleaner-testimonial.jpg",
-    "public/product/ios/photos/voice.jpg",
-    "public/product/ios/photos/send.jpg",
-    "public/product/ios/photos/customers.jpg",
-    "public/product/ios/photos/cardpayment.jpg",
-    "public/product/ios/photos/automessage.jpg",
-    "public/product/ios/photos/readreceipts.jpg",
-    "public/product/ios/photos/ad-landing/electrician.jpg",
-    "public/product/ios/photos/ad-landing/gardener.jpg",
-    "public/product/ios/photos/ad-landing/dog-groomer.jpg",
-    "public/product/ios/photos/ad-landing/photographer.jpg",
-    "public/product/ios/photos/ad-landing/maintenance.jpg",
-    "public/product/ios/photos/ad-landing/snake-catcher.jpg",
-    "public/product/gmail/photos/hero.jpg",
-    "public/product/gmail/photos/demo.jpg",
     "public/product/gmail/photos/workflow.jpg",
-    "public/product/gmail/photos/contrast.jpg",
     "public/product/gmail/photos/sku-match.jpg",
+    "public/product/gmail/photos/contrast.jpg",
+    "public/product/gmail/photos/demo.jpg",
+    "public/product/ios/photos/cardpayment.jpg",
+    "public/product/ios/photos/send.jpg",
+    "public/product/home/hero-tradie-car.jpg",
+    "public/product/home/voice-story-painter.jpg",
 ]
 
 # Keyword → SMASH + stock category folders (stock paths resolved at runtime).
@@ -229,27 +216,55 @@ def existing_photos() -> list[Path]:
     return out
 
 
-def pick_from(rels: list[str], slug: str) -> Path | None:
+def _least_used(candidates: list[Path], slug: str, usage: dict[str, int]) -> Path:
+    return sorted(
+        candidates,
+        key=lambda p: (
+            usage.get(str(p), 0),
+            int(hashlib.sha1(f"{slug}:{p.name}".encode()).hexdigest(), 16),
+        ),
+    )[0]
+
+
+def pick_from(
+    rels: list[str],
+    slug: str,
+    usage: dict[str, int],
+    global_pool: list[Path],
+    max_uses: int = 2,
+) -> Path | None:
     existing = [ROOT / rel for rel in rels if (ROOT / rel).exists()]
     if not existing:
         return None
-    # Prefer Unsplash / Pexels over older Wikimedia fills
     preferred = [p for p in existing if p.name.startswith(("unsplash-", "pexels-"))]
-    pool = preferred or existing
-    idx = int(hashlib.sha1(slug.encode()).hexdigest(), 16) % len(pool)
-    return pool[idx]
+    candidates = preferred or existing
+    under = [p for p in candidates if usage.get(str(p), 0) < max_uses]
+    if not under:
+        under = [p for p in global_pool if usage.get(str(p), 0) < max_uses]
+    return _least_used(under or candidates, slug, usage)
 
 
-def pick_photo(slug: str, title: str, keyword: str | None, pool: list[Path]) -> Path:
+def pick_photo(
+    slug: str,
+    title: str,
+    keyword: str | None,
+    pool: list[Path],
+    usage: dict[str, int],
+) -> Path:
     hay = f"{slug} {title} {keyword or ''}"
     for pattern, rels in build_photo_rules():
         if pattern.search(hay):
-            chosen = pick_from(rels, slug)
+            chosen = pick_from(rels, slug, usage, pool)
             if chosen:
+                usage[str(chosen)] = usage.get(str(chosen), 0) + 1
                 return chosen
-    # Stable variety: hash slug into pool so neighbours don't share the same shot.
-    idx = int(hashlib.sha1(slug.encode()).hexdigest(), 16) % len(pool)
-    return pool[idx]
+    stock_first = [p for p in pool if "/og/stock/" in str(p)] or list(pool)
+    under = [p for p in stock_first if usage.get(str(p), 0) < 2]
+    if not under:
+        under = [p for p in pool if usage.get(str(p), 0) < 2]
+    chosen = _least_used(under or stock_first, slug, usage)
+    usage[str(chosen)] = usage.get(str(chosen), 0) + 1
+    return chosen
 
 
 def load_font(size: int, prefer_black: bool = True) -> ImageFont.FreeTypeFont:
@@ -315,36 +330,32 @@ def cover_crop(img: Image.Image, width: int, height: int) -> Image.Image:
 
 
 def draw_scrim(base: Image.Image) -> None:
-    overlay = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    draw = ImageDraw.Draw(overlay)
-    # Left-heavy vignette for title readability
-    for x in range(base.width):
-        t = x / base.width
-        alpha = int(210 * (1 - min(1.0, t * 1.15)) ** 1.2 + 70)
-        draw.line([(x, 0), (x, base.height)], fill=(10, 10, 12, alpha))
-    # Bottom fade
-    for y in range(base.height // 2, base.height):
-        t = (y - base.height // 2) / (base.height / 2)
-        alpha = int(120 * t)
-        draw.line([(0, y), (base.width, y)], fill=(10, 10, 12, alpha))
-    composed = Image.alpha_composite(base.convert("RGBA"), overlay)
-    base.paste(composed.convert("RGB"))
+    """Smooth left + bottom darken via gradients (no per-row line banding)."""
+    rgba = base.convert("RGBA")
+    w, h = rgba.size
+    # Black→white top-to-bottom; rotate so black is on the left
+    left_grad = Image.linear_gradient("L").rotate(90, expand=True).resize((w, h))
+    # Left fade only on ~55% width, smooth to transparent (no hard vertical edge)
+    left_a = left_grad.point(lambda p: int(max(0, ((255 - p) / 255.0) * 1.7 - 0.15) ** 1.4 * 210))
+    bottom_grad = Image.linear_gradient("L").resize((w, h))
+    bottom_a = bottom_grad.point(lambda p: int((p / 255.0) ** 3.2 * 55))
+    alpha = ImageChops.lighter(left_a, bottom_a)
+    veil = Image.new("RGBA", (w, h), (8, 8, 10, 255))
+    veil.putalpha(alpha)
+    base.paste(Image.alpha_composite(rgba, veil).convert("RGB"))
 
 
 def render_card(photo: Path, title: str, out_path: Path) -> None:
     img = Image.open(photo)
     # Slight desaturate so type pops
-    img = ImageEnhance.Color(img).enhance(0.85)
-    img = ImageEnhance.Brightness(img).enhance(0.92)
+    img = ImageEnhance.Color(img).enhance(0.88)
+    img = ImageEnhance.Brightness(img).enhance(0.94)
     canvas = cover_crop(img, W, H)
     draw_scrim(canvas)
-    # Soft blur on far right so faces/details don't fight the title
-    right = canvas.crop((int(W * 0.55), 0, W, H)).filter(ImageFilter.GaussianBlur(radius=1.2))
-    canvas.paste(right, (int(W * 0.55), 0))
 
     draw = ImageDraw.Draw(canvas)
     pad_x = 64
-    max_text_w = int(W * 0.62)
+    max_text_w = int(W * 0.58)
 
     brand_font = load_font(28, prefer_black=True)
     draw.text((pad_x, 48), "SMASH", font=brand_font, fill=ACCENT)
@@ -355,7 +366,10 @@ def render_card(photo: Path, title: str, out_path: Path) -> None:
     line_gap = int(title_font.size * 0.92)
     block_h = line_gap * len(lines)
     y = (H - block_h) // 2 + 10
+    # No box/bar — readable type via soft multi-offset shadow only
     for line in lines:
+        for dx, dy in ((-2, 0), (2, 0), (0, -2), (0, 2), (3, 3), (-1, 2)):
+            draw.text((pad_x + dx, y + dy), line, font=title_font, fill=(0, 0, 0))
         draw.text((pad_x, y), line, font=title_font, fill=WHITE)
         y += line_gap
 
@@ -386,12 +400,13 @@ def main() -> int:
         return 1
 
     manifest: list[dict] = []
+    usage: dict[str, int] = {}
     ok = 0
     for post in posts:
         slug = post["slug"]
         title = post["title"]
         keyword = post.get("primary_keyword") or ""
-        photo = pick_photo(slug, title, keyword, pool)
+        photo = pick_photo(slug, title, keyword, pool, usage)
         out_rel = f"/og/blog/{slug}.jpg"
         out_path = ROOT / "public" / "og" / "blog" / f"{slug}.jpg"
         render_card(photo, title, out_path)

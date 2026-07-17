@@ -48,32 +48,137 @@ BLOCKLIST = re.compile(
     re.I,
 )
 
-# category → search queries (tried in order until we fill the quota)
+# category → environmental / object-first queries (avoid “portrait of person” results)
 CATEGORIES: dict[str, list[str]] = {
-    "electrician": ["Electrician working", "Electrical worker toolbox"],
-    "plumber": ["Plumber at work", "Pipefitter pipes", "Plumbing tools sink"],
-    "painter": ["House painter rolling", "Painter painting wall"],
-    "gardener": ["Gardener landscaping", "Lawn care worker"],
-    "cleaner": ["Professional cleaner mopping", "Commercial cleaning worker"],
-    "mechanic": ["Car mechanic engine bay", "Automotive workshop mechanic"],
-    "handyman": ["DIY home repair tools", "Home renovation carpenter", "Toolbox workbench"],
-    "construction": ["Construction worker site", "Tradesperson hard hat"],
-    "dog_groomer": ["Dog grooming salon", "Pet groomer"],
-    "photographer": ["Photographer camera shoot", "Wedding photographer"],
-    "pool": ["Swimming pool maintenance", "Pool technician"],
-    "solar": ["Solar panel installation", "Rooftop solar workers"],
-    "fencing": ["Fence construction worker", "Building a fence"],
-    "tree": ["Arborist tree work", "Tree removal worker"],
-    "pest": ["Pest control technician", "Exterminator"],
-    "locksmith": ["Locksmith door lock", "Locksmith working"],
-    "tiler": ["Tile installer bathroom", "Tiling floor worker"],
-    "concrete": ["Concrete worker pouring", "Concreter construction"],
-    "hvac": ["HVAC technician air conditioning", "Air conditioner repair"],
-    "truck": ["Pickup truck tradesman", "Work ute toolbox"],
-    "office": ["Laptop on desk coffee", "Home office laptop typing", "Small business desk computer"],
-    "phone": ["Smartphone construction site", "Worker holding smartphone outdoors"],
-    "payment": ["Contactless card payment", "Credit card tap phone"],
-    "customer": ["Customer service desk smile", "Small business owner client"],
+    "electrician": [
+        "electrical panel close up",
+        "copper wiring conduits",
+        "switchboard circuit breakers",
+        "tools electrician toolbox",
+    ],
+    "plumber": [
+        "kitchen sink faucet close up",
+        "bathroom tap chrome",
+        "copper pipes under sink",
+        "plumbing wrench pipes",
+    ],
+    "painter": [
+        "paint roller on wall",
+        "paint cans brushes",
+        "fresh painted wall texture",
+        "drop cloth renovation room",
+    ],
+    "gardener": [
+        "garden tools soil",
+        "lawn mower grass",
+        "hedge landscaping greenery",
+        "wheelbarrow garden path",
+    ],
+    "cleaner": [
+        "cleaning supplies bucket mop",
+        "sparkling clean floor",
+        "window glass reflection clean",
+        "vacuum cleaner floor",
+    ],
+    "mechanic": [
+        "car engine bay close up",
+        "workshop tools garage",
+        "tyre wheel garage",
+        "socket wrench toolbox",
+    ],
+    "handyman": [
+        "toolbox open tools",
+        "drill bits workbench",
+        "home renovation unfinished wall",
+        "hammer nails wood",
+    ],
+    "construction": [
+        "building site scaffolding empty",
+        "concrete foundation site",
+        "brick wall construction",
+        "crane skyline building site",
+    ],
+    "dog_groomer": [
+        "dog grooming tools scissors",
+        "pet salon table",
+        "dog bath tub salon",
+    ],
+    "photographer": [
+        "camera lens close up",
+        "studio lighting softbox",
+        "camera on tripod outdoor",
+    ],
+    "pool": [
+        "swimming pool water tiles",
+        "pool cleaning equipment",
+        "blue pool water surface",
+    ],
+    "solar": [
+        "solar panels rooftop",
+        "solar panel array close up",
+        "rooftop solar installation",
+    ],
+    "fencing": [
+        "timber fence panels",
+        "metal fence construction",
+        "garden fence posts",
+    ],
+    "tree": [
+        "tree canopy forest",
+        "cut timber logs",
+        "chainsaw tree work tools",
+    ],
+    "pest": [
+        "garden insects plants",
+        "spray bottle garden",
+        "outdoor shed tools",
+    ],
+    "locksmith": [
+        "door lock close up",
+        "keys lock cylinder",
+        "padlock metal door",
+    ],
+    "tiler": [
+        "bathroom tile pattern",
+        "ceramic tiles stack",
+        "tiled floor close up",
+    ],
+    "concrete": [
+        "wet concrete pour texture",
+        "concrete mixer site",
+        "raw concrete wall texture",
+    ],
+    "hvac": [
+        "air conditioning unit outdoor",
+        "hvac ductwork",
+        "ventilation vents ceiling",
+    ],
+    "truck": [
+        "utility tray toolbox ute",
+        "work van parked street",
+        "pickup truck bed tools",
+    ],
+    "office": [
+        "laptop desk coffee top view",
+        "invoice papers desk",
+        "keyboard mouse desk",
+        "home office desk empty",
+    ],
+    "phone": [
+        "smartphone on workbench",
+        "phone screen outdoor blur",
+        "mobile phone tools table",
+    ],
+    "payment": [
+        "contactless card terminal",
+        "credit card tap machine",
+        "payment terminal close up",
+    ],
+    "customer": [
+        "handshake close up",
+        "front door welcome mat",
+        "clipboard paperwork desk",
+    ],
 }
 
 

@@ -36,6 +36,18 @@
     "id": "unsplash-ZGY5Pp8Xxaw"
   },
   {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-_2AlIm-F6pw.jpg",
+    "provider": "existing",
+    "id": "unsplash-_2AlIm-F6pw"
+  },
+  {
+    "category": "electrician",
+    "path": "public/og/stock/electrician/unsplash-zWOgsj3j0wA.jpg",
+    "provider": "existing",
+    "id": "unsplash-zWOgsj3j0wA"
+  },
+  {
     "category": "plumber",
     "path": "public/og/stock/plumber/unsplash-Cx5Lk7Rv-vE.jpg",
     "provider": "existing",
@@ -70,6 +82,18 @@
     "path": "public/og/stock/plumber/unsplash-oOyFmy3gnZo.jpg",
     "provider": "existing",
     "id": "unsplash-oOyFmy3gnZo"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-vPaerNQSl6I.jpg",
+    "provider": "existing",
+    "id": "unsplash-vPaerNQSl6I"
+  },
+  {
+    "category": "plumber",
+    "path": "public/og/stock/plumber/unsplash-zKlmUuc7pBk.jpg",
+    "provider": "existing",
+    "id": "unsplash-zKlmUuc7pBk"
   },
   {
     "category": "painter",
@@ -108,6 +132,18 @@
     "id": "unsplash-ioOlenqfMqA"
   },
   {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-jo4CWjIw4Wc.jpg",
+    "provider": "existing",
+    "id": "unsplash-jo4CWjIw4Wc"
+  },
+  {
+    "category": "painter",
+    "path": "public/og/stock/painter/unsplash-rMVjOX8nm2U.jpg",
+    "provider": "existing",
+    "id": "unsplash-rMVjOX8nm2U"
+  },
+  {
     "category": "gardener",
     "path": "public/og/stock/gardener/unsplash--o7ASOHDV9E.jpg",
     "provider": "existing",
@@ -142,6 +178,18 @@
     "path": "public/og/stock/gardener/unsplash-KcQuXaHCSPE.jpg",
     "provider": "existing",
     "id": "unsplash-KcQuXaHCSPE"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-aqqx2yrVB2M.jpg",
+    "provider": "existing",
+    "id": "unsplash-aqqx2yrVB2M"
+  },
+  {
+    "category": "gardener",
+    "path": "public/og/stock/gardener/unsplash-bsld7GjQwjI.jpg",
+    "provider": "existing",
+    "id": "unsplash-bsld7GjQwjI"
   },
   {
     "category": "cleaner",
@@ -180,6 +228,18 @@
     "id": "unsplash-MwxsRSG1A2s"
   },
   {
+    "category": "cleaner",
+    "path": "public/og/stock/cleaner/unsplash-POlu6snb-wQ.jpg",
+    "provider": "existing",
+    "id": "unsplash-POlu6snb-wQ"
+  },
+  {
+    "category": "cleaner",
+    "path": "public/og/stock/cleaner/unsplash-TpNA_02AzXY.jpg",
+    "provider": "existing",
+    "id": "unsplash-TpNA_02AzXY"
+  },
+  {
     "category": "mechanic",
     "path": "public/og/stock/mechanic/unsplash-8DKsb8Wkgyk.jpg",
     "provider": "existing",
@@ -198,582 +258,1207 @@
     "id": "unsplash-u8Vr8qC4BR0"
   },
   {
-    "id": "wiki-railway-master-mechanic-microform-1895-14759087795-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Railway_master_mechanic_%28microform%29_%281895%29_%2814759087795%29.jpg/1920px-Railway_master_mechanic_%28microform%29_%281895%29_%2814759087795%29.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Railway_master_mechanic_(microform)_(1895)_(14759087795).jpg",
-    "query": "Car mechanic engine bay",
-    "category": "mechanic",
-    "path": "public/og/stock/mechanic/wiki-railway-master-mechanic-microform-1895-14759087795-jpg.jpg"
-  },
-  {
-    "id": "wiki-camp-mabry-building-no-15-2200-west-thirty-fifth-street-austin-travis-county-tx",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Camp_Mabry%2C_Building_No._15%2C_2200_West_Thirty-fifth_Street%2C_Austin%2C_Travis_County%2C_TX_HABS_TX-3516-A_%28sheet_11_of_12%29.png/1920px-Camp_Mabry%2C_Building_No._15%2C_2200_West_Thirty-fifth_Street%2C_Austin%2C_Travis_County%2C_TX_HABS_TX-3516-A_%28sheet_11_of_12%29.png",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Camp_Mabry,_Building_No._15,_2200_West_Thirty-fifth_Street,_Austin,_Travis_County,_TX_HABS_TX-3516-A_(sheet_11_of_12).png",
+    "id": "unsplash-KhF58h0hTbc",
+    "url": "https://images.unsplash.com/photo-1676018366904-c083ed678e60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/KhF58h0hTbc/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww",
+    "provider": "unsplash",
+    "photographer": "Kato Blackmore \ud83c\uddfa\ud83c\udde6",
+    "page": "https://unsplash.com/photos/a-man-working-on-a-machine-in-a-garage-KhF58h0hTbc",
     "query": "Automotive workshop mechanic",
     "category": "mechanic",
-    "path": "public/og/stock/mechanic/wiki-camp-mabry-building-no-15-2200-west-thirty-fifth-street-austin-travis-county-tx.jpg"
+    "path": "public/og/stock/mechanic/unsplash-KhF58h0hTbc.jpg"
   },
   {
-    "id": "wiki-dfc-4703-a-mechanic-works-on-a-motorcycle-engine-on-the-workshop-floor-focused-o",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg/1920px-DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:DFC_4703_A_mechanic_works_on_a_motorcycle_engine_on_the_workshop_floor_focused_on_repairing_the_bike_amid_tools_and_parts.jpg",
+    "id": "unsplash-K5624F8cipE",
+    "url": "https://images.unsplash.com/photo-1702146713858-8e7d1cc29fe8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/K5624F8cipE/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww",
+    "provider": "unsplash",
+    "photographer": "Tahamie Farooqui",
+    "page": "https://unsplash.com/photos/a-man-working-on-a-car-under-a-vehicle-K5624F8cipE",
     "query": "Automotive workshop mechanic",
     "category": "mechanic",
-    "path": "public/og/stock/mechanic/wiki-dfc-4703-a-mechanic-works-on-a-motorcycle-engine-on-the-workshop-floor-focused-o.jpg"
+    "path": "public/og/stock/mechanic/unsplash-K5624F8cipE.jpg"
   },
   {
-    "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-mary-andrews-clark-memorial-home-los-angeles-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-mary-andrews-clark-memorial-home-los-angeles-jpg"
+    "id": "unsplash-Ffq4-mWzhmE",
+    "url": "https://images.unsplash.com/photo-1698998881125-b7b8f05a504b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Ffq4-mWzhmE/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww",
+    "provider": "unsplash",
+    "photographer": "Zanelle Lofty-Eaton",
+    "page": "https://unsplash.com/photos/a-black-and-white-photo-of-a-man-working-on-a-vehicle-Ffq4-mWzhmE",
+    "query": "Automotive workshop mechanic",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-Ffq4-mWzhmE.jpg"
   },
   {
-    "id": "wiki-autumn-farm-buggy-tool-shed-pubjpg---west-virginia---forestwander-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg/1920px-Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Autumn-farm-buggy-tool-shed-pubJPG_-_West_Virginia_-_ForestWander.jpg",
+    "id": "unsplash-2SjhIreAIN4",
+    "url": "https://images.unsplash.com/photo-1698998882494-57c3e043f340?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/2SjhIreAIN4/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww",
+    "provider": "unsplash",
+    "photographer": "Zanelle Lofty-Eaton",
+    "page": "https://unsplash.com/photos/a-man-in-a-hoodie-working-on-a-machine-2SjhIreAIN4",
+    "query": "Automotive workshop mechanic",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-2SjhIreAIN4.jpg"
+  },
+  {
+    "id": "unsplash-U_WtoT1M0VM",
+    "url": "https://images.unsplash.com/photo-1780401531667-849222fb636b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/U_WtoT1M0VM/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8QXV0b21vdGl2ZSUyMHdvcmtzaG9wJTIwbWVjaGFuaWN8ZW58MXwwfHx8MTc4NDI1NzM3Nnww",
+    "provider": "unsplash",
+    "photographer": "Kelvin Zyteng",
+    "page": "https://unsplash.com/photos/motorcycles-parked-inside-a-garage-with-tools-and-people-U_WtoT1M0VM",
+    "query": "Automotive workshop mechanic",
+    "category": "mechanic",
+    "path": "public/og/stock/mechanic/unsplash-U_WtoT1M0VM.jpg"
+  },
+  {
+    "id": "unsplash-IClZBVw5W5A",
+    "url": "https://images.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/IClZBVw5W5A/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Todd Quackenbush",
+    "page": "https://unsplash.com/photos/clothes-iron-hammer-axe-flashlight-and-pitcher-on-brown-wooden-table-IClZBVw5W5A",
     "query": "DIY home repair tools",
     "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-autumn-farm-buggy-tool-shed-pubjpg---west-virginia---forestwander-jpg.jpg"
+    "path": "public/og/stock/handyman/unsplash-IClZBVw5W5A.jpg"
   },
   {
-    "id": "wiki-building-garages-and-tool-shed---dpla---e2174aba790c99b73d243f69c137d6df-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Building_%28Garages_and_Tool_Shed%29_-_DPLA_-_e2174aba790c99b73d243f69c137d6df.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Building_(Garages_and_Tool_Shed)_-_DPLA_-_e2174aba790c99b73d243f69c137d6df.jpg",
+    "id": "unsplash-EJU7A__krX0",
+    "url": "https://images.unsplash.com/photo-1645651964715-d200ce0939cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/EJU7A__krX0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "benjamin lehman",
+    "page": "https://unsplash.com/photos/a-couple-of-tools-that-are-sitting-on-a-table-EJU7A__krX0",
     "query": "DIY home repair tools",
     "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-building-garages-and-tool-shed---dpla---e2174aba790c99b73d243f69c137d6df-jpg.jpg"
+    "path": "public/og/stock/handyman/unsplash-EJU7A__krX0.jpg"
   },
   {
-    "id": "wiki-graham-s-homes-workshop-in-kalimpong-01-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_01.jpg",
+    "id": "unsplash-9JU2CKqtw0M",
+    "url": "https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/9JU2CKqtw0M/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Elena Rouame",
+    "page": "https://unsplash.com/photos/red-and-silver-hand-tool-9JU2CKqtw0M",
     "query": "DIY home repair tools",
     "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-01-jpg.jpg"
+    "path": "public/og/stock/handyman/unsplash-9JU2CKqtw0M.jpg"
   },
   {
-    "id": "wiki-graham-s-homes-workshop-in-kalimpong-02-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_02.jpg",
+    "id": "unsplash-t5YUoHW6zRo",
+    "url": "https://images.unsplash.com/photo-1426927308491-6380b6a9936f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/t5YUoHW6zRo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Barn Images",
+    "page": "https://unsplash.com/photos/assorted-handheld-tools-in-tool-rack-t5YUoHW6zRo",
     "query": "DIY home repair tools",
     "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-02-jpg.jpg"
+    "path": "public/og/stock/handyman/unsplash-t5YUoHW6zRo.jpg"
   },
   {
-    "id": "wiki-graham-s-homes-workshop-in-kalimpong-03-jpg",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg/1920px-Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg",
-    "provider": "wikimedia",
-    "photographer": "",
-    "page": "https://commons.wikimedia.org/wiki/File:Graham%27s_Homes_Workshop_in_Kalimpong_03.jpg",
+    "id": "unsplash-iwz5tmhjl7o",
+    "url": "https://images.unsplash.com/photo-1676311396794-f14881e9daaa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/iwz5tmhjl7o/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Bermix Studio",
+    "page": "https://unsplash.com/photos/a-variety-of-tools-are-sitting-on-a-table-iwz5tmhjl7o",
     "query": "DIY home repair tools",
     "category": "handyman",
-    "path": "public/og/stock/handyman/wiki-graham-s-homes-workshop-in-kalimpong-03-jpg.jpg"
+    "path": "public/og/stock/handyman/unsplash-iwz5tmhjl7o.jpg"
   },
   {
+    "id": "unsplash-Rf9eElW3Qxo",
+    "url": "https://images.unsplash.com/photo-1567361808960-dec9cb578182?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Rf9eElW3Qxo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Louis Hansel",
+    "page": "https://unsplash.com/photos/assorted-type-carpentry-tools-on-brown-surface-Rf9eElW3Qxo",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/unsplash-Rf9eElW3Qxo.jpg"
+  },
+  {
+    "id": "unsplash-2Qlj2Gaft7w",
+    "url": "https://images.unsplash.com/photo-1671040690726-b78261eff126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/2Qlj2Gaft7w/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "Anton Savinov",
+    "page": "https://unsplash.com/photos/a-bunch-of-tools-hanging-up-on-a-wall-2Qlj2Gaft7w",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/unsplash-2Qlj2Gaft7w.jpg"
+  },
+  {
+    "id": "unsplash-sm0Bkoj5bnA",
+    "url": "https://images.unsplash.com/photo-1586864387789-628af9feed72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/sm0Bkoj5bnA/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8RElZJTIwaG9tZSUyMHJlcGFpciUyMHRvb2xzfGVufDF8MHx8fDE3ODQyNTczOTF8MA",
+    "provider": "unsplash",
+    "photographer": "iMattSmart",
+    "page": "https://unsplash.com/photos/black-and-silver-claw-hammer-sm0Bkoj5bnA",
+    "query": "DIY home repair tools",
+    "category": "handyman",
+    "path": "public/og/stock/handyman/unsplash-sm0Bkoj5bnA.jpg"
+  },
+  {
+    "id": "unsplash-sgYamIzhAhg",
+    "url": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/sgYamIzhAhg/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Etienne Girardet",
+    "page": "https://unsplash.com/photos/two-men-working-sgYamIzhAhg",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-a-worker-wears-a-helmet-and-visor-at-a-hong-kong-construction-site-during-a-heat.jpg",
-    "provider": "existing",
-    "id": "wiki-a-worker-wears-a-helmet-and-visor-at-a-hong-kong-construction-site-during-a-heat"
+    "path": "public/og/stock/construction/unsplash-sgYamIzhAhg.jpg"
   },
   {
+    "id": "unsplash-DWp5nUqTn6E",
+    "url": "https://images.unsplash.com/photo-1694521787162-5373b598945c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/DWp5nUqTn6E/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Glenov Brankovic",
+    "page": "https://unsplash.com/photos/a-group-of-men-standing-on-top-of-a-construction-site-DWp5nUqTn6E",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-armenian-construction-worker-sleeping-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-armenian-construction-worker-sleeping-jpg"
+    "path": "public/og/stock/construction/unsplash-DWp5nUqTn6E.jpg"
   },
   {
+    "id": "unsplash-EWoU3snzadU",
+    "url": "https://images.unsplash.com/photo-1646324554833-f0b6a479fa5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/EWoU3snzadU/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Josh Olalde",
+    "page": "https://unsplash.com/photos/a-man-in-a-hard-hat-and-safety-gear-working-on-a-wooden-structure-EWoU3snzadU",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-chinese-construction-workers-in-israel-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-chinese-construction-workers-in-israel-jpg"
+    "path": "public/og/stock/construction/unsplash-EWoU3snzadU.jpg"
   },
   {
+    "id": "unsplash--7QPeGK2_iU",
+    "url": "https://images.unsplash.com/photo-1664662568348-24b1482b6354?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/-7QPeGK2_iU/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Thatselby",
+    "page": "https://unsplash.com/photos/a-person-on-a-ladder--7QPeGK2_iU",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-construction-photography-of-workers-on-site-by-construction-photographer-daniel.jpg",
-    "provider": "existing",
-    "id": "wiki-construction-photography-of-workers-on-site-by-construction-photographer-daniel"
+    "path": "public/og/stock/construction/unsplash--7QPeGK2_iU.jpg"
   },
   {
+    "id": "unsplash-4xLxkDeiJC0",
+    "url": "https://images.unsplash.com/photo-1640101086894-7d70c3e70179?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/4xLxkDeiJC0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Fons Heijnsbroek",
+    "page": "https://unsplash.com/photos/a-group-of-construction-workers-standing-around-a-construction-site-4xLxkDeiJC0",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-construction-site-and-a-worker-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-construction-site-and-a-worker-jpg"
+    "path": "public/og/stock/construction/unsplash-4xLxkDeiJC0.jpg"
   },
   {
+    "id": "unsplash-QADRnW0D2zw",
+    "url": "https://images.unsplash.com/photo-1647735282077-c12699af40be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/QADRnW0D2zw/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Remy Gieling",
+    "page": "https://unsplash.com/photos/a-couple-of-men-standing-next-to-a-construction-site-QADRnW0D2zw",
+    "query": "Construction worker site",
     "category": "construction",
-    "path": "public/og/stock/construction/wiki-construction-worker-on-footpath-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-construction-worker-on-footpath-jpg"
+    "path": "public/og/stock/construction/unsplash-QADRnW0D2zw.jpg"
   },
   {
+    "id": "unsplash-EixJzIdl4bc",
+    "url": "https://images.unsplash.com/photo-1630683924997-fe27050a0416?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/EixJzIdl4bc/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Emma Houghton",
+    "page": "https://unsplash.com/photos/man-in-green-and-yellow-safety-vest-and-blue-denim-jeans-standing-on-brown-wooden-pallet-EixJzIdl4bc",
+    "query": "Construction worker site",
+    "category": "construction",
+    "path": "public/og/stock/construction/unsplash-EixJzIdl4bc.jpg"
+  },
+  {
+    "id": "unsplash-k3Xa8xH2TPY",
+    "url": "https://images.unsplash.com/photo-1694521788304-1d42378498da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/k3Xa8xH2TPY/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8Q29uc3RydWN0aW9uJTIwd29ya2VyJTIwc2l0ZXxlbnwxfDB8fHwxNzg0MjU3NDE1fDA",
+    "provider": "unsplash",
+    "photographer": "Glenov Brankovic",
+    "page": "https://unsplash.com/photos/a-construction-worker-standing-in-a-pile-of-sand-k3Xa8xH2TPY",
+    "query": "Construction worker site",
+    "category": "construction",
+    "path": "public/og/stock/construction/unsplash-k3Xa8xH2TPY.jpg"
+  },
+  {
+    "id": "wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A_dog_grooming_salon_downstairs%2C_Christopher_Street%2C_Greenwich_Village%2C_New_York_%2824727591878%29.jpg/1920px-A_dog_grooming_salon_downstairs%2C_Christopher_Street%2C_Greenwich_Village%2C_New_York_%2824727591878%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:A_dog_grooming_salon_downstairs,_Christopher_Street,_Greenwich_Village,_New_York_(24727591878).jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24.jpg",
-    "provider": "existing",
-    "id": "wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24"
+    "path": "public/og/stock/dog_groomer/wiki-a-dog-grooming-salon-downstairs-christopher-street-greenwich-village-new-york-24.jpg"
   },
   {
+    "id": "wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/American_Eskimo-10-GCH-Anana%27s_Look_Into_The_Future_CGC_01_%2816583766991%29.jpg/1920px-American_Eskimo-10-GCH-Anana%27s_Look_Into_The_Future_CGC_01_%2816583766991%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:American_Eskimo-10-GCH-Anana%27s_Look_Into_The_Future_CGC_01_(16583766991).jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg"
+    "path": "public/og/stock/dog_groomer/wiki-american-eskimo-10-gch-anana-s-look-into-the-future-cgc-01-16583766991-jpg.jpg"
   },
   {
+    "id": "wiki-dog-stylin-3406880422-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Dog_Stylin%27_%283406880422%29.jpg/1920px-Dog_Stylin%27_%283406880422%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Dog_Stylin%27_(3406880422).jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-dog-bath-r\u00f8m\u00f8-camping-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-dog-bath-r\u00f8m\u00f8-camping-jpg"
+    "path": "public/og/stock/dog_groomer/wiki-dog-stylin-3406880422-jpg.jpg"
   },
   {
+    "id": "wiki-dog-bath-r\u00f8m\u00f8-camping-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Dog_bath_R%C3%B8m%C3%B8_camping.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Dog_bath_R%C3%B8m%C3%B8_camping.jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-dog-stylin-3406880422-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-dog-stylin-3406880422-jpg"
+    "path": "public/og/stock/dog_groomer/wiki-dog-bath-r\u00f8m\u00f8-camping-jpg.jpg"
   },
   {
+    "id": "wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Gries_salon_toilettage_frimouse_canine_rue_de_bischwiller2.jpg/1920px-Gries_salon_toilettage_frimouse_canine_rue_de_bischwiller2.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Gries_salon_toilettage_frimouse_canine_rue_de_bischwiller2.jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg"
+    "path": "public/og/stock/dog_groomer/wiki-gries-salon-toilettage-frimouse-canine-rue-de-bischwiller2-jpg.jpg"
   },
   {
+    "id": "wiki-grooming-poodle-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Grooming_Poodle.jpg/1920px-Grooming_Poodle.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Grooming_Poodle.jpg",
+    "query": "Dog grooming salon",
     "category": "dog_groomer",
-    "path": "public/og/stock/dog_groomer/wiki-grooming-poodle-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-grooming-poodle-jpg"
+    "path": "public/og/stock/dog_groomer/wiki-grooming-poodle-jpg.jpg"
   },
   {
+    "id": "wiki-lorca-dog-grooming-station-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Lorca_dog_grooming_station.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Lorca_dog_grooming_station.jpg",
+    "query": "Dog grooming salon",
+    "category": "dog_groomer",
+    "path": "public/og/stock/dog_groomer/wiki-lorca-dog-grooming-station-jpg.jpg"
+  },
+  {
+    "id": "wiki-salon-48858401143-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Salon_%2848858401143%29.jpg/1920px-Salon_%2848858401143%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Salon_(48858401143).jpg",
+    "query": "Dog grooming salon",
+    "category": "dog_groomer",
+    "path": "public/og/stock/dog_groomer/wiki-salon-48858401143-jpg.jpg"
+  },
+  {
+    "id": "unsplash-WxM465oM4j4",
+    "url": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/WxM465oM4j4/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Reinhart Julian",
+    "page": "https://unsplash.com/photos/black-dslr-camera-floating-over-mans-hand-at-the-woods-WxM465oM4j4",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-ensign-midget---model-22-camera-in-comparison-to-a-type-135-film-roll-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-ensign-midget---model-22-camera-in-comparison-to-a-type-135-film-roll-jpg"
+    "path": "public/og/stock/photographer/unsplash-WxM465oM4j4.jpg"
   },
   {
+    "id": "unsplash-qWYvQMIJyfE",
+    "url": "https://images.unsplash.com/photo-1486916856992-e4db22c8df33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/qWYvQMIJyfE/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Jamie Street",
+    "page": "https://unsplash.com/photos/black-digital-camera-capturing-yellow-flower-qWYvQMIJyfE",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-i-prefer-shooting-with-a-camera---geograph-org-uk---7980665-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-i-prefer-shooting-with-a-camera---geograph-org-uk---7980665-jpg"
+    "path": "public/og/stock/photographer/unsplash-qWYvQMIJyfE.jpg"
   },
   {
+    "id": "unsplash-jkZs3Oi9pq0",
+    "url": "https://images.unsplash.com/photo-1513031300226-c8fb12de9ade?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/jkZs3Oi9pq0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Ailbhe Flynn",
+    "page": "https://unsplash.com/photos/person-taking-photo-using-canon-camera-in-shallow-focus-lens-jkZs3Oi9pq0",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-mt-mankial-swat-pakistan-point-shoot-camera-image-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-mt-mankial-swat-pakistan-point-shoot-camera-image-jpg"
+    "path": "public/og/stock/photographer/unsplash-jkZs3Oi9pq0.jpg"
   },
   {
+    "id": "unsplash-DQPP9rVLYGQ",
+    "url": "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/DQPP9rVLYGQ/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Jakob Owens",
+    "page": "https://unsplash.com/photos/shallow-focus-photography-of-man-using-a-dslr-camera-DQPP9rVLYGQ",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-multi-camera-exterior-efp-shoot-at-a-bmx-rally-california-2004-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-multi-camera-exterior-efp-shoot-at-a-bmx-rally-california-2004-jpg"
+    "path": "public/og/stock/photographer/unsplash-DQPP9rVLYGQ.jpg"
   },
   {
+    "id": "unsplash-gVbOF8mdE3U",
+    "url": "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/gVbOF8mdE3U/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Christian Wiediger",
+    "page": "https://unsplash.com/photos/a-person-holding-a-camera-up-to-take-a-picture-gVbOF8mdE3U",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-photographer-and-video-shooter-at-work-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-photographer-and-video-shooter-at-work-jpg"
+    "path": "public/og/stock/photographer/unsplash-gVbOF8mdE3U.jpg"
   },
   {
+    "id": "unsplash-hfk6xOjQlFk",
+    "url": "https://images.unsplash.com/photo-1520390138845-fd2d229dd553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/hfk6xOjQlFk/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "William Bayreuther",
+    "page": "https://unsplash.com/photos/person-holding-canon-dslr-camera-hfk6xOjQlFk",
+    "query": "Photographer camera shoot",
     "category": "photographer",
-    "path": "public/og/stock/photographer/wiki-photographer-taking-a-group-photograph-of-smiling-students-in-front-of-the-tokyo.jpg",
-    "provider": "existing",
-    "id": "wiki-photographer-taking-a-group-photograph-of-smiling-students-in-front-of-the-tokyo"
+    "path": "public/og/stock/photographer/unsplash-hfk6xOjQlFk.jpg"
   },
   {
+    "id": "unsplash-jz0xIgcwyL0",
+    "url": "https://images.unsplash.com/photo-1499343245400-cddc78a01317?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/jz0xIgcwyL0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Miss Zhang",
+    "page": "https://unsplash.com/photos/grayscale-photography-of-camera-jz0xIgcwyL0",
+    "query": "Photographer camera shoot",
+    "category": "photographer",
+    "path": "public/og/stock/photographer/unsplash-jz0xIgcwyL0.jpg"
+  },
+  {
+    "id": "unsplash-L6W9ZIQ5saM",
+    "url": "https://images.unsplash.com/photo-1548502499-ef49e8cf98d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/L6W9ZIQ5saM/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8UGhvdG9ncmFwaGVyJTIwY2FtZXJhJTIwc2hvb3R8ZW58MXwwfHx8MTc4NDI1NzQ3MHww",
+    "provider": "unsplash",
+    "photographer": "Lilly Rum",
+    "page": "https://unsplash.com/photos/person-holding-canon-eos-dslr-camera-L6W9ZIQ5saM",
+    "query": "Photographer camera shoot",
+    "category": "photographer",
+    "path": "public/og/stock/photographer/unsplash-L6W9ZIQ5saM.jpg"
+  },
+  {
+    "id": "unsplash-QGdRrty4054",
+    "url": "https://images.unsplash.com/photo-1558617320-e695f0d420de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/QGdRrty4054/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Thomas Park",
+    "page": "https://unsplash.com/photos/swimming-pool-close-up-photography-QGdRrty4054",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-camping-site-pool-maintenance-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-camping-site-pool-maintenance-jpg"
+    "path": "public/og/stock/pool/unsplash-QGdRrty4054.jpg"
   },
   {
+    "id": "unsplash-Xh6BpT-1tXo",
+    "url": "https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Xh6BpT-1tXo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Etienne Girardet",
+    "page": "https://unsplash.com/photos/swimming-pool-with-stainless-steel-ladder-Xh6BpT-1tXo",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-13-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-13-jpg"
+    "path": "public/og/stock/pool/unsplash-Xh6BpT-1tXo.jpg"
   },
   {
+    "id": "unsplash-GBLZAb0Rcvw",
+    "url": "https://images.unsplash.com/photo-1724660583299-2356fe880e54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/GBLZAb0Rcvw/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Declan Sun",
+    "page": "https://unsplash.com/photos/a-swimming-pool-with-a-tiled-floor-and-blue-water-GBLZAb0Rcvw",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-14-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-14-jpg"
+    "path": "public/og/stock/pool/unsplash-GBLZAb0Rcvw.jpg"
   },
   {
+    "id": "unsplash-y0dUkS5M9K8",
+    "url": "https://images.unsplash.com/photo-1592345965963-cde4e1c83608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/y0dUkS5M9K8/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Eduardo Goody",
+    "page": "https://unsplash.com/photos/blue-body-of-water-during-daytime-y0dUkS5M9K8",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-15-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-15-jpg"
+    "path": "public/og/stock/pool/unsplash-y0dUkS5M9K8.jpg"
   },
   {
+    "id": "unsplash-uWB32BEOnuw",
+    "url": "https://images.unsplash.com/photo-1742353980377-b8e42932c590?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/uWB32BEOnuw/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Zhiqiang Wang",
+    "page": "https://unsplash.com/photos/a-robotic-pool-cleaner-is-working-underwater-uWB32BEOnuw",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-16-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-16-jpg"
+    "path": "public/og/stock/pool/unsplash-uWB32BEOnuw.jpg"
   },
   {
+    "id": "unsplash-GopikeAEE80",
+    "url": "https://images.unsplash.com/photo-1693852657003-bdcf9f784be4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/GopikeAEE80/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Artem Kniaz",
+    "page": "https://unsplash.com/photos/a-swimming-pool-with-a-long-metal-railing-next-to-it-GopikeAEE80",
+    "query": "Swimming pool maintenance",
     "category": "pool",
-    "path": "public/og/stock/pool/wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-17-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-swimming-pool-maintenance-in-perth-western-australia-june-2021-17-jpg"
+    "path": "public/og/stock/pool/unsplash-GopikeAEE80.jpg"
   },
   {
+    "id": "unsplash-DsrHw56Juag",
+    "url": "https://images.unsplash.com/photo-1722325009084-6bfc230f0860?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/DsrHw56Juag/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Lawrence Krowdeed",
+    "page": "https://unsplash.com/photos/a-man-sitting-on-the-side-of-a-swimming-pool-next-to-an-inflatable-DsrHw56Juag",
+    "query": "Swimming pool maintenance",
+    "category": "pool",
+    "path": "public/og/stock/pool/unsplash-DsrHw56Juag.jpg"
+  },
+  {
+    "id": "unsplash-IEvt175Ndwo",
+    "url": "https://images.unsplash.com/photo-1605702755163-4f303492e55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/IEvt175Ndwo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8U3dpbW1pbmclMjBwb29sJTIwbWFpbnRlbmFuY2V8ZW58MXwwfHx8MTc4NDI1NzQ5NHww",
+    "provider": "unsplash",
+    "photographer": "Iosi Pratama",
+    "page": "https://unsplash.com/photos/man-in-white-polo-shirt-and-blue-denim-jeans-standing-on-swimming-pool-during-daytime-IEvt175Ndwo",
+    "query": "Swimming pool maintenance",
+    "category": "pool",
+    "path": "public/og/stock/pool/unsplash-IEvt175Ndwo.jpg"
+  },
+  {
+    "id": "unsplash-513dBrMJ_5w",
+    "url": "https://images.unsplash.com/photo-1509391366360-2e959784a276?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/513dBrMJ_5w/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "American Public Power Association",
+    "page": "https://unsplash.com/photos/solar-panels-on-green-field-513dBrMJ_5w",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-a-solar-panel-installation-in-a-coastal-area-image-by-skysail-innovation-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-a-solar-panel-installation-in-a-coastal-area-image-by-skysail-innovation-jpg"
+    "path": "public/og/stock/solar/unsplash-513dBrMJ_5w.jpg"
   },
   {
+    "id": "unsplash-rNn_TU8dvoY",
+    "url": "https://images.unsplash.com/photo-1668097613572-40b7c11c8727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/rNn_TU8dvoY/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "Markus Spiske",
+    "page": "https://unsplash.com/photos/a-person-working-on-a-solar-panel-rNn_TU8dvoY",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-installation-of-solar-pv-panels---panels-in-place---geograph-org-uk---2624288-jp.jpg",
-    "provider": "existing",
-    "id": "wiki-installation-of-solar-pv-panels---panels-in-place---geograph-org-uk---2624288-jp"
+    "path": "public/og/stock/solar/unsplash-rNn_TU8dvoY.jpg"
   },
   {
+    "id": "unsplash-wmaP3Tl80ww",
+    "url": "https://images.unsplash.com/photo-1624397640148-949b1732bb0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/wmaP3Tl80ww/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "Bill Mead",
+    "page": "https://unsplash.com/photos/man-in-white-dress-shirt-and-blue-denim-jeans-sitting-on-white-and-black-solar-panel-wmaP3Tl80ww",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-installation-of-solar-pv-panels---support-bars---geograph-org-uk---2623932-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-installation-of-solar-pv-panels---support-bars---geograph-org-uk---2623932-jpg"
+    "path": "public/og/stock/solar/unsplash-wmaP3Tl80ww.jpg"
   },
   {
+    "id": "unsplash-Q8V1EEvnJgk",
+    "url": "https://images.unsplash.com/photo-1660330589257-813305a4a383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Q8V1EEvnJgk/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "Raze Solar",
+    "page": "https://unsplash.com/photos/a-man-on-a-roof-Q8V1EEvnJgk",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-messenger---installation-of-solar-panels-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-messenger---installation-of-solar-panels-jpg"
+    "path": "public/og/stock/solar/unsplash-Q8V1EEvnJgk.jpg"
   },
   {
+    "id": "unsplash-2ASQyjafflo",
+    "url": "https://images.unsplash.com/photo-1648135327756-b606e2eb8caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/2ASQyjafflo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "Evgeniy Alyoshin",
+    "page": "https://unsplash.com/photos/a-white-hard-hat-sitting-on-top-of-a-solar-panel-2ASQyjafflo",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-solar-panel-installation-at-grange-farm-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-solar-panel-installation-at-grange-farm-jpg"
+    "path": "public/og/stock/solar/unsplash-2ASQyjafflo.jpg"
   },
   {
+    "id": "unsplash-Ja8t8nJN2I4",
+    "url": "https://images.unsplash.com/photo-1655300256335-beef51a914fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Ja8t8nJN2I4/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8U29sYXIlMjBwYW5lbCUyMGluc3RhbGxhdGlvbnxlbnwxfDB8fHwxNzg0MjU3NTIxfDA",
+    "provider": "unsplash",
+    "photographer": "Watt A Lot",
+    "page": "https://unsplash.com/photos/a-house-with-solar-panels-Ja8t8nJN2I4",
+    "query": "Solar panel installation",
     "category": "solar",
-    "path": "public/og/stock/solar/wiki-solar-panel-installation-at-lodge-farm---geograph-org-uk---2521908-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-solar-panel-installation-at-lodge-farm---geograph-org-uk---2521908-jpg"
+    "path": "public/og/stock/solar/unsplash-Ja8t8nJN2I4.jpg"
   },
   {
+    "id": "wiki-rooftop-photovoltaic-array-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Rooftop_Photovoltaic_Array.jpg/1920px-Rooftop_Photovoltaic_Array.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Rooftop_Photovoltaic_Array.jpg",
+    "query": "Rooftop solar workers",
+    "category": "solar",
+    "path": "public/og/stock/solar/wiki-rooftop-photovoltaic-array-jpg.jpg"
+  },
+  {
+    "id": "wiki-solar-installation-technician-on-rooftop-5392894792-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Solar_installation_technician_on_rooftop_%285392894792%29.jpg/1920px-Solar_installation_technician_on_rooftop_%285392894792%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Solar_installation_technician_on_rooftop_(5392894792).jpg",
+    "query": "Rooftop solar workers",
+    "category": "solar",
+    "path": "public/og/stock/solar/wiki-solar-installation-technician-on-rooftop-5392894792-jpg.jpg"
+  },
+  {
+    "id": "wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/A_view_through_the_new_Gate_of_the_University-building_on_Roeterseiland%2C_Amsterdam%3B_high_resolution_image_by_FotoDutch_in_June_2013.jpg/1920px-A_view_through_the_new_Gate_of_the_University-building_on_Roeterseiland%2C_Amsterdam%3B_high_resolution_image_by_FotoDutch_in_June_2013.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:A_view_through_the_new_Gate_of_the_University-building_on_Roeterseiland,_Amsterdam;_high_resolution_image_by_FotoDutch_in_June_2013.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda.jpg",
-    "provider": "existing",
-    "id": "wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda"
+    "path": "public/og/stock/fencing/wiki-a-view-through-the-new-gate-of-the-university-building-on-roeterseiland-amsterda.jpg"
   },
   {
+    "id": "wiki-aquafence-in-basel-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/AquaFence_in_Basel.jpg/1920px-AquaFence_in_Basel.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:AquaFence_in_Basel.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-aquafence-in-basel-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-aquafence-in-basel-jpg"
+    "path": "public/og/stock/fencing/wiki-aquafence-in-basel-jpg.jpg"
   },
   {
+    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bosbewerking%2C_arbeiders%2C_palen%2C_gazen%2C_afrasteringen%2C_Bestanddeelnr_251-7949.jpg/1920px-Bosbewerking%2C_arbeiders%2C_palen%2C_gazen%2C_afrasteringen%2C_Bestanddeelnr_251-7949.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Bosbewerking,_arbeiders,_palen,_gazen,_afrasteringen,_Bestanddeelnr_251-7949.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg"
+    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7949-jpg.jpg"
   },
   {
+    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bosbewerking%2C_arbeiders%2C_palen%2C_gazen%2C_afrasteringen%2C_Bestanddeelnr_251-7952.jpg/1920px-Bosbewerking%2C_arbeiders%2C_palen%2C_gazen%2C_afrasteringen%2C_Bestanddeelnr_251-7952.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Bosbewerking,_arbeiders,_palen,_gazen,_afrasteringen,_Bestanddeelnr_251-7952.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg"
+    "path": "public/og/stock/fencing/wiki-bosbewerking-arbeiders-palen-gazen-afrasteringen-bestanddeelnr-251-7952-jpg.jpg"
   },
   {
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_02.jpg/1920px-Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_02.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_02.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg"
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-02-jpg.jpg"
   },
   {
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_03.jpg/1920px-Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_03.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_03.jpg",
+    "query": "Fence construction worker",
     "category": "fencing",
-    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg"
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-03-jpg.jpg"
   },
   {
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-04-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_04.jpg/1920px-Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_04.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_04.jpg",
+    "query": "Fence construction worker",
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-04-jpg.jpg"
+  },
+  {
+    "id": "wiki-building-construction-moira-close-broadwater-farm-haringey-2025-05-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_05.jpg/1920px-Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_05.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Building_construction_Moira_Close_Broadwater_Farm_Haringey_2025_05.jpg",
+    "query": "Fence construction worker",
+    "category": "fencing",
+    "path": "public/og/stock/fencing/wiki-building-construction-moira-close-broadwater-farm-haringey-2025-05-jpg.jpg"
+  },
+  {
+    "id": "wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Arborist_at_work_-_detail_-_geograph.org.uk_-_6761044.jpg/1920px-Arborist_at_work_-_detail_-_geograph.org.uk_-_6761044.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Arborist_at_work_-_detail_-_geograph.org.uk_-_6761044.jpg",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg"
+    "path": "public/og/stock/tree/wiki-arborist-at-work---detail---geograph-org-uk---6761044-jpg.jpg"
   },
   {
+    "id": "wiki-arborist-searching-mistletoe-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Arborist_searching_mistletoe.jpg/1920px-Arborist_searching_mistletoe.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Arborist_searching_mistletoe.jpg",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-arborist-searching-mistletoe-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-arborist-searching-mistletoe-jpg"
+    "path": "public/og/stock/tree/wiki-arborist-searching-mistletoe-jpg.jpg"
   },
   {
+    "id": "wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Arborist_working_at_tree_near_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.jpg/1920px-Arborist_working_at_tree_near_T%C5%99eb%C3%AD%C4%8D%2C_T%C5%99eb%C3%AD%C4%8D_District.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Arborist_working_at_tree_near_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.jpg",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg"
+    "path": "public/og/stock/tree/wiki-arborist-working-at-tree-near-t\u0159eb\u00ed\u010d-t\u0159eb\u00ed\u010d-district-jpg.jpg"
   },
   {
+    "id": "wiki-arborists-3--kallista--vic--09-07-2008-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Arborists-3%2C-Kallista%2C-VIC%2C-09.07.2008.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Arborists-3,-Kallista,-VIC,-09.07.2008.jpg",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-arborists-3--kallista--vic--09-07-2008-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-arborists-3--kallista--vic--09-07-2008-jpg"
+    "path": "public/og/stock/tree/wiki-arborists-3--kallista--vic--09-07-2008-jpg.jpg"
   },
   {
+    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_01.png/1920px-Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_01.png",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Color_it_green_with_trees;_a_calendar_of_activities_for_home_arborists_01.png",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png.jpg",
-    "provider": "existing",
-    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png"
+    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-01-png.jpg"
   },
   {
+    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_02.png/1920px-Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_02.png",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Color_it_green_with_trees;_a_calendar_of_activities_for_home_arborists_02.png",
+    "query": "Arborist tree work",
     "category": "tree",
-    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png.jpg",
-    "provider": "existing",
-    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png"
+    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-02-png.jpg"
   },
   {
+    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-03-png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_03.png/1920px-Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_03.png",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Color_it_green_with_trees;_a_calendar_of_activities_for_home_arborists_03.png",
+    "query": "Arborist tree work",
+    "category": "tree",
+    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-03-png.jpg"
+  },
+  {
+    "id": "wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-05-png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_05.png/1920px-Color_it_green_with_trees%3B_a_calendar_of_activities_for_home_arborists_05.png",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Color_it_green_with_trees;_a_calendar_of_activities_for_home_arborists_05.png",
+    "query": "Arborist tree work",
+    "category": "tree",
+    "path": "public/og/stock/tree/wiki-color-it-green-with-trees-a-calendar-of-activities-for-home-arborists-05-png.jpg"
+  },
+  {
+    "id": "wiki-new-zealand-biocontrol-technician-chris-winks-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/New_Zealand_biocontrol_technician_Chris_Winks.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:New_Zealand_biocontrol_technician_Chris_Winks.jpg",
+    "query": "Pest control technician",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-billy-the-exterminator-2-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-billy-the-exterminator-2-jpg"
+    "path": "public/og/stock/pest/wiki-new-zealand-biocontrol-technician-chris-winks-jpg.jpg"
   },
   {
+    "id": "wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pestering_pests%2C_Entomology_sprays_down_threats_150323-F-XD389-010.jpg/1920px-Pestering_pests%2C_Entomology_sprays_down_threats_150323-F-XD389-010.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Pestering_pests,_Entomology_sprays_down_threats_150323-F-XD389-010.jpg",
+    "query": "Pest control technician",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-sendan-kendatsuba-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-extermination-of-evil-sendan-kendatsuba-jpg"
+    "path": "public/og/stock/pest/wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg.jpg"
   },
   {
+    "id": "wiki-billy-the-exterminator-2-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Billy_the_Exterminator_2.jpg/1920px-Billy_the_Exterminator_2.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Billy_the_Exterminator_2.jpg",
+    "query": "Exterminator",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-shinch\u016b-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-extermination-of-evil-shinch\u016b-jpg"
+    "path": "public/og/stock/pest/wiki-billy-the-exterminator-2-jpg.jpg"
   },
   {
+    "id": "wiki-extermination-of-evil-sendan-kendatsuba-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Extermination_of_Evil_Sendan_Kendatsuba.jpg/1920px-Extermination_of_Evil_Sendan_Kendatsuba.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Extermination_of_Evil_Sendan_Kendatsuba.jpg",
+    "query": "Exterminator",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-extermination-of-evil-sh\u014dki-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-extermination-of-evil-sh\u014dki-jpg"
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-sendan-kendatsuba-jpg.jpg"
   },
   {
+    "id": "wiki-extermination-of-evil-shinch\u016b-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Extermination_of_Evil_Shinch%C5%AB.jpg/1920px-Extermination_of_Evil_Shinch%C5%AB.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Extermination_of_Evil_Shinch%C5%AB.jpg",
+    "query": "Exterminator",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-new-zealand-biocontrol-technician-chris-winks-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-new-zealand-biocontrol-technician-chris-winks-jpg"
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-shinch\u016b-jpg.jpg"
   },
   {
+    "id": "wiki-extermination-of-evil-sh\u014dki-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Extermination_of_Evil_Sh%C5%8Dki.jpg/1920px-Extermination_of_Evil_Sh%C5%8Dki.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Extermination_of_Evil_Sh%C5%8Dki.jpg",
+    "query": "Exterminator",
     "category": "pest",
-    "path": "public/og/stock/pest/wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-pestering-pests-entomology-sprays-down-threats-150323-f-xd389-010-jpg"
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-sh\u014dki-jpg.jpg"
   },
   {
+    "id": "wiki-extermination-of-evil-tenkeisei-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Extermination_of_Evil_Tenkeisei.jpg/1920px-Extermination_of_Evil_Tenkeisei.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Extermination_of_Evil_Tenkeisei.jpg",
+    "query": "Exterminator",
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-tenkeisei-jpg.jpg"
+  },
+  {
+    "id": "wiki-extermination-of-evil-vaisravana-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Extermination_of_Evil_Vaisravana.jpg/1920px-Extermination_of_Evil_Vaisravana.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Extermination_of_Evil_Vaisravana.jpg",
+    "query": "Exterminator",
+    "category": "pest",
+    "path": "public/og/stock/pest/wiki-extermination-of-evil-vaisravana-jpg.jpg"
+  },
+  {
+    "id": "wiki-key-change-7395907-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Key_Change_%287395907%29.jpg/1920px-Key_Change_%287395907%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Key_Change_(7395907).jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-key-change-7395907-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-key-change-7395907-jpg"
+    "path": "public/og/stock/locksmith/wiki-key-change-7395907-jpg.jpg"
   },
   {
+    "id": "wiki-keys-to-the-castle-7395839-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Keys_to_the_Castle_%287395839%29.jpg/1920px-Keys_to_the_Castle_%287395839%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Keys_to_the_Castle_(7395839).jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395839-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-keys-to-the-castle-7395839-jpg"
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395839-jpg.jpg"
   },
   {
+    "id": "wiki-keys-to-the-castle-7395841-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Keys_to_the_Castle_%287395841%29.jpg/1920px-Keys_to_the_Castle_%287395841%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Keys_to_the_Castle_(7395841).jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395841-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-keys-to-the-castle-7395841-jpg"
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395841-jpg.jpg"
   },
   {
+    "id": "wiki-keys-to-the-castle-7395843-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Keys_to_the_Castle_%287395843%29.jpg/1920px-Keys_to_the_Castle_%287395843%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Keys_to_the_Castle_(7395843).jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395843-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-keys-to-the-castle-7395843-jpg"
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395843-jpg.jpg"
   },
   {
+    "id": "wiki-keys-to-the-castle-7395844-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Keys_to_the_Castle_%287395844%29.jpg/1920px-Keys_to_the_Castle_%287395844%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Keys_to_the_Castle_(7395844).jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395844-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-keys-to-the-castle-7395844-jpg"
+    "path": "public/og/stock/locksmith/wiki-keys-to-the-castle-7395844-jpg.jpg"
   },
   {
+    "id": "wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Wroclaw_National_Museum_2022_Iron_World_Exhibition_P10_door_lock.jpg/1920px-Wroclaw_National_Museum_2022_Iron_World_Exhibition_P10_door_lock.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Wroclaw_National_Museum_2022_Iron_World_Exhibition_P10_door_lock.jpg",
+    "query": "Locksmith door lock",
     "category": "locksmith",
-    "path": "public/og/stock/locksmith/wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg"
+    "path": "public/og/stock/locksmith/wiki-wroclaw-national-museum-2022-iron-world-exhibition-p10-door-lock-jpg.jpg"
   },
   {
+    "id": "wiki-art-of-locksmithing-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Art_of_Locksmithing.jpg/1920px-Art_of_Locksmithing.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Art_of_Locksmithing.jpg",
+    "query": "Locksmith working",
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-art-of-locksmithing-jpg.jpg"
+  },
+  {
+    "id": "wiki-uithangbord-de-sleutelmaker---deventer---20054369---rce-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Uithangbord_de_sleutelmaker_-_Deventer_-_20054369_-_RCE.jpg/1920px-Uithangbord_de_sleutelmaker_-_Deventer_-_20054369_-_RCE.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Uithangbord_de_sleutelmaker_-_Deventer_-_20054369_-_RCE.jpg",
+    "query": "Locksmith working",
+    "category": "locksmith",
+    "path": "public/og/stock/locksmith/wiki-uithangbord-de-sleutelmaker---deventer---20054369---rce-jpg.jpg"
+  },
+  {
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201827%29.jpg/1920px-156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201827%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:156th_CES_deployment_for_training_at_Aviano_Air_Base_(9201827).jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg"
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201827-jpg.jpg"
   },
   {
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201828%29.jpg/1920px-156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201828%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:156th_CES_deployment_for_training_at_Aviano_Air_Base_(9201828).jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg"
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201828-jpg.jpg"
   },
   {
+    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201833%29.jpg/1920px-156th_CES_deployment_for_training_at_Aviano_Air_Base_%289201833%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:156th_CES_deployment_for_training_at_Aviano_Air_Base_(9201833).jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg"
+    "path": "public/og/stock/tiler/wiki-156th-ces-deployment-for-training-at-aviano-air-base-9201833-jpg.jpg"
   },
   {
+    "id": "wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bathroom%2C_Glessner_House%2C_Prairie_Avenue_and_18th_Street%2C_Near_South_Side%2C_Chicago%2C_IL_-_54202826194.jpg/1920px-Bathroom%2C_Glessner_House%2C_Prairie_Avenue_and_18th_Street%2C_Near_South_Side%2C_Chicago%2C_IL_-_54202826194.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Bathroom,_Glessner_House,_Prairie_Avenue_and_18th_Street,_Near_South_Side,_Chicago,_IL_-_54202826194.jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i.jpg",
-    "provider": "existing",
-    "id": "wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i"
+    "path": "public/og/stock/tiler/wiki-bathroom-glessner-house-prairie-avenue-and-18th-street-near-south-side-chicago-i.jpg"
   },
   {
+    "id": "wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Installing_ceramic_tiles_in_the_future_public_bathrooms_in_the_LIRR_Concourse._08-01-2019_%2848441517082%29.jpg/1920px-Installing_ceramic_tiles_in_the_future_public_bathrooms_in_the_LIRR_Concourse._08-01-2019_%2848441517082%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Installing_ceramic_tiles_in_the_future_public_bathrooms_in_the_LIRR_Concourse._08-01-2019_(48441517082).jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08.jpg",
-    "provider": "existing",
-    "id": "wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08"
+    "path": "public/og/stock/tiler/wiki-installing-ceramic-tiles-in-the-future-public-bathrooms-in-the-lirr-concourse-08.jpg"
   },
   {
+    "id": "wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Tile_finishes_installed_in_the_woman%E2%80%99s_bathroom_of_the_future_LIRR_passenger_concourse._%28CM014B%2C_09-26-2018%29_%2844925115192%29.jpg/1920px-Tile_finishes_installed_in_the_woman%E2%80%99s_bathroom_of_the_future_LIRR_passenger_concourse._%28CM014B%2C_09-26-2018%29_%2844925115192%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Tile_finishes_installed_in_the_woman%E2%80%99s_bathroom_of_the_future_LIRR_passenger_concourse._(CM014B,_09-26-2018)_(44925115192).jpg",
+    "query": "Tile installer bathroom",
     "category": "tiler",
-    "path": "public/og/stock/tiler/wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con.jpg",
-    "provider": "existing",
-    "id": "wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con"
+    "path": "public/og/stock/tiler/wiki-tile-finishes-installed-in-the-woman-s-bathroom-of-the-future-lirr-passenger-con.jpg"
   },
   {
+    "id": "wiki-grundreinigung-fliesenboden-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Grundreinigung-Fliesenboden.jpg/1920px-Grundreinigung-Fliesenboden.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Grundreinigung-Fliesenboden.jpg",
+    "query": "Tiling floor worker",
+    "category": "tiler",
+    "path": "public/og/stock/tiler/wiki-grundreinigung-fliesenboden-jpg.jpg"
+  },
+  {
+    "id": "wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/-2021-01-18_Foundations_and_concrete_oversite%2C_Trimingham%2C_Norfolk_%281%29.JPG/1920px--2021-01-18_Foundations_and_concrete_oversite%2C_Trimingham%2C_Norfolk_%281%29.JPG",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:-2021-01-18_Foundations_and_concrete_oversite,_Trimingham,_Norfolk_(1).JPG",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg"
+    "path": "public/og/stock/concrete/wiki-2021-01-18-foundations-and-concrete-oversite-trimingham-norfolk-1-jpg.jpg"
   },
   {
+    "id": "wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/88d106_Pouring_top_floor_of_Witherspoon_Street_garage_%2829539037876%29.jpg/1920px-88d106_Pouring_top_floor_of_Witherspoon_Street_garage_%2829539037876%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:88d106_Pouring_top_floor_of_Witherspoon_Street_garage_(29539037876).jpg",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg"
+    "path": "public/og/stock/concrete/wiki-88d106-pouring-top-floor-of-witherspoon-street-garage-29539037876-jpg.jpg"
   },
   {
+    "id": "wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/88d109_Pouring_top_floor_of_Witherspoon_Street_garage_%2828949709823%29.jpg/1920px-88d109_Pouring_top_floor_of_Witherspoon_Street_garage_%2828949709823%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:88d109_Pouring_top_floor_of_Witherspoon_Street_garage_(28949709823).jpg",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg"
+    "path": "public/og/stock/concrete/wiki-88d109-pouring-top-floor-of-witherspoon-street-garage-28949709823-jpg.jpg"
   },
   {
+    "id": "wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/A63_Mar25_Mytongate_Underpass_Concrete_Pumping_Operation.jpg/1920px-A63_Mar25_Mytongate_Underpass_Concrete_Pumping_Operation.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:A63_Mar25_Mytongate_Underpass_Concrete_Pumping_Operation.jpg",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg"
+    "path": "public/og/stock/concrete/wiki-a63-mar25-mytongate-underpass-concrete-pumping-operation-jpg.jpg"
   },
   {
+    "id": "wiki-beautiful-day-for-pouring-concrete-14076549404-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Beautiful_day_for_pouring_concrete_%2814076549404%29.jpg/1920px-Beautiful_day_for_pouring_concrete_%2814076549404%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Beautiful_day_for_pouring_concrete_(14076549404).jpg",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-beautiful-day-for-pouring-concrete-14076549404-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-beautiful-day-for-pouring-concrete-14076549404-jpg"
+    "path": "public/og/stock/concrete/wiki-beautiful-day-for-pouring-concrete-14076549404-jpg.jpg"
   },
   {
+    "id": "wiki-concrete-flattening-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Concrete_flattening.jpg/1920px-Concrete_flattening.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Concrete_flattening.jpg",
+    "query": "Concrete worker pouring",
     "category": "concrete",
-    "path": "public/og/stock/concrete/wiki-concrete-flattening-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-concrete-flattening-jpg"
+    "path": "public/og/stock/concrete/wiki-concrete-flattening-jpg.jpg"
   },
   {
+    "id": "wiki-concrete-pouring-0020-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Concrete_pouring_0020.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Concrete_pouring_0020.jpg",
+    "query": "Concrete worker pouring",
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-concrete-pouring-0020-jpg.jpg"
+  },
+  {
+    "id": "wiki-concrete-pouring-for-the-new-spangdahlem-elementary-school-8062805-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Concrete_pouring_for_the_new_Spangdahlem_Elementary_School_%288062805%29.jpg/1920px-Concrete_pouring_for_the_new_Spangdahlem_Elementary_School_%288062805%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Concrete_pouring_for_the_new_Spangdahlem_Elementary_School_(8062805).jpg",
+    "query": "Concrete worker pouring",
+    "category": "concrete",
+    "path": "public/og/stock/concrete/wiki-concrete-pouring-for-the-new-spangdahlem-elementary-school-8062805-jpg.jpg"
+  },
+  {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502254%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502254%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502254).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502254-jpg.jpg"
   },
   {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502255%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502255%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502255).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502255-jpg.jpg"
   },
   {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502256%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502256%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502256).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502256-jpg.jpg"
   },
   {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502257%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502257%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502257).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502257-jpg.jpg"
   },
   {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502258%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502258%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502258).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502258-jpg.jpg"
   },
   {
+    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502259%29.jpg/1920px-379th_ECES_HVAC_technicians_combat_rising_temperatures_%288502259%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502259).jpg",
+    "query": "HVAC technician air conditioning",
     "category": "hvac",
-    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg"
+    "path": "public/og/stock/hvac/wiki-379th-eces-hvac-technicians-combat-rising-temperatures-8502259-jpg.jpg"
   },
   {
+    "id": "wiki-cool-under-pressure--386th-eces-hvac-technicians-in-action-9047739-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_%289047739%29.jpg/1920px-Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_%289047739%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_(9047739).jpg",
+    "query": "HVAC technician air conditioning",
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-cool-under-pressure--386th-eces-hvac-technicians-in-action-9047739-jpg.jpg"
+  },
+  {
+    "id": "wiki-cool-under-pressure--386th-eces-hvac-technicians-in-action-9047740-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_%289047740%29.jpg/1920px-Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_%289047740%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Cool_under_pressure-_386th_ECES_HVAC_technicians_in_action_(9047740).jpg",
+    "query": "HVAC technician air conditioning",
+    "category": "hvac",
+    "path": "public/og/stock/hvac/wiki-cool-under-pressure--386th-eces-hvac-technicians-in-action-9047740-jpg.jpg"
+  },
+  {
+    "id": "wiki-18-ram-3500-tradesman-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/18_Ram_3500_Tradesman.jpg/1920px-18_Ram_3500_Tradesman.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:18_Ram_3500_Tradesman.jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-18-ram-3500-tradesman-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-18-ram-3500-tradesman-jpg"
+    "path": "public/og/stock/truck/wiki-18-ram-3500-tradesman-jpg.jpg"
   },
   {
+    "id": "wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/2007_Ford_Falcon_%28BF_II%29_XL_Tradesman_utility_%2816332585488%29.jpg/1920px-2007_Ford_Falcon_%28BF_II%29_XL_Tradesman_utility_%2816332585488%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2007_Ford_Falcon_(BF_II)_XL_Tradesman_utility_(16332585488).jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg"
+    "path": "public/og/stock/truck/wiki-2007-ford-falcon-bf-ii-xl-tradesman-utility-16332585488-jpg.jpg"
   },
   {
+    "id": "wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/2017_Ram_1500_ST_Hemi_Crew_Cab_4x2_5%277_Box_with_Tradesman_Package_and_Popular_Equipment_Group_in_Bright_Silver_Metallic%2C_Front_Right%2C_2023-12-18.jpg/1920px-2017_Ram_1500_ST_Hemi_Crew_Cab_4x2_5%277_Box_with_Tradesman_Package_and_Popular_Equipment_Group_in_Bright_Silver_Metallic%2C_Front_Right%2C_2023-12-18.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2017_Ram_1500_ST_Hemi_Crew_Cab_4x2_5%277_Box_with_Tradesman_Package_and_Popular_Equipment_Group_in_Bright_Silver_Metallic,_Front_Right,_2023-12-18.jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq.jpg",
-    "provider": "existing",
-    "id": "wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq"
+    "path": "public/og/stock/truck/wiki-2017-ram-1500-st-hemi-crew-cab-4x2-5-7-box-with-tradesman-package-and-popular-eq.jpg"
   },
   {
+    "id": "wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/2020_Ram_1500_Classic_Tradesman_Crew_Cab_with_SXT_Package%2C_front_left_09-12-2022.jpg/1920px-2020_Ram_1500_Classic_Tradesman_Crew_Cab_with_SXT_Package%2C_front_left_09-12-2022.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2020_Ram_1500_Classic_Tradesman_Crew_Cab_with_SXT_Package,_front_left_09-12-2022.jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022.jpg",
-    "provider": "existing",
-    "id": "wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022"
+    "path": "public/og/stock/truck/wiki-2020-ram-1500-classic-tradesman-crew-cab-with-sxt-package-front-left-09-12-2022.jpg"
   },
   {
+    "id": "wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/2022_Ram_1500_Tradesman_eTorque_in_Granite_Crystal_Metallic%2C_Front_Right%2C_03-06-2022.jpg/1920px-2022_Ram_1500_Tradesman_eTorque_in_Granite_Crystal_Metallic%2C_Front_Right%2C_03-06-2022.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2022_Ram_1500_Tradesman_eTorque_in_Granite_Crystal_Metallic,_Front_Right,_03-06-2022.jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20.jpg",
-    "provider": "existing",
-    "id": "wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20"
+    "path": "public/og/stock/truck/wiki-2022-ram-1500-tradesman-etorque-in-granite-crystal-metallic-front-right-03-06-20.jpg"
   },
   {
+    "id": "wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/2022_Ram_Heavy_Duty_2500_Tradesman_Crew_Cab_SRW_6%274_Box_in_Hydro_Blue_Pearl%2C_front_left%2C_2022-04-18.jpg/1920px-2022_Ram_Heavy_Duty_2500_Tradesman_Crew_Cab_SRW_6%274_Box_in_Hydro_Blue_Pearl%2C_front_left%2C_2022-04-18.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2022_Ram_Heavy_Duty_2500_Tradesman_Crew_Cab_SRW_6%274_Box_in_Hydro_Blue_Pearl,_front_left,_2022-04-18.jpg",
+    "query": "Pickup truck tradesman",
     "category": "truck",
-    "path": "public/og/stock/truck/wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron.jpg",
-    "provider": "existing",
-    "id": "wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron"
+    "path": "public/og/stock/truck/wiki-2022-ram-heavy-duty-2500-tradesman-crew-cab-srw-6-4-box-in-hydro-blue-pearl-fron.jpg"
   },
   {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-aloneness-or-loneliness-3033873597-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-aloneness-or-loneliness-3033873597-jpg"
+    "id": "wiki-2025-ram-2500-regular-cab-8-box-4x4-tradesman-in-bright-white-front-right-2025-0",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/2025_RAM_2500_Regular_Cab_8%27_Box_4x4_Tradesman_in_Bright_White%2C_front_right%2C_2025-09-07.jpg/1920px-2025_RAM_2500_Regular_Cab_8%27_Box_4x4_Tradesman_in_Bright_White%2C_front_right%2C_2025-09-07.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:2025_RAM_2500_Regular_Cab_8%27_Box_4x4_Tradesman_in_Bright_White,_front_right,_2025-09-07.jpg",
+    "query": "Pickup truck tradesman",
+    "category": "truck",
+    "path": "public/og/stock/truck/wiki-2025-ram-2500-regular-cab-8-box-4x4-tradesman-in-bright-white-front-right-2025-0.jpg"
   },
   {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-new-vesd-app-141121-f-he996-005-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-new-vesd-app-141121-f-he996-005-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-partner-staff-52388904223-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-partner-staff-52388904223-jpg"
-  },
-  {
-    "category": "office",
-    "path": "public/og/stock/office/wiki-workspace-nottingham-flat-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-workspace-nottingham-flat-jpg"
+    "id": "wiki-20-ram-3500-tradesman-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/20_Ram_3500_Tradesman.jpg/1920px-20_Ram_3500_Tradesman.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:20_Ram_3500_Tradesman.jpg",
+    "query": "Pickup truck tradesman",
+    "category": "truck",
+    "path": "public/og/stock/truck/wiki-20-ram-3500-tradesman-jpg.jpg"
   },
   {
     "id": "wiki-businesswoman-has-coffee-and-snacks-while-working-on-laptop-jpg",
@@ -796,131 +1481,279 @@
     "path": "public/og/stock/office/wiki-coffee-desk-laptop-notebook-24244320481-jpg.jpg"
   },
   {
+    "id": "wiki-desk-at-speakerthon-bbc-broadcasting-house-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Desk_at_Speakerthon%2C_BBC_Broadcasting_House.JPG",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Desk_at_Speakerthon,_BBC_Broadcasting_House.JPG",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-desk-at-speakerthon-bbc-broadcasting-house-jpg.jpg"
+  },
+  {
+    "id": "wiki-laptop-and-a-mug-unsplash-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Laptop_and_a_mug_%28Unsplash%29.jpg/1920px-Laptop_and_a_mug_%28Unsplash%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Laptop_and_a_mug_(Unsplash).jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-laptop-and-a-mug-unsplash-jpg.jpg"
+  },
+  {
+    "id": "wiki-laptop-and-coffee-on-a-desk-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Laptop_and_coffee_on_a_desk.jpg/1920px-Laptop_and_coffee_on_a_desk.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Laptop_and_coffee_on_a_desk.jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-laptop-and-coffee-on-a-desk-jpg.jpg"
+  },
+  {
+    "id": "wiki-middle-aged-businesswoman-typing-on-laptop-at-home-office-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Middle-aged_businesswoman_typing_on_laptop_at_home_office.jpg/1920px-Middle-aged_businesswoman_typing_on_laptop_at_home_office.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Middle-aged_businesswoman_typing_on_laptop_at_home_office.jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-middle-aged-businesswoman-typing-on-laptop-at-home-office-jpg.jpg"
+  },
+  {
+    "id": "wiki-professional-woman-working-at-her-desk-with-a-laptop-coffee-and-handcuffs-in-an",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Professional_woman_working_at_her_desk_with_a_laptop%2C_coffee%2C_and_handcuffs_in_an_office_setting.jpg/1920px-Professional_woman_working_at_her_desk_with_a_laptop%2C_coffee%2C_and_handcuffs_in_an_office_setting.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Professional_woman_working_at_her_desk_with_a_laptop,_coffee,_and_handcuffs_in_an_office_setting.jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-professional-woman-working-at-her-desk-with-a-laptop-coffee-and-handcuffs-in-an.jpg"
+  },
+  {
+    "id": "wiki-woman-enjoying-coffee-while-working-on-laptop-in-cozy-indoor-space-during-daytim",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Woman_enjoying_coffee_while_working_on_laptop_in_cozy_indoor_space_during_daytime.jpg/1920px-Woman_enjoying_coffee_while_working_on_laptop_in_cozy_indoor_space_during_daytime.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Woman_enjoying_coffee_while_working_on_laptop_in_cozy_indoor_space_during_daytime.jpg",
+    "query": "Laptop on desk coffee",
+    "category": "office",
+    "path": "public/og/stock/office/wiki-woman-enjoying-coffee-while-working-on-laptop-in-cozy-indoor-space-during-daytim.jpg"
+  },
+  {
+    "id": "wiki-brunner-mine-industrial-site-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Brunner_Mine_Industrial_Site.jpg/1920px-Brunner_Mine_Industrial_Site.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Brunner_Mine_Industrial_Site.jpg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0.jpg",
-    "provider": "existing",
-    "id": "wiki-35-sz-\u6df1\u5733-shenzhen-\u7f85\u6e56-luohu-\u7d05\u5dba\u5317\u8def-hongling-north-road-june-2017-ix1-bus-123-view-0"
+    "path": "public/og/stock/phone/wiki-brunner-mine-industrial-site-jpg.jpg"
   },
   {
+    "id": "wiki-brunner-mine-industrial-site-02-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Brunner_Mine_Industrial_Site_02.jpg/1920px-Brunner_Mine_Industrial_Site_02.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Brunner_Mine_Industrial_Site_02.jpg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-caterpillar-backhoe-loader-at-construction-site-in-sunnyvale-back-view-jpg"
+    "path": "public/og/stock/phone/wiki-brunner-mine-industrial-site-02-jpg.jpg"
   },
   {
+    "id": "wiki-brunner-mine-industrial-site-05-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Brunner_Mine_Industrial_Site_05.jpg/1920px-Brunner_Mine_Industrial_Site_05.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Brunner_Mine_Industrial_Site_05.jpg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-cellular-network-mobile-phone-antenna-mount-haringey-london-jpg"
+    "path": "public/og/stock/phone/wiki-brunner-mine-industrial-site-05-jpg.jpg"
   },
   {
+    "id": "wiki-le-stand-de-l-australie-biennale-d-architecture-2014-venise-15603613298-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Le_stand_de_l%27Australie_%28Biennale_d%27architecture_2014%2C_Venise%29_%2815603613298%29.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Le_stand_de_l%27Australie_(Biennale_d%27architecture_2014,_Venise)_(15603613298).jpg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg.jpg",
-    "provider": "existing",
-    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-1-jpeg"
+    "path": "public/og/stock/phone/wiki-le-stand-de-l-australie-biennale-d-architecture-2014-venise-15603613298-jpg.jpg"
   },
   {
+    "id": "wiki-rohbau-d\u00fcrwi\u00df-jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rohbau_D%C3%BCrwi%C3%9F.jpg/1920px-Rohbau_D%C3%BCrwi%C3%9F.jpg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:Rohbau_D%C3%BCrwi%C3%9F.jpg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg.jpg",
-    "provider": "existing",
-    "id": "wiki-construction-of-a-five-star-international-hotel-in-wagga-wagga-jpeg"
+    "path": "public/og/stock/phone/wiki-rohbau-d\u00fcrwi\u00df-jpg.jpg"
   },
   {
+    "id": "wiki-\u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0435-\u0441\u0442\u0430\u043d\u0446\u0438\u0438-\u043c\u0446\u0434-2-\u043f\u0435\u0447\u0430\u0442\u043d\u0438\u043a\u0438-33-jpeg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%9C%D0%A6%D0%94-2_%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D0%BD%D0%B8%D0%BA%D0%B8_%2833%29.jpeg",
+    "provider": "wikimedia",
+    "photographer": "",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%9C%D0%A6%D0%94-2_%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D0%BD%D0%B8%D0%BA%D0%B8_(33).jpeg",
+    "query": "Smartphone construction site",
     "category": "phone",
-    "path": "public/og/stock/phone/wiki-constructionclock-app-on-table-saw-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-constructionclock-app-on-table-saw-jpg"
+    "path": "public/og/stock/phone/wiki-\u043e\u0442\u043a\u0440\u044b\u0442\u0438\u0435-\u0441\u0442\u0430\u043d\u0446\u0438\u0438-\u043c\u0446\u0434-2-\u043f\u0435\u0447\u0430\u0442\u043d\u0438\u043a\u0438-33-jpeg.jpg"
   },
   {
+    "id": "unsplash-ahjzVINkuCs",
+    "url": "https://images.unsplash.com/photo-1613243555988-441166d4d6fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/ahjzVINkuCs/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Markus Winkler",
+    "page": "https://unsplash.com/photos/black-asus-laptop-computer-on-white-surface-ahjzVINkuCs",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-bank-card-payment-methods-winschoten-2020-01-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-bank-card-payment-methods-winschoten-2020-01-jpg"
+    "path": "public/og/stock/payment/unsplash-ahjzVINkuCs.jpg"
   },
   {
+    "id": "unsplash-s8F8yglbpjo",
+    "url": "https://images.unsplash.com/photo-1609429019995-8c40f49535a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/s8F8yglbpjo/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "CardMapr.nl",
+    "page": "https://unsplash.com/photos/blue-and-white-visa-card-on-silver-laptop-computer-s8F8yglbpjo",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-cashless-payment-devices-creditcard-and-code-payment-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-cashless-payment-devices-creditcard-and-code-payment-jpg"
+    "path": "public/og/stock/payment/unsplash-s8F8yglbpjo.jpg"
   },
   {
+    "id": "unsplash-0IVop5v4MMU",
+    "url": "https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/0IVop5v4MMU/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Jonas Leupe",
+    "page": "https://unsplash.com/photos/woman-holding-android-smartphone-0IVop5v4MMU",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-contactless-fare-reader-on-sf-muni-tram-january-2026-jpg"
+    "path": "public/og/stock/payment/unsplash-0IVop5v4MMU.jpg"
   },
   {
+    "id": "unsplash-HNPrWOH2Z8U",
+    "url": "https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/HNPrWOH2Z8U/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Towfiqu barbhuiya",
+    "page": "https://unsplash.com/photos/person-holding-black-and-white-electronic-device-HNPrWOH2Z8U",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-contactless-payment-card-opened-to-show-rf-antenna-jpg"
+    "path": "public/og/stock/payment/unsplash-HNPrWOH2Z8U.jpg"
   },
   {
+    "id": "unsplash-3YSDTzqnVtQ",
+    "url": "https://images.unsplash.com/photo-1654263937079-f63a3ea4d48b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/3YSDTzqnVtQ/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NXx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Nathana Rebou\u00e7as",
+    "page": "https://unsplash.com/photos/a-person-holding-a-credit-card-in-front-of-a-machine-3YSDTzqnVtQ",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-ctt-nord-contactless-electronic-card-01-chesi-jpg"
+    "path": "public/og/stock/payment/unsplash-3YSDTzqnVtQ.jpg"
   },
   {
+    "id": "unsplash--JJg90OAnWI",
+    "url": "https://images.unsplash.com/photo-1556740720-776b84291f8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/-JJg90OAnWI/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Nnx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Blake Wisz",
+    "page": "https://unsplash.com/photos/person-holding-credit-card-swipe-machine--JJg90OAnWI",
+    "query": "Contactless card payment",
     "category": "payment",
-    "path": "public/og/stock/payment/wiki-fare-gates-with-contactless-readers-harvard-station-jpg.jpg",
-    "provider": "existing",
-    "id": "wiki-fare-gates-with-contactless-readers-harvard-station-jpg"
+    "path": "public/og/stock/payment/unsplash--JJg90OAnWI.jpg"
+  },
+  {
+    "id": "unsplash-k24rOBJ2D_0",
+    "url": "https://images.unsplash.com/photo-1608286022625-bc07f7a21154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/k24rOBJ2D_0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8N3x8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "naipo.de",
+    "page": "https://unsplash.com/photos/person-holding-black-android-smartphone-k24rOBJ2D_0",
+    "query": "Contactless card payment",
+    "category": "payment",
+    "path": "public/og/stock/payment/unsplash-k24rOBJ2D_0.jpg"
+  },
+  {
+    "id": "unsplash-Xn5FbEM9564",
+    "url": "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/Xn5FbEM9564/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8OHx8Q29udGFjdGxlc3MlMjBjYXJkJTIwcGF5bWVudHxlbnwxfDB8fHwxNzg0MjYwODA0fDA",
+    "provider": "unsplash",
+    "photographer": "Blake Wisz",
+    "page": "https://unsplash.com/photos/person-holding-smartphone-beside-tablet-computer-Xn5FbEM9564",
+    "query": "Contactless card payment",
+    "category": "payment",
+    "path": "public/og/stock/payment/unsplash-Xn5FbEM9564.jpg"
   },
   {
     "category": "customer",
-    "path": "public/og/stock/customer/wiki-handshake-2016-07-18-28351919656-jpg.jpg",
+    "path": "public/og/stock/customer/unsplash-9-vdJkH9NdI.jpg",
     "provider": "existing",
-    "id": "wiki-handshake-2016-07-18-28351919656-jpg"
+    "id": "unsplash-9-vdJkH9NdI"
   },
   {
     "category": "customer",
-    "path": "public/og/stock/customer/wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg.jpg",
+    "path": "public/og/stock/customer/unsplash-QGg-vsPYbu8.jpg",
     "provider": "existing",
-    "id": "wiki-usace-hosts-workshop-to-help-build-customer-service-relations-5412818211-jpg"
+    "id": "unsplash-QGg-vsPYbu8"
   },
   {
-    "id": "unsplash-dU3KJqyYlO0",
-    "url": "https://images.unsplash.com/photo-1753351052617-62818ffc9173?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "download_location": "https://api.unsplash.com/photos/dU3KJqyYlO0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-dU3KJqyYlO0.jpg",
+    "provider": "existing",
+    "id": "unsplash-dU3KJqyYlO0"
+  },
+  {
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-uRnRa8XXtrI.jpg",
+    "provider": "existing",
+    "id": "unsplash-uRnRa8XXtrI"
+  },
+  {
+    "id": "unsplash-wnpf3Q5pkXA",
+    "url": "https://images.unsplash.com/photo-1766066014237-00645c74e9c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/wnpf3Q5pkXA/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8MXx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA",
+    "provider": "unsplash",
+    "photographer": "BaljkanN 4",
+    "page": "https://unsplash.com/photos/a-smiling-woman-wearing-a-headset-at-a-computer-wnpf3Q5pkXA",
+    "query": "Customer service desk smile",
+    "category": "customer",
+    "path": "public/og/stock/customer/unsplash-wnpf3Q5pkXA.jpg"
+  },
+  {
+    "id": "unsplash-r82UQrlmWz0",
+    "url": "https://images.unsplash.com/photo-1758874383719-7c801adb7e5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/r82UQrlmWz0/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA",
     "provider": "unsplash",
     "photographer": "Vitaly Gariev",
-    "page": "https://unsplash.com/photos/two-cafe-owners-proudly-stand-together-dU3KJqyYlO0",
-    "query": "Small business owner client",
+    "page": "https://unsplash.com/photos/man-in-glasses-talking-on-phone-at-desk-r82UQrlmWz0",
+    "query": "Customer service desk smile",
     "category": "customer",
-    "path": "public/og/stock/customer/unsplash-dU3KJqyYlO0.jpg"
+    "path": "public/og/stock/customer/unsplash-r82UQrlmWz0.jpg"
   },
   {
-    "id": "unsplash-9-vdJkH9NdI",
-    "url": "https://images.unsplash.com/photo-1695668543969-ea7dec95047c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "download_location": "https://api.unsplash.com/photos/9-vdJkH9NdI/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8Mnx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "id": "unsplash-oKJ6RpzL_0U",
+    "url": "https://images.unsplash.com/photo-1783094268558-267292b35ca2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/oKJ6RpzL_0U/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA",
     "provider": "unsplash",
-    "photographer": "Kevin Ache",
-    "page": "https://unsplash.com/photos/two-men-sitting-at-a-table-talking-to-each-other-9-vdJkH9NdI",
-    "query": "Small business owner client",
+    "photographer": "Cabri Caldwell",
+    "page": "https://unsplash.com/photos/woman-smiling-at-desk-with-laptop-and-books-oKJ6RpzL_0U",
+    "query": "Customer service desk smile",
     "category": "customer",
-    "path": "public/og/stock/customer/unsplash-9-vdJkH9NdI.jpg"
+    "path": "public/og/stock/customer/unsplash-oKJ6RpzL_0U.jpg"
   },
   {
-    "id": "unsplash-QGg-vsPYbu8",
-    "url": "https://images.unsplash.com/photo-1753351052363-53ce102830eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "download_location": "https://api.unsplash.com/photos/QGg-vsPYbu8/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8M3x8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
-    "provider": "unsplash",
-    "photographer": "Vitaly Gariev",
-    "page": "https://unsplash.com/photos/a-smiling-woman-stands-in-her-coffee-shop-QGg-vsPYbu8",
-    "query": "Small business owner client",
-    "category": "customer",
-    "path": "public/og/stock/customer/unsplash-QGg-vsPYbu8.jpg"
-  },
-  {
-    "id": "unsplash-uRnRa8XXtrI",
-    "url": "https://images.unsplash.com/photo-1753351054581-783229e920fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "download_location": "https://api.unsplash.com/photos/uRnRa8XXtrI/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8U21hbGwlMjBidXNpbmVzcyUyMG93bmVyJTIwY2xpZW50fGVufDF8MHx8fDE3ODQyNDY0Mzd8MA",
+    "id": "unsplash-JJEOuvnY1Tw",
+    "url": "https://images.unsplash.com/photo-1758691463384-771db2f192b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "download_location": "https://api.unsplash.com/photos/JJEOuvnY1Tw/download?ixid=M3wxMDAwNTM2fDB8MXxzZWFyY2h8NHx8Q3VzdG9tZXIlMjBzZXJ2aWNlJTIwZGVzayUyMHNtaWxlfGVufDF8MHx8fDE3ODQyNjA4MzF8MA",
     "provider": "unsplash",
     "photographer": "Vitaly Gariev",
-    "page": "https://unsplash.com/photos/two-cafe-workers-standing-behind-a-counter-uRnRa8XXtrI",
-    "query": "Small business owner client",
+    "page": "https://unsplash.com/photos/doctor-wearing-a-stethoscope-sits-at-a-desk-JJEOuvnY1Tw",
+    "query": "Customer service desk smile",
     "category": "customer",
-    "path": "public/og/stock/customer/unsplash-uRnRa8XXtrI.jpg"
+    "path": "public/og/stock/customer/unsplash-JJEOuvnY1Tw.jpg"
   }
 ]

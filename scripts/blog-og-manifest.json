@@ -3,13 +3,13 @@
     "slug": "fastest-way-to-send-invoice-2026",
     "featured_image": "/og/blog/fastest-way-to-send-invoice-2026.jpg",
     "featured_image_alt": "The Fastest Way to Send an Invoice in 2026 (60-Second Speedrun) \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "photo": "public/og/stock/construction/unsplash-DWp5nUqTn6E.jpg"
   },
   {
     "slug": "quickbooks-gmail-sidebar-tab-switching",
     "featured_image": "/og/blog/quickbooks-gmail-sidebar-tab-switching.jpg",
     "featured_image_alt": "Stop Juggling Tabs: The QuickBooks Sidebar for Gmail That Does the Work \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/contrast.jpg"
+    "photo": "public/product/gmail/photos/demo.jpg"
   },
   {
     "slug": "gmail-quickbooks-xero-bridge",
@@ -21,13 +21,13 @@
     "slug": "quickbooks-gmail-chrome-extension-missing",
     "featured_image": "/og/blog/quickbooks-gmail-chrome-extension-missing.jpg",
     "featured_image_alt": "What QuickBooks Doesn't Have (And Why I Built It) \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/demo.jpg"
+    "photo": "public/product/gmail/photos/workflow.jpg"
   },
   {
     "slug": "gmail-to-xero-invoice-no-typing",
     "featured_image": "/og/blog/gmail-to-xero-invoice-no-typing.jpg",
     "featured_image_alt": "Gmail to Xero: Turn Job Requests Into Invoices Without Typing a Word \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/demo.jpg"
+    "photo": "public/product/gmail/photos/contrast.jpg"
   },
   {
     "slug": "pest-control-invoicing-gmail-csv-pricing",
@@ -42,82 +42,40 @@
     "photo": "public/product/gmail/photos/demo.jpg"
   },
   {
-    "slug": "appliance-repair-invoice-template-australia",
-    "featured_image": "/og/blog/appliance-repair-invoice-template-australia.jpg",
-    "featured_image_alt": "Appliance Repair Invoice Template Australia: Callout Fee, Labour, Parts and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
-  },
-  {
-    "slug": "how-to-invoice-solar-with-stc-rebates",
-    "featured_image": "/og/blog/how-to-invoice-solar-with-stc-rebates.jpg",
-    "featured_image_alt": "How to Invoice Solar Installations with STC Rebates: Correct Format and GST Treatment \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "how-to-invoice-mobile-dog-grooming-appointments",
-    "featured_image": "/og/blog/how-to-invoice-mobile-dog-grooming-appointments.jpg",
-    "featured_image_alt": "How to Invoice Mobile Dog Grooming Appointments: Between Grooms, Repeat Clients, Add-ons \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/dog-groomer.jpg"
-  },
-  {
-    "slug": "how-to-invoice-cctv-and-alarm-installations",
-    "featured_image": "/og/blog/how-to-invoice-cctv-and-alarm-installations.jpg",
-    "featured_image_alt": "How to Invoice CCTV and Alarm Installations: Equipment Lists, Cable, Monitoring \u2014 SMASH Invoices",
-    "photo": "public/product/home/voice-story-painter.jpg"
-  },
-  {
-    "slug": "how-to-invoice-appliance-repair-callouts",
-    "featured_image": "/og/blog/how-to-invoice-appliance-repair-callouts.jpg",
-    "featured_image_alt": "How to Invoice Appliance Repair Callouts: Diagnostic, Parts, After-hours and Commercial \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
-  },
-  {
-    "slug": "how-to-invoice-tree-removal-and-stump-grinding",
-    "featured_image": "/og/blog/how-to-invoice-tree-removal-and-stump-grinding.jpg",
-    "featured_image_alt": "How to Invoice Tree Removal and Stump Grinding: Multi-component Jobs Made Simple \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/gardener.jpg"
-  },
-  {
     "slug": "arborist-invoice-template-australia",
     "featured_image": "/og/blog/arborist-invoice-template-australia.jpg",
     "featured_image_alt": "Arborist Invoice Template Australia: Crew Rates, Removal, Stump Grinding and GST \u2014 SMASH Invoices",
     "photo": "public/product/ios/photos/ad-landing/gardener.jpg"
   },
   {
-    "slug": "fencing-invoice-template-australia",
-    "featured_image": "/og/blog/fencing-invoice-template-australia.jpg",
-    "featured_image_alt": "Fencing Invoice Template Australia: Metre Rates, Gates, Removal and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "slug": "how-to-invoice-solar-with-stc-rebates",
+    "featured_image": "/og/blog/how-to-invoice-solar-with-stc-rebates.jpg",
+    "featured_image_alt": "How to Invoice Solar Installations with STC Rebates: Correct Format and GST Treatment \u2014 SMASH Invoices",
+    "photo": "public/og/stock/solar/unsplash-513dBrMJ_5w.jpg"
   },
   {
-    "slug": "how-to-invoice-rubbish-removal-tip-fees",
-    "featured_image": "/og/blog/how-to-invoice-rubbish-removal-tip-fees.jpg",
-    "featured_image_alt": "How to Invoice Rubbish Removal Tip Fees: Waste Types, Weight, and Disposal Charges \u2014 SMASH Invoices",
-    "photo": "public/product/home/voice-story-painter.jpg"
+    "slug": "appliance-repair-invoice-template-australia",
+    "featured_image": "/og/blog/appliance-repair-invoice-template-australia.jpg",
+    "featured_image_alt": "Appliance Repair Invoice Template Australia: Callout Fee, Labour, Parts and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-EJU7A__krX0.jpg"
   },
   {
     "slug": "security-installer-invoice-template-australia",
     "featured_image": "/og/blog/security-installer-invoice-template-australia.jpg",
     "featured_image_alt": "Security Installer Invoice Template Australia: Equipment, Cable, Labour and GST \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "photo": "public/og/stock/handyman/unsplash-IClZBVw5W5A.jpg"
   },
   {
-    "slug": "rubbish-removal-invoice-template-australia",
-    "featured_image": "/og/blog/rubbish-removal-invoice-template-australia.jpg",
-    "featured_image_alt": "Rubbish Removal Invoice Template Australia: Load Rates, Tip Fees and GST \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "how-to-invoice-rubbish-removal-tip-fees",
+    "featured_image": "/og/blog/how-to-invoice-rubbish-removal-tip-fees.jpg",
+    "featured_image_alt": "How to Invoice Rubbish Removal Tip Fees: Waste Types, Weight, and Disposal Charges \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-k3Xa8xH2TPY.jpg"
   },
   {
-    "slug": "pool-service-invoice-template-australia",
-    "featured_image": "/og/blog/pool-service-invoice-template-australia.jpg",
-    "featured_image_alt": "Pool Service Invoice Template Australia: Chemicals, Labour, Equipment and GST \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-pool-maintenance.png"
-  },
-  {
-    "slug": "how-to-invoice-pool-chemical-treatments",
-    "featured_image": "/og/blog/how-to-invoice-pool-chemical-treatments.jpg",
-    "featured_image_alt": "How to Invoice Pool Chemical Treatments: Chlorine, pH, Algaecide and Green Pool Jobs \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-pool-maintenance.png"
+    "slug": "how-to-invoice-cctv-and-alarm-installations",
+    "featured_image": "/og/blog/how-to-invoice-cctv-and-alarm-installations.jpg",
+    "featured_image_alt": "How to Invoice CCTV and Alarm Installations: Equipment Lists, Cable, Monitoring \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-t5YUoHW6zRo.jpg"
   },
   {
     "slug": "dog-grooming-invoice-template-australia",
@@ -132,40 +90,82 @@
     "photo": "public/og/stock/painter/unsplash-jo4CWjIw4Wc.jpg"
   },
   {
-    "slug": "car-detailing-invoice-template-australia",
-    "featured_image": "/og/blog/car-detailing-invoice-template-australia.jpg",
-    "featured_image_alt": "Car Detailing Invoice Template Australia: Packages, Add-ons, Fleet and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "slug": "how-to-invoice-mobile-dog-grooming-appointments",
+    "featured_image": "/og/blog/how-to-invoice-mobile-dog-grooming-appointments.jpg",
+    "featured_image_alt": "How to Invoice Mobile Dog Grooming Appointments: Between Grooms, Repeat Clients, Add-ons \u2014 SMASH Invoices",
+    "photo": "public/product/ios/photos/ad-landing/dog-groomer.jpg"
   },
   {
-    "slug": "it-repair-invoice-template-australia",
-    "featured_image": "/og/blog/it-repair-invoice-template-australia.jpg",
-    "featured_image_alt": "IT Repair Invoice Template Australia: Callout Fee, Labour, Parts and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "slug": "how-to-invoice-pool-chemical-treatments",
+    "featured_image": "/og/blog/how-to-invoice-pool-chemical-treatments.jpg",
+    "featured_image_alt": "How to Invoice Pool Chemical Treatments: Chlorine, pH, Algaecide and Green Pool Jobs \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-GopikeAEE80.jpg"
   },
   {
-    "slug": "solar-installation-invoice-template-australia",
-    "featured_image": "/og/blog/solar-installation-invoice-template-australia.jpg",
-    "featured_image_alt": "Solar Installation Invoice Template Australia: Panels, Inverter, STC Rebates and GST \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "rubbish-removal-invoice-template-australia",
+    "featured_image": "/og/blog/rubbish-removal-invoice-template-australia.jpg",
+    "featured_image_alt": "Rubbish Removal Invoice Template Australia: Load Rates, Tip Fees and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-sgYamIzhAhg.jpg"
   },
   {
-    "slug": "how-to-invoice-fencing-by-the-metre",
-    "featured_image": "/og/blog/how-to-invoice-fencing-by-the-metre.jpg",
-    "featured_image_alt": "How to Invoice Fencing Jobs by the Metre: Colorbond, Timber, Pool and Gate Pricing \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-pool-maintenance.png"
+    "slug": "pool-service-invoice-template-australia",
+    "featured_image": "/og/blog/pool-service-invoice-template-australia.jpg",
+    "featured_image_alt": "Pool Service Invoice Template Australia: Chemicals, Labour, Equipment and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-Xh6BpT-1tXo.jpg"
   },
   {
     "slug": "how-to-invoice-computer-repair-parts-and-labour",
     "featured_image": "/og/blog/how-to-invoice-computer-repair-parts-and-labour.jpg",
     "featured_image_alt": "How to Invoice Computer Repair Parts and Labour: Callout, Markup, Business Rates \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "photo": "public/og/stock/construction/unsplash-4xLxkDeiJC0.jpg"
+  },
+  {
+    "slug": "solar-installation-invoice-template-australia",
+    "featured_image": "/og/blog/solar-installation-invoice-template-australia.jpg",
+    "featured_image_alt": "Solar Installation Invoice Template Australia: Panels, Inverter, STC Rebates and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/solar/unsplash-rNn_TU8dvoY.jpg"
+  },
+  {
+    "slug": "how-to-invoice-fencing-by-the-metre",
+    "featured_image": "/og/blog/how-to-invoice-fencing-by-the-metre.jpg",
+    "featured_image_alt": "How to Invoice Fencing Jobs by the Metre: Colorbond, Timber, Pool and Gate Pricing \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-uWB32BEOnuw.jpg"
+  },
+  {
+    "slug": "car-detailing-invoice-template-australia",
+    "featured_image": "/og/blog/car-detailing-invoice-template-australia.jpg",
+    "featured_image_alt": "Car Detailing Invoice Template Australia: Packages, Add-ons, Fleet and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-EixJzIdl4bc.jpg"
+  },
+  {
+    "slug": "how-to-invoice-appliance-repair-callouts",
+    "featured_image": "/og/blog/how-to-invoice-appliance-repair-callouts.jpg",
+    "featured_image_alt": "How to Invoice Appliance Repair Callouts: Diagnostic, Parts, After-hours and Commercial \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-QADRnW0D2zw.jpg"
+  },
+  {
+    "slug": "it-repair-invoice-template-australia",
+    "featured_image": "/og/blog/it-repair-invoice-template-australia.jpg",
+    "featured_image_alt": "IT Repair Invoice Template Australia: Callout Fee, Labour, Parts and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-2Qlj2Gaft7w.jpg"
+  },
+  {
+    "slug": "fencing-invoice-template-australia",
+    "featured_image": "/og/blog/fencing-invoice-template-australia.jpg",
+    "featured_image_alt": "Fencing Invoice Template Australia: Metre Rates, Gates, Removal and GST \u2014 SMASH Invoices",
+    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+  },
+  {
+    "slug": "how-to-invoice-tree-removal-and-stump-grinding",
+    "featured_image": "/og/blog/how-to-invoice-tree-removal-and-stump-grinding.jpg",
+    "featured_image_alt": "How to Invoice Tree Removal and Stump Grinding: Multi-component Jobs Made Simple \u2014 SMASH Invoices",
+    "photo": "public/product/ios/photos/ad-landing/gardener.jpg"
   },
   {
     "slug": "concreter-invoice-template-australia",
     "featured_image": "/og/blog/concreter-invoice-template-australia.jpg",
     "featured_image_alt": "Concreter Invoice Template Australia: Labour, Concrete Supply, Excavation and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/construction/unsplash--7QPeGK2_iU.jpg"
   },
   {
     "slug": "locksmith-invoice-template-australia",
@@ -177,37 +177,25 @@
     "slug": "how-to-invoice-concrete-progress-claims",
     "featured_image": "/og/blog/how-to-invoice-concrete-progress-claims.jpg",
     "featured_image_alt": "How to Invoice Progress Claims for Concrete Jobs: Deposits, Milestones and Final Claims \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "how-to-invoice-tiling-labour-and-materials",
-    "featured_image": "/og/blog/how-to-invoice-tiling-labour-and-materials.jpg",
-    "featured_image_alt": "How to Invoice Tiling Labour and Materials: Floor, Wall, Supply and Install \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
-  },
-  {
-    "slug": "tiler-invoice-template-australia",
-    "featured_image": "/og/blog/tiler-invoice-template-australia.jpg",
-    "featured_image_alt": "Tiler Invoice Template Australia: Labour by m\u00b2, Tiles, Adhesive, Grout and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/construction/unsplash-EWoU3snzadU.jpg"
   },
   {
     "slug": "how-to-invoice-emergency-locksmith-call-outs",
     "featured_image": "/og/blog/how-to-invoice-emergency-locksmith-call-outs.jpg",
     "featured_image_alt": "How to Invoice Emergency Locksmith Call-outs: After-hours Rates, Same-night Payment \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/painter/unsplash-KShbs9y4C7Y.jpg"
   },
   {
-    "slug": "how-to-invoice-multi-day-painting-jobs",
-    "featured_image": "/og/blog/how-to-invoice-multi-day-painting-jobs.jpg",
-    "featured_image_alt": "How to Invoice Multi-Day Painting Jobs: Labour, Stages and Cashflow \u2014 SMASH Invoices",
-    "photo": "public/og/stock/painter/unsplash-jo4CWjIw4Wc.jpg"
+    "slug": "how-to-invoice-tiling-labour-and-materials",
+    "featured_image": "/og/blog/how-to-invoice-tiling-labour-and-materials.jpg",
+    "featured_image_alt": "How to Invoice Tiling Labour and Materials: Floor, Wall, Supply and Install \u2014 SMASH Invoices",
+    "photo": "public/og/stock/customer/unsplash-JJEOuvnY1Tw.jpg"
   },
   {
-    "slug": "air-conditioning-emergency-call-out-invoice",
-    "featured_image": "/og/blog/air-conditioning-emergency-call-out-invoice.jpg",
-    "featured_image_alt": "Air Conditioning Emergency Call-out Invoice: After-Hours Rates, Parts and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "slug": "tiler-invoice-template-australia",
+    "featured_image": "/og/blog/tiler-invoice-template-australia.jpg",
+    "featured_image_alt": "Tiler Invoice Template Australia: Labour by m\u00b2, Tiles, Adhesive, Grout and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/electrician/unsplash-GXLPLG3_Vf4.jpg"
   },
   {
     "slug": "how-to-invoice-quarterly-pest-treatments",
@@ -216,10 +204,10 @@
     "photo": "public/product/ios/photos/ad-landing/snake-catcher.jpg"
   },
   {
-    "slug": "pest-control-invoice-template-australia",
-    "featured_image": "/og/blog/pest-control-invoice-template-australia.jpg",
-    "featured_image_alt": "Pest Control Invoice Template Australia: Treatments, Chemicals and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/snake-catcher.jpg"
+    "slug": "air-conditioning-emergency-call-out-invoice",
+    "featured_image": "/og/blog/air-conditioning-emergency-call-out-invoice.jpg",
+    "featured_image_alt": "Air Conditioning Emergency Call-out Invoice: After-Hours Rates, Parts and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/customer/unsplash-uRnRa8XXtrI.jpg"
   },
   {
     "slug": "painter-invoice-template-australia",
@@ -231,67 +219,79 @@
     "slug": "hvac-air-con-invoice-template-australia",
     "featured_image": "/og/blog/hvac-air-con-invoice-template-australia.jpg",
     "featured_image_alt": "HVAC Invoice Template Australia: Refrigerant, Labour, Parts and GST \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/cleaner/unsplash--dc38HdQR1M.jpg"
   },
   {
-    "slug": "gardening-invoice-template-australia",
-    "featured_image": "/og/blog/gardening-invoice-template-australia.jpg",
-    "featured_image_alt": "Gardening Invoice Template Australia: Lawn Care, Green Waste and GST \u2014 SMASH Invoices",
-    "photo": "public/og/stock/gardener/unsplash--o7ASOHDV9E.jpg"
+    "slug": "how-to-invoice-multi-day-painting-jobs",
+    "featured_image": "/og/blog/how-to-invoice-multi-day-painting-jobs.jpg",
+    "featured_image_alt": "How to Invoice Multi-Day Painting Jobs: Labour, Stages and Cashflow \u2014 SMASH Invoices",
+    "photo": "public/og/stock/painter/unsplash-HWGGMob7BhI.jpg"
   },
   {
-    "slug": "mobile-mechanic-call-out-fee-invoice",
-    "featured_image": "/og/blog/mobile-mechanic-call-out-fee-invoice.jpg",
-    "featured_image_alt": "Mobile Mechanic Call-out Fee Invoices: Roadside and After-hours \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg"
-  },
-  {
-    "slug": "handyman-invoice-template-australia",
-    "featured_image": "/og/blog/handyman-invoice-template-australia.jpg",
-    "featured_image_alt": "Handyman Invoice Template Australia: Odd Jobs, Labour and Materials \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "pest-control-invoice-template-australia",
+    "featured_image": "/og/blog/pest-control-invoice-template-australia.jpg",
+    "featured_image_alt": "Pest Control Invoice Template Australia: Treatments, Chemicals and GST \u2014 SMASH Invoices",
+    "photo": "public/product/ios/photos/ad-landing/snake-catcher.jpg"
   },
   {
     "slug": "mobile-mechanic-parts-markup-invoice",
     "featured_image": "/og/blog/mobile-mechanic-parts-markup-invoice.jpg",
     "featured_image_alt": "Mobile Mechanic Parts Markup Invoices: Labour, Parts and Fluids \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-8DKsb8Wkgyk.jpg"
+    "photo": "public/og/stock/mechanic/unsplash-ZCGyXRnr4Uw.jpg"
+  },
+  {
+    "slug": "handyman-invoice-template-australia",
+    "featured_image": "/og/blog/handyman-invoice-template-australia.jpg",
+    "featured_image_alt": "Handyman Invoice Template Australia: Odd Jobs, Labour and Materials \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-9JU2CKqtw0M.jpg"
   },
   {
     "slug": "handyman-materials-and-call-out-fees",
     "featured_image": "/og/blog/handyman-materials-and-call-out-fees.jpg",
     "featured_image_alt": "Handyman Materials and Call-out Fees: How to Invoice Small Jobs \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/handyman/unsplash-iwz5tmhjl7o.jpg"
+  },
+  {
+    "slug": "mobile-mechanic-call-out-fee-invoice",
+    "featured_image": "/og/blog/mobile-mechanic-call-out-fee-invoice.jpg",
+    "featured_image_alt": "Mobile Mechanic Call-out Fee Invoices: Roadside and After-hours \u2014 SMASH Invoices",
+    "photo": "public/og/stock/mechanic/unsplash-u8Vr8qC4BR0.jpg"
+  },
+  {
+    "slug": "gardening-invoice-template-australia",
+    "featured_image": "/og/blog/gardening-invoice-template-australia.jpg",
+    "featured_image_alt": "Gardening Invoice Template Australia: Lawn Care, Green Waste and GST \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-EkhWxU_pgLo.jpg"
   },
   {
     "slug": "lawn-mowing-repeat-invoices",
     "featured_image": "/og/blog/lawn-mowing-repeat-invoices.jpg",
     "featured_image_alt": "Repeat Invoices for Lawn Mowing and Garden Maintenance \u2014 SMASH Invoices",
-    "photo": "public/og/stock/gardener/unsplash-aqqx2yrVB2M.jpg"
+    "photo": "public/og/stock/gardener/unsplash--o7ASOHDV9E.jpg"
   },
   {
     "slug": "electrician-invoice-template-australia",
     "featured_image": "/og/blog/electrician-invoice-template-australia.jpg",
     "featured_image_alt": "Electrician Invoice Template Australia: Licence, Labour, Materials and GST \u2014 SMASH Invoices",
-    "photo": "public/og/stock/electrician/unsplash-UovTD1dG-lA.jpg"
-  },
-  {
-    "slug": "how-to-invoice-switchboard-upgrades",
-    "featured_image": "/og/blog/how-to-invoice-switchboard-upgrades.jpg",
-    "featured_image_alt": "How to Invoice Switchboard Upgrades \u2014 SMASH Invoices",
     "photo": "public/og/stock/electrician/unsplash-zWOgsj3j0wA.jpg"
   },
   {
     "slug": "electrician-call-out-fee-invoice",
     "featured_image": "/og/blog/electrician-call-out-fee-invoice.jpg",
     "featured_image_alt": "Electrician Call-out Fee Invoice: Standard, Emergency and After-hours Rates \u2014 SMASH Invoices",
-    "photo": "public/og/stock/electrician/unsplash-_2AlIm-F6pw.jpg"
+    "photo": "public/og/stock/electrician/unsplash-UovTD1dG-lA.jpg"
+  },
+  {
+    "slug": "how-to-invoice-switchboard-upgrades",
+    "featured_image": "/og/blog/how-to-invoice-switchboard-upgrades.jpg",
+    "featured_image_alt": "How to Invoice Switchboard Upgrades \u2014 SMASH Invoices",
+    "photo": "public/og/stock/electrician/unsplash-ZGY5Pp8Xxaw.jpg"
   },
   {
     "slug": "how-to-charge-materials-on-a-plumbing-invoice",
     "featured_image": "/og/blog/how-to-charge-materials-on-a-plumbing-invoice.jpg",
     "featured_image_alt": "How to Charge Materials on a Plumbing Invoice \u2014 SMASH Invoices",
-    "photo": "public/og/stock/plumber/unsplash-XCL_ROkw5t8.jpg"
+    "photo": "public/og/stock/plumber/unsplash-Cx5Lk7Rv-vE.jpg"
   },
   {
     "slug": "plumber-call-out-fee-invoice",
@@ -303,73 +303,115 @@
     "slug": "plumbing-invoice-template-australia",
     "featured_image": "/og/blog/plumbing-invoice-template-australia.jpg",
     "featured_image_alt": "Plumbing Invoice Template Australia: Licence, Labour, Materials and GST \u2014 SMASH Invoices",
-    "photo": "public/og/stock/plumber/unsplash-oOyFmy3gnZo.jpg"
-  },
-  {
-    "slug": "how-to-invoice-commercial-cleaning-clients",
-    "featured_image": "/og/blog/how-to-invoice-commercial-cleaning-clients.jpg",
-    "featured_image_alt": "How to Invoice Commercial Cleaning Clients \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-0FTI9ceTUOc.jpg"
-  },
-  {
-    "slug": "cleaning-invoice-template-australia",
-    "featured_image": "/og/blog/cleaning-invoice-template-australia.jpg",
-    "featured_image_alt": "Cleaning Invoice Template Australia: What to Include \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-HRV4IHTP3O8.jpg"
+    "photo": "public/og/stock/plumber/unsplash-zKlmUuc7pBk.jpg"
   },
   {
     "slug": "repeat-invoices-for-cleaners",
     "featured_image": "/og/blog/repeat-invoices-for-cleaners.jpg",
     "featured_image_alt": "Repeat Invoices for Cleaners: Weekly Clients Without Re-typing \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-POlu6snb-wQ.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-3hO8igCybds.jpg"
   },
   {
-    "slug": "miscellaneous-costing-you",
-    "featured_image": "/og/blog/miscellaneous-costing-you.jpg",
-    "featured_image_alt": "What Is 'Miscellaneous' Actually Costing You? My Dad's 30-Year Mistake \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "how-to-invoice-commercial-cleaning-clients",
+    "featured_image": "/og/blog/how-to-invoice-commercial-cleaning-clients.jpg",
+    "featured_image_alt": "How to Invoice Commercial Cleaning Clients \u2014 SMASH Invoices",
+    "photo": "public/og/stock/cleaner/unsplash-BVrJBcmn0EU.jpg"
+  },
+  {
+    "slug": "cleaning-invoice-template-australia",
+    "featured_image": "/og/blog/cleaning-invoice-template-australia.jpg",
+    "featured_image_alt": "Cleaning Invoice Template Australia: What to Include \u2014 SMASH Invoices",
+    "photo": "public/og/stock/cleaner/unsplash-tLJjHrasyUg.jpg"
+  },
+  {
+    "slug": "tax-deductions-sole-trader-tradie-australia",
+    "featured_image": "/og/blog/tax-deductions-sole-trader-tradie-australia.jpg",
+    "featured_image_alt": "What Tax Deductions Can Australian Tradies Claim? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-Rf9eElW3Qxo.jpg"
+  },
+  {
+    "slug": "built-for-people-who-dont-type",
+    "featured_image": "/og/blog/built-for-people-who-dont-type.jpg",
+    "featured_image_alt": "Why I Built an Invoicing App for People Who Don't Type \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-sm0Bkoj5bnA.jpg"
   },
   {
     "slug": "invoicing-app-no-typing",
     "featured_image": "/og/blog/invoicing-app-no-typing.jpg",
     "featured_image_alt": "Is There an Invoicing App That Doesn't Require Typing? \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "photo": "public/og/stock/painter/unsplash-712YAykhAD8.jpg"
   },
   {
-    "slug": "how-to-invoice-as-a-plumber-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-plumber-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Plumber in Australia \u2014 SMASH Invoices",
-    "photo": "public/og/stock/plumber/unsplash-oOyFmy3gnZo.jpg"
-  },
-  {
-    "slug": "what-happens-no-abn-on-invoice-australia",
-    "featured_image": "/og/blog/what-happens-no-abn-on-invoice-australia.jpg",
-    "featured_image_alt": "What Happens If I Don't Have an ABN on My Invoice in Australia? \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "miscellaneous-costing-you",
+    "featured_image": "/og/blog/miscellaneous-costing-you.jpg",
+    "featured_image_alt": "What Is 'Miscellaneous' Actually Costing You? My Dad's 30-Year Mistake \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-iwz5tmhjl7o.jpg"
   },
   {
     "slug": "why-every-invoicing-app-fails",
     "featured_image": "/og/blog/why-every-invoicing-app-fails.jpg",
     "featured_image_alt": "Why Every Invoicing App Fails Self-Employed Service Workers (and What to Do Instead) \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/construction/unsplash-EWoU3snzadU.jpg"
+  },
+  {
+    "slug": "read-receipts-invoicing",
+    "featured_image": "/og/blog/read-receipts-invoicing.jpg",
+    "featured_image_alt": "How Read Receipts Changed the Way I Follow Up Invoices \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-EixJzIdl4bc.jpg"
+  },
+  {
+    "slug": "customer-payment-history-better-tradie",
+    "featured_image": "/og/blog/customer-payment-history-better-tradie.jpg",
+    "featured_image_alt": "Why Knowing Your Customer's Payment History Makes You a Better Tradie \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-sgYamIzhAhg.jpg"
+  },
+  {
+    "slug": "customer-approval-portal",
+    "featured_image": "/og/blog/customer-approval-portal.jpg",
+    "featured_image_alt": "What Is a Customer Approval Portal and Why Does It Matter for Sole Traders? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/customer/unsplash-QGg-vsPYbu8.jpg"
+  },
+  {
+    "slug": "property-manager-payment-runaround",
+    "featured_image": "/og/blog/property-manager-payment-runaround.jpg",
+    "featured_image_alt": "The Property Manager Runaround \u2014 Why Commercial Clients Pay Last \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-t5YUoHW6zRo.jpg"
+  },
+  {
+    "slug": "never-send-bank-details-text",
+    "featured_image": "/og/blog/never-send-bank-details-text.jpg",
+    "featured_image_alt": "Why You Should Never Send Your Bank Details in a Text Message \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-sm0Bkoj5bnA.jpg"
+  },
+  {
+    "slug": "how-to-invoice-as-a-plumber-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-plumber-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Plumber in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/plumber/unsplash-vPaerNQSl6I.jpg"
+  },
+  {
+    "slug": "eofy-invoicing-checklist-sole-traders-australia",
+    "featured_image": "/og/blog/eofy-invoicing-checklist-sole-traders-australia.jpg",
+    "featured_image_alt": "The EOFY Invoicing Checklist for Australian Sole Traders \u2014 SMASH Invoices",
+    "photo": "public/og/stock/solar/unsplash-wmaP3Tl80ww.jpg"
+  },
+  {
+    "slug": "fly-screen-job",
+    "featured_image": "/og/blog/fly-screen-job.jpg",
+    "featured_image_alt": "The 20 Seconds That Changed How I Invoice \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash--7QPeGK2_iU.jpg"
+  },
+  {
+    "slug": "is-voice-invoicing-accurate",
+    "featured_image": "/og/blog/is-voice-invoicing-accurate.jpg",
+    "featured_image_alt": "Is Voice Invoicing Accurate Enough to Trust? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-4xLxkDeiJC0.jpg"
   },
   {
     "slug": "smash-vs-typing-invoices",
     "featured_image": "/og/blog/smash-vs-typing-invoices.jpg",
     "featured_image_alt": "SMASH Invoices vs Typing Invoices: What 60 Seconds Really Costs You \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "how-to-invoice-as-a-painter-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-painter-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Painter in Australia \u2014 SMASH Invoices",
-    "photo": "public/og/stock/painter/unsplash-rMVjOX8nm2U.jpg"
-  },
-  {
-    "slug": "how-to-invoice-as-a-pest-control-operator-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-pest-control-operator-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Pest Control Operator in Australia \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/snake-catcher.jpg"
+    "photo": "public/og/stock/construction/unsplash-DWp5nUqTn6E.jpg"
   },
   {
     "slug": "how-to-invoice-as-an-electrician-australia",
@@ -378,148 +420,94 @@
     "photo": "public/og/stock/electrician/unsplash-_2AlIm-F6pw.jpg"
   },
   {
-    "slug": "fly-screen-job",
-    "featured_image": "/og/blog/fly-screen-job.jpg",
-    "featured_image_alt": "The 20 Seconds That Changed How I Invoice \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "how-to-invoice-as-a-painter-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-painter-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Painter in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/painter/unsplash-9JP9kH8VHO8.jpg"
   },
   {
-    "slug": "smash-vs-google-docs-free-invoice-template",
-    "featured_image": "/og/blog/smash-vs-google-docs-free-invoice-template.jpg",
-    "featured_image_alt": "SMASH Invoices vs a Free Google Docs Template \u2014 The Real Cost of \\\"Free\\ \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "do-i-need-gst-as-a-sole-trader-australia",
+    "featured_image": "/og/blog/do-i-need-gst-as-a-sole-trader-australia.jpg",
+    "featured_image_alt": "Do I Need to Register for GST as a Sole Trader in Australia? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/payment/unsplash-ahjzVINkuCs.jpg"
   },
   {
-    "slug": "what-is-a-bas-sole-trader-australia",
-    "featured_image": "/og/blog/what-is-a-bas-sole-trader-australia.jpg",
-    "featured_image_alt": "What Is a BAS and When Do Sole Traders Need to Lodge One? \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/workflow.jpg"
+    "slug": "how-to-invoice-as-a-handyman-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-handyman-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Handyman in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-IClZBVw5W5A.jpg"
   },
   {
-    "slug": "who-is-smash-invoices-for",
-    "featured_image": "/og/blog/who-is-smash-invoices-for.jpg",
-    "featured_image_alt": "Who Is SMASH Invoices Actually For? (And Who It's Not) \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "how-to-invoice-as-a-carpenter-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-carpenter-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Carpenter in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-2Qlj2Gaft7w.jpg"
   },
   {
-    "slug": "what-must-be-on-a-tax-invoice-australia",
-    "featured_image": "/og/blog/what-must-be-on-a-tax-invoice-australia.jpg",
-    "featured_image_alt": "What Must Be On a Tax Invoice in Australia? (The Exact Legal List) \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "slug": "how-to-invoice-as-a-sole-trader-australia-complete-guide",
+    "featured_image": "/og/blog/how-to-invoice-as-a-sole-trader-australia-complete-guide.jpg",
+    "featured_image_alt": "How to Invoice as a Sole Trader in Australia \u2014 The Complete Guide \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-Rf9eElW3Qxo.jpg"
   },
   {
-    "slug": "built-for-people-who-dont-type",
-    "featured_image": "/og/blog/built-for-people-who-dont-type.jpg",
-    "featured_image_alt": "Why I Built an Invoicing App for People Who Don't Type \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "slug": "can-i-invoice-without-gst-australia",
+    "featured_image": "/og/blog/can-i-invoice-without-gst-australia.jpg",
+    "featured_image_alt": "Can I Invoice Without GST in Australia? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/handyman/unsplash-EJU7A__krX0.jpg"
   },
   {
-    "slug": "forgotten-invoices-annual-cost",
-    "featured_image": "/og/blog/forgotten-invoices-annual-cost.jpg",
-    "featured_image_alt": "How Much Is One Forgotten Invoice Actually Costing You Per Year? \u2014 SMASH Invoices",
-    "photo": "public/product/home/voice-story-painter.jpg"
+    "slug": "why-trades-businesses-fail-year-3",
+    "featured_image": "/og/blog/why-trades-businesses-fail-year-3.jpg",
+    "featured_image_alt": "Why Trades Businesses Fail in Year 3 (It's Not the Work) \u2014 SMASH Invoices",
+    "photo": "public/og/stock/cleaner/unsplash-loXX7MAtCqQ.jpg"
   },
   {
-    "slug": "the-30000-mistake-accountant-cant-save",
-    "featured_image": "/og/blog/the-30000-mistake-accountant-cant-save.jpg",
-    "featured_image_alt": "The $30,000 Mistake Your Accountant Can't Save You From \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-2NcTLdFHpH8.jpg"
+    "slug": "the-verbal-quote-trap",
+    "featured_image": "/og/blog/the-verbal-quote-trap.jpg",
+    "featured_image_alt": "The Verbal Quote Trap \u2014 Why \\\"We Agreed on $350\\\" Loses Every Time \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-QADRnW0D2zw.jpg"
   },
   {
-    "slug": "property-manager-payment-runaround",
-    "featured_image": "/og/blog/property-manager-payment-runaround.jpg",
-    "featured_image_alt": "The Property Manager Runaround \u2014 Why Commercial Clients Pay Last \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "builder-owes-you-subcontractor-payment-australia",
+    "featured_image": "/og/blog/builder-owes-you-subcontractor-payment-australia.jpg",
+    "featured_image_alt": "The Builder Who Owes You \u2014 Subcontractor Payment Rights in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/payment/unsplash-k24rOBJ2D_0.jpg"
   },
   {
-    "slug": "price-materials-automatically",
-    "featured_image": "/og/blog/price-materials-automatically.jpg",
-    "featured_image_alt": "How to Price Materials Automatically in a Quote Without Looking Anything Up \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "customer-put-fifty-back-in-purse",
-    "featured_image": "/og/blog/customer-put-fifty-back-in-purse.jpg",
-    "featured_image_alt": "She Put the Last $50 Back in Her Purse: What to Do When a Customer Doesn't Pay the Full Amount \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "never-send-bank-details-text",
-    "featured_image": "/og/blog/never-send-bank-details-text.jpg",
-    "featured_image_alt": "Why You Should Never Send Your Bank Details in a Text Message \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "customer-approval-portal",
-    "featured_image": "/og/blog/customer-approval-portal.jpg",
-    "featured_image_alt": "What Is a Customer Approval Portal and Why Does It Matter for Sole Traders? \u2014 SMASH Invoices",
-    "photo": "public/og/stock/customer/unsplash-9-vdJkH9NdI.jpg"
-  },
-  {
-    "slug": "what-does-a-good-tradie-business-look-like",
-    "featured_image": "/og/blog/what-does-a-good-tradie-business-look-like.jpg",
-    "featured_image_alt": "What Does a Good Tradie Business Actually Look Like? (The Real Numbers) \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "ill-pay-you-next-week-chasing-invoices",
-    "featured_image": "/og/blog/ill-pay-you-next-week-chasing-invoices.jpg",
-    "featured_image_alt": "\\\"I'll Pay You Next Week\\\" \u2014 The Three Mondays That Cost Tradies Thousands \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "smash-vs-invoice2go",
-    "featured_image": "/og/blog/smash-vs-invoice2go.jpg",
-    "featured_image_alt": "SMASH Invoices vs Invoice2go \u2014 Which Is Better for Sole Traders? \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "invoice-without-typing",
-    "featured_image": "/og/blog/invoice-without-typing.jpg",
-    "featured_image_alt": "How to Invoice Without Typing a Single Word \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "read-receipts-invoicing",
-    "featured_image": "/og/blog/read-receipts-invoicing.jpg",
-    "featured_image_alt": "How Read Receipts Changed the Way I Follow Up Invoices \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "how-to-invoice-pool-maintenance-australia",
-    "featured_image": "/og/blog/how-to-invoice-pool-maintenance-australia.jpg",
-    "featured_image_alt": "How to Invoice for Pool Maintenance in Australia \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-pool-maintenance.png"
-  },
-  {
-    "slug": "too-nice-costing-you-money",
-    "featured_image": "/og/blog/too-nice-costing-you-money.jpg",
-    "featured_image_alt": "Why Being \\\"Too Nice\\\" Is Costing Your Trades Business Money \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "i-never-got-it-invoice-dispute",
-    "featured_image": "/og/blog/i-never-got-it-invoice-dispute.jpg",
-    "featured_image_alt": "\\\"I Never Got It\\\" \u2014 The Three Words That Cost Self-Employed Service Workers Thousands \u2014 SMASH Invoices",
-    "photo": "public/product/home/voice-story-painter.jpg"
-  },
-  {
-    "slug": "smash-vs-tradify-sole-trader",
-    "featured_image": "/og/blog/smash-vs-tradify-sole-trader.jpg",
-    "featured_image_alt": "SMASH Invoices vs Tradify \u2014 When You Don't Need a Full Platform \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "slug": "how-to-invoice-as-a-gardener-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-gardener-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Gardener or Landscaper in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-Apips1tJsXo.jpg"
   },
   {
     "slug": "xero-too-complicated-sole-trader",
     "featured_image": "/og/blog/xero-too-complicated-sole-trader.jpg",
     "featured_image_alt": "Is Xero Too Complicated for a One-Person Trades Business? \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/demo.jpg"
+    "photo": "public/product/gmail/photos/sku-match.jpg"
   },
   {
     "slug": "scope-creep-tradie-invoice",
     "featured_image": "/og/blog/scope-creep-tradie-invoice.jpg",
     "featured_image_alt": "\\\"While You're Up There...\\\" \u2014 The Scope Creep Job That Pays for One and Works for Three \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/handyman/unsplash-9JU2CKqtw0M.jpg"
+  },
+  {
+    "slug": "smash-vs-tradify-sole-trader",
+    "featured_image": "/og/blog/smash-vs-tradify-sole-trader.jpg",
+    "featured_image_alt": "SMASH Invoices vs Tradify \u2014 When You Don't Need a Full Platform \u2014 SMASH Invoices",
+    "photo": "public/og/stock/construction/unsplash-k3Xa8xH2TPY.jpg"
+  },
+  {
+    "slug": "i-never-got-it-invoice-dispute",
+    "featured_image": "/og/blog/i-never-got-it-invoice-dispute.jpg",
+    "featured_image_alt": "\\\"I Never Got It\\\" \u2014 The Three Words That Cost Self-Employed Service Workers Thousands \u2014 SMASH Invoices",
+    "photo": "public/og/stock/customer/unsplash-9-vdJkH9NdI.jpg"
+  },
+  {
+    "slug": "forgotten-invoices-annual-cost",
+    "featured_image": "/og/blog/forgotten-invoices-annual-cost.jpg",
+    "featured_image_alt": "How Much Is One Forgotten Invoice Actually Costing You Per Year? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/customer/unsplash-wnpf3Q5pkXA.jpg"
   },
   {
     "slug": "how-to-invoice-as-a-cleaner-australia",
@@ -528,148 +516,160 @@
     "photo": "public/og/stock/cleaner/unsplash-MwxsRSG1A2s.jpg"
   },
   {
-    "slug": "how-much-losing-uncharged-materials",
-    "featured_image": "/og/blog/how-much-losing-uncharged-materials.jpg",
-    "featured_image_alt": "How Much Do Self-Employed Service Workers Lose on Materials They Forget to Charge For? \u2014 SMASH Invoices",
-    "photo": "public/og/stock/customer/unsplash-dU3KJqyYlO0.jpg"
-  },
-  {
-    "slug": "how-to-invoice-as-a-gardener-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-gardener-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Gardener or Landscaper in Australia \u2014 SMASH Invoices",
-    "photo": "public/og/stock/gardener/unsplash-aqqx2yrVB2M.jpg"
-  },
-  {
-    "slug": "customer-payment-history-better-tradie",
-    "featured_image": "/og/blog/customer-payment-history-better-tradie.jpg",
-    "featured_image_alt": "Why Knowing Your Customer's Payment History Makes You a Better Tradie \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
-  },
-  {
-    "slug": "why-trades-businesses-fail-year-3",
-    "featured_image": "/og/blog/why-trades-businesses-fail-year-3.jpg",
-    "featured_image_alt": "Why Trades Businesses Fail in Year 3 (It's Not the Work) \u2014 SMASH Invoices",
-    "photo": "public/og/stock/plumber/unsplash-c314Gh8dXAo.jpg"
-  },
-  {
-    "slug": "the-verbal-quote-trap",
-    "featured_image": "/og/blog/the-verbal-quote-trap.jpg",
-    "featured_image_alt": "The Verbal Quote Trap \u2014 Why \\\"We Agreed on $350\\\" Loses Every Time \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "how-to-invoice-as-a-sole-trader-australia-complete-guide",
-    "featured_image": "/og/blog/how-to-invoice-as-a-sole-trader-australia-complete-guide.jpg",
-    "featured_image_alt": "How to Invoice as a Sole Trader in Australia \u2014 The Complete Guide \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "tax-deductions-sole-trader-tradie-australia",
-    "featured_image": "/og/blog/tax-deductions-sole-trader-tradie-australia.jpg",
-    "featured_image_alt": "What Tax Deductions Can Australian Tradies Claim? \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "can-i-invoice-without-gst-australia",
-    "featured_image": "/og/blog/can-i-invoice-without-gst-australia.jpg",
-    "featured_image_alt": "Can I Invoice Without GST in Australia? \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "repeat-customer-inconsistent-pricing",
-    "featured_image": "/og/blog/repeat-customer-inconsistent-pricing.jpg",
-    "featured_image_alt": "The Repeat Customer Who Always Gets Your Cheapest Price (Even When You Don't Offer It) \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/snake-catcher.jpg"
-  },
-  {
-    "slug": "how-to-invoice-as-a-handyman-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-handyman-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Handyman in Australia \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "is-voice-invoicing-accurate",
-    "featured_image": "/og/blog/is-voice-invoicing-accurate.jpg",
-    "featured_image_alt": "Is Voice Invoicing Accurate Enough to Trust? \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "do-i-need-gst-as-a-sole-trader-australia",
-    "featured_image": "/og/blog/do-i-need-gst-as-a-sole-trader-australia.jpg",
-    "featured_image_alt": "Do I Need to Register for GST as a Sole Trader in Australia? \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/automessage.jpg"
-  },
-  {
     "slug": "how-to-invoice-as-a-mobile-mechanic-australia",
     "featured_image": "/og/blog/how-to-invoice-as-a-mobile-mechanic-australia.jpg",
     "featured_image_alt": "How to Invoice as a Mobile Mechanic in Australia \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg"
+    "photo": "public/og/stock/mechanic/unsplash-PdWuK5_QOiM.jpg"
   },
   {
-    "slug": "eofy-invoicing-checklist-sole-traders-australia",
-    "featured_image": "/og/blog/eofy-invoicing-checklist-sole-traders-australia.jpg",
-    "featured_image_alt": "The EOFY Invoicing Checklist for Australian Sole Traders \u2014 SMASH Invoices",
-    "photo": "public/og/stock/painter/unsplash-1iho4gvI4-g.jpg"
+    "slug": "how-to-invoice-pool-maintenance-australia",
+    "featured_image": "/og/blog/how-to-invoice-pool-maintenance-australia.jpg",
+    "featured_image_alt": "How to Invoice for Pool Maintenance in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-GBLZAb0Rcvw.jpg"
   },
   {
-    "slug": "how-to-invoice-as-a-carpenter-australia",
-    "featured_image": "/og/blog/how-to-invoice-as-a-carpenter-australia.jpg",
-    "featured_image_alt": "How to Invoice as a Carpenter in Australia \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "slug": "invoice-without-typing",
+    "featured_image": "/og/blog/invoice-without-typing.jpg",
+    "featured_image_alt": "How to Invoice Without Typing a Single Word \u2014 SMASH Invoices",
+    "photo": "public/og/stock/photographer/unsplash-DQPP9rVLYGQ.jpg"
+  },
+  {
+    "slug": "how-much-losing-uncharged-materials",
+    "featured_image": "/og/blog/how-much-losing-uncharged-materials.jpg",
+    "featured_image_alt": "How Much Do Self-Employed Service Workers Lose on Materials They Forget to Charge For? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/payment/unsplash-3YSDTzqnVtQ.jpg"
+  },
+  {
+    "slug": "too-nice-costing-you-money",
+    "featured_image": "/og/blog/too-nice-costing-you-money.jpg",
+    "featured_image_alt": "Why Being \\\"Too Nice\\\" Is Costing Your Trades Business Money \u2014 SMASH Invoices",
+    "photo": "public/og/stock/payment/unsplash-0IVop5v4MMU.jpg"
+  },
+  {
+    "slug": "smash-vs-invoice2go",
+    "featured_image": "/og/blog/smash-vs-invoice2go.jpg",
+    "featured_image_alt": "SMASH Invoices vs Invoice2go \u2014 Which Is Better for Sole Traders? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/payment/unsplash-Xn5FbEM9564.jpg"
+  },
+  {
+    "slug": "customer-put-fifty-back-in-purse",
+    "featured_image": "/og/blog/customer-put-fifty-back-in-purse.jpg",
+    "featured_image_alt": "She Put the Last $50 Back in Her Purse: What to Do When a Customer Doesn't Pay the Full Amount \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-5xML_2EClnA.jpg"
+  },
+  {
+    "slug": "the-30000-mistake-accountant-cant-save",
+    "featured_image": "/og/blog/the-30000-mistake-accountant-cant-save.jpg",
+    "featured_image_alt": "The $30,000 Mistake Your Accountant Can't Save You From \u2014 SMASH Invoices",
+    "photo": "public/og/stock/photographer/unsplash-L6W9ZIQ5saM.jpg"
+  },
+  {
+    "slug": "what-does-a-good-tradie-business-look-like",
+    "featured_image": "/og/blog/what-does-a-good-tradie-business-look-like.jpg",
+    "featured_image_alt": "What Does a Good Tradie Business Actually Look Like? (The Real Numbers) \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-IEvt175Ndwo.jpg"
   },
   {
     "slug": "how-long-to-send-invoice-after-job-australia",
     "featured_image": "/og/blog/how-long-to-send-invoice-after-job-australia.jpg",
     "featured_image_alt": "How Long Do You Have to Send an Invoice After Completing a Job in Australia? \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "photo": "public/og/stock/electrician/unsplash--0-kl1BjvFc.jpg"
+  },
+  {
+    "slug": "how-to-invoice-as-a-pest-control-operator-australia",
+    "featured_image": "/og/blog/how-to-invoice-as-a-pest-control-operator-australia.jpg",
+    "featured_image_alt": "How to Invoice as a Pest Control Operator in Australia \u2014 SMASH Invoices",
+    "photo": "public/og/stock/cleaner/unsplash-2NcTLdFHpH8.jpg"
+  },
+  {
+    "slug": "what-must-be-on-a-tax-invoice-australia",
+    "featured_image": "/og/blog/what-must-be-on-a-tax-invoice-australia.jpg",
+    "featured_image_alt": "What Must Be On a Tax Invoice in Australia? (The Exact Legal List) \u2014 SMASH Invoices",
+    "photo": "public/og/stock/plumber/unsplash-c314Gh8dXAo.jpg"
+  },
+  {
+    "slug": "what-is-a-bas-sole-trader-australia",
+    "featured_image": "/og/blog/what-is-a-bas-sole-trader-australia.jpg",
+    "featured_image_alt": "What Is a BAS and When Do Sole Traders Need to Lodge One? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/photographer/unsplash-WxM465oM4j4.jpg"
+  },
+  {
+    "slug": "who-is-smash-invoices-for",
+    "featured_image": "/og/blog/who-is-smash-invoices-for.jpg",
+    "featured_image_alt": "Who Is SMASH Invoices Actually For? (And Who It's Not) \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-KcQuXaHCSPE.jpg"
+  },
+  {
+    "slug": "price-materials-automatically",
+    "featured_image": "/og/blog/price-materials-automatically.jpg",
+    "featured_image_alt": "How to Price Materials Automatically in a Quote Without Looking Anything Up \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-EnMHRC1O00U.jpg"
   },
   {
     "slug": "sunday-night-invoicing-real-cost",
     "featured_image": "/og/blog/sunday-night-invoicing-real-cost.jpg",
     "featured_image_alt": "What Is the Real Cost of Sunday Night Invoicing? (It's Not Just Time) \u2014 SMASH Invoices",
-    "photo": "public/og/stock/painter/unsplash-Cl-OpYWFFm0.jpg"
+    "photo": "public/og/stock/solar/unsplash-2ASQyjafflo.jpg"
   },
   {
-    "slug": "builder-owes-you-subcontractor-payment-australia",
-    "featured_image": "/og/blog/builder-owes-you-subcontractor-payment-australia.jpg",
-    "featured_image_alt": "The Builder Who Owes You \u2014 Subcontractor Payment Rights in Australia \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/cardpayment.jpg"
+    "slug": "repeat-customer-inconsistent-pricing",
+    "featured_image": "/og/blog/repeat-customer-inconsistent-pricing.jpg",
+    "featured_image_alt": "The Repeat Customer Who Always Gets Your Cheapest Price (Even When You Don't Offer It) \u2014 SMASH Invoices",
+    "photo": "public/og/stock/painter/unsplash-ioOlenqfMqA.jpg"
+  },
+  {
+    "slug": "smash-vs-google-docs-free-invoice-template",
+    "featured_image": "/og/blog/smash-vs-google-docs-free-invoice-template.jpg",
+    "featured_image_alt": "SMASH Invoices vs a Free Google Docs Template \u2014 The Real Cost of \\\"Free\\ \u2014 SMASH Invoices",
+    "photo": "public/og/stock/solar/unsplash-Q8V1EEvnJgk.jpg"
+  },
+  {
+    "slug": "ill-pay-you-next-week-chasing-invoices",
+    "featured_image": "/og/blog/ill-pay-you-next-week-chasing-invoices.jpg",
+    "featured_image_alt": "\\\"I'll Pay You Next Week\\\" \u2014 The Three Mondays That Cost Tradies Thousands \u2014 SMASH Invoices",
+    "photo": "public/og/stock/pool/unsplash-y0dUkS5M9K8.jpg"
+  },
+  {
+    "slug": "what-happens-no-abn-on-invoice-australia",
+    "featured_image": "/og/blog/what-happens-no-abn-on-invoice-australia.jpg",
+    "featured_image_alt": "What Happens If I Don't Have an ABN on My Invoice in Australia? \u2014 SMASH Invoices",
+    "photo": "public/og/stock/photographer/unsplash-jz0xIgcwyL0.jpg"
   },
   {
     "slug": "built-by-someone-else-tradie-invoicing",
     "featured_image": "/og/blog/built-by-someone-else-tradie-invoicing.jpg",
     "featured_image_alt": "Built by Someone Else: Tradie Invoicing for Inherited Projects \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
-  },
-  {
-    "slug": "handymen-multi-skill-voice-invoicing-tradie",
-    "featured_image": "/og/blog/handymen-multi-skill-voice-invoicing-tradie.jpg",
-    "featured_image_alt": "Handymen Multi-Skill Invoicing: Consolidate Plumbing, Electrical, Carpentry on One Invoice \u2014 SMASH Invoices",
-    "photo": "public/og/stock/electrician/unsplash-ZGY5Pp8Xxaw.jpg"
-  },
-  {
-    "slug": "driveway-concrete-asphalt-voice-invoicing",
-    "featured_image": "/og/blog/driveway-concrete-asphalt-voice-invoicing.jpg",
-    "featured_image_alt": "Driveway and Concrete Invoicing: Capture Forgotten Costs in Every Job \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg"
   },
   {
     "slug": "cleaning-services-voice-invoicing-tradie",
     "featured_image": "/og/blog/cleaning-services-voice-invoicing-tradie.jpg",
     "featured_image_alt": "Cleaning Services Voice Invoicing: Hands-Free Admin for Your Team \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-0FTI9ceTUOc.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-PkFdlMAl85Q.jpg"
   },
   {
     "slug": "fergus-alternative-voice-invoicing-tradie",
     "featured_image": "/og/blog/fergus-alternative-voice-invoicing-tradie.jpg",
     "featured_image_alt": "Fergus Alternative for Tradies: Voice Invoicing Without the Scheduling Overhead \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-0FTI9ceTUOc.jpg"
+  },
+  {
+    "slug": "handymen-multi-skill-voice-invoicing-tradie",
+    "featured_image": "/og/blog/handymen-multi-skill-voice-invoicing-tradie.jpg",
+    "featured_image_alt": "Handymen Multi-Skill Invoicing: Consolidate Plumbing, Electrical, Carpentry on One Invoice \u2014 SMASH Invoices",
+    "photo": "public/og/stock/electrician/unsplash-PkHf7BUWbtk.jpg"
+  },
+  {
+    "slug": "driveway-concrete-asphalt-voice-invoicing",
+    "featured_image": "/og/blog/driveway-concrete-asphalt-voice-invoicing.jpg",
+    "featured_image_alt": "Driveway and Concrete Invoicing: Capture Forgotten Costs in Every Job \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-g06S-kKPvV0.jpg"
   },
   {
     "slug": "smash-xero-voice-invoicing-accounting",
     "featured_image": "/og/blog/smash-xero-voice-invoicing-accounting.jpg",
     "featured_image_alt": "SMASH + Xero: Voice Invoicing That Actually Syncs With Your Accounting \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/demo.jpg"
+    "photo": "public/product/gmail/photos/workflow.jpg"
   },
   {
     "slug": "smash-quickbooks-why-tradies-choose-speed",
@@ -681,19 +681,19 @@
     "slug": "smash-quickbooks-perfect-invoice-speed-stack",
     "featured_image": "/og/blog/smash-quickbooks-perfect-invoice-speed-stack.jpg",
     "featured_image_alt": "SMASH + QuickBooks: The Perfect Invoice Speed Stack for Tradies \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/workflow.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-TpNA_02AzXY.jpg"
   },
   {
     "slug": "ultimate-tradie-tech-stack-voice-first-2026",
     "featured_image": "/og/blog/ultimate-tradie-tech-stack-voice-first-2026.jpg",
     "featured_image_alt": "The Ultimate Tradie Tech Stack: Why Voice is the Core of Your 2026 Toolkit \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/photographer/unsplash-hfk6xOjQlFk.jpg"
   },
   {
     "slug": "solo-tradies-compete-big-firms-ai-2026",
     "featured_image": "/og/blog/solo-tradies-compete-big-firms-ai-2026.jpg",
     "featured_image_alt": "Small Business, Big Tech: How Solo Tradies Out-Compete the Big Firms with AI \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/customer/unsplash-r82UQrlmWz0.jpg"
   },
   {
     "slug": "voice-to-crm-ai-learns-customers",
@@ -705,150 +705,150 @@
     "slug": "ai-voice-invoicing-2026-standard",
     "featured_image": "/og/blog/ai-voice-invoicing-2026-standard.jpg",
     "featured_image_alt": "The 2026 Standard: Why \"AI Voice Invoicing\" is Replacing Manual Apps \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/pool/unsplash-QGdRrty4054.jpg"
   },
   {
     "slug": "stop-admin-sundays-voice-invoicing",
     "featured_image": "/og/blog/stop-admin-sundays-voice-invoicing.jpg",
     "featured_image_alt": "Stop \"Admin Sundays\": How Voice Features Give Tradies Their Weekends Back \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-h1QltV7rQ6s.jpg"
   },
   {
     "slug": "the-60-second-invoice-voice-to-invoice",
     "featured_image": "/og/blog/the-60-second-invoice-voice-to-invoice.jpg",
     "featured_image_alt": "The 60-Second Invoice: Mastering Voice-to-Invoice for Faster Payments \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
-  },
-  {
-    "slug": "beyond-chatgpt-dedicated-voice-invoicing",
-    "featured_image": "/og/blog/beyond-chatgpt-dedicated-voice-invoicing.jpg",
-    "featured_image_alt": "Beyond ChatGPT: Why Dedicated Voice Invoicing is Smarter for Service Pros \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
-  },
-  {
-    "slug": "voice-vs-typing-thumbs-costing-ten-dollars",
-    "featured_image": "/og/blog/voice-vs-typing-thumbs-costing-ten-dollars.jpg",
-    "featured_image_alt": "Voice vs. Typing: Why Your Thumbs are Costing You $10 Per Invoice \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "photo": "public/og/stock/customer/unsplash-oKJ6RpzL_0U.jpg"
   },
   {
     "slug": "voice-to-estimate-build-bids-without-pen",
     "featured_image": "/og/blog/voice-to-estimate-build-bids-without-pen.jpg",
     "featured_image_alt": "Voice to Estimate: How to Build Precise Bids Without Ever Picking Up a Pen \u2014 SMASH Invoices",
-    "photo": "public/product/home/voice-story-painter.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-DyM3Cv1r4I0.jpg"
+  },
+  {
+    "slug": "beyond-chatgpt-dedicated-voice-invoicing",
+    "featured_image": "/og/blog/beyond-chatgpt-dedicated-voice-invoicing.jpg",
+    "featured_image_alt": "Beyond ChatGPT: Why Dedicated Voice Invoicing is Smarter for Service Pros \u2014 SMASH Invoices",
+    "photo": "public/og/stock/gardener/unsplash-FwW5fhFKM6k.jpg"
+  },
+  {
+    "slug": "voice-vs-typing-thumbs-costing-ten-dollars",
+    "featured_image": "/og/blog/voice-vs-typing-thumbs-costing-ten-dollars.jpg",
+    "featured_image_alt": "Voice vs. Typing: Why Your Thumbs are Costing You $10 Per Invoice \u2014 SMASH Invoices",
+    "photo": "public/product/home/hero-pool-maintenance.png"
   },
   {
     "slug": "the-cost-of-a-coffee-invoicing-roi",
     "featured_image": "/og/blog/the-cost-of-a-coffee-invoicing-roi.jpg",
     "featured_image_alt": "The Cost of a Coffee: Why Your \"Free\" Invoices are Stealing Your Profit \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/gardener/unsplash-eAyfUEy3EYw.jpg"
   },
   {
     "slug": "why-i-deleted-my-invoice-spreadsheet",
     "featured_image": "/og/blog/why-i-deleted-my-invoice-spreadsheet.jpg",
     "featured_image_alt": "The Night I Deleted Excel: Why Spreadsheets are a Small Business Trap \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "photo": "public/og/stock/photographer/unsplash-jkZs3Oi9pq0.jpg"
   },
   {
     "slug": "mobile-mechanic-toolkit-voice-to-invoice",
     "featured_image": "/og/blog/mobile-mechanic-toolkit-voice-to-invoice.jpg",
     "featured_image_alt": "The Mobile Mechanic's Toolkit: Why Voice-to-Invoice is a Game Changer \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg"
+    "photo": "public/og/stock/mechanic/unsplash-GIPcinVIG7U.jpg"
   },
   {
     "slug": "how-to-get-invoices-paid-faster-tradie-secrets",
     "featured_image": "/og/blog/how-to-get-invoices-paid-faster-tradie-secrets.jpg",
     "featured_image_alt": "How I Get Paid in 2 Days (Not 2 Weeks): The Secret to 48-Hour Cash Flow \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/painter/unsplash--ZG3DlZAjY8.jpg"
   },
   {
     "slug": "best-quote-and-invoice-software-for-tradies",
     "featured_image": "/og/blog/best-quote-and-invoice-software-for-tradies.jpg",
     "featured_image_alt": "The 30-Second Quote: Best Quote and Invoice Software for Tradies \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-mbUoGdg1FXk.jpg"
   },
   {
     "slug": "word-vs-excel-vs-app-for-invoices",
     "featured_image": "/og/blog/word-vs-excel-vs-app-for-invoices.jpg",
     "featured_image_alt": "Word or Excel? The Honest Truth About Creating Invoices \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/voice.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-POlu6snb-wQ.jpg"
   },
   {
     "slug": "can-chatgpt-generate-invoices-tradie-guide",
     "featured_image": "/og/blog/can-chatgpt-generate-invoices-tradie-guide.jpg",
     "featured_image_alt": "Can ChatGPT Write My Invoices? (The Honest Answer for Tradies) \u2014 SMASH Invoices",
-    "photo": "public/product/home/hero-tradie-car.jpg"
+    "photo": "public/og/stock/gardener/unsplash-yYC-hPnhksU.jpg"
   },
   {
     "slug": "mobile-mechanic-invoice-software-grease-free",
     "featured_image": "/og/blog/mobile-mechanic-invoice-software-grease-free.jpg",
     "featured_image_alt": "Grease on the Screen: The Mobile Mechanic's Guide to Invoicing \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-GZ70X-8ZXMs.jpg"
+    "photo": "public/og/stock/mechanic/unsplash-8DKsb8Wkgyk.jpg"
   },
   {
     "slug": "is-xero-overkill-for-solo-tradies",
     "featured_image": "/og/blog/is-xero-overkill-for-solo-tradies.jpg",
     "featured_image_alt": "Is Xero Overkill? The Case for Mobile-First Invoicing \u2014 SMASH Invoices",
-    "photo": "public/product/gmail/photos/workflow.jpg"
+    "photo": "public/og/stock/cleaner/unsplash-_FstoR-_Ixw.jpg"
   },
   {
     "slug": "friday-pub-test-batch-invoicing-tradies",
     "featured_image": "/og/blog/friday-pub-test-batch-invoicing-tradies.jpg",
     "featured_image_alt": "The Friday Pub Test: How I Send 20 Invoices Before My First Sip \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/payment/unsplash--JJg90OAnWI.jpg"
   },
   {
     "slug": "stop-double-handling-invoicing-on-the-job",
     "featured_image": "/og/blog/stop-double-handling-invoicing-on-the-job.jpg",
     "featured_image_alt": "Stop doing the job twice: Why scribbling on cardboard is costing you a fortune \u2014 SMASH Invoices",
-    "photo": "public/og/stock/mechanic/unsplash-8DKsb8Wkgyk.jpg"
+    "photo": "public/og/stock/plumber/unsplash-XCL_ROkw5t8.jpg"
   },
   {
     "slug": "why-tradies-hate-phones-for-admin",
     "featured_image": "/og/blog/why-tradies-hate-phones-for-admin.jpg",
     "featured_image_alt": "Your Hands Were Made for Tools, Not Tiny Screens \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/gardener/unsplash-bsld7GjQwjI.jpg"
   },
   {
     "slug": "stop-using-your-truck-as-an-office",
     "featured_image": "/og/blog/stop-using-your-truck-as-an-office.jpg",
     "featured_image_alt": "Your truck isn't an office\u2014stop trying to make it one \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/gardener.jpg"
+    "photo": "public/og/stock/painter/unsplash-d6YyP28-Ycw.jpg"
   },
   {
     "slug": "the-paperwork-tax-stop-losing-money",
     "featured_image": "/og/blog/the-paperwork-tax-stop-losing-money.jpg",
     "featured_image_alt": "The \"Paperwork Tax\": How You're Losing $400 a Week in the Gaps \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/ad-landing/maintenance.jpg"
+    "photo": "public/og/stock/gardener/unsplash-rFHyreAMC5o.jpg"
   },
   {
     "slug": "stop-bringing-laptops-to-job-sites",
     "featured_image": "/og/blog/stop-bringing-laptops-to-job-sites.jpg",
     "featured_image_alt": "Your laptop belongs in the office\u2014stop bringing it to the job site. \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/plumber/unsplash-kxuz4YrLxSc.jpg"
   },
   {
     "slug": "voice-to-quote-feature",
     "featured_image": "/og/blog/voice-to-quote-feature.jpg",
     "featured_image_alt": "Stop Typing, Start Talking: Why Voice-to-Quote is the Feature You Didn't Know You Needed \u2014 SMASH Invoices",
-    "photo": "public/product/ios/photos/send.jpg"
+    "photo": "public/og/stock/painter/unsplash-rMVjOX8nm2U.jpg"
   },
   {
     "slug": "the-car-office-reality-check",
     "featured_image": "/og/blog/the-car-office-reality-check.jpg",
     "featured_image_alt": "The \"Car Office\" Reality: Why Your Truck Cab is the Worst Place to Act Like an Accountant \u2014 SMASH Invoices",
-    "photo": "public/og/stock/customer/unsplash-uRnRa8XXtrI.jpg"
+    "photo": "public/og/stock/solar/unsplash-Ja8t8nJN2I4.jpg"
   },
   {
     "slug": "hidden-cost-of-invoicing-friction",
     "featured_image": "/og/blog/hidden-cost-of-invoicing-friction.jpg",
     "featured_image_alt": "The Hidden Cost of Manual Invoicing: Death by a Thousand Dropdowns \u2014 SMASH Invoices",
-    "photo": "public/og/stock/painter/unsplash-712YAykhAD8.jpg"
+    "photo": "public/og/stock/painter/unsplash-Cl-OpYWFFm0.jpg"
   },
   {
     "slug": "why-invoicing-apps-fail-mobile-test",
     "featured_image": "/og/blog/why-invoicing-apps-fail-mobile-test.jpg",
     "featured_image_alt": "Why Every Invoicing App Feels Like It Was Made for Accountants (And Why That's a Problem) \u2014 SMASH Invoices",
-    "photo": "public/og/stock/cleaner/unsplash-TpNA_02AzXY.jpg"
+    "photo": "public/og/stock/gardener/unsplash-aqqx2yrVB2M.jpg"
   }
 ]
