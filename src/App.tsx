@@ -19,6 +19,7 @@ const Contact = lazy(() => import('./pages/contact').then(m => ({ default: m.Con
 const Features = lazy(() => import('./pages/features').then(m => ({ default: m.Features })));
 const IosAppLandingPage = lazy(() => import('./components/ios-product-landing/IosAppLandingPage').then(m => ({ default: m.IosAppLandingPage })));
 const AiInvoicing = lazy(() => import('./pages/ai-invoicing').then(m => ({ default: m.AiInvoicing })));
+const AiEstimates = lazy(() => import('./pages/ai-estimates').then(m => ({ default: m.AiEstimates })));
 const GstCompliantInvoicing = lazy(() => import('./pages/gst-compliant-invoicing').then(m => ({ default: m.GstCompliantInvoicing })));
 const ChromeExtension = lazy(() => import('./pages/chrome-extension').then(m => ({ default: m.ChromeExtension })));
 const Roadmap = lazy(() => import('./pages/roadmap').then(m => ({ default: m.Roadmap })));
@@ -27,6 +28,7 @@ const InternalTryItPage = lazy(() => import('./pages/internal-try-it').then(m =>
 
 // Tool pages
 const QuoteGenerator = lazy(() => import('./pages/quote-generator').then(m => ({ default: m.QuoteGenerator })));
+const EstimateGenerator = lazy(() => import('./pages/estimate-generator').then(m => ({ default: m.EstimateGenerator })));
 const InvoiceGenerator = lazy(() => import('./pages/invoice-generator').then(m => ({ default: m.InvoiceGenerator })));
 const GstCalculator = lazy(() => import('./pages/gst-calculator').then(m => ({ default: m.GstCalculator })));
 const InvoiceTemplate = lazy(() => import('./pages/invoice-template').then(m => ({ default: m.InvoiceTemplate })));
@@ -146,6 +148,7 @@ function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/voice-invoicing" element={<IosAppLandingPage />} />
         <Route path="/ai-invoicing" element={<AiInvoicing />} />
+        <Route path="/ai-estimates" element={<AiEstimates />} />
         <Route path="/gst-compliant-invoicing" element={<GstCompliantInvoicing />} />
         <Route path="/invoice-on-mobile" element={<Navigate to="/voice-invoicing" replace />} />
         <Route path="/chrome-extension" element={<ChromeExtension />} />
@@ -156,6 +159,7 @@ function App() {
         {/* Tool pages */}
         <Route path="/tools" element={<Tools />} />
         <Route path="/quote-generator" element={<QuoteGenerator />} />
+        <Route path="/estimate-generator" element={<EstimateGenerator />} />
         <Route path="/invoice-generator" element={<InvoiceGenerator />} />
         <Route path="/gst-calculator" element={<GstCalculator />} />
         <Route path="/invoice-template" element={<InvoiceTemplate />} />

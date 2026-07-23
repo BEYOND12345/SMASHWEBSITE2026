@@ -267,9 +267,11 @@ export function SegmentPage({ data }: { data: SegmentData }) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { to: '/voice-invoicing', title: 'Voice invoicing', body: 'Describe the job out loud and send the invoice before admin piles up.' },
+              { to: '/ai-estimates', title: 'AI estimates', body: 'Send a priced estimate before you lose the job — then invoice in one tap.' },
+              { to: '/voice-invoicing', title: 'Voice invoicing', body: 'Describe the job out loud and send before admin piles up.' },
+              { to: '/estimate-generator', title: 'Free estimate generator', body: 'Build a priced estimate in the browser, or continue by voice in SMASH.' },
+              { to: '/quote-generator', title: 'Free quote generator', body: 'Same document as an estimate — price the next job and send approval.' },
               { to: '/invoice-generator', title: 'Free invoice generator', body: 'Build a tax-compliant invoice manually, then see how SMASH automates it.' },
-              { to: '/quote-generator', title: 'Free quote generator', body: 'Price the next job and turn the quote into an approval link.' },
               { to: '/hourly-rate-calculator', title: 'Hourly rate calculator', body: 'Work out what you should charge before setting your catalog rates.' },
               { to: '/chrome-extension', title: 'SMASH for Gmail', body: 'Turn customer emails into quotes and invoices without leaving the inbox.' },
               { to: '/pricing', title: 'Pricing', body: 'Start free. Paid plans unlock unlimited invoices and accounting sync.' },
@@ -452,6 +454,8 @@ export function SegmentPage({ data }: { data: SegmentData }) {
             <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/30 font-medium">
+            <Link to="/ai-estimates" className="hover:text-white/60 transition-colors">AI estimates</Link>
+            {' · '}
             <Link to="/voice-invoicing" className="hover:text-white/60 transition-colors">Voice invoicing</Link>
             {' · '}
             <Link to="/features" className="hover:text-white/60 transition-colors">All features</Link>

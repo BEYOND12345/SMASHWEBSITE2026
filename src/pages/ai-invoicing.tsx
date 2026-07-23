@@ -445,7 +445,7 @@ export function AiInvoicing() {
             <span className="font-body text-xs font-medium text-white/40">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/40 font-medium">
-            <Link to="/voice-invoicing" className="underline hover:text-white/70 transition-colors">Voice invoicing</Link> · <Link to="/features" className="underline hover:text-white/70 transition-colors">All features</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link> · <Link to="/for-cleaners" className="underline hover:text-white/70 transition-colors">For cleaners</Link>
+            <Link to="/ai-estimates" className="underline hover:text-white/70 transition-colors">AI estimates</Link> · <Link to="/voice-invoicing" className="underline hover:text-white/70 transition-colors">Voice invoicing</Link> · <Link to="/estimate-generator" className="underline hover:text-white/70 transition-colors">Estimate generator</Link> · <Link to="/pricing" className="underline hover:text-white/70 transition-colors">Pricing</Link>
           </p>
           </AnimateIn>
         </div>

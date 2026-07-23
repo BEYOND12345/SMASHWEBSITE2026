@@ -26,7 +26,12 @@ const routes: { key: keyof typeof mainPages; dir: string }[] = [
   { key: 'pricing', dir: 'pricing' },
   { key: 'getStarted', dir: 'get-started' },
   { key: 'quoteToInvoice', dir: 'quote-to-invoice' },
+  { key: 'aiEstimates', dir: 'ai-estimates' },
+  { key: 'estimateGenerator', dir: 'estimate-generator' },
 ];
+
+// US static stub: estimate-first H1 (matches Keyword Planner demand)
+const US_STATIC_H1 = 'Send the estimate before they call someone else.';
 
 for (const { key, dir } of routes) {
   const page = mainPages[key];
@@ -38,11 +43,14 @@ for (const { key, dir } of routes) {
 for (const c of countries.filter((x) => x.slug !== 'au')) {
   const title = countryPageTitles[c.slug as keyof typeof countryPageTitles];
   const taxWord = c.taxLabel.split('(')[0].trim();
+  const estimateFirst = c.slug === 'us' || c.slug === 'ca';
   const page = {
     path: c.path,
     title,
-    description: `Send a priced quote or invoice in under 60 seconds in ${c.name}. Voice on iPhone or Gmail in Chrome — ${taxWord}, local currency, Xero and QuickBooks. Free to start.`,
-    h1: `Send the quote before they call someone else.`,
+    description: estimateFirst
+      ? `Send a priced AI estimate or invoice in under 60 seconds in ${c.name}. Voice on iPhone or Gmail in Chrome — ${taxWord}, local currency, Xero and QuickBooks. Free to start.`
+      : `Send a priced quote or invoice in under 60 seconds in ${c.name}. Voice on iPhone or Gmail in Chrome — ${taxWord}, local currency, Xero and QuickBooks. Free to start.`,
+    h1: estimateFirst ? US_STATIC_H1 : `Send the quote before they call someone else.`,
     brandLine: 'You do the work. SMASH does the rest.',
     answerBlock: countryAnswerBlock(c.demonym.toLowerCase() + ' contractors and service businesses', taxWord),
     cta: 'both' as const,

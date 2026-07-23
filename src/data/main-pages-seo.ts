@@ -3,7 +3,7 @@
  * Used by React pages and static HTML generators.
  */
 export const SITE = 'https://smashinvoices.com';
-export const DATE_MODIFIED = '2026-07-14';
+export const DATE_MODIFIED = '2026-07-23';
 
 export const HREFLANG_LINKS = [
   { hreflang: 'x-default', href: `${SITE}/` },
@@ -38,17 +38,17 @@ export const mainPages: Record<string, MainPageSeo> = {
     path: '/',
     title: 'SMASH Invoices — Never Type an Invoice Again',
     description:
-      'Voice invoicing on iPhone and quotes from Gmail in Chrome or Edge. Priced, tax-ready invoices in under 60 seconds — built from your rates, not guessed. Free to start.',
+      'AI estimates and voice invoicing for service businesses. Speak the job on iPhone or build from Gmail — priced estimate or invoice from your rates in under 60 seconds. Free to start.',
     h1: 'Never type an invoice again.',
     brandLine: 'Invoicing for people who hate typing.',
     answerBlock:
-      'SMASH Invoices helps self-employed service workers send a priced quote or invoice in under 60 seconds — by voice on iPhone or from Gmail in Chrome or Edge. It builds from your own pricing, applies GST/VAT/sales tax, and syncs with Xero and QuickBooks. Free to start. Live in Australia, New Zealand, the UK, the US and Canada.',
+      'SMASH Invoices helps self-employed service workers send a priced estimate (quote) or invoice in under 60 seconds — by voice on iPhone or from Gmail in Chrome or Edge. It builds from your own pricing, applies GST/VAT/sales tax, and syncs with Xero and QuickBooks. Free to start. Live in Australia, New Zealand, the UK, the US and Canada.',
     cta: 'both',
     faqs: [
       {
         question: 'What is SMASH Invoices?',
         answer:
-          'SMASH lets you send a priced quote or invoice in under 60 seconds — talk on iPhone or scan the Gmail thread at your desk. Live in Australia, New Zealand, the UK, the US and Canada. Free to start.',
+          'SMASH lets you send a priced estimate, quote or invoice in under 60 seconds — talk on iPhone or scan the Gmail thread at your desk. Live in Australia, New Zealand, the UK, the US and Canada. Free to start.',
       },
       {
         question: 'Is SMASH free to use?',
@@ -56,14 +56,14 @@ export const mainPages: Record<string, MainPageSeo> = {
           'Yes. SMASH has a free plan with 5 quotes or invoices per month — no credit card needed. Paid plans unlock unlimited volume, Xero and QuickBooks, and CSV export.',
       },
       {
-        question: 'How fast can I send a quote?',
+        question: 'How fast can I send an estimate or quote?',
         answer:
-          'Under 60 seconds. Describe the job or open the customer email, verify line items against your catalog, send. Your client gets a professional PDF with approval and payment options.',
+          'Under 60 seconds. Describe the job or open the customer email, verify line items against your catalog, send. Your client gets a professional PDF with approval and payment options. Same document — estimate in the US/CA, quote in AU/UK.',
       },
       {
         question: 'Can I send a hands-free invoice after a job?',
         answer:
-          'Yes on iPhone. Hold Start Recording, describe labour and materials out loud, verify priced lines from your catalog, and send — no typing on site. Many users send the invoice before they start the van.',
+          'Yes on iPhone. Hold Start Recording, describe labour and materials out loud, verify priced lines from your catalog, and send — no typing on site. Many users send the invoice before they start the van. That is voice to invoice — the same engine as AI estimates.',
       },
       {
         question: 'Does SMASH work for GST and VAT invoices?',
@@ -252,8 +252,9 @@ export const mainPages: Record<string, MainPageSeo> = {
       },
     ],
     relatedLinks: [
+      { href: '/ai-estimates', label: 'AI estimates' },
+      { href: '/estimate-generator', label: 'Free estimate generator' },
       { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
-      { href: '/gmail-invoice', label: 'Email to invoice in Gmail' },
       { href: '/pricing', label: 'Pricing — free to start' },
     ],
     faqs: [
@@ -273,18 +274,18 @@ export const mainPages: Record<string, MainPageSeo> = {
   },
   quoteToInvoice: {
     path: '/quote-to-invoice',
-    title: 'Quote to Invoice — Same Job, No Retyping | SMASH',
+    title: 'Estimate to Invoice — Same Job, No Retyping | SMASH',
     description:
-      'Customer approved your quote? Convert it to a tax-ready invoice in one tap — same line items, same prices, no retyping. Voice on iPhone or Gmail in Chrome.',
-    h1: 'Quote approved? Invoice in one tap.',
+      'Customer approved your estimate or quote? Convert it to a tax-ready invoice in one tap — same line items, same prices, no retyping. Voice on iPhone or Gmail in Chrome.',
+    h1: 'Estimate approved? Invoice in one tap.',
     brandLine: BRAND_LINE,
     answerBlock:
-      'Quote to invoice means turning an approved estimate into a bill without re-entering line items. In SMASH, the quote you already verified becomes the invoice — labour, materials, fees, and tax carry over. Send from iPhone after the job or from Gmail when the customer replies “go ahead”. Works with Xero and QuickBooks on paid plans.',
+      'Estimate to invoice (also called quote to invoice) means turning an approved price into a bill without re-entering line items. In SMASH, the estimate you already verified becomes the invoice — labour, materials, fees, and tax carry over. Send from iPhone after the job or from Gmail when the customer replies “go ahead”. Works with Xero and QuickBooks on paid plans.',
     cta: 'both',
     steps: [
       {
-        title: 'Send the quote first',
-        body: 'Build from voice or Gmail, verify against your catalog, send with approval link. Customer sees professional PDF with your rates — not generic guesses.',
+        title: 'Send the estimate first',
+        body: 'Build from voice or Gmail, verify against your catalog, send with approval link. Customer sees professional PDF with your rates — not generic guesses. Same document as a quote in AU/UK.',
       },
       {
         title: 'Customer approves',
@@ -292,26 +293,106 @@ export const mainPages: Record<string, MainPageSeo> = {
       },
       {
         title: 'Convert to invoice',
-        body: 'One action creates the invoice from the quote — same lines, updated invoice number and due date. Push to Xero or QuickBooks when ready.',
+        body: 'One action creates the invoice from the estimate — same lines, updated invoice number and due date. Push to Xero or QuickBooks when ready.',
       },
     ],
     relatedLinks: [
-      { href: '/voice-invoicing', label: 'Voice quotes on iPhone' },
-      { href: '/gmail-invoice', label: 'Quotes from Gmail' },
+      { href: '/ai-estimates', label: 'AI estimates' },
+      { href: '/estimate-generator', label: 'Free estimate generator' },
+      { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
       { href: '/get-started', label: 'Get started free' },
     ],
     faqs: [
       {
         question: 'Do I have to retype line items for the invoice?',
-        answer: 'No. The invoice is generated from the approved quote — you only adjust if the scope changed on site.',
+        answer: 'No. The invoice is generated from the approved estimate or quote — you only adjust if the scope changed on site.',
       },
       {
-        question: 'Can I quote on Gmail and invoice from my phone?',
-        answer: 'Yes. Quotes and invoices sync to your SMASH account across iPhone and Chrome.',
+        question: 'Can I send an estimate from Gmail and invoice from my phone?',
+        answer: 'Yes. Estimates, quotes and invoices sync to your SMASH account across iPhone and Chrome.',
       },
       {
-        question: 'Does quote-to-invoice work with Xero or QuickBooks?',
-        answer: 'Yes on Starter and above — push the approved quote, then the invoice, without double entry.',
+        question: 'Does estimate-to-invoice work with Xero or QuickBooks?',
+        answer: 'Yes on Starter and above — push the approved estimate, then the invoice, without double entry.',
+      },
+    ],
+  },
+  aiEstimates: {
+    path: '/ai-estimates',
+    title: 'AI Estimate — Priced From Your Rates in Under 60 Seconds | SMASH',
+    description:
+      'AI estimate for service businesses: speak the job on iPhone or scan Gmail — catalog-priced estimate (or quote) in under 60 seconds, then one-tap invoice. Live AU, NZ, UK, US, CA.',
+    h1: 'Send the estimate before you lose the job.',
+    brandLine: BRAND_LINE,
+    answerBlock:
+      'An AI estimate turns a spoken or typed job description into a professional, itemised estimate priced from your own rates — not generic internet guesses. SMASH is built for self-employed service workers: talk for about 30 seconds on iPhone (or scan Gmail), verify the lines, send before you leave, then convert to invoice when approved. Same product as a quote in Australia, New Zealand and the UK. Voice to invoice uses the same engine after the job is done.',
+    bridgeParagraph:
+      'US Keyword Planner shows commercial demand for AI estimate and AI estimate generator. This page owns that intent; the free estimate generator solves it in-browser; voice to invoice closes the loop when the work is finished.',
+    cta: 'both',
+    steps: [
+      {
+        title: 'Speak the job',
+        body: 'On site: describe labour, materials and call-out out loud. At the desk: open the customer email in Gmail and build from the thread.',
+      },
+      {
+        title: 'Estimate priced from your rates',
+        body: 'SMASH matches speech to your catalog — unmatched items are flagged, not silently guessed. Review, edit, send.',
+      },
+      {
+        title: 'One-tap invoice when they say yes',
+        body: 'Approved estimate becomes the invoice — same lines, tax and totals. Optional Pay Now. Sync to Xero or QuickBooks on paid plans.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/estimate-generator', label: 'Free estimate generator' },
+      { href: '/voice-invoicing', label: 'Voice to invoice' },
+      { href: '/quote-to-invoice', label: 'Estimate → invoice' },
+      { href: '/quote-generator', label: 'Quote generator' },
+    ],
+    faqs: [
+      {
+        question: 'What is an AI estimate?',
+        answer:
+          'An AI estimate is a priced job estimate built from a natural-language description — spoken or typed — instead of typing every line item. SMASH matches what you say to your saved rates, then you verify and send in under 60 seconds.',
+      },
+      {
+        question: 'Is an AI estimate the same as a quote?',
+        answer:
+          'Same job, different words. US and Canada usually say estimate; Australia, New Zealand and the UK usually say quote. SMASH builds one priced document either way.',
+      },
+      {
+        question: 'How is this different from ChatGPT for estimates?',
+        answer:
+          'ChatGPT drafts wording if you paste every rate each time. It does not hold your catalog, send a branded PDF with approval, or turn the estimate into a tax-ready invoice.',
+      },
+    ],
+  },
+  estimateGenerator: {
+    path: '/estimate-generator',
+    title: 'Free Estimate Generator — Job Estimates in Under 60 Seconds | SMASH',
+    description:
+      'Free estimate generator for service businesses. Build a priced job estimate in your browser, or speak an AI estimate on iPhone from your rates. Live AU, NZ, UK, US, CA. Start free.',
+    h1: 'Free estimate generator — priced jobs in 60 seconds.',
+    brandLine: BRAND_LINE,
+    answerBlock:
+      'An estimate generator creates a professional, itemised price for a job before the work starts. Use the free browser builder on this page, or AI estimate by voice in SMASH from your catalog — then invoice in one tap when they approve. Prefer quote language? Use the free quote generator.',
+    cta: 'both',
+    relatedLinks: [
+      { href: '/ai-estimates', label: 'AI estimates' },
+      { href: '/quote-generator', label: 'Quote generator' },
+      { href: '/quote-to-invoice', label: 'Estimate to invoice' },
+      { href: '/voice-invoicing', label: 'Voice to invoice' },
+    ],
+    faqs: [
+      {
+        question: 'What is a free estimate generator?',
+        answer:
+          'A free estimate generator lets you build a professional job estimate in your browser without buying software first. SMASH does the same job by voice from your saved rates in under 60 seconds.',
+      },
+      {
+        question: 'Is an estimate the same as a quote?',
+        answer:
+          'Yes for most service businesses. Estimate is usual in the US and Canada; quote is common in Australia, New Zealand and the UK.',
       },
     ],
   },
@@ -320,10 +401,10 @@ export const mainPages: Record<string, MainPageSeo> = {
 export const countryPageTitles: Record<'nz' | 'uk' | 'us' | 'ca', string> = {
   nz: 'Invoice App New Zealand — Quote in Under 60 Seconds | SMASH',
   uk: 'Invoice App the United Kingdom — Quote in Under 60 Seconds | SMASH',
-  us: 'Invoice App the United States — Quote in Under 60 Seconds | SMASH',
-  ca: 'Invoice App Canada — Quote in Under 60 Seconds | SMASH',
+  us: 'AI Estimate & Invoice App USA — Under 60 Seconds | SMASH',
+  ca: 'Invoice App Canada — Estimate or Quote in Under 60 Seconds | SMASH',
 };
 
 export function countryAnswerBlock(country: string, taxWord: string): string {
-  return `SMASH helps ${country} service businesses send a priced quote or invoice in under 60 seconds — voice on iPhone or from Gmail in Chrome. Built from your pricing with ${taxWord} handled automatically. Works with Xero and QuickBooks. Free to start.`;
+  return `SMASH helps ${country} service businesses send a priced estimate, quote or invoice in under 60 seconds — voice on iPhone or from Gmail in Chrome. Built from your pricing with ${taxWord} handled automatically. Works with Xero and QuickBooks. Free to start.`;
 }

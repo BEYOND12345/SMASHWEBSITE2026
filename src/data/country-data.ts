@@ -258,40 +258,45 @@ export const countries: CountryData[] = [
     taxRate: 'varies by state',
     businessNumberLabel: 'EIN',
     live: true,
-    heroHook: 'Send the invoice before you leave the job.',
-    heroSub: 'Voice on iPhone or email scan in Gmail — USD invoice with state sales tax and your EIN, sent in under 60 seconds.',
+    heroHook: 'Send the estimate before you lose the job.',
+    heroSub: 'Voice on iPhone or email scan in Gmail — priced USD estimate from your rates, then one-tap invoice with state sales tax and your EIN.',
     reasons: [
       {
-        title: 'State sales tax, handled per invoice',
+        title: 'AI estimate from your rates',
+        body: 'Talk the job for about 30 seconds. SMASH builds a priced estimate from your catalog — not guessed internet prices — so you can send before they call someone else.',
+      },
+      {
+        title: 'State sales tax, handled per document',
         body: 'Set your state and county once. SMASH applies the correct sales tax rate to every line item automatically — no lookup, no calculator.',
       },
       {
-        title: 'USD pricing, EIN on every invoice',
-        body: 'Invoices in USD. Your EIN on every PDF. Payment by card or ACH. Built for 1099 contractors, sole proprietors, and small LLCs.',
-      },
-      {
-        title: 'Works for the trades Americans run',
-        body: 'HVAC, plumbing, electrical, handyman, lawn care, mobile detailing, pressure washing — voice recognition trained on the language of US service work.',
+        title: 'Estimate → invoice in one tap',
+        body: 'When they approve, the same lines become the invoice. USD, EIN on every PDF, card or ACH. Built for 1099 contractors, sole proprietors, and small LLCs.',
       },
       {
         title: 'Available on iOS and Chrome',
-        body: 'Download the SMASH app from the US App Store, or pin the Chrome extension to invoice straight from your laptop. Free to start, no credit card.',
+        body: 'Download the SMASH app from the US App Store, or pin the Chrome extension to estimate and invoice from Gmail. Free to start, no credit card.',
       },
     ],
     audience: 'HVAC techs, electricians, plumbers, handymen, lawn care, mobile detailing, pressure washing, house cleaning',
     seo: {
-      title: 'Invoice App the United States — Quote in Under 60 Seconds | SMASH',
-      description: 'Talk or scan Gmail. Send a USD invoice with state sales tax and your EIN in under 60 seconds. Built for 1099 contractors and service businesses. iOS + Chrome.',
-      keywords: '',
+      title: 'AI Estimate & Invoice App USA — Under 60 Seconds | SMASH',
+      description:
+        'AI estimate for US contractors: talk or scan Gmail, send a USD estimate from your rates in under 60 seconds, then invoice with state sales tax and your EIN. iOS + Chrome. Free to start.',
+      keywords: 'AI estimate, job estimate app, estimate generator, voice invoice, invoice app USA',
     },
     faqs: [
+      {
+        q: 'Can SMASH create an AI estimate for my job?',
+        a: 'Yes. Describe the job on iPhone or build from a Gmail thread. SMASH prices from your saved rates, you verify, and you send a professional estimate in under 60 seconds — then convert to invoice when they say yes.',
+      },
       {
         q: 'Does SMASH handle US state sales tax?',
         a: 'Yes. You set your state (and county, if applicable) once during onboarding and SMASH applies the correct sales tax rate to every invoice automatically — no lookup tables, no manual entry.',
       },
       {
         q: 'Can I use SMASH as a 1099 contractor or sole proprietor?',
-        a: 'Yes. SMASH is built for 1099 contractors, sole proprietors, and small LLCs. Pick your business type during onboarding — EIN or SSN, sole prop or LLC — and invoices are formatted correctly from day one. Your EIN appears on every invoice.',
+        a: 'Yes. SMASH is built for 1099 contractors, sole proprietors, and small LLCs. Pick your business type during onboarding — EIN or SSN, sole prop or LLC — and documents are formatted correctly from day one. Your EIN appears on every PDF.',
       },
       {
         q: 'Is SMASH available in the United States?',
@@ -299,11 +304,7 @@ export const countries: CountryData[] = [
       },
       {
         q: 'How does SMASH compare to QuickBooks for US contractors?',
-        a: 'QuickBooks is a full accounting platform — great for bookkeeping, payroll, and tax prep. SMASH is built for one thing: getting an invoice sent from your phone in 60 seconds. Many US contractors use both — SMASH on the job, QuickBooks for the accountant. SMASH exports clean CSV and PDF that your accountant can import.',
-      },
-      {
-        q: 'Does SMASH work for service businesses, not just construction trades?',
-        a: 'Yes. SMASH works great for any service business that invoices on the go: lawn care, pressure washing, house cleaning, mobile detailing, pest control, IT repair. If you finish a job and need to send an invoice before you leave, SMASH was built for you.',
+        a: 'QuickBooks is a full accounting platform — great for bookkeeping, payroll, and tax prep. SMASH is built for speed: estimate and invoice from your phone in under 60 seconds. Many US contractors use both — SMASH on the job, QuickBooks for the accountant.',
       },
     ],
   },

@@ -30,8 +30,14 @@ const tools = [
   },
   {
     icon: ClipboardList,
+    name: 'Estimate Generator',
+    desc: 'Build a priced job estimate in your browser — or send an AI estimate by voice from your rates.',
+    href: '/estimate-generator',
+  },
+  {
+    icon: ClipboardList,
     name: 'Quote Generator',
-    desc: 'Build a professional GST quote right now. Add line items, see live preview, send it.',
+    desc: 'Build a professional quote right now (same document as an estimate). Add line items, live preview.',
     href: '/quote-generator',
   },
   {
@@ -70,9 +76,9 @@ export function Tools() {
   return (
     <>
       <SEO
-        title="Free Tradie Tools & Calculators Australia | SMASH"
-        description="Free tools and calculators for Australian tradies. GST calculator, invoice generator, quote builder, hourly rate calculator, profit calculator and more. No signup required."
-        keywords="tradie tools australia, free business calculators tradies, gst calculator, invoice generator australia, hourly rate calculator tradies"
+        title="Free Estimate, Quote & Invoice Tools | SMASH"
+        description="Free estimate generator, quote generator, invoice generator and calculators for service businesses. Build a priced estimate in-browser — or send by voice in SMASH. No signup required."
+        keywords="estimate generator, free estimate generator, quote generator, invoice generator, AI estimate, tradie tools, gst calculator"
         canonical="https://smashinvoices.com/tools"
         hreflangs={hreflangAlternates}
       />
@@ -93,7 +99,7 @@ export function Tools() {
             <span className="block text-accent">a tradie needs.</span>
           </h1>
           <p className={`${iosLanding.subline} mb-8 !text-white/65 !max-w-2xl`}>
-            No signup. No app download. Free to use right here. Built for Australian tradies, contractors, and small businesses.
+            No signup. Free in the browser. Start with the estimate generator — or send an AI estimate by voice in SMASH. Live for service businesses in AU, NZ, UK, US and Canada.
           </p>
           <DualProductCtas />
         </AnimateIn>

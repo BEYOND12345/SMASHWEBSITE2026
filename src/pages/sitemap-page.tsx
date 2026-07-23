@@ -35,6 +35,7 @@ const sections: Section[] = [
     links: [
       { to: '/voice-invoicing',           label: 'Send invoice fast',  note: 'Voice pillar — talk, verify, send' },
       { to: '/gmail-invoice',             label: 'Gmail invoice',      note: 'Desk pillar — email thread to sent invoice' },
+      { to: '/ai-estimates',              label: 'AI estimates',     note: 'P0 — send a priced estimate before you lose the job' },
       { to: '/ai-invoicing',              label: 'AI invoicing',     note: 'How the AI turns speech into line items' },
       { to: '/gst-compliant-invoicing',   label: 'GST-compliant invoicing', note: 'ATO-ready tax invoices, coming soon for VAT / HST / sales tax' },
       { to: '/chrome-extension',          label: 'SMASH for Gmail',   note: 'Chrome extension that turns customer emails into priced quotes by voice — synced to Xero and QuickBooks' },
@@ -56,6 +57,7 @@ const sections: Section[] = [
     links: [
       { to: '/tools',                     label: 'Tools hub' },
       { to: '/invoice-generator',         label: 'Invoice generator' },
+      { to: '/estimate-generator',        label: 'Estimate generator', note: 'P0 acquisition tool — global estimate language' },
       { to: '/quote-generator',           label: 'Quote generator' },
       { to: '/invoice-template',          label: 'Invoice templates' },
       { to: '/gst-calculator',            label: 'GST calculator' },

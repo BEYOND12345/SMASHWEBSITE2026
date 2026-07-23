@@ -123,6 +123,7 @@ async function generateSitemap() {
     // Tool pages
     { loc: '/tools',                    srcFiles: ['src/pages/tools.tsx'], changefreq: 'weekly',  priority: '0.9' },
     { loc: '/quote-generator',          srcFiles: ['src/pages/quote-generator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
+    { loc: '/estimate-generator',       srcFiles: ['src/pages/estimate-generator.tsx', 'src/pages/quote-generator.tsx', ...toolsShell], changefreq: 'monthly', priority: '1.0' },
     { loc: '/invoice-generator',        srcFiles: ['src/pages/invoice-generator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-calculator',           srcFiles: ['src/pages/gst-calculator.tsx', ...toolsShell], changefreq: 'monthly', priority: '0.9' },
     { loc: '/invoice-template',         srcFiles: ['src/pages/invoice-template.tsx'], changefreq: 'monthly', priority: '0.9' },
@@ -135,6 +136,7 @@ async function generateSitemap() {
     // Feature / product pages
     { loc: '/voice-invoicing',         srcFiles: ['src/data/main-pages-seo.ts', 'public/voice-invoicing/index.html', 'src/components/ios-product-landing/IosAppLandingPage.tsx'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/gmail-invoice',           srcFiles: ['public/gmail-invoice/index.html', 'scripts/generate-gmail-landing-static.ts'], changefreq: 'weekly', priority: '1.0' },
+    { loc: '/ai-estimates',            srcFiles: ['src/pages/ai-estimates.tsx'], changefreq: 'weekly', priority: '1.0' },
     { loc: '/ai-invoicing',            srcFiles: ['src/pages/ai-invoicing.tsx'], changefreq: 'monthly', priority: '0.9' },
     { loc: '/gst-compliant-invoicing', srcFiles: ['src/pages/gst-compliant-invoicing.tsx'], changefreq: 'monthly', priority: '0.8' },
     { loc: '/chrome-extension',        srcFiles: ['src/pages/chrome-extension.tsx'], changefreq: 'monthly', priority: '0.9' },

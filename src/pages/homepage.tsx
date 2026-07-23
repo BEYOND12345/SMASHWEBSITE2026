@@ -90,9 +90,14 @@ const HOME_PAGE_FAQS = [
       'On site, use the iPhone app — voice is the fastest way to capture a job before you leave. At your desk, install the browser extension in Chrome or Edge — it reads the Gmail thread and builds the quote in your sidebar. Same account, everything synced.',
   },
   {
-    question: 'How fast can I send a quote?',
+    question: 'How fast can I send an estimate or quote?',
     answer:
-      'Under 60 seconds. Talk for twenty seconds on iPhone, or open the customer email in Gmail — verify line items against your catalog and send. Your client gets a professional PDF with approval and payment options.',
+      'Under 60 seconds. Talk for twenty seconds on iPhone, or open the customer email in Gmail — verify line items against your catalog and send. Your client gets a professional PDF with approval and payment options. Same document — estimate in the US/CA, quote in AU/UK.',
+  },
+  {
+    question: 'What is an AI estimate in SMASH?',
+    answer:
+      'You describe the job; SMASH builds a priced estimate from your rates — not guessed internet prices. When they approve, one tap turns it into an invoice. That is also how voice to invoice works after the job is done.',
   },
   {
     question: 'Does it work with Xero and QuickBooks?',

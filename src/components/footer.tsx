@@ -316,6 +316,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                     SMASH for iOS
                   </Link>
                 </li>
+                <li><Link to="/ai-estimates" className={linkClass}>AI Estimates</Link></li>
                 <li><Link to="/ai-invoicing" className={linkClass}>AI Invoicing</Link></li>
                 <li><Link to="/gst-compliant-invoicing" className={linkClass}>GST Invoicing</Link></li>
                 <li>
@@ -347,6 +348,7 @@ export function Footer({ showCTA = false }: FooterProps) {
             <div className="lg:space-y-8">
               <FooterSection title="Free Tools">
                 <li><Link to="/tools" className={linkClass}>All free tools</Link></li>
+                <li><Link to="/estimate-generator" className={linkClass}>Estimate generator</Link></li>
                 <li><Link to="/quote-generator" className={linkClass}>Quote generator</Link></li>
                 <li><Link to="/invoice-generator" className={linkClass}>Invoice generator</Link></li>
                 <li><Link to="/invoice-template" className={linkClass}>Invoice template</Link></li>

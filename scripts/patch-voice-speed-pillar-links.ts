@@ -33,6 +33,8 @@ const VOICE_SPEED_SLUGS = [
 ];
 
 const RELATED_LINKS = [
+  { href: '/ai-estimates', label: 'AI estimates — send before you lose the job' },
+  { href: '/estimate-generator', label: 'Free estimate generator' },
   { href: '/voice-invoicing', label: 'Voice to invoice on iPhone' },
   { href: '/blog/send-quote-on-site-30-seconds-handyman', label: 'Send a quote on site in ~30 seconds' },
   { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
@@ -51,7 +53,7 @@ function escapeHtml(s: string): string {
 function intentCallout(): string {
   return `<aside class="intent-pillar" ${MARKER} aria-label="Voice and speed invoicing" style="margin:24px 0;padding:20px;border-left:3px solid var(--accent);background:rgba(223,255,0,0.06);border-radius:8px;">
   <p style="margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-dim);">On the job · about 30 seconds</p>
-  <p style="margin:0;"><a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a> that wins the job, then the <a href="/voice-invoicing">on the job invoice</a>. <a href="/blog/what-is-voice-to-invoice">What is voice to invoice?</a></p>
+  <p style="margin:0;"><a href="/ai-estimates">AI estimates</a> · <a href="/voice-invoicing"><strong>Voice to invoice</strong></a> — describe the job out loud on iPhone, verify priced lines from your catalog, and send before you leave. Same loop for an <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a> / estimate that wins the job. Tool: <a href="/estimate-generator">estimate generator</a>. <a href="/blog/what-is-voice-to-invoice">What is voice to invoice?</a></p>
 </aside>`;
 }
 

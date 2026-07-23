@@ -4,7 +4,28 @@
 **Rule:** Never submit URLs that now 301 — see [do-not-submit](#do-not-submit-23-urls) below.  
 **Checklist per URL:** URL Inspection → **Test live URL** → confirm content → **Request indexing**
 
-Last updated: 12 Jun 2026 (after GRP-007 phase 2 merge)
+Last updated: 23 Jul 2026 — **AI estimate P0 batch added** (see Batch EST below)
+
+---
+
+## Batch EST — NEXT (AI estimate direction) ⭐ SUBMIT FIRST AFTER DEPLOY
+
+Priority for [SEO_AI_ESTIMATE_DIRECTION_JUL_2026.md](../SEO_AI_ESTIMATE_DIRECTION_JUL_2026.md). Max 10/day.
+
+| ☐ | URL | Why |
+|---|-----|-----|
+| ☐ | https://smashinvoices.com/ai-estimates | P0 pillar — AI estimate |
+| ☐ | https://smashinvoices.com/estimate-generator | P0 tool — AI estimate generator |
+| ☐ | https://smashinvoices.com/quote-to-invoice | Estimate → invoice bridge |
+| ☐ | https://smashinvoices.com/us | US estimate-first country page |
+| ☐ | https://smashinvoices.com/quote-generator | Dual quote/estimate tool |
+| ☐ | https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate | Support → pillars |
+| ☐ | https://smashinvoices.com/blog/chatgpt-got-my-handyman-estimates-wrong | Support → pillars |
+| ☐ | https://smashinvoices.com/blog/first-quote-wins-instant-quote-on-site | Support → pillars |
+| ☐ | https://smashinvoices.com/ai-invoicing | Twin invoice intent |
+| ☐ | https://smashinvoices.com/voice-invoicing | Protected moat (re-crawl) |
+
+Day 2 fill: `/ca`, `/get-started`, `/llms.txt` (if GSC allows), homepage `/`.
 
 ---
 

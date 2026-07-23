@@ -528,7 +528,7 @@ export function Features() {
             <span className="font-body text-xs text-white/40 font-medium">Cancel anytime</span>
           </div>
           <p className="text-sm text-white/30 font-medium">
-            <Link to="/voice-invoicing" className="underline hover:text-white/60 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing from $0</Link> · <Link to="/how-it-works" className="underline hover:text-white/60 transition-colors">How it works</Link>
+            <Link to="/ai-estimates" className="underline hover:text-white/60 transition-colors">AI estimates</Link> · <Link to="/estimate-generator" className="underline hover:text-white/60 transition-colors">Estimate generator</Link> · <Link to="/voice-invoicing" className="underline hover:text-white/60 transition-colors">Voice invoicing</Link> · <Link to="/pricing" className="underline hover:text-white/60 transition-colors">Pricing</Link>
           </p>
           </AnimateIn>
         </div>
@@ -537,7 +537,7 @@ export function Features() {
       <section className="bg-brand py-12 border-t border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           <RelatedTools
-            keywords={['invoice', 'quote', 'gst calculator']}
+            keywords={['estimate', 'invoice', 'quote', 'gst calculator']}
             title="Related free tools"
           />
         </div>

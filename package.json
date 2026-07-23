@@ -16,6 +16,7 @@
     "patch:voice-blog-meta": "node --experimental-strip-types scripts/patch-voice-cluster-blog-meta.ts",
     "patch:voice-speed-links": "node --experimental-strip-types scripts/patch-voice-speed-pillar-links.ts",
     "patch:chatgpt-cluster": "node --experimental-strip-types scripts/patch-chatgpt-cluster.ts",
+    "patch:estimate-cluster": "node --experimental-strip-types scripts/patch-estimate-cluster-links.ts",
     "retrofit:blog-action-plan-v1": "node --experimental-strip-types scripts/blog-retrofit-action-plan-v1.ts",
     "fix:consolidated-internal-links": "node --experimental-strip-types scripts/fix-consolidated-internal-links.ts",
     "apply:gmail-consolidation-redirects": "node --experimental-strip-types scripts/apply-consolidation-redirects.ts",

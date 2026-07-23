@@ -30,12 +30,13 @@ If a keyword, page, or content asset does not reinforce speed, voice, and self-e
 
 ## Priority Clusters
 
-1. Voice invoicing / voice to invoice
-2. AI invoicing and ChatGPT-origin content
-3. Free tools: invoice generator, quote generator, GST calculator, invoice template, hourly rate calculator, tradie hourly rates
-4. Cleaners cluster first, then handymen, gardeners, mobile mechanics, plumbers, electricians
-5. Gmail / Chrome invoice extension
-6. NDIS invoicing and participant-number compliance
+1. **AI estimate** (90-day acquisition door) — `/ai-estimates`, `/estimate-generator`; quote as synonym; see `SEO_AI_ESTIMATE_DIRECTION_JUL_2026.md`
+2. Voice invoicing / voice to invoice — **protect** `/voice-invoicing` (moat, not abandoned)
+3. Estimate → invoice loop — `/quote-to-invoice`, AI invoice twin `/ai-invoicing`
+4. Free tools: estimate generator, quote generator, invoice generator, GST calculator, invoice template, hourly rate calculator, tradie hourly rates
+5. Cleaners cluster first (after estimate funnel proves trials), then handymen, gardeners, mobile mechanics, plumbers, electricians
+6. Gmail / Chrome invoice extension
+7. NDIS invoicing and participant-number compliance
 
 ## Per-Page SEO Checklist
 

@@ -124,7 +124,7 @@ interface QuoteLineItem {
   gst: boolean;
 }
 
-function QuoteBuilder() {
+export function QuoteBuilder({ leadSource = 'quote_generator' }: { leadSource?: string } = {}) {
   const [businessName, setBusinessName] = useState('Your Business Name');
   const [abn, setAbn] = useState('');
   const [clientName, setClientName] = useState('');
@@ -173,7 +173,7 @@ function QuoteBuilder() {
     try {
       await supabase.from('leads').insert({
         email: leadEmail,
-        source: 'quote_generator',
+        source: leadSource,
         business_name: businessName !== 'Your Business Name' ? businessName : null,
         total_value: total,
         created_at: new Date().toISOString(),
@@ -511,11 +511,11 @@ export function QuoteGenerator() {
   return (
     <>
       <SEO
-        title="Free Quote Generator Australia: Professional Quotes in 60 Seconds | SMASH"
-        description="Australia's fastest quote generator. Describe the job out loud — get a professional, GST-compliant quote in 60 seconds. Free to start. iPhone app for tradies."
-        keywords="free quote generator australia, tradie quote generator, quote generator app, invoice quote generator, GST quote generator australia"
-        ogTitle="Free Quote Generator for Tradies — SMASH"
-        ogDescription="Voice-powered quote generator for tradies and service businesses. Professional quotes in 60 seconds. Live in Australia, NZ, the UK, the US and Canada. Free to start."
+        title="Free Quote Generator — Professional Quotes (or Estimates) in 60 Seconds | SMASH"
+        description="Free quote generator for service businesses. Build a priced quote in your browser, or speak it on iPhone from your rates. Same as an estimate in the US/CA. Live AU, NZ, UK, US, CA."
+        keywords="free quote generator, quote generator, AI quote, tradie quote generator, estimate generator, job quote, GST quote generator"
+        ogTitle="Free Quote Generator — SMASH"
+        ogDescription="Build a professional quote free in your browser — or send by voice from your catalog in under 60 seconds. Estimate language welcome."
         canonical="https://smashinvoices.com/quote-generator"
         hreflangs={hreflangAlternates}
       />
@@ -549,13 +549,13 @@ export function QuoteGenerator() {
 
       <ToolPageHero
         eyebrow="Free quote generator"
-        subline="SMASH is the only quote generator built for Australian tradies. Describe the job out loud — get a professional, GST-compliant quote in under 60 seconds."
-        meta="2 free quotes/month · No credit card · iPhone or Gmail"
+        subline="Build a priced quote in your browser — or speak it from your rates on iPhone in under 60 seconds. In the US and Canada this is the same document as an estimate."
+        meta="Free in browser · Start Free on iPhone · Gmail extension"
         headline={
           <>
             <span className="block text-white">Free Quote Generator</span>
-            <span className="block text-white">Australia — Professional</span>
-            <span className="block text-accent">Quotes in 60 Seconds.</span>
+            <span className="block text-white">— Professional Quotes</span>
+            <span className="block text-accent">in 60 Seconds.</span>
           </>
         }
       />
@@ -853,7 +853,14 @@ export function QuoteGenerator() {
             ))}
           </div>
           <p className="font-body text-xs text-brand/40 font-medium">
-            Also see: <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link> · <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
+            Also see:{' '}
+            <Link to="/estimate-generator" className="text-accent font-semibold hover:underline">estimate generator</Link>
+            {' · '}
+            <Link to="/ai-estimates" className="text-accent font-semibold hover:underline">AI estimates</Link>
+            {' · '}
+            <Link to="/voice-invoicing" className="text-accent font-semibold hover:underline">voice invoicing</Link>
+            {' · '}
+            <Link to="/pricing" className="text-accent font-semibold hover:underline">pricing plans</Link>
           </p>
         </div>
       </section>

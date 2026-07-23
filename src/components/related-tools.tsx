@@ -17,9 +17,16 @@ const ALL_TOOLS = [
     keywords: ['invoice', 'billing', 'tax invoice', 'payment', 'send invoice', 'invoice software'],
   },
   {
+    slug: '/estimate-generator',
+    name: 'Estimate Generator',
+    desc: 'Build a priced job estimate in your browser.',
+    icon: ClipboardList,
+    keywords: ['estimate', 'job estimate', 'estimate generator', 'ai estimate', 'quoting'],
+  },
+  {
     slug: '/quote-generator',
     name: 'Quote Generator',
-    desc: 'Build a professional GST quote right now.',
+    desc: 'Build a professional quote (same as an estimate).',
     icon: ClipboardList,
     keywords: ['quote', 'estimate', 'quoting', 'quote generator', 'job quote'],
   },

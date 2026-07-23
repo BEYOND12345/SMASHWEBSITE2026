@@ -65,7 +65,9 @@ export const softwareApplicationSchema = {
   ],
   "sameAs": [
     "https://smashinvoices.com/voice-invoicing",
+    "https://smashinvoices.com/ai-estimates",
     "https://smashinvoices.com/ai-invoicing",
+    "https://smashinvoices.com/estimate-generator",
     "https://smashinvoices.com/blog/can-chatgpt-generate-invoices-tradie-guide",
     "https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate"
   ],
