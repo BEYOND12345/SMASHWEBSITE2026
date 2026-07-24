@@ -50,7 +50,8 @@ export function sendMetaCapiLead(options: {
   if (options.contentName) payload.content_name = options.contentName;
 
   const body = JSON.stringify(payload);
-  const url = '/api/meta-capi';
+  // Direct function URL — reliable on Netlify ( /api rewrite can lag behind SPA _redirects )
+  const url = '/.netlify/functions/meta-capi';
 
   try {
     if (typeof navigator.sendBeacon === 'function') {
