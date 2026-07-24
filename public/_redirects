@@ -1,3 +1,7 @@
+# Meta Conversions API — must be above SPA catch-all (first match wins)
+/api/meta-capi          /.netlify/functions/meta-capi    200
+/api/meta-capi/         /.netlify/functions/meta-capi    200
+
 # Comparison URL migration — article-style /vs-* pages
 /smash-vs-servicem8     /vs-servicem8     301!
 /smash-vs-servicem8/    /vs-servicem8     301!
