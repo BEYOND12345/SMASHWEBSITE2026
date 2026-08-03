@@ -3,6 +3,17 @@
  * Pricing checked dates must match on-page copy and schema dateModified.
  */
 
+import {
+  vsFreshbooks,
+  vsInvoiceHome,
+  vsInvoiceSimple,
+  vsJoist,
+  vsQuotemate,
+  vsSquareInvoices,
+  vsWave,
+  vsZohoInvoice,
+} from './vs-page-data-icp.ts';
+
 export type VsTableRow = { label: string; smash: string; them: string; themAlt?: string };
 
 export type VsContentSection = { heading: string; body: string };
@@ -58,6 +69,14 @@ export const VS_ARTICLE_SLUGS = new Set([
   'rounded',
   'tradify',
   'xero',
+  'invoice-simple',
+  'quotemate',
+  'invoice-home',
+  'joist',
+  'wave',
+  'freshbooks',
+  'square-invoices',
+  'zoho-invoice',
 ]);
 
 export function vsPagePath(competitorKey: string): string {
@@ -771,4 +790,15 @@ export const vsPageBySlug: Record<string, VsPageData> = {
   'vs-rounded': vsRounded,
   'vs-tradify': vsTradify,
   'vs-xero': vsXero,
+  'vs-invoice-simple': vsInvoiceSimple,
+  'vs-quotemate': vsQuotemate,
+  'vs-invoice-home': vsInvoiceHome,
+  'vs-joist': vsJoist,
+  'vs-wave': vsWave,
+  'vs-freshbooks': vsFreshbooks,
+  'vs-square-invoices': vsSquareInvoices,
+  'vs-zoho-invoice': vsZohoInvoice,
 };
+
+/** All /vs-* article pages (for static generation + alternatives hub). */
+export const allVsPages: VsPageData[] = Object.values(vsPageBySlug);

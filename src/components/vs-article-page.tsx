@@ -7,10 +7,14 @@ import { AnimateIn } from './animate-in';
 import { DualProductCtas } from './marketing/DualProductCtas';
 import { hreflangAlternates } from '../data/country-data';
 import type { VsPageData } from '../data/vs-page-data';
-import { vsPagePath } from '../data/vs-page-data';
-import { allComparisons } from '../data/comparison-data';
+import { allVsPages } from '../data/vs-page-data';
 
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+const LEGACY_MORE = [
+  { path: '/smash-vs-quickbooks', label: 'QuickBooks' },
+  { path: '/smash-vs-fergus', label: 'Fergus' },
+];
 
 function InlineLinks({ text }: { text: string }) {
   const nodes: React.ReactNode[] = [];
@@ -49,10 +53,6 @@ function RichParagraphs({ body }: { body: string }) {
   );
 }
 
-function competitorKeyFromSlug(slug: string): string {
-  return slug.replace(/^smash-vs-/, '');
-}
-
 export function VsArticlePage({ data }: { data: VsPageData }) {
   const canonical = `https://smashinvoices.com/${data.slug}`;
 
@@ -70,9 +70,7 @@ export function VsArticlePage({ data }: { data: VsPageData }) {
     },
   };
 
-  const otherComparisons = allComparisons.filter(
-    (c) => competitorKeyFromSlug(c.slug) !== data.slug.replace(/^vs-/, ''),
-  );
+  const otherComparisons = allVsPages.filter((p) => p.slug !== data.slug);
 
   return (
     <>
@@ -299,19 +297,26 @@ export function VsArticlePage({ data }: { data: VsPageData }) {
             <section>
               <h2 className="font-display text-xl uppercase tracking-tighter text-brand mb-6">More comparisons</h2>
               <ul className="grid gap-3 sm:grid-cols-2 font-body text-sm">
-                {otherComparisons.map((c) => {
-                  const key = competitorKeyFromSlug(c.slug);
-                  return (
-                    <li key={c.slug}>
-                      <Link
-                        to={vsPagePath(key)}
-                        className="text-brand underline underline-offset-2 hover:text-accent hover:no-underline"
-                      >
-                        SMASH vs {c.competitorShort}
-                      </Link>
-                    </li>
-                  );
-                })}
+                {otherComparisons.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      to={`/${p.slug}`}
+                      className="text-brand underline underline-offset-2 hover:text-accent hover:no-underline"
+                    >
+                      SMASH vs {p.competitorShort}
+                    </Link>
+                  </li>
+                ))}
+                {LEGACY_MORE.map((c) => (
+                  <li key={c.path}>
+                    <Link
+                      to={c.path}
+                      className="text-brand underline underline-offset-2 hover:text-accent hover:no-underline"
+                    >
+                      SMASH vs {c.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </section>
           </AnimateIn>

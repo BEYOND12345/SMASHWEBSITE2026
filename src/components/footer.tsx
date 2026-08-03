@@ -409,18 +409,25 @@ export function Footer({ showCTA = false }: FooterProps) {
         {/* ── DISCLOSURES (hidden by default, multi-column when open) ── */}
         <FooterDisclosure
           title="Compare SMASH vs alternatives"
-          count={10}
+          count={18}
           cols="sm:grid-cols-2 md:grid-cols-3"
         >
           <li><Link to="/alternatives" className={linkClass + ' font-semibold text-accent'}>All alternatives (speed compare)</Link></li>
+          <li><Link to="/vs-invoice-simple" className={linkClass}>SMASH vs Invoice Simple</Link></li>
+          <li><Link to="/vs-quotemate" className={linkClass}>SMASH vs QuoteMate</Link></li>
+          <li><Link to="/vs-joist" className={linkClass}>SMASH vs Joist</Link></li>
+          <li><Link to="/vs-invoice2go" className={linkClass}>SMASH vs Invoice2go</Link></li>
+          <li><Link to="/vs-wave" className={linkClass}>SMASH vs Wave</Link></li>
+          <li><Link to="/vs-freshbooks" className={linkClass}>SMASH vs FreshBooks</Link></li>
+          <li><Link to="/vs-square-invoices" className={linkClass}>SMASH vs Square Invoices</Link></li>
+          <li><Link to="/vs-zoho-invoice" className={linkClass}>SMASH vs Zoho Invoice</Link></li>
+          <li><Link to="/vs-invoice-home" className={linkClass}>SMASH vs Invoice Home</Link></li>
           <li><Link to="/vs-xero" className={linkClass}>SMASH vs Xero</Link></li>
           <li><Link to="/vs-myob" className={linkClass}>SMASH vs MYOB</Link></li>
           <li><Link to="/vs-servicem8" className={linkClass}>SMASH vs ServiceM8</Link></li>
           <li><Link to="/smash-vs-quickbooks" className={linkClass}>SMASH vs QuickBooks</Link></li>
           <li><Link to="/smash-vs-fergus" className={linkClass}>SMASH vs Fergus</Link></li>
           <li><Link to="/vs-tradify" className={linkClass}>SMASH vs Tradify</Link></li>
-          <li><Link to="/vs-invoice2go" className={linkClass}>SMASH vs Invoice2go</Link></li>
-          <li><Link to="/smash-vs-joist" className={linkClass}>SMASH vs Joist</Link></li>
           <li><Link to="/vs-rounded" className={linkClass}>SMASH vs Rounded</Link></li>
         </FooterDisclosure>
 

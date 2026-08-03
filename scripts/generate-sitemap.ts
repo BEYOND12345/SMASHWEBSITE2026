@@ -151,9 +151,17 @@ async function generateSitemap() {
     { loc: '/vs-rounded',            srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
     { loc: '/vs-tradify',            srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
     { loc: '/vs-xero',               srcFiles: ['src/App.tsx', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx', ...comparisonData], lastmodOverride: '2026-07-06', changefreq: 'monthly', priority: '0.95' },
+    // ICP basic-app hijack pages (static + React)
+    { loc: '/vs-invoice-simple',     srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-quotemate',          srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-invoice-home',       srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-joist',              srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-wave',               srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-freshbooks',         srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-square-invoices',    srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
+    { loc: '/vs-zoho-invoice',       srcFiles: ['src/data/vs-page-data-icp.ts', 'src/data/vs-page-data.ts', 'src/components/vs-article-page.tsx'], lastmodOverride: '2026-08-04', changefreq: 'monthly', priority: '0.95' },
     { loc: '/smash-vs-quickbooks',  srcFiles: ['src/pages/smash-vs-quickbooks.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
     { loc: '/smash-vs-fergus',      srcFiles: ['src/pages/smash-vs-fergus.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
-    { loc: '/smash-vs-joist',       srcFiles: ['src/pages/smash-vs-joist.tsx', ...comparisonData], changefreq: 'monthly', priority: '0.9' },
 
     // Segment / trade pages — all driven by segment-data
     { loc: '/for-cleaners',            srcFiles: ['src/pages/for-cleaners.tsx', ...segmentData], changefreq: 'monthly', priority: '0.8' },

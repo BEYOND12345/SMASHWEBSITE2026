@@ -1,7 +1,7 @@
 # AlternativeTo & directory submissions — July 2026
 
 **Do today:** AlternativeTo + SaaSHub (same copy, ~45 min total).  
-**On-site comparisons:** https://smashinvoices.com/alternatives (hub) + 9 `/smash-vs-*` pages — **not blog posts**.
+**On-site comparisons:** https://smashinvoices.com/alternatives (hub) + `/vs-*` article pages (crawler-static) — **not blog posts**.
 
 **Positioning:** Lead with **speed & efficiency** (“under 60 seconds”, “before you leave the job”). Voice is *how* SMASH achieves speed — not the only headline.
 
@@ -59,7 +59,7 @@
 
 ---
 
-## Step 2 — Tag SMASH as an alternative (do all 9 + extras)
+## Step 2 — Tag SMASH as an alternative (do all + ICP basics)
 
 On each competitor’s AlternativeTo page, click **“Add alternative”** and select **SMASH Invoices**.
 
@@ -69,24 +69,22 @@ Use this **one-line reason** (speed-first) for every tag:
 
 | # | Competitor | AlternativeTo search | Our comparison page |
 |---|------------|----------------------|---------------------|
-| 1 | Xero | xero | https://smashinvoices.com/vs-xero |
-| 2 | MYOB | myob | https://smashinvoices.com/vs-myob |
-| 3 | QuickBooks | quickbooks | https://smashinvoices.com/smash-vs-quickbooks |
-| 4 | ServiceM8 | servicem8 | https://smashinvoices.com/vs-servicem8 |
-| 5 | Fergus | fergus | https://smashinvoices.com/smash-vs-fergus |
-| 6 | Tradify | tradify | https://smashinvoices.com/vs-tradify |
-| 7 | Invoice2go | invoice2go | https://smashinvoices.com/vs-invoice2go |
-| 8 | Joist | joist | https://smashinvoices.com/smash-vs-joist |
-| 9 | Rounded | rounded invoicing | https://smashinvoices.com/vs-rounded |
-
-**Optional extras** (tag if listed on AlternativeTo — no on-site page yet):
-
-| Competitor | Notes |
-|------------|--------|
-| Wave | Accounting + invoicing; speed angle: no voice, desk-first |
-| FreshBooks | Similar to QuickBooks lite |
-| Zoho Invoice | Template-heavy |
-| Invoice Home | AU competitor; consider `/smash-vs-*` page later |
+| 1 | Invoice Simple | invoice simple | https://smashinvoices.com/vs-invoice-simple |
+| 2 | QuoteMate | quotemate | https://smashinvoices.com/vs-quotemate |
+| 3 | Joist | joist | https://smashinvoices.com/vs-joist |
+| 4 | Invoice2go | invoice2go | https://smashinvoices.com/vs-invoice2go |
+| 5 | Invoice Home | invoice home | https://smashinvoices.com/vs-invoice-home |
+| 6 | Wave | wave accounting | https://smashinvoices.com/vs-wave |
+| 7 | FreshBooks | freshbooks | https://smashinvoices.com/vs-freshbooks |
+| 8 | Square Invoices | square invoices | https://smashinvoices.com/vs-square-invoices |
+| 9 | Zoho Invoice | zoho invoice | https://smashinvoices.com/vs-zoho-invoice |
+| 10 | Xero | xero | https://smashinvoices.com/vs-xero |
+| 11 | MYOB | myob | https://smashinvoices.com/vs-myob |
+| 12 | QuickBooks | quickbooks | https://smashinvoices.com/smash-vs-quickbooks |
+| 13 | ServiceM8 | servicem8 | https://smashinvoices.com/vs-servicem8 |
+| 14 | Fergus | fergus | https://smashinvoices.com/smash-vs-fergus |
+| 15 | Tradify | tradify | https://smashinvoices.com/vs-tradify |
+| 16 | Rounded | rounded invoicing | https://smashinvoices.com/vs-rounded |
 
 ---
 
@@ -95,7 +93,7 @@ Use this **one-line reason** (speed-first) for every tag:
 **URL:** https://www.saashub.com/submit
 
 Same name, URL, description as AlternativeTo.  
-**Alternatives to list:** Xero, QuickBooks, Tradify, ServiceM8, Invoice2go, Joist, Fergus, MYOB, Rounded.
+**Alternatives to list:** Invoice Simple, QuoteMate, Joist, Invoice2go, Wave, FreshBooks, Square, Zoho Invoice, Xero, QuickBooks, Tradify, ServiceM8, Fergus, MYOB, Rounded.
 
 **Primary URL for SaaSHub:** https://smashinvoices.com/alternatives
 
@@ -113,14 +111,20 @@ Same name, URL, description as AlternativeTo.
 
 ## Step 5 — After submitting (GSC)
 
-Request indexing on:
+Request indexing on (no trailing slash; 10/day quota — rotate):
 
 1. https://smashinvoices.com/alternatives  
-2. https://smashinvoices.com/vs-xero  
-3. https://smashinvoices.com/vs-tradify  
-4. https://smashinvoices.com/vs-invoice2go  
+2. https://smashinvoices.com/vs-invoice-simple  
+3. https://smashinvoices.com/vs-quotemate  
+4. https://smashinvoices.com/vs-joist  
+5. https://smashinvoices.com/vs-invoice-home  
+6. https://smashinvoices.com/vs-wave  
+7. https://smashinvoices.com/vs-freshbooks  
+8. https://smashinvoices.com/vs-square-invoices  
+9. https://smashinvoices.com/vs-zoho-invoice  
+10. https://smashinvoices.com/vs-invoice2go  
 
-(10/day quota — rotate through all 9 comparison pages over the next week.)
+Then: `/vs-xero`, `/vs-tradify`, `/vs-servicem8`, `/vs-rounded`, `/vs-myob`.
 
 ---
 
@@ -129,10 +133,10 @@ Request indexing on:
 | Priority | What | Why |
 |----------|------|-----|
 | **P0** | Directory submissions (this doc) | Real backlinks + “alternative” SERP presence |
-| **P0** | GSC indexing on `/alternatives` + `/smash-vs-*` | Google must crawl comparison pages |
+| **P0** | GSC indexing on `/alternatives` + ICP `/vs-*` | Google must crawl comparison pages with real titles |
+| **P1** | AlternativeTo tags on Invoice Simple / Wave / FreshBooks | Hijack basic-app switcher traffic |
 | **P1** | Trade community (SavvySME, Flying Solo) | AU relevance; one genuine profile beats 10 bought links |
 | **P2** | YouTube → embed on `/blog/fastest-way-*` | Time-on-page + topical authority for speed |
-| **P3** | More `/smash-vs-*` pages (Wave, Invoice Home) | Only after top 9 are indexed |
 | **Skip for now** | 10k-word blog expansions | Low ROI vs directories + indexing |
 
 ---

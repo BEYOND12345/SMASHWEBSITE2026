@@ -44,7 +44,6 @@ import { VS_ARTICLE_SLUGS, vsPageBySlug } from './data/vs-page-data';
 import { VsArticlePage } from './components/vs-article-page';
 const SmashVsQuickBooks = lazy(() => import('./pages/smash-vs-quickbooks').then(m => ({ default: m.SmashVsQuickBooks })));
 const SmashVsFergus = lazy(() => import('./pages/smash-vs-fergus').then(m => ({ default: m.SmashVsFergus })));
-const SmashVsJoist = lazy(() => import('./pages/smash-vs-joist').then(m => ({ default: m.SmashVsJoist })));
 const BlogList = lazy(() => import('./pages/blog-list').then(m => ({ default: m.BlogList })));
 const BlogPost = lazy(() => import('./pages/blog-post').then(m => ({ default: m.BlogPost })));
 const FastestWayToInvoice2026 = lazy(() => import('./pages/blog/FastestWayToInvoice2026'));
@@ -180,7 +179,7 @@ function App() {
         ))}
         <Route path="/smash-vs-quickbooks" element={<SmashVsQuickBooks />} />
         <Route path="/smash-vs-fergus" element={<SmashVsFergus />} />
-        <Route path="/smash-vs-joist" element={<SmashVsJoist />} />
+        <Route path="/smash-vs-joist" element={<Navigate to="/vs-joist" replace />} />
 
         {/* Segment pages */}
         <Route path="/for-cleaners" element={<ForCleaners />} />

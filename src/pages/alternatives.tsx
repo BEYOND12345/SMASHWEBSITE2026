@@ -7,12 +7,25 @@ import { StructuredData, createBreadcrumbSchema, createFAQSchema } from '../comp
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import { organizationSchema as aiOrgSchema, softwareApplicationSchema } from '../data/schema-data';
 import { hreflangAlternates } from '../data/country-data';
-import { allComparisons } from '../data/comparison-data';
-import { vsPagePath } from '../data/vs-page-data';
+import { allVsPages } from '../data/vs-page-data';
 import { DualProductCtas } from '../components/marketing/DualProductCtas';
 import { iosLanding } from '../components/ios-product-landing/ios-landing-tokens';
 
 const CANONICAL = 'https://smashinvoices.com/alternatives';
+
+/** Legacy comparison pages not yet migrated to /vs-* article template */
+const LEGACY_COMPARISONS = [
+  {
+    path: '/smash-vs-quickbooks',
+    name: 'QuickBooks',
+    desc: 'Cloud accounting vs voice-speed quoting and invoicing for service businesses.',
+  },
+  {
+    path: '/smash-vs-fergus',
+    name: 'Fergus',
+    desc: 'Trade job management suite vs the fastest path from job done to invoice sent.',
+  },
+];
 
 const faqs = [
   {
@@ -38,8 +51,8 @@ export function AlternativesPage() {
     <>
       <SEO
         title="SMASH Invoices Alternatives — Fastest Way to Send an Invoice"
-        description="Compare SMASH to Xero, QuickBooks, Tradify, ServiceM8, Invoice2go, Joist, Fergus, MYOB and Rounded. Send a priced invoice in under 60 seconds — voice on iPhone or Gmail in Chrome. Live in AU, NZ, UK, US and Canada."
-        keywords="Xero alternative, QuickBooks alternative, Tradify alternative, fastest invoicing app, invoice app alternative, voice to invoice, send invoice fast"
+        description="Compare SMASH to Invoice Simple, QuoteMate, Joist, Wave, FreshBooks, Square, Zoho Invoice, Xero, Tradify, ServiceM8, Invoice2go and more. Send a priced invoice in under 60 seconds — voice on iPhone or Gmail in Chrome."
+        keywords="Invoice Simple alternative, QuoteMate alternative, Joist alternative, Wave alternative, FreshBooks alternative, voice to invoice, fastest invoicing app"
         ogTitle="SMASH Invoices — Alternatives & Comparisons"
         ogDescription="The fastest invoicing alternative for service businesses. Under 60 seconds. Voice on site or Gmail at your desk."
         canonical={CANONICAL}
@@ -88,16 +101,30 @@ export function AlternativesPage() {
               speed, hands-free input, and same-day sending.
             </p>
             <ul className="grid gap-4 sm:grid-cols-2">
-              {allComparisons.map((c) => (
-                <li key={c.slug}>
+              {allVsPages.map((p) => (
+                <li key={p.slug}>
                   <Link
-                    to={vsPagePath(c.slug.replace(/^smash-vs-/, ''))}
+                    to={`/${p.slug}`}
                     className="block rounded-2xl border border-slate-200 p-6 hover:border-accent transition-colors group"
                   >
                     <p className="font-display text-lg uppercase tracking-tight text-brand group-hover:text-accent">
-                      SMASH vs {c.competitorShort}
+                      SMASH vs {p.competitorShort}
                     </p>
-                    <p className="font-body text-sm text-slate-500 mt-2 line-clamp-2">{c.metaDescription}</p>
+                    <p className="font-body text-sm text-slate-500 mt-2 line-clamp-2">{p.metaDescription}</p>
+                    <p className="font-body text-xs font-semibold text-accent mt-3">Compare →</p>
+                  </Link>
+                </li>
+              ))}
+              {LEGACY_COMPARISONS.map((c) => (
+                <li key={c.path}>
+                  <Link
+                    to={c.path}
+                    className="block rounded-2xl border border-slate-200 p-6 hover:border-accent transition-colors group"
+                  >
+                    <p className="font-display text-lg uppercase tracking-tight text-brand group-hover:text-accent">
+                      SMASH vs {c.name}
+                    </p>
+                    <p className="font-body text-sm text-slate-500 mt-2 line-clamp-2">{c.desc}</p>
                     <p className="font-body text-xs font-semibold text-accent mt-3">Compare →</p>
                   </Link>
                 </li>

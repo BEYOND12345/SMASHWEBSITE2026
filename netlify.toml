@@ -100,6 +100,55 @@
   function = "voice-invoicing-route"
   path = "/voice-invoicing/*"
 
+# /alternatives + /vs-* — SPA for humans; edge rewrites crawlers to static HTML
+[[redirects]]
+  from = "/alternatives"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/alternatives/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-*/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/alternatives"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/alternatives/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-*"
+
+[[redirects]]
+  from = "/smash-vs-joist"
+  to = "/vs-joist"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/smash-vs-joist/"
+  to = "/vs-joist"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/invoice-on-mobile"
   to = "/voice-invoicing"
