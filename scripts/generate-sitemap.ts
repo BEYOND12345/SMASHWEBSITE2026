@@ -105,6 +105,7 @@ async function generateSitemap() {
     { loc: '/blog/what-is-voice-to-invoice', srcFiles: ['public/blog/what-is-voice-to-invoice/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/first-quote-wins-instant-quote-on-site', srcFiles: ['public/blog/first-quote-wins-instant-quote-on-site/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/can-chatgpt-write-a-quote-estimate', srcFiles: ['public/blog/can-chatgpt-write-a-quote-estimate/index.html'], changefreq: 'monthly', priority: '0.85' },
+    { loc: '/blog/can-claude-write-a-quote-estimate', srcFiles: ['public/blog/can-claude-write-a-quote-estimate/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/can-chatgpt-generate-invoices-tradie-guide', srcFiles: ['public/blog/can-chatgpt-generate-invoices-tradie-guide/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/send-quote-on-site-30-seconds-handyman', srcFiles: ['public/blog/send-quote-on-site-30-seconds-handyman/index.html'], changefreq: 'monthly', priority: '0.85' },
     { loc: '/blog/chatgpt-got-my-handyman-estimates-wrong', srcFiles: ['public/blog/chatgpt-got-my-handyman-estimates-wrong/index.html'], changefreq: 'monthly', priority: '0.85' },

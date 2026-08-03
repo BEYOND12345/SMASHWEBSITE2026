@@ -39,6 +39,7 @@ const RELATED_LINKS = [
   { href: '/blog/send-quote-on-site-30-seconds-handyman', label: 'Send a quote on site in ~30 seconds' },
   { href: '/blog/first-quote-wins-instant-quote-on-site', label: 'First quote wins — instant quote on site' },
   { href: '/blog/chatgpt-got-my-handyman-estimates-wrong', label: 'ChatGPT got my estimates wrong' },
+  { href: '/blog/can-claude-write-a-quote-estimate', label: 'Can Claude write a quote or estimate?' },
   { href: '/blog/what-is-voice-to-invoice', label: 'What is voice to invoice?' },
   { href: '/blog/the-60-second-invoice-voice-to-invoice', label: 'Voice to invoice workflow' },
   { href: '/blog/fastest-way-to-send-invoice-2026', label: 'Fastest way to send an invoice' },
@@ -96,7 +97,7 @@ function patchHtml(html: string, slug: string): string {
     );
   }
 
-  // how-long — exact anchor in short answer + closing CTA
+  // how-long — exact anchor in short answer + closing CTA + AI estimate bridge
   if (slug === 'how-long-to-send-invoice-after-job-australia') {
     if (!out.includes('voice to invoice</a> guide for the on-site')) {
       out = out.replace(
@@ -110,6 +111,27 @@ function patchHtml(html: string, slug: string): string {
         '<p><strong>Invoice before you leave the driveway. Every time.</strong> Use <a href="/voice-invoicing">voice to invoice</a> on iPhone or <a href="/gmail-invoice">email to invoice</a> at your desk.',
       );
     }
+    if (!out.includes('data-problem-feeder="how-long"')) {
+      out = out.replace(
+        '<hr>\n<h2>The 28-day rule',
+        `<aside data-problem-feeder="how-long" style="margin:24px 0;padding:18px;border:1px solid rgba(255,255,255,0.12);border-radius:10px;background:rgba(255,255,255,0.04);">
+  <p style="margin:0 0 8px;"><strong>Same-day habit, two documents:</strong> win the job with an <a href="/ai-estimates">AI estimate</a> / <a href="/blog/first-quote-wins-instant-quote-on-site">instant quote</a> on site, then invoice before you leave. ChatGPT and Claude can draft wording — they do not send from your rates (<a href="/blog/can-chatgpt-write-a-quote-estimate">ChatGPT</a> · <a href="/blog/can-claude-write-a-quote-estimate">Claude</a>).</p>
+</aside>
+<hr>
+<h2>The 28-day rule`,
+      );
+    }
+  }
+
+  // word-vs-excel — bridge to AI estimate intent (high impressions feeder)
+  if (slug === 'word-vs-excel-vs-app-for-invoices' && !out.includes('data-problem-feeder="word-excel"')) {
+    out = out.replace(
+      '<h2>Why a Mobile App Beats Both</h2>',
+      `<aside data-problem-feeder="word-excel" style="margin:24px 0;padding:18px;border:1px solid rgba(255,255,255,0.12);border-radius:10px;background:rgba(255,255,255,0.04);">
+  <p style="margin:0;"><strong>Looking for AI estimating instead of templates?</strong> Pasting a job into ChatGPT or Claude still leaves you typing rates. <a href="/ai-estimates">AI estimates</a> price from your catalog in under 60 seconds — then <a href="/voice-invoicing">voice to invoice</a> when the work is done. Guides: <a href="/blog/can-chatgpt-write-a-quote-estimate">ChatGPT quote/estimate</a> · <a href="/blog/can-claude-write-a-quote-estimate">Claude quote/estimate</a>.</p>
+</aside>
+<h2>Why a Mobile App Beats Both</h2>`,
+    );
   }
 
   // 60-second post — fix weak pillar link anchor in body + quote angle

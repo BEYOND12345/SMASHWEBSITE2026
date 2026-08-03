@@ -31,6 +31,10 @@ const faqs = [
     a: 'ChatGPT can draft wording if you paste every rate each time. It does not hold your catalog, send a branded PDF with approval, or turn the estimate into a tax-ready invoice. SMASH is talk → verify → send from your prices.',
   },
   {
+    q: 'Can I use Claude for AI estimating instead?',
+    a: 'Claude can draft a clear quote paragraph the same way ChatGPT can — but it still will not store your rates, send from the driveway, or convert the estimate to a payable invoice. For that loop use SMASH AI estimates (voice or Gmail) priced from your catalog.',
+  },
+  {
     q: 'Can I send the estimate by voice on site?',
     a: 'Yes on iPhone. Describe the job out loud for about 20–30 seconds, verify catalog-priced lines, and send before you leave. That is voice to estimate — the same engine as voice to invoice.',
   },
@@ -212,7 +216,7 @@ export function AiEstimates() {
               {[
                 {
                   title: 'Catalog fidelity',
-                  body: 'Upload your rates once. Every AI estimate uses your labour, packages and materials — the same promise as voice invoicing.',
+                  body: 'Upload your rates once. Every AI estimate uses your labour, packages and materials — not ChatGPT or Claude guesses. Same promise as voice invoicing.',
                 },
                 {
                   title: 'Estimate and invoice in one loop',

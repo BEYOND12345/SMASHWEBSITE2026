@@ -34,6 +34,16 @@
   status = 200
 
 [[redirects]]
+  from = "/terms"
+  to = "/terms/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms/"
+  to = "/terms/index.html"
+  status = 200
+
+[[redirects]]
   from = "/support"
   to = "/support/index.html"
   status = 200

@@ -99,6 +99,7 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'what-is-voice-to-invoice',
   'first-quote-wins-instant-quote-on-site',
   'can-chatgpt-write-a-quote-estimate',
+  'can-claude-write-a-quote-estimate',
   'send-quote-on-site-30-seconds-handyman',
   'chatgpt-got-my-handyman-estimates-wrong',
 ]);

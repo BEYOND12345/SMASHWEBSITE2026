@@ -18,6 +18,7 @@ const extra = `<p>Talk on site → verify priced line items from your catalog �
 <a href="https://smashinvoices.com/blog/send-quote-on-site-30-seconds-handyman">Send a quote on site in ~30 seconds</a> ·
 <a href="https://smashinvoices.com/blog/first-quote-wins-instant-quote-on-site">First quote wins</a> ·
 <a href="https://smashinvoices.com/blog/can-chatgpt-write-a-quote-estimate">Can ChatGPT write a quote?</a> ·
+<a href="https://smashinvoices.com/blog/can-claude-write-a-quote-estimate">Can Claude write a quote?</a> ·
 <a href="https://smashinvoices.com/founder">Founder story</a></p>`;
 
 writeStaticPage(out, buildStaticPage(mainPages.voiceInvoicing, extra, { iosRemarketing: true }));
