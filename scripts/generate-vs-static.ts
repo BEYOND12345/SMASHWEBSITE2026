@@ -5,7 +5,14 @@
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { allVsPages, type VsPageData } from '../src/data/vs-page-data.ts';
+import {
+  allVsPages,
+  DEFAULT_PROCESS_ROWS,
+  VS_DEMO_YOUTUBE_ID,
+  vsPageBySlug,
+  type VsPageData,
+  type VsTableRow,
+} from '../src/data/vs-page-data.ts';
 import { buildFaqSchema, esc, ld, writeStaticPage } from './lib/static-page-template.ts';
 import { loadViteEnv } from './lib/load-vite-env.ts';
 import { metaPixelClickTrackingHtml, metaPixelHeadHtml } from './meta-pixel-snippet.ts';
@@ -44,17 +51,22 @@ function paragraphsHtml(body: string): string {
     .join('\n');
 }
 
-function buildVsHtml(data: VsPageData): string {
-  const canonical = `${SITE}/${data.slug}`;
-  const themCol = data.tableColumns?.them ?? data.competitorShort;
-  const rows = data.tableRows
+function tableBody(rows: VsTableRow[], themAlt?: boolean): string {
+  return rows
     .map(
       (r) =>
         `<tr><th scope="row">${esc(r.label)}</th><td>${esc(r.smash)}</td><td>${esc(r.them)}</td>${
-          data.tableColumns?.themAlt ? `<td>${esc(r.themAlt ?? '—')}</td>` : ''
+          themAlt ? `<td>${esc(r.themAlt ?? '—')}</td>` : ''
         }</tr>`,
     )
     .join('');
+}
+
+function buildVsHtml(data: VsPageData): string {
+  const canonical = `${SITE}/${data.slug}`;
+  const themCol = data.tableColumns?.them ?? data.competitorShort;
+  const processRows = data.processRows ?? DEFAULT_PROCESS_ROWS;
+  const hasAlt = Boolean(data.tableColumns?.themAlt);
 
   const sections = data.contentSections
     .map((s) => `<section><h2>${esc(s.heading)}</h2>${paragraphsHtml(s.body)}</section>`)
@@ -70,9 +82,18 @@ function buildVsHtml(data: VsPageData): string {
     .map(
       (f) => `<details style="border-bottom:1px solid #e2e8f0;padding:14px 0;">
 <summary style="cursor:pointer;font-weight:700;">${esc(f.q)}</summary>
-<p style="color:#475569;margin:10px 0 0;">${esc(f.a)}</p></details>`,
+<p style="color:#475569;margin:10px 0 0;">${mdToHtml(f.a)}</p></details>`,
     )
     .join('');
+
+  const related = (data.relatedSlugs ?? [])
+    .map((slug) => vsPageBySlug[slug])
+    .filter(Boolean)
+    .map(
+      (p) =>
+        `<li style="margin-bottom:12px;"><a href="${SITE}/${p.slug}"><strong>${esc(p.h1)}</strong></a><br><span style="color:#64748b;">${esc(p.metaDescription)}</span></li>`,
+    )
+    .join('\n');
 
   const moreLinks = allVsPages
     .filter((p) => p.slug !== data.slug)
@@ -100,7 +121,19 @@ function buildVsHtml(data: VsPageData): string {
     ],
   };
 
+  const videoLd = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'SMASH Invoices — send a quote or invoice before you leave the job',
+    description:
+      'Demo: talk for about 30 seconds, verify catalog prices, send a tax-ready quote or invoice. Customer approves and pays on one link.',
+    thumbnailUrl: `https://img.youtube.com/vi/${VS_DEMO_YOUTUBE_ID}/hqdefault.jpg`,
+    embedUrl: `https://www.youtube.com/embed/${VS_DEMO_YOUTUBE_ID}`,
+    uploadDate: '2026-01-15',
+  };
+
   const faqLd = buildFaqSchema(data.faqs.map((f) => ({ question: f.q, answer: f.a })));
+  const altTh = hasAlt ? `<th>${esc(data.tableColumns!.themAlt!)}</th>` : '';
 
   return `<!DOCTYPE html>
 <html lang="en-AU">
@@ -124,6 +157,7 @@ function buildVsHtml(data: VsPageData): string {
   <meta property="article:modified_time" content="${data.dateModified}">
   <script type="application/ld+json">${ld(articleLd)}</script>
   <script type="application/ld+json">${ld(breadcrumbLd)}</script>
+  <script type="application/ld+json">${ld(videoLd)}</script>
   <script type="application/ld+json">${ld(faqLd)}</script>
 ${metaPixelHeadHtml(process.env.VITE_META_PIXEL_ID)}
 ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
@@ -136,20 +170,32 @@ ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
     th,td{border-bottom:1px solid #e2e8f0;padding:10px 8px;text-align:left;vertical-align:top}
     .cta{display:inline-block;background:#DFFF00;color:#0f172a;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:8px 8px 0 0}
     .meta{color:#64748b;font-size:0.85rem}
+    .brand{color:#64748b;font-weight:600}
     .box{background:#f8fafc;border:1px solid #e2e8f0;padding:16px;border-radius:12px;margin:24px 0}
   </style>
 </head>
 <body>
   <nav><a href="${SITE}/">Home</a> · <a href="${SITE}/alternatives">Alternatives</a> · <a href="${canonical}">This page</a></nav>
-  <p class="meta">Comparison · Pricing checked ${esc(data.pricingChecked)}</p>
+  <p class="meta">${esc(data.eyebrow ?? `Comparison · Pricing checked ${data.pricingChecked}`)}</p>
   <h1>${esc(data.h1)}</h1>
-  <p>${esc(data.intro)}</p>
-  <h2>SMASH vs ${esc(data.competitorShort)}: quick comparison</h2>
+  ${data.brandLine ? `<p class="brand">${esc(data.brandLine)}</p>` : ''}
+  <p>${mdToHtml(data.intro)}</p>
+  <section>
+    <h2>Watch the 60-second demo</h2>
+    <p>Talk → verify your rates → send → they approve and pay.</p>
+    <p><a href="https://www.youtube.com/watch?v=${VS_DEMO_YOUTUBE_ID}">Watch on YouTube</a> · <a href="${SITE}/voice-invoicing">How voice to invoice works</a></p>
+  </section>
+  <h2>The full process — not just an invoice PDF</h2>
+  <p>Most invoice apps stop at send. Service businesses need quote → approve → invoice → paid — on site.</p>
   <table>
-    <thead><tr><th></th><th>SMASH</th><th>${esc(themCol)}</th>${
-      data.tableColumns?.themAlt ? `<th>${esc(data.tableColumns.themAlt)}</th>` : ''
-    }</tr></thead>
-    <tbody>${rows}</tbody>
+    <thead><tr><th></th><th>SMASH</th><th>${esc(themCol)}</th>${altTh}</tr></thead>
+    <tbody>${tableBody(processRows, hasAlt)}</tbody>
+  </table>
+  <h2>SMASH vs ${esc(data.competitorShort)}: quick comparison</h2>
+  <p class="meta">Pricing checked ${esc(data.pricingChecked)}</p>
+  <table>
+    <thead><tr><th></th><th>SMASH</th><th>${esc(themCol)}</th>${altTh}</tr></thead>
+    <tbody>${tableBody(data.tableRows, hasAlt)}</tbody>
   </table>
   ${sections}
   <section>
@@ -158,7 +204,7 @@ ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
   </section>
   <section>
     <h2>Who SMASH is right for</h2>
-    <p>${esc(data.whoSmashFor)}</p>
+    <p>${mdToHtml(data.whoSmashFor)}</p>
   </section>
   <section class="box">
     <h2>${esc(data.whenThemHeading)}</h2>
@@ -170,11 +216,18 @@ ${googleAdsHeadHtml(process.env.VITE_GOOGLE_ADS_ID)}
     <h2>Feature detail</h2>
     ${features}
   </section>
+  ${
+    related
+      ? `<section class="box"><h2>Comparing other basic apps?</h2><ul style="list-style:none;padding:0;">${related}</ul>
+<p><a href="${SITE}/for-handymen">Handyman invoicing</a> · <a href="${SITE}/voice-invoicing">Voice to invoice</a> · <a href="${SITE}/alternatives">All alternatives</a></p></section>`
+      : ''
+  }
   <section>
     <h2>FAQ</h2>
     ${faqHtml}
   </section>
-  <p><strong>${esc(data.ctaPreamble)} ${esc(data.ctaLine)}</strong></p>
+  <p><strong>${esc(data.ctaPreamble)}</strong></p>
+  <p>${esc(data.ctaLine)}</p>
   <p>
     <a class="cta" href="${APP_STORE}">Start Free</a>
     <a class="cta" href="${CHROME_STORE}">Add to Chrome — Free</a>

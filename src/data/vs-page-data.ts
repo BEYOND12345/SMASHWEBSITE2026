@@ -38,9 +38,18 @@ export type VsPageData = {
   ogImage: string;
   articleHeadline: string;
   h1: string;
+  /** Optional SERP/hero eyebrow above H1 */
+  eyebrow?: string;
+  /** Short brand punch under H1 — e.g. You do the work. SMASH does the rest. */
+  brandLine?: string;
   intro: string;
   tableColumns?: { them: string; themAlt?: string };
   tableRows: VsTableRow[];
+  /**
+   * Quote → approve → invoice → pay scorecard (the ICP fight).
+   * When omitted, the article page uses a sensible default.
+   */
+  processRows?: VsTableRow[];
   contentSections: VsContentSection[];
   pricingHeading: string;
   pricingBody: string;
@@ -54,12 +63,26 @@ export type VsPageData = {
   faqs: { q: string; a: string }[];
   ctaPreamble: string;
   ctaLine: string;
+  /** Sibling /vs-* slugs to feature in the ICP cluster (e.g. vs-joist) */
+  relatedSlugs?: string[];
   images: {
     hero: VsImage;
     pricing: VsImage;
     portal: VsImage;
   };
 };
+
+/** Shared YouTube demo used on comparison pages (same as /voice-invoicing hero). */
+export const VS_DEMO_YOUTUBE_ID = 'uNL733tYTf0';
+
+export const DEFAULT_PROCESS_ROWS: VsTableRow[] = [
+  { label: 'Win the job (quote / estimate)', smash: 'Talk → priced PDF on site', them: 'Type forms later' },
+  { label: 'Customer approves', smash: 'One-tap approval link', them: 'Email PDF / chase' },
+  { label: 'Invoice same lines', smash: 'Convert — no retype', them: 'Rebuild or convert in-app' },
+  { label: 'Get paid', smash: 'Pay on the same link', them: 'Varies / separate step' },
+  { label: 'Dirty-hands capture', smash: 'Voice on iPhone', them: 'Keyboard / desk' },
+  { label: 'Prices', smash: 'Your catalog — nothing guessed', them: 'You type every rate' },
+];
 
 /** Competitors with live /vs-* article pages (others still use /smash-vs-*). */
 export const VS_ARTICLE_SLUGS = new Set([

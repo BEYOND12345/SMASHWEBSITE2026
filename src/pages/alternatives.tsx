@@ -78,9 +78,9 @@ export function AlternativesPage() {
               <span className="block text-accent">when typing is the bottleneck.</span>
             </h1>
             <p className={`${iosLanding.subline} mb-4 !text-white/65 !max-w-2xl`}>
-              SMASH is not a full accounting suite or job-management platform. It is the fastest path from
-              job done → priced invoice sent. Talk for 30 seconds on iPhone, or quote from Gmail in Chrome —
-              under 60 seconds either way.
+              Most apps send invoice PDFs. SMASH runs the full loop for people who work with their hands:
+              quote → customer approves → invoice → paid. Talk for 30 seconds on iPhone, or quote from Gmail
+              in Chrome — under 60 seconds either way.
             </p>
             <p className="font-body text-base text-white/45 mb-10 max-w-2xl">
               Live in Australia, New Zealand, the United Kingdom, the United States, and Canada.
