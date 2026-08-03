@@ -7,6 +7,10 @@ const BOT_UA =
 export default async (request: Request, context: Context) => {
   const ua = request.headers.get('user-agent') ?? '';
   const url = new URL(request.url);
+  // Already the static file — serve as-is (do not re-force SPA).
+  if (url.pathname.endsWith('/index.html')) {
+    return context.next();
+  }
   // /vs-invoice-simple or /alternatives (strip trailing slash)
   const pathname = url.pathname.replace(/\/$/, '') || '/';
   const target = BOT_UA.test(ua) ? `${pathname}/index.html` : '/index.html';

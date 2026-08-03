@@ -100,7 +100,9 @@
   function = "voice-invoicing-route"
   path = "/voice-invoicing/*"
 
-# /alternatives + /vs-* — SPA for humans; edge rewrites crawlers to static HTML
+# /alternatives + /vs-* — SPA for humans (exact paths only — never force */index.html,
+# or crawler static files get shadowed like the old /vs-* wildcard bug).
+# Edge function rewrites bots to /{path}/index.html (same pattern as voice-invoicing).
 [[redirects]]
   from = "/alternatives"
   to = "/index.html"
@@ -114,13 +116,169 @@
   force = true
 
 [[redirects]]
-  from = "/vs-*"
+  from = "/vs-servicem8"
   to = "/index.html"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/vs-*/"
+  from = "/vs-servicem8/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice2go"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice2go/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-myob"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-myob/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-rounded"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-rounded/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-tradify"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-tradify/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-xero"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-xero/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice-simple"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice-simple/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-quotemate"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-quotemate/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice-home"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-invoice-home/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-joist"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-joist/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-wave"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-wave/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-freshbooks"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-freshbooks/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-square-invoices"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-square-invoices/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-zoho-invoice"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/vs-zoho-invoice/"
   to = "/index.html"
   status = 200
   force = true
@@ -135,7 +293,115 @@
 
 [[edge_functions]]
   function = "vs-alternatives-route"
-  path = "/vs-*"
+  path = "/vs-servicem8"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-servicem8/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice2go"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice2go/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-myob"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-myob/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-rounded"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-rounded/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-tradify"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-tradify/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-xero"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-xero/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice-simple"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice-simple/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-quotemate"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-quotemate/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice-home"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-invoice-home/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-joist"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-joist/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-wave"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-wave/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-freshbooks"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-freshbooks/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-square-invoices"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-square-invoices/*"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-zoho-invoice"
+
+[[edge_functions]]
+  function = "vs-alternatives-route"
+  path = "/vs-zoho-invoice/*"
 
 [[redirects]]
   from = "/smash-vs-joist"
