@@ -102,6 +102,9 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'can-claude-write-a-quote-estimate',
   'send-quote-on-site-30-seconds-handyman',
   'chatgpt-got-my-handyman-estimates-wrong',
+  'invoice-simple-review-for-tradies',
+  'joist-review-for-tradies',
+  'wave-invoicing-review-for-tradies',
 ]);
 const APP_STORE_URL = 'https://apps.apple.com/au/app/smash-invoices/id6759475079';
 const CHROME_STORE_URL =

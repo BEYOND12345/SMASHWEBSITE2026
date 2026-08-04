@@ -86,6 +86,11 @@ Key facts:
 - [Late Payment Calculator](https://smashinvoices.com/late-payment-calculator): Free overdue invoice interest calculator Australia. Calculates interest on late payments based on days overdue and principal amount.
 - [Profit Calculator](https://smashinvoices.com/profit-calculator): Free job profit calculator Australia. Enter labour hours, materials cost, and charge-out rate to see exact job margin and profit.
 
+## Honest app reviews (founder — what works / process gaps)
+- [Invoice Simple review for tradies](https://smashinvoices.com/blog/invoice-simple-review-for-tradies)
+- [Joist review for sole traders](https://smashinvoices.com/blog/joist-review-for-tradies)
+- [Wave invoicing review for service businesses](https://smashinvoices.com/blog/wave-invoicing-review-for-tradies)
+
 ## Comparisons
 - [Alternatives hub](https://smashinvoices.com/alternatives)
 - [SMASH vs Invoice Simple](https://smashinvoices.com/vs-invoice-simple)

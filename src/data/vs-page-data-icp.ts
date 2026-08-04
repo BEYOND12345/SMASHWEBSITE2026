@@ -110,6 +110,10 @@ SMASH removes the form. You talk the scope the way you’d tell a mate. Labour, 
       heading: 'Same ICP, different product job',
       body: `Both apps target freelancers and service businesses. Invoice Simple’s job is a nice invoice PDF. SMASH’s job is the money loop: [AI estimates](/ai-estimates) from your catalog → approval → invoice → paid — on iPhone on site, or from Gmail at the desk. If you are also eyeing [Joist](/vs-joist), [Wave](/vs-wave), or [Invoice2go](/vs-invoice2go), it is the same fork in the road.`,
     },
+    {
+      heading: 'Longer honest review',
+      body: `Want the full “what works / what doesn’t” without a sales page vibe? Read [Invoice Simple review for tradies](/blog/invoice-simple-review-for-tradies) — pain points people search for, keep-vs-switch guidance, and the process scorecard.`,
+    },
   ],
   pricingHeading: 'Pricing note',
   pricingBody: `Invoice Simple uses freemium / subscription tiers that change by market — always check their site. SMASH: free monthly quote/invoice allowance with the full voice workflow, then paid from about $15/month AUD for higher volume and accounting sync. See [SMASH pricing](/pricing).`,
@@ -375,6 +379,10 @@ export const vsJoist: VsPageData = {
       heading: 'Process, not just features',
       body: `Joist covers estimates and payments. SMASH optimises the dirty-hands capture and the same approval portal after voice. You do not need a full field-service OS to get paid today — compare [ServiceM8](/vs-servicem8) and [Tradify](/vs-tradify) if you are weighing suites.`,
     },
+    {
+      heading: 'Longer honest review',
+      body: `Full founder-style take: [Joist review for sole traders](/blog/joist-review-for-tradies) — what Joist does well, the open-tab problem on site, and when to keep it.`,
+    },
   ],
   pricingHeading: 'Pricing note',
   pricingBody: `Joist plans vary by region — verify current pricing. SMASH free + paid from ~$15/month AUD. [SMASH pricing](/pricing).`,
@@ -453,6 +461,10 @@ export const vsWave: VsPageData = {
     {
       heading: 'Handymen need the driveway, not the ledger first',
       body: `Books matter. Getting the quote out while the customer is still there matters more for cash flow. Six small jobs × “I’ll Wave it tonight” is how uninvoiced work adds up. SMASH’s loop finishes with approve and pay — then you can sync. See [for handymen](/for-handymen).`,
+    },
+    {
+      heading: 'Longer honest review',
+      body: `Desk vs driveway in full: [Wave invoicing review for service businesses](/blog/wave-invoicing-review-for-tradies). Also the Gmail desk twin: [Wave invoicing alternative from Gmail](/blog/wave-invoicing-alternative-gmail).`,
     },
   ],
   pricingHeading: 'Pricing note',

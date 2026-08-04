@@ -1,0 +1,53 @@
+{
+  "slug": "invoice-simple-review-for-tradies",
+  "title": "Invoice Simple Review for Tradies: What Works (and Where It Breaks On Site)",
+  "meta_title": "Invoice Simple Review for Tradies (2026) — Honest Take | SMASH",
+  "meta_description": "Honest Invoice Simple review for handymen and sole traders: what the app does well, where tap-to-type slows you down on site, and when a full quote→approve→invoice loop is the better fit.",
+  "excerpt": "Invoice Simple is a real product for real service businesses. Here’s an honest look at what works, what doesn’t for dirty-hands work, and the pain points people actually search for.",
+  "primary_keyword": "invoice simple review",
+  "secondary_keywords": [
+    "invoice simple alternative",
+    "invoice simple for tradies",
+    "invoice simple estimate",
+    "is invoice simple good",
+    "invoice simple on site",
+    "best invoice app for handyman"
+  ],
+  "key_takeaways": [
+    "Invoice Simple works well when you need a clean mobile invoice PDF and you are happy tapping fields.",
+    "The common pain for tradies is not “bad software” — it is typing between jobs and estimates that wait until tonight.",
+    "If you need quote → customer approves → invoice → paid before you leave, you need more than an invoice sender.",
+    "Keep Invoice Simple if volume is tiny; switch the capture layer when Sunday admin is the real cost."
+  ],
+  "faq_data": [
+    {
+      "question": "Is Invoice Simple good for tradies?",
+      "answer": "Yes for sole traders who want a simple phone invoicer and are fine building line items by tapping. It is weaker when you need fast on-site estimates with dirty hands and a customer approval link in the same motion."
+    },
+    {
+      "question": "What is the biggest Invoice Simple pain point on site?",
+      "answer": "Time. Five jobs means five rounds of typing descriptions, quantities, and tax. That is when “I’ll finish invoices tonight” starts — and tonight often never comes."
+    },
+    {
+      "question": "Does Invoice Simple do estimates and invoices?",
+      "answer": "Yes — estimates and invoices are core. The gap for many trades is speed of capture and whether approval and payment feel like one loop after the job, not a separate admin project."
+    },
+    {
+      "question": "What is a fair Invoice Simple alternative?",
+      "answer": "If your pain is typing or delayed sends, look for voice or catalog-priced capture that still lets the customer approve and pay. SMASH is built for that loop — see our comparison page."
+    },
+    {
+      "question": "Should I leave Invoice Simple immediately?",
+      "answer": "No. Start free on a new tool for the next quote, keep Invoice Simple until you trust the workflow. Switching overnight is rarely necessary."
+    }
+  ],
+  "last_reviewed": "2026-08-04T00:00:00.000Z",
+  "reading_time": 8,
+  "author": "Dan Neale",
+  "author_bio": "Dan Neale built SMASH as a working handyman after typing invoices and pasting jobs into generic AI tools cost him real money and evenings.",
+  "published_at": "2026-08-04T02:00:00.000Z",
+  "updated_at": "2026-08-04T02:00:00.000Z",
+  "featured_image": "/og/blog/smash-vs-invoice2go.jpg",
+  "featured_image_alt": "Tradie reviewing a simple invoice app on a phone at the van",
+  "content": "## Short answer\n\n**Invoice Simple is a solid tap-to-type invoicer. It was not designed for the full dirty-hands money loop.**\n\nThis is my honest review as someone who built software after living the trade-admin problem — not a hit piece. Invoice Simple helps a lot of freelancers and contractors send professional invoices from a phone. What it does *not* remove is the keyboard tax between jobs, or the gap between “PDF sent” and “customer approved and paid while I’m still on site.”\n\nDeep comparison: [SMASH vs Invoice Simple](/vs-invoice-simple) · Process product: [voice to invoice](/voice-invoicing) · Handyman context: [for handymen](/for-handymen).\n\n## What Invoice Simple does well\n\nCredit where it is due:\n\n- **Mobile-first invoices** — built for phone use, not a desktop afterthought\n- **Estimates → invoices** — you can convert work without starting from zero every time\n- **Low learning curve** — templates and fields most people understand in a day\n- **Good fit for low volume** — one or two invoices a week and typing is annoying, not catastrophic\n\nIf that is your business, Invoice Simple can be the right tool. Plenty of sole traders are happy there.\n\n## What people are actually searching for (the pain points)\n\nWhen someone googles around Invoice Simple, it is rarely “teach me features.” It is usually one of these:\n\n| Pain they feel | What they type (roughly) | Real job-to-be-done |\n| --- | --- | --- |\n| Too slow between jobs | invoice simple slow / typing invoices on phone | Capture the job without forms |\n| Estimates die on site | send estimate from job site / quote before I leave | Win the job with a priced PDF *now* |\n| Sunday admin pile | catch up on invoices / batch invoicing | Same-day send as default |\n| Looking to switch | invoice simple alternative / invoice simple review | Fair “what works / what doesn’t” |\n| Full process | estimate approval invoice payment | One loop, not three apps |\n\nThose are the problems worth writing about. Crashes and billing spats show up in app-store noise — they are not the strategic story, and they are not how we talk about other brands here.\n\n## Where it breaks for people who work with their hands\n\n### 1. Typing is the product\n\nInvoice Simple’s workflow assumes you can tap descriptions, quantities, and rates. On a handyman afternoon — flat-pack, gate latch, three odd jobs for a property manager — that means five forms. The work is done. The paperwork waits.\n\n### 2. “Invoice sent” ≠ process finished\n\nA PDF in someone’s inbox is not the same as: they approved the scope, you converted to invoice, they paid, you saw they opened it. Many basic apps stop at send. The [full loop](/vs-invoice-simple) is what service businesses actually run.\n\n### 3. Your rates live in your head (or get retyped)\n\nCatalog memory matters when every job is different. Re-entering the same call-out and hourly is how inconsistency creeps in — and how ChatGPT-style guesses sneak into quotes. We wrote about that failure mode here: [ChatGPT got my estimates wrong](/blog/chatgpt-got-my-handyman-estimates-wrong).\n\n## At a glance — what works / what doesn’t\n\n| Need | Invoice Simple | Better when… |\n| --- | --- | --- |\n| Clean invoice PDF | Strong | — |\n| Learn it fast | Strong | — |\n| Dirty-hands capture | Weak (forms) | You talk the job instead |\n| Quote while customer waits | Slow | ~30s catalog-priced send |\n| Approve + pay on one link | Partial / varies | Built into the send |\n| Desk quote from Gmail | App-first | [Chrome extension](/chrome-extension) path |\n\n## Who should keep Invoice Simple\n\n- You send a handful of invoices a month\n- You almost never need an on-site estimate\n- Typing on a phone does not bother you\n- You do not need customer approval as part of the same motion\n\n## Who should look past it\n\n- Handymen, cleaners, gardeners, mobile trades with several jobs a day\n- Anyone whose backlog is “I’ll invoice Sunday”\n- Anyone who loses jobs because the quote left too late — [first quote wins](/blog/first-quote-wins-instant-quote-on-site)\n\n## Fair alternative (without trash-talk)\n\nIf the pain is capture and loop — not “I hate Invoice Simple” — try voice against your own rates, verify, send, let them approve and pay. That is what [SMASH](/vs-invoice-simple) is for. Start free; keep Invoice Simple until you are sure.\n\nSame ICP conversation: [Joist review](/blog/joist-review-for-tradies) · [Wave review](/blog/wave-invoicing-review-for-tradies) · [vs Invoice2go](/vs-invoice2go).\n\n## Bottom line\n\nInvoice Simple is good at being a simple invoicer. Tradies often need a **process**, not a prettier PDF. Be honest about which problem you have — then pick the tool that matches.\n\n[SMASH vs Invoice Simple](/vs-invoice-simple) · [Voice to invoice](/voice-invoicing) · [All alternatives](/alternatives)"
+}
