@@ -276,6 +276,10 @@ With SMASH you say the job out loud. "Gutter clean, two storey, three hours, plu
 
 The first answer back wins the job. Typing is where jobs go to die. More on [how voice invoicing works](/voice-invoicing).`,
     },
+    {
+      heading: 'Longer honest review',
+      body: `Full founder-style take for the same ICP: [Invoice2go review for tradies](/blog/invoice2go-review-for-tradies) — caps, typing, keep-vs-switch. Sister apps: [Invoice Simple review](/blog/invoice-simple-review-for-tradies) · [Invoice Home review](/blog/invoice-home-review-for-tradies).`,
+    },
   ],
   pricingHeading: 'SMASH vs Invoice2go pricing compared',
   pricingBody: `Invoice2go: Starter US$5.99/month (2 invoices), Professional US$9.99/month (5 invoices), Premium US$39.99/month (unlimited, recurring invoices, phone support). Annual billing changes the limits to 30 and 100 per year. Card processing runs 3.5% on Starter down to 2.9% on Premium.

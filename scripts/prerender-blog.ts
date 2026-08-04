@@ -103,6 +103,9 @@ const PROTECTED_BLOG_SLUGS = new Set([
   'send-quote-on-site-30-seconds-handyman',
   'chatgpt-got-my-handyman-estimates-wrong',
   'invoice-simple-review-for-tradies',
+  'invoice2go-review-for-tradies',
+  'invoice-home-review-for-tradies',
+  'quotemate-review-for-tradies',
   'joist-review-for-tradies',
   'wave-invoicing-review-for-tradies',
 ]);

@@ -207,6 +207,10 @@ export const vsQuotemate: VsPageData = {
       heading: 'Handymen do not need guessed market rates',
       body: `A gate repair in the Inner West is not a national average. It is your call-out, your hourly, your hinge pack. Catalog fidelity is the product. Market-rate AI is a starting point you still have to rewrite — which puts you back in the form.`,
     },
+    {
+      heading: 'Longer honest review',
+      body: `Deep dive: [QuoteMate review for tradies](/blog/quotemate-review-for-tradies). Same ICP typing cluster: [Invoice2go](/blog/invoice2go-review-for-tradies) · [Invoice Simple](/blog/invoice-simple-review-for-tradies).`,
+    },
   ],
   pricingHeading: 'Pricing note',
   pricingBody: `QuoteMate pricing changes — verify on their site. SMASH: free allowance, then paid from ~$15/month AUD with optional Xero/QuickBooks. [SMASH pricing](/pricing).`,
@@ -294,6 +298,10 @@ export const vsInvoiceHome: VsPageData = {
     {
       heading: 'What a handyman actually needs',
       body: `After a fence job you need a priced quote the owner can approve on their phone — not a blank template waiting on a laptop. If they say yes, the invoice should be the same lines. If they pay on the link, you are done before the next job. Template makers skip most of that loop. So do a lot of “simple” apps — see [Zoho Invoice](/vs-zoho-invoice) and [Wave](/vs-wave) for the same pattern.`,
+    },
+    {
+      heading: 'Longer honest review',
+      body: `[Invoice Home review for tradies](/blog/invoice-home-review-for-tradies) — templates vs workflow. Same simple-app ICP: [Invoice2go](/blog/invoice2go-review-for-tradies) · [Invoice Simple](/blog/invoice-simple-review-for-tradies).`,
     },
   ],
   pricingHeading: 'Pricing note',
