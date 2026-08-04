@@ -134,6 +134,52 @@ export function AlternativesPage() {
         </div>
       </section>
 
+      <section className="bg-white py-16 md:py-20 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <AnimateIn direction="up">
+            <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tighter text-brand mb-4">
+              Honest reviews (what works / what doesn’t)
+            </h2>
+            <p className="font-body text-slate-500 mb-8 max-w-2xl">
+              Founder-style takes on the simple apps our ICP already uses — pain points people search for, not
+              trash-talk.
+            </p>
+            <ul className="grid gap-3 sm:grid-cols-2 font-body text-brand">
+              <li>
+                <Link to="/blog/invoice-simple-review-for-tradies" className="underline hover:no-underline">
+                  Invoice Simple review for tradies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/invoice2go-review-for-tradies" className="underline hover:no-underline">
+                  Invoice2go review for tradies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/invoice-home-review-for-tradies" className="underline hover:no-underline">
+                  Invoice Home review for tradies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/quotemate-review-for-tradies" className="underline hover:no-underline">
+                  QuoteMate review for tradies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/joist-review-for-tradies" className="underline hover:no-underline">
+                  Joist review for sole traders
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/wave-invoicing-review-for-tradies" className="underline hover:no-underline">
+                  Wave invoicing review
+                </Link>
+              </li>
+            </ul>
+          </AnimateIn>
+        </div>
+      </section>
+
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <AnimateIn direction="up">
